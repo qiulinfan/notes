@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "name": "Math Notes",
+      "path": ".."
+    }
+  ],
+  "settings": {
+    "tinymist.typstExtraArgs": [
+      "point-set-topology/main.typ"
+    ]
+  }
+}
+

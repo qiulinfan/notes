@@ -1,0 +1,2205 @@
+{
+  "counts": {
+    "edges": 577,
+    "nodes": 346,
+    "references": 58
+  },
+  "curation_statuses": {
+    "current": 316
+  },
+  "entry_authorities": {
+    "entries": [
+      {
+        "path": "knowledge/entries/a-borel-measure-on-0-infty-times-s-n-1.md",
+        "sha256": "f86df1eba8313967c7ebb64ddd5a28abca2aa17eff905d27fddc9884936d3a01"
+      },
+      {
+        "path": "knowledge/entries/a-sum-of-indicator-functions-of-measurable-sets-simple-function.md",
+        "sha256": "30c25154b7a71c89c19c82c2df3d3236249919f9768a3f43a813e7a136355dee"
+      },
+      {
+        "path": "knowledge/entries/absolute-continuity-of-signed-measures.md",
+        "sha256": "83cec504e4e07233a6e57968c0b115a4560ebad2f414fa65ada5e4d9c3427864"
+      },
+      {
+        "path": "knowledge/entries/absolutely-continuous-function-on-a-cpt-interval.md",
+        "sha256": "01d0eae5be5870e5e3d21fb6c42e18a3b33eefee257ae50466f6b7d58277c8dd"
+      },
+      {
+        "path": "knowledge/entries/absolutely-continuous-function.md",
+        "sha256": "ef5c1f465a4dee2fc5cd9dd39247c979ca01005ed5ffc53cc2b4d4f3c610bd76"
+      },
+      {
+        "path": "knowledge/entries/absolutely-continuous.md",
+        "sha256": "7e3217fc68879d7a1228acb4f0f860bd64caa21c2dc198e505a85559506aa8d9"
+      },
+      {
+        "path": "knowledge/entries/additivity-of-poisson-distribution.md",
+        "sha256": "ade235cc39acd1df641fc3e35268862bfb861d93d9dc2a1cfc96c71dbeaad8b1"
+      },
+      {
+        "path": "knowledge/entries/algebra-of-sets.md",
+        "sha256": "cd41334f419fe64197f2689080b391a8e211f751cd4548e1e722e1e5caf96775"
+      },
+      {
+        "path": "knowledge/entries/almost-everywhere.md",
+        "sha256": "9fc2f9a8162ba407f8bdfaaef8e9c97983f7cadf081f40b7f4f649214d82cbb3"
+      },
+      {
+        "path": "knowledge/entries/another-criterion-for-banach-space.md",
+        "sha256": "c6855e446ad4e8f4e755fe8dcb65dd7fee013e9f256af201e7a213d619d231ce"
+      },
+      {
+        "path": "knowledge/entries/approximate-an-open-set-by-disjoint-interior-cubes.md",
+        "sha256": "52e801a5271be7e531aeb546f649bc3ac70911bc2ed5df7e66c17f52a09e5970"
+      },
+      {
+        "path": "knowledge/entries/approximating-a-nonneg-measurable-function-by-simple-function.md",
+        "sha256": "c78c3277d85eda2767b2a8557b2b2177b8e0c5848da4ed3ba62bbe1934432804"
+      },
+      {
+        "path": "knowledge/entries/arithmetic-preserves-measurability.md",
+        "sha256": "e1678744c9f6b36492eca5d27acefae228f421852b7f46b938e72ba4d6a81dc1"
+      },
+      {
+        "path": "knowledge/entries/associativity-of-product-measure.md",
+        "sha256": "790b89f099da4c4f6191d5c09a8521dd3946d0ed9bda1be9d4479090986c3205"
+      },
+      {
+        "path": "knowledge/entries/average.md",
+        "sha256": "5ffbbfe8967a4cedb9b2b0a2cd7107cbb107100cdc2bf00baa46c7a41577e19a"
+      },
+      {
+        "path": "knowledge/entries/banach-space.md",
+        "sha256": "b75c13232b0c6d3439f9f6ecb73b4139b2e03d14b9933258e6577b59e01b52e2"
+      },
+      {
+        "path": "knowledge/entries/bayes-theorem.md",
+        "sha256": "fea59936a7e8aeb9d85abc016700581d46566fed44555c1f369cc2d75587c609"
+      },
+      {
+        "path": "knowledge/entries/berry-esseen-theorem.md",
+        "sha256": "fd396929e40bc47112ebf39227a47530a5c8df1c086b7fe5100cbab900d778f1"
+      },
+      {
+        "path": "knowledge/entries/binomial-theorem.md",
+        "sha256": "e5f3877c604de26498929b0b33c7e01d2a0637c386bf639c354652da14620d76"
+      },
+      {
+        "path": "knowledge/entries/borel-cantelli-lemma.md",
+        "sha256": "c07a56ae3a7d24d255267faa1911c3a8f1f262f9abc372d337ffd18b97e7cbcf"
+      },
+      {
+        "path": "knowledge/entries/borel-measurable-random-variables.md",
+        "sha256": "4eda728fffe6bef1ffbbc76f99e3f19bd5d6c6aa47838f99555601c84acd129f"
+      },
+      {
+        "path": "knowledge/entries/borel-sigma-algebra-defined-on-a-topological-space.md",
+        "sha256": "e2b527ac2a05061d63e0f845d43a4bd767abf2c580d4b04f19894cfc151a0ed9"
+      },
+      {
+        "path": "knowledge/entries/bounded-linear-functional.md",
+        "sha256": "69ebf04bbb278c94066a12b555ce6c5c437105eb80191eadcd38e7ae49daaf67"
+      },
+      {
+        "path": "knowledge/entries/bv-complex-vector-space.md",
+        "sha256": "85b997795c4320ef51a0bdaa134cf64bc1264ea62f11be04d24ce8193d671dfd"
+      },
+      {
+        "path": "knowledge/entries/bv-or-bv-i.md",
+        "sha256": "51a03bcd29f1f19a35ce0793a80f14996a6143d9ab4a93ec107db1faf0997a82"
+      },
+      {
+        "path": "knowledge/entries/c-c-x-subset-l-1-mu-dense-linear-subspace.md",
+        "sha256": "aa53a1fc96b5533dd8433f70b3a4b37201ee373fe5a43f7bd923ee18b5927873"
+      },
+      {
+        "path": "knowledge/entries/c-c-x.md",
+        "sha256": "d40378fcaed50e241c29ee5b74964db7e826289226336225f9977df68131c5fc"
+      },
+      {
+        "path": "knowledge/entries/caratheodory-s-criterion.md",
+        "sha256": "233e192a891e31f5ead7c39a2cf02fe32cf4ac70a7b583dddfc1f08f09afd176"
+      },
+      {
+        "path": "knowledge/entries/caratheodory-theorem.md",
+        "sha256": "2c23f4215a8850d7c1277bb4dbf6fab13a56dd58816eace852d9deeffa1bec16"
+      },
+      {
+        "path": "knowledge/entries/cauchy-schwarz-inequality.md",
+        "sha256": "64d31bbdad026b63b631426e2b248512b543c6ba108a689b36e4fe61ffdbeae0"
+      },
+      {
+        "path": "knowledge/entries/cauchy-sequence.md",
+        "sha256": "a61becd19f34f1a2553c96a9e4a4a90cccfa62119e286bf3cd63f1c2ee663d4c"
+      },
+      {
+        "path": "knowledge/entries/cdf-nbv.md",
+        "sha256": "868eeaaceccebc2f773835877086e1b1c555b97366306c20371884afebf36979"
+      },
+      {
+        "path": "knowledge/entries/centered-l2-hilbert-space-under-covariance.md",
+        "sha256": "855e2f749eef28cb1531728cc23f035f2d076e0801a33bd771b4435558584de8"
+      },
+      {
+        "path": "knowledge/entries/centered-square-integrable-random-variables.md",
+        "sha256": "8a1b60b5fca9e8a9fd031e779366b08a46f205646a6ec1f7f64805251908d3db"
+      },
+      {
+        "path": "knowledge/entries/change-of-variables-theorem.md",
+        "sha256": "5c4a156e66fa150dc527b5b3c364cc436a1609f4e509ee4774a2f50e86d6ccdc"
+      },
+      {
+        "path": "knowledge/entries/characteristic-indicator-function.md",
+        "sha256": "7f80bae92c6ca10fd3ee7487ad41463847062ee91ead9b0fd57851f81a2a62ab"
+      },
+      {
+        "path": "knowledge/entries/characterization-for-lipschitz-ctn.md",
+        "sha256": "2bb6c7dd99a7bf25e56f3ad964c71b851926270ab452a1975ff38c95dc223c14"
+      },
+      {
+        "path": "knowledge/entries/characterization-of-mu-f-perp-m-mu-f-ll-m-for-f-in-nbv.md",
+        "sha256": "351524e8b3c13dc6bdfa8618aaba55f164046c6b3b3ad8577fa2804fd6bb33cb"
+      },
+      {
+        "path": "knowledge/entries/chebyshev-inequality.md",
+        "sha256": "1ed823f2c42e4b0cd65ae00009db9f3489186b562febe479f3e3e1c260822117"
+      },
+      {
+        "path": "knowledge/entries/combinations-with-repetition.md",
+        "sha256": "7089978d342244fee4a0b0f3515f726a7fee13bc918e9b5a06322aeee0b3b589"
+      },
+      {
+        "path": "knowledge/entries/combinations.md",
+        "sha256": "95ff8bb625757febdd0b8a5046e0f67043e6e001cea09111a37483d4ed0764ae"
+      },
+      {
+        "path": "knowledge/entries/compactness.md",
+        "sha256": "adc1880929637b6baada3137c15c0ce10e93571dd0ea3a611615a11f0e634fba"
+      },
+      {
+        "path": "knowledge/entries/complete-fubini-tonelli.md",
+        "sha256": "0a6c72d047fce9cc12f13d7d7e75fde75e4679bd2e76c30b9de383a2fdedee10"
+      },
+      {
+        "path": "knowledge/entries/complete-measure-space.md",
+        "sha256": "0287d82466ea3973fc771914fbd2a01e7949e26702f8b67bcca065e2f06fa036"
+      },
+      {
+        "path": "knowledge/entries/complete-ordered-field.md",
+        "sha256": "a19585c357635c100e97076d5e39c3e1b3ce279b0a52624d801c4b1cd510ebea"
+      },
+      {
+        "path": "knowledge/entries/complex-measure.md",
+        "sha256": "684967e1f248373c8036c140f3950aec5a7beb9ffa2d897d1efb1704eb5bc7b8"
+      },
+      {
+        "path": "knowledge/entries/complex-valued-integrable-function.md",
+        "sha256": "420cf7f8d43d444241278c45e01d9df77dca68995b1134dd1355b22351ae8066"
+      },
+      {
+        "path": "knowledge/entries/complex-valued-measurable-functions.md",
+        "sha256": "96853aa36e10ff88e679a29c5d83f512c634c647f9b1d76b381a766e883d2040"
+      },
+      {
+        "path": "knowledge/entries/composition-preserves-measurability.md",
+        "sha256": "10eb27f7fdd1eaf17d554b878a92e90ecef4965b94f5341bf078ff9a19f84e76"
+      },
+      {
+        "path": "knowledge/entries/computing-variance.md",
+        "sha256": "08344bf835e619194a41d74e48fb8be3d9189ef37709fe6f3e9ce5dae2d98a96"
+      },
+      {
+        "path": "knowledge/entries/condition-number.md",
+        "sha256": "4db1d1ae1018dc0d9167d03cd148af9fc9b8070a5c9014b4850f2715cc637763"
+      },
+      {
+        "path": "knowledge/entries/conditional-distribution.md",
+        "sha256": "01ca8b9e8baf4a330f9bb6ec10486cc26b3aa8e794bf2dc0349c0679ce5662e8"
+      },
+      {
+        "path": "knowledge/entries/conditional-expectation.md",
+        "sha256": "10e320a6f2c4dc3e75a36d8a48ece480cf85ed1848620692638205ee1a96d68b"
+      },
+      {
+        "path": "knowledge/entries/conditional-probability-space-and-trace-sigma-algebra.md",
+        "sha256": "60a3277d10ea1630ae3916af6a15bd235d6528cb1e8bcd7d1b453de6ea2a9af4"
+      },
+      {
+        "path": "knowledge/entries/conditional-probability.md",
+        "sha256": "fc60d4dd6776bca12dbafdd1ac72cbdd09a40d5fafccd1c76b081bbc57eb7999"
+      },
+      {
+        "path": "knowledge/entries/congruence-modulo-n.md",
+        "sha256": "1fc6d3614bd81088b4c43b8c2259f0bb0cd76ddd9750793a65cb567f208e1d77"
+      },
+      {
+        "path": "knowledge/entries/conjugate-exponent-p-q-l-p-l-q-dual-space.md",
+        "sha256": "ad8398f1b79d2748d17bc2618a67c583d35aa64565c904a0e362ee3ec3cbce9f"
+      },
+      {
+        "path": "knowledge/entries/construct-outer-measure-out-of-an-elementary-length-function.md",
+        "sha256": "4bcad325532a842bd7ee6c98058f4e21d16809728965a164accf3c66f697fb2c"
+      },
+      {
+        "path": "knowledge/entries/continuity-of-signed-measures.md",
+        "sha256": "351a1ca0b2d36e5d16f708404500b5b4e8cd46ea0f38e69a835d8770ebb1ea57"
+      },
+      {
+        "path": "knowledge/entries/continuous-joint-cdf.md",
+        "sha256": "3f337935581d3526238d15f11131966177ee0b5cfeded171858ddf4b0e1d464a"
+      },
+      {
+        "path": "knowledge/entries/continuous-random-variable-expectation-variance.md",
+        "sha256": "9ef415943b500b75f86635af05c992c26c144b5799ea47346bb020a73f993c9f"
+      },
+      {
+        "path": "knowledge/entries/continuous-random-variable.md",
+        "sha256": "f2cb7af46b54616cb6614e892e42f779d7d1b05613f8b603e98859c92106ffb9"
+      },
+      {
+        "path": "knowledge/entries/continuous-random-vector-continuous-joint-cdf.md",
+        "sha256": "29b3b22a908b920c3e390f7b6706c11977b41f2e07d4cb9154cd5d7a61d94acd"
+      },
+      {
+        "path": "knowledge/entries/convergence-in-distribution.md",
+        "sha256": "f4908072cbc96d95e2910388ee923d0301588b0290f725ca6ec935449b9323ec"
+      },
+      {
+        "path": "knowledge/entries/convergence-in-l-infty-iffuniform-convergence-a-e.md",
+        "sha256": "20cd80a077079b213dcf90375168f4e65895ab9e489c4d66314cb15ffafb1f44"
+      },
+      {
+        "path": "knowledge/entries/correlation.md",
+        "sha256": "9eb98d8db29accf8a0f3f889daf8c4ea9850b4cddac04272b1db91d2fab0e51a"
+      },
+      {
+        "path": "knowledge/entries/covariance-positive-semidefinite-bilinear-form.md",
+        "sha256": "d7d27cb91d7480b7d018796c57e1c574b9133ba867fb5144ddc8d3a76a7dd2de"
+      },
+      {
+        "path": "knowledge/entries/covariance.md",
+        "sha256": "186a8cdda2702696284ae6daa05bdacb8da3109d5c88a44e4cdb26e688c24102"
+      },
+      {
+        "path": "knowledge/entries/criterion-for-l-p-convergence.md",
+        "sha256": "0b5be67b6958f03228c5adbe42a116b05fb69702d941a9a4c27e14d6d33448d1"
+      },
+      {
+        "path": "knowledge/entries/de-moivre-laplace-theorem.md",
+        "sha256": "f651eea5bca3863ef0933728b9e575e1ddb4684249346eb51a0ead77504260b7"
+      },
+      {
+        "path": "knowledge/entries/decomposing-probability-of-intersection-of-events.md",
+        "sha256": "9e823fedb60cb99f9de58e0fbbc60f7314fb5050b09ea110b809196bf6587750"
+      },
+      {
+        "path": "knowledge/entries/density-of-a-set-at-a-point.md",
+        "sha256": "f413df6224dc86d159040131aeefc309deada101700de63fc1208d9d70b85b22"
+      },
+      {
+        "path": "knowledge/entries/density-of-compactly-supported-continuous-functions-in-lp.md",
+        "sha256": "06dae5157f6018a050da91bfec240e482528c0e65a9b94caac8573cc8e135afc"
+      },
+      {
+        "path": "knowledge/entries/density-of-simple-functions-in-l-1-mu.md",
+        "sha256": "a0f4b3a7fab8ed0f189dfab84b82653abaeec54e35340f5772ba18e5258448b5"
+      },
+      {
+        "path": "knowledge/entries/derivative.md",
+        "sha256": "33377f4a5a8e865d17304d2789565e2bd647876845b46fbcaa528b66f052232c"
+      },
+      {
+        "path": "knowledge/entries/diagonalization.md",
+        "sha256": "5eebe01fa7a8a55649070b9fbd0da0c9f93d95126a2c66715b03516c3abc7336"
+      },
+      {
+        "path": "knowledge/entries/differentiability.md",
+        "sha256": "907fb035691443a36095b0200e6217ead522439e084f4746fa11aa2ff4ab9511"
+      },
+      {
+        "path": "knowledge/entries/direct-sum.md",
+        "sha256": "ad4ec6fc557e17536202ad599c82d11fb013fb0c55efa6a491148a9680492689"
+      },
+      {
+        "path": "knowledge/entries/discrete-random-variable-expectation-variance.md",
+        "sha256": "8d8c573e7779e95ecefb5a3b6f0eae8a9425ed478059ed513c264a0808ec01cf"
+      },
+      {
+        "path": "knowledge/entries/discrete-random-variable.md",
+        "sha256": "47b48724dc48a8b8022421a42768c0da668307f7b30b8e3c7e97f9b348fac9cf"
+      },
+      {
+        "path": "knowledge/entries/discrete-rv-independence-characterization.md",
+        "sha256": "ed47aa37c6f448f6979cccf68bf94263530fd579e1ee9a4362d070502d64aedc"
+      },
+      {
+        "path": "knowledge/entries/distribution-function-cumulative-distribution-function-cdf.md",
+        "sha256": "13dabc8ddb466a3f2df6e5be3093e8c8fbc6bb93ebae4ef4262d1044aa6fc5d2"
+      },
+      {
+        "path": "knowledge/entries/distribution-function-f-x-determines-distribution-mathbb-p-x.md",
+        "sha256": "d9d296eb04f3bbbd9ff716e9072781acbef74a440568b654ae17a1d031aa9a60"
+      },
+      {
+        "path": "knowledge/entries/distribution-function-is-increasing-and-right-ctn.md",
+        "sha256": "54bcdcc422e7015bb08bed55dbfae34c94b769426ea075f671c76fe3b8968d51"
+      },
+      {
+        "path": "knowledge/entries/distribution-function-of-mu.md",
+        "sha256": "92165c1db65d9ab339f0d74da4c3eff95f10f3d3ebc1e2f9e5c8b7b677262ca9"
+      },
+      {
+        "path": "knowledge/entries/distribution-function.md",
+        "sha256": "66a83ae15b0ccc7fb88007822a67e3f22017017a95eeed243628835fb166b6e7"
+      },
+      {
+        "path": "knowledge/entries/distribution-x-push-forward-measure-expectation.md",
+        "sha256": "b562786a3969a91976e119ff20b101ea0b41b95aee4ca555820ce32990d48491"
+      },
+      {
+        "path": "knowledge/entries/division-algorithm.md",
+        "sha256": "4cec533a32793025d816ff0dc5f17538fcecfd171186b47273fad15019ab6497"
+      },
+      {
+        "path": "knowledge/entries/dominated-convergence-theorem.md",
+        "sha256": "45f387119327e3975eca031e663bb2d652f5dd8c6133b152dc38dc400e6ec555"
+      },
+      {
+        "path": "knowledge/entries/dual-space-is-always-banach.md",
+        "sha256": "f1020e30536a23682515b3f00e127b67693b39728445bdfe2f16f0cf5a0fa2db"
+      },
+      {
+        "path": "knowledge/entries/dual-space.md",
+        "sha256": "cec48cdc5edd5b3ed5a667d6f8d0fb989c85fd1443802c66944985af83da6a38"
+      },
+      {
+        "path": "knowledge/entries/dynkins-pi-lambda-theorem.md",
+        "sha256": "eb119850fea3ce0744dc5088eac939c69a1c7897615a0aac9ce4f0a1fea2dd13"
+      },
+      {
+        "path": "knowledge/entries/easier-fubini.md",
+        "sha256": "b1a81f0b3a8c9aa11489bd659e2734078abc5141b10e58f4af9f3accc019a147"
+      },
+      {
+        "path": "knowledge/entries/egoroff-s-theorem.md",
+        "sha256": "95be0db7327534d1f5a96c2175a1bf9ff1a869bed7d9c72bf90c30d4d844b6cd"
+      },
+      {
+        "path": "knowledge/entries/eigenspace.md",
+        "sha256": "78addd2353fc2426e4243962b9ccfe19fa96d51ae0797c434dd46042c0025d7f"
+      },
+      {
+        "path": "knowledge/entries/elementary-row-operation.md",
+        "sha256": "dfc756f4e48e1ba37513ffa59a383a831296c29445e62ef0fe0c3287b086d455"
+      },
+      {
+        "path": "knowledge/entries/ell-infty.md",
+        "sha256": "aa23611fefa4d6c3c82697ee2c43af2b8897619916b16eca50565964a314305c"
+      },
+      {
+        "path": "knowledge/entries/elliptic-curve.md",
+        "sha256": "d8ad5e0bb46aff7afb53387434bff1bab98c53c435505160341641b7cb5f1cac"
+      },
+      {
+        "path": "knowledge/entries/essential-supremum.md",
+        "sha256": "997d2b04be3aaa14b32806c98d5ea52a4b73fc156942feac4859f0652d758193"
+      },
+      {
+        "path": "knowledge/entries/event-space.md",
+        "sha256": "e43fcc2ce3324c7d4c4fa7fcc3bc2ff956ce091c511873a12c7bde817a34a969"
+      },
+      {
+        "path": "knowledge/entries/every-measure-space-can-be-completed.md",
+        "sha256": "81a3a3153b177c2ff601f07b5c852d11d5668a8c7a7b12f3f0067aa26be6319e"
+      },
+      {
+        "path": "knowledge/entries/expectation-and-variance-of-random-variable.md",
+        "sha256": "644090f3c999456727f74aaa1ddaf7329d41f16ef36658c9454e1d9fb341f29f"
+      },
+      {
+        "path": "knowledge/entries/expectation.md",
+        "sha256": "9d34d637e149e6f43e8552e91144d10476ecd96f6710315fe28a0a1f55578f98"
+      },
+      {
+        "path": "knowledge/entries/exponential-distribution.md",
+        "sha256": "b8e85c5cf89bbf87511088fff8a7fe8ab9debeb1deffbf48c2a3b7656560ec27"
+      },
+      {
+        "path": "knowledge/entries/f-in-bv-right-ctn-implies-t-f-right-ctn.md",
+        "sha256": "ebc56a96b010f57437c13757bcd08a196ab25e9cd97db9ec64ec35072c88878e"
+      },
+      {
+        "path": "knowledge/entries/f-in-nbv-abs-ctn-iff-mu-f-ll-m.md",
+        "sha256": "8532743c118774279cdc74d8f22301af26a6685efa081b2f3a4f0dd8c178ce66"
+      },
+      {
+        "path": "knowledge/entries/fast-l-1-conv-implies-a-e-conv.md",
+        "sha256": "bea18bf088fe5e39c69826c91f5347aaf10977e3d6dee10727adcd94f027ce1f"
+      },
+      {
+        "path": "knowledge/entries/fatou-lemma.md",
+        "sha256": "70263174daccf472ca588e10f0a55f4de078c06e78a81f9084aad04991a56f66"
+      },
+      {
+        "path": "knowledge/entries/first-isomorphism-theorem.md",
+        "sha256": "e09deb893a3560fabe6b2dad8432afe97e0d2fff5ebb2ffabd3f84fd237c1eeb"
+      },
+      {
+        "path": "knowledge/entries/ftc-ii-for-lebesgue-integral-on-a-cpt-interval.md",
+        "sha256": "3f4c0d323840a399fe2a347d31e834a45325dce650bdf516d4fe1fefbc0c93b4"
+      },
+      {
+        "path": "knowledge/entries/ftc-in-lebesgue.md",
+        "sha256": "6d388f22664198cfde8cd00f16dcfccc327d555c5aca83c5a9c4ae5d7b245518"
+      },
+      {
+        "path": "knowledge/entries/fubini-for-series-and-integral.md",
+        "sha256": "592a212a840679a7a4257c82c8bf741119691c326e2eb64a56d92b99756e69d3"
+      },
+      {
+        "path": "knowledge/entries/fubini-theorem.md",
+        "sha256": "7c8a4a77dd2952482cd97e3e6f424858bd5f3cc23c4740dfc5a7f4ecff233063"
+      },
+      {
+        "path": "knowledge/entries/fubini-tonelli-for-m-n.md",
+        "sha256": "a027ce9070887f339d4767937cd37023501911b422cdaea13288bc0e3bd7a25d"
+      },
+      {
+        "path": "knowledge/entries/function-of-bounded-variation-on-an-interval.md",
+        "sha256": "ac4a01936f673adc27399b4e6663f8d0eb51f5713679d6c8b3be5dbee6308386"
+      },
+      {
+        "path": "knowledge/entries/function-of-bounded-variation.md",
+        "sha256": "e3df86ad7bc4f53c6887f13d9624a5224881360a69fc8ac7acafae61a617ec50"
+      },
+      {
+        "path": "knowledge/entries/g-delta-f-sigma-sets.md",
+        "sha256": "da5915a543d2ab48f20e78c8e24802868a647a34f0f148835e45461463ba1292"
+      },
+      {
+        "path": "knowledge/entries/gamma-as-sum-of-independent-exponentials.md",
+        "sha256": "4c2e499f1ec21e64b6af96d4e0964a97c2f37e8b97d9789a17436e5aee47d6b6"
+      },
+      {
+        "path": "knowledge/entries/gamma-distribution.md",
+        "sha256": "3b629283bc7c7ba5283a2a6d776d7f024aad5711c34dc4602d61db9eeec631be"
+      },
+      {
+        "path": "knowledge/entries/general-change-of-variable-theorem.md",
+        "sha256": "48d9980d3e802d9cba998721b5264c7f940353be9b959e9b112439ad4e5e47c0"
+      },
+      {
+        "path": "knowledge/entries/generalized-dct.md",
+        "sha256": "40a83c86299f68d837eeacdb7b95ab9ec3879c5c1f659812648c93481544ed0d"
+      },
+      {
+        "path": "knowledge/entries/generalized-ldt.md",
+        "sha256": "f53a029a3ef334dbba99829433a05d8aea8ec6873fd04f424426531c61e27554"
+      },
+      {
+        "path": "knowledge/entries/h-interval.md",
+        "sha256": "5c509e3b51a16cfe3bb1f75b8c8bcbe26e523e6b36af5671137bc5eba4452ab1"
+      },
+      {
+        "path": "knowledge/entries/h-intervals-form-an-algebra-and-generate-borel-set.md",
+        "sha256": "19972e6830079ffe4c4fb7e27ac35794456436a8fcf7e00d4b36649629160468"
+      },
+      {
+        "path": "knowledge/entries/hahn-decomposition-theorem.md",
+        "sha256": "743457a82e3444c04bb02169d8f69a0552d695afb837727c34bcb53c087c3bca"
+      },
+      {
+        "path": "knowledge/entries/hahn-kolmogorov-theorem.md",
+        "sha256": "0eec898af0f9318e2e871358c4ae2ebc939963b74ac1e511f2180e872b5d5529"
+      },
+      {
+        "path": "knowledge/entries/hardy-littlewood-maximal-function.md",
+        "sha256": "65a08388243aa2c289fb48201479b2148392497b77df19dd6d996a8cb7fa2ccb"
+      },
+      {
+        "path": "knowledge/entries/hl-maximal-function-measurable.md",
+        "sha256": "a75d7427f5489d8517f4a5b17429f54d42ad5dbbd11d41d03b013a24116dfd41"
+      },
+      {
+        "path": "knowledge/entries/hl-maximal-theorem.md",
+        "sha256": "e972a65cde010337b845856c573e6d4fb7fda70bfc54de7d3ea95994608d0dea"
+      },
+      {
+        "path": "knowledge/entries/holder-inequality.md",
+        "sha256": "e6739fe4b6a1526ab28038f2acb19cb197a6a6c90b09acdd1993b62b7aadb803"
+      },
+      {
+        "path": "knowledge/entries/implies-support-sigma-finite.md",
+        "sha256": "a8499b25e9c05434222477f5d856cba32c656e4db380a472d77ec672a37d680e"
+      },
+      {
+        "path": "knowledge/entries/inclusion-exclusion-principle.md",
+        "sha256": "3ecbdb3a5877405a3215f218fae0d2980378fa708c7d11f978d582e23a39a4af"
+      },
+      {
+        "path": "knowledge/entries/inclusion-properties-of-generated-sigma-algebra.md",
+        "sha256": "cec0648b8e1ba2a9a539ffff7be9855eeded7663de46877bdad626ea0f890d6a"
+      },
+      {
+        "path": "knowledge/entries/inclusion-relation-between-l-p-spaces-when-base-space-is-finite.md",
+        "sha256": "4e247b1983dbf9edcb00276c561be529874b4f10edb998719f76c7b67d27b464"
+      },
+      {
+        "path": "knowledge/entries/increasing-right-ctn-regular-borel-measure-distribution.md",
+        "sha256": "540cb0b54628065077ddd4e9390fd10f0968cb4a1607594b70b8d95103d72a1f"
+      },
+      {
+        "path": "knowledge/entries/independence-conditional-density.md",
+        "sha256": "74973db8609856212019a2092ffa62633ceea07d45d1f498d2d58d80b98154a0"
+      },
+      {
+        "path": "knowledge/entries/independence-conditional-distribution-density-expectation.md",
+        "sha256": "14e3f03e8e004c313f4338b63731481e16b684d8d495cf67e7b401046349d831"
+      },
+      {
+        "path": "knowledge/entries/independence-conditional-expectation.md",
+        "sha256": "6e4534026db856ad050fd94152999c0c78afacab71aee34884112d287bc35824"
+      },
+      {
+        "path": "knowledge/entries/independence-implies-expectation-is-closed-under-product.md",
+        "sha256": "9932c530692a0ef40d20b617283e5579cc56c543b5ad8492118fd39088585c2f"
+      },
+      {
+        "path": "knowledge/entries/independence-of-events.md",
+        "sha256": "972b44404437727da329ebf5254225176cf3642e98e3bab236b65c9eee9eb261"
+      },
+      {
+        "path": "knowledge/entries/independence-of-two-events.md",
+        "sha256": "34f8fe0d3f213c4738b9dc6092efbbe066f686443414d51437dcad5f97a2bef8"
+      },
+      {
+        "path": "knowledge/entries/independence-via-conditional-distribution.md",
+        "sha256": "10704519aa7977ab8d6006b36fed70015b574a8d1ee7a6f30dd0860186b1a896"
+      },
+      {
+        "path": "knowledge/entries/independence-via-generated-sigma-algebras.md",
+        "sha256": "2700b3697e2d9bcfc21b829d39d7f9c64712d6ec4f01e9eb9f659fd339d34dcd"
+      },
+      {
+        "path": "knowledge/entries/independence-via-joint-density-factorization.md",
+        "sha256": "08deac151e6e8e8ed6aa7f4d424008e9dfdc62a0fae30983f5018ecd6647d3f6"
+      },
+      {
+        "path": "knowledge/entries/independence-via-product-distribution.md",
+        "sha256": "4efda1fb640e2b1c46eef99ee1316e724cd7ca13642e14e6a7b8bb2bd1d1a49b"
+      },
+      {
+        "path": "knowledge/entries/independent-uncorrelated.md",
+        "sha256": "abf85d769dfdcedc7162c562476205df1528411d57a58c5772606e4d6083dacc"
+      },
+      {
+        "path": "knowledge/entries/inner-product-space.md",
+        "sha256": "0f486a9bcd6625b84ee34646611986eb23b43380dfd02562084df790017fee46"
+      },
+      {
+        "path": "knowledge/entries/inner-regularity.md",
+        "sha256": "a80c311a5bb4da2d95c2e4a9f06aa8f0b2afdd744b8133a3ed786f43549ebfa9"
+      },
+      {
+        "path": "knowledge/entries/integral-of-simple-functions.md",
+        "sha256": "d80a19304e45068b85a321584885f7718f18fa97f3165db2cacf9c261613d4a1"
+      },
+      {
+        "path": "knowledge/entries/integral-restricted-to-a-measurable-set.md",
+        "sha256": "cd24de35a45122b423b606da63ccef029fc1d26af60b5f175a4db9e274d94cbf"
+      },
+      {
+        "path": "knowledge/entries/integration-on-a-subset.md",
+        "sha256": "4a6ab38d0c19731c4ec5bae19cce30ec3551feaeebef96e0d1e9295649d209b0"
+      },
+      {
+        "path": "knowledge/entries/integration-w-r-t-signed-measure.md",
+        "sha256": "62fd1b6d7b4f194f1305cbe03e4728c3f92ea03bc0efba3a9c874bc600b6e80a"
+      },
+      {
+        "path": "knowledge/entries/inverse-function-theorem.md",
+        "sha256": "b4b3e42f8963ffb72907c93174fcc855115d1f05c27b4006fd3ce9aa81fcc560"
+      },
+      {
+        "path": "knowledge/entries/jensen-inequality.md",
+        "sha256": "b764ee5d7307899fff6324440e0c3d7b1918f7a26e0e6c805b40e34717eca91f"
+      },
+      {
+        "path": "knowledge/entries/joint-cdf.md",
+        "sha256": "3dba4c26aa88d81655a4413de494bb6a3e459513164c231a1bf6f5076079b6e7"
+      },
+      {
+        "path": "knowledge/entries/joint-distribution-and-joint-cdf.md",
+        "sha256": "a44ae3e37b350b3596e81d8af7a2364ec6aa55e154660e9ece996b11a17dc040"
+      },
+      {
+        "path": "knowledge/entries/joint-pdf-joint-cdf.md",
+        "sha256": "9a5807481f99ceeb2aaaf61c434a3e06c8fbdf5220f7df2df00b6f8df2dcaf9a"
+      },
+      {
+        "path": "knowledge/entries/jointly-continuous-rvs-defined-conditional-density.md",
+        "sha256": "9c3aeff42f154d1289d8f08103b9e1d6349669de634ff9af5f061633158920b2"
+      },
+      {
+        "path": "knowledge/entries/jordan-decomposition-for-f-in-bv.md",
+        "sha256": "757973c22db33f2c9544f7eb30c1a932a9018f7c8517a3230dc909a799381cf3"
+      },
+      {
+        "path": "knowledge/entries/jordan-decomposition-theorem.md",
+        "sha256": "a08ccc80a8a28cb25c9450b4f9af9189b100c843ed551dcb4b34dbe1204bf9be"
+      },
+      {
+        "path": "knowledge/entries/jordan-measure.md",
+        "sha256": "7f613b01f3e008e8131ef37c5fd52d2d9903a85fc8eb6ed5acb2a67a89fc6ef1"
+      },
+      {
+        "path": "knowledge/entries/kolmogorov-definition-of-conditional-probability.md",
+        "sha256": "db38cc4ace4f19cde01880f88bd9cf74c7fb3bded7bea81686d75c19eec72f5f"
+      },
+      {
+        "path": "knowledge/entries/l-1-convergence-impliesconv-in-measure-implies-subseq-a-e-conv.md",
+        "sha256": "f8cbbdda96c7a88e01fd5d3f8a247debf975db67febb3f7f59173e2eba86fa57"
+      },
+      {
+        "path": "knowledge/entries/l-1-mu-cdot-banach-space.md",
+        "sha256": "0db802d336cb5184d219da26d4b5f51635cde4588cdb8a2495591d66478a5fdb"
+      },
+      {
+        "path": "knowledge/entries/l-1-mu-integral-w-r-t-mu-norm-normed-vs.md",
+        "sha256": "31f2896a000190b1aaeb2799128edefbee1b8e6a3d2501a7981c411520bfe797"
+      },
+      {
+        "path": "knowledge/entries/l-1-mu-space.md",
+        "sha256": "2ce822be8d8768f25e05fb137395e01d8976de5948f6da3dc9044c1b66ebdd81"
+      },
+      {
+        "path": "knowledge/entries/l-infty-space.md",
+        "sha256": "47b825af4096201e0cd6a38fc20b547b034ff9f7fd848c4b2f609e89235a3aae"
+      },
+      {
+        "path": "knowledge/entries/l-m-l-n-l-r-0-n-m-r-leq-infty.md",
+        "sha256": "7128549bafc37186c5848b9d53888b3e413a8da5a37181569aed94f6e464b7b0"
+      },
+      {
+        "path": "knowledge/entries/l-p-1-leq-p-leq-infty-is-banach.md",
+        "sha256": "c2ad58ea12b3a5acea01fb4483addb922cb87d6b0ab0d2d09a2d901f06545254"
+      },
+      {
+        "path": "knowledge/entries/l-p-space-1-leq-p-infty-is-banach.md",
+        "sha256": "883bfda69bda6e512909ac7b1733414f3368d8bece7c1d9b9d109c1580b3e98d"
+      },
+      {
+        "path": "knowledge/entries/l-p-space-is-a-vector-space.md",
+        "sha256": "86f38e42115a6310bf24711b7a0b5c0a02cef803a653566ba92cd0a8af6fc680"
+      },
+      {
+        "path": "knowledge/entries/l-p-spaces.md",
+        "sha256": "c889c60909f0ef31b54d40e6db7dbe86fad2aec69d06c37093f8f2b635208234"
+      },
+      {
+        "path": "knowledge/entries/l-space-and-integration-on-it.md",
+        "sha256": "503f3559497409ceced7c26c4732f3c14cea4acc7e510ce92c47f254fb2639ff"
+      },
+      {
+        "path": "knowledge/entries/law-of-total-expectation.md",
+        "sha256": "ef8cffb65ca9fa49692d6765890b3b0c4bbe1506a5763e6ba5028b3d8b44d58c"
+      },
+      {
+        "path": "knowledge/entries/law-of-total-probability.md",
+        "sha256": "91551b819978280c89469f10ca707b344d5a3d499ffff261b64c39e5e3e2f598"
+      },
+      {
+        "path": "knowledge/entries/ldt-meets-lrnt-computing-rn-derivative-on-mathbb-r-n.md",
+        "sha256": "209e99f55ff8d6ef3a7982a8cab8a0d10b1a838fdbed596cbd71091ef8a409ec"
+      },
+      {
+        "path": "knowledge/entries/least-squares-method.md",
+        "sha256": "67054eff52e1d0d0008c59933195aecd9ee8357a85a9924bb4e54505f8801cd4"
+      },
+      {
+        "path": "knowledge/entries/lebesgue-decomposition-theorem.md",
+        "sha256": "3ad5e9f1a98c8dd77c5ccf58c4ba108a5099b4a32dfa0588f0091a06d8798add"
+      },
+      {
+        "path": "knowledge/entries/lebesgue-differentiation-theorem.md",
+        "sha256": "f556f7f52f2e43b82ab34197a2b112410fd61f504e4c458d778a2c763ebdf1d7"
+      },
+      {
+        "path": "knowledge/entries/lebesgue-measurable-functions-borel-measurable-functions.md",
+        "sha256": "92509b08d7c1351c54a97a44f599c25711d75cacb0809afde433c7ca3e928be4"
+      },
+      {
+        "path": "knowledge/entries/lebesgue-measure-and-integral-is-invariant-under-translation.md",
+        "sha256": "1a189a167e6cb2d45d3b29a22f6508d2580cf4c437db08ed1da585d769765bf3"
+      },
+      {
+        "path": "knowledge/entries/lebesgue-measure-and-integration-is-scaled-det-t-by-linear-map.md",
+        "sha256": "072b7853946fbc343e704608335df49d6a97a512781dfc24da9109184721fc5e"
+      },
+      {
+        "path": "knowledge/entries/lebesgue-measure-is-invariant-under-rotation.md",
+        "sha256": "52d1452076336939ca05ebd49f2bb5c735db0d56c2267082607ef314b2480fd8"
+      },
+      {
+        "path": "knowledge/entries/lebesgue-measure.md",
+        "sha256": "af031835474f00d41ed267e6e7f888c45e4639c2cbc28e6f71f18afc61e45503"
+      },
+      {
+        "path": "knowledge/entries/lebesgue-outer-measure.md",
+        "sha256": "ffc0610d3b25d2b0d8629fbed6068733d5ca6cc7b711438b04e31d25dd876d60"
+      },
+      {
+        "path": "knowledge/entries/lebesgue-radon-nikodym-theorem.md",
+        "sha256": "b883d19e4f1341dcc77c4ca5a0ec99a8a1f6e6a40ee947080368a0b55048660b"
+      },
+      {
+        "path": "knowledge/entries/lebesgue-s-characterization-of-riemann-integrability.md",
+        "sha256": "7c2d272ed79bc2b827f09b71bdc01c9d465b3010bdee3d30b1deb1edfc544677"
+      },
+      {
+        "path": "knowledge/entries/lebesgue-set.md",
+        "sha256": "cab1db3b3cff40073da63c491f5ea0561761fc756c8ded0ba073b7779d677d2e"
+      },
+      {
+        "path": "knowledge/entries/lebesgue-stieltjes-measurable.md",
+        "sha256": "9b58cb39112d58298c5922ec022a0607464a265f209adeaa1855d30a8c6f87fb"
+      },
+      {
+        "path": "knowledge/entries/lebesgue-stieltjes-measure-associated-with-f.md",
+        "sha256": "d90b905b1fa7a42a7f390acc74043a3f00126e732398c0aaa93d678761986cf1"
+      },
+      {
+        "path": "knowledge/entries/liminf-version-of-mct.md",
+        "sha256": "2750ea02e66cd1af30f47a5ac7d717661c480d07c8edb84009ea70167ffd5731"
+      },
+      {
+        "path": "knowledge/entries/lindeberg-levy-central-limit-theorem.md",
+        "sha256": "8d82bf37678ca277fa0a9a7ac227fd8b6baded7171da61dd85ee5c8582d075ad"
+      },
+      {
+        "path": "knowledge/entries/linear-combination.md",
+        "sha256": "bd3a47ee85601f528ace30805527de38b466425f512194c543034f274dea382c"
+      },
+      {
+        "path": "knowledge/entries/linear-functional-bounded-iff-ctn-at-0.md",
+        "sha256": "d8cf37cb11b09691d23a44a14c5665b3a41c5ab503909b9c5da20d67bb737b05"
+      },
+      {
+        "path": "knowledge/entries/linear-transformation.md",
+        "sha256": "0677b475babcec8837a843cc3504b6838f3f8d37275413b29c78bc8a845d3dc5"
+      },
+      {
+        "path": "knowledge/entries/locally-integrable.md",
+        "sha256": "0f7eeb389d72cfd805ddf43dc1d0583b1b2970d8792f06b11ac7b2e553653470"
+      },
+      {
+        "path": "knowledge/entries/ls-measure-space-l-1-space-density-of-step-functions.md",
+        "sha256": "cc3cbe1d9ac7b1a094c25a2714ef2a0e47b1d8fcd5008a6a807b9984909c78a8"
+      },
+      {
+        "path": "knowledge/entries/lusin-s-theorem.md",
+        "sha256": "0f27afab5b79b22724ed15b53e1511cd3dd5adea8b89c93a66fb90a04ebcc99f"
+      },
+      {
+        "path": "knowledge/entries/mapping-from-euclidean-coord-to-polar-coord.md",
+        "sha256": "50cf8a0a95a5f7072c6e059fcc315490e3db26ed163c0377851e7b82fd349ba6"
+      },
+      {
+        "path": "knowledge/entries/marginal-distribution-from-joint-limits.md",
+        "sha256": "65c2076891481274d227e790dbc17c699c580c20d7f338dc553ffd13f0859ce0"
+      },
+      {
+        "path": "knowledge/entries/marginal-distribution.md",
+        "sha256": "d47ca8c9b1c0c512eb9ebd02547cab3fb55edeee37119b0dd880260d3bd7980d"
+      },
+      {
+        "path": "knowledge/entries/markov-inequality.md",
+        "sha256": "d017414b72402bdb29af69f57f8f2317cfec2c20effaadf1d6a542acfc40b6bb"
+      },
+      {
+        "path": "knowledge/entries/mathcal-l-preserves-translation-and-scaling.md",
+        "sha256": "6648e45e6de3c85871f8c1d22d1d1b481b27821774a1d60651a67f64f3854965"
+      },
+      {
+        "path": "knowledge/entries/mathcal-m-mathcal-n-measurable-function.md",
+        "sha256": "968b1e52a702dced09cb3f3ac9ecf45ab910e5bce7f15816b779f1fbac44bf8f"
+      },
+      {
+        "path": "knowledge/entries/matrix-rank.md",
+        "sha256": "1c380141a175aaadfa52d57071a6e31982bd2e85d14a71bdf7fca1783ba69327"
+      },
+      {
+        "path": "knowledge/entries/measurable-space-and-measure-space.md",
+        "sha256": "1db7f429cce68e2d977717c49a587f2cc2b97844444f101528d740830e9e7b09"
+      },
+      {
+        "path": "knowledge/entries/measurable-subset-preserves-sign.md",
+        "sha256": "c901ee8c9dc2d0679dffaf6d034cf9b10f7b69e12146e62b04a46b0eda86ccf7"
+      },
+      {
+        "path": "knowledge/entries/measure-is-finitely-additive.md",
+        "sha256": "611f3494f2a54d0004897962a12920b3e244f29952f893f7818137214fcc23bc"
+      },
+      {
+        "path": "knowledge/entries/measure-space.md",
+        "sha256": "889e8a3109282eb2a4863c6452537e15330765739810be65ea4d73892d060f27"
+      },
+      {
+        "path": "knowledge/entries/measure.md",
+        "sha256": "2db451e5ef0b708a7893e39077fd61faa82ddc58d867b1b04abd3aaf1d3798ca"
+      },
+      {
+        "path": "knowledge/entries/memoryless-property-of-exponential-distribution.md",
+        "sha256": "0b9a7e360956d0b48ffb437d116a129e25b781ea3e8c01256732ac1da573dd6f"
+      },
+      {
+        "path": "knowledge/entries/metric-space.md",
+        "sha256": "7818bf50cd872e1d7541e2e10a7f32e33f346cc70298323c487fb289abdadc8d"
+      },
+      {
+        "path": "knowledge/entries/minkowski-inequality.md",
+        "sha256": "b68eac41769e162e6e1edaff8b3c666db0344f8c0d2af32ec2cc9ceb40fd0833"
+      },
+      {
+        "path": "knowledge/entries/modes-of-convergence-for-functions.md",
+        "sha256": "e65f51af8efebd2149c1184061e982d8106fd4cf28c3fee2c48aa1564ad02e24"
+      },
+      {
+        "path": "knowledge/entries/modes-of-convergence-for-random-variables.md",
+        "sha256": "05a5099ccafcaecbf4f2ede0c583e4bef4cf1f293389d580dd1533927e31d064"
+      },
+      {
+        "path": "knowledge/entries/moment-generating-function.md",
+        "sha256": "caf3d8759e6864cd4a047f773460f55e9fad34273c7a1ef687e835c5a43622a8"
+      },
+      {
+        "path": "knowledge/entries/monotone-class-lemma.md",
+        "sha256": "9c9beb1ee271c668a300bcbf771fa23a94113510750986565db15628bd904416"
+      },
+      {
+        "path": "knowledge/entries/monotone-class.md",
+        "sha256": "2808bd67c3d5a77e7e1f6be54cb83a01a97feb9b65024448f5bb99c6c0e23465"
+      },
+      {
+        "path": "knowledge/entries/monotone-convergence-theorem.md",
+        "sha256": "119fd5b7c25282db5a7d39e7118d8fdc748721e8adaabdd58ad02b8464d90218"
+      },
+      {
+        "path": "knowledge/entries/monotone-differentiation-theorem.md",
+        "sha256": "79dc2ed5d5a89aa984d3ae49b736ca96e6a8db459c7dd95d0ec2f4b1968b5968"
+      },
+      {
+        "path": "knowledge/entries/mu-f-total-variation-measure-mu-t-f.md",
+        "sha256": "702407fd3bddd5010123df6f9dae9a6d74c149209b989ff30ce99b177c5d2e2a"
+      },
+      {
+        "path": "knowledge/entries/mu-measurable.md",
+        "sha256": "e70e59eb8b988819471935f7cee8c61c9dba892259d25428566c2345d3d76c73"
+      },
+      {
+        "path": "knowledge/entries/multinomial-coefficient.md",
+        "sha256": "6b7df0ff10065a62faf88830c69fc1c72d5aa6114eb920e7767a0bf083c95d74"
+      },
+      {
+        "path": "knowledge/entries/mutual-independence-of-multiple-random-variables.md",
+        "sha256": "aba22222c08c95f70df2d4295abed268c6737e88dfcd71c7b0314e0e484af21f"
+      },
+      {
+        "path": "knowledge/entries/mutually-singular.md",
+        "sha256": "dee41d303aa55a7839d287b0e1b7c24fe6a80fab727d077668184110362ca88a"
+      },
+      {
+        "path": "knowledge/entries/n-random-variable-vector-random-vector.md",
+        "sha256": "0f71f7b1a5c0633e95e0de07295b143be1f217d49d6dcd7d0dce317e5b75d896"
+      },
+      {
+        "path": "knowledge/entries/nbv.md",
+        "sha256": "7fa2e3377e145b917ce8ddd00dd69f526d25871d168120bee5bbcc1cf64a2872"
+      },
+      {
+        "path": "knowledge/entries/norm-of-dual-space-dual-norm.md",
+        "sha256": "fa7a194ed66c7bad7274fce9e97c68599f6794d7e7f3944346fccdb99c9436a9"
+      },
+      {
+        "path": "knowledge/entries/nul-set-subnull-set-almost-everywhere.md",
+        "sha256": "f504f2d4a0db3b02fcd893aed21593c887f24ff00b6c3974da7ffee59264c304"
+      },
+      {
+        "path": "knowledge/entries/open-interval-covers-for-lebesgue-stieltjes-measure.md",
+        "sha256": "7f7f5a817145c6ffb2cfc4e65689b30d5f6b9e87ef64bfdc9af9ca2a5b6064c9"
+      },
+      {
+        "path": "knowledge/entries/operator-norm.md",
+        "sha256": "6277cd367af018a100b14a280c4a878c40f2373a41945246c62fcdda5ccf9cf4"
+      },
+      {
+        "path": "knowledge/entries/orthogonal-projection.md",
+        "sha256": "d57b5215a93fb5f92e593a0c12b38702dfae87a7555933abcdda13c773e1182d"
+      },
+      {
+        "path": "knowledge/entries/orthogonal-projector.md",
+        "sha256": "b9ad3c2a08331aa348d6e4520d9ca4ef026d75f5b88707d7f41da49e20614620"
+      },
+      {
+        "path": "knowledge/entries/orthogonal-transformation.md",
+        "sha256": "095d94b0e3497895d1aa965a20b3c8eeecce1fb228f10d52a060150df956caf1"
+      },
+      {
+        "path": "knowledge/entries/outer-measure.md",
+        "sha256": "6aa5ff524a666ebf696312566f48dc8a34ced2778c0de88e5abf020967fed24f"
+      },
+      {
+        "path": "knowledge/entries/outer-regularity.md",
+        "sha256": "96746dc36d63fc31bc1224aa8a26373ced0d94965791f7516d5a0cc28ba01b0e"
+      },
+      {
+        "path": "knowledge/entries/permutation-matrix.md",
+        "sha256": "009a0de0d24ae3f7dc66bbaf9f059be4c50f7f2754eb8c588d971c283b0158d1"
+      },
+      {
+        "path": "knowledge/entries/permutations.md",
+        "sha256": "7019866018384f9ccdd1fb37ae23a4b4ca37182344efea0ee6997c7f09fbfd4c"
+      },
+      {
+        "path": "knowledge/entries/pmf-distribution-counting-measure-mu-s-radon-nikodym.md",
+        "sha256": "a66dbf475fc3fadb98eaff5f1b55d39d07d0bf01a291bf60c9d1911f90d9d909"
+      },
+      {
+        "path": "knowledge/entries/polynomial-division.md",
+        "sha256": "a077db9ca22daaf8b0ed1dd1107deeb10b28a4f7311d48600edd19f91aacf747"
+      },
+      {
+        "path": "knowledge/entries/positive-negative-null-set-measure-space.md",
+        "sha256": "5df8c91bd4ecda46f354343ea361ee8c380da97a9f3eaaba63bcf78ba6bb2962"
+      },
+      {
+        "path": "knowledge/entries/positive-set-negative-set-null-set.md",
+        "sha256": "c944d49ab3e9a6ece186f8bc63bbb2cdbb88f4f017f5f46a238c35159c7a4bae"
+      },
+      {
+        "path": "knowledge/entries/premeasure-extension-via-induced-outer-measure.md",
+        "sha256": "fce3c4f8d74daff79cfd552a8641be7a304e00770f2ba936a6ccbf575eb59df8"
+      },
+      {
+        "path": "knowledge/entries/premeasure.md",
+        "sha256": "784d028ac1640745fe4ae892c80f945df221a47e7152dac639689e2b03502826"
+      },
+      {
+        "path": "knowledge/entries/probability-density-function-pdf.md",
+        "sha256": "fc4f512bf58edca99623e6be96218875cbcf237243d48e61f9b3d5890745c930"
+      },
+      {
+        "path": "knowledge/entries/probability-density-function.md",
+        "sha256": "cd30427f8625dcc4c5904aded895ff83463935ab03cbf1ede4b85b33055cacf1"
+      },
+      {
+        "path": "knowledge/entries/probability-distribution.md",
+        "sha256": "7b3b785ff73547a56315b6c1ce5db9a4e5786999acb536b2fdf162e9986f964e"
+      },
+      {
+        "path": "knowledge/entries/probability-mass-function-pmf.md",
+        "sha256": "bd8fb583419bae624064251e7733f79f30da73921065c64a17c289e90d3b4c11"
+      },
+      {
+        "path": "knowledge/entries/probability-measure.md",
+        "sha256": "c60b3d7d5c61cc5c1849134f972889660cd4bcd13e0143d0b3ab46f458025aa9"
+      },
+      {
+        "path": "knowledge/entries/probability-space.md",
+        "sha256": "c0c10f7b6e815cfac9ffc0c3d2c54a9b2b6ca877d25abecbf1182925b22a5fba"
+      },
+      {
+        "path": "knowledge/entries/product-sigma-algebra.md",
+        "sha256": "6e7da845f2d9f1669fd022cc4dd52197878d08e13c6847ae12ad692a4dfa4d58"
+      },
+      {
+        "path": "knowledge/entries/properties-of-correlation.md",
+        "sha256": "0348209dc9d079006a9f5cead7f183811950c33e5c40261ecaab30fdcac01f00"
+      },
+      {
+        "path": "knowledge/entries/properties-of-measure.md",
+        "sha256": "81fff4d90622cdbb448ea77136282f835426f7894331fcfcb90a5d0c235ee7ec"
+      },
+      {
+        "path": "knowledge/entries/qr-factorization.md",
+        "sha256": "fed2a28db2016edb7e917c3df3937bffcd8aa509cd930eb5074e41ba13e4f8af"
+      },
+      {
+        "path": "knowledge/entries/radon-nikodym-derivative.md",
+        "sha256": "e13509e94d3714b909629c836ec5543c36de9fdeea8be564f59eec5e6e488e97"
+      },
+      {
+        "path": "knowledge/entries/radon-nikodym-theorem.md",
+        "sha256": "ba628ff0b31e9ff26caceee9b7eba11b94af92f95460f268f80cdf6e8c8bcfb8"
+      },
+      {
+        "path": "knowledge/entries/random-variable-continuous-random-variable.md",
+        "sha256": "82e4b2205d3bc6c491f570e9746642b2083583a77fa465a69881ce03629952d9"
+      },
+      {
+        "path": "knowledge/entries/random-variable.md",
+        "sha256": "a5e6e8c6afaf1c74911549bc01e44a8859b84be5db08cd8ba254269d38d08f77"
+      },
+      {
+        "path": "knowledge/entries/random-variables-variance.md",
+        "sha256": "66fbffe37789bc7ead2e3104be73979b1103724197a1512dd2acc18b8c7d8c6c"
+      },
+      {
+        "path": "knowledge/entries/random-vector-random-variable.md",
+        "sha256": "56e3aa4934dd774cab7031f32e95e1d0a9c32668eb61bd442060833fbf491a89"
+      },
+      {
+        "path": "knowledge/entries/random-vector.md",
+        "sha256": "62310171013ee142de2e5279205c91e735a9e7a803f3a733f25743375c977015"
+      },
+      {
+        "path": "knowledge/entries/real-valued-integrable-function.md",
+        "sha256": "1a57a56799ee7e970bb15fe35b73dffaea79798da3aeec38407fbfcd11d0da38"
+      },
+      {
+        "path": "knowledge/entries/real-valued-measurable-functions.md",
+        "sha256": "fc840250ed1f9d60f3d72d550040be812e68710cb2d6afefe6d092c2e356fed2"
+      },
+      {
+        "path": "knowledge/entries/regular-borel-measure-regularity.md",
+        "sha256": "c25b7aef40b84c7df061ebd31aed9bf5dd13000162ae7e6cc06741d06beb55da"
+      },
+      {
+        "path": "knowledge/entries/regular-borel-measure.md",
+        "sha256": "1e38dc5175817b33fc6ffd24f2d05d410391ab5a66ddcafc47ab721ad7a017d8"
+      },
+      {
+        "path": "knowledge/entries/regular-signed-complex-measure.md",
+        "sha256": "4247938b900edc3b4e09f64663ced9b725a32b1ae21a8619b9b2b5af7f0647d6"
+      },
+      {
+        "path": "knowledge/entries/regularities-of-mathcal-l-n.md",
+        "sha256": "16bd8b230469e3750056ca6f2b544f59023c95e8abb7af163ecc135d8c33a982"
+      },
+      {
+        "path": "knowledge/entries/riemann-integrability-in-r-n.md",
+        "sha256": "37be9fd39d485e86d31c1d7c2b3f7b77a42545ab248b0eb589ba156f7e806b8b"
+      },
+      {
+        "path": "knowledge/entries/riemann-integrability.md",
+        "sha256": "12537cc1228cbce87bf4e3b44a7762c85c44f19b7988781a715b77aed403ff76"
+      },
+      {
+        "path": "knowledge/entries/riemann-integral-lebesgue-integral.md",
+        "sha256": "ab29fa2130afdba64ece9ab92f979ebb923c05176c47ddf4e23f93f00755d5c8"
+      },
+      {
+        "path": "knowledge/entries/ring-homomorphism.md",
+        "sha256": "1b02cba718533fb6968b47578ae7bfec0b8757703a7ec7ec7f1408d919d79a70"
+      },
+      {
+        "path": "knowledge/entries/row-reduction.md",
+        "sha256": "682d1b172d7c1032cf162cb16d3a281eed337c14ce5e5c21874559040bc008c9"
+      },
+      {
+        "path": "knowledge/entries/sample-space.md",
+        "sha256": "294da9e295fc158295bdeb790745472b8b08ac8155a230636f6eb11f27a124c8"
+      },
+      {
+        "path": "knowledge/entries/semi-norm-norm.md",
+        "sha256": "539aaa729c37b377f8da3e09c7f5b30ea29d8922b52ce939914c79993dcf4201"
+      },
+      {
+        "path": "knowledge/entries/sequential-behavior-of-real-valued-measurable-function.md",
+        "sha256": "0b4fcf8be53232cbf2b5002ac3866b148cef7d07eaf9abbf4cd8bc238d52091b"
+      },
+      {
+        "path": "knowledge/entries/series-convergence-absolute-convergence.md",
+        "sha256": "21d2e2705517e1ef78b6df345636edd92adc270722f8504a2743d489213c64f6"
+      },
+      {
+        "path": "knowledge/entries/series.md",
+        "sha256": "47b866b969423f57b026d9d5031846cdee9bd347558d557d091c2182f3f118fd"
+      },
+      {
+        "path": "knowledge/entries/sigma-algebra-closure-properties.md",
+        "sha256": "26f739eb01bb396e41ec2bd2f804166fa69801cc86e62ed4a52ee3e581162695"
+      },
+      {
+        "path": "knowledge/entries/sigma-algebra-generated-by-a-random-variable-measurable-function.md",
+        "sha256": "f344011f3d0a55784b164c43d30c828fe207b47484210e814908636efccc4038"
+      },
+      {
+        "path": "knowledge/entries/sigma-algebra-generated-by-a-subset.md",
+        "sha256": "dd913c8f29eb08faadbde92589a8a88cc7820f09e5ab6864e921c9fc8202a5e6"
+      },
+      {
+        "path": "knowledge/entries/sigma-algebra-intersection-sigma-algebra.md",
+        "sha256": "e8bcca0ed5e241ca87f3306824e2b3f8d33e687dd58f7f2ddaff8fcbeca258f8"
+      },
+      {
+        "path": "knowledge/entries/sigma-algebra.md",
+        "sha256": "4588501f0d9d9999b9c59a48b756ca182bd768deb36c000b5b4d119e408628be"
+      },
+      {
+        "path": "knowledge/entries/sigma-finite-measure.md",
+        "sha256": "d0dc03f940260224193354c5092416bea97aab64a701079efa7433fc8879393b"
+      },
+      {
+        "path": "knowledge/entries/signed-measure.md",
+        "sha256": "4b2b8bc30df19fa3dbb674ab0b69eec9eca1de821e46e4fd61e869a0ff42e0d3"
+      },
+      {
+        "path": "knowledge/entries/simple-approximation-of-complex-measurable-functions.md",
+        "sha256": "5ee9566807554278d08c47c86bbc08e42f1b3a70ec1b323357c64f76756f8298"
+      },
+      {
+        "path": "knowledge/entries/simple-function.md",
+        "sha256": "160e39fc2d90769b7c312661d468218d55e3b9116b5adcd32ad7f304cff81d12"
+      },
+      {
+        "path": "knowledge/entries/singular-continuous-random-variable.md",
+        "sha256": "d7a9fdfe403669f314c293cc208248b496daaf9680e80eeef75b3a22bd7c5126"
+      },
+      {
+        "path": "knowledge/entries/singular-value.md",
+        "sha256": "df399159f105180d0482d1c98d06f1a1f9ab9a97157804591367167702a73f47"
+      },
+      {
+        "path": "knowledge/entries/slightly-more-general-version-of-lrnt-meets-ldt.md",
+        "sha256": "868e51941a88fb459278f82301701241a734c6e6d9dea5e0d5d3a46a87a42560"
+      },
+      {
+        "path": "knowledge/entries/spectral-theorem.md",
+        "sha256": "0c454c4add5a673f0f9a52719ce6ecc110e0937831b9024a0bed2d8b93c87f70"
+      },
+      {
+        "path": "knowledge/entries/strong-law-of-large-numbers.md",
+        "sha256": "854062b176cb572f18aa833becc500e2a47549398bac57b5c3e801c5d2829dd1"
+      },
+      {
+        "path": "knowledge/entries/subnull-set.md",
+        "sha256": "ff8661cc7d26fc3fe0f5459cd3d2eee5e3299d91cafbb332f03fd69dd2fff91e"
+      },
+      {
+        "path": "knowledge/entries/subspace.md",
+        "sha256": "054dad39867502bfecd3444cf5e53a6e6491507a6a2a5cfd41efd43e4f23dbd4"
+      },
+      {
+        "path": "knowledge/entries/symmetric-difference.md",
+        "sha256": "b2b149d79c3705acfa168364f495e3c6a14a10ce94fb712eb5f6e75163d4e128"
+      },
+      {
+        "path": "knowledge/entries/tensor-product.md",
+        "sha256": "f0099c35dc70defce67097fda41d220c34a60e5a566fbf49af26864a7aa89b14"
+      },
+      {
+        "path": "knowledge/entries/text-complex-borel-measures-on-mathbb-r-simeq-nbv.md",
+        "sha256": "40e42c1954317738d52f41e93d2024a2b62761feb3861eef23e4791c9f5557ec"
+      },
+      {
+        "path": "knowledge/entries/tilde-l-x-mu-mathbb-r-tilde-l-x-mu-mathbb-c-space.md",
+        "sha256": "21b891c714f3156a48735ec99d9f9f97d0317bcb88b95567da2ceb8dba0b4733"
+      },
+      {
+        "path": "knowledge/entries/tonelli-for-sets.md",
+        "sha256": "59ac5f4f864de53b757e00b49d363a821ef27afada99d5fdc252767051cf6cfe"
+      },
+      {
+        "path": "knowledge/entries/tonelli-for-sum-and-integrals.md",
+        "sha256": "7fbdce326a47fccdd3ef01548ce3d4d9521f634ca41b069198cfe98011b5b7d1"
+      },
+      {
+        "path": "knowledge/entries/tonelli-theorem.md",
+        "sha256": "e537951a884442cf220a9a4632b0a01c30e9518de2a9b85fbf881f37df4d05d9"
+      },
+      {
+        "path": "knowledge/entries/total-variation-function.md",
+        "sha256": "91afb99e764640b1006a33b51e0846e0a6296d8dea3cb99a94cda951aba47d68"
+      },
+      {
+        "path": "knowledge/entries/total-variation-measure.md",
+        "sha256": "dd00a28f622b47aca2cc8b2755d077110a53a9b0e6699dfda91ae2fadb2156ed"
+      },
+      {
+        "path": "knowledge/entries/trace-sigma-algebra.md",
+        "sha256": "d5bc79fbf239e3117d61af91443f1ad43580b10ebf7442c5da5feb69f57c59d3"
+      },
+      {
+        "path": "knowledge/entries/uncorrelated-random-variables.md",
+        "sha256": "f94d6c47c03393f48c5a129e2bfbefdcf9a4c0994b8dab2b410b4a5d8b64f835"
+      },
+      {
+        "path": "knowledge/entries/uniform-continuity.md",
+        "sha256": "7d7110b7cb8ce3cb1493f5070a06c46b0bd772e70321e1ea3e950200ff0ed947"
+      },
+      {
+        "path": "knowledge/entries/uniform-convergence.md",
+        "sha256": "93c1d1253b23fa16f0bb758be514d2d099598767ff41cf2e29e4eb9ff63aea6f"
+      },
+      {
+        "path": "knowledge/entries/uniform-distribution.md",
+        "sha256": "bcd4e2ac7493277f5d4bf651491e537aebacc26ede881d7d457cf6460defc97c"
+      },
+      {
+        "path": "knowledge/entries/unique-smallest-sigma-algebra-containing-a-collection-of-subsets.md",
+        "sha256": "4798faaf0f38a967104055bc51b7c494cdf64ef33ffccdec2d81e129df3de5c5"
+      },
+      {
+        "path": "knowledge/entries/unitary-matrix.md",
+        "sha256": "3b81d84b2f6904831928e55316e827e1761c0f3c87a557b15cf325646e3dc6ea"
+      },
+      {
+        "path": "knowledge/entries/vector-space.md",
+        "sha256": "9a4ac92a3512b6a2cbfd4b74f2fc2b1791e94889d8685b2fe17ab586021710bc"
+      },
+      {
+        "path": "knowledge/entries/vitali-covering-lemma.md",
+        "sha256": "7a28fbf47329721758ff372bf5998ec6a65bca601791457de13372ba00b48d61"
+      },
+      {
+        "path": "knowledge/entries/weak-law-of-large-numbers.md",
+        "sha256": "0dadfbd344670e422c0528767e6bb1e572647a129649d9d23d65bef737e68ab7"
+      },
+      {
+        "path": "knowledge/entries/why-it-is-called-absolutely-continuous.md",
+        "sha256": "629fe0b137e8551af435db47c3781976b8357182cb6cec200847fdfa57bcc19a"
+      },
+      {
+        "path": "knowledge/entries/x-section-y-section.md",
+        "sha256": "fa0a09ea9d73e8e458a224715a053151d6cc21be3425c5d9af6ad8fba6105d4b"
+      },
+      {
+        "path": "knowledge/entries/young-s-inequality-for-products.md",
+        "sha256": "8de155aa6f9f94a72c9f6ec0462ff86dc17227fc78b9689dd9a9da9060bb84ec"
+      },
+      {
+        "path": "knowledge/entries/zero-integral-iff-zero-almost-everywhere.md",
+        "sha256": "c5dfe23abf7e5afda07288e9967a66979139cdae40ed40981f90e81cf02b7e56"
+      }
+    ],
+    "schema": "kgdistiller-entry-index-v1"
+  },
+  "entry_sources": {
+    "entries": [
+      {
+        "path": "knowledge/derived/by-source/notes/math/advanced-linear-algebra/chapters/01-review-on-basic-concepts.typ.md",
+        "sha256": "04ea6d8c81b9b2d625c92d61a01fd77dba2fd91583cb4671dc9efa034c32afad"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/linear-algebra/chapters/01-linear-equations.typ.md",
+        "sha256": "256bd2b9a8fb0e54459b22e57519b4166e4b84fe23d8d43f2ca67396c20fcd15"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/linear-algebra/chapters/03-linear-combinations.typ.md",
+        "sha256": "c0014438c1c70c9c8b6f883194600234b4b6fcd04c568ba25a8db575d4a78637"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/linear-algebra/chapters/04-linear-transformations.typ.md",
+        "sha256": "39c38751baf2a91aa47469ba6352cc7689d7779e07f87b65b74b09a82ac22378"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/linear-algebra/chapters/05-geometry-of-linear-transformations.typ.md",
+        "sha256": "8e39b93736befe3f4280c7bc3731939396394957e12d7dcd182716607c39b7b2"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/linear-algebra/chapters/06-gram-schmidt-and-qr.typ.md",
+        "sha256": "32e3a152754cdf242f27babbce6bb9d465ecfbf0f48f0399ad4026e1991f6c84"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/linear-algebra/chapters/07-orthogonal-transformations.typ.md",
+        "sha256": "c6d2a4ad352e8787cdeabf532dd128e71fc50900a9754632c3c872eb023c4a74"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/linear-algebra/chapters/08-least-squares.typ.md",
+        "sha256": "cafd61c1f474aff586b8836e116e95486e2febe53e5d18fd4aedb3eb67c84d6d"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/linear-algebra/chapters/09-inner-product-spaces.typ.md",
+        "sha256": "c90dad5338b6f12cb6f8b4bd1be00c792a8a48ea3857883ca1daa5f9ac5e6a6c"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/linear-algebra/chapters/10-diagonalization.typ.md",
+        "sha256": "8bf6ecd228bafcb2e38e9ee68b33325f1ed4b78ea4f4f7affa228c5c3bc5a0f3"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/linear-algebra/chapters/13-spectral-theorem.typ.md",
+        "sha256": "76cc2fbf29989077a5d0d9901876e136a63f472b19de27d8bd141a8b41e8e3ab"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/mathematical-analysis/chapters/01-real-number-system.typ.md",
+        "sha256": "e751b92825ba5f750591333fece823adb1dfc133bebc4072d43a3e6464de6922"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/mathematical-analysis/chapters/02-functions-countability-and-metric-spaces.typ.md",
+        "sha256": "fe968f13b52ad32996004dae8bc30ffd591fe4fcebcad8ca47b97cabaf3dd740"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/mathematical-analysis/chapters/03-sequences-and-topology.typ.md",
+        "sha256": "7a878b9ad29109ac2b8e3ff6b1c5252ba7c984e2c29d065e16ea137e0b5e4e7d"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/mathematical-analysis/chapters/04-limits-and-continuity.typ.md",
+        "sha256": "e25b234e0f809a441898fa4cb38b6bfa70f20cf2d7176ea260f382113ea46607"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/mathematical-analysis/chapters/05-differentiation.typ.md",
+        "sha256": "b73685cfab5f15ab95d2068f87fd6b050321798c34c3973b50da287e76e45a5b"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/mathematical-analysis/chapters/06-numerical-series.typ.md",
+        "sha256": "bc123f366009a580e3b78b69ecda4150bc28fbe828d76f352c61647b911c8a67"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/mathematical-analysis/chapters/07-riemann-integration.typ.md",
+        "sha256": "a3a8e0172a0180d1e08659479a78ba7347a2814ec5a7dfe1cdbb77aec53f3723"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/mathematical-analysis/chapters/08-sequences-and-series-of-functions.typ.md",
+        "sha256": "e90ed192002301ce225803ef7e26c260e1cfc17158bd27cf8d376d66db997fea"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.typ.md",
+        "sha256": "d2a4a6660aa520139b5bbc3df595938a3609a233b8ce852e222b85e16ab3ec93"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.typ.md",
+        "sha256": "21342e1548973ced5c41abfe8383a7b268d1716c83162f6a317f19191c3ca338"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.typ.md",
+        "sha256": "3dd8e7f13d7d5561942ca497783eb3727779193462744b1216010db975179e15"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).typ.md",
+        "sha256": "4872241cfd6210efaa52bb24f976dc19765713449c9adadb125124f6514a1b94"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.typ.md",
+        "sha256": "4a154a2bb87ae6cc3d4dbfa2e8b7ae578dfdeec22235b93faa012794c91ed46e"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.typ.md",
+        "sha256": "bc4e4cc56e9cb47b8832d9dcd705e404893b538f73032de1029984a740890293"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.typ.md",
+        "sha256": "5dd13912eb1169941836db51788a32733e6d5cad99b226c7bf27b6bb8c102350"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.typ.md",
+        "sha256": "9f9534a6af1bbc79aa99aa439eb00a31c435094b33f00a0cdcbd7c19f6e65cbd"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.typ.md",
+        "sha256": "a24a46e6359001089e8a69d8b10db9bfee49699c095f36e4620331cb28aa4b3f"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.typ.md",
+        "sha256": "fc3b1fd4c1dd6198277e744e0225c7c366c2a21b550738fe1335bf29eafbdd68"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.typ.md",
+        "sha256": "75fc9ad9babc011aa00a8dcc87bc1a9f75c8d7532ef49a0cf54442690275c255"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.typ.md",
+        "sha256": "9ad96e95994d7684c4ca200e193c820035ed825cf43d143f29cfafbde80900f4"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/chapters/13-the_dual_of_L^p-spaces.typ.md",
+        "sha256": "8f5c0b5455b16db0387725132ce11e7fa740f326bb72d6e7ca7a95b9f6103e55"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/homeworks/hw02-on_Carathéodorys&Hahn-Kolmogrov-thm.typ.md",
+        "sha256": "4333bf8a71bd4c2993fee8166e70fef5f2d07eaf18085477b71ef4db6dce5bbb"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/measure-theory/homeworks/hw08-on_L^p-spacecs.typ.md",
+        "sha256": "4eedbdc693641bcc5034bda279d5b870d42d8250483a84669841b8e6efccac02"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/modern-algebra/chapters/01-integers-and-division.typ.md",
+        "sha256": "00b4dfa49bf4ef3d336044ab1728dcf4483cc67d8bcb9ff583e736fb273414fc"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/modern-algebra/chapters/02-gcd-primes-and-congruence.typ.md",
+        "sha256": "3faf525b3365c0fc3a409719caa07736df1150429c375571e7d7b97bdb9f0dc0"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/modern-algebra/chapters/03-rings-and-homomorphisms.typ.md",
+        "sha256": "ec9b82f40a688884971f3f3ad91dbe0111c9198acd3a0015ecabec1507795578"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/modern-algebra/chapters/04-polynomials-and-quotients.typ.md",
+        "sha256": "cbf248a5c201ecaa3383066ca8ef173f6ece4dd9ae1612ac5ac7e385f93771cc"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/modern-algebra/chapters/05-groups-and-permutations.typ.md",
+        "sha256": "9d8a87dac2a3bcffd7497ec567f31e8d4d9821082bbb862e7a5bcb01f2a28ecb"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/modern-algebra/chapters/06-normal-subgroups-and-isomorphisms.typ.md",
+        "sha256": "551ee97bfa6e93f2b2abe4ccdbe6620c9c96cda2cf7b86b91dfc97496ee16b88"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/modern-algebra/chapters/07-elliptic-curves.typ.md",
+        "sha256": "44bece5f478219ad7d7c1499a9684a3816f2fde5f8b738b3635ad75d88b6a0f9"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/multivariate-analysis/chapters/01-metric-spaces-and-compactness.typ.md",
+        "sha256": "85a292ee677b1a5556f970435e0a17a3e5dcf07186bfbc92087ad12da11fe72a"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/multivariate-analysis/chapters/02-multivariable-differentiation.typ.md",
+        "sha256": "4bf52ac6126f79140a0632d471565ca9cff025baa9f51ee67ad88e87755dd977"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/multivariate-analysis/chapters/03-implicit-and-inverse-functions.typ.md",
+        "sha256": "7e75c5aedb662d87cd8abc23d612a3640687e8bc0d9c23ede6eb993d0d620a9b"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/multivariate-analysis/chapters/04-partitions-and-lebesgue-characterization.typ.md",
+        "sha256": "9ded21b03041373ffa30b2f4505119f58a8db96db741e60cebe312683999001a"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/multivariate-analysis/chapters/05-integration-and-change-of-variables.typ.md",
+        "sha256": "397338a33c96b0e1f74d4bca0e5021edae2ef70a6034bf4425982457edb69ecd"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/multivariate-analysis/chapters/06-ibl-baire-to-jordan-measure.typ.md",
+        "sha256": "d56a48516f04cf8592c1dcc28585c265f3343556cf966bb4c8c3e9a5c6f6f136"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/multivariate-analysis/chapters/07-ibl-lebesgue-outer-measure.typ.md",
+        "sha256": "622dd7209cf5eafee197c0a2fa658d6d8c70a8b9da118b88e6f0d55758761d5e"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/multivariate-analysis/chapters/08-ibl-measurability-regularity-and-additivity.typ.md",
+        "sha256": "2a826bb617a3e045f91ef456fa90f881625960950b73dd109c89b5c26a937784"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/multivariate-analysis/chapters/09-ibl-limits-and-carathéodory.typ.md",
+        "sha256": "bf4902ec4bae0ddb70c7c2fca132c014bd5d1aeefaf614f967ce433ab3b619d7"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/numerical-linear-algebra/chapters/01-tensor-products-and-matrix-multiplication.typ.md",
+        "sha256": "d2d3b4279120e16bd117e7bc0e962774056bca1c3fd5532673b73205415d80bd"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/numerical-linear-algebra/chapters/02-orthogonal-vectors-and-matrices.typ.md",
+        "sha256": "e9e84535d4cae9a5dfddd8781386211e82f91e88a4d517b06e0695e871251761"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/numerical-linear-algebra/chapters/03-norms.typ.md",
+        "sha256": "28eb4f6bd8a6f562cff844e6150f02c876419a0abbb8c5d17453c3fee634ab4f"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/numerical-linear-algebra/chapters/04-svd.typ.md",
+        "sha256": "b303d139fa1889adc9c1068f7857dc5c777b600c2efb0c0917166698239c33ff"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/numerical-linear-algebra/chapters/05-qr-factorization.typ.md",
+        "sha256": "0603a3ff2f452cc608c610c6821840930fa11c00cd171220a322a02380455245"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/numerical-linear-algebra/chapters/07-conditioning-and-stability.typ.md",
+        "sha256": "01da5a6a4d56f623e9c98a9bcd9d890b759171b5127c1b565dff3610435310d4"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/prob/chapters/01-combinatorics&prob_space.typ.md",
+        "sha256": "85ec8db58bd29edfb393ac5e5f57555a2e9acb9680b39b85b9898e7b89790e97"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md",
+        "sha256": "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/prob/chapters/03-joint&conditional-distribution.typ.md",
+        "sha256": "225f9c65cf203ff7f5de6fb275c6aa022a0ea76958849888893242091694ae29"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/prob/chapters/04-LLN.typ.md",
+        "sha256": "832888e03949ed5914f31f788001bf68352a73d0b2ecc986b85ccc70c8e5b27e"
+      },
+      {
+        "path": "knowledge/derived/by-source/notes/math/prob/chapters/05-CLT.typ.md",
+        "sha256": "5f7348d3fa7ec45b2d0850ecc670c74f51c6ee037017dbf56cc19931c0d18669"
+      }
+    ],
+    "schema": "kgdistiller-entry-source-index-v1"
+  },
+  "entry_store": {
+    "entries": 343,
+    "schema": "kgdistiller-entry-shards-v1",
+    "shards": [
+      {
+        "bytes": 498,
+        "count": 2,
+        "path": "entries/by-source/notes/math/advanced-linear-algebra/chapters/01-review-on-basic-concepts.typ.jsonl",
+        "sha256": "e28441154ae96a275c6d95595225dfa0d33eb0606e535a65c7934f16dbe1d2ad"
+      },
+      {
+        "bytes": 362,
+        "count": 2,
+        "path": "entries/by-source/notes/math/linear-algebra/chapters/01-linear-equations.typ.jsonl",
+        "sha256": "743358c9ee9df11c75326bbdd17c30a842b8c48fc7b5c318016b7eb5ec855725"
+      },
+      {
+        "bytes": 381,
+        "count": 2,
+        "path": "entries/by-source/notes/math/linear-algebra/chapters/03-linear-combinations.typ.jsonl",
+        "sha256": "669c9e9dfeab4b6f292f988f520fdda0c4d61dfb80601d989236b581e479acd7"
+      },
+      {
+        "bytes": 204,
+        "count": 1,
+        "path": "entries/by-source/notes/math/linear-algebra/chapters/04-linear-transformations.typ.jsonl",
+        "sha256": "9ceed90a846392535515d5bac18b062d1bd56a40fbe55c06d7d1c489e2394ccc"
+      },
+      {
+        "bytes": 212,
+        "count": 1,
+        "path": "entries/by-source/notes/math/linear-algebra/chapters/05-geometry-of-linear-transformations.typ.jsonl",
+        "sha256": "97f21befec84f050164b0e7211f2c20ca983458ac97615c0e3504945bd7b5a73"
+      },
+      {
+        "bytes": 267,
+        "count": 1,
+        "path": "entries/by-source/notes/math/linear-algebra/chapters/06-gram-schmidt-and-qr.typ.jsonl",
+        "sha256": "3143a88199eeb6bd7854a84f146160ce5c5225e46ff0e540958cce4db18633ef"
+      },
+      {
+        "bytes": 256,
+        "count": 1,
+        "path": "entries/by-source/notes/math/linear-algebra/chapters/07-orthogonal-transformations.typ.jsonl",
+        "sha256": "1cc3673e7d440408b4b4cff95ab1083851f6eccf23ad45c8704da2352e8a1b58"
+      },
+      {
+        "bytes": 217,
+        "count": 1,
+        "path": "entries/by-source/notes/math/linear-algebra/chapters/08-least-squares.typ.jsonl",
+        "sha256": "289911216e84012ed9c2fca62e9d85a0b7e2fa7c7c3e0b5e02adc2a6d673cac5"
+      },
+      {
+        "bytes": 234,
+        "count": 1,
+        "path": "entries/by-source/notes/math/linear-algebra/chapters/09-inner-product-spaces.typ.jsonl",
+        "sha256": "f3fa4871ef9fc1f1774dc4f947d8e1b3b7b95c9a82ba3a1feef42536475f5982"
+      },
+      {
+        "bytes": 457,
+        "count": 2,
+        "path": "entries/by-source/notes/math/linear-algebra/chapters/10-diagonalization.typ.jsonl",
+        "sha256": "ea2a74acf4fa67e31544616822edb5f46f33e918302952de8120df2acfc34e2b"
+      },
+      {
+        "bytes": 189,
+        "count": 1,
+        "path": "entries/by-source/notes/math/linear-algebra/chapters/13-spectral-theorem.typ.jsonl",
+        "sha256": "e06dc44676fb3da4fc86a099450cc24836e05dbee63ca517ee7a9cfdbbf877ff"
+      },
+      {
+        "bytes": 217,
+        "count": 1,
+        "path": "entries/by-source/notes/math/mathematical-analysis/chapters/01-real-number-system.typ.jsonl",
+        "sha256": "16fccc9c0d31966dab96c9f4f117f5a791bddd6a2e3cdcd204c4a70232326479"
+      },
+      {
+        "bytes": 267,
+        "count": 1,
+        "path": "entries/by-source/notes/math/mathematical-analysis/chapters/02-functions-countability-and-metric-spaces.typ.jsonl",
+        "sha256": "2c2cf60d615343045498182f5b10c2979d40567c3e861e261966afbc9e50cb32"
+      },
+      {
+        "bytes": 202,
+        "count": 1,
+        "path": "entries/by-source/notes/math/mathematical-analysis/chapters/03-sequences-and-topology.typ.jsonl",
+        "sha256": "7cb6454dc6bd5142632c269b04c9ae5d241aa9b543719c94f5a958ac3164e6f0"
+      },
+      {
+        "bytes": 269,
+        "count": 1,
+        "path": "entries/by-source/notes/math/mathematical-analysis/chapters/04-limits-and-continuity.typ.jsonl",
+        "sha256": "803a6ed39d26aa13976b8da6848e44ca6fbf1e40ecf8dcc798a8c476a36c0a09"
+      },
+      {
+        "bytes": 259,
+        "count": 1,
+        "path": "entries/by-source/notes/math/mathematical-analysis/chapters/05-differentiation.typ.jsonl",
+        "sha256": "2594b15343fcbcab0aeb6e82d0284528f80320e29a50fdbe033b7ffe0cfbab5d"
+      },
+      {
+        "bytes": 213,
+        "count": 1,
+        "path": "entries/by-source/notes/math/mathematical-analysis/chapters/06-numerical-series.typ.jsonl",
+        "sha256": "2d05d237d58ad4c6c50f620fcce92df1156b1e8a3579abc2d274eed0daaad958"
+      },
+      {
+        "bytes": 276,
+        "count": 1,
+        "path": "entries/by-source/notes/math/mathematical-analysis/chapters/07-riemann-integration.typ.jsonl",
+        "sha256": "68aa41da32774cdac9fed0e7c2528bebbb7b2955beacdb7836f8257ce6fccdf1"
+      },
+      {
+        "bytes": 286,
+        "count": 1,
+        "path": "entries/by-source/notes/math/mathematical-analysis/chapters/08-sequences-and-series-of-functions.typ.jsonl",
+        "sha256": "4ef5090e0b223aa20a4e801be9130e18e6513b8abeee9ad570988e07df56575c"
+      },
+      {
+        "bytes": 11128,
+        "count": 13,
+        "path": "entries/by-source/notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.typ.jsonl",
+        "sha256": "3b0843176fb2a84a4aeccd1db8339033e606e2f05aa3a90275bd56847c06804e"
+      },
+      {
+        "bytes": 11015,
+        "count": 13,
+        "path": "entries/by-source/notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.typ.jsonl",
+        "sha256": "c2a1347febc62ae27ebe59b236bf4969d6b8ee6eaf23a70f2bb87392db296d0b"
+      },
+      {
+        "bytes": 9904,
+        "count": 13,
+        "path": "entries/by-source/notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.typ.jsonl",
+        "sha256": "d70f1fed9caee29c204490b427b92fd0c71f12ee590f928eb034e446fa7604d2"
+      },
+      {
+        "bytes": 14783,
+        "count": 22,
+        "path": "entries/by-source/notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).typ.jsonl",
+        "sha256": "2df5f3409e60b1471ccce58353eb84b8cbfedfefca43a569eb93bee2657ea2a4"
+      },
+      {
+        "bytes": 12152,
+        "count": 20,
+        "path": "entries/by-source/notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.typ.jsonl",
+        "sha256": "a6dfd4c94648458c0cb220bb8358a8dd1b2c02a028d69ea51c9c90f092d55262"
+      },
+      {
+        "bytes": 9173,
+        "count": 10,
+        "path": "entries/by-source/notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.typ.jsonl",
+        "sha256": "55623b51a8fba8e71881c489b0b9073d9d25ecaa1a57d6913dfaf058c015a39f"
+      },
+      {
+        "bytes": 7415,
+        "count": 10,
+        "path": "entries/by-source/notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.typ.jsonl",
+        "sha256": "2a854bb6f7c537ff1584327dc76cf3b634d7f327aa4bf6bff7c43b9ead445593"
+      },
+      {
+        "bytes": 6588,
+        "count": 11,
+        "path": "entries/by-source/notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.typ.jsonl",
+        "sha256": "1c248a9760638b9843591951d5996b8469cec22b5188d54dbc7b7d234533fcaf"
+      },
+      {
+        "bytes": 10715,
+        "count": 19,
+        "path": "entries/by-source/notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.typ.jsonl",
+        "sha256": "d24c92eecebb7c9347f110a01ff121dd0cb777f0bc3131e3b39e4f2e9e425ced"
+      },
+      {
+        "bytes": 8140,
+        "count": 10,
+        "path": "entries/by-source/notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.typ.jsonl",
+        "sha256": "b817157c0f11731d8744c3d1566a8508734e73fe11f37b87863b9171cc10d26f"
+      },
+      {
+        "bytes": 5496,
+        "count": 7,
+        "path": "entries/by-source/notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.typ.jsonl",
+        "sha256": "b0fb734fc67922a33a59371f482d862745bdf47ad5dda98f97c1342b6f977236"
+      },
+      {
+        "bytes": 14379,
+        "count": 22,
+        "path": "entries/by-source/notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.typ.jsonl",
+        "sha256": "9945863f5e646ffa909beb373ea6a8427a109f75a3d0d1daadc4b2149fb3e333"
+      },
+      {
+        "bytes": 2883,
+        "count": 6,
+        "path": "entries/by-source/notes/math/measure-theory/chapters/13-the_dual_of_L^p-spaces.typ.jsonl",
+        "sha256": "6769fcdd9d1f9d7a0e60199b7a2a8261598dd8ff71daec49bd3293acb59c4006"
+      },
+      {
+        "bytes": 401,
+        "count": 1,
+        "path": "entries/by-source/notes/math/measure-theory/homeworks/hw02-on_Carathéodorys&Hahn-Kolmogrov-thm.typ.jsonl",
+        "sha256": "b9126a3ea93f8b208925dc0d9748ac7d1942d0eba9a9a4c8d04bf9e4c44cbffa"
+      },
+      {
+        "bytes": 1059,
+        "count": 1,
+        "path": "entries/by-source/notes/math/measure-theory/homeworks/hw08-on_L^p-spacecs.typ.jsonl",
+        "sha256": "a994f49148f84b406c039a5c9bccb64226075e9df3c19dbc48f10430d36b6b4f"
+      },
+      {
+        "bytes": 265,
+        "count": 1,
+        "path": "entries/by-source/notes/math/modern-algebra/chapters/01-integers-and-division.typ.jsonl",
+        "sha256": "16b210cf2427f8369b2badc161d2a6c6cb1ffcacb1f6262b4ae415c8c0ffbe7a"
+      },
+      {
+        "bytes": 212,
+        "count": 1,
+        "path": "entries/by-source/notes/math/modern-algebra/chapters/02-gcd-primes-and-congruence.typ.jsonl",
+        "sha256": "f8d233451101ed06ff439adf224052e7012ac46b7498ef7556b69a94c23b0441"
+      },
+      {
+        "bytes": 260,
+        "count": 1,
+        "path": "entries/by-source/notes/math/modern-algebra/chapters/03-rings-and-homomorphisms.typ.jsonl",
+        "sha256": "ed9eaa9837ec2bd037d1903e7d9db0d9df43196280d424a40c3937942fabd496"
+      },
+      {
+        "bytes": 288,
+        "count": 1,
+        "path": "entries/by-source/notes/math/modern-algebra/chapters/04-polynomials-and-quotients.typ.jsonl",
+        "sha256": "cbebaa46439b11c85a3cc5505a9d5687b2552b500e05b945fcd3b474cdf40a19"
+      },
+      {
+        "bytes": 341,
+        "count": 1,
+        "path": "entries/by-source/notes/math/modern-algebra/chapters/05-groups-and-permutations.typ.jsonl",
+        "sha256": "c37ef2e06905b4a8355f817d6218608974be8c8072f17209bf84800927930005"
+      },
+      {
+        "bytes": 222,
+        "count": 1,
+        "path": "entries/by-source/notes/math/modern-algebra/chapters/06-normal-subgroups-and-isomorphisms.typ.jsonl",
+        "sha256": "fc5fefe2bb62629664265483a0b455e09c1178a8efe06eeba52d4c875d1f3104"
+      },
+      {
+        "bytes": 389,
+        "count": 1,
+        "path": "entries/by-source/notes/math/modern-algebra/chapters/07-elliptic-curves.typ.jsonl",
+        "sha256": "c82cf08f5fe3fd64f13c33ac0a8641b1d5421cbb0766fd9766a24e07367816f0"
+      },
+      {
+        "bytes": 292,
+        "count": 1,
+        "path": "entries/by-source/notes/math/multivariate-analysis/chapters/01-metric-spaces-and-compactness.typ.jsonl",
+        "sha256": "4294a4a6db13e2d23b475baff05126317f136f58b72b4afe2896fd70029f4a90"
+      },
+      {
+        "bytes": 332,
+        "count": 1,
+        "path": "entries/by-source/notes/math/multivariate-analysis/chapters/02-multivariable-differentiation.typ.jsonl",
+        "sha256": "29b64965e72e522c87967d6e45992be8916a4553183eff290a60eac8063560cd"
+      },
+      {
+        "bytes": 295,
+        "count": 1,
+        "path": "entries/by-source/notes/math/multivariate-analysis/chapters/03-implicit-and-inverse-functions.typ.jsonl",
+        "sha256": "0d76dc7ac2c35522084c38216f3aae658d2dbd7c31eede0c4c8aad0af4c9f2d1"
+      },
+      {
+        "bytes": 321,
+        "count": 1,
+        "path": "entries/by-source/notes/math/multivariate-analysis/chapters/04-partitions-and-lebesgue-characterization.typ.jsonl",
+        "sha256": "b57c6daf44dcca8ce4a327c360e87163e06ae9ab3d01640c0da32055669100ea"
+      },
+      {
+        "bytes": 318,
+        "count": 1,
+        "path": "entries/by-source/notes/math/multivariate-analysis/chapters/05-integration-and-change-of-variables.typ.jsonl",
+        "sha256": "00f641df033e8cc912bcef53fb736a20fe2e0868af50b3c7341a27cadb159260"
+      },
+      {
+        "bytes": 343,
+        "count": 1,
+        "path": "entries/by-source/notes/math/multivariate-analysis/chapters/06-ibl-baire-to-jordan-measure.typ.jsonl",
+        "sha256": "27443b9b99329089dd299e9a54bf56eb3a178b32231f9a8622491c7071107610"
+      },
+      {
+        "bytes": 285,
+        "count": 1,
+        "path": "entries/by-source/notes/math/multivariate-analysis/chapters/07-ibl-lebesgue-outer-measure.typ.jsonl",
+        "sha256": "284cd51e0e1a2c59660f0828287ecad1763037b242dd30030286c0a0ac7cf369"
+      },
+      {
+        "bytes": 245,
+        "count": 1,
+        "path": "entries/by-source/notes/math/multivariate-analysis/chapters/08-ibl-measurability-regularity-and-additivity.typ.jsonl",
+        "sha256": "18d280c7c0cd2e322158c97fb4bfcc9f0e63b8f938756926b6e82bcb2280d961"
+      },
+      {
+        "bytes": 311,
+        "count": 1,
+        "path": "entries/by-source/notes/math/multivariate-analysis/chapters/09-ibl-limits-and-carathéodory.typ.jsonl",
+        "sha256": "70d0638687d4b464e9e4939676c6e46a1247902ad8c15c23109a4e3e4376a037"
+      },
+      {
+        "bytes": 285,
+        "count": 1,
+        "path": "entries/by-source/notes/math/numerical-linear-algebra/chapters/01-tensor-products-and-matrix-multiplication.typ.jsonl",
+        "sha256": "38989cd544074e14473562bba0e0f842082de041430b63c3ae0d338d509604f3"
+      },
+      {
+        "bytes": 255,
+        "count": 1,
+        "path": "entries/by-source/notes/math/numerical-linear-algebra/chapters/02-orthogonal-vectors-and-matrices.typ.jsonl",
+        "sha256": "0c82332665e9afaec0b8ac7d67adcb6cc1a23d5ca08380b3cc894769b29499b2"
+      },
+      {
+        "bytes": 294,
+        "count": 1,
+        "path": "entries/by-source/notes/math/numerical-linear-algebra/chapters/03-norms.typ.jsonl",
+        "sha256": "df96b012bb3dadcf2901b7ab917967d42ea0248eeb9d7ceb2d4c44072d1da24e"
+      },
+      {
+        "bytes": 299,
+        "count": 1,
+        "path": "entries/by-source/notes/math/numerical-linear-algebra/chapters/04-svd.typ.jsonl",
+        "sha256": "5c064c20b41c3f0a7c9eec1661389589068dc9443b096bf9b59c44f6fa171a66"
+      },
+      {
+        "bytes": 251,
+        "count": 1,
+        "path": "entries/by-source/notes/math/numerical-linear-algebra/chapters/05-qr-factorization.typ.jsonl",
+        "sha256": "71b9664578d20b16a889a3dd3e41aa6e8e141c03095e8a9208f6869fe18e6a5c"
+      },
+      {
+        "bytes": 271,
+        "count": 1,
+        "path": "entries/by-source/notes/math/numerical-linear-algebra/chapters/07-conditioning-and-stability.typ.jsonl",
+        "sha256": "28210f9080bb0c105d66aae0ee2d5860edf52d480aa4524a2f88931c4e19680a"
+      },
+      {
+        "bytes": 7871,
+        "count": 19,
+        "path": "entries/by-source/notes/math/prob/chapters/01-combinatorics&prob_space.typ.jsonl",
+        "sha256": "be2fb0a69c96df667f94f6163eccf1429a0cb210f69229dea8410c6065ca4206"
+      },
+      {
+        "bytes": 11521,
+        "count": 38,
+        "path": "entries/by-source/notes/math/prob/chapters/02-random-variables.typ.jsonl",
+        "sha256": "41ed7b9fb3b11d7482870c43c59844df2c684804197a08d613ca9b5392469656"
+      },
+      {
+        "bytes": 10152,
+        "count": 26,
+        "path": "entries/by-source/notes/math/prob/chapters/03-joint&conditional-distribution.typ.jsonl",
+        "sha256": "dce16295e5b02dc734465068d3b03770918ff1e7215ecc8498554bd224ac9d38"
+      },
+      {
+        "bytes": 1639,
+        "count": 6,
+        "path": "entries/by-source/notes/math/prob/chapters/04-LLN.typ.jsonl",
+        "sha256": "97276d4554481798d0b37c70ae62cd43022e544bee00b78b5c3132e0afa07d31"
+      },
+      {
+        "bytes": 1280,
+        "count": 4,
+        "path": "entries/by-source/notes/math/prob/chapters/05-CLT.typ.jsonl",
+        "sha256": "522d7a819f39bbe3bd9004735f512cb48af712679f7e8ac65d709518fd4c0b0a"
+      },
+      {
+        "bytes": 1246,
+        "count": 9,
+        "path": "entries/meta/global/unscoped.jsonl",
+        "sha256": "e34a9f637ffcdee82cd8bb60d206776fc80c34176f99f12dad0435c01590729e"
+      },
+      {
+        "bytes": 2129,
+        "count": 13,
+        "path": "entries/meta/math/measure-theory.jsonl",
+        "sha256": "13e6afd3f48f6eaba0ccf2a69e30d0b39bf6cfbf5520f97d906c2b1a2ca9291f"
+      },
+      {
+        "bytes": 837,
+        "count": 5,
+        "path": "entries/meta/math/probability.jsonl",
+        "sha256": "e8c9b83b690f592b986d7018559bdbbee069e3603f78d2f845186f164057cedd"
+      }
+    ]
+  },
+  "generator": "kgdistiller",
+  "git_revision": "565a0978b82329839fe06893fc94d1612e9a9638",
+  "graph_sha256": "512c884db08c4c39f2f0b27bfaf33906ba9236106f00e6092fb43e176889e32b",
+  "identity_sha256": "1c8105e50aa47e039a073fdbaae235cdeb76c1380f72a91e7b0f155b6a77e3a2",
+  "knowledge_origins": {
+    "personal-note": 316
+  },
+  "node_types": {
+    "field": 9,
+    "knowledge": 316,
+    "topic": 21
+  },
+  "registry_sha256": "67d056381518336e84cf470a55655412fc3576abee50c2847c193494cede7b55",
+  "relations": {
+    "contains": 358,
+    "contrasts-with": 2,
+    "derived-from": 75,
+    "generalizes": 6,
+    "implies": 16,
+    "prerequisite-for": 120
+  },
+  "schema": "kgdistiller-graph-v1",
+  "source_hashes": {
+    "notes/cs/computer-graphics/README.md": "5cab628090fc9e4518228336cfbc714cf961a467ac55457b145b0036d17b42bb",
+    "notes/cs/computer-networks/README.md": "90ffacbc8117290758ef5ee569d3595f300cb22dc83241cc22cd34d1848376d8",
+    "notes/cs/computer-organization/370-notes-1-ISA.md": "e4318ebdb98ae337037e332a833836b950af50d4e04e32e705b518b0e528a460",
+    "notes/cs/computer-organization/370-notes-2-Digital-Logic.md": "31c9c3f883d47c4e74cc855790979a07e3eba6fc36350c228d71b80d040ab7e7",
+    "notes/cs/computer-organization/370-notes-3-Cache&Memory-Design.md": "6dbf329989bb9bb2a5ce1f664520161fb747448b8148d96da616b52b3d195252",
+    "notes/cs/computer-organization/370-notes-finalReview.md": "07e89b01e6d6d2e4b55d6aecb258fed88ce17bc3b92f5395c4c49f8785af7fcd",
+    "notes/cs/computer-organization/370-notes-project.md": "51990a1759719b05079865e4e14e7aee60b0cbb49efa4bc3f24d4c312a31bb26",
+    "notes/cs/computer-organization/370-notes.md": "cec9d5bcad1c87f2c31f07b0a87d970a9888b39340940b05b9d7cd0514bce45b",
+    "notes/cs/computer-organization/README.md": "5727ff108259e90801c51cc89840af818f5159863e2e80730241930d4d7fcf45",
+    "notes/cs/computer-vision/README.md": "71012f4bee6643bada1349640d38365f3a1d7e00b555dab13d92f06b6176e5c4",
+    "notes/cs/cpp-programming/docs/01-Command-Line Interface-(CLI).md": "b390652af49325cf80e3112e9c36d87aaebb2170215d3bce275256db7065641a",
+    "notes/cs/cpp-programming/docs/02-IDEs.md": "7a69b59c1da2e2ed63b48cc7d3877f9fd142171072430fbae7b85f710ef7b679",
+    "notes/cs/cpp-programming/docs/03-Compilation-(Makefile).md": "e6863738d6567d5b2019ca5da7513959ce9c33d7d70f142abe97a51a3eb71064",
+    "notes/cs/cpp-programming/docs/04-Debuggers.md": "972085c7aba81b32b6eff19d9ef3b2b06d996d0652154070d631d4ef435b2e07",
+    "notes/cs/cpp-programming/docs/05-Version-Control-(git).md": "f2a28196c556d2fb5e8071ee7d6a032309ebff8f1b7c521fc97365efed2ad676",
+    "notes/cs/cpp-programming/docs/06-Text-Editors-(emacs).md": "580ad122ef1d3bf064b8d4b56e14d78408fe567bde1eecfe86478a9add42cde0",
+    "notes/cs/cpp-programming/docs/07-Call-Stack-Procedural-Abstraction-and-Unit-Tests.md": "53e1d008c927fabfa7f8d304bebe51141f3f3abaf46b45dc30e9f0712254bd11",
+    "notes/cs/cpp-programming/docs/08-Pointers-and-Arrays.md": "d95831129590fd952cd8c02ff3511395fe5db9bcd3b84cc16b071621f65f465e",
+    "notes/cs/cpp-programming/docs/09-const-keyword.md": "fd0dc95b9cd223469c5a811902ae2ca09ad74ed6d087d5171af8cb818e6f59ea",
+    "notes/cs/cpp-programming/docs/10-Compound-objects,-ADT-and-Dynamic-Allocation.md": "8f555f719a04615ad6b39d36e5f9e1d19535b0112d1bae3957fab716c3346066",
+    "notes/cs/cpp-programming/docs/11-C-strings.md": "4f44b5b924d09eec5e9d1f88e916b993ab0588df1b134190aa086396950d114a",
+    "notes/cs/cpp-programming/docs/12-Stream-and-IO.md": "5d4ecd1e1b4b32f88cdf3327b0176efd42e517761d37678d6242f812e7e360d5",
+    "notes/cs/cpp-programming/docs/13-ADT-in-C++.md": "6296f0f5e5d983c20a14a6742bbd70fe58a34885ae32f785543196a4858e2701",
+    "notes/cs/cpp-programming/docs/14-Derived-Classes-and-Inheritance.md": "d16cc72d7469cab0823305ca054e47b134410011e68d94f45394884226685ce8",
+    "notes/cs/cpp-programming/docs/15-Polymorphism.md": "922b4d3f4556ef3064babb4ef9bbd51e047397b6f3e435475b519f16e5fcc461",
+    "notes/cs/cpp-programming/docs/16-ContainerADT-I.md": "539499c1650f77e4b854575924166069bc32f350e4b9624685576cf44201efbe",
+    "notes/cs/cpp-programming/docs/17-ContainerADT-II.md": "4b0f024b51741373c48077997c1232c192ac47c30b8e88c55d428dce32db3973",
+    "notes/cs/cpp-programming/docs/18-Memory-Model-and-Dynamic-Memory.md": "a2fb5c6ccd2f6814a743728038d1ef1372b377b04e6a68fa01b12517aca64205",
+    "notes/cs/cpp-programming/docs/19-Managing-Dynamic-Memory.md": "ec59948fd90aba6bb35abfe4dee920e6fafc272288e96e610a488dd4e41d2407",
+    "notes/cs/cpp-programming/docs/20-Deep-Copies-and-the-Big-Three.md": "8fb14ee2c25ed07bf8fa350e0cf09f873cbfebaa50ce1d605b545ac01c1bdf6f",
+    "notes/cs/cpp-programming/docs/21-Linked-List.md": "562d59df35e1a1537e74eb0917fb3ddd38fb3bd1b5b964d0f799a55610e1b3e9",
+    "notes/cs/cpp-programming/docs/22-Iterator.md": "c2dd4078d3a2bb1db696a0c071a4b6cae24aadf726c8c94a23d6d0ab39c7b272",
+    "notes/cs/cpp-programming/docs/23-Functors-and-Imposter-Syndrome.md": "2d321a50872e80db2381b26131a41284696c9b2572a59a3557b7bfe356721f88",
+    "notes/cs/cpp-programming/docs/24-Recursion.md": "4e78c17830d5ef99bef5feac1685ee62cd07f8b0ae3b046251d8656cd649a1ae",
+    "notes/cs/cpp-programming/docs/25-BST-and-Maps.md": "b8a469bc09f0fe2e3d1aabfd87421da30875dd57bcd0f61ecacc9a18778ac318",
+    "notes/cs/cpp-programming/docs/280-midterm-cheatsheet.md": "83a31141fb1828981aca060c90bb4bf7648fa5c8f9c902f8963fcbd3e4d94abf",
+    "notes/cs/cpp-programming/docs/index.md": "15300036d234fa1152d6999a122f3ef6682b983091b009aabe018a24f9642cf8",
+    "notes/cs/data-structures-algorithms/docs/index.md": "d744483f159fe9d06d41a24073ae99bd0329efb4ff105392d1d461b61abcf2c4",
+    "notes/cs/data-structures-algorithms/docs/notes-01-08.md": "9a9b99378912e2302a72a53ba3c4b207c49e28e4b8e0743d6f31d08e90df6fc1",
+    "notes/cs/data-structures-algorithms/docs/notes-09-16.md": "8e18a6733fb8ea23346693a7ba6e920b8696d2291192431a6a93741d216e5ac1",
+    "notes/cs/data-structures-algorithms/docs/notes-17-25.md": "ca2f238092a05b7b1ee48f9a6bdf6e935d2a6fbe67c58c8a14512668c2bc3451",
+    "notes/cs/machine-learning/00-prequisite/00-prob.md": "b9fbacaf2bf79d5435f619e25a813b1cec5c519c029a85fb43bd808360ebee3c",
+    "notes/cs/machine-learning/00-prequisite/gradient and Heissan.md": "00d3544c55a2121a4b0a5ed61afa59dfe7460c4a22ca3bb881cdf8ee22773d74",
+    "notes/cs/machine-learning/01-Linear_Regression/Linear_Regression.assets/1. QR 分解.md": "308189e97d1387563248930ae8f6ba4a056ed0a2ff820c7129382ae07c322c0f",
+    "notes/cs/machine-learning/01-Linear_Regression/Linear_Regression.md": "299b1787a4455f8d182d60b12809a60bf42e2fefd0e607610cdf84480cb8c82e",
+    "notes/cs/machine-learning/02-Logistic&Softmax_Regression(Prob_Discriminative_Classification)/classification_overview.md": "ac432f1d5ab264001abe9f74c57845e90289bf9aa72f499583b11bdb01f9da7e",
+    "notes/cs/machine-learning/02-Logistic&Softmax_Regression(Prob_Discriminative_Classification)/logistic&softmax&knn.md": "defe33324a9a8296a09c9cadb152ef9a6eedefa59e3a5dd8a10a12b4eff0828c",
+    "notes/cs/machine-learning/03-GDA&Naive_Bayes(Prob_Generative_Classification)/GDA.md": "b161c2884cb8a46da5f5043b23fcb50760936937ac94f232f1c0af6916c29220",
+    "notes/cs/machine-learning/03-GDA&Naive_Bayes(Prob_Generative_Classification)/Naive_Bayes.md": "995b48508fb1f1f082f7f2594f910d8555ebb2e41f74af65a88828452cee96d4",
+    "notes/cs/machine-learning/04-Kernel_Methods(kernelized_SVM)/kernel_method.md": "a07b27759215506021f909f6e5815c86637a12f7f6f3ed4a2a07afac51057c4a",
+    "notes/cs/machine-learning/05-Neural_Network/neural_network.md": "8ef70f4cc9200a386f9ce56dcf4db7fd63c319b33759786cc61a5d9e3132c285",
+    "notes/cs/machine-learning/06-CNN/CNN.assets/03-kernel_methods.md": "4b7227f1d5f784266ac9b5efa687d5746bcdbe37dd4527d23fb609480a6b14de",
+    "notes/cs/machine-learning/06-CNN/CNN.md": "3e99e51a2fd2a841dd2433cc55045db991c40cf7716824b19501f344829c1773",
+    "notes/cs/machine-learning/06-CNN/transfer_learning.md": "dfc34436fc575199f7a8fe31c351477da80b610fb2440f691380c145229db745",
+    "notes/cs/machine-learning/07-RNN&LSTM/RNN_and_transformer.assets/03-kernel_methods.md": "4b7227f1d5f784266ac9b5efa687d5746bcdbe37dd4527d23fb609480a6b14de",
+    "notes/cs/machine-learning/07-RNN&LSTM/RNN_and_transformer.md": "cf4f864813cacb45dd6eb547880e64fef6ae3ba0338315802b4d50e8bbf0106f",
+    "notes/cs/machine-learning/09-EM_and_clustering(Kmeans&GMM)/09(1)-EM_algorithm_general.md": "1d413421708e8ebca27ffea33be49f19b9d71991f97f4d94f54dd0666888c3bb",
+    "notes/cs/machine-learning/09-EM_and_clustering(Kmeans&GMM)/09(2)-Clustering(Kmeans&GMM).md": "fbfc9e1bb9f6e3d9391f05a3e68d87f7cc0a956f2a48a75cbb3bb239e7added6",
+    "notes/cs/machine-learning/10-dim_reduction(PCA,ICA,Sparse_Encoding)/ICA.md": "0763a30cd6dca78dffd994ef9aef0a72358501321c01925b7fb82bf0a4853423",
+    "notes/cs/machine-learning/10-dim_reduction(PCA,ICA,Sparse_Encoding)/PCA.md": "ec24f053444bf979181167fcb4f5871b2b7f81e91f769cb2c46f3177b1ad9b77",
+    "notes/cs/machine-learning/12-Generative_models(AR,VAE,GAN,diffusion)/Autoencoder&VAE.md": "52b3053635178920c63524b202dba01010a722a8da4db46cd609e05c91d4b7ba",
+    "notes/cs/machine-learning/12-Generative_models(AR,VAE,GAN,diffusion)/deep_generative_models.md": "6a8b22f334f6d5475884270e04e21a92b9c5412b0c45517136677e1b4711e887",
+    "notes/cs/machine-learning/13-HMM/08-Transformer/Transformer.md": "ac62113eb347a70fafc7f435b1ba3baff43e7004b6e6a2c2c1f0673ffe3fc99d",
+    "notes/cs/machine-learning/README.md": "f86475bff742733b0749abbdddb39df6689d5fd667fe340de99f4d793493c10f",
+    "notes/cs/natural-language-processing/README.md": "24598249d20c32629c03adcb194581b5dd62fb673b33380b11d922cdd6ae15fd",
+    "notes/cs/operating-systems/lab-notes/lab00-core_dump,extern,static,smartptr/lab00-core_dump,extern,static,smartptr.md": "cba1c30f3369ed3da34d9bf474b64266266325cb7e710ba932afc466d606c10d",
+    "notes/cs/operating-systems/lab-notes/lab01-thread,function_ptr,mutex,p1_hint/lab01-thread,function_ptr,mutex,p1_hint.md": "6fe32bd6d0800a8e04f60294fff6296ef1ae1cae8aa1b61a64bccafedcc4873e",
+    "notes/cs/operating-systems/lab-notes/lab02-monitor/lab02-monitor.md": "16b1a5d4157564af91e2c5805347453a31f83595857837d027b4a5b164195e42",
+    "notes/cs/operating-systems/lab-notes/lab03-monitor_programming,RAII/lab03-monitor_programming,RAII.md": "5da7fd5b567ca2d98d928fafa62fee5ec4d9f93bd34de800e8b0f1e127addb58",
+    "notes/cs/operating-systems/lab-notes/lab04-semaphore,context,interrupt/lab04-semaphore,context,interrupt.md": "db8591caa0e3476434fdd5842b221c7736274359f0fe8db53dc785f5e8775a30",
+    "notes/cs/operating-systems/lab-notes/lab05-deadlock/lab05-deadlock.md": "e873f0adab29e9baf08fd1c17c9e5b96f912d7adae275f798b475d0972882332",
+    "notes/cs/operating-systems/lab-notes/lab08-socket/exer-1-response_time_vs_throughput/分析.md": "c10f08e74eebb56d52546388ed4c992970f4512d53f29e1f11da7500055d1c5e",
+    "notes/cs/operating-systems/lab-notes/lab08-socket/lab08.md": "8f2792a8d59a11f3fd34d99f203aa678c313f5883be86f9d83f426c20c372bd7",
+    "notes/cs/operating-systems/lab-notes/lab09-file_system/lab09.md": "6adb89492b118f968dd4ab3a124e31e768189a65a538bd84839e8995ebc23650",
+    "notes/cs/operating-systems/lab-notes/lab10-final/1.md": "e66035bdac2942a536d1ff3f048a924e5962c460318540c3af5810cd3d4e9fb4",
+    "notes/cs/operating-systems/lec-notes/lec01.md": "712aaea1b07705ff4adf6548967ea33590b10034ad0c2d7ca61aa4e1dc0d2658",
+    "notes/cs/operating-systems/lec-notes/lec03-commuting_threads.md": "3d9b9c222abf26cfac8ca65f3ca8b047b427a5363e3fee73119007931be32b93",
+    "notes/cs/operating-systems/lec-notes/lec04-thread-safe_queue(mutual_exclusion_by_mutex).md": "1ed22e2cd1cb319176b10056c857d85d12f18cbfbb8e91754340be08153ad9b7",
+    "notes/cs/operating-systems/lec-notes/lec05-condition_variables.md": "98c975ed10fe4252e595e454bff5fe6bda1c8a9b320313a826fdaea554d1a156",
+    "notes/cs/operating-systems/lec-notes/lec06-readerwriter_locks_and_semaphores.md": "82bc847d1833053d440f71c01443ec7546e6b2e0e2425dc4aed0488125bc9291",
+    "notes/cs/operating-systems/lec-notes/lec07-semaphoreVSmonitors_and_thread_states.md": "4ff437b14d1cbd7a6094088a8875ce37a025da56405339aa3430c6b8823acd09",
+    "notes/cs/operating-systems/lec-notes/lec08-cpu_switching_threads.md": "623e9d84db80cc661fcce4727340bf30405db0df0cbc5c34fa9b12415c18324c",
+    "notes/cs/operating-systems/lec-notes/lec09-lock_implementation.md": "ec9a05a4ad938d60ffe65515507468da537a52f45481e945f19472f70a551f0e",
+    "notes/cs/operating-systems/lec-notes/lec10-multiprocessor_lock&deadlock.md": "ff56456f6d378ca8c1b7406e9d8ede806743732e3c9b4807b424d2fbb50a5cd2",
+    "notes/cs/operating-systems/lec-notes/lec11-deadlock_prevention&address_space.md": "bec5e60150ebebccdffc96cee6973b5b6a4184ae42e62d94521dba52206f962f",
+    "notes/cs/operating-systems/lec-notes/lec12-dynamic_address_translation.md": "7828689955c27f5ec5b9dda864d0c0c27687213d4e66ee3c3585131a1c5b6e50",
+    "notes/cs/operating-systems/lec-notes/lec13-multi_level_paging.md": "6a1c0df0e3dbc85556c4d14e8ea3364f11de372ec1fedbaa300c335633adacd2",
+    "notes/cs/operating-systems/lec-notes/lec14-page_eviction.md": "c488f878ba193f75259ad1702333582b286d5ed3fc4461a2337cf4d11051231d",
+    "notes/cs/operating-systems/lec-notes/lec15-user_and_kernel_address_spaces.md": "e78a49cc3fd05101360bbc400db49999cab7a7b887e6c9b5be4fe133f755a3d7",
+    "notes/cs/operating-systems/lec-notes/lec16-managing_multiple_address_spaces.md": "d9b6f888763bebb380e9a795abe24492fb4affd556fe424e68f4393044377774",
+    "notes/cs/operating-systems/lec-notes/lec17-CPU_scheduling.md": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "notes/cs/operating-systems/lec-notes/lec18-file_and_storage_system.md": "718416bfb2ca81dd60a96689aa71c7cf4371951c1c4caae26755252f1858d396",
+    "notes/cs/operating-systems/lec-notes/lec19-file_system.md": "92cb1d2e7ccec2b975828957e7cfa713f399e340b74c7accae72fda606170e2f",
+    "notes/cs/operating-systems/lec-notes/lec20-hierarchical_file_sysems.md": "b955d4ff8cd86980b4b77b82536e7e9e988044576c1ca6418cc6c1613e0bf686",
+    "notes/cs/operating-systems/lec-notes/lec21-crash_consistency.md": "d514d20fbe490984b9cebe68db9fd24996a878582d43afe0d663eaaad5ebba1f",
+    "notes/cs/operating-systems/lec-notes/lec22-network.md": "06d487d2c590143e82d349b3611616ec8a77f07a005b46a9336e0799828ea629",
+    "notes/cs/operating-systems/on_debugging.md": "53381c6b20d0340abd1d5ac99c8a91c25c906c0c68386a297acffe1257d2d903",
+    "notes/cs/operating-systems/on_git.md": "e829b38996ad527504c6461e2067783056726120b4252830cccf18de2ccf2fb3",
+    "notes/cs/operating-systems/on_socket.md": "f825a09fa8324abb418b77c23a16103d6da1e0f70d0a493574cca80040ddd2f7",
+    "notes/cs/optimization/README.md": "e996687d4f4c0ae521759155a3402a0ae82e7f96bc8379307314b6ec2490e137",
+    "notes/cs/optimization/lec-notes/0-basic_tools.md": "4307ed786d6182a5f200b9e9c84b79ef1cd63bba936d5aa4ff7e996822499c1d",
+    "notes/cs/optimization/lec-notes/1-convex_smooth_problems.md": "9372828af372f541045d74d052c6af6e5efa286d4abfb0fc0a8d3fc3d23b55cb",
+    "notes/cs/optimization/lec-notes/3-nonconvex_optimization-I.md": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "notes/cs/optimization/lec-notes/4-nonconvex_optimization-II.md": "399368758f1c90bda038a71a6948cb32108281a5aaeead03b0196ca600f95e88",
+    "notes/cs/optimization/lec-notes/5-nonconvex_optimization-III.md": "f3e176b549fe935d556851749efc98bf49526f09effc7633e5d6bd23c6f14dbb",
+    "notes/cs/optimization/lec-notes/lec11-intro-noncvx-opt.md": "d8a585e8f0a9093e29e2a1818c894f43937955872f9251eac89a1b97cd7b7778",
+    "notes/cs/optimization/lec-notes/lec12-Trust-Region&Cubic-Regularization.md": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "notes/cs/optimization/project/proposal/idea.md": "10bf4b223923d1919da39a38dae5ee0b6e19bf99c83c85052731ddd6114fcfdc",
+    "notes/math/a-bit-of-abstract-algebra/chapters/01-introduction.typ": "68a5717a5a6849031f70aa80a3a1373ff447a2112e167f417b6038c1a87a5701",
+    "notes/math/a-bit-of-abstract-algebra/main.typ": "96b9e6fbe4dba13e9721526b78219f5686dcaa42d4d24fa92675566e8f5acbac",
+    "notes/math/advanced-linear-algebra/chapters/01-review-on-basic-concepts.typ": "7e5efa092a13ce42a983383972e3aa434138435b25616fc9ec65bbc625010938",
+    "notes/math/advanced-linear-algebra/chapters/02-linear-functionals-and-duality.typ": "e34cab6780c0243bf3db2c13f380fa52ef4b554b5f82e401598d18031d507af3",
+    "notes/math/advanced-linear-algebra/chapters/03-eigenvalues-and-operators.typ": "c0c8714d17004d92432bb03a147f70a75458ae0a0d7704dd6af4c3c2b8cc16d9",
+    "notes/math/advanced-linear-algebra/chapters/04-operators-on-complex-vector-spaces.typ": "4a9425a82ddbe677e87052b03e9421a253741f7be3f7162482ff778190b7e88a",
+    "notes/math/advanced-linear-algebra/chapters/05-multilinear-algebra.typ": "5ada1c86c647fcb2fa0abc96e0ebab2a97f46dc5ff647dc732cd839c41037a0c",
+    "notes/math/advanced-linear-algebra/main.typ": "391c5e0d820ba1a09ed6ae285b5251204ae55398747e636584bc3b7dde8d9cfd",
+    "notes/math/everything-about-linear-algebra/chapters/01-introduction.typ": "444210e8025470497ddc00b50f591f35f2e1aa8c18809f76aa0fd01f41878c4d",
+    "notes/math/everything-about-linear-algebra/main.typ": "af6f5be32489d439452c7350754a9c94ae5f3c557c03d36e5404d4ce7a358062",
+    "notes/math/linear-algebra/chapters/01-linear-equations.typ": "75a00237cb86cd64ce55c43b1e069575b26b9f0fc70335d1da5b302161ed4b3c",
+    "notes/math/linear-algebra/chapters/02-linear-systems-and-matrices.typ": "652dcdf851d1367be5b26ae41b320085aecf9ffd37d6041543ba287144777c6b",
+    "notes/math/linear-algebra/chapters/03-linear-combinations.typ": "7256d034182f5b161127af8d1b35e8ef02978ccda5a1110afadaf5fce93ffced",
+    "notes/math/linear-algebra/chapters/04-linear-transformations.typ": "a753b073b55e086dc90475a4231ca7a6e33af9283eec1f34b91855019cd0a609",
+    "notes/math/linear-algebra/chapters/05-geometry-of-linear-transformations.typ": "94f74010af4ceee2e68f7db69a91483e6bc1c334ca6e4c8290db1bd1cca3e939",
+    "notes/math/linear-algebra/chapters/06-gram-schmidt-and-qr.typ": "8252fe2142896366d59fd077bd3ec12b1ea82bc982f53d5f62dc59941cccf9a0",
+    "notes/math/linear-algebra/chapters/07-orthogonal-transformations.typ": "4de96de7c9cf2c0087ceba5f92a7814c799e578235a088f17665d0c136574ffe",
+    "notes/math/linear-algebra/chapters/08-least-squares.typ": "5356657e130f383d0a58d5bc5b117fda6cfe1414ed51c140eb6ece00b17a54d2",
+    "notes/math/linear-algebra/chapters/09-inner-product-spaces.typ": "5a1e7ea5e270c60934993d9e7a452537bc7cd49aa57fe2f6a2e4ae3ab93a301a",
+    "notes/math/linear-algebra/chapters/10-diagonalization.typ": "24df19e70f381dc063c1af73196411ea16c8ff07a73d2a45e058ea2f1f696cfc",
+    "notes/math/linear-algebra/chapters/11-eigenvalues-and-eigenspaces.typ": "76e06508a1d399e4b3628bd55c4eda72058e0d3fc3ee6141193810add5c0e238",
+    "notes/math/linear-algebra/chapters/12-complex-eigenvalues.typ": "e4cbbc7cd30b161e18df2107f67cbd75c9601d47df29e1e2972452d899ba86ea",
+    "notes/math/linear-algebra/chapters/13-spectral-theorem.typ": "d1816b0c5eb898fc8d9d5fab7deda8443246b132380d6cfe44db9bc1235ccc7b",
+    "notes/math/linear-algebra/homeworks/hw01.typ": "21780f6ee1211bd93cfd336fda06098186de9497ef6cdab143919bcb5978fea8",
+    "notes/math/linear-algebra/homeworks/hw02.typ": "a9622ac008b14a2bf5470f303050ffac5475cf0837a0ff70c3613c6e3500b933",
+    "notes/math/linear-algebra/homeworks/hw03.typ": "b375081aa5779cac8afdd1e4a5d3744085c33f152ebcbce4f8bac84dcf2ffc57",
+    "notes/math/linear-algebra/homeworks/hw04.typ": "50a5e7aaa25e7bc039e5549304f12ab9260f8e190b3fcfbcbf84873727fe5f94",
+    "notes/math/linear-algebra/homeworks/hw05.typ": "9f3490f4eaea37fa593ea3046eab33e27b80c4bd6d9f4a0462cc71c2c2e958d8",
+    "notes/math/linear-algebra/homeworks/hw06.typ": "bd86fb5e1699ed5aefd9965fcd2a134f78c85b8ec7f8665f4f13c255e9fd045a",
+    "notes/math/linear-algebra/homeworks/hw07.typ": "88d91401eb175301e15982a81ee1bcef005763c2a6036c0c908c1bff545cf81d",
+    "notes/math/linear-algebra/homeworks/hw08.typ": "48f361ed30e2a470e761f950cfd630d03d9232d74d5c0d30a38cb1b0c05d6621",
+    "notes/math/linear-algebra/homeworks/hw09.typ": "32f3078beba4f4edee7d43e9e5b34a283f7e87acf202d49729034bdd6f912923",
+    "notes/math/linear-algebra/homeworks/hw10.typ": "8187cfb9ef832594262f776f073a112c1a3c6880f43b763ff713b6ed3d06a0ea",
+    "notes/math/linear-algebra/main.typ": "52d47708d63de5c33e606c5c5f6947ab0b5a649e3fd340a01b1f9d705883b985",
+    "notes/math/mathematical-analysis/chapters/01-real-number-system.typ": "3ac6334a6a0f38e9f1ab13317a3c36450a35fa01d32497ce3d5ddadfcb0bb00d",
+    "notes/math/mathematical-analysis/chapters/02-functions-countability-and-metric-spaces.typ": "f5224b68dc15e5baeb7ca8bc527bbcea1a5650cd7877624f2b2dcb7e0cc96a1f",
+    "notes/math/mathematical-analysis/chapters/03-sequences-and-topology.typ": "3516330eb8533aff49c984a1afa8e5c571a2ce7642440b553dc023116ce7f0a8",
+    "notes/math/mathematical-analysis/chapters/04-limits-and-continuity.typ": "faa3695e89912f45cb6e4d94c6af02791ce3f9f8feedd65891cad10db212e35a",
+    "notes/math/mathematical-analysis/chapters/05-differentiation.typ": "36bb1aa380c4576dbf1f0ab9bafa6543a8bc25a54f10ee09fd9541ebfac7d51b",
+    "notes/math/mathematical-analysis/chapters/06-numerical-series.typ": "852d51d39f7149558b542ba9f9fcf61381ce087b9a08b74293c3829b53f013ae",
+    "notes/math/mathematical-analysis/chapters/07-riemann-integration.typ": "1da040e67e43f0f42adeb842e8c18a50f835b100065c5ab0bd82d4cac5f6410d",
+    "notes/math/mathematical-analysis/chapters/08-sequences-and-series-of-functions.typ": "c1da524ffebdbd1662245ad8150028fbc8ad83f8ef3410787138f87c0bad833d",
+    "notes/math/mathematical-analysis/homeworks.typ": "30efc2753c8633b23f5ce5d6741f761757f557b6331c4f20ea751806edd8cc54",
+    "notes/math/mathematical-analysis/homeworks/hw01.typ": "7aa9c0de858a0c73311e5fa03d604b906a4e7819b836d8f0ffcc68ee31d3ed34",
+    "notes/math/mathematical-analysis/homeworks/hw02.typ": "498074dd132fae34512e589478b55aa4b3425dba03fa0c7c299593594efcbca9",
+    "notes/math/mathematical-analysis/homeworks/hw03.typ": "bdbd8ceded26ccddf89c615eb524276ecfb8ea36ae1fdb73d0c016d4436862fe",
+    "notes/math/mathematical-analysis/homeworks/hw04.typ": "cc4d895d12d22b94bd6977ab9b1ccab8264715521b336a46fc76bedaf2b48c09",
+    "notes/math/mathematical-analysis/homeworks/hw05.typ": "a8bab8a8e114e81d897312fe0134990cb6768b9a6206fb1a2e88eb7d44a3cf04",
+    "notes/math/mathematical-analysis/homeworks/hw06.typ": "18111e04a606f5a4a7b796595f8c11d711466dbf1dfbcd4cc29cffe4a7fd45a4",
+    "notes/math/mathematical-analysis/homeworks/hw07.typ": "4edde7687aaf4b3768d838d0cf256a4a247d99ff8d8a92cfe615ae8b48d84e7c",
+    "notes/math/mathematical-analysis/main.typ": "9e6476d7588da8ab30830d72b89ab1dd505fc610c84d430080d4f4ce4a6bf26c",
+    "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.typ": "dbc1c8de21145ebddce0818f8e62800e9e5bcf1fd118ff8c937d0f7c1abd4bdb",
+    "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.typ": "8a3f8aa8efd167455ee91f76b928ffc881fdd1b3c1d5eb60cd96eb0bfdf78a8e",
+    "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.typ": "30558efcc4e880fc58a37e4b09170511ae0067592bb7aceb7ee8d6befa0e330a",
+    "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).typ": "640edfbf1b2098d138640c1efc89c8ecfe64fa9441a7dacb359790a3eb78ba9f",
+    "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.typ": "da6e341e1e0a4cebee296f92a4607923fc5534398aeb57125b8a7b6627e19738",
+    "notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.typ": "a0f49b7f48bcbd1cb95c663cebec5d360a801b5cae000a8d84c33cdac3f6f403",
+    "notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.typ": "55709d5049eec2fcd2a02284cb262c2f0109ec4d7af373fbb79e55d884803638",
+    "notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.typ": "5ea083066e0d24b86bd2855c976bf5e431e7c1540f03cacaa9191e2b385522f8",
+    "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.typ": "5e581859b57a1a52f18993fe3d20add484d54a81c17672edeb5da15b52d2f632",
+    "notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.typ": "46cf4f23a45eb8328dcba6acc07411dac21c5eb6bd0ca6a5e9a84b806bb6fcf4",
+    "notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.typ": "c656b167d86d43789fdc810afedea4a44af55da75366abee66ad955c28e0e7b2",
+    "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.typ": "e963c85a54a461558d1c67266786ecdfe6b219fce8a68deffb1008fbde29c014",
+    "notes/math/measure-theory/chapters/13-the_dual_of_L^p-spaces.typ": "6f5a115ddf57d539a987ab94f3290be6e94c8acbf3d9cd186ad7fa569be9e833",
+    "notes/math/measure-theory/extras.typ": "cec589036c2318f597ae2b921022bbf82d18a75408f362c967ee93a013be6996",
+    "notes/math/measure-theory/extras/hw00.typ": "0ebd2f0785ce5f25e1c8f87198ae757d0d63b2c2c264e221661675929ab517e1",
+    "notes/math/measure-theory/extras/lec36-problem-solving.typ": "a76db7a59ae6a6c20aa476aa7efb048414bb0a4587a1ac84ed42c1b800d35a70",
+    "notes/math/measure-theory/extras/lec37-problem-solving-iii.typ": "c55c7e716bc90ce4962f511990da6e637116f8cbd259eff9c1cdc2a9a7d0776c",
+    "notes/math/measure-theory/extras/lec38-extra-topics.typ": "e4290034476f6d9c7a137a8eaf36a18fa82e134d8cc09c651fe2e40077ec3bec",
+    "notes/math/measure-theory/extras/practice_problems.typ": "28569cf73d4194c2fe367db4f9a4265802d3382eca3e07e84a5b3ab3d0dec1c4",
+    "notes/math/measure-theory/homeworks/hw01-on_sigma-algebra.typ": "06df72648a738a2ecfe353e1e6e2a744f135e85329cd79aa7b9b870502c697eb",
+    "notes/math/measure-theory/homeworks/hw02-on_Carathéodorys&Hahn-Kolmogrov-thm.typ": "8acb893731de01173c97279256091ccdd0c907696b5fbe232eb90ab5f547fb38",
+    "notes/math/measure-theory/homeworks/hw03-on_Lebesgue-Stieljes-measures.typ": "16570afb3b92460ce26e5a20d9e849996df419268429912fe8bf658dc3591ea4",
+    "notes/math/measure-theory/homeworks/hw04-on_measurable-functions.typ": "bd9e4faca69a4da941b3d251bf45bcd3e883c1c931f9fda76b9c86ab404a0517",
+    "notes/math/measure-theory/homeworks/hw05-on_integration.typ": "606af9c22f0aa270ed29f885431bb23c50508b2ec8adf0884d097e6951713d72",
+    "notes/math/measure-theory/homeworks/hw06-on_product-measure&mode-of-convergence.typ": "7951bde504ef2e01c1d351fee72d63918be5883acd8ebb4af222f9576900b11e",
+    "notes/math/measure-theory/homeworks/hw07-on_differentiaion.typ": "6d7f1b89f162b44400172ab351c53699fc8fb62c023816903bf18c4d2178755d",
+    "notes/math/measure-theory/homeworks/hw08-on_L^p-spacecs.typ": "403d6864b4a3dc8f2546e43855368e5610547190927cb3a634b48a401f34ab0a",
+    "notes/math/measure-theory/homeworks/hw09-on_signed-measure.typ": "f9c62d1af62acae202b9aa5a273c01b71bef353c419d090e204490b65886b2da",
+    "notes/math/measure-theory/homeworks/hw10-on_LRN-theorem&complex-measure.typ": "8d6b440c6fe0207bc3e0b67023eee8fbfbcca9533f264b0b37e56a39f522353f",
+    "notes/math/measure-theory/homeworks/hw11-on_regular-borel-measure&BV.typ": "921b1a11659d85fe0680fadfadf2fcca15e70f3871619658cf97c0c5ef5d94d1",
+    "notes/math/measure-theory/homeworks/hw12-on_absolutely-continuous-functions.typ": "c267f694d1095fd43e58d0518521406e4631d0ef966e7388cf6ea6d950831ee0",
+    "notes/math/measure-theory/main.typ": "73744ef631a5c9980b1fccb048d965d57518697a3d40a0cb38b359bde5e5d6a3",
+    "notes/math/modern-algebra/chapters/01-integers-and-division.typ": "13ab6cc119f0b6f548e8a05058eb4070279fecd0349ac7bcdbd152fe956adbff",
+    "notes/math/modern-algebra/chapters/02-gcd-primes-and-congruence.typ": "e08fe97f3b970778c45c6aef98be77c865823c134bc549fa4c3a67b86d18f78e",
+    "notes/math/modern-algebra/chapters/03-rings-and-homomorphisms.typ": "ee7ec265127c2f91039baa2866cdd749d4c7203b354660894a875428a3c2013f",
+    "notes/math/modern-algebra/chapters/04-polynomials-and-quotients.typ": "82dac3a007a7aac615b366590a8853474dab59fa3aa362860c1c9042716c0822",
+    "notes/math/modern-algebra/chapters/05-groups-and-permutations.typ": "7e55204ef26aaebc0e53e2cb59bcc6dda5725e8851f033f1f95e52fe57ac77e0",
+    "notes/math/modern-algebra/chapters/06-normal-subgroups-and-isomorphisms.typ": "76b4c93eed02a270939ec86a234907544a19ca5cb83d869cdcb350359bd10127",
+    "notes/math/modern-algebra/chapters/07-elliptic-curves.typ": "5348f94a3e2838e7af8b3e1777ae12f75cd4a54771cfd1ec06c29fa58b3e2753",
+    "notes/math/modern-algebra/homeworks/hw01-integers-and-equivalence.typ": "e035a8e947e71613ebb00f3016edf35bdb5b0f0b8f51e27eab81675cb6b0123e",
+    "notes/math/modern-algebra/homeworks/hw02-rings-and-polynomials.typ": "582e4f3f95cd465a536b86623ab6c52efb57f3839a4138a8f89cbb5557eadba3",
+    "notes/math/modern-algebra/homeworks/hw03-groups.typ": "6edc23061f0e9842718818696890bed4a2d78716a286a18534eaf1f596c423f1",
+    "notes/math/modern-algebra/homeworks/hw04-subgroups-and-cosets.typ": "c3e32c71b01683d8edeea1c0a1f19a344b869c7b209c0c3909ff73b0232d768e",
+    "notes/math/modern-algebra/homeworks/hw05-group-actions-and-homomorphisms.typ": "113040ea44615642f82957905f184d01de5be71c3a17d9061e7de61b9006a7da",
+    "notes/math/modern-algebra/homeworks/hw06-quotient-groups.typ": "c1544a24c41a78abcf526cf446df45ce5f16158cb00ce7e45dc1ad626e35554d",
+    "notes/math/modern-algebra/homeworks/hw07-isomorphism-theorems.typ": "ef85d95873add77590cd69a9297be215d32e15c7aa98d98e9e55b7528be284b5",
+    "notes/math/modern-algebra/homeworks/hw08-rings-and-ideals.typ": "616eb1ea2f8aa6ee0c4ca9ce65f5f938616792b29fc59510bc6130ceaadc3080",
+    "notes/math/modern-algebra/homeworks/hw09-quotient-rings.typ": "b7cb519f2141d69082b8da349599ebf3dc3b16fc7fa297609ced503c9d0fe659",
+    "notes/math/modern-algebra/homeworks/hw10-final-topics.typ": "a761e5e1a1ea60ef8653b046518d112b8b08f0d62958fffe3374f8a87f827c6d",
+    "notes/math/modern-algebra/main.typ": "7677d6220e3fbedf051a6b10d90cc66a3aac99d5995e04e0957a131c1b388418",
+    "notes/math/multivariate-analysis/chapters/01-metric-spaces-and-compactness.typ": "40866e0afa06fc9a17780397c1abc767d576191f04bdd7dd05fd0754d845dffe",
+    "notes/math/multivariate-analysis/chapters/02-multivariable-differentiation.typ": "16d73f6cc679df2ed99afa216cfe39f4dac66e120281d14b2c864e72b8222818",
+    "notes/math/multivariate-analysis/chapters/03-implicit-and-inverse-functions.typ": "147eaa1f3ed40774788d13b24a65b1aef592c5521467a8bbd3de808c6dd7efed",
+    "notes/math/multivariate-analysis/chapters/04-partitions-and-lebesgue-characterization.typ": "2f2b5053c9d29aacc92df5e1f208216564416f3b9d7cb59cb165487d9ed61e7b",
+    "notes/math/multivariate-analysis/chapters/05-integration-and-change-of-variables.typ": "c31d0f0fb718e7aac93f13f95ef9c72dc1aac3c95bcdc386bc7829e89cd30aa9",
+    "notes/math/multivariate-analysis/chapters/06-ibl-baire-to-jordan-measure.typ": "37026d0a734ba00b27b6a6cea2fe7927f391584e4e0a36a7a78f819ed46ae69b",
+    "notes/math/multivariate-analysis/chapters/07-ibl-lebesgue-outer-measure.typ": "272445032df15f024362ee87394cf4c7cd39a66648b49af63ae4c64c75f7304c",
+    "notes/math/multivariate-analysis/chapters/08-ibl-measurability-regularity-and-additivity.typ": "5c267e5bb41fbfc3f2090bdd0174d2e2f794999164ffada9679df2aeee293c8d",
+    "notes/math/multivariate-analysis/chapters/09-ibl-limits-and-carathéodory.typ": "0f677f366ffd3390af521106741641dac277bc41827a3c7024764822d52eaf1b",
+    "notes/math/multivariate-analysis/homeworks.typ": "277830c26795de5572c6dea9d2414244c887a39468c831121a4ae53f3b428fbd",
+    "notes/math/multivariate-analysis/homeworks/hw01.typ": "56724378cbad8364cc687662bcd9f8aebe762d5ac8cf55365bf8e38717168c4e",
+    "notes/math/multivariate-analysis/homeworks/hw02.typ": "2488b5d2eb4abe65e0602fb1ddc74e9b23e085905901fcd91fdcf5c5aa417179",
+    "notes/math/multivariate-analysis/homeworks/hw03.typ": "84291d482be079add4ce46635c207b61c0c2396bf287a39208904586f5a38e52",
+    "notes/math/multivariate-analysis/homeworks/hw04.typ": "3e8d67a0261f188f0e2ab07c1e46baa4280fd36ee07a0f0ab9fe6b2fdfa3c5b7",
+    "notes/math/multivariate-analysis/homeworks/hw05.typ": "3a0e20a86d4b3a95e12f938f60bc87ce591fefae62ed2236f0b472105aa84372",
+    "notes/math/multivariate-analysis/homeworks/hw07.typ": "41fc785f5dde3a3af61dd65c8d918e05e5c74a00b9c19728a43fd6c22349ab9d",
+    "notes/math/multivariate-analysis/homeworks/hw08.typ": "ad91ef599d32499a3e4b2a6b13d98d03f991e5dbc4158a48077d2a085a57343d",
+    "notes/math/multivariate-analysis/homeworks/hw09.typ": "b890ebd9e752f40d5bcb591aa7a32f0bbd1b443d05863fdcd2bbfb7397553299",
+    "notes/math/multivariate-analysis/homeworks/hw10.typ": "2d6cce553f36f98d231874c24501e109650ede264f1dcb2ef467a1b677a79d92",
+    "notes/math/multivariate-analysis/homeworks/hw12.typ": "7b03b9699b8f0af9250f3d7f88f7ff740aee9ede1549f795322cf17a4b85e40d",
+    "notes/math/multivariate-analysis/homeworks/hw13.typ": "2eb8886fe6de0f3c8983ed993c5fc52c1013cbff39eb652298fedde8ee5307db",
+    "notes/math/multivariate-analysis/homeworks/hw14.typ": "9da059d0eab42c251f6c409d73c02a485f75dfa2a5d7c3547f801467c1455121",
+    "notes/math/multivariate-analysis/homeworks/hw15.typ": "2a2744178c305fbd43adcbfedc34be291a16f4576599fd165fe3e335950640f2",
+    "notes/math/multivariate-analysis/main.typ": "9eaaa85c9fab2d66c5162206378118ea6ef61556b02dc49a3afe00aafb06e874",
+    "notes/math/numerical-linear-algebra/chapters/01-tensor-products-and-matrix-multiplication.typ": "03dc62607c8b1b8015fb7542eb1c211abc3b28a235ff76d233125fa11debab97",
+    "notes/math/numerical-linear-algebra/chapters/02-orthogonal-vectors-and-matrices.typ": "6077eb579e2e267dbd606fa7e3c52d6dee27f84036a5021b171c2bb72a54fd2c",
+    "notes/math/numerical-linear-algebra/chapters/03-norms.typ": "c2325f62c8f6dc193ecda8e6d74e144a20789f3135c40313822d23d6802daa7b",
+    "notes/math/numerical-linear-algebra/chapters/04-svd.typ": "597b561bb71646160610fc9a65c8071ff0cd1b4a418f46ce50d27f038b0c83de",
+    "notes/math/numerical-linear-algebra/chapters/05-qr-factorization.typ": "7e999d042de59a6fbf13b1686c5483da3e14e64cef90d1111f94cb6776ad496f",
+    "notes/math/numerical-linear-algebra/chapters/06-discrete-fourier-transform.typ": "f2746b039887a7682ab45d0712b48219059e554ddd34205151398e8300b2330f",
+    "notes/math/numerical-linear-algebra/chapters/07-conditioning-and-stability.typ": "0af313f0391300729fe425bd5760a19d441d573e001492847a88ec43684dcf0b",
+    "notes/math/numerical-linear-algebra/chapters/08-backward-error-analysis.typ": "b6cf2f81aa847efd86ff69efe658ff5e7f0553b1236e2b0e36b4c8f2764d8791",
+    "notes/math/numerical-linear-algebra/main.typ": "420782f7ca3d9b1c2858945daeac044b1dd1aa37f761f40d988a8604b0b0dc54",
+    "notes/math/point-set-topology/chapters/01-introduction.typ": "8d1060e04c769e26767684f35351351d66315484f645920aafd0f4ae74062ddf",
+    "notes/math/point-set-topology/main.typ": "20b09d9dbda256d67db69072588e0defeda414c0c56920245ff91a5d1a887f78",
+    "notes/math/prob/chapters/01-combinatorics&prob_space.typ": "2b065b40bdde094e9d56eb430487104ef88b6f8b8c4b65d08654e3da312d2c93",
+    "notes/math/prob/chapters/02-random-variables.typ": "2eb5b3d050af0834cbbc78e16090dfdb11181d220b676c0f93e1b2c5ea89c15d",
+    "notes/math/prob/chapters/03-joint&conditional-distribution.typ": "d7f47fa5ac33e68543baeb615f1d624e3f1e85723d318c45bcde4b0f1ffcbf54",
+    "notes/math/prob/chapters/04-LLN.typ": "48b886f769d7b817b225a98d3a2d10e8ec073a2e664c9471f717ace47cdb3931",
+    "notes/math/prob/chapters/05-CLT.typ": "dbe8dff001f19d4239cfab2403b849136411736a06d20baf72faac25af3962ce",
+    "notes/math/prob/homeworks.typ": "afd29a23d0793016a219fdd2e2c216c79bc853a2db176ff7cadf161f46474845",
+    "notes/math/prob/homeworks/hw01.typ": "2ab64e15dc39409cd91bea4a6616f9e6902025fdb420e7f67146ec7ab80ac848",
+    "notes/math/prob/homeworks/hw02.typ": "26786530bee3fb0effac934c698da60448f6c16ecae770b46e248c55fc946ed4",
+    "notes/math/prob/homeworks/hw03.typ": "653b07f3df98496ae1de733c1a6d9fc383d500049e63656b81b5b5934a688a83",
+    "notes/math/prob/homeworks/hw04.typ": "646ee9e152654ea3fd480cc67a942ed6f97124e39bf85184e7e05c3d05e821e8",
+    "notes/math/prob/homeworks/hw05.typ": "ad41fb90e81966ec24edd8ece581634b7fd071e5e43ab46f1a4211fb46ea2fab",
+    "notes/math/prob/homeworks/hw06.typ": "199f72b96afa615c50fd485692bdfd499e6929870729e8db73903c3cee30dfd5",
+    "notes/math/prob/main.typ": "49c2e69c915c2641146e03e9355f018eb75949629d46184588bff0b7c2f804d6",
+    "notes/math/single-and-multivariate-mathematical-analysis/chapters/01-introduction.typ": "932de89d2d57681a274fcb3ae3008fe107370cbc43b1504dfdf24272710a36ba",
+    "notes/math/single-and-multivariate-mathematical-analysis/main.typ": "357f9977546df26f565af8d2ae52c0f84cd4eececbd8dab2c39176b9067884ab"
+  },
+  "statuses": {
+    "active": 316,
+    "meta": 30
+  }
+}

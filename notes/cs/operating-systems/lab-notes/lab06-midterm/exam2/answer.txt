@@ -1,0 +1,115 @@
+
+-----------------------------p2--------------------------------
+mutex m;
+bool occupied = false;
+priority_queue<unsigned int> pq;
+map<unsigned int, cv*> waiters;
+
+void enter_intersection(unsigned int priority) {
+	m.lock();
+
+	// enqueue
+	pq.push(priority);
+	// if we did not see this priority before, create a new cv
+	if (!waiters.contains(priority)) {
+		waiters[priority] = new cv;
+	}
+
+	// wait until our turn to go to intersection
+	while (occupied || pq.top()!= priority) {
+		waiters[priority].wait(m);
+	}
+	// now it's the turn
+	occupied = true;
+	pq.pop();
+
+	m.unlock();
+}
+
+
+
+void leave_intersection() {
+	m.lock():
+
+	// now we left, 
+	occupied = false;
+	if (!pq.empty()) {
+		// signal the cv of the current top priority in the pq
+		waiters[pq.top()].signal();
+	}
+
+	m.unlock():
+}
+
+-----------------------------p3b--------------------------------
+3a 的回答就是: reuse 已经结束运行的 threads 的 context
+
+
+
+struct work_args {
+	thread_startfunc_t func;
+	uintptr_t arg;
+}
+
+
+queue<ucontext_t *> workers;
+queue<work_args> work;
+
+
+
+void wrapper_func() {
+	while(true) {
+		// get func, arg from work queue
+		auto w = work.front();
+		work.pop();
+
+		// execute user function
+		cpu::interrupt_enable();
+		func(arg);
+		cpu::interrupt_disable();
+
+		// finish execution: 我们 push 当前 worker (context) 让它 available
+		// 同时切换 context
+		workers.push(current);
+		ucontext_t * prev = current;
+		current = ready.front();
+		ready.pop();
+		swapcontext(prev, current)
+	}	
+	
+}
+
+
+
+
+// 创造一个 work. 以及, 如果没有空闲的 worker 那么也创造一个 worker
+thread::thread(thread_startfunc_t func, uintptr_t arg) {
+	cpu::interrupt_disable();
+
+	work.push((work_args)(func, arg));
+
+	if (workers.empty) { //this means that 
+		ucontext_t * ctxptr = new ucontext_t;
+		ctxptr->uc_stack.ss_ptr = new char[STACK_SIZE]; 
+		ctxptr->uc_stack.ss_size = STACK_SIZE;
+		ctxptr->uc_stack.ss_flags = 0;
+		ctxptr->uc_link = nullptr;
+		makecontext(ctxptr, wrapper_func, 0);
+		workers.push(ctxptr);
+	}
+
+	cpu::interrupt_enable();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+{
+  "folders": [
+    { "name": "Math Notes", "path": ".." }
+  ],
+  "settings": {
+    "tinymist.typstExtraArgs": ["mathematical-analysis/main.typ"]
+  }
+}

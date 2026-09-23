@@ -1,0 +1,146 @@
+
+
+
+
+-------------------------------P2--------------------------------
+int account_balance;
+mutex m;
+cv waiting_organizer;
+
+int ground_break = 0;
+// why is this an int not bool?
+// Because: what if we break ground several times while drilling
+
+void donor(unsigned int gift_amount) {
+	m.lock();
+	account_balance += gift_amount;
+	m.unlock();
+}
+
+
+
+
+void organizer() {
+	m.lock();
+	while (true) {
+		while (account_balance < 25000) {
+			waiting_organizer.wait(m);
+		}
+		account_balance -= 25000;
+
+		m.unlock();
+
+
+		break_ground();
+
+		m.lock();
+		ground_broken = true;
+		waiting_drillers.signal();
+	}
+	m.unlock();
+}
+
+
+
+
+void driller() {
+	while(true) {
+		m.lock();
+		while (!ground_broken) {
+			waiting_drillers.wait();
+		}
+
+		ground_broken--;
+		m.unlock();
+		drill_well();
+	}
+}
+
+
+-------------------------------P3--------------------------------
+
+
+class room {
+	//...
+	unsigned int max;
+	set<ucontext_t *> in_room;
+	queue<ucontext_t *> waiters;
+
+
+}
+
+room::room(unsigned int max_in) {
+	max = max_in;
+}
+
+void room:enter() {
+	cpu::interrupt_disabled();
+
+	// add the thread to waiting, if 
+	// thread not in the room and room is full
+	if (!in_room.contains(current) && waiters.size() == max) {
+		waiters.push(current);
+		auto prev = current;
+		current = ready.front();
+		ready.pop();
+		swapcontext(prev, current);
+	} else {
+		// otherwise just insert (it is okay if already exists, it does not change it)
+		in_room.insert(current);
+	}
+
+	cpu::interrupt_enabled();
+}
+
+void room::exit() {
+	cpu::interrupt_disabled();
+
+	in_room.erase(current);
+	if (in_room.size() < max && !waiter.empty()) {
+		in_room.insert(waiter.front());
+		ready.push(waiters.front());
+		waiters.pop()
+	}
+	cpu::interrupt_enabled();
+}
+
+
+
+
+
+-------------------------------P4--------------------------------
+
+non-FIFO:
+A has lock
+A has lock again
+B has lock
+
+FIFO:
+A has lock
+B has lock
+A has lock again
+
+
+void A () {
+	m.lock();
+	cout << "A has lock";
+	thread::yield();
+	m.unlock();
+
+	m.lock();
+	cout << "A has lock again";
+	m.unlock();
+}
+
+
+
+
+void B() {
+	m.lock();
+	cout << "B got lock";
+}
+
+
+A yield -> B 开始运行 -> B 被堵塞, 进入 lock 的 wait queue
+-> 回到 A, A unlock (signal 了 B), 这个时候 B 在 ready queue, 但是
+下面还是 A get lock.

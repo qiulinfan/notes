@@ -1,0 +1,7 @@
+model_verbosity = "medium"
+[mcp_servers.kgdistiller]
+command = "kgdistiller"
+args = ["--repo-root", ".", "mcp"]
+cwd = "."
+required = false
+startup_timeout_sec = 20

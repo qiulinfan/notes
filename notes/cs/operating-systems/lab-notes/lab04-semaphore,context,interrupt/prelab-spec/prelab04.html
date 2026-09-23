@@ -1,0 +1,165 @@
+
+<!-- saved from url=(0045)https://os.eecs.umich.edu/lab/semaphores.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://umich.edu/favicon.ico" rel="shortcut icon">
+   <style class="anchorjs"></style><link rel="stylesheet" href="./prelab04_files/primer-spec-base.css">
+   <link rel="preload" href="./prelab04_files/primer_spec_plugin.min.js" as="script" crossorigin="">
+	<title>Semaphores</title>
+	<script src="./prelab04_files/primer_spec_plugin.min.js" crossorigin="anonymous"></script><!-- These should be included at the beginning of the <head> tag. -->
+<link rel="stylesheet" href="./prelab04_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="./prelab04_files/primer-spec-base.css">
+<link rel="stylesheet" id="primer-spec-subtheme-style" href="./prelab04_files/theme_default.css">
+	<script type="text/javascript">
+		function showHide(id) {
+			var e = document.getElementById(id);
+			e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+		}
+	</script>
+<!-- These should be included at the beginning of the <head> tag. -->
+<link rel="stylesheet" href="./prelab04_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="./prelab04_files/primer-spec-base.css">
+<link rel="stylesheet" id="primer-spec-subtheme-style" href="./prelab04_files/theme_default.css"></head>
+
+<body><div id="primer-spec-top"></div>
+<!-- Custom sidebar with a table of content -->
+<!-- 
+    The explicit onClick handler is needed to force Safari (iOS) to propagate
+    click events for the sidebar.
+-->
+<div class="primer-spec-sidebar position-fixed top-0 py-5 no-print" onclick="return true;">
+    <h2 class="primer-spec-toc-ignore" id="contents">
+        Contents
+        <!-- Show/Hide Sidebar button -->
+        <span class="primer-spec-hoverable">
+            <a href="https://os.eecs.umich.edu/lab/semaphores.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-hoverable sidebar-shown no-print">
+                <i class="fas fa-bars"></i>
+            </a>
+        </span>
+    </h2>
+    <br>
+    <div id="primer-spec-toc"><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h1"><a href="https://os.eecs.umich.edu/lab/semaphores.html#semaphores">
+	Semaphores
+</a></div><div class="primer-spec-toc-section"><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/semaphores.html#pre-lab-1-ping-pong-with-semaphores">
+	[pre-lab] 1. Ping pong with semaphores
+</a></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/semaphores.html#pre-lab-2-barrier-synchronization-with-semaphores">
+	[pre-lab] 2. Barrier synchronization with semaphores
+</a></div><div class="primer-spec-toc-section"></div></div></div>
+</div> <!-- .primer-spec-sidebar -->
+
+<div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+    <!-- Show/Hide Sidebar button -->
+    <a href="https://os.eecs.umich.edu/lab/semaphores.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-sidebar-toggle-fixed primer-spec-hoverable primer-spec-float-left sidebar-shown no-print">
+        <i class="fas fa-bars"></i>
+    </a>
+    <!-- Show Settings button -->
+    </div>
+
+<!--
+    Settings modal. Treat it exactly like the actual content, but its
+    position on the page is fixed.
+    It should be displayed when the "settings" icon is clicked.
+-->
+<div class="primer-spec-settings container-lg markdown-body primer-spec-content-margin-extra px-3 py-5 position-fixed top-0 left-0">
+    <div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+        <!-- Hide Settings button -->
+        <a href="https://os.eecs.umich.edu/lab/semaphores.html#primer-spec-top" class="primer-spec-settings-toggle primer-spec-hoverable primer-spec-float-right no-print">
+            <i class="fas fa-times"></i>
+        </a>
+    </div>
+
+    <h1 class="primer-spec-toc-ignore">Spec Theme Settings</h1>
+    <p>Choose your theme!</p>
+    <select class="primer-spec-subtheme-selector">
+    <option value="default">default</option><option value="bella">bella</option><option value="modern">modern</option><option value="xcode-dark">xcode-dark</option></select>
+
+    <hr>
+
+    <p><small>
+        Does the spec display incorrectly? <a href="https://github.com/eecs485staff/primer-spec/issues">Let us know by adding a new "issue" here.</a>
+    </small></p>
+
+    <p class="primer-spec-brand">
+        <a href="https://github.com/eecs485staff/primer-spec/" target="_blank">
+            Primer Spec v1.1.0
+        </a>
+    </p>
+
+</div>
+<div id="primer-spec-plugin-main-content" onclick="return true;" class="container-lg px-3 my-5 markdown-body primer-spec-content-margin-extra">
+
+<h1 id="semaphores">
+	Semaphores
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/semaphores.html#semaphores" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h1>
+
+<p>
+Please work out the pre-lab problems before your next lab section.  The
+GSI/IAs will go over these problems during the lab section.
+</p>
+
+<p>
+Implement your solutions using the semaphores that are provided by the
+<a href="https://os.eecs.umich.edu/project1/">Project 1</a>
+thread library.
+</p>
+
+<h3 id="pre-lab-1-ping-pong-with-semaphores">
+	[pre-lab] 1. Ping pong with semaphores
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/semaphores.html#pre-lab-1-ping-pong-with-semaphores" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+Redo the ping pong problem from the previous lab using semaphores.
+
+<!--
+<h3>
+	[pre-lab] 1. Luxury box with semaphores
+</h3>
+
+<p>
+Redo the luxury box problem from the previous lab using semaphores.
+To ensure some fairness and prevent starvation, your solution shall use
+the following policy. If PAC 12 (BIG 10) fans are in the luxury box, then newly
+arriving PAC 12 (BIG 10) fans can keep going in as long as BIG 10 (PAC 12) fans are not
+waiting; else new arrivals must wait. When all PAC 12 (BIG 10) fans leave the luxury box,
+all waiting BIG 10 (PAC 12) fans are admitted. Write the following procedures:
+</p>
+
+<ul>
+	<li><tt>pac12_enters()</tt></li>
+	<li><tt>big10_enters()</tt></li>
+	<li><tt>pac12_leaves()</tt></li>
+	<li><tt>big10_leaves()</tt></li>
+</ul>
+-->
+
+</p><h3 id="pre-lab-2-barrier-synchronization-with-semaphores">
+	[pre-lab] 2. Barrier synchronization with semaphores
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/semaphores.html#pre-lab-2-barrier-synchronization-with-semaphores" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+Some applications are divided into phases and have a rule that no process
+may proceed into the next phase until all processes are ready to proceed
+to the next phase.
+</p>
+
+<p>
+A running race is to take place.  There are N runners and one official starter
+of the race.  The starter waits until all of the runners arrive at the starting line.
+Once all the runners have arrived, the starter releases all the runners to start
+the race.  Write the following procedures using semaphores to simulate
+this situation:
+</p>
+
+<ul>
+	<li><tt>starter()</tt></li>
+	<li><tt>runner()</tt></li>
+</ul>
+</div>
+
+<script src="./prelab04_files/primer_spec_plugin.min.js" crossorigin="anonymous">
+</script>
+
+
+
+</body></html>

@@ -1,0 +1,8 @@
+/.gitattributes text eol=lf
+*.sh text eol=lf
+
+# Keep the adopted text bundle byte-stable for review even though its portable
+# verifier canonicalizes CRLF/CR to LF before checking hashes and byte counts.
+/knowledge/export/site/*.json text eol=lf
+/knowledge/export/site/*.py text eol=lf
+/knowledge/export/site/*.typ text eol=lf

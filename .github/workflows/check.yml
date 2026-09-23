@@ -1,0 +1,44 @@
+name: Check notes and rebuild the homepage
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Read the Typst pin
+        id: typst
+        run: echo "version=$(make -s typst-version)" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Typst
+        uses: typst-community/setup-typst@v5
+        with:
+          typst-version: ${{ steps.typst.outputs.version }}
+
+      - name: Check the knowledge export, source policy, and published web pages
+        run: make check
+
+  rebuild-homepage:
+    needs: check
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger the homepage Pages build
+        env:
+          GH_TOKEN: ${{ secrets.HOMEPAGE_DISPATCH_TOKEN }}
+        run: gh workflow run pages.yml --repo qiulinfan/qiulinfan.github.io

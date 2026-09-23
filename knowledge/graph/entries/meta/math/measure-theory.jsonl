@@ -1,0 +1,13 @@
+{"id":"differentiation-of-integrals","text":"以 Hardy–Littlewood maximal function 为工具，发展 Lebesgue differentiation theorem 及积分的微分性质。"}
+{"id":"duality-of-lp-spaces","text":"从 bounded linear functionals 与 dual spaces 出发，研究 conjugate exponents 下 Lᵖ spaces 的 duality。"}
+{"id":"functions-of-bounded-variation","text":"研究 bounded variation functions、normalized bounded variation、相关 measures 与 Lebesgue decomposition。"}
+{"id":"lebesgue-integration-and-convergence","text":"从 real/complex-valued integrable functions 出发，研究 Lebesgue integral、dominated convergence 与 L¹ convergence。"}
+{"id":"lebesgue-measure-on-euclidean-space","text":"研究 Euclidean space 上 Lebesgue measure 的 translation、linear change of variables 与极坐标结构。"}
+{"id":"lebesgue-stieltjes-measures","text":"连接 distribution functions、Lebesgue–Stieltjes measures、regularity 与 Lebesgue measure。"}
+{"id":"lp-spaces-and-inequalities","text":"建立 semi-norm、norm 与 Lᵖ spaces，研究 Hölder/Minkowski inequalities、completeness 与 density。"}
+{"id":"measurable-functions-and-nonnegative-integration","text":"建立 measurable functions、simple functions 与非负积分，并发展 monotone convergence 与 Fatou lemma。"}
+{"id":"measurable-spaces-and-measures","text":"从 algebra of sets 与 σ-algebra 出发，建立 measurable space、measure space、measure 及其基本性质。"}
+{"id":"outer-measure-and-extension","text":"研究 null sets 与 completion，并通过 outer measure、Carathéodory theorem 和 Hahn–Kolmogorov theorem 从 premeasure 构造 measure。"}
+{"id":"product-measures-and-fubini-tonelli","text":"建立 product σ-algebra 与 product measure，并用 Tonelli/Fubini 定理交换多重积分。"}
+{"id":"radon-nikodym-theory","text":"研究 measures 之间的 absolute continuity、Radon–Nikodym derivative 及 Lebesgue–Radon–Nikodym decomposition。"}
+{"id":"signed-measures","text":"建立 signed measure、positive/negative sets、Hahn decomposition、Jordan decomposition 与 total variation。"}

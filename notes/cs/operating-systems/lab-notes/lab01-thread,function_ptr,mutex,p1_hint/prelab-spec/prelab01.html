@@ -1,0 +1,272 @@
+
+<!-- saved from url=(0042)https://os.eecs.umich.edu/lab/threads.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://umich.edu/favicon.ico" rel="shortcut icon">
+   <style class="anchorjs"></style><link rel="stylesheet" href="./prelab01_files/primer-spec-base.css">
+   <link rel="preload" href="./prelab01_files/primer_spec_plugin.min.js" as="script" crossorigin="">
+	<title>
+		Threads and race conditions
+	</title>
+<!-- These should be included at the beginning of the <head> tag. -->
+<link rel="stylesheet" href="./prelab01_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="./prelab01_files/primer-spec-base.css">
+<link rel="stylesheet" id="primer-spec-subtheme-style" href="./prelab01_files/theme_default.css"></head>
+
+<body><div id="primer-spec-top"></div>
+<!-- Custom sidebar with a table of content -->
+<!-- 
+    The explicit onClick handler is needed to force Safari (iOS) to propagate
+    click events for the sidebar.
+-->
+<div class="primer-spec-sidebar position-fixed top-0 py-5 no-print" onclick="return true;" style="display: inherit;">
+    <h2 class="primer-spec-toc-ignore" id="contents">
+        Contents
+        <!-- Show/Hide Sidebar button -->
+        <span class="primer-spec-hoverable">
+            <a href="https://os.eecs.umich.edu/lab/threads.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-hoverable no-print sidebar-shown">
+                <i class="fas fa-bars"></i>
+            </a>
+        </span>
+    </h2>
+    <br>
+    <div id="primer-spec-toc"><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h1"><a href="https://os.eecs.umich.edu/lab/threads.html#threads-and-race-conditions">
+	Threads and race conditions
+</a></div><div class="primer-spec-toc-section"><div class="primer-spec-toc-item primer-spec-toc-h2 primer-spec-toc-active"><a href="https://os.eecs.umich.edu/lab/threads.html#pre-lab-and-in-lab-threads-and-races">
+	[pre-lab and in-lab] Threads and races
+</a></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h2"><a href="https://os.eecs.umich.edu/lab/threads.html#pre-lab-implementing-mutual-exclusion-with-atomic-load-and-atom">
+	[pre-lab] Implementing mutual exclusion with atomic load and atomic store
+</a></div><div class="primer-spec-toc-section"><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/threads.html#thread-0">
+	Thread 0
+</a></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/threads.html#thread-1">
+	Thread 1
+</a></div><div class="primer-spec-toc-section"></div></div></div></div>
+</div> <!-- .primer-spec-sidebar -->
+
+<div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+    <!-- Show/Hide Sidebar button -->
+    <a href="https://os.eecs.umich.edu/lab/threads.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-sidebar-toggle-fixed primer-spec-hoverable primer-spec-float-left no-print sidebar-shown">
+        <i class="fas fa-bars"></i>
+    </a>
+    <!-- Show Settings button -->
+    </div>
+
+<!--
+    Settings modal. Treat it exactly like the actual content, but its
+    position on the page is fixed.
+    It should be displayed when the "settings" icon is clicked.
+-->
+<div class="primer-spec-settings container-lg markdown-body px-3 py-5 position-fixed top-0 left-0 primer-spec-content-margin-extra">
+    <div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+        <!-- Hide Settings button -->
+        <a href="https://os.eecs.umich.edu/lab/threads.html#primer-spec-top" class="primer-spec-settings-toggle primer-spec-hoverable primer-spec-float-right no-print">
+            <i class="fas fa-times"></i>
+        </a>
+    </div>
+
+    <h1 class="primer-spec-toc-ignore">Spec Theme Settings</h1>
+    <p>Choose your theme!</p>
+    <select class="primer-spec-subtheme-selector">
+    <option value="default">default</option><option value="bella">bella</option><option value="modern">modern</option><option value="xcode-dark">xcode-dark</option></select>
+
+    <hr>
+
+    <p><small>
+        Does the spec display incorrectly? <a href="https://github.com/eecs485staff/primer-spec/issues">Let us know by adding a new "issue" here.</a>
+    </small></p>
+
+    <p class="primer-spec-brand">
+        <a href="https://github.com/eecs485staff/primer-spec/" target="_blank">
+            Primer Spec v1.1.0
+        </a>
+    </p>
+
+</div>
+<div id="primer-spec-plugin-main-content" onclick="return true;" class="container-lg px-3 my-5 markdown-body primer-spec-content-margin-extra">
+
+<h1 id="threads-and-race-conditions">
+	Threads and race conditions
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/threads.html#threads-and-race-conditions" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h1>
+
+<p>
+Please work out the pre-lab problems before your next lab section.  The
+GSI/IAs will go over these problems during the lab section.
+</p>
+
+<h2 id="pre-lab-and-in-lab-threads-and-races">
+	[pre-lab and in-lab] Threads and races
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/threads.html#pre-lab-and-in-lab-threads-and-races" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>
+Consider the following program, which uses <a href="https://os.eecs.umich.edu/project1">Project 1</a>
+threads.
+</p>
+
+<pre>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include "cpu.h"
+#include "thread.h"
+#include "mutex.h"
+
+const int NUM_THREADS = 2;
+const int NUM_ITER = 100000;
+
+int counter = 0;
+mutex counter_mutex;
+
+void child(uintptr_t arg)
+{
+    for (int i=0; i &lt; NUM_ITER; i++) {
+        // counter_mutex.lock();
+        counter++;
+        // counter_mutex.unlock();
+    }
+}
+
+void parent(uintptr_t arg)
+{
+    std::vector&lt;thread&gt; threads;
+
+    for (int i = 0; i &lt; NUM_THREADS; i++) {
+        threads.push_back(thread(child, 0));
+    }
+
+    for (auto &amp;t : threads) {
+        t.join();
+    }
+
+    std::cout &lt;&lt; "counter = " &lt;&lt; counter &lt;&lt; std::endl;
+}
+
+int main()
+{
+    cpu::boot(parent, 0, 0);
+}
+</pre>
+
+<ol>
+<li>
+[pre-lab] Assume that assignment and addition (but not increment) are
+atomic.  Determine the lower and upper bounds for the final value of the
+shared variable <tt>counter</tt>, and show thread interleavings that
+generate these lower and upper bounds.
+</li>
+</ol>
+
+<ol start="2">
+<li>
+[in-lab] Compile the program (<tt>g++ -std=c++20 -ldl -pthread race.cpp -o race libthread.o</tt>),
+then use a scripting language (e.g., bash, python, perl, etc.) to run it 100
+times and summarize the results.  What are the smallest and largest value
+seen in your lab section?  Do results vary by computer?
+</li>
+
+<!--
+<li-->
+[in-lab] Change the program to use NUM_THREADS=5 and
+NUM_ITER=1000000, and run it a few times.  What range of answers do you
+see?  How often does it produce the answer that a naive programmer might
+expect?
+&gt;
+
+<li>
+[in-lab] Uncomment the lines that use a <tt>mutex</tt> to protect the
+increment of <tt>counter</tt>, then re-run the program.
+</li>
+</ol>
+
+<!--
+	<h3>Threads, processes, and address spaces.</h3>
+
+	<p>
+	This section is to be done pre-lab.
+	</p>
+
+	<p>
+	A. How can threads within a process share information?  How can one thread
+	protect its information from another thread?
+	</p>
+
+	<p>
+	B. How can threads in different processes share information?  Can thread in
+	one process protect its information from a thread in a different process?
+	</p>
+-->
+
+<h2 id="pre-lab-implementing-mutual-exclusion-with-atomic-load-and-atom">
+	[pre-lab] Implementing mutual exclusion with atomic load and atomic store
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/threads.html#pre-lab-implementing-mutual-exclusion-with-atomic-load-and-atom" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>
+Consider the following pseudo-code, which attempts to provide mutual
+exclusion for a critical section using only atomic load and store operations.
+</p>
+
+<pre>/* Global variables */
+bool active[2] = {false, false};
+int turn = 0;
+</pre>
+
+<h3 id="thread-0">
+	Thread 0
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/threads.html#thread-0" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<pre>while (true) {
+    active[0] = true;
+
+    while (turn != 0) {
+	while (active[1]) {}
+	turn = 0;
+    }
+    &lt;critical section&gt;
+    active[0] = false;
+
+    &lt;do other stuff&gt;
+}
+</pre>
+
+<h3 id="thread-1">
+	Thread 1
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/threads.html#thread-1" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<pre>while (true) {
+    active[1] = true;
+
+    while (turn != 1) {
+	while (active[0]) {}
+	turn = 1;
+    }
+
+    &lt;critical section&gt;
+    active[1] = false;
+
+    &lt;do other stuff&gt;
+}
+</pre>
+
+<p>
+Is this a correct solution? If yes, prove it.  If not, provide a
+counter-example, i.e., an interleaving of threads that allow the two
+threads to simultaneously access their critical sections.
+</p>
+
+<!--
+	<h3>
+		[pre-lab] 3. Using mutexes and condition variables
+	</h3>
+
+	<p>
+	Using the
+	<a href="../project1/">Project 1</a>
+	thread library, write a program that creates two threads (ping and pong).
+	ping should print "ping" 5 times, and pong should print "pong" 5 times.
+	Use a mutex, a condition variable, and a shared variable to ensure that the
+	two threads alternate printing.
+-->
+
+</div>
+<script src="./prelab01_files/primer_spec_plugin.min.js" crossorigin="anonymous"></script>
+
+
+</body></html>

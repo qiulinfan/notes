@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd -P)
+
+if command -v python3 >/dev/null 2>&1; then
+	exec python3 "$repo_root/scripts/knowledge-pre-push.py"
+fi
+
+if command -v py >/dev/null 2>&1; then
+	exec py -3 "$repo_root/scripts/knowledge-pre-push.py"
+fi
+
+echo "knowledge pre-push: Python 3 is required." >&2
+exit 1

@@ -1,0 +1,5 @@
+{"id":"central-limit-theorems","text":"研究 moment generating functions、De Moivre–Laplace、Lindeberg–Lévy CLT 与 Berry–Esseen error bounds。"}
+{"id":"joint-and-conditional-distributions","text":"建立 random vectors、joint/marginal distributions、independence、conditional distributions 与 conditional expectation。"}
+{"id":"laws-of-large-numbers","text":"研究 modes of convergence、Markov/Chebyshev inequalities，以及 weak/strong laws of large numbers。"}
+{"id":"probability-spaces-and-combinatorics","text":"从计数原理进入 probability space、events、conditional probability、Bayes theorem 与 event independence。"}
+{"id":"random-variables-and-distributions","text":"研究 random variables 的 measurability、probability distributions、cdf/pmf/pdf、expectation、variance 与常见分布。"}

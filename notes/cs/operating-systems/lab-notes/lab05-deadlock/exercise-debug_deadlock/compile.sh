@@ -1,0 +1,1 @@
+clang++ -std=c++23 -pthread -DDEBUG -o deadlock deadlock.cpp 

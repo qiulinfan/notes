@@ -1,0 +1,1396 @@
+{
+  "schema": "kgdistiller-identities-v1",
+  "identities": [
+    {
+      "id": "a-borel-measure-on-0-infty-times-s-n-1",
+      "canonical_name": "a Borel measure on (0,oo)times S^(n - 1)",
+      "aliases": []
+    },
+    {
+      "id": "a-sum-of-indicator-functions-of-measurable-sets-simple-function",
+      "canonical_name": "使用 a sum of indicator functions of measurable sets 来定义 simple function",
+      "aliases": []
+    },
+    {
+      "id": "absolute-continuity-of-signed-measures",
+      "canonical_name": "absolute continuity of signed measures",
+      "aliases": []
+    },
+    {
+      "id": "absolutely-continuous",
+      "canonical_name": "absolutely continuous 的性质",
+      "aliases": []
+    },
+    {
+      "id": "absolutely-continuous-function",
+      "canonical_name": "absolutely continuous function",
+      "aliases": []
+    },
+    {
+      "id": "absolutely-continuous-function-on-a-cpt-interval",
+      "canonical_name": "absolutely continuous function on a cpt interval",
+      "aliases": []
+    },
+    {
+      "id": "additivity-of-poisson-distribution",
+      "canonical_name": "additivity of Poisson distribution",
+      "aliases": []
+    },
+    {
+      "id": "algebra-of-sets",
+      "canonical_name": "algebra of sets",
+      "aliases": []
+    },
+    {
+      "id": "almost-everywhere",
+      "canonical_name": "almost everywhere",
+      "aliases": []
+    },
+    {
+      "id": "another-criterion-for-banach-space",
+      "canonical_name": "another criterion for Banach space",
+      "aliases": []
+    },
+    {
+      "id": "approximate-an-open-set-by-disjoint-interior-cubes",
+      "canonical_name": "approximate an open set by disjoint interior cubes",
+      "aliases": []
+    },
+    {
+      "id": "approximating-a-nonneg-measurable-function-by-simple-function",
+      "canonical_name": "approximating a nonneg measurable function by simple function",
+      "aliases": []
+    },
+    {
+      "id": "arithmetic-preserves-measurability",
+      "canonical_name": "addition and multiplication preserve measurability",
+      "aliases": []
+    },
+    {
+      "id": "associativity-of-product-measure",
+      "canonical_name": "associativity of product measure",
+      "aliases": []
+    },
+    {
+      "id": "average",
+      "canonical_name": "average",
+      "aliases": []
+    },
+    {
+      "id": "banach-space",
+      "canonical_name": "Banach space",
+      "aliases": []
+    },
+    {
+      "id": "bayes-theorem",
+      "canonical_name": "Bayes theorem",
+      "aliases": []
+    },
+    {
+      "id": "berry-esseen-theorem",
+      "canonical_name": "Berry-Esseen Theorem",
+      "aliases": []
+    },
+    {
+      "id": "binomial-theorem",
+      "canonical_name": "Binomial Theorem",
+      "aliases": []
+    },
+    {
+      "id": "borel-cantelli-lemma",
+      "canonical_name": "Borel--Cantelli Lemma",
+      "aliases": []
+    },
+    {
+      "id": "borel-measurable-random-variables",
+      "canonical_name": "以 Borel measurable 的方式组合起多个 random variables",
+      "aliases": []
+    },
+    {
+      "id": "borel-sigma-algebra-defined-on-a-topological-space",
+      "canonical_name": "Borel σ-algebra defined on a topological space",
+      "aliases": []
+    },
+    {
+      "id": "bounded-linear-functional",
+      "canonical_name": "bounded linear functional",
+      "aliases": []
+    },
+    {
+      "id": "bv-complex-vector-space",
+      "canonical_name": "B V 是一个 complex vector space",
+      "aliases": []
+    },
+    {
+      "id": "bv-or-bv-i",
+      "canonical_name": "哪些函数一定 B V or B V(I)",
+      "aliases": []
+    },
+    {
+      "id": "c-c-x",
+      "canonical_name": "C_c(X)",
+      "aliases": []
+    },
+    {
+      "id": "c-c-x-subset-l-1-mu-dense-linear-subspace",
+      "canonical_name": "C_c(X)subset L^1(mu) 是一个 dense linear subspace",
+      "aliases": []
+    },
+    {
+      "id": "caratheodory-theorem",
+      "canonical_name": "Carathéodory theorem",
+      "aliases": []
+    },
+    {
+      "id": "cauchy-schwarz-inequality",
+      "canonical_name": "Cauchy-Schwarz inequality",
+      "aliases": []
+    },
+    {
+      "id": "cdf-nbv",
+      "canonical_name": "cdf 一定是 N B V 的",
+      "aliases": []
+    },
+    {
+      "id": "centered-l2-hilbert-space-under-covariance",
+      "canonical_name": "L_0^2(Omega,cal(F),bb(P)) 为一个 Hilbert space, with covariance as an inner product",
+      "aliases": []
+    },
+    {
+      "id": "centered-square-integrable-random-variables",
+      "canonical_name": "zero-centered square integrable random variables L_0^2(Omega,cal(F),bb(P))",
+      "aliases": []
+    },
+    {
+      "id": "characteristic-indicator-function",
+      "canonical_name": "characteristic (indicator) function",
+      "aliases": []
+    },
+    {
+      "id": "characterization-for-lipschitz-ctn",
+      "canonical_name": "characterization for Lipschitz ctn",
+      "aliases": []
+    },
+    {
+      "id": "characterization-of-mu-f-perp-m-mu-f-ll-m-for-f-in-nbv",
+      "canonical_name": "characterization of mu_F perp m 和 mu_F lt.double m, for F in N B V",
+      "aliases": []
+    },
+    {
+      "id": "chebyshev-inequality",
+      "canonical_name": "Chebyshev's inequality",
+      "aliases": []
+    },
+    {
+      "id": "combinations",
+      "canonical_name": "combinations",
+      "aliases": []
+    },
+    {
+      "id": "combinations-with-repetition",
+      "canonical_name": "combinations with repetition",
+      "aliases": []
+    },
+    {
+      "id": "complete-fubini-tonelli",
+      "canonical_name": "complete Fubini-Tonelli",
+      "aliases": []
+    },
+    {
+      "id": "complete-measure-space",
+      "canonical_name": "complete measure space",
+      "aliases": []
+    },
+    {
+      "id": "complex-measure",
+      "canonical_name": "complex measure",
+      "aliases": []
+    },
+    {
+      "id": "complex-valued-integrable-function",
+      "canonical_name": "complex-valued integrable function",
+      "aliases": []
+    },
+    {
+      "id": "complex-valued-measurable-functions",
+      "canonical_name": "(complex-valued) measurable functions",
+      "aliases": []
+    },
+    {
+      "id": "composition-preserves-measurability",
+      "canonical_name": "composition preserves measurability",
+      "aliases": []
+    },
+    {
+      "id": "computing-variance",
+      "canonical_name": "computing variance",
+      "aliases": []
+    },
+    {
+      "id": "conditional-distribution",
+      "canonical_name": "conditional distribution",
+      "aliases": []
+    },
+    {
+      "id": "conditional-expectation",
+      "canonical_name": "conditional expectation",
+      "aliases": []
+    },
+    {
+      "id": "conditional-probability",
+      "canonical_name": "conditional probability",
+      "aliases": []
+    },
+    {
+      "id": "conditional-probability-space-and-trace-sigma-algebra",
+      "canonical_name": "conditional probability space",
+      "aliases": [
+        "conditional probability space",
+        "conditional probability space and trace σ-algebra"
+      ]
+    },
+    {
+      "id": "conjugate-exponent-p-q-l-p-l-q-dual-space",
+      "canonical_name": "对于互为 conjugate exponent 的 p,q, L^p 是 L^q 的 dual space",
+      "aliases": []
+    },
+    {
+      "id": "construct-outer-measure-out-of-an-elementary-length-function",
+      "canonical_name": "construct outer measure out of an \"elementary length function\"",
+      "aliases": []
+    },
+    {
+      "id": "continuity-of-signed-measures",
+      "canonical_name": "continuity from below and above for signed measures",
+      "aliases": []
+    },
+    {
+      "id": "continuous-joint-cdf",
+      "canonical_name": "continuous joint cdf",
+      "aliases": []
+    },
+    {
+      "id": "continuous-random-variable",
+      "canonical_name": "continuous random variable",
+      "aliases": []
+    },
+    {
+      "id": "continuous-random-variable-expectation-variance",
+      "canonical_name": "continuous random variable 的 expectation 和 variance",
+      "aliases": []
+    },
+    {
+      "id": "continuous-random-vector-continuous-joint-cdf",
+      "canonical_name": "continuous random vector",
+      "aliases": [
+        "continuous random vector 和 continuous joint cdf"
+      ]
+    },
+    {
+      "id": "convergence-in-distribution",
+      "canonical_name": "convergence in distribution",
+      "aliases": []
+    },
+    {
+      "id": "convergence-in-l-infty-iffuniform-convergence-a-e",
+      "canonical_name": "convergence in L^oo arrow.l.r.doubleuniform convergence a.e.",
+      "aliases": []
+    },
+    {
+      "id": "correlation",
+      "canonical_name": "correlation",
+      "aliases": []
+    },
+    {
+      "id": "covariance",
+      "canonical_name": "covariance",
+      "aliases": []
+    },
+    {
+      "id": "covariance-positive-semidefinite-bilinear-form",
+      "canonical_name": "covariance is a positive-semidefinite symmetric bilinear form",
+      "aliases": []
+    },
+    {
+      "id": "criterion-for-l-p-convergence",
+      "canonical_name": "Criterion for L^p convergence",
+      "aliases": []
+    },
+    {
+      "id": "de-moivre-laplace-theorem",
+      "canonical_name": "De Moivre–Laplace theorem",
+      "aliases": []
+    },
+    {
+      "id": "decomposing-probability-of-intersection-of-events",
+      "canonical_name": "decomposing probability of intersection of events",
+      "aliases": []
+    },
+    {
+      "id": "density-of-a-set-at-a-point",
+      "canonical_name": "density of a set at a point",
+      "aliases": []
+    },
+    {
+      "id": "density-of-compactly-supported-continuous-functions-in-lp",
+      "canonical_name": "C_c^0(bb(R)^n) is dense in L^p(bb(R),m) for 1 lt.eq p < oo",
+      "aliases": []
+    },
+    {
+      "id": "density-of-simple-functions-in-l-1-mu",
+      "canonical_name": "density of simple functions in L^1(mu)",
+      "aliases": []
+    },
+    {
+      "id": "discrete-random-variable",
+      "canonical_name": "discrete random variable",
+      "aliases": []
+    },
+    {
+      "id": "discrete-random-variable-expectation-variance",
+      "canonical_name": "discrete random variable 的 expectation 和 variance",
+      "aliases": []
+    },
+    {
+      "id": "discrete-rv-independence-characterization",
+      "canonical_name": "discrete RV independence 的 characterization",
+      "aliases": []
+    },
+    {
+      "id": "distribution-function",
+      "canonical_name": "distribution function 的性质",
+      "aliases": []
+    },
+    {
+      "id": "distribution-function-cumulative-distribution-function-cdf",
+      "canonical_name": "distribution function (也称 cumulative distribution function, cdf )",
+      "aliases": []
+    },
+    {
+      "id": "distribution-function-f-x-determines-distribution-mathbb-p-x",
+      "canonical_name": "distribution function F_X determines distribution bb(P)^X",
+      "aliases": []
+    },
+    {
+      "id": "distribution-function-is-increasing-and-right-ctn",
+      "canonical_name": "distribution function is increasing and right ctn",
+      "aliases": []
+    },
+    {
+      "id": "distribution-function-of-mu",
+      "canonical_name": "distribution function of mu",
+      "aliases": []
+    },
+    {
+      "id": "distribution-x-push-forward-measure-expectation",
+      "canonical_name": "用 distribution (X 的 push-forward measure) 计算 expectation",
+      "aliases": []
+    },
+    {
+      "id": "dominated-convergence-theorem",
+      "canonical_name": "dominated convergence theorem",
+      "aliases": []
+    },
+    {
+      "id": "dual-space",
+      "canonical_name": "dual space",
+      "aliases": []
+    },
+    {
+      "id": "dual-space-is-always-banach",
+      "canonical_name": "dual space is always Banach",
+      "aliases": []
+    },
+    {
+      "id": "dynkins-pi-lambda-theorem",
+      "canonical_name": "Dynkin's π - lambda theorem",
+      "aliases": []
+    },
+    {
+      "id": "easier-fubini",
+      "canonical_name": "easier Fubini",
+      "aliases": []
+    },
+    {
+      "id": "egoroff-s-theorem",
+      "canonical_name": "Egoroff's Theorem",
+      "aliases": []
+    },
+    {
+      "id": "ell-infty",
+      "canonical_name": "ell^oo",
+      "aliases": []
+    },
+    {
+      "id": "essential-supremum",
+      "canonical_name": "essential supremum",
+      "aliases": []
+    },
+    {
+      "id": "event-space",
+      "canonical_name": "event space",
+      "aliases": []
+    },
+    {
+      "id": "every-measure-space-can-be-completed",
+      "canonical_name": "every measure space can be completed",
+      "aliases": []
+    },
+    {
+      "id": "expectation",
+      "canonical_name": "expectation 的性质",
+      "aliases": []
+    },
+    {
+      "id": "expectation-and-variance-of-random-variable",
+      "canonical_name": "expectation and variance of random variable",
+      "aliases": []
+    },
+    {
+      "id": "exponential-distribution",
+      "canonical_name": "exponential distribution",
+      "aliases": []
+    },
+    {
+      "id": "f-in-bv-right-ctn-implies-t-f-right-ctn",
+      "canonical_name": "F in B V right ctn arrow.r.double.long T_F right ctn",
+      "aliases": []
+    },
+    {
+      "id": "f-in-nbv-abs-ctn-iff-mu-f-ll-m",
+      "canonical_name": "F in N B V abs ctn arrow.l.r.double mu_F lt.double m",
+      "aliases": []
+    },
+    {
+      "id": "fast-l-1-conv-implies-a-e-conv",
+      "canonical_name": "fast L^1-conv arrow.r.double.long a.e. conv.",
+      "aliases": []
+    },
+    {
+      "id": "fatou-lemma",
+      "canonical_name": "Fatou's Lemma",
+      "aliases": []
+    },
+    {
+      "id": "ftc-ii-for-lebesgue-integral-on-a-cpt-interval",
+      "canonical_name": "FTC-II for Lebesgue integral on a cpt interval",
+      "aliases": []
+    },
+    {
+      "id": "ftc-in-lebesgue",
+      "canonical_name": "FTC in Lebesgue",
+      "aliases": []
+    },
+    {
+      "id": "fubini-for-series-and-integral",
+      "canonical_name": "Fubini for series and integral",
+      "aliases": []
+    },
+    {
+      "id": "fubini-theorem",
+      "canonical_name": "Fubini's Theorem",
+      "aliases": []
+    },
+    {
+      "id": "fubini-tonelli-for-m-n",
+      "canonical_name": "Fubini-Tonelli for m^n",
+      "aliases": []
+    },
+    {
+      "id": "function-of-bounded-variation",
+      "canonical_name": "function of bounded variation",
+      "aliases": []
+    },
+    {
+      "id": "function-of-bounded-variation-on-an-interval",
+      "canonical_name": "function of bounded variation on an interval",
+      "aliases": []
+    },
+    {
+      "id": "g-delta-f-sigma-sets",
+      "canonical_name": "G_delta,F_sigma sets",
+      "aliases": []
+    },
+    {
+      "id": "gamma-as-sum-of-independent-exponentials",
+      "canonical_name": "Gamma distribution as a sum of independent exponentials",
+      "aliases": []
+    },
+    {
+      "id": "gamma-distribution",
+      "canonical_name": "Gamma-distribution",
+      "aliases": []
+    },
+    {
+      "id": "general-change-of-variable-theorem",
+      "canonical_name": "general change of variable theorem",
+      "aliases": []
+    },
+    {
+      "id": "generalized-dct",
+      "canonical_name": "Generalized DCT",
+      "aliases": []
+    },
+    {
+      "id": "generalized-ldt",
+      "canonical_name": "generalized LDT",
+      "aliases": []
+    },
+    {
+      "id": "h-interval",
+      "canonical_name": "h-interval",
+      "aliases": []
+    },
+    {
+      "id": "h-intervals-form-an-algebra-and-generate-borel-set",
+      "canonical_name": "h-intervals form an algebra and generate borel set",
+      "aliases": []
+    },
+    {
+      "id": "hahn-decomposition-theorem",
+      "canonical_name": "Hahn Decomposition Theorem",
+      "aliases": []
+    },
+    {
+      "id": "hahn-kolmogorov-theorem",
+      "canonical_name": "Hahn–Kolmogorov theorem",
+      "aliases": []
+    },
+    {
+      "id": "hardy-littlewood-maximal-function",
+      "canonical_name": "Hardy-Littlewood maximal function",
+      "aliases": []
+    },
+    {
+      "id": "hl-maximal-function-measurable",
+      "canonical_name": "HL maximal function 是 measurable 的",
+      "aliases": []
+    },
+    {
+      "id": "hl-maximal-theorem",
+      "canonical_name": "HL maximal theorem",
+      "aliases": []
+    },
+    {
+      "id": "holder-inequality",
+      "canonical_name": "Hölder's ineq",
+      "aliases": []
+    },
+    {
+      "id": "implies-support-sigma-finite",
+      "canonical_name": "积分收敛 arrow.r.double.long 发散点集零测, 以及 support σ-finite",
+      "aliases": []
+    },
+    {
+      "id": "inclusion-exclusion-principle",
+      "canonical_name": "inclusion-exclusion principle",
+      "aliases": []
+    },
+    {
+      "id": "inclusion-properties-of-generated-sigma-algebra",
+      "canonical_name": "inclusion properties of generated σ-algebra",
+      "aliases": []
+    },
+    {
+      "id": "inclusion-relation-between-l-p-spaces-when-base-space-is-finite",
+      "canonical_name": "inclusion relation between L^p spaces (when base space is finite measure)",
+      "aliases": []
+    },
+    {
+      "id": "increasing-right-ctn-regular-borel-measure-distribution",
+      "canonical_name": "任意 increasing 且 right ctn 函数都是某个 regular Borel measure 的 distribution 函数",
+      "aliases": []
+    },
+    {
+      "id": "independence-conditional-density",
+      "canonical_name": "independence 下 conditional density 不变",
+      "aliases": []
+    },
+    {
+      "id": "independence-conditional-distribution-density-expectation",
+      "canonical_name": "independence 下 conditional distribution 不变",
+      "aliases": [
+        "independence 让 conditional distribution, density 和 expectation 都退化"
+      ]
+    },
+    {
+      "id": "independence-conditional-expectation",
+      "canonical_name": "independence 下 conditional expectation 不变",
+      "aliases": []
+    },
+    {
+      "id": "independence-implies-expectation-is-closed-under-product",
+      "canonical_name": "independence arrow.r.double.long expectation is closed under product",
+      "aliases": []
+    },
+    {
+      "id": "independence-of-events",
+      "canonical_name": "independence of events",
+      "aliases": []
+    },
+    {
+      "id": "independence-of-two-events",
+      "canonical_name": "independence of two events 的等价定义",
+      "aliases": []
+    },
+    {
+      "id": "independence-via-conditional-distribution",
+      "canonical_name": "independence via conditional distribution: marginal distribution",
+      "aliases": []
+    },
+    {
+      "id": "independence-via-generated-sigma-algebras",
+      "canonical_name": "independence via generated σ-algebras",
+      "aliases": []
+    },
+    {
+      "id": "independence-via-joint-density-factorization",
+      "canonical_name": "independence via joint-density factorization marginal densities",
+      "aliases": []
+    },
+    {
+      "id": "independence-via-product-distribution",
+      "canonical_name": "independence via product distribution of marginal distributions",
+      "aliases": [
+        "independence of random variables"
+      ]
+    },
+    {
+      "id": "independent-uncorrelated",
+      "canonical_name": "independent 严格强于 uncorrelated",
+      "aliases": []
+    },
+    {
+      "id": "inner-regularity",
+      "canonical_name": "inner regularity",
+      "aliases": []
+    },
+    {
+      "id": "integral-of-simple-functions",
+      "canonical_name": "integral of simple functions 的性质",
+      "aliases": []
+    },
+    {
+      "id": "integral-restricted-to-a-measurable-set",
+      "canonical_name": "integral restricted to a measurable set",
+      "aliases": []
+    },
+    {
+      "id": "integration-on-a-subset",
+      "canonical_name": "integration on a subset",
+      "aliases": []
+    },
+    {
+      "id": "integration-w-r-t-signed-measure",
+      "canonical_name": "integration w.r.t. signed measure",
+      "aliases": []
+    },
+    {
+      "id": "jensen-inequality",
+      "canonical_name": "Jensen's inequality",
+      "aliases": []
+    },
+    {
+      "id": "joint-cdf",
+      "canonical_name": "joint cdf",
+      "aliases": [
+        "joint distribution function",
+        "joint cumulative distribution function"
+      ]
+    },
+    {
+      "id": "joint-distribution-and-joint-cdf",
+      "canonical_name": "joint distribution",
+      "aliases": [
+        "joint distribution and joint cdf"
+      ]
+    },
+    {
+      "id": "joint-pdf-joint-cdf",
+      "canonical_name": "joint pdf 和 joint cdf 的性质",
+      "aliases": []
+    },
+    {
+      "id": "jointly-continuous-rvs-defined-conditional-density",
+      "canonical_name": "jointly continuous RVs 之间所有 defined 处总有 conditional density",
+      "aliases": []
+    },
+    {
+      "id": "jordan-decomposition-for-f-in-bv",
+      "canonical_name": "Jordan decomposition for F in B V",
+      "aliases": []
+    },
+    {
+      "id": "jordan-decomposition-theorem",
+      "canonical_name": "Jordan decomposition theorem",
+      "aliases": []
+    },
+    {
+      "id": "kolmogorov-definition-of-conditional-probability",
+      "canonical_name": "Kolmogorov definition of conditional probability",
+      "aliases": []
+    },
+    {
+      "id": "l-1-convergence-impliesconv-in-measure-implies-subseq-a-e-conv",
+      "canonical_name": "L^1-convergence (arrow.r.double.longconv. in measure) arrow.r.double.long subseq a.e. conv.",
+      "aliases": []
+    },
+    {
+      "id": "l-1-mu-cdot-banach-space",
+      "canonical_name": "(L^1(mu),||dot.op||) 是一个 Banach space",
+      "aliases": []
+    },
+    {
+      "id": "l-1-mu-integral-w-r-t-mu-norm-normed-vs",
+      "canonical_name": "L^1(mu) 以 integral w.r.t. mu 作为 norm 是一个 normed VS",
+      "aliases": []
+    },
+    {
+      "id": "l-1-mu-space",
+      "canonical_name": "L^1(mu) space",
+      "aliases": []
+    },
+    {
+      "id": "l-infty-space",
+      "canonical_name": "L^oo space",
+      "aliases": []
+    },
+    {
+      "id": "l-m-l-n-l-r-0-n-m-r-leq-infty",
+      "canonical_name": "每个 L^m 函数都是一个 L^n 函数和一个 L^r 函数的和 (0 < n < m < r lt.eq oo)",
+      "aliases": []
+    },
+    {
+      "id": "l-p-1-leq-p-leq-infty-is-banach",
+      "canonical_name": "L^p (1 lt.eq p lt.eq oo) is Banach",
+      "aliases": []
+    },
+    {
+      "id": "l-p-space-1-leq-p-infty-is-banach",
+      "canonical_name": "L^p space (1 lt.eq p < oo) is Banach",
+      "aliases": []
+    },
+    {
+      "id": "l-p-space-is-a-vector-space",
+      "canonical_name": "L_p space is a vector space",
+      "aliases": []
+    },
+    {
+      "id": "l-p-spaces",
+      "canonical_name": "L_p spaces",
+      "aliases": []
+    },
+    {
+      "id": "l-space-and-integration-on-it",
+      "canonical_name": "L^(+) space and integration on it",
+      "aliases": []
+    },
+    {
+      "id": "law-of-total-expectation",
+      "canonical_name": "law of total expectation",
+      "aliases": []
+    },
+    {
+      "id": "law-of-total-probability",
+      "canonical_name": "law of total probability",
+      "aliases": []
+    },
+    {
+      "id": "ldt-meets-lrnt-computing-rn-derivative-on-mathbb-r-n",
+      "canonical_name": "LDT meets LRNT: computing RN derivative on bb(R)^n",
+      "aliases": []
+    },
+    {
+      "id": "lebesgue-decomposition-theorem",
+      "canonical_name": "Lebesgue Decomposition Theorem",
+      "aliases": []
+    },
+    {
+      "id": "lebesgue-differentiation-theorem",
+      "canonical_name": "Lebesgue differentiation theorem",
+      "aliases": []
+    },
+    {
+      "id": "lebesgue-measurable-functions-borel-measurable-functions",
+      "canonical_name": "Lebesgue measurable functions, Borel measurable functions",
+      "aliases": []
+    },
+    {
+      "id": "lebesgue-measure",
+      "canonical_name": "Lebesgue measure",
+      "aliases": []
+    },
+    {
+      "id": "lebesgue-measure-and-integral-is-invariant-under-translation",
+      "canonical_name": "Lebesgue measure and integral is invariant under translation",
+      "aliases": []
+    },
+    {
+      "id": "lebesgue-measure-and-integration-is-scaled-det-t-by-linear-map",
+      "canonical_name": "Lebesgue measure and integration is scaled |det T| by linear map",
+      "aliases": []
+    },
+    {
+      "id": "lebesgue-measure-is-invariant-under-rotation",
+      "canonical_name": "Lebesgue measure is invariant under rotation",
+      "aliases": []
+    },
+    {
+      "id": "lebesgue-radon-nikodym-theorem",
+      "canonical_name": "Lebesgue-Radon-Nikodym Theorem",
+      "aliases": [
+        "Lebesgue–Radon–Nikodym theorem",
+        "LRNT"
+      ]
+    },
+    {
+      "id": "lebesgue-s-characterization-of-riemann-integrability",
+      "canonical_name": "Lebesgue's characterization of Riemann integrability",
+      "aliases": []
+    },
+    {
+      "id": "lebesgue-set",
+      "canonical_name": "Lebesgue set",
+      "aliases": []
+    },
+    {
+      "id": "lebesgue-stieltjes-measurable",
+      "canonical_name": "Lebesgue-Stieltjes measurable 的等价条件",
+      "aliases": []
+    },
+    {
+      "id": "lebesgue-stieltjes-measure-associated-with-f",
+      "canonical_name": "Lebesgue-Stieltjes measure associated with F",
+      "aliases": []
+    },
+    {
+      "id": "liminf-version-of-mct",
+      "canonical_name": "liminf version of MCT",
+      "aliases": []
+    },
+    {
+      "id": "lindeberg-levy-central-limit-theorem",
+      "canonical_name": "Lindeberg-Levy Central Limit Theorem",
+      "aliases": []
+    },
+    {
+      "id": "linear-functional-bounded-iff-ctn-at-0",
+      "canonical_name": "linear functional bounded arrow.l.r.double ctn at 0",
+      "aliases": []
+    },
+    {
+      "id": "locally-integrable",
+      "canonical_name": "locally integrable",
+      "aliases": []
+    },
+    {
+      "id": "ls-measure-space-l-1-space-density-of-step-functions",
+      "canonical_name": "LS measure space 的 L^1 space 上的 density of step functions",
+      "aliases": []
+    },
+    {
+      "id": "lusin-s-theorem",
+      "canonical_name": "Lusin's Theorem",
+      "aliases": []
+    },
+    {
+      "id": "mapping-from-euclidean-coord-to-polar-coord",
+      "canonical_name": "mapping from Euclidean coord to polar coord",
+      "aliases": []
+    },
+    {
+      "id": "marginal-distribution",
+      "canonical_name": "marginal distribution",
+      "aliases": []
+    },
+    {
+      "id": "marginal-distribution-from-joint-limits",
+      "canonical_name": "通过 joint distribution 的极限得到 marginal distribution",
+      "aliases": []
+    },
+    {
+      "id": "markov-inequality",
+      "canonical_name": "Markov's inequality",
+      "aliases": []
+    },
+    {
+      "id": "mathcal-l-preserves-translation-and-scaling",
+      "canonical_name": "cal(L) preserves translation and scaling",
+      "aliases": []
+    },
+    {
+      "id": "mathcal-m-mathcal-n-measurable-function",
+      "canonical_name": "(cal(M),cal(N))-measurable function",
+      "aliases": []
+    },
+    {
+      "id": "measurable-space-and-measure-space",
+      "canonical_name": "measurable space",
+      "aliases": [
+        "measurable space and measure space"
+      ]
+    },
+    {
+      "id": "measurable-subset-preserves-sign",
+      "canonical_name": "measurable subset preserves sign",
+      "aliases": []
+    },
+    {
+      "id": "measure",
+      "canonical_name": "measure",
+      "aliases": []
+    },
+    {
+      "id": "measure-is-finitely-additive",
+      "canonical_name": "measure is finitely additive",
+      "aliases": []
+    },
+    {
+      "id": "measure-space",
+      "canonical_name": "measure space",
+      "aliases": []
+    },
+    {
+      "id": "memoryless-property-of-exponential-distribution",
+      "canonical_name": "memoryless property of exponential distribution",
+      "aliases": []
+    },
+    {
+      "id": "minkowski-inequality",
+      "canonical_name": "Minkowski inequality",
+      "aliases": []
+    },
+    {
+      "id": "modes-of-convergence-for-functions",
+      "canonical_name": "modes of convergence for measurable functions",
+      "aliases": []
+    },
+    {
+      "id": "modes-of-convergence-for-random-variables",
+      "canonical_name": "RV 序列的三种收敛方式",
+      "aliases": []
+    },
+    {
+      "id": "moment-generating-function",
+      "canonical_name": "moment generating function",
+      "aliases": []
+    },
+    {
+      "id": "monotone-class",
+      "canonical_name": "monotone class",
+      "aliases": []
+    },
+    {
+      "id": "monotone-class-lemma",
+      "canonical_name": "monotone class lemma",
+      "aliases": []
+    },
+    {
+      "id": "monotone-convergence-theorem",
+      "canonical_name": "monotone convergence theorem",
+      "aliases": []
+    },
+    {
+      "id": "monotone-differentiation-theorem",
+      "canonical_name": "Monotone Differentiation Theorem",
+      "aliases": []
+    },
+    {
+      "id": "mu-f-total-variation-measure-mu-t-f",
+      "canonical_name": "mu_F 的 total variation measure = mu_(T_F)",
+      "aliases": []
+    },
+    {
+      "id": "mu-measurable",
+      "canonical_name": "mu^(*)-measurable",
+      "aliases": []
+    },
+    {
+      "id": "multinomial-coefficient",
+      "canonical_name": "multinomial coefficient",
+      "aliases": []
+    },
+    {
+      "id": "mutual-independence-of-multiple-random-variables",
+      "canonical_name": "mutual independence of multiple random variables",
+      "aliases": [
+        "mutual independence"
+      ]
+    },
+    {
+      "id": "mutually-singular",
+      "canonical_name": "mutually singular",
+      "aliases": []
+    },
+    {
+      "id": "n-random-variable-vector-random-vector",
+      "canonical_name": "由 n 个 random variable 构成的 vector 是一个 random vector",
+      "aliases": []
+    },
+    {
+      "id": "nbv",
+      "canonical_name": "NBV",
+      "aliases": []
+    },
+    {
+      "id": "norm-of-dual-space-dual-norm",
+      "canonical_name": "norm of dual space: 即 dual norm",
+      "aliases": []
+    },
+    {
+      "id": "nul-set-subnull-set-almost-everywhere",
+      "canonical_name": "null set",
+      "aliases": [
+        "nul set, subnull set, almost everywhere"
+      ]
+    },
+    {
+      "id": "open-interval-covers-for-lebesgue-stieltjes-measure",
+      "canonical_name": "open-interval covers for Lebesgue–Stieltjes measure",
+      "aliases": []
+    },
+    {
+      "id": "outer-measure",
+      "canonical_name": "outer measure",
+      "aliases": []
+    },
+    {
+      "id": "outer-regularity",
+      "canonical_name": "outer regularity",
+      "aliases": []
+    },
+    {
+      "id": "permutations",
+      "canonical_name": "permutations",
+      "aliases": []
+    },
+    {
+      "id": "pmf-distribution-counting-measure-mu-s-radon-nikodym",
+      "canonical_name": "pmf 是 distribution 对于 counting measure mu_S 的 Radon-Nikodym 导数",
+      "aliases": []
+    },
+    {
+      "id": "positive-negative-null-set-measure-space",
+      "canonical_name": "positive, negative, null set 内的局部性质和普通的 measure space 一样",
+      "aliases": []
+    },
+    {
+      "id": "positive-set-negative-set-null-set",
+      "canonical_name": "positive set, negative set, null set",
+      "aliases": []
+    },
+    {
+      "id": "premeasure",
+      "canonical_name": "premeasure",
+      "aliases": []
+    },
+    {
+      "id": "premeasure-extension-via-induced-outer-measure",
+      "canonical_name": "premeasure extension via induced outer measure",
+      "aliases": []
+    },
+    {
+      "id": "probability-density-function",
+      "canonical_name": "probability density function 的性质",
+      "aliases": []
+    },
+    {
+      "id": "probability-density-function-pdf",
+      "canonical_name": "probability density function (pdf)",
+      "aliases": []
+    },
+    {
+      "id": "probability-distribution",
+      "canonical_name": "probability distribution",
+      "aliases": []
+    },
+    {
+      "id": "probability-mass-function-pmf",
+      "canonical_name": "probability mass function (pmf)",
+      "aliases": []
+    },
+    {
+      "id": "probability-measure",
+      "canonical_name": "probability measure",
+      "aliases": []
+    },
+    {
+      "id": "probability-space",
+      "canonical_name": "probability space",
+      "aliases": [
+        "probability space",
+        "probability space, probability measure, sample space, event space"
+      ]
+    },
+    {
+      "id": "product-sigma-algebra",
+      "canonical_name": "product σ-algebra",
+      "aliases": []
+    },
+    {
+      "id": "properties-of-correlation",
+      "canonical_name": "properties of correlation",
+      "aliases": []
+    },
+    {
+      "id": "properties-of-measure",
+      "canonical_name": "properties of measure",
+      "aliases": []
+    },
+    {
+      "id": "radon-nikodym-derivative",
+      "canonical_name": "Radon-Nikodym derivative",
+      "aliases": [
+        "Radon–Nikodym derivative",
+        "RN derivative"
+      ]
+    },
+    {
+      "id": "radon-nikodym-theorem",
+      "canonical_name": "Radon-Nikodym Theorem",
+      "aliases": [
+        "Radon–Nikodym theorem",
+        "RNT"
+      ]
+    },
+    {
+      "id": "random-variable",
+      "canonical_name": "random variable",
+      "aliases": []
+    },
+    {
+      "id": "random-variable-continuous-random-variable",
+      "canonical_name": "一个 random variable 是 continuous random variable 的充要条件",
+      "aliases": []
+    },
+    {
+      "id": "random-variables-variance",
+      "canonical_name": "两个 random variables 之和的 variance",
+      "aliases": []
+    },
+    {
+      "id": "random-vector",
+      "canonical_name": "random vector",
+      "aliases": []
+    },
+    {
+      "id": "random-vector-random-variable",
+      "canonical_name": "一个 random vector 的每个分量都是一个 random variable",
+      "aliases": []
+    },
+    {
+      "id": "real-valued-integrable-function",
+      "canonical_name": "real-valued integrable function",
+      "aliases": []
+    },
+    {
+      "id": "real-valued-measurable-functions",
+      "canonical_name": "(real-valued) measurable functions",
+      "aliases": []
+    },
+    {
+      "id": "regular-borel-measure",
+      "canonical_name": "regular Borel measure",
+      "aliases": []
+    },
+    {
+      "id": "regular-borel-measure-regularity",
+      "canonical_name": "regular Borel measure: 蕴含了 regularity",
+      "aliases": []
+    },
+    {
+      "id": "regular-signed-complex-measure",
+      "canonical_name": "regular signed/complex measure",
+      "aliases": []
+    },
+    {
+      "id": "regularities-of-mathcal-l-n",
+      "canonical_name": "regularities of cal(L)^n",
+      "aliases": []
+    },
+    {
+      "id": "riemann-integral-lebesgue-integral",
+      "canonical_name": "Riemann integral 是 Lebesgue integral 的特殊情况",
+      "aliases": []
+    },
+    {
+      "id": "row-reduction",
+      "canonical_name": "row reduction",
+      "aliases": []
+    },
+    {
+      "id": "sample-space",
+      "canonical_name": "sample space",
+      "aliases": []
+    },
+    {
+      "id": "semi-norm-norm",
+      "canonical_name": "semi-norm, norm",
+      "aliases": []
+    },
+    {
+      "id": "sequential-behavior-of-real-valued-measurable-function",
+      "canonical_name": "sequential behavior of real-valued measurable function",
+      "aliases": []
+    },
+    {
+      "id": "series-convergence-absolute-convergence",
+      "canonical_name": "series: convergence 和 absolute convergence",
+      "aliases": []
+    },
+    {
+      "id": "sigma-algebra",
+      "canonical_name": "σ-algebra",
+      "aliases": []
+    },
+    {
+      "id": "sigma-algebra-closure-properties",
+      "canonical_name": "σ-algebra closure properties: set difference, symmetric difference and countable intersection",
+      "aliases": []
+    },
+    {
+      "id": "sigma-algebra-generated-by-a-random-variable-measurable-function",
+      "canonical_name": "σ-algebra generated by a random variable (measurable function)",
+      "aliases": []
+    },
+    {
+      "id": "sigma-algebra-generated-by-a-subset",
+      "canonical_name": "σ-algebra generated by a subset",
+      "aliases": []
+    },
+    {
+      "id": "sigma-algebra-intersection-sigma-algebra",
+      "canonical_name": "任意 σ-algebra 的 intersection 仍是 σ-algebra",
+      "aliases": []
+    },
+    {
+      "id": "sigma-finite-measure",
+      "canonical_name": "σ-finite measure",
+      "aliases": []
+    },
+    {
+      "id": "signed-measure",
+      "canonical_name": "signed measure",
+      "aliases": []
+    },
+    {
+      "id": "simple-approximation-of-complex-measurable-functions",
+      "canonical_name": "simple approximation of complex measurable functions",
+      "aliases": []
+    },
+    {
+      "id": "simple-function",
+      "canonical_name": "simple function",
+      "aliases": []
+    },
+    {
+      "id": "singular-continuous-random-variable",
+      "canonical_name": "singular continuous random variable",
+      "aliases": []
+    },
+    {
+      "id": "slightly-more-general-version-of-lrnt-meets-ldt",
+      "canonical_name": "slightly more general version of LRNT meets LDT",
+      "aliases": []
+    },
+    {
+      "id": "strong-law-of-large-numbers",
+      "canonical_name": "strong Law of Large Numbers",
+      "aliases": []
+    },
+    {
+      "id": "subnull-set",
+      "canonical_name": "subnull set",
+      "aliases": []
+    },
+    {
+      "id": "text-complex-borel-measures-on-mathbb-r-simeq-nbv",
+      "canonical_name": "upright(\"complex Borel measures on \") bb(R) tilde.eq N B V",
+      "aliases": []
+    },
+    {
+      "id": "tilde-l-x-mu-mathbb-r-tilde-l-x-mu-mathbb-c-space",
+      "canonical_name": "tilde(L)(X,mu,bb(R)) 以及tilde(L)(X,mu,bb(C)) space",
+      "aliases": []
+    },
+    {
+      "id": "tonelli-for-sets",
+      "canonical_name": "Tonelli for sets",
+      "aliases": []
+    },
+    {
+      "id": "tonelli-for-sum-and-integrals",
+      "canonical_name": "Tonelli for sum and integrals",
+      "aliases": []
+    },
+    {
+      "id": "tonelli-theorem",
+      "canonical_name": "Tonelli",
+      "aliases": []
+    },
+    {
+      "id": "total-variation-function",
+      "canonical_name": "total variation function",
+      "aliases": []
+    },
+    {
+      "id": "total-variation-measure",
+      "canonical_name": "total variation measure",
+      "aliases": []
+    },
+    {
+      "id": "trace-sigma-algebra",
+      "canonical_name": "trace σ-algebra",
+      "aliases": [
+        "trace sigma algebra"
+      ]
+    },
+    {
+      "id": "uncorrelated-random-variables",
+      "canonical_name": "uncorrelated random variables",
+      "aliases": [
+        "uncorrelated"
+      ]
+    },
+    {
+      "id": "uniform-distribution",
+      "canonical_name": "uniform distribution",
+      "aliases": []
+    },
+    {
+      "id": "unique-smallest-sigma-algebra-containing-a-collection-of-subsets",
+      "canonical_name": "unique smallest σ-algebra containing a collection of subsets",
+      "aliases": []
+    },
+    {
+      "id": "vitali-covering-lemma",
+      "canonical_name": "Vitali-type covering lemma",
+      "aliases": []
+    },
+    {
+      "id": "weak-law-of-large-numbers",
+      "canonical_name": "weak Law of Large Numbers",
+      "aliases": []
+    },
+    {
+      "id": "why-it-is-called-absolutely-continuous",
+      "canonical_name": "why it is called \"absolutely continuous\"",
+      "aliases": []
+    },
+    {
+      "id": "x-section-y-section",
+      "canonical_name": "x-section, y-section",
+      "aliases": []
+    },
+    {
+      "id": "young-s-inequality-for-products",
+      "canonical_name": "Young's inequality for products",
+      "aliases": []
+    },
+    {
+      "id": "zero-integral-iff-zero-almost-everywhere",
+      "canonical_name": "非负函数积分为 0 等价于几乎处处为 0",
+      "aliases": []
+    }
+  ]
+}

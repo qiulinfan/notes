@@ -1,0 +1,271 @@
+
+<!-- saved from url=(0044)https://os.eecs.umich.edu/lab/deadlocks.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://umich.edu/favicon.ico" rel="shortcut icon">
+   <style class="anchorjs"></style><link rel="stylesheet" href="./prelab05_files/primer-spec-base.css">
+   <link rel="preload" href="./prelab05_files/primer_spec_plugin.min.js" as="script" crossorigin="">
+	<title>Deadlocks</title>
+	<script src="./prelab05_files/primer_spec_plugin.min.js" crossorigin="anonymous"></script><!-- These should be included at the beginning of the <head> tag. -->
+<link rel="stylesheet" href="./prelab05_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="./prelab05_files/primer-spec-base.css">
+<link rel="stylesheet" id="primer-spec-subtheme-style" href="./prelab05_files/theme_default.css">
+	<script type="text/javascript">
+		function showHide(id) {
+			var e = document.getElementById(id);
+			e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+		}
+	</script>
+<!-- These should be included at the beginning of the <head> tag. -->
+<link rel="stylesheet" href="./prelab05_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="./prelab05_files/primer-spec-base.css">
+<link rel="stylesheet" id="primer-spec-subtheme-style" href="./prelab05_files/theme_default.css"></head>
+
+<body><div id="primer-spec-top"></div>
+<!-- Custom sidebar with a table of content -->
+<!-- 
+    The explicit onClick handler is needed to force Safari (iOS) to propagate
+    click events for the sidebar.
+-->
+<div class="primer-spec-sidebar position-fixed top-0 py-5 no-print" onclick="return true;">
+    <h2 class="primer-spec-toc-ignore" id="contents">
+        Contents
+        <!-- Show/Hide Sidebar button -->
+        <span class="primer-spec-hoverable">
+            <a href="https://os.eecs.umich.edu/lab/deadlocks.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-hoverable sidebar-shown no-print">
+                <i class="fas fa-bars"></i>
+            </a>
+        </span>
+    </h2>
+    <br>
+    <div id="primer-spec-toc"><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h1"><a href="https://os.eecs.umich.edu/lab/deadlocks.html#deadlocks">
+	Deadlocks
+</a></div><div class="primer-spec-toc-section"><div class="primer-spec-toc-item primer-spec-toc-h3 primer-spec-toc-active"><a href="https://os.eecs.umich.edu/lab/deadlocks.html#pre-lab-1-preventing-deadlock">
+	[pre-lab] 1. Preventing deadlock
+</a></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/deadlocks.html#a-how-can-this-deadlock">
+	A. How can this deadlock?
+</a></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/deadlocks.html#b-attacking-the-circular-wait-condition">
+	B. Attacking the circular wait condition
+</a></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/deadlocks.html#c-attacking-the-hold-and-wait-condition">
+	C. Attacking the hold-and-wait condition
+</a></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/deadlocks.html#in-lab-2-debugging-deadlock">
+	[in-lab] 2. Debugging deadlock
+</a></div><div class="primer-spec-toc-section"></div></div></div>
+</div> <!-- .primer-spec-sidebar -->
+
+<div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+    <!-- Show/Hide Sidebar button -->
+    <a href="https://os.eecs.umich.edu/lab/deadlocks.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-sidebar-toggle-fixed primer-spec-hoverable primer-spec-float-left sidebar-shown no-print">
+        <i class="fas fa-bars"></i>
+    </a>
+    <!-- Show Settings button -->
+    </div>
+
+<!--
+    Settings modal. Treat it exactly like the actual content, but its
+    position on the page is fixed.
+    It should be displayed when the "settings" icon is clicked.
+-->
+<div class="primer-spec-settings container-lg markdown-body primer-spec-content-margin-extra px-3 py-5 position-fixed top-0 left-0">
+    <div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+        <!-- Hide Settings button -->
+        <a href="https://os.eecs.umich.edu/lab/deadlocks.html#primer-spec-top" class="primer-spec-settings-toggle primer-spec-hoverable primer-spec-float-right no-print">
+            <i class="fas fa-times"></i>
+        </a>
+    </div>
+
+    <h1 class="primer-spec-toc-ignore">Spec Theme Settings</h1>
+    <p>Choose your theme!</p>
+    <select class="primer-spec-subtheme-selector">
+    <option value="default">default</option><option value="bella">bella</option><option value="modern">modern</option><option value="xcode-dark">xcode-dark</option></select>
+
+    <hr>
+
+    <p><small>
+        Does the spec display incorrectly? <a href="https://github.com/eecs485staff/primer-spec/issues">Let us know by adding a new "issue" here.</a>
+    </small></p>
+
+    <p class="primer-spec-brand">
+        <a href="https://github.com/eecs485staff/primer-spec/" target="_blank">
+            Primer Spec v1.1.0
+        </a>
+    </p>
+
+</div>
+<div id="primer-spec-plugin-main-content" onclick="return true;" class="container-lg px-3 my-5 markdown-body primer-spec-content-margin-extra">
+
+<h1 id="deadlocks">
+	Deadlocks
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/deadlocks.html#deadlocks" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h1>
+
+<p>
+Please work out the pre-lab problems before your next lab section.  The
+GSI/IAs will go over all problems during the lab section.
+</p>
+
+<h3 id="pre-lab-1-preventing-deadlock">
+	[pre-lab] 1. Preventing deadlock
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/deadlocks.html#pre-lab-1-preventing-deadlock" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+You have learned the four necessary conditions for deadlock:
+</p>
+
+<ul>
+	<li>Limited resources</li>
+	<li>Hold and wait</li>
+	<li>No preemption</li>
+	<li>Circular chain of requests</li>
+</ul>
+
+<p>
+Deadlock prevention schemes work by attempting to remove one (or more) of 
+these conditions. In this question, you will look at two such methods.
+</p>
+
+<p>
+You are developing a multithreaded bank software package, which has a
+procedure for transferring funds from one account to another. Each user
+account has a lock associated with it.
+</p>
+
+<p>
+You must acquire the lock for both accounts before transferring funds, to 
+ensure the money transfer is atomic. The transfer function prototype is:
+</p>
+
+<pre>void transfer_money(int from_account_id, int to_account_id, int amount);
+</pre>
+
+<p>
+Here is an incorrect solution:
+</p>
+
+<pre>/*
+ * A vector of locks that ranges over account numbers.
+ * locks[i] = lock for account i
+ */
+std::vector&lt;std::mutex&gt; locks;
+
+void transfer_money(int acct1, int acct2, int amount) {
+    locks[acct1].lock();
+    locks[acct2].lock();
+    &lt;transfer money&gt;
+    locks[acct2].unlock();
+    locks[acct1].unlock();
+}
+</pre>
+
+<p>
+For example, thread 1 could execute <tt>transfer_money(1, 2, 20)</tt>,
+and thread 2 could execute <tt>transfer_money(2, 1, 100)</tt>.
+</p>
+
+<h3 id="a-how-can-this-deadlock">
+	A. How can this deadlock?
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/deadlocks.html#a-how-can-this-deadlock" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<h3 id="b-attacking-the-circular-wait-condition">
+	B. Attacking the circular wait condition
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/deadlocks.html#b-attacking-the-circular-wait-condition" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+Rewrite <tt>transfer_money()</tt> to be deadlock-free, by making a circular
+wait impossible. (Hint: define an ordering for the locks.)
+</p>
+
+<h3 id="c-attacking-the-hold-and-wait-condition">
+	C. Attacking the hold-and-wait condition
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/deadlocks.html#c-attacking-the-hold-and-wait-condition" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+Rewrite transfer_money() again, this time avoiding any possible deadlock
+by removing the hold-and-wait condition. (Hint: each thread should either
+acquire both locks at once, or not at all). You may define new shared 
+variables and/or new locks and condition variables. Your solution should
+<strong>not</strong> busy-wait.
+</p>
+
+<h3 id="in-lab-2-debugging-deadlock">
+	[in-lab] 2. Debugging deadlock
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/deadlocks.html#in-lab-2-debugging-deadlock" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+Consider the following program, which uses C++ threads.
+</p>
+
+<pre>#include &lt;iostream&gt;
+#include &lt;thread&gt;
+#include &lt;mutex&gt;
+
+std::mutex x, y, c;
+
+void child1()
+{
+    for (int i=0; i&lt;1000000; i++) {
+        if (!(i%100)) {
+	    c.lock();
+	    std::cout &lt;&lt; "child1: " &lt;&lt; i &lt;&lt; std::endl;
+	    c.unlock();
+	}
+	x.lock();
+	y.lock();
+	y.unlock();
+	x.unlock();
+    }
+}
+
+void child2()
+{
+    for (int i=0; i&lt;1000000; i++) {
+        if (!(i%100)) {
+	    c.lock();
+	    std::cout &lt;&lt; "child2: " &lt;&lt; i &lt;&lt; std::endl;
+	    c.unlock();
+	}
+	y.lock();
+	x.lock();
+	x.unlock();
+	y.unlock();
+    }
+}
+
+int main()
+{
+    std::thread t1(child1);
+    std::thread t2(child2);
+
+    t1.join();
+    t2.join();
+}
+
+</pre>
+
+<p>
+A. How can this program deadlock?
+</p>
+
+<p>
+B. Compile this program (g++ -g deadlock.cpp -pthread -o deadlock)
+and run it in gdb until
+it deadlocks.  Examine the state of the deadlocked threads in gdb, using
+commands such as "info threads", "thread <n>", "bt", and "thread apply all ...".
+Where is each thread blocked?
+</n></p>
+
+<p>
+C. Now find where each thread is blocked by adding <tt>cout</tt> statements
+before/after each potentially blocking call.  This technique is useful
+when a debugger is not available, or when the debugger does not understand
+your implementation of threads (as in Project 2).
+</p>
+
+</div>
+
+<script src="./prelab05_files/primer_spec_plugin.min.js" crossorigin="anonymous">
+</script>
+
+
+
+</body></html>

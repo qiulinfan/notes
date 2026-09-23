@@ -1,0 +1,25 @@
+# Shared LaTeX build products
+**/build/
+# Course-local HTML is disposable. GitHub Actions publishes it to Pages.
+**/site/
+# Typst-to-LaTeX/Markdown snapshots are reproducible local projections.
+**/exports/
+**/*.aux
+**/*.log
+**/*.out
+**/*.toc
+**/*.fdb_latexmk
+**/*.fls
+**/*.synctex.gz
+**/*.synctex(busy)
+**/*.pdfsync
+**/*.bbl
+**/*.blg
+**/*.bcf
+**/*.run.xml
+
+# PDF and pagination artifacts are forbidden below notes/.
+**/main.pdf
+**/docs/*.pdf
+**/pages/
+**/contact-sheets/

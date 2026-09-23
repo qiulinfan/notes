@@ -1,0 +1,16 @@
+--- Summary after 100 runs ---
+
+Count: 100 times
+Output:
+Pong!
+Ping!
+Pong!
+Ping!
+Pong!
+Ping!
+Pong!
+Ping!
+Pong!
+Ping!
+No runnable threads.  Exiting.
+----------------------------------------

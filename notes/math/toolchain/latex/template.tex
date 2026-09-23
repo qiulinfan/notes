@@ -1,0 +1,26 @@
+% Generated from $source$. Typst is authoritative; regeneration overwrites this file.
+\documentclass{qlnotes-export}
+
+\title{$title$}
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$endif$
+$if(date)$
+\date{$date$}
+$endif$
+
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents
+
+\mainmatter
+$body$
+
+$if(bibliography)$
+\printbibliography
+$endif$
+\end{document}

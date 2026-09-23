@@ -1,0 +1,128 @@
+
+<!-- saved from url=(0037)https://os.eecs.umich.edu/lab/fs.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>File systems</title>
+<style class="anchorjs"></style><!-- These should be included at the beginning of the <head> tag. -->
+<link rel="stylesheet" href="./File systems_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="./File systems_files/primer-spec-base.css">
+<link rel="stylesheet" id="primer-spec-subtheme-style" href="./File systems_files/theme_default.css"></head>
+<body><div id="primer-spec-top"></div>
+<!-- Custom sidebar with a table of content -->
+<!-- 
+    The explicit onClick handler is needed to force Safari (iOS) to propagate
+    click events for the sidebar.
+-->
+<div class="primer-spec-sidebar position-fixed top-0 py-5 no-print" onclick="return true;">
+    <h2 class="primer-spec-toc-ignore" id="contents">
+        Contents
+        <!-- Show/Hide Sidebar button -->
+        <span class="primer-spec-hoverable">
+            <a href="https://os.eecs.umich.edu/lab/fs.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-hoverable sidebar-shown no-print">
+                <i class="fas fa-bars"></i>
+            </a>
+        </span>
+    </h2>
+    <br>
+    <div id="primer-spec-toc"><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h1"><a href="https://os.eecs.umich.edu/lab/fs.html#file-systems">File systems</a></div><div class="primer-spec-toc-section"><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/fs.html#pre-lab-1-file-systems">[pre-lab] 1. File systems</a></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/fs.html#in-lab-2-install-and-use-boost-threads">[in-lab] 2. Install and use Boost threads</a></div><div class="primer-spec-toc-section"></div></div></div>
+</div> <!-- .primer-spec-sidebar -->
+
+<div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+    <!-- Show/Hide Sidebar button -->
+    <a href="https://os.eecs.umich.edu/lab/fs.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-sidebar-toggle-fixed primer-spec-hoverable primer-spec-float-left sidebar-shown no-print">
+        <i class="fas fa-bars"></i>
+    </a>
+    <!-- Show Settings button -->
+    </div>
+
+<!--
+    Settings modal. Treat it exactly like the actual content, but its
+    position on the page is fixed.
+    It should be displayed when the "settings" icon is clicked.
+-->
+<div class="primer-spec-settings container-lg markdown-body primer-spec-content-margin-extra px-3 py-5 position-fixed top-0 left-0">
+    <div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+        <!-- Hide Settings button -->
+        <a href="https://os.eecs.umich.edu/lab/fs.html#primer-spec-top" class="primer-spec-settings-toggle primer-spec-hoverable primer-spec-float-right no-print">
+            <i class="fas fa-times"></i>
+        </a>
+    </div>
+
+    <h1 class="primer-spec-toc-ignore">Spec Theme Settings</h1>
+    <p>Choose your theme!</p>
+    <select class="primer-spec-subtheme-selector">
+    <option value="default">default</option><option value="bella">bella</option><option value="modern">modern</option><option value="xcode-dark">xcode-dark</option></select>
+
+    <hr>
+
+    <p><small>
+        Does the spec display incorrectly? <a href="https://github.com/eecs485staff/primer-spec/issues">Let us know by adding a new "issue" here.</a>
+    </small></p>
+
+    <p class="primer-spec-brand">
+        <a href="https://github.com/eecs485staff/primer-spec/" target="_blank">
+            Primer Spec v1.1.0
+        </a>
+    </p>
+
+</div>
+<div id="primer-spec-plugin-main-content" class="container-lg px-3 my-5 markdown-body primer-spec-content-margin-extra">
+<h1 id="file-systems">File systems<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/fs.html#file-systems" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h1>
+
+<p>
+Please work out pre-lab problems before your next lab section.  The
+GSI/IAs will go over all problems during the lab section.
+
+</p><h3 id="pre-lab-1-file-systems">[pre-lab] 1. File systems<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/fs.html#pre-lab-1-file-systems" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+Use the fs_inode and fs_direntry data structures from <a href="https://os.eecs.umich.edu/project4/">
+Project 4</a>.
+Note: Blocks are 512 bytes, and inodes are block-sized.
+
+</p><p>
+A. What is the minimum and maximum number of disk blocks
+that must be brought into memory in order to read the first
+block of the file <tt>/etc/passwd</tt>?
+
+</p><p>
+B. A big file <tt>/bigfile</tt> that is 4 blocks in size is stored in the file system.
+
+</p><p>
+B1. Draw out how <tt>/bigfile</tt> is laid out on disk. Include all inodes
+and data blocks required to store the file. Assume there are no other files.
+
+</p><p>
+B2. A user program makes a read request from offset 1 from <tt>/bigfile</tt>.
+How many disk accesses are required to process the request?
+
+</p><p>
+B3. i) How many disk accesses are required to process a read request on
+offset 2 of <tt>/bigfile</tt>?
+ii) How many accesses would it be if we had cached the blocks from part b?
+
+</p><p>
+B4. If we wanted to add a new directory, <tt>/foo</tt>, how many new disk
+blocks do we need to allocate? Update your diagram from part a with the new disk
+blocks.
+
+</p><p>
+B5. If we wanted to add a new file, <tt>/foo/bar</tt>, how many new disk
+blocks do we need to allocate? Update your diagram from part A with the new
+disk blocks.
+
+</p><h3 id="in-lab-2-install-and-use-boost-threads">[in-lab] 2. Install and use Boost threads<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/fs.html#in-lab-2-install-and-use-boost-threads" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+You will be using Boost threads in <a href="https://os.eecs.umich.edu/project4">Project 4</a>.
+Convert the concurrent program you wrote in last week's lab to use Boost
+threads and run it.  See the <a href="https://os.eecs.umich.edu/project4/#logistics">Project 4
+handout</a> for instructions on how to compile and run a program with Boost
+threads.
+
+</p></div>
+<script src="./File systems_files/primer_spec_plugin.min.js.download" crossorigin="anonymous">
+</script>
+
+
+
+</body></html>

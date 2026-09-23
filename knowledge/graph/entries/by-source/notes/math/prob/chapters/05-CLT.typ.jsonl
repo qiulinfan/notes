@@ -1,0 +1,4 @@
+{"entry":{"context":"原生 marker；authority: notes/math/prob/chapters/05-CLT.typ:205。","summary":"在有限三阶中心绝对矩条件下，以 O(n^−1/2) 一致界控制标准化和的 CDF 与 Φ 的差。"},"id":"berry-esseen-theorem","text":"在有限三阶中心绝对矩条件下，以 O(n^−1/2) 一致界控制标准化和的 CDF 与 Φ 的差。"}
+{"entry":{"context":"原生 marker；authority: notes/math/prob/chapters/05-CLT.typ:10。","summary":"在极限 CDF 连续点上 F_Xn(x)→F_X(x) 定义按分布收敛。"},"id":"convergence-in-distribution","text":"在极限 CDF 连续点上 F_Xn(x)→F_X(x) 定义按分布收敛。"}
+{"entry":{"context":"原生 marker；authority: notes/math/prob/chapters/05-CLT.typ:75。","summary":"i.i.d.、均值 μ、有限方差 σ² 时，(S_n−nμ)/√(nσ²) 按分布收敛到 N(0,1)。"},"id":"lindeberg-levy-central-limit-theorem","text":"i.i.d.、均值 μ、有限方差 σ² 时，(S_n−nμ)/√(nσ²) 按分布收敛到 N(0,1)。"}
+{"entry":{"context":"原生 marker；authority: notes/math/prob/chapters/05-CLT.typ:50。","summary":"M_X(t)=E[e^(tX)]；在零邻域存在时导数给出各阶矩。"},"id":"moment-generating-function","text":"M_X(t)=E[e^(tX)]；在零邻域存在时导数给出各阶矩。"}

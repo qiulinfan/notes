@@ -1,0 +1,3 @@
+## ECE 559: Optimization Methods for SIPML
+Graduate-level course on optimization algorithms and efficiency analysis for large-scale problems in Signal and Image Processing and Machine Learning.
+Including (sub)gradient methods, proximal methods, Nesterov’s accelerated methods, ADMM, quasi-Newton, trust-region, cubic regularization methods, and (some of) their stochastic variants, and constraint optimization over the Riemannian manifold; together with applications to inverse problems in signal processing (e.g., sparse recovery, phase retrieval, blind deconvolution, matrix completion), unsupervised learning (e.g., dictionary learning, independent component analysis, nonnegative matrix factorization), and supervised learning (e.g., deep learning).

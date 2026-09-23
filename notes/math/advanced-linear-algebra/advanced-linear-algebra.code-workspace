@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "name": "Math Notes",
+      "path": ".."
+    }
+  ],
+  "settings": {
+    "tinymist.typstExtraArgs": [
+      "advanced-linear-algebra/main.typ"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{"entry":{"context":"原生 marker；authority: notes/math/prob/chapters/04-LLN.typ:79。","summary":"|E[XY]|≤√(E[X²]E[Y²])。"},"id":"cauchy-schwarz-inequality","text":"|E[XY]|≤√(E[X²]E[Y²])。"}
+{"entry":{"context":"原生 marker；authority: notes/math/prob/chapters/04-LLN.typ:92。","summary":"凸 φ 下，φ(E[X])≤E[φ(X)]，要求两侧有限且有定义。"},"id":"jensen-inequality","text":"凸 φ 下，φ(E[X])≤E[φ(X)]，要求两侧有限且有定义。"}
+{"entry":{"context":"原生 marker；authority: notes/math/prob/chapters/04-LLN.typ:16。","summary":"非负 X 与 t>0 时，P(X≥t)≤E[X]/t。"},"id":"markov-inequality","text":"非负 X 与 t>0 时，P(X≥t)≤E[X]/t。"}
+{"entry":{"context":"原生 marker；authority: notes/math/prob/chapters/04-LLN.typ:231。","summary":"给出 a.s.、Lᵖ 与 probability 三种随机变量序列收敛的定义。"},"id":"modes-of-convergence-for-random-variables","text":"给出 a.s.、Lᵖ 与 probability 三种随机变量序列收敛的定义。"}
+{"entry":{"context":"原生 marker；authority: notes/math/prob/chapters/04-LLN.typ:314。","summary":"在笔记所用的同一条件下，样本均值几乎处处收敛到 E[X₁]。"},"id":"strong-law-of-large-numbers","text":"在笔记所用的同一条件下，样本均值几乎处处收敛到 E[X₁]。"}
+{"entry":{"context":"原生 marker；authority: notes/math/prob/chapters/04-LLN.typ:284。","summary":"i.i.d. 且二阶矩有限时，样本均值依概率收敛到 E[X₁]。"},"id":"weak-law-of-large-numbers","text":"i.i.d. 且二阶矩有限时，样本均值依概率收敛到 E[X₁]。"}

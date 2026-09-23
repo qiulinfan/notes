@@ -1,0 +1,22 @@
+# Threads | Throughput (jobs/sec) | Avg Response Time (sec)
+Threads: 1
+Throughput: 23.1821 jobs/sec
+Avg response time: 0.043132 sec
+Threads: 2
+Throughput: 41.9132 jobs/sec
+Avg response time: 0.047653 sec
+Threads: 4
+Throughput: 72.3056 jobs/sec
+Avg response time: 0.0530326 sec
+Threads: 8
+Throughput: 117.981 jobs/sec
+Avg response time: 0.0637241 sec
+Threads: 16
+Throughput: 150.592 jobs/sec
+Avg response time: 0.100546 sec
+Threads: 32
+Throughput: 155.081 jobs/sec
+Avg response time: 0.171721 sec
+Threads: 64
+Throughput: 159.994 jobs/sec
+Avg response time: 0.33803 sec

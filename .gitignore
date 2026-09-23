@@ -1,0 +1,69 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Editor and temporary files
+.vscode/
+!notes/math/**/.vscode/
+!notes/math/**/.vscode/**
+*~
+*.swp
+*.swo
+*.tmp
+*.temp
+*.bak
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Crash dumps
+core
+core.*
+*.core
+
+# Native build outputs and debug metadata
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.exe
+*.dSYM/
+
+# LaTeX intermediates
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
+
+# Notes are source-first and published as web pages. PDF artifacts never belong
+# anywhere below notes/, including ignored local preview builds.
+/notes/**/*.[pP][dD][fF]
+
+# JavaScript dependencies
+node_modules/
+
+# Disposable local knowledge builds, candidate reviews, deltas, and receipts
+knowledge/build/
+
+# Obsidian community plugins are installed from the official marketplace on each
+# machine. Keep reusable plugin data in Git without republishing bundled code.
+/.obsidian/workspace.json
+/.obsidian/workspace-mobile.json
+/.obsidian/graph.json
+/.obsidian/plugins/*/main.js
+/.obsidian/plugins/*/manifest.json
+/.obsidian/plugins/*/styles.css
+/.obsidian/plugins/obsidian-tinymist/data.json
+
+# Obsidian YOLO contains credentials, OAuth tokens and generated runtimes
+/.obsidian/plugins/yolo/
+/YOLO/

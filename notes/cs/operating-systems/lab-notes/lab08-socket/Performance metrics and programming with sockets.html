@@ -1,0 +1,204 @@
+
+<!-- saved from url=(0042)https://os.eecs.umich.edu/lab/sockets.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Performance metrics and programming with sockets</title>
+<style class="anchorjs"></style><!-- These should be included at the beginning of the <head> tag. -->
+<link rel="stylesheet" href="./Performance metrics and programming with sockets_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="./Performance metrics and programming with sockets_files/primer-spec-base.css">
+<link rel="stylesheet" id="primer-spec-subtheme-style" href="./Performance metrics and programming with sockets_files/theme_default.css"></head>
+<body><div id="primer-spec-top"></div>
+<!-- Custom sidebar with a table of content -->
+<!-- 
+    The explicit onClick handler is needed to force Safari (iOS) to propagate
+    click events for the sidebar.
+-->
+<div class="primer-spec-sidebar position-fixed top-0 py-5 no-print" onclick="return true;">
+    <h2 class="primer-spec-toc-ignore" id="contents">
+        Contents
+        <!-- Show/Hide Sidebar button -->
+        <span class="primer-spec-hoverable">
+            <a href="https://os.eecs.umich.edu/lab/sockets.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-hoverable sidebar-shown no-print">
+                <i class="fas fa-bars"></i>
+            </a>
+        </span>
+    </h2>
+    <br>
+    <div id="primer-spec-toc"><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h1"><a href="https://os.eecs.umich.edu/lab/sockets.html#performance-metrics-and-programming-with-sockets">Performance metrics and programming with sockets</a></div><div class="primer-spec-toc-section"><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/sockets.html#pre-lab-and-in-lab-1-response-time-versus-throughput"> [pre-lab and in-lab] 1. Response time versus throughput</a></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h3 primer-spec-toc-active"><a href="https://os.eecs.umich.edu/lab/sockets.html#pre-lab-and-in-lab-2-socket-programming">[pre-lab and in-lab] 2. Socket programming</a></div><div class="primer-spec-toc-section"></div></div></div>
+</div> <!-- .primer-spec-sidebar -->
+
+<div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+    <!-- Show/Hide Sidebar button -->
+    <a href="https://os.eecs.umich.edu/lab/sockets.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-sidebar-toggle-fixed primer-spec-hoverable primer-spec-float-left sidebar-shown no-print">
+        <i class="fas fa-bars"></i>
+    </a>
+    <!-- Show Settings button -->
+    </div>
+
+<!--
+    Settings modal. Treat it exactly like the actual content, but its
+    position on the page is fixed.
+    It should be displayed when the "settings" icon is clicked.
+-->
+<div class="primer-spec-settings container-lg markdown-body primer-spec-content-margin-extra px-3 py-5 position-fixed top-0 left-0">
+    <div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+        <!-- Hide Settings button -->
+        <a href="https://os.eecs.umich.edu/lab/sockets.html#primer-spec-top" class="primer-spec-settings-toggle primer-spec-hoverable primer-spec-float-right no-print">
+            <i class="fas fa-times"></i>
+        </a>
+    </div>
+
+    <h1 class="primer-spec-toc-ignore">Spec Theme Settings</h1>
+    <p>Choose your theme!</p>
+    <select class="primer-spec-subtheme-selector">
+    <option value="default">default</option><option value="bella">bella</option><option value="modern">modern</option><option value="xcode-dark">xcode-dark</option></select>
+
+    <hr>
+
+    <p><small>
+        Does the spec display incorrectly? <a href="https://github.com/eecs485staff/primer-spec/issues">Let us know by adding a new "issue" here.</a>
+    </small></p>
+
+    <p class="primer-spec-brand">
+        <a href="https://github.com/eecs485staff/primer-spec/" target="_blank">
+            Primer Spec v1.1.0
+        </a>
+    </p>
+
+</div>
+<div id="primer-spec-plugin-main-content" class="container-lg px-3 my-5 markdown-body primer-spec-content-margin-extra">
+<h1 id="performance-metrics-and-programming-with-sockets">Performance metrics and programming with sockets<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/sockets.html#performance-metrics-and-programming-with-sockets" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h1>
+
+<p>
+Please work out the pre-lab problems before your next lab section.  The
+GSI/IAs will go over all problems during the lab section.
+
+</p><h3 id="pre-lab-and-in-lab-1-response-time-versus-throughput"> [pre-lab and in-lab] 1. Response time versus throughput<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/sockets.html#pre-lab-and-in-lab-1-response-time-versus-throughput" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3> 
+
+<p>
+[pre-lab] A. Write a function <tt>job</tt> in C++ that is
+computationally expensive (e.g., sum the integers from 0 to 100000000).
+Measure the response time of <tt>job</tt> by calling
+<tt>gettimeofday</tt> at the beginning and end of the function.
+Compute the average response time of <tt>job</tt> by summing the response
+time of each execution of <tt>job</tt>, then dividing by the number of
+times <tt>job</tt> was called.  <tt>job</tt> will be invoked by multiple
+threads, so make it thread safe (use C++ threading facilities).
+
+<!-- 
+In W23, I found that this form of calculating response time doesn't seem to
+match the way response time is defined elsewhere in the lab.
+This description measures how long it takes a job to finish once it's begun, not how long
+it takes to run the job once it's known to the system (which is how we use 'response time'
+in the earlier problems and slides).
+
+I've made a fix to the sample solution code in https://github.com/eecs482/scheduling_lab
+in a branch called 'response_time_fix'.
+
+-daviwang
+ -->
+
+</p><p>
+[pre-lab] B. Write a program that calls <tt>job</tt> 64 times in a single
+thread.  Measure the running time of the program, then print out the
+throughput of the program (number of jobs / running time of the program),
+and average response time for each job.
+
+</p><p>
+[in-lab] C. Speed up your program by using concurrency.  Your program
+should still call <tt>job</tt> a total of 64 times, but it should do so in
+a configurable number of threads.  Run the program with different numbers
+of threads (1, 2, 4, 8, 16, 32, 64), and graph the average response time
+versus throughput as you vary the number of threads.  What concurrency level
+produces the best (lowest) response time?  What concurrency level produces
+the best (highest) throughput?  What level of concurrency would you recommend
+running on this machine?
+
+</p><h3 id="pre-lab-and-in-lab-2-socket-programming">[pre-lab and in-lab] 2. Socket programming<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/sockets.html#pre-lab-and-in-lab-2-socket-programming" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+You will use sockets in Project 4 to facilitate communication between
+a client and the network file server you will write. This exercise will
+serve to give you practice using the various socket functions for both
+the client and the server.
+
+</p><p> [pre-lab] A. Read a <a href="https://beej.us/guide/bgnet/html/split/">
+tutorial</a> on socket programming.
+
+</p><p>
+[in-lab] B. Write a simple client and server, where the client sends a string to 
+the server and the server outputs the string using cout.
+
+</p><p>
+Here is some starter code for the client.
+
+</p><pre>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+static const size_t MAX_MESSAGE_SIZE = 256;
+
+int main(int argc, const char **argv) {
+    // Parse command line arguments
+    if (argc != 4) {
+        std::cout &lt;&lt; "Usage: ./client &lt;hostname&gt; &lt;port&gt; &lt;message&gt;\n";
+        return(-1);
+    }
+    const char* hostname = argv[1];
+    const char* port = argv[2];
+    std::string message(argv[3]);
+
+    std::cout &lt;&lt; "Sending " &lt;&lt; message &lt;&lt; " to " &lt;&lt; hostname &lt;&lt; ":"
+              &lt;&lt; port &lt;&lt; std::endl;
+
+    // Create a socket.  Use socket().
+
+    // Create a sockaddr to specify remote host and port.  Use getaddrinfo().
+
+    // Connect to remote server.  Use connect().
+
+    // Send message to remote server.  Use send().
+
+    // Close connection.  Use close().
+
+    return(0);
+}
+
+</pre>
+
+<p>
+Here is some starter code for the server.
+
+</p><pre>#include &lt;iostream&gt;
+
+static const size_t MAX_MESSAGE_SIZE = 256;
+
+int main() {
+    // Create socket for accepting connections.  Use socket().
+
+    // Configure a sockaddr_in for the accepting socket.
+
+    // Bind to a port.  Use bind().
+
+    // Begin listening for incoming connections.  Use listen().
+
+    // Serve incoming connections one by one forever.
+    while (true) {
+        // Accept connection from client.  Use accept().
+
+        // Receive message from client.  Use recv().
+
+        // Print message from client.
+
+        // Close connection.  Use close().
+    }
+
+    return(0);
+}
+</pre>
+
+</div>
+<script src="./Performance metrics and programming with sockets_files/primer_spec_plugin.min.js.download" crossorigin="anonymous">
+</script>
+
+
+
+</body></html>

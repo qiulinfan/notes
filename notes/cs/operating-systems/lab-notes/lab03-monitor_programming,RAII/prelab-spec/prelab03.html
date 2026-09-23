@@ -1,0 +1,209 @@
+
+<!-- saved from url=(0039)https://os.eecs.umich.edu/lab/raii.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://umich.edu/favicon.ico" rel="shortcut icon">
+   <style class="anchorjs"></style><link rel="stylesheet" href="./prelab03_files/primer-spec-base.css">
+   <link rel="preload" href="./prelab03_files/primer_spec_plugin.min.js" as="script" crossorigin="">
+	<title>RAII</title>
+	<script src="./prelab03_files/primer_spec_plugin.min.js" crossorigin="anonymous"></script><!-- These should be included at the beginning of the <head> tag. -->
+<link rel="stylesheet" href="./prelab03_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="./prelab03_files/primer-spec-base.css">
+<link rel="stylesheet" id="primer-spec-subtheme-style" href="./prelab03_files/theme_default.css">
+	<script type="text/javascript">
+		function showHide(id) {
+			var e = document.getElementById(id);
+			e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+		}
+	</script>
+<!-- These should be included at the beginning of the <head> tag. -->
+<link rel="stylesheet" href="./prelab03_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="./prelab03_files/primer-spec-base.css">
+<link rel="stylesheet" id="primer-spec-subtheme-style" href="./prelab03_files/theme_default.css"></head>
+
+<body><div id="primer-spec-top"></div>
+<!-- Custom sidebar with a table of content -->
+<!-- 
+    The explicit onClick handler is needed to force Safari (iOS) to propagate
+    click events for the sidebar.
+-->
+<div class="primer-spec-sidebar position-fixed top-0 py-5 no-print" onclick="return true;">
+    <h2 class="primer-spec-toc-ignore" id="contents">
+        Contents
+        <!-- Show/Hide Sidebar button -->
+        <span class="primer-spec-hoverable">
+            <a href="https://os.eecs.umich.edu/lab/raii.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-hoverable sidebar-shown no-print">
+                <i class="fas fa-bars"></i>
+            </a>
+        </span>
+    </h2>
+    <br>
+    <div id="primer-spec-toc"><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h1"><a href="https://os.eecs.umich.edu/lab/raii.html#monitor-programming-raii">
+	Monitor programming; RAII
+</a></div><div class="primer-spec-toc-section"><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/raii.html#pre-lab-and-in-lab-1-luxury-box-access">[pre-lab and in-lab] 1. Luxury box access</a></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/raii.html#in-lab-2-acquiring-and-releasing-mutexes-with-raii">
+	[in-lab] 2. Acquiring and releasing mutexes with RAII
+</a></div><div class="primer-spec-toc-section"></div></div></div>
+</div> <!-- .primer-spec-sidebar -->
+
+<div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+    <!-- Show/Hide Sidebar button -->
+    <a href="https://os.eecs.umich.edu/lab/raii.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-sidebar-toggle-fixed primer-spec-hoverable primer-spec-float-left sidebar-shown no-print">
+        <i class="fas fa-bars"></i>
+    </a>
+    <!-- Show Settings button -->
+    </div>
+
+<!--
+    Settings modal. Treat it exactly like the actual content, but its
+    position on the page is fixed.
+    It should be displayed when the "settings" icon is clicked.
+-->
+<div class="primer-spec-settings container-lg markdown-body primer-spec-content-margin-extra px-3 py-5 position-fixed top-0 left-0">
+    <div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+        <!-- Hide Settings button -->
+        <a href="https://os.eecs.umich.edu/lab/raii.html#primer-spec-top" class="primer-spec-settings-toggle primer-spec-hoverable primer-spec-float-right no-print">
+            <i class="fas fa-times"></i>
+        </a>
+    </div>
+
+    <h1 class="primer-spec-toc-ignore">Spec Theme Settings</h1>
+    <p>Choose your theme!</p>
+    <select class="primer-spec-subtheme-selector">
+    <option value="default">default</option><option value="bella">bella</option><option value="modern">modern</option><option value="xcode-dark">xcode-dark</option></select>
+
+    <hr>
+
+    <p><small>
+        Does the spec display incorrectly? <a href="https://github.com/eecs485staff/primer-spec/issues">Let us know by adding a new "issue" here.</a>
+    </small></p>
+
+    <p class="primer-spec-brand">
+        <a href="https://github.com/eecs485staff/primer-spec/" target="_blank">
+            Primer Spec v1.1.0
+        </a>
+    </p>
+
+</div>
+<div id="primer-spec-plugin-main-content" onclick="return true;" class="container-lg px-3 my-5 markdown-body primer-spec-content-margin-extra">
+
+<h1 id="monitor-programming-raii">
+	Monitor programming; RAII
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/raii.html#monitor-programming-raii" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h1>
+
+<p>
+Please work out the pre-lab problems before your next lab section.  The
+GSI/IAs will go over all problems during the lab section.
+</p>
+
+<h3 id="pre-lab-and-in-lab-1-luxury-box-access">[pre-lab and in-lab] 1. Luxury box access<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/raii.html#pre-lab-and-in-lab-1-luxury-box-access" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+The Rose Bowl rents out its luxury box to fans.  To prevent fights between
+fans of opposing teams, the management enforces a rule that all fans in the
+luxury box must be fans of the same team.  Assume the luxury box has
+unlimited seats.
+</p>
+
+<p>
+Your task is to write a program which controls access to the luxury box, using
+the Mesa monitors that are provided by the <a <="" href="https://os.eecs.umich.edu/project1/">Project 1</a>
+thread library.  You will write the following procedures:
+<tt>big10_fan_enters()</tt>,
+<tt>big10_fan_leaves()</tt>,
+<tt>pac12_fan_enters()</tt>,
+<tt>pac12_fan_leaves()</tt>.
+
+</p><p>
+[pre-lab] A. Write the above functions to control access to the luxury box.
+For this solution, you need not be concerned about starvation, i.e., it's
+ok if a person waits indefinitely (but they must be allowed to enter if the
+luxury box is unoccupied).
+</p>
+
+<p>
+[in-lab] B. Modify your solution to prevent starvation. In other words,
+ensure that a person will not wait indefinitely to enter, assuming that
+each person already in the luxury box stays there for a finite time
+period.
+</p>
+
+<p>
+We will try to ensure fairness using a variable called TURN.  TURN can be
+set to either BIG10 or PAC12.  Write a solution that uses the TURN variable
+to alternate priorities between BIG 10 and PAC 12 fans when both groups are
+waiting.  For example, if there are BIG 10 fans in the luxury box and PAC
+12 fans waiting for the luxury box, then a BIG 10 fan arrives, the BIG 10
+fan should only be allowed in if TURN = BIG10.  Flip the TURN variable when
+appropriate.
+</p>
+
+<p>
+Notice that we can change the TURN variable in either the big10_leaves()
+function, or the big10_enters() function.
+</p>
+
+<ol>
+<li>Describe the fairness policy enforced if we change the TURN variable in <tt>big10_enters()</tt>.
+</li><li>Describe the fairness policy enforced if we change the TURN variable in <tt>big10_leaves()</tt>.
+</li><li>Do either of these actually prevent starvation?
+</li></ol>
+
+<p>
+We want a policy that maximizes concurrency while not allowing for starvation.
+What fairness policy do we actually want?  What would it take to implement this?
+</p>
+
+<h3 id="in-lab-2-acquiring-and-releasing-mutexes-with-raii">
+	[in-lab] 2. Acquiring and releasing mutexes with RAII
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/raii.html#in-lab-2-acquiring-and-releasing-mutexes-with-raii" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+<a href="https://en.cppreference.com/w/cpp/language/raii">
+RAII (Resource Acquisition Is Initialization)</a> is a programming idiom
+that is commonly used to acquire/release mutexes in concurrent programs.
+The basic idea is to create a class (often called a lock guard) whose
+constructor acquires the mutex and whose destructor releases the mutex.
+The program can then define the lock guard as a local variable when it
+needs to acquire the lock, then let the compiler automatically
+call the destructor (and release the lock) whenever that local variable
+leaves scope.  This idiom makes it easy to release the mutex, regardless
+of how the program leaves the scope (e.g., return statement, exception).
+You will find this idiom handy when you write Project 2 and 4.
+</p>
+
+<p>
+Modify the <a href="https://os.eecs.umich.edu/project1/#example">example program</a> from the
+Project 1 handout to use RAII.  Remember that you can create a new scope
+anywhere in your program, even if it doesn't correspond nicely to a
+function, if-statement, or loop.
+</p>
+
+<!--
+<p>
+B. Think about what resources are acquired and released in Project 2,
+and consider using RAII to acquire/release these resources.
+</p>
+-->
+
+<!--
+<h3>
+[pre-lab and in-lab] 3. Correctness checker
+</h3>
+
+<p>
+Based on the <a href="monitors.html">ping pong lab activity</a> from
+last week, implement a correctness checker in some scripting language,
+which tests the output of your solution. Your correctness checker should
+take in the printed output of a ping pong solution, and determine whether
+or not it is valid according to the spec.
+-->
+
+</div>
+
+<script src="./prelab03_files/primer_spec_plugin.min.js" crossorigin="anonymous">
+</script>
+
+
+
+</body></html>

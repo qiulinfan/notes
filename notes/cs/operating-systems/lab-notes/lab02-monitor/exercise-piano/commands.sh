@@ -1,0 +1,1 @@
+clang++ -std=c++23 pingpong.cpp -ldl -pthread libthread_macos.o -o pingpong

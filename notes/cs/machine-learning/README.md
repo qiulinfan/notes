@@ -1,0 +1,2 @@
+EECS 545: Machine Learning, 25 Winter. This is a graduate introductory course on ML. The note includes both mathematical proof and implementations using Python.
+Homework and project is not included here.

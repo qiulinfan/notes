@@ -1,0 +1,652 @@
+{
+  "schema": "kgdistiller-sources-v1",
+  "fields": [
+    {
+      "id": "analysis",
+      "label": "Analysis",
+      "text": "The field studying limiting processes, continuity, measure, integration, and function spaces."
+    },
+    {
+      "id": "linear-algebra",
+      "label": "Linear Algebra",
+      "text": "The field studying vector spaces, linear maps, matrix factorisations, spectral structure, and numerical stability."
+    },
+    {
+      "id": "abstract-algebra",
+      "label": "Abstract Algebra",
+      "text": "The field studying algebraic structures such as groups, rings, quotient objects, and homomorphisms."
+    },
+    {
+      "id": "measure-theory",
+      "label": "Measure Theory",
+      "text": "The field of measurable structures, measures, integration, and differentiation of measures."
+    },
+    {
+      "id": "probability-theory",
+      "label": "Probability Theory",
+      "text": "The field studying random phenomena through probability spaces, distributions, and stochastic limits."
+    },
+    {
+      "id": "combinatorics",
+      "label": "Combinatorics",
+      "text": "The field studying discrete structures, counting principles, and finite configurations."
+    },
+    {
+      "id": "computer-architecture",
+      "label": "Computer Architecture",
+      "text": "The field connecting instruction sets, processors, memory systems, digital organization, and performance."
+    },
+    {
+      "id": "programming-languages",
+      "label": "Programming Languages",
+      "text": "The field studying programming-language concepts, abstractions, type systems, memory models, and their practical use."
+    },
+    {
+      "id": "data-structures-and-algorithms",
+      "label": "Data Structures and Algorithms",
+      "text": "The field studying representations of data, algorithm design, correctness, and computational efficiency."
+    }
+  ],
+  "sources": [
+    {
+      "id": "math:measure-theory",
+      "title": "Measure Theory",
+      "description": "Measure, integration, convergence, product measures, differentiation, and Lp spaces.",
+      "subject": "math",
+      "course": "measure-theory",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "analysis",
+        "measure-theory"
+      ],
+      "root": "notes/math/measure-theory",
+      "files": [
+        "main.typ",
+        "extras.typ",
+        "chapters/*.typ",
+        "homeworks/*.typ",
+        "extras/*.typ"
+      ],
+      "publish": true,
+      "listed": true,
+      "web": "https://qiulinfan.github.io/notes/math/measure-theory",
+      "web_artifacts": [
+        {
+          "source": "build/typst/index.html",
+          "route": ""
+        },
+        {
+          "source": "build/typst/extras.html",
+          "route": "extras"
+        }
+      ],
+      "topics": [
+        {
+          "glob": "chapters/01-*.typ",
+          "id": "measurable-spaces-and-measures",
+          "label": "Measurable Spaces and Measures"
+        },
+        {
+          "glob": "chapters/02-*.typ",
+          "id": "outer-measure-and-extension",
+          "label": "Outer Measure and Measure Extension"
+        },
+        {
+          "glob": "chapters/03-*.typ",
+          "id": "lebesgue-stieltjes-measures",
+          "label": "Lebesgue–Stieltjes Measures"
+        },
+        {
+          "glob": "chapters/04-*.typ",
+          "id": "measurable-functions-and-nonnegative-integration",
+          "label": "Measurable Functions and Nonnegative Integration"
+        },
+        {
+          "glob": "chapters/05-*.typ",
+          "id": "lebesgue-integration-and-convergence",
+          "label": "Lebesgue Integration and Convergence"
+        },
+        {
+          "glob": "chapters/06-*.typ",
+          "id": "product-measures-and-fubini-tonelli",
+          "label": "Product Measures and Fubini–Tonelli"
+        },
+        {
+          "glob": "chapters/07-*.typ",
+          "id": "lebesgue-measure-on-euclidean-space",
+          "label": "Lebesgue Measure on Euclidean Space"
+        },
+        {
+          "glob": "chapters/08-*.typ",
+          "id": "differentiation-of-integrals",
+          "label": "Differentiation of Integrals"
+        },
+        {
+          "glob": "chapters/09-*.typ",
+          "id": "lp-spaces-and-inequalities",
+          "label": "Lp Spaces and Inequalities"
+        },
+        {
+          "glob": "chapters/10-*.typ",
+          "id": "signed-measures",
+          "label": "Signed Measures"
+        },
+        {
+          "glob": "chapters/11-*.typ",
+          "id": "radon-nikodym-theory",
+          "label": "Radon–Nikodym Theory"
+        },
+        {
+          "glob": "chapters/12-*.typ",
+          "id": "functions-of-bounded-variation",
+          "label": "Differentiation and Functions of Bounded Variation"
+        },
+        {
+          "glob": "chapters/13-*.typ",
+          "id": "duality-of-lp-spaces",
+          "label": "Duality of Lp Spaces"
+        }
+      ]
+    },
+    {
+      "id": "math:probability",
+      "title": "Probability Theory",
+      "description": "Probability spaces, random variables, distributions, laws of large numbers, and central limit theorems.",
+      "subject": "math",
+      "course": "probability",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "probability-theory"
+      ],
+      "root": "notes/math/prob",
+      "files": [
+        "main.typ",
+        "homeworks.typ",
+        "chapters/*.typ",
+        "homeworks/*.typ"
+      ],
+      "publish": true,
+      "listed": true,
+      "web": "https://qiulinfan.github.io/notes/math/probability",
+      "web_artifacts": [
+        {
+          "source": "build/typst/index.html",
+          "route": ""
+        },
+        {
+          "source": "build/typst/homeworks.html",
+          "route": "homeworks"
+        }
+      ],
+      "topics": [
+        {
+          "glob": "chapters/01-*.typ",
+          "id": "probability-spaces-and-combinatorics",
+          "label": "Probability Spaces and Combinatorics",
+          "fields": [
+            "combinatorics"
+          ]
+        },
+        {
+          "glob": "chapters/02-*.typ",
+          "id": "random-variables-and-distributions",
+          "label": "Random Variables and Distributions",
+          "fields": [
+            "measure-theory"
+          ]
+        },
+        {
+          "glob": "chapters/03-*.typ",
+          "id": "joint-and-conditional-distributions",
+          "label": "Joint and Conditional Distributions",
+          "fields": [
+            "analysis",
+            "measure-theory"
+          ]
+        },
+        {
+          "glob": "chapters/04-*.typ",
+          "id": "laws-of-large-numbers",
+          "label": "Laws of Large Numbers",
+          "fields": [
+            "analysis"
+          ]
+        },
+        {
+          "glob": "chapters/05-*.typ",
+          "id": "central-limit-theorems",
+          "label": "Central Limit Theorems",
+          "fields": [
+            "analysis"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math:advanced-linear-algebra",
+      "title": "Advanced Linear Algebra",
+      "description": "Selected notes on vector spaces, duality, operators, and multilinear algebra.",
+      "subject": "math",
+      "course": "advanced-linear-algebra",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "linear-algebra"
+      ],
+      "root": "notes/math/advanced-linear-algebra",
+      "files": [
+        "main.typ",
+        "chapters/*.typ"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/math/advanced-linear-algebra",
+      "topics": []
+    },
+    {
+      "id": "math:linear-algebra",
+      "title": "Linear Algebra",
+      "description": "Linear algebra worksheets and personal homework submissions from MATH 217.",
+      "subject": "math",
+      "course": "linear-algebra",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "linear-algebra"
+      ],
+      "root": "notes/math/linear-algebra",
+      "files": [
+        "main.typ",
+        "chapters/*.typ",
+        "homeworks/*.typ"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/math/linear-algebra",
+      "topics": []
+    },
+    {
+      "id": "math:mathematical-analysis",
+      "title": "Mathematical Analysis",
+      "description": "Single-variable mathematical analysis lectures and personal homework submissions from MATH 451.",
+      "subject": "math",
+      "course": "mathematical-analysis",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "analysis"
+      ],
+      "root": "notes/math/mathematical-analysis",
+      "files": [
+        "main.typ",
+        "homeworks.typ",
+        "chapters/*.typ",
+        "homeworks/*.typ"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/math/mathematical-analysis",
+      "topics": []
+    },
+    {
+      "id": "math:modern-algebra",
+      "title": "Modern Algebra",
+      "description": "Abstract algebra worksheets and personal homework submissions from MATH 412.",
+      "subject": "math",
+      "course": "modern-algebra",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "abstract-algebra"
+      ],
+      "root": "notes/math/modern-algebra",
+      "files": [
+        "main.typ",
+        "chapters/*.typ",
+        "homeworks/*.typ"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/math/modern-algebra",
+      "topics": []
+    },
+    {
+      "id": "math:multivariate-analysis",
+      "title": "Multivariate Analysis",
+      "description": "Multivariate mathematical analysis lectures, IBL notes, and personal homework submissions from MATH 395.",
+      "subject": "math",
+      "course": "multivariate-analysis",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "analysis"
+      ],
+      "root": "notes/math/multivariate-analysis",
+      "files": [
+        "main.typ",
+        "homeworks.typ",
+        "chapters/*.typ",
+        "homeworks/*.typ"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/math/multivariate-analysis",
+      "topics": []
+    },
+    {
+      "id": "math:numerical-linear-algebra",
+      "title": "Numerical Linear Algebra",
+      "description": "Notes on matrix factorisations, norms, conditioning, stability, and backward error analysis.",
+      "subject": "math",
+      "course": "numerical-linear-algebra",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "linear-algebra"
+      ],
+      "root": "notes/math/numerical-linear-algebra",
+      "files": [
+        "main.typ",
+        "chapters/*.typ"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/math/numerical-linear-algebra",
+      "topics": []
+    },
+    {
+      "id": "cs:computer-organization",
+      "title": "Computer Organization",
+      "description": "Course notes on instruction sets, digital logic, caches, and memory systems.",
+      "subject": "cs",
+      "course": "computer-organization",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "computer-architecture"
+      ],
+      "root": "notes/cs/computer-organization",
+      "files": [
+        "*.md"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/cs/computer-organization",
+      "topics": [
+        {
+          "glob": "*.md",
+          "id": "computer-organization",
+          "label": "Computer Organization"
+        }
+      ]
+    },
+    {
+      "id": "cs:cpp-programming",
+      "title": "C++ Programming",
+      "description": "C++ programming notes on tooling, procedural abstraction, memory, object-oriented design, containers, iterators, recursion, and trees.",
+      "subject": "cs",
+      "course": "cpp-programming",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "programming-languages"
+      ],
+      "root": "notes/cs/cpp-programming/docs",
+      "files": [
+        "index.md",
+        "0*.md",
+        "1*.md",
+        "20*.md",
+        "21*.md",
+        "22*.md",
+        "23*.md",
+        "24*.md",
+        "25*.md",
+        "280*.md"
+      ],
+      "publish": true,
+      "listed": true,
+      "web": "https://qiulinfan.github.io/notes/cs/cpp-programming",
+      "topics": [
+        {
+          "glob": "*.md",
+          "id": "cpp-programming",
+          "label": "C++ Programming"
+        }
+      ]
+    },
+    {
+      "id": "cs:data-structures-algorithms",
+      "title": "Data Structures and Algorithms",
+      "description": "Data structures and algorithms notes covering union-find, hashing, balanced trees, graphs, shortest paths, minimum spanning trees, dynamic programming, and optimization.",
+      "subject": "cs",
+      "course": "data-structures-algorithms",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "data-structures-and-algorithms"
+      ],
+      "root": "notes/cs/data-structures-algorithms/docs",
+      "files": [
+        "index.md",
+        "notes-*.md"
+      ],
+      "publish": true,
+      "listed": true,
+      "web": "https://qiulinfan.github.io/notes/cs/data-structures-algorithms",
+      "topics": [
+        {
+          "glob": "*.md",
+          "id": "data-structures-algorithms",
+          "label": "Data Structures and Algorithms"
+        }
+      ]
+    },
+    {
+      "id": "math:everything-about-linear-algebra",
+      "title": "Everything About Linear Algebra",
+      "description": "A combined collection of linear algebra, advanced linear algebra, and numerical linear algebra notes.",
+      "subject": "math",
+      "course": "everything-about-linear-algebra",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "linear-algebra"
+      ],
+      "root": "notes/math/everything-about-linear-algebra",
+      "files": [
+        "main.typ",
+        "chapters/*.typ"
+      ],
+      "publish": true,
+      "listed": true,
+      "web": "https://qiulinfan.github.io/notes/math/everything-about-linear-algebra",
+      "web_artifacts": [
+        {
+          "source": "build/typst/index.html",
+          "route": ""
+        }
+      ],
+      "topics": []
+    },
+    {
+      "id": "math:single-and-multivariate-mathematical-analysis",
+      "title": "Single and Multivariate Mathematical Analysis",
+      "description": "A combined collection of single-variable and multivariate mathematical analysis notes.",
+      "subject": "math",
+      "course": "single-and-multivariate-mathematical-analysis",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "analysis"
+      ],
+      "root": "notes/math/single-and-multivariate-mathematical-analysis",
+      "files": [
+        "main.typ",
+        "chapters/*.typ"
+      ],
+      "publish": true,
+      "listed": true,
+      "web": "https://qiulinfan.github.io/notes/math/single-and-multivariate-mathematical-analysis",
+      "web_artifacts": [
+        {
+          "source": "build/typst/index.html",
+          "route": ""
+        }
+      ],
+      "topics": []
+    },
+    {
+      "id": "math:a-bit-of-abstract-algebra",
+      "title": "(A Bit of) Abstract Algebra",
+      "description": "A personal collection of introductory abstract algebra notes and worked problems.",
+      "subject": "math",
+      "course": "a-bit-of-abstract-algebra",
+      "knowledge_origin": "personal-note",
+      "fields": [
+        "abstract-algebra"
+      ],
+      "root": "notes/math/a-bit-of-abstract-algebra",
+      "files": [
+        "main.typ",
+        "chapters/*.typ"
+      ],
+      "publish": true,
+      "listed": true,
+      "web": "https://qiulinfan.github.io/notes/math/a-bit-of-abstract-algebra",
+      "web_artifacts": [
+        {
+          "source": "build/typst/index.html",
+          "route": ""
+        }
+      ],
+      "topics": []
+    },
+    {
+      "id": "math:point-set-topology",
+      "title": "Point-Set Topology",
+      "description": "Typst-first notes for Point-Set Topology.",
+      "subject": "math",
+      "course": "point-set-topology",
+      "knowledge_origin": "personal-note",
+      "fields": [],
+      "root": "notes/math/point-set-topology",
+      "files": [
+        "main.typ",
+        "chapters/*.typ"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/math/point-set-topology",
+      "topics": []
+    },
+    {
+      "id": "cs:operating-systems",
+      "title": "Operating Systems",
+      "description": "// 待整理",
+      "subject": "cs",
+      "course": "operating-systems",
+      "knowledge_origin": "personal-note",
+      "fields": [],
+      "root": "notes/cs/operating-systems",
+      "files": [
+        "**/*.md"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/cs/operating-systems",
+      "topics": []
+    },
+    {
+      "id": "cs:machine-learning",
+      "title": "Machine Learning",
+      "description": "// 待整理",
+      "subject": "cs",
+      "course": "machine-learning",
+      "knowledge_origin": "personal-note",
+      "fields": [],
+      "root": "notes/cs/machine-learning",
+      "files": [
+        "**/*.md"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/cs/machine-learning",
+      "topics": []
+    },
+    {
+      "id": "cs:optimization",
+      "title": "Optimization Methods for SIPML",
+      "description": "// 待整理",
+      "subject": "cs",
+      "course": "optimization",
+      "knowledge_origin": "personal-note",
+      "fields": [],
+      "root": "notes/cs/optimization",
+      "files": [
+        "**/*.md"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/cs/optimization",
+      "topics": []
+    },
+    {
+      "id": "cs:computer-networks",
+      "title": "Computer Networks",
+      "description": "// 待整理",
+      "subject": "cs",
+      "course": "computer-networks",
+      "knowledge_origin": "personal-note",
+      "fields": [],
+      "root": "notes/cs/computer-networks",
+      "files": [
+        "README.md"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/cs/computer-networks",
+      "topics": []
+    },
+    {
+      "id": "cs:computer-vision",
+      "title": "Computer Vision",
+      "description": "// 待整理",
+      "subject": "cs",
+      "course": "computer-vision",
+      "knowledge_origin": "personal-note",
+      "fields": [],
+      "root": "notes/cs/computer-vision",
+      "files": [
+        "README.md"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/cs/computer-vision",
+      "topics": []
+    },
+    {
+      "id": "cs:natural-language-processing",
+      "title": "Natural Language Processing",
+      "description": "// 待整理",
+      "subject": "cs",
+      "course": "natural-language-processing",
+      "knowledge_origin": "personal-note",
+      "fields": [],
+      "root": "notes/cs/natural-language-processing",
+      "files": [
+        "README.md"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/cs/natural-language-processing",
+      "topics": []
+    },
+    {
+      "id": "cs:computer-graphics",
+      "title": "Computer Graphics",
+      "description": "// 待整理",
+      "subject": "cs",
+      "course": "computer-graphics",
+      "knowledge_origin": "personal-note",
+      "fields": [],
+      "root": "notes/cs/computer-graphics",
+      "files": [
+        "README.md"
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/cs/computer-graphics",
+      "topics": []
+    }
+  ]
+}

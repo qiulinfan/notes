@@ -1,0 +1,561 @@
+
+<!-- saved from url=(0043)https://os.eecs.umich.edu/lab/monitors.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://umich.edu/favicon.ico" rel="shortcut icon">
+   <style class="anchorjs"></style><link rel="stylesheet" href="./prelab02_files/primer-spec-base.css">
+   <link rel="preload" href="./prelab02_files/primer_spec_plugin.min.js" as="script" crossorigin="">
+	<title>Monitors</title>
+	<script src="./prelab02_files/primer_spec_plugin.min.js" crossorigin="anonymous"></script><!-- These should be included at the beginning of the <head> tag. -->
+<link rel="stylesheet" href="./prelab02_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="./prelab02_files/primer-spec-base.css">
+<link rel="stylesheet" id="primer-spec-subtheme-style" href="./prelab02_files/theme_default.css">
+	<script type="text/javascript">
+		function showHide(id) {
+			var e = document.getElementById(id);
+			e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+		}
+	</script>
+<!-- These should be included at the beginning of the <head> tag. -->
+<link rel="stylesheet" href="./prelab02_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="./prelab02_files/primer-spec-base.css">
+<link rel="stylesheet" id="primer-spec-subtheme-style" href="./prelab02_files/theme_default.css"></head>
+
+<body><div id="primer-spec-top"></div>
+<!-- Custom sidebar with a table of content -->
+<!-- 
+    The explicit onClick handler is needed to force Safari (iOS) to propagate
+    click events for the sidebar.
+-->
+<div class="primer-spec-sidebar position-fixed top-0 py-5 no-print" onclick="return true;">
+    <h2 class="primer-spec-toc-ignore" id="contents">
+        Contents
+        <!-- Show/Hide Sidebar button -->
+        <span class="primer-spec-hoverable">
+            <a href="https://os.eecs.umich.edu/lab/monitors.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-hoverable sidebar-shown no-print">
+                <i class="fas fa-bars"></i>
+            </a>
+        </span>
+    </h2>
+    <br>
+    <div id="primer-spec-toc"><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h1"><a href="https://os.eecs.umich.edu/lab/monitors.html#monitors">
+	Monitors
+</a></div><div class="primer-spec-toc-section"><div class="primer-spec-toc-item primer-spec-toc-h3 primer-spec-toc-active"><a href="https://os.eecs.umich.edu/lab/monitors.html#pre-lab-1-ping-pong">[pre-lab] 1. Ping pong</a></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/monitors.html#pre-lab-and-in-lab-2-piano">[pre-lab and in-lab] 2. Piano</a></div><div class="primer-spec-toc-section"></div><div class="primer-spec-toc-item primer-spec-toc-h3"><a href="https://os.eecs.umich.edu/lab/monitors.html#pre-lab-and-in-lab-3-correctness-checker">
+[pre-lab and in-lab] 3. Correctness checker
+</a></div><div class="primer-spec-toc-section"></div></div></div>
+</div> <!-- .primer-spec-sidebar -->
+
+<div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+    <!-- Show/Hide Sidebar button -->
+    <a href="https://os.eecs.umich.edu/lab/monitors.html#primer-spec-top" class="primer-spec-sidebar-toggle primer-spec-sidebar-toggle-fixed primer-spec-hoverable primer-spec-float-left sidebar-shown no-print">
+        <i class="fas fa-bars"></i>
+    </a>
+    <!-- Show Settings button -->
+    </div>
+
+<!--
+    Settings modal. Treat it exactly like the actual content, but its
+    position on the page is fixed.
+    It should be displayed when the "settings" icon is clicked.
+-->
+<div class="primer-spec-settings container-lg markdown-body primer-spec-content-margin-extra px-3 py-5 position-fixed top-0 left-0">
+    <div class="primer-spec-topbar position-fixed width-full top-0 left-0 py-2 no-print">
+        <!-- Hide Settings button -->
+        <a href="https://os.eecs.umich.edu/lab/monitors.html#primer-spec-top" class="primer-spec-settings-toggle primer-spec-hoverable primer-spec-float-right no-print">
+            <i class="fas fa-times"></i>
+        </a>
+    </div>
+
+    <h1 class="primer-spec-toc-ignore">Spec Theme Settings</h1>
+    <p>Choose your theme!</p>
+    <select class="primer-spec-subtheme-selector">
+    <option value="default">default</option><option value="bella">bella</option><option value="modern">modern</option><option value="xcode-dark">xcode-dark</option></select>
+
+    <hr>
+
+    <p><small>
+        Does the spec display incorrectly? <a href="https://github.com/eecs485staff/primer-spec/issues">Let us know by adding a new "issue" here.</a>
+    </small></p>
+
+    <p class="primer-spec-brand">
+        <a href="https://github.com/eecs485staff/primer-spec/" target="_blank">
+            Primer Spec v1.1.0
+        </a>
+    </p>
+
+</div>
+<div id="primer-spec-plugin-main-content" onclick="return true;" class="container-lg px-3 my-5 markdown-body primer-spec-content-margin-extra">
+
+<h1 id="monitors">
+	Monitors
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/monitors.html#monitors" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h1>
+
+<p>
+Please work out the pre-lab problems before your next lab section.  The
+GSI/IAs will go over these problems during the lab section.
+</p>
+
+<!--
+<h3>[pre-lab] 1. Locks</h3>
+
+<p>
+Assume n threads are accessing m independent shared objects (e.g., shared
+variables). How many locks are required to provide maximum concurrency 
+within the threads? Does more concurrency imply better performance?
+</p>
+-->
+
+<h3 id="pre-lab-1-ping-pong">[pre-lab] 1. Ping pong<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/monitors.html#pre-lab-1-ping-pong" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+Write a multi-threaded program that simulates a game of ping pong between
+two players, each of whom is represented by a thread.  One player hits
+the ball by printing "ping"; the other player hits the ball by printing
+"pong".  The program should allow either player to hit the ball first
+(depending on which thread is faster), then the players should alternate
+until each player has hit the ball 5 times.  Use a command-line argument to
+control the value of the <tt>deterministic</tt> flag passed to
+<tt>cpu::boot</tt>
+
+</p><h3 id="pre-lab-and-in-lab-2-piano">[pre-lab and in-lab] 2. Piano<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/monitors.html#pre-lab-and-in-lab-2-piano" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+Write a multi-threaded program that simulates a conductor directing
+musicians to play music.  The conductor thread reads a series of notes (the
+note value is in the range 0-7) from an input file and directs different
+musician threads to play each note.  Each musician thread plays a single
+type of note by printing an appropriate string (0=empty, 1=do, 2=re, 3=mi,
+4=fa, 5=sol, 6=la, 7=ti).
+
+</p><p>
+Here is some starter code
+
+</p><pre>#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;type_traits&gt;
+#include &lt;vector&gt;
+#include &lt;cassert&gt;
+
+#include "cpu.h"
+#include "thread.h"
+#include "mutex.h"
+#include "cv.h"
+
+using std::cout;
+using std::endl;
+
+/* given helper functions and variables */
+
+enum class Note : uintptr_t { Na = 0, Do = 1, Re = 2, Mi = 3, Fa = 4, So = 5, La = 6, Ti = 7 };
+std::vector&lt;std::string&gt; notes_str{"empty", "do", "re", "mi", "fa", "sol", "la", "ti"};
+
+/* Overload extraction operator so that we can read directly into a Note variable */
+std::ifstream &amp;operator&gt;&gt;(std::ifstream &amp;stream, Note &amp;note) {
+    std::underlying_type_t&lt;Note&gt; temp{};
+    stream &gt;&gt; temp;
+    note = static_cast&lt;Note&gt;(temp);
+    return stream;
+}
+
+void play(Note note) {
+    assert(note != Note::Na);
+    cout &lt;&lt; notes_str[static_cast&lt;size_t&gt;(note)] &lt;&lt; endl;
+}
+
+/* Add global variables and helper functions here */
+
+void conductor(uintptr_t arg) {
+    std::ifstream infile("input.txt");
+    /* implement here */
+}
+
+void pianoKey(uintptr_t arg) {
+    auto note = static_cast&lt;Note&gt;(arg);
+    /* implement here */
+}
+
+void manageThreads(uintptr_t arg) {
+    for (uintptr_t i = 1; i &lt;= 7; ++i) {
+        thread pianoKeyThread(pianoKey, i);
+    }
+    thread conductorThread(conductor, 0);
+}
+
+int main(int argc, char **argv) {
+    cpu::boot(manageThreads, 0, 0);
+}
+</pre>
+
+<h3 id="pre-lab-and-in-lab-3-correctness-checker">
+[pre-lab and in-lab] 3. Correctness checker
+<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://os.eecs.umich.edu/lab/monitors.html#pre-lab-and-in-lab-3-correctness-checker" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>
+Based on the ping pong lab activity, implement a correctness checker in some scripting language,
+which tests the output of your solution. Your correctness checker should
+take in the printed output of a ping pong solution, and determine whether
+or not it is valid according to the spec.
+</p>
+
+<!--
+<p>
+Here is a <a href="https://github.com/eecs482/piano_lab">github repo</a>
+with some starter code.
+-->
+
+<!--
+<h3>[pre-lab and in-lab] 2. Luxury box access</h3>
+
+<p>
+The Rose Bowl rents out its luxury box to fans.  To prevent fights between
+fans of opposing teams, the management enforces a rule that all fans in the
+luxury box must be fans of the same team.  Assume the luxury box has
+unlimited seats.
+</p>
+
+<p>
+Your task is to write a program which controls access to the luxury box, using
+the Mesa monitors that are provided by the <a
+< href="../project1/">Project 1</a>
+thread library.  You will write the following procedures:
+<tt>big10_fan_enters()</tt>,
+<tt>big10_fan_leaves()</tt>,
+<tt>pac12_fan_enters()</tt>,
+<tt>pac12_fan_leaves()</tt>.
+
+<p>
+[pre-lab] A. Write the above functions to control access to the luxury box.
+For this solution, you need not be concerned about starvation, i.e., it's
+ok if a person waits indefinitely (but they must be allowed to enter if the
+luxury box is unoccupied).
+</p>
+
+<p>
+[in-lab] B. Modify your solution to prevent starvation. In other words,
+ensure that a person will not wait indefinitely to enter, assuming that
+each person already in the luxury box stays there for a finite time
+period.
+</p>
+
+<p>
+We will try to ensure fairness using a variable called TURN.  TURN can be
+set to either BIG10 or PAC12.  Write a solution that uses the TURN variable
+to alternate priorities between BIG 10 and PAC 12 fans when both groups are
+waiting.  For example, if there are BIG 10 fans in the luxury box and PAC
+12 fans waiting for the luxury box, then a BIG 10 fan arrives, the BIG 10
+fan should only be allowed in if TURN = BIG10.  Flip the TURN variable when
+appropriate.
+</p>
+
+<p>
+Notice that we can change the TURN variable in either the big10_leaves()
+function, or the big10_enters() function.
+</p>
+
+<ol>
+<li>Describe the fairness policy enforced if we change the TURN variable in <tt>big10_enters()</tt>.
+<li>Describe the fairness policy enforced if we change the TURN variable in <tt>big10_leaves()</tt>.
+<li>Do either of these actually prevent starvation?
+</ol>
+
+<p>
+We want a policy that maximizes concurrency while not allowing for starvation.
+What fairness policy do we actually want?  What would it take to implement this?
+</p>
+-->
+
+<!--
+<h3>[pre-lab] 3. File access</h3>
+
+<p>
+Several threads are accessing a file.  Each thread has a a unique priority
+number. The file can be accessed simultaneously by several threads,
+subject to the following constraint: the sum of all unique priority numbers
+of the threads currently accessing the file must be less than n.
+</p>
+
+<p>
+Show how to use monitors to coordinate access to the file.
+</p>
+
+<h3>[Bonus] 4. Barriers</h3>
+
+<p>
+Note that this exercise is being released as a bonus problem! There will likely not be enough time during lab to go over the solution, but completing this will be excellent prep for the midterm.
+</p>
+
+<p>
+<i>(This problem has optional background material. The background
+reading tries to give you a sense of how you might find parallelism
+and use monitors in a real world problem, and attempts to motivate the
+usefulness of barriers. If you'd like to read the background
+material, <a href="javascript:showHide('backMaterial');">click here</a>.
+It is not necessary to understand the background material to do the
+problem.)</i>
+</p>
+
+<div id="backMaterial" style="display:none">
+<hr/>
+
+<p>
+Certain classes of partial differential equations can be solved by an
+iterative method called relaxation. One such PDE is the one
+dimentional form of Poisson's equation:
+&part;<sup>2</sup><i>V</i>/&part;<i>x</i><sup>2</sup>
+= <i>f(x)</i>. If you create a vector of doubles representing the
+values of <i>V</i> at <tt>SIZE + 1</tt> discretized points, you can
+calculate an approximate solution through iteration. At each
+point <tt>i</tt> from <tt>1</tt> to <tt>SIZE-1</tt>, you can compute
+the next value of <tt>V[i] = (V[i+1] + V[i-1] -
+f(i))/2</tt>. Eventually, in enough iterations, <tt>V</tt> will converge
+to the solution of the PDE.
+</p>
+
+<p>
+So, you write the following code:
+</p>
+
+<pre>
+void relaxation(int * V, int (*f)(int) f, int size, int count) {
+  // A temporary buffer to hold alternate iterations
+  int * tmp = new int[size]; 
+  // A pointer pointing at the next iteration array
+  int * p = tmp;
+  // A pointer pointing at the old iteration array
+  int * p_prime = V + 1;
+
+  for (int j = 0; j < count; j++) {
+    for (int i = 0; i < size; i++) {
+      //Computing the next iteration
+      p[i] = (p_prime[i-1] + p_prime[i+1] - f(i))/2;
+    }   
+    // Swap the two pointers, so that the old array can be
+    // reused for the next
+    swap(p, p_prime);
+  }
+
+  // If when we finished, the result was not in the input array
+  // copy it back there.
+  if (p != V + 1) {
+    memcpy(V + 1, p, size);
+  }
+
+  delete tmp;
+}
+</pre>
+
+<p>
+You run the code and are satisfied with its correctness, but because
+you make SIZE large and <i>f</i> is difficult to compute, this
+function is slow. You decide that you could divide up the array and
+give part of the array to multiple threads.
+</p>
+
+<pre>
+struct relaxation_config {
+  int * V;
+  int * p;
+  int * p_prime;
+  int (*f)(int);
+  int size;
+  int count;
+};
+
+void relaxation_thread(void * arg) {
+  // Cast the input to a relaxation_config struct pointer.
+  auto config = static_cast&ltrelaxation_config *&gt(arg);
+
+  // Compute our portion of the iteration.
+  for (int j = 0; j < config->count; j++) {
+      // For each cell in our range, evaluate the expression.
+      for (int i = 0; i < config->size; i++) {
+         config->p[i] = (config->p_prime[i-1] + 
+           config->p_prime[i+1] - config->f(i))/2;
+      }   
+      swap(config->p, config->p_prime);
+  }
+
+  if (config->p != config->V) {
+    memcpy(config->V, config->p, size);
+  }
+
+  delete config;
+}
+
+void relaxation(int * V, int (*f)(int), int size, int count) {
+  int * tmp = new int[size]; 
+  int * p = tmp;
+  int * p_prime = V + 1;
+  thread * threads[NUM_THREADS];
+
+  // Each thread will do thread_size entries in the matrix.
+  int thread_size = size/NUM_THREADS;
+
+  for (int i = 0; i < NUM_THREADS; i++) {
+    // Configure the child thread
+    relaxation_config * config = new relaxation_config;
+    // Each thread gets a segment beginning i * thread_size through
+    config->V = V + 1 + i * thread_size;
+    config->p = p + i * thread_size;
+    config->p_prime = p_prime + i * thread_size;
+    config->f = f;
+    config->size = thread_size;
+    config->count = count;
+    // Create the thread
+    threads[i] = new thread(relaxation_thread, static_cast&ltvoid *&gt(config));
+  }
+
+  // Join with all the threads. Function cannot return until 
+  // all threads have finished!
+  for (int i = 0; i < NUM_THREADS; i++) {
+    threads[i]->join();
+    delete threads[i];
+  }
+
+  delete tmp;
+}
+</pre> 
+
+<p>
+<strong>But this code has a bug!</strong> Each thread computes all of
+its cells, but what happens on the edges? When a thread is computing
+it's <tt>j</tt>'th <tt>i=0</tt> iteration of the inner loop, it is
+dependent on another thread having completed
+it's <tt>j-1</tt>'th <tt>i=threadd_size - 1</tt> iteration! We must
+enforce this restriction.
+</p>
+
+<p>
+So, you consult your EECS 482 textbook and see that the solution is to
+use a <strong>barrier</strong>. But alas, the simple EECS 482 thread
+library doesn't provide them. So, you decide to implement barriers
+with monitors.
+</p>
+<hr/>
+</div>
+
+<p>
+A barrier is a tool that provides a way for various threads to
+synchronize their progress. Threads "check in" or wait at a barrier
+and are only allowed to proceed past the barrier when a certain number
+of threads have "checked in" to the barrier. This tool allows a
+program to run phases in parallel (particularly useful in
+matrix operations).
+</p>
+
+<p>
+Your job is to implement barriers using monitors. <strong>Implement
+the constructor and <tt>wait</tt> function adding private variables as
+needed.</strong>
+</p>
+
+<pre>
+class Barrier {
+ private:
+  //Add your private member variables
+
+
+
+
+
+ public:
+  /* Constructs a new barrier that will allow number_of_threads
+     threads to check in. */
+  Barrier(int number_of_threads);
+
+  /* Called by a thread checking in to the barrier. Should return
+     true if the thread was the last thread to check in (in POSIX threads
+     lingo, the "serial thread") and false otherwise. This function should
+     block until all threads have checked in. */
+  bool wait();
+
+  /* Delete copy constructor and copy assignment operators */
+  Barrier(const Barrier&) = delete;
+  Barrier& operator=(const Barrier&) = delete;
+  Barrier(Barrier&&) = delete;
+  Barrier& operator=(Barrier&&) = delete;
+};
+</pre>
+
+<div id="pBackMaterial" style="display:none;">
+<p>
+Now, armed with your new <tt>Barrier</tt> class, you fix up your code
+so that it works correctly in parallel by having each thread check in
+to the barrier before continuing on to its next iteration of the outer
+loop.
+</p>
+
+<pre>
+struct relaxation_config {
+  int * V;
+  int * p;
+  int * p_prime;
+  int (*f)(int);
+  int size;
+  int count;
+  Barrier * barrier;
+};
+
+void relaxation_thread(void * arg) {
+  auto config = static_cast&ltrelaxation_config *&gt(arg);
+  for (int j = 0; j < config->count; j++) {
+      for (int i = 1; i <= config->size; i++) {
+         config->p[i] = (config->p_prime[i-1] + 
+           config->p_prime[i+1] - config->f(i))/2;
+      }   
+      swap(config->p, config->p_prime);
+
+      // Wait at the barrier until all thread have completed
+      // j'th iteration.
+      barrier->wait();
+  }
+
+  if (config->p != config->V) {
+    memcpy(config->V, config->p, size);
+  }
+  delete config;
+}
+
+void relaxation(int * V, int (*f)(int), int size, int count) {
+  int * tmp = new int[size]; 
+  int * p = tmp;
+  int * p_prime = V;
+  thread * threads[NUM_THREADS];
+
+  // Create a new barrier
+  Barrier * barrier = new barrier(NUM_THREADS);
+  int thread_size = size/NUM_THREADS;
+
+  for (int i = 0; i < NUM_THREADS; i++) {
+    relaxation_config * config = new relaxation_config;
+    config->V = V + i * thread_size;
+    config->p = p + i * thread_size;
+    config->p_prime = p_prime + i * thread_size;
+    config->f = f;
+    config->size = thread_size;
+    config->count = count;
+    config->barrier = barrier;
+    threads[i] = new thread(relaxation_thread, static_cast&ltvoid *&gt(config));
+  }
+
+  for (int i = 0; i < NUM_THREADS; i++) {
+    threads[i]->join();
+    delete threads[i];
+  }
+
+  delete barrier;
+}
+</pre>
+
+</div>
+</div>
+-->
+
+<script src="./prelab02_files/primer_spec_plugin.min.js" crossorigin="anonymous">
+</script>
+</div>
+
+
+</body></html>
