@@ -1916,7 +1916,7 @@
     ]
   },
   "generator": "kgdistiller",
-  "git_revision": "565a0978b82329839fe06893fc94d1612e9a9638",
+  "git_revision": "bed727b4326796e3d69e72cc3514a289130a70d8",
   "graph_sha256": "512c884db08c4c39f2f0b27bfaf33906ba9236106f00e6092fb43e176889e32b",
   "identity_sha256": "1c8105e50aa47e039a073fdbaae235cdeb76c1380f72a91e7b0f155b6a77e3a2",
   "knowledge_origins": {
