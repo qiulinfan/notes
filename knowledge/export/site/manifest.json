@@ -19,7 +19,7 @@
       "sha256": "b00a561f929ce8e6ca9c3ba8407a9a8db4ac627b97cbb8a46e198b34a46ae0bd"
     }
   ],
-  "export_sha256": "c1568014dc4fb3391035855be680e0e2fe79731868cccd01949fb800b370892e",
+  "export_sha256": "e18a6b00b2d55cbe7f7ca3e69b7a5b8b55f4b3828aeca7d5f8a4cbed51e0466d",
   "graph": {
     "private_counts": {
       "edges": 577,
@@ -42,7 +42,7 @@
     "repository": "https://github.com/qiulinfan/kgdistiller",
     "version": "0.4.0"
   },
-  "replaces_export_sha256": "b8f223e780bd21c860cbb8b78e5438423b361041fc36ec5ae62cf1dea19f8957",
+  "replaces_export_sha256": "c1568014dc4fb3391035855be680e0e2fe79731868cccd01949fb800b370892e",
   "schema": "kgdistiller-static-export-v1",
   "source": {
     "digest": "8c14dc8268c2ca644820469cd8cf338533b62d6e7fec0f573e78c6470b0dc1eb",
@@ -133,8 +133,8 @@
       "notes/math/single-and-multivariate-mathematical-analysis/chapters/01-introduction.typ": "932de89d2d57681a274fcb3ae3008fe107370cbc43b1504dfdf24272710a36ba",
       "notes/math/single-and-multivariate-mathematical-analysis/main.typ": "357f9977546df26f565af8d2ae52c0f84cd4eececbd8dab2c39176b9067884ab"
     },
-    "repository": "https://github.com/qiulinfan/qiulinfan.github.io",
-    "revision": "cdc0b468636d8a2fb4fdb31369739d307c5d0a17"
+    "repository": "https://github.com/qiulinfan/notes",
+    "revision": "bed727b4326796e3d69e72cc3514a289130a70d8"
   },
   "status": "exported",
   "visibility": {
