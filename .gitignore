@@ -67,3 +67,27 @@ knowledge/build/
 # Obsidian YOLO contains credentials, OAuth tokens and generated runtimes
 /.obsidian/plugins/yolo/
 /YOLO/
+
+# Obsidian local state and private plugin configuration.
+# Only reviewed Completr and Quick LaTeX preferences are versioned.
+/.obsidian/*
+!/.obsidian/app.json
+!/.obsidian/appearance.json
+!/.obsidian/core-plugins.json
+!/.obsidian/community-plugins.json
+!/.obsidian/hotkeys.json
+!/.obsidian/plugins/
+/.obsidian/workspace*.json
+/.obsidian/graph.json
+/.obsidian/cache/
+/.obsidian/*.local.json
+/.obsidian/secrets.json
+/.obsidian/secret-storage.json
+/.obsidian/plugins/**
+!/.obsidian/plugins/obsidian-completr/
+!/.obsidian/plugins/obsidian-completr/data.json
+!/.obsidian/plugins/obsidian-completr/callout_suggestions.json
+!/.obsidian/plugins/obsidian-completr/latex_commands.json
+!/.obsidian/plugins/quick-latex/
+!/.obsidian/plugins/quick-latex/data.json
+/YOLO/
