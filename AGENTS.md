@@ -13,6 +13,11 @@ the owner asks, and keep development documentation here. The READMEs inside
 - The export manifest records `https://github.com/qiulinfan/notes` as its source repository; keep that value when exporting.
 - `notes/math/toolchain/web.css` is the standalone projection of the homepage palette (`site/src/styles/variables.styl` in the homepage repository). The homepage build verifies the pair, so change both together.
 - A course is published only through `knowledge/sources.json` (`publish`, `listed`, `web_artifacts`); `make web` derives its build list from that registry.
+- Native LaTeX web export uses `notes/math/toolchain/scripts/export_latex_web.py`
+  and `kgdistiller export latex` with the obsidian-latex-live converter. Follow
+  the selected product's `docs/latex-sources.md`; do not use Typst/Pandoc as this
+  web route or register generated HTML as an authority. Explicit format
+  migration tools remain separate.
 - Validate changes with `make check`.
 - Never place credentials in the repository or command output.
 
