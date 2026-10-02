@@ -1,0 +1,74 @@
+% LaTeX companion of 13-spectral-theorem.typ. Both formats are editable.
+\chapter{Spectral theorem}
+
+\section{WS 27, p. 1: theorem and first two claims}
+
+\begin{theorem}{\kn{Spectral theorem}}
+
+\(A\) is orthogonally diagonalizable iff \(A\) is symmetric: \(\exists S \in \mathbb{R}^{n \times n}\) such that \(S^{- 1} = S^{t}\) and \(S^{t}AS\) is diagonal iff \(A\) is symmetric.
+
+\end{theorem}
+
+Equivalently, \(S\) 的 cols 是 \(\mathbb{R}^{n}\) 的一个 orthonormal basis, 且为 \(A\) 的 eigenvectors. 普通 diagonalization: \(D = SAS^{- 1}\), \(S\) 的 cols 为 \(V\) 的 一个 eigenbasis \(\left( {v_{1},\ldots,v_{n}} \right)\). 而 orthogonal diagonalization: \(D = S^{t}AS\), \(S\) 的 cols 不但是 eigenbasis，而且还是一个 orthonormal eigenbasis. 这意味着对于不同的 eigenvectors，它们都是 orthogonal 的 （可以为 orthonormal），也就是说 \(V,E_{\lambda_{1}},E_{\lambda_{2}}\) with \(E_{\lambda_{1}} \perp E_{\lambda_{2}}\).
+
+Claim 1: if \(A\) is orthogonally diagonalizable, then \(A\) is symmetric. If \(S^{t}AS = D\) and \(S^{- 1} = S^{t}\), then
+
+\[A = SDS^{t},\]
+
+and
+
+\[A^{t} = \left( {SDS^{t}} \right)^{t} = SD^{t}S^{t} = SDS^{t} = A.\]
+
+Claim 2: if \(A \in \mathbb{R}^{n \times n}\) is symmetric, then \(A\) is orthogonally diagonalizable over \(\mathbb{R}\). This claim is divided into three parts.
+
+Claim 2 pt.(1): if \(A \in \mathbb{R}^{n \times n}\) is symmetric, then \(A\) has real eigenvalues. By the fundamental theorem of Algebra, \(\chi_{T{(x)}} = 0\) 有 \(n\) 个 complex roots 包含重复. Let \(\lambda\) be any complex eigenvalue, so \(\exists z \in \mathbb{C}^{n}\), \(Az = \lambda z\). Then \(A\bar{z} = \bar{\lambda}\bar{z}\), and, after transpose, \({\bar{z}}^{t}A = \bar{\lambda}{\bar{z}}^{t}\) because \(A\) is symmetric. Multiply \(z\) on the right:
+
+\[{\bar{z}}^{t}Az = \lambda\left( {{\bar{z}}^{t}z} \right) = \bar{\lambda}\left( {{\bar{z}}^{t}z} \right).\]
+
+Since \(\left. {\bar{z}}^{t}z = \sum_{i} \middle| z_{i} \middle| {}_{2} > 0 \right.\), \(\lambda = \bar{\lambda}\); every complex eigenvalue is real.
+
+Claim 2 pt.(2): consider \(\lambda_{1},\lambda_{2}\) and nonzero \(v_{1} \in E_{\lambda_{1}}\), \(v_{2} \in E_{\lambda_{2}}\), with \(\lambda_{1} \neq \lambda_{2}\). Then
+
+\[\lambda_{1}v_{1}^{t}v_{2} = \left( {Av_{1}} \right)^{t}v_{2} = v_{1}^{t}A^{t}v_{2} = v_{1}^{t{({Av_{2}})}} = \lambda_{2}v_{1}^{t}v_{2}.\]
+
+Thus \(v_{1} \cdot v_{2} = 0\), so \(v_{1} \perp v_{2}\).
+
+\section{WS 27, p. 2: induction proof}
+
+Claim 2 pt.(3): if \(A \in \mathbb{R}^{n \times n}\) is symmetric, then \(A\) is orthogonally diagonalizable. Prove by induction.
+
+Base case: a \(1 \times 1\) matrix is diagonal and symmetric. Inductive step: if every symmetric \(n \times n\) matrix is orthogonally diagonalizable, then every \(\left( {n + 1} \right) \times \left( {n + 1} \right)\) matrix is too.
+
+Let \(A \in \mathbb{R}^{{({n + 1})} \times {({n + 1})}}\) be symmetric. Let \(\lambda\) be an eigenvalue and \(u\) a corresponding unit eigenvector. Complete \(U = \left( {u,u_{1},\ldots,u_{n}} \right)\) to an orthonormal basis of \(\mathbb{R}^{n + 1}\). Put
+
+\[Q = \begin{pmatrix}
+u & u_{1} & \ldots & u_{n}
+\end{pmatrix},\]
+
+so \(Q\) is orthogonal and \(Q^{t} = Q^{- 1}\). 注意 \(Q\) 为 \(S_{U\rightarrow\varepsilon}\), 因而 \(Q^{t} = Q^{- 1} = S_{\varepsilon\rightarrow U}\).
+
+Then
+
+\[Q^{t}AQ = \left\lbrack {\lambda,0;0,B} \right\rbrack\]
+
+for some \(B \in \mathbb{R}^{n \times n}\): \(Q^{t}AQ\) is symmetric, and
+
+\[Q^{t}AQe_{1} = Q^{t{({Au})}} = Q^{t{({\lambda u})}} = \lambda S_{\varepsilon\rightarrow U}u = \lambda e_{1}.\]
+
+By the inductive hypothesis, \(B\) is orthogonally diagonalizable, \(B = RDR^{t}\) for an orthogonal \(R\) and diagonal \(D\). Therefore
+
+\[Q^{t}AQ = \begin{pmatrix}
+1 & 0 \\
+0 & R
+\end{pmatrix}\begin{pmatrix}
+\lambda & 0 \\
+0 & D
+\end{pmatrix}\begin{pmatrix}
+1 & 0 \\
+0 & R
+\end{pmatrix}^{t}.\]
+
+The middle matrix is diagonal and \(\begin{pmatrix}
+1 & 0 \\
+0 & R
+\end{pmatrix}\) is orthogonal, since its transpose equals its inverse. Therefore we have constructed an orthogonal diagonalization of \(A\).

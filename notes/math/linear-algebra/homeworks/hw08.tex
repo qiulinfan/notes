@@ -1,0 +1,306 @@
+% LaTeX companion of hw08.typ. Both formats are editable.
+\section{Homework 8 --- submitted work}
+
+\chapter{Part A}
+
+The assigned book exercises are 5.1: 45; 5.2: 14, 26; 5.3: 36; and 5.4: 26, 32.
+
+\section{5.1 Exercise 45}
+
+For \(A = \begin{pmatrix}
+3 & 5 & 11 \\
+5 & 9 & 20 \\
+11 & 20 & 49
+\end{pmatrix}\) and \(V = \text{span}\left( {\overrightarrow{v_{2}},\overrightarrow{v_{3}}} \right)\), put \(\text{proj}_{V{(\overrightarrow{v_{1}})}} = c_{2}\overrightarrow{v_{2}} + c_{3}\overrightarrow{v_{3}}\). Orthogonality gives
+
+\(9c_{2} + 20c_{3} = 5,\quad 20c_{2} + 49c_{3} = 11,\)
+
+so \(c_{2} = \frac{25}{41}\), \(c_{3} = - \frac{1}{41}\), and
+
+\(\text{proj}_{V{(\overrightarrow{v_{1}})}} = \frac{25}{41}\overrightarrow{v_{2}} - \frac{1}{41}\overrightarrow{v_{3}}.\)
+
+\section{5.2 Exercise 14}
+
+For \(\begin{pmatrix}
+1 \\
+7 \\
+1 \\
+7
+\end{pmatrix},\begin{pmatrix}
+0 \\
+7 \\
+2 \\
+7
+\end{pmatrix},\begin{pmatrix}
+1 \\
+8 \\
+1 \\
+6
+\end{pmatrix}\), the submitted Gram--Schmidt calculation gives
+
+\(u_{1} = \frac{1}{10}\begin{pmatrix}
+1 \\
+7 \\
+1 \\
+7
+\end{pmatrix},\quad u_{2} = \frac{1}{\sqrt{2}}\begin{pmatrix}
+{- 1} \\
+0 \\
+1 \\
+0
+\end{pmatrix},\quad u_{3} = \frac{1}{\sqrt{2}}\begin{pmatrix}
+0 \\
+1 \\
+0 \\
+{- 1}
+\end{pmatrix}.\)
+
+It states that \(\left( {u_{1},u_{2},u_{3}} \right)\) is the orthonormal basis.
+
+\section{5.2 Exercise 26}
+
+For \(m_{1} = \begin{pmatrix}
+2 \\
+3 \\
+0 \\
+6
+\end{pmatrix}\) and \(m_{2} = \begin{pmatrix}
+4 \\
+4 \\
+2 \\
+13
+\end{pmatrix}\),
+
+\(u_{1} = \frac{1}{7}\begin{pmatrix}
+2 \\
+3 \\
+0 \\
+6
+\end{pmatrix},\quad u_{2} = \frac{1}{3}\begin{pmatrix}
+0 \\
+{- 2} \\
+2 \\
+1
+\end{pmatrix},\)
+
+and
+
+\(Q = \begin{pmatrix}
+\frac{2}{7} & 0 \\
+\frac{3}{7} & {- \frac{2}{3}} \\
+0 & \frac{2}{3} \\
+\frac{6}{7} & \frac{1}{3}
+\end{pmatrix},\quad R = \begin{pmatrix}
+7 & 14 \\
+0 & 3
+\end{pmatrix}.\)
+
+\section{5.3 Exercise 36}
+
+For \(\begin{pmatrix}
+\frac{2}{3} & \frac{1}{\sqrt{2}} & a \\
+\frac{2}{3} & {- \frac{1}{\sqrt{2}}} & b \\
+\frac{1}{3} & 0 & c
+\end{pmatrix}\), the roles must be orthonormal. The page solves
+
+\(\frac{4}{9} - \frac{1}{2} + ab = 0,\quad\frac{2}{9} + ac = 0,\quad\frac{2}{9} + bc = 0,\)
+
+giving \(a = b = \frac{\sqrt{2}}{6}\) and \(c = - 2\frac{\sqrt{2}}{3}\).
+
+\section{5.4 Exercise 26}
+
+For \(A = \begin{pmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{pmatrix}\), \(b = \begin{pmatrix}
+1 \\
+0 \\
+0
+\end{pmatrix}\), the normal equation is
+
+\(\begin{pmatrix}
+66 & 78 & 90 \\
+78 & 93 & 108 \\
+90 & 108 & 126
+\end{pmatrix}x = \begin{pmatrix}
+1 \\
+2 \\
+3
+\end{pmatrix}.\)
+
+Its reduced echelon form is
+
+\(\begin{pmatrix}
+1 & 0 & {- 1} & \frac{7}{6} \\
+0 & 1 & 2 & 1 \\
+0 & 0 & 0 & 0
+\end{pmatrix},\)
+
+so
+
+\(x^{\ast} = \begin{pmatrix}
+{- \frac{7}{6} + t} \\
+{1 - 2t} \\
+t
+\end{pmatrix} = \begin{pmatrix}
+{- \frac{7}{6}} \\
+1 \\
+0
+\end{pmatrix} + t\begin{pmatrix}
+1 \\
+{- 2} \\
+1
+\end{pmatrix}.\)
+
+\section{5.4 Exercise 32}
+
+For \(\left( {0,27} \right),\left( {1,0} \right),\left( {2,0} \right),\left( {3,0} \right)\), let \(f(x) = c_{0} + c_{1}x + c_{2}x^{2}\), with
+
+\(A = \begin{pmatrix}
+1 & 0 & 0 \\
+1 & 1 & 1 \\
+1 & 2 & 4 \\
+1 & 3 & 9
+\end{pmatrix},\quad b = \begin{pmatrix}
+27 \\
+0 \\
+0 \\
+0
+\end{pmatrix}.\)
+
+The source gives
+
+\(\begin{pmatrix}
+4 & 6 & 14 \\
+6 & 14 & 36 \\
+14 & 36 & 98
+\end{pmatrix}x = \begin{pmatrix}
+27 \\
+0 \\
+0
+\end{pmatrix},\)
+
+\(x^{\ast} = \begin{pmatrix}
+\frac{513}{20} \\
+{- \frac{567}{20}} \\
+\frac{21}{4}
+\end{pmatrix},\)
+
+and
+
+\(f^{\ast}(x) = \frac{513}{20} - \frac{567}{20}x + \frac{21}{4}x^{2} = 25.65 - 28.35x + 6.25x^{2}.\)
+
+\chapter{Part B}
+
+\section{Problem 1}
+
+For \(\pi(v) = \sum_{i = 1}^{d}\frac{v \cdot v_{i}}{v_{i} \cdot v_{i}}v_{i}\):
+
+\subsection{(a)}
+
+If \(v_{i} \cdot v_{j} = 0\) for \(i \neq j\), then \(\left( {\frac{v_{1}}{\left\| v_{1} \right\|},\ldots,\frac{v_{d}}{\left\| v_{d} \right\|}} \right)\) is an orthonormal basis. Writing \(u_{i} = \frac{v_{i}}{\left\| v_{i} \right\|}\),
+
+\(\pi(v) = \sum_{i = 1}^{d}\frac{v \cdot v_{i}}{\left\| v_{i} \right\|^{2}}v_{i} = \sum_{i = 1}^{d{({v \cdot u_{i}})}}u_{i},\)
+
+so \(\pi\) is the orthogonal projection onto \(W\).
+
+\subsection{(b)}
+
+If the basis is not perpendicular, some \(v_{i} \cdot v_{j} = a \neq 0\). While \(\text{proj}_{W{(v_{i})}} = v_{i}\),
+
+\(\pi\left( v_{i} \right) = v_{i} + \ldots + \frac{a}{\left\| v_{j} \right\|^{2}}v_{j} + \ldots \neq v_{i}\)
+
+by linear independence. Thus \(\pi\) is not \(\text{proj}_{W}\).
+
+\section{Problem 2}
+
+For the set \(O_{n}\) of orthogonal matrices:
+
+\begin{itemize}
+\tightlist
+\item
+  (a) False. \(I_{n} \in O_{n}\), but \(I_{n} + I_{n}\) is not orthogonal; the page gives \(\left( {I_{n} + I_{n}} \right)^{T{({I_{n} + I_{n}})}} = \begin{pmatrix}
+  2 & 0 \\
+  0 & 2
+  \end{pmatrix}\), whereas its inverse is \(\begin{pmatrix}
+  \frac{1}{2} & 0 \\
+  0 & \frac{1}{2}
+  \end{pmatrix}\).
+\item
+  (b) True. The composition of the orthogonal maps represented by \(A,B\) has standard matrix \(AB\), so \(AB \in O_{n}\).
+\item
+  (c) True by the same composition argument for \(A^{2}\).
+\item
+  (d) True. If \(A^{2}\) were orthogonal but \(A\) were not, with \(\left\| T_{A{(x)}} \right\| = a\left\| x \right\|\) and \(a \neq 1\), then \(\left\| {T_{A} \circ T_{A{(x)}}} \right\| = a^{2}\left\| x \right\| \neq \left\| x \right\|\), a contradiction.
+\item
+  (e) True. \(A \in O_{n}\) gives \(A^{T} = A^{- 1}\); \(A^{2} = I_{n}\) gives \(A = A^{- 1} = A^{T}\), so \(A\) is symmetric.
+\end{itemize}
+
+\section{Problem 3}
+
+For an orthonormal basis \(\mathcal{B}\),
+
+\(v = v_{1}b_{1} + \ldots + v_{r}b_{r},\quad w = w_{1}b_{1} + \ldots + w_{r}b_{r},\)
+
+and the calculation on the page is
+
+\(v \cdot w = \sum_{i = 1}^{r}v_{i}w_{i} = \lbrack v\rbrack_{\mathcal{B}} \cdot \lbrack w\rbrack_{\mathcal{B}}.\)
+
+For two orthonormal bases \(\mathcal{B},\mathcal{C}\), \(S_{\mathcal{C}\rightarrow\mathcal{B}}\) has \(\left( {i,j} \right)\) entry \(c_{j} \cdot b_{i}\) and \(S_{\mathcal{B}\rightarrow\mathcal{C}}\) has transpose entry \(b_{i} \cdot c_{j}\). Hence
+
+\(S_{\mathcal{C}\rightarrow\mathcal{B}} = S_{\mathcal{B}\rightarrow\mathcal{C}}^{T} = S_{\mathcal{B}\rightarrow\mathcal{C}}^{- 1},\)
+
+so \(S_{\mathcal{B}\rightarrow\mathcal{C}}\) is orthogonal.
+
+\section{Problem 4}
+
+The submitted answers are:
+
+\begin{itemize}
+\tightlist
+\item
+  (a) True. \(\left( {\text{ker}\ A} \right)^{\perp} = \text{im}\ A^{T}\), from \(\text{ker}\left( A^{T} \right) = \left( {\text{im}\ A} \right)^{\perp}\) and double orthogonal complement.
+\item
+  (b) True. \(\text{ker}\ A = \text{ker}\left( {A^{T}A} \right)\), then rank-nullity gives \(\text{rank}\ A = \text{rank}\left( {A^{T}A} \right)\).
+\item
+  (c) True. \(\text{ker}\left( A^{T} \right) = \left( {\text{im}\ A} \right)^{\perp}\) and rank-nullity yield \(\text{rank}\ A = \text{rank}\left( A^{T} \right)\).
+\item
+  (d) True. With (b), (c), and \(\left( A^{T} \right)^{T} = A\), \(\text{rank}\left( {A^{T}A} \right) = \text{rank}\left( {AA^{T}} \right)\).
+\item
+  (e) False. \(\text{dim}\left( {\text{ker}\ A} \right) = m - \text{rank}\ A\) but \(\text{dim}\left( {\text{ker}\ AA^{T}} \right) = n - \text{rank}\ A\); if \(n \neq m\) they cannot be equal.
+\end{itemize}
+
+\section{Problem 5}
+
+\subsection{(a)}
+
+For \(X = \left\{ {x_{1},\ldots,x_{r}} \right\}\), \(Y = \left\{ {y_{1},\ldots,y_{s}} \right\}\) and \(X \perp Y\),
+
+\(x = \sum a_{i}x_{i},\quad y = \sum b_{j}y_{j}\)
+
+implies \(x \cdot y = 0\), because every \(x_{i} \cdot y_{j} = 0\). Thus \(\text{span}\ X \perp \text{span}\ Y\).
+
+\subsection{(b)}
+
+For a relation
+
+\(\sum a_{i}x_{i} + \sum b_{j}y_{j} = 0,\)
+
+if coefficients on both sides are nonzero then the equal nonzero vectors would belong to \(\text{span}\ X \cap \text{span}\ Y\). But (a) and WS 16 give this intersection as \(0\). Hence all coefficients vanish and \(X \cup Y\) is linearly independent.
+
+\subsection{(c)}
+
+A pairwise orthogonal set with fewer than \(n + 1\) members is not maximal: append \(0\), use Gram--Schmidt, and add a new unit vector. A set with more than \(n + 1\) members would make \(Y \cup \left\{ 0 \right\}\) linearly independent in \(\mathbb{R}^{n}\), which is impossible. Therefore a maximal pairwise orthogonal set has exactly \(n + 1\) elements.
+
+\section{Problem 6}
+
+\subsection{(a)}
+
+The source applies Gram--Schmidt to full-rank \(A\) to obtain an orthonormal basis, reverses the chosen basis, and uses a QR factorization. It then sets
+
+It takes the orthonormal basis matrix and the transpose of the upper factor, obtaining the stated QL factorization. The resulting lower factor is triangular with positive diagonal.
+
+\subsection{(b)}
+
+The finished submission stops after the construction for (a); no visible proof for part (b) appears in the source PDF.

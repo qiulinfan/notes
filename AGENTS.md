@@ -19,6 +19,23 @@ the owner asks, and keep development documentation here. The READMEs inside
   web route or register generated HTML as an authority. Explicit format
   migration tools remain separate.
 - Validate changes with `make check`.
+- Mathematics course sources have editable, same-directory `.typ` and `.tex`
+  companions. Preserve their include structure and explicit knowledge markers.
+  Registered pairs select TeX for knowledge authoring; source and topic globs
+  admit both formats. Converted mathematical name spellings have explicit
+  aliases in `knowledge/identities.json`, retaining the registered IDs.
+- `notes/math/toolchain/latex/qlnotes-native.cls` is the shared XeLaTeX class.
+  Course entry points load it by relative path; avoid copying classes per course.
+  Run `make latex-check` for pair/include auditing and two-pass compilation of
+  every entry (plus uncovered fragments). All outputs stay in
+  `knowledge/build/native-tex/check`, outside the source-only `notes/` tree.
+- `add_native_tex.py` is an explicit migration tool, not a synchronization job.
+  It evaluates a disposable copy through Typst/MathML and the QLNotes filters;
+  `.tex` companions are authored files afterward. Never regenerate an edited
+  companion without requested replacement. Its `--replace` flag overwrites
+  companions, including subsequent TeX-only layout edits. The migration checks
+  every mathematical expression, knowledge marker and ignored backend element;
+  its diagnostic and identity maps remain under `knowledge/build/native-tex`.
 - Never place credentials in the repository or command output.
 
 ## Layout

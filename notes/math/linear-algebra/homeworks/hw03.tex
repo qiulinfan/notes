@@ -1,0 +1,273 @@
+% LaTeX companion of hw03.typ. Both formats are editable.
+\section{Homework 3 --- submitted work}
+
+\begin{qlnote}{Note}
+
+Visual transcription of the personal finished submission. Source: \texttt{217-Hw-3-finished.pdf}; page references below are PDF pages.
+
+\end{qlnote}
+
+\subsection{Source p. 1 --- Exercise 20}
+
+Reflection about the \(x - z\) plane sends \(\begin{pmatrix}
+v_{1} \\
+v_{2} \\
+v_{3}
+\end{pmatrix}\) to \(\begin{pmatrix}
+v_{1} \\
+{- v_{2}} \\
+v_{3}
+\end{pmatrix}\). The submitted standard matrix is \(\begin{pmatrix}
+1 & 0 & 0 \\
+0 & {- 1} & 0 \\
+0 & 0 & 1
+\end{pmatrix}\), accompanied by a sketch of the reflected vector.
+
+\subsection{Source p. 2 --- Exercise 38(a)--(c)}
+
+(a) Projection onto an arbitrary unit vector \(u = \begin{pmatrix}
+u_{1} \\
+u_{2}
+\end{pmatrix}\) has matrix \(\begin{pmatrix}
+u_{1}^{2} & {u_{1}u_{2}} \\
+{u_{1}u_{2}} & u_{2}^{2}
+\end{pmatrix}\). Its determinant is \(0\), so it is not invertible.
+
+(b) A reflection matrix is \(\begin{pmatrix}
+a & b \\
+b & {- a}
+\end{pmatrix}\) with \(a^{2} + b^{2} = 1\); its determinant is \(- 1\), so it is invertible.
+
+(c) A rotation matrix is \(\begin{pmatrix}
+a & {- b} \\
+b & a
+\end{pmatrix}\) with \(a^{2} + b^{2} = 1\); its determinant is \(a^{2} + b^{2} = 1\), so it is invertible.
+
+\subsection{Source p. 3 --- Exercise 38(d); Exercise 18 begins}
+
+(d) The horizontal and vertical shear matrices are \(\begin{pmatrix}
+1 & k \\
+0 & 1
+\end{pmatrix}\) and \(\begin{pmatrix}
+1 & 0 \\
+k & 1
+\end{pmatrix}\). Each has determinant \(1\), so each is invertible.
+
+For Exercise 18, let \(A = \begin{pmatrix}
+2 & 3 \\
+{- 3} & 2
+\end{pmatrix}\) and \(B = \begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}\). Equating \(AB\) and \(BA\) yields \(b = - c\) and \(a = d\), so \(B = \begin{pmatrix}
+a & b \\
+{- b} & a
+\end{pmatrix}\).
+
+\subsection{Source p. 4 --- Exercise 34}
+
+For \(A = \begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}\), the submitted computations are
+
+\(A^{2} = \begin{pmatrix}
+1 & 2 \\
+0 & 1
+\end{pmatrix}\), \(A^{3} = \begin{pmatrix}
+1 & 3 \\
+0 & 1
+\end{pmatrix}\), \(A^{4} = \begin{pmatrix}
+1 & 4 \\
+0 & 1
+\end{pmatrix}\), and \(A^{1001} = \begin{pmatrix}
+1 & 1001 \\
+0 & 1
+\end{pmatrix}\).
+
+Thus \(A^{k} = \begin{pmatrix}
+1 & k \\
+0 & 1
+\end{pmatrix}\) for positive \(k\). Geometrically, repeated application is a horizontal shear by one unit each time.
+
+\subsection{Source p. 5 --- Exercise 12}
+
+For \(A = \begin{pmatrix}
+2 & 5 & 0 & 0 \\
+1 & 3 & 0 & 0 \\
+0 & 0 & 1 & 2 \\
+0 & 0 & 2 & 5
+\end{pmatrix}\), the submission applies the invertible-matrix test through row reduction of \(\left\lbrack {A:I_{4}} \right\rbrack\). The displayed operations first exchange the first two rows and then use pivots to clear the two \(2 \times 2\) blocks.
+
+\subsection{Source p. 6 --- Exercise 12; Exercise 34 begins}
+
+The final augmented matrix is \(\left\lbrack {I_{4}:A^{-}1} \right\rbrack\), with
+
+\(A^{-}1 = \begin{pmatrix}
+3 & {- 5} & 0 & 0 \\
+{- 1} & 2 & 0 & 0 \\
+0 & 0 & 5 & {- 2} \\
+0 & 0 & {- 2} & 1
+\end{pmatrix}\).
+
+By Theorem 2.4.5, \(A\) is invertible.
+
+For a diagonal \(A = \begin{pmatrix}
+a & 0 & 0 \\
+0 & b & 0 \\
+0 & 0 & c
+\end{pmatrix}\), the submitted answer says \(A\) is invertible precisely when \(a,b,c \neq 0\), and then \(A^{-}1 = \begin{pmatrix}
+\frac{1}{a} & 0 & 0 \\
+0 & \frac{1}{b} & 0 \\
+0 & 0 & \frac{1}{c}
+\end{pmatrix}\). A diagonal matrix of arbitrary size is invertible iff every diagonal element is nonzero.
+
+\subsection{Source p. 7 --- Part B, Problem 1(a)--(b)}
+
+The source defines trace, determinant, transpose, and symmetric matrix, then asks truth values for transpose claims. The submission marks (a) false and takes \(A = \begin{pmatrix}
+1 & 2 \\
+2 & 1
+\end{pmatrix}\) and \(B = \begin{pmatrix}
+1 & 2 \\
+1 & 2
+\end{pmatrix}\). It computes \(AB = \begin{pmatrix}
+3 & 6 \\
+3 & 6
+\end{pmatrix}\), \(B^{T} = \begin{pmatrix}
+1 & 1 \\
+2 & 2
+\end{pmatrix}\), \(A^{T} = \begin{pmatrix}
+1 & 2 \\
+2 & 1
+\end{pmatrix}\), and \(A^{T}B^{T} = \begin{pmatrix}
+5 & 5 \\
+4 & 4
+\end{pmatrix}\), so \(\left( {AB} \right)^{T} \neq A^{T}B^{T}\).
+
+For (b), it marks false using the same matrices and records \(AB = A^{T}B^{T} = \begin{pmatrix}
+5 & 4 \\
+4 & 5
+\end{pmatrix}\) as a counterexample to the universal inequality.
+
+\subsection{Source p. 8 --- Part B, Problem 1(c)}
+
+The statement \(\left( {AB} \right)^{T} = B^{T}A^{T}\) is marked true. Let \(A\) be \(n \times p\) and \(B\) be \(p \times m\). The work writes both matrices by entries and notes that \(\left( {B^{T}A^{T}} \right)\) has the same \(m \times n\) shape as \(\left( {AB} \right)^{T}\).
+
+\subsection{Source p. 9 --- Part B, Problem 1(c)--(d)}
+
+The \(j,i\) entry of \(B^{T}A^{T}\) is computed as
+
+\(\sum_{k = 1}^{p}b_{kj}a_{ik} = \sum_{k = 1}^{p}a_{ik}b_{kj}\),
+
+the \(j,i\) entry of \(\left( {AB} \right)^{T}\). Since \(i,j\) are arbitrary, \(\left( {AB} \right)^{T} = B^{T}A^{T}\).
+
+For (d), the submission begins induction: for a symmetric \(A = \begin{pmatrix}
+a & b \\
+b & a
+\end{pmatrix}\), \(A^{1} = A\) is symmetric, and if \(A^{n} = \begin{pmatrix}
+c & d \\
+d & c
+\end{pmatrix}\), then \(A^{n + 1} = A^{n}A\).
+
+\subsection{Source p. 10 --- Part B, Problem 1(d)--(e)}
+
+The inductive multiplication is
+
+\(\begin{pmatrix}
+c & d \\
+d & c
+\end{pmatrix}\begin{pmatrix}
+a & b \\
+b & a
+\end{pmatrix} = \begin{pmatrix}
+{ac + bd} & {ad + bc} \\
+{ad + bc} & {ac + bd}
+\end{pmatrix}\),
+
+which is symmetric. Hence \(A^{n}\) is symmetric for all \(n \in \mathbb{N}\).
+
+(e) is false: \(A = \begin{pmatrix}
+1 & 3 \\
+2 & 7
+\end{pmatrix}\) is not symmetric, while \(A^{2} = \begin{pmatrix}
+7 & 24 \\
+16 & 55
+\end{pmatrix}\) is recorded as symmetric in the submitted counterexample.
+
+\subsection{Source p. 11 --- Part B, Problem 2(a)--(c)}
+
+(a) True. A \(3 \times 3\) matrix with a zero row has at most two leading 1s, so \(\text{rank}(A) \leq 2\); by Theorem 2.4.3 it is not invertible.
+
+(b) False. The counterexample is \(\begin{pmatrix}
+1 & 1 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}\), whose RREF has rank \(2 \neq 3\), so it is not invertible.
+
+(c) True. If \(A\) is an invertible \(n \times n\) matrix, then \(A^{-}1A = \mathbb{A}^{-}1 = I_{n}\); therefore \(A^{-}1\) is invertible.
+
+\subsection{Source p. 12 --- Part B, Problem 2(d)}
+
+(d) True. If \(A\) is invertible, then \(\left( {A^{-}1} \right)^{n}\) is an inverse for \(A^{n}\). By associativity, the submission writes the products until adjacent \(A^{-}1A\) pairs become \(I_{n}\), so both products equal \(I_{n}\).
+
+\subsection{Source p. 13 --- Part B, Problem 3(a)}
+
+If there is an \(n \times m\) matrix \(B\) with \(BA = I_{n}\), suppose \(x_{1}\) and \(x_{2}\) solve \(Ax = 0\). Then \(A\left( {x_{1} - x_{2}} \right) = 0\). Multiplying on the left by \(B\) gives \(BA\left( {x_{1} - x_{2}} \right) = B0 = 0\); hence \(x_{1} - x_{2} = 0\) and \(x_{1} = x_{2}\). Therefore \(Ax = 0\) has a unique solution.
+
+\subsection{Source p. 14 --- Part B, Problem 4(a)}
+
+Statement (a) is marked true. Write \(A = \left\lbrack {v_{1},v_{2},\ldots,v_{m}} \right\rbrack\) and \(B = \left\lbrack {w_{1},w_{2},\ldots,w_{k}} \right\rbrack\). By Theorem 2.3.2,
+
+\(AB = A\left\lbrack {w_{1},w_{2},\ldots,w_{k}} \right\rbrack = \left\lbrack {Aw_{1},Aw_{2},\ldots,Aw_{k}} \right\rbrack\).
+
+If \(w_{i} = \begin{pmatrix}
+w_{1i} \\
+\ldots \\
+w_{mi}
+\end{pmatrix}\), then by Theorem 1.3.8,
+
+\(Aw_{i} = w_{1i}v_{1} + w_{2i}v_{2} + \ldots + w_{mi}v_{m}\).
+
+Thus every column of \(AB\) is a linear combination of the columns of \(A\).
+
+\subsection{Source p. 15 --- Part B, Problem 4(b)}
+
+Statement (b) is false. The counterexample uses \(A = \begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix}\) and \(B = \begin{pmatrix}
+1 & 1 \\
+1 & 1
+\end{pmatrix}\), so \(AB = \begin{pmatrix}
+1 & 1 \\
+0 & 0
+\end{pmatrix}\). Its first column \(\begin{pmatrix}
+1 \\
+0
+\end{pmatrix}\) is not a linear combination of the columns \(\begin{pmatrix}
+1 \\
+1
+\end{pmatrix}\) and \(\begin{pmatrix}
+1 \\
+1
+\end{pmatrix}\) of \(B\): the submitted RREF shows that the corresponding system is inconsistent.
+
+\subsection{Source p. 16 --- Part B, Problem 5(a)}
+
+For a linear \(f:\mathbb{R}^{d}\rightarrow\mathbb{R}^{d}\), the proof by induction has base \(n = 1\), where \(f^{1}(x) = f\left( {f^{0}(x)} \right) = f(x)\) is linear. Assuming \(f^{n}\) is linear, write \(f(x) = Ax\). The key theorem gives a matrix \(B\) with \(f^{n{(x)}} = Bx\); hence
+
+\(f^{n + 1}(x) = f\left( f^{n{(x)}} \right) = f\left( {Bx} \right) = A\left( {Bx} \right) = \left( {AB} \right)x\),
+
+so it is linear. Thus \(f^{n}\) is linear for all \(n \in \mathbb{N}\).
+
+\subsection{Source p. 17 --- Part B, Problem 5(a)}
+
+The submission restates the inductive conclusion: the base case and inductive step prove that if \(f\) is a linear transformation, then \(f^{n}\) is a linear transformation for all \(n \in \mathbb{N}\).
+
+\subsection{Source p. 18 --- Part B, Problem 5(b)}
+
+Define \(f:\mathbb{R}^{2}\rightarrow\mathbb{R}^{2}\) by \(f(x) = - x\) if \(\left\| x \right\| = 2\), and \(f(x) = x\) otherwise. The submission says \(f\) is not linear: choose \(x_{1},x_{2}\) with \(\left\| x_{1} \right\| = 2\) and \(\left\| x_{2} \right\| \neq 2\), then \(f\left( {x_{1} + x_{2}} \right) = x_{1} + x_{2}\) while \(f\left( x_{1} \right) + f\left( x_{2} \right) = - x_{1} + x_{2}\). But \(f^{2}(x) = x\) for all \(x\), so \(f^{2}\) is the identity and is linear.
+
+\subsection{Source p. 19 --- Part B, Problem 5(c)}
+
+Let \(f(x) = Ax\). If \(f(x) = 0\) has a unique solution, then \(Ax = 0\) has a unique solution; by Theorem 1.3.4, \(\text{rank}(A) = d\), hence by Theorem 2.4.3 \(A\) is invertible. Problem 3 has shown that \(A^{n}\) is invertible for every \(n \in \mathbb{N}\). Since \(f^{n{(x)}} = A^{n}x\), Theorem 1.3.4 gives a unique solution to \(A^{n}x = 0\), proving the claim.

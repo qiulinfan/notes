@@ -1,0 +1,1693 @@
+% LaTeX companion of 02-random-variables.typ. Both formats are editable.
+\chapter{random variable}\label{random-variable}
+
+\section{\texorpdfstring{random variable and generated \(\mathit{\sigma}\)-algebra}{random variable and generated \textbackslash mathit\{\textbackslash sigma\}-algebra}}\label{random-variable-and-generated-sigma-algebra}
+
+\subsection{random variable: 即 prob space 上的一个 Borel measurable function}\label{random-variable-ux5373-prob-space-ux4e0aux7684ux4e00ux4e2a-borel-measurable-function}
+
+\begin{definition}{\kn{random variable}}
+
+对于 \knref{probability space} \((\Omega,\mathcal{F},\mathbb{P})\), 一个 random variable 是一个 \textbf{\knref{$(\mathcal{M},\mathcal{N})$-measurable function}（Borel measurable function）} \(\mathit{X}:\Omega\rightarrow\mathbb{R}\).
+
+\end{definition}
+
+\begin{qlremark}{Remark}
+
+回顾 (Borel) measurable function 的定义: 即对于任意 \(\mathit{B} \in \mathcal{B}(\mathbb{R})\), 有 \(\mathit{X}^{- 1}(\mathit{B}) \in \mathcal{F}\); 由于是在 real space 上, Borel measurable 也可以简化为: 对于任意的 open ray \(( - \infty,\mathit{a})\), 有 \(\mathit{X}^{- 1}(( - \infty,\mathit{a})) \in \mathcal{F}\).
+
+例如: \(\mathit{X}(\mathit{\omega}) = \mathit{\omega}^{2}\) 是一个 (Borel) measurable function, 因为对于任意 open ray \(( - \infty,\mathit{a})\), \(\mathit{X}^{- 1}(( - \infty,\mathit{a}))\) 是一个 interval (either \(( - \sqrt{\mathit{a}},\sqrt{\mathit{a}})\) or \(\varnothing\)).
+
+并且 recall: 任意的 continuous function 都是 (Borel) measurable function. (所以之后我们看到 continuous function 就知道它一定是一个 random variable).
+
+\end{qlremark}
+
+\begin{qlremark}{Remark}
+
+Random variable (Borel measurable function) 本质上是对 样本空间中的事件进行 weights assignment.
+
+原本, 一个 prob space 只能表示: \textbf{有多少个 outcomes, 每个 outcome 的概率是多少} (对于无限的 sample space, 一些 outcomes 组合, 即事件, 的概率是多少).
+
+而 random variable 就是\textbf{给这些 outcomes 以 weights}: 比如
+
+\begin{example}
+
+在一副扑克牌中抽一张, 那么每一张的概率都是 \(1/52\). 但是如果我想知道抽到的牌的价值, 那么我就需要一个 random variable \(\mathit{X}\) 来给每一张牌赋予一个 weight; 比如说, \(\mathit{X}(\text{A}) = 1\), \(\mathit{X}(2) = 2\), \(\cdots\), \(\mathit{X}(\text{K}) = 13\).\\
+
+\end{example}
+
+\textbf{Question}: 为什么对于 assigning weights 的行为, 我们一定要求它是一个 (Borel) measurable function 呢? 普通的给 outcomes 以 weights 的行为 (任意一个 function \(\mathit{f}:\Omega\rightarrow\mathbb{R}\)) 不行吗?
+
+\textbf{Answer}: 因为我们想要知道 \(\mathit{X}\) 的值在一个范围 \(\mathit{B}\), 比如 \(\lbrack 1,6\rbrack\) 之内的 probability (which is defined on 原本的 prob measure \(\mathbb{P}\) 上的) 是多少. 而只有每一个这样的范围集合的 preimage \(\mathit{X}^{- 1}(\mathit{B})\) 都是 \(\mathcal{F}\) 中的事件, 我们才能够通过 \(\mathbb{P}\) 来计算这个 probability; that is, 我们需要这个 \(\mathit{X}\) 是一个 measurable function.
+
+因为这一切都是建立在我们以 measure theory 的 framework 来定义 probability 的基础上的.\\
+
+\end{qlremark}
+
+下面是一个简单的 proposition: 我们可以把多个 random variables 以一种 Borel measurable 的方式组合起来, 那么就成为一个新的 random variable.
+
+\begin{proposition}{\kn{以 Borel measurable 的方式组合起多个 random variables}}
+
+Prob space \((\Omega,\mathcal{F},\mathbb{P})\) 上的 random variables \(\mathit{X}_{1},\mathit{X}_{2},\ldots,\mathit{X}_{\mathit{k}}:\Omega\rightarrow\mathbb{R}\), 任取 Borel measurable function \(\mathit{g}:\mathbb{R}^{\mathit{k}}\rightarrow\mathbb{R}\),
+
+\[\begin{matrix}
+{\mathit{X}:\Omega} & {\rightarrow\mathbb{R}} \\
+\mathit{\omega} & {\mapsto\mathit{g}(\mathit{X}_{1}(\mathit{\omega}),\mathit{X}_{2}(\mathit{\omega}),\ldots,\mathit{X}_{\mathit{k}}(\mathit{\omega}))}
+\end{matrix}\]
+
+也是一个 random variable.
+
+\end{proposition}
+
+\begin{proof}
+
+我们在 measure theory 中证明过: 对于任意的 finite seq of Borel measureable functions \((\mathit{f}_{\mathit{i}}:\Omega\rightarrow\mathbb{R})_{\mathit{i} = 1}^{\mathit{k}}\), 其各作为一个维度组成的函数 \(\mathit{f} = (\mathit{f}_{1},\cdots,\mathit{f}_{\mathit{k}})\) 也是一个 Borel measurable function (from \(\Omega\) 到 \(\mathbb{R}^{\mathit{k}}\)).\\
+而这里的 \(\mathit{X}\) 就是 \(\mathit{g} \circ \mathit{f}\), 是两个 Borel measurable function 的 composition, 因而也是一个 Borel measurable function (即 random variable).
+
+\end{proof}
+
+\begin{qlremark}{Remark}
+
+以一种 Borel measurable 的方式组合多个 random variables, 这个函数也仍然是一个 random variable.
+
+这个 proposition 看似没有什么卵用, 但是它其实是我们之后构造 random variable 的一个重要工具. 很多我们默认合法的行为, 它都作为基础.
+
+比如我们:
+
+\begin{itemize}
+\item
+  定义了两个 random variable \(\mathit{X}\) 和 \(\mathit{Y}\), 那么它们的和 \(\mathit{X} + \mathit{Y}\) 以及积 \(\mathit{X} \cdot \mathit{Y}\) 也是 random variables.
+\item
+  更加复杂的: 标量变换 \(\mathit{g}(\mathit{X}) = \sin(\mathit{X}),h(\mathit{X}) = \mathit{e}^{\mathit{X}}\), 向量变换 \(\mathit{g}(\mathit{X}_{1},\mathit{X}_{2}) = \mathit{X}_{1}^{2} + \mathit{X}_{2}^{2}\), 等等, 都是 random variables.
+\item
+  统计学中, 我们有一堆样本, \textbf{每一个都是随机采样得到的 (即一个 random variable \(\mathit{X}_{\mathit{i}}\))}. 因而在观测之前, 我们 把它看作一个 random variable \(\mathit{X}_{\mathit{i}}\), 然后在观测之后取到它的一个实际值 \(\mathit{x}_{\mathit{i}}\).
+
+  通常我们假设所有样本都是 \textbf{independent and identically distributed (i.i.d., 独立同分布)} 的, 即所有的 \(\mathit{X}_{1},\mathit{X}_{2},\ldots,\mathit{X}_{\mathit{n}}\) 都是 independent 的, 并且服从同一个 distribution (discuss later\ldots).
+
+  然后, 我们就可以从这些样本中计算各种统计量, 比如平均值 \(\bar{\mathit{X}} := \frac{1}{\mathit{n}}\sum_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}\), 再比如 order statistic, sample variance 等等, 从而通过大数定律等工具的辅佐, 来估计这个 distribution 到底是什么样的一个 distribution.
+
+  这里这些统计量, 由于是以 Borel measurable 的方式组合起多个 random variables, 也是 random variables. 所以这个 proposition 其实也奠定了统计学中各种统计量的合法性.
+\end{itemize}
+
+\end{qlremark}
+
+\subsection{\texorpdfstring{由一个 random variable generate 的 \(\mathit{\sigma}\)-algebra}{由一个 random variable generate 的 \textbackslash mathit\{\textbackslash sigma\}-algebra}}\label{ux7531ux4e00ux4e2a-random-variable-generate-ux7684-mathitsigma-algebra}
+
+\begin{definition}{\kn{$\mathit{\sigma}$-algebra generated by a random variable (measurable
+function)}}
+
+对于 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\), 其 generate 的 \(\mathit{\sigma}\)-algebra 定义为
+
+\[\mathit{\sigma}(\mathit{X}) := \left\{ {\mathit{X}^{- 1}(\mathit{B}):\mathit{B} \in \mathcal{B}(\mathbb{R})} \right\} \subseteq \mathcal{F}\]
+
+\end{definition}
+
+这个集合 \(\mathit{\sigma}(\mathit{X})\) 是一个 \(\mathit{\sigma}\)-algebra, 是一个 trivial truth. 因为 里面所有的 set 都是 \(\mathit{X}\) 的 preimage, 而 \(\mathit{X}\) 是一个 measurable function, 因而任意的 \(\mathit{X}^{- 1}(\mathit{B}) \in \mathcal{F}\).
+
+{\emergencystretch=2em
+这个 \(\mathit{\sigma}(\mathit{X})\) 也是让 \(\mathit{X}\) 成为一个 measurable function (即 random variable) 的最小的 \(\mathit{\sigma}\)-algebra. 它的意义是: \textbf{当我们仅仅观察到 \(\mathit{X}\) 的取值时, 我们所掌握的关于 underlying sample space \(\Omega\) 的全部 "information".}\par}
+
+
+\begin{qlremark}{Remark}
+
+我们知道, \textbf{一个 \(\mathit{\sigma}\)-algebra \(\mathcal{F}\) 可以看作是一个 information structure}: 它是对 underlying sample space \(\Omega\) 进行划分的一个工具.\\
+最大的 \(\mathit{\sigma}\)-algebra \(\mathcal{P}(\Omega)\), 即 power set, 是 最细的划分, 也是信息量最大的 \(\mathit{\sigma}\)-algebra. 它把每一个元素都区分开来. 对于 discrete 的 sample space, 通常我们的 probability measure 就是定义在 power set 上的, 正是因为我们 希望区分每一个 outcome.\\
+而给定一个 prob space \((\Omega,\mathcal{F},\mathbb{P})\), 原本的 prob measure 所 base on 的 \(\mathit{\sigma}\)-algebra \(\mathcal{F}\) 就成为了一个基准的 information 的颗粒度: 哪些事件是我们可以区分, 即可以在上面定义 probability 的.
+
+而一个 random variable \(\mathit{X}\) 可能会把多个 outcomes 映射到同一个值上, 也即 把多个 events 映射到同一个值上, 从而把这些 events 区分不开来. 因而, \textbf{random variable \(\mathit{X}\) generate 的 \(\mathit{\sigma}\)-algebra \(\mathit{\sigma}(\mathit{X})\) 就可能是一个更粗的划分}. 当我们取这些 events 所映射到的同一个值的 preimage 的时候, 取到的是 它们的 union, 也就是它们中最大的一个.
+
+比如
+
+\begin{example}
+
+掷一次骰子, 所有可能结果为 sample space:
+
+\[\Omega = \left\{ {1,2,3,4,5,6} \right\}\]
+
+而我们定义一个 random variable \(\mathit{X}\) 来表示掷出的点数的奇偶性, 即:
+
+\[\mathit{X}(\mathit{\omega}) = \left\{ \begin{matrix}
+{1,} & {\mathit{\omega} \in \left\{ {2,4,6} \right\}} \\
+{0,} & {\mathit{\omega} \in \left\{ {1,3,5} \right\}}
+\end{matrix} \right.\]
+
+那么它 generate 的 \(\mathit{\sigma}\)-algebra:
+
+\[\mathit{\sigma}(\mathit{X}) = \left\{ {\varnothing,\left\{ {1,3,5} \right\},\left\{ {2,4,6} \right\},\Omega} \right\}\]
+
+因为 \(1,3,5\) 这些事件都被映射到了同一个值 \(0\) 上, 即 \(\left\{ 1 \right\},\left\{ 3 \right\},\left\{ 5 \right\},\left\{ {1,3} \right\}\) 这些事件都被 \(\left\{ {1,3,5} \right\}\) 这个 事件吸收了, 它们在这个 random variable \(\mathit{X}\) 的映射下是区分不开的. 这就代表了 这个 random variable 所蕴含的信息颗粒度: \textbf{我们只能区分掷出的点数是奇数还是偶数, 但是无法区分具体的点数是多少.}\\
+至此我们知道: \textbf{一个 random variable \(\mathit{X}\) 的 generate 的 \(\mathit{\sigma}\)-algebra \(\mathit{\sigma}(\mathit{X})\) 表示了这个 random variable 对 underlying sample space \(\Omega\) 所能区分的 information granularity (信息颗粒度)}.\\
+
+\end{example}
+
+\end{qlremark}
+
+除了能表示 information granularity 以外, \(\mathit{\sigma}(\mathit{X})\) 还有什么实际用处呢:
+
+\begin{itemize}
+\item
+  之后讨论关于 independence of two random variables \(\mathit{X}\) 和 \(\mathit{Y}\) 时, 可以用它来作严格定义, 并且展现 independence 的本质: 两个 RV 的 independence 实际表示它们蕴含的信息颗粒度之间没有任何 overlap
+\item
+  用以定义 conditional expectation: \(\left. \mathbb{E}\lbrack\mathit{Y} \middle| \mathit{\sigma}(\mathit{X})\rbrack \right.\), 通常 简写为 \(\left. \mathbb{E}\lbrack\mathit{Y} \middle| \mathit{X}\rbrack \right.\), 但是其实 \(\left. \mathbb{E}\lbrack\mathit{Y} \middle| \mathit{\sigma}(\mathit{X})\rbrack \right.\) 是一个更加直观的事情, 表述了一种 Partial Averaging 的概念.
+\item
+  Stochastic Process 中有众多应用. 比如 stopping time 的定义.
+\end{itemize}
+
+至此关于 random variable, 我们已经讨论了很多 general 的 刻画. 现在我们来讲一点实用的:
+
+\section{distributions}\label{distributions}
+
+\subsection{distribution and cumulative distribution function}\label{distribution-and-cumulative-distribution-function}
+
+\begin{definition}{\kn{probability distribution}}
+
+对于 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\) on \(\Omega,\mathcal{F},\mathbb{P}\), 其 probability distribution 是 \(\mathit{X}\) 对于 \(\mathbb{P}\) 的 pushforward measure, 记作 \(\mathbb{P}^{\mathit{X}}:\mathcal{B}(\mathbb{R})\rightarrow\lbrack 0,1\rbrack\). 即
+
+\[\mathbb{P}^{\mathit{X}}(\mathit{B}) := \mathbb{P}(\mathit{X}^{- 1}(\mathit{B})),\quad\forall\mathit{B} \in \mathcal{B}(\mathbb{R})\]
+
+我们 write:
+
+\[\mathit{X} \sim \mathbb{P}^{\mathit{X}}\]
+
+\end{definition}
+
+\begin{qlremark}{Remark}
+
+看着有点不直观. 实则我们拆解:
+
+\begin{itemize}
+\item
+  \(\mathit{X}^{- 1}(\mathit{B})\) 即: 有多少 samples (即哪一个事件 \(\mathit{E} \in \mathcal{F}\)) 在这个 RV \(\mathit{X}\) 的映射下落入 \(\mathit{B}\) 这个区间?
+\item
+  \(\mathbb{P}(\mathit{X}^{- 1}(\mathit{B}))\) 即: 这个事件 \(\mathit{E}\) 的概率是多少?
+\end{itemize}
+
+接下来的定义和例子会更加直观.
+
+\end{qlremark}
+
+\begin{definition}{\kn{distribution function (也称 \textbf{cumulative distribution function,
+cdf})}}
+
+对于 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\), 其 \textbf{cumulative distribution function} 是 \(\mathbb{P}^{\mathit{X}}\) 这一函数的 distribution function, 记作 \(\mathit{F}_{\mathit{X}}\). 即对于任意 \(\mathit{x} \in \mathbb{R}\), 有
+
+\[\mathit{F}_{\mathit{X}}(\mathit{x}) := \mathbb{P}^{\mathit{X}}(( - \infty,\mathit{x}\rbrack) = \mathbb{P}(\mathit{X}^{- 1}(( - \infty,\mathit{x}\rbrack))\]
+
+\end{definition}
+
+\begin{qlremark}{Remark}
+
+\(\mathit{F}_{\mathit{X}}(\mathit{x})\) 即 \(\mathbb{P}(\left\{ {\mathit{X} \leq \mathit{x}} \right\})\) 我们也会简写为 \(\mathbb{P}(\mathit{X} \leq \mathit{x})\).\\
+\(\mathit{F}_{\mathit{X}}(\mathit{x})\) 的意义是: random variable \(\mathit{X}\) 的值不超过 \(\mathit{x}\) 的概率.\\
+
+\end{qlremark}
+
+\begin{example}[(geometric probability)]
+
+Fix \(\mathit{a},\mathit{b} > 0\). 我们在正方形区域 \(\Omega = \lbrack 0,\mathit{a}\rbrack \times \lbrack 0,\mathit{b}\rbrack\) 上均匀地随机选取一个点 \((\mathit{x},\mathit{y})\).\\
+我们 define 随机变量: \(\mathit{X}:\Omega\rightarrow\mathbb{R}\) by \(\mathit{X}(\mathit{x},\mathit{y}) = \mathit{x}\). 求 \(\mathit{X}\) 的 distribution function \(\mathit{F}_{\mathit{X}}\).\\
+这很简单: 对于 \(\mathit{x} \in \lbrack 0,\mathit{a}\rbrack\),
+
+\[\mathit{F}_{\mathit{X}}(\mathit{x}) = \mathbb{P}(\mathit{X} \leq \mathit{x}) = \frac{\mathit{m}(\lbrack 0,\mathit{x}\rbrack \times \lbrack 0,\mathit{b}\rbrack)}{\mathit{m}(\lbrack 0,\mathit{a}\rbrack \times \lbrack 0,\mathit{b}\rbrack)} = \frac{\mathit{x} \cdot \mathit{b}}{\mathit{a} \cdot \mathit{b}} = \frac{\mathit{x}}{\mathit{a}},\quad 0 \leq \mathit{x} \leq \mathit{a}\]
+
+因为
+
+\[\mathit{F}_{\mathit{X}}(\mathit{x}) = \left\{ \begin{matrix}
+{0,} & {\mathit{x} < 0} \\
+{\frac{\mathit{x}}{\mathit{a}},} & {0 \leq \mathit{x} \leq \mathit{a}} \\
+{1,} & {\mathit{x} > \mathit{a}}
+\end{matrix} \right.\]
+
+注意: 在这个例子中, probability measure \(\mathit{P}\) 是 Lebesgue measure on \(\lbrack 0,\mathit{a}\rbrack \times \lbrack 0,\mathit{b}\rbrack\). 很多时候我们在 计算 RV 的 distribution function 的时候, 都是直接直观地计算 \(\mathit{P}(\mathit{X} \leq \mathit{x})\). 但是在稍微复杂一些 的例子中, 我们需要对各个条件的 formalization 更清楚一点.
+
+\end{example}
+
+% qlnotes: kind=theorem; id=thm-02-random-variables-distribution-function
+\begin{theorem}{\kn{distribution function 的性质}}\label{thm-02-random-variables-distribution-function}
+
+对于 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\), 其 distribution function \(\mathit{F}_{\mathit{X}}\) 满足:
+
+\begin{itemize}
+\item
+  \(\mathit{F}_{\mathit{X}}\) 是 non-decreasing (non-strictly increasing) 的.
+\item
+  \(\lim_{\mathit{x}\rightarrow + \infty}\mathit{F}_{\mathit{X}}(\mathit{x}) = 1\), \(\lim_{\mathit{x}\rightarrow - \infty}\mathit{F}_{\mathit{X}}(\mathit{x}) = 0\).
+\item
+  \(\mathit{F}_{\mathit{X}}\) 是 right-continuous 的. 即对于任意 \(\mathit{x}_{0}\), 有 \(\lim_{\mathit{x}\rightarrow\mathit{x}_{0}^{+}}\mathit{F}_{\mathit{X}}(\mathit{x}) = \mathit{F}_{\mathit{X}}(\mathit{x}_{0})\).
+\item
+  对于任意 \(\mathit{x}_{0}\), 有 \(\lim_{\mathit{x}\rightarrow\mathit{x}_{0}^{-}}\mathit{F}_{\mathit{X}}(\mathit{x}) = \mathit{P}(\mathit{X} < \mathit{x}_{0})\). 并且 \(\mathbb{P}(\mathit{X} = \mathit{x}_{0}) = \lim_{\mathit{x}\rightarrow\mathit{x}_{0}^{+}}\mathit{F}_{\mathit{X}}(\mathit{x}) - \lim_{\mathit{x}\rightarrow\mathit{x}_{0}^{-}}\mathit{F}_{\mathit{X}}(\mathit{x})\).
+\item
+  对于任意 \(\mathit{x}_{1} < \mathit{x}_{2}\), 有 \(\mathit{P}(\mathit{X} \in (\mathit{x}_{1},\mathit{x}_{2}\rbrack) = \mathit{F}_{\mathit{X}}(\mathit{x}_{2}) - \mathit{F}_{\mathit{X}}(\mathit{x}_{1})\).
+\end{itemize}
+
+\end{theorem}
+
+\begin{proof}
+
+其他都显然. right-continuity 是源自 measure 的 continuity from above, 我们证明一下: 考虑一个单调递减序列 \(\left\{ \mathit{x}_{\mathit{n}} \right\} \downarrow \mathit{x}_{0}\), 令 seq of events \(\mathit{A}_{\mathit{n}} = \left\{ {\mathit{X} \leq \mathit{x}_{\mathit{n}}} \right\}\), 注意这是一个嵌套递减的 set seq. 通过 \(\mathbb{R}\) 的 completeness 容易证明:
+
+\[\mathit{A}_{0} = \bigcap\limits_{\mathit{n} = 1}^{\infty}\mathit{A}_{\mathit{n}} = \left\{ {\mathit{\omega}:\mathit{X}(\mathit{\omega}) \leq \mathit{x}_{0}} \right\}\]
+
+由 measure 的 continuity from above, \(\mathbb{P}(\mathit{A}_{0}) = \lim_{\mathit{n}\rightarrow\infty}\mathbb{P}(\mathit{A}_{\mathit{n}})\). 也即 \(\lim_{\mathit{x}\rightarrow\mathit{x}_{0}^{+}}\mathit{F}_{\mathit{X}}(\mathit{x}) = \mathbb{P}(\mathit{X} \leq \mathit{x}_{0})\).\\
+而下面一条 \(\lim_{\mathit{x}\rightarrow\mathit{x}_{0}^{-}}\mathit{F}_{\mathit{X}}(\mathit{x}) = \mathbb{P}(\mathit{X} < \mathit{x}_{0})\) 同理是源自 measure 的 continuity from below.\\
+那么 \(\mathbb{P}(\mathit{X} = \mathit{x}_{0}) = \mathbb{P}(\mathit{X} \leq \mathit{x}_{0}) - \mathbb{P}(\mathit{X} < \mathit{x}_{0})\) 是 natural 的 (by def).
+
+\end{proof}
+
+\begin{qlremark}{Remark}
+
+我们此时心里会默认一件事情: 一旦知道了 RV \(\mathit{X}\) 的 distribution function \(\mathit{F}_{\mathit{X}}\), 就知道了 \(\mathit{X}\) 的完整 distribution \(\mathit{P}^{\mathit{X}}\). 这个直觉是对的.\\
+回忆一下: 我们在 measure theory 中, 证明 Carathéodory extension theorem 的时候, 证明过一个 \(\mathit{\pi} - \mathit{\lambda}\) theorem, 以它作为工具才 把 premeasure 从一个 algebra extend 到一个 measure on the generated \(\mathit{\sigma}\)-algebra:
+
+\begin{theorem}{\kn{Dynkin's $\mathit{\pi} - \mathit{\lambda}$ theorem}}
+
+设 \(\mathcal{P}\) 是一个 \(\mathit{\pi}\)-system (closed under finite intersection), \(\mathcal{L}\) 是一个 \(\mathit{\lambda}\)-system (closed under complementation and countable disjoint union), 如果 \(\mathcal{P} \subseteq \mathcal{L}\), 那么 \(\mathit{\sigma}(\mathcal{P}) \subseteq \mathcal{L}\).
+
+\end{theorem}
+
+我们考虑所有的 half-open interval \(( - \infty,\mathit{x}\rbrack\) 组成的集合 \(\mathcal{G}\), 这个集合 generate the Borel \(\mathit{\sigma}\)-algebra, 并且 还是一个 \(\mathit{\pi}\)-system, 即: 它 closed under finite intersection:
+
+\[( - \infty,\mathit{a}\rbrack \cap ( - \infty,\mathit{b}\rbrack \in \mathcal{G},\quad\forall\mathit{a},\mathit{b} \in \mathbb{R}\]
+
+然后考虑
+
+\[\mathcal{L} := \left\{ {\mathit{E} \in \mathit{\sigma}(\mathcal{G}):\mathbb{P}_{1}(\mathit{E}) = \mathbb{P}_{2}(\mathit{E})} \right\}\]
+
+即两个 measure 一致的 collection of sets. 容易证明, 这个 \(\mathcal{L}\) 是一个 \(\mathit{\lambda}\)-system, 并且 \(\mathcal{G} \subset \mathcal{L}\).\\
+从而,
+
+\[\mathbb{B}(\mathbb{R}) = \mathit{\sigma}(\mathcal{G}) \subseteq \mathcal{L}\]
+
+并且 \(\mathbb{P}_{1}(\mathit{E}) = \mathbb{P}_{2}(\mathit{E})\) 对于任意 \(\mathit{E} \in \mathbb{B}(\mathbb{R})\).
+
+因而:
+
+\begin{corollary}{\kn{distribution function $\mathit{F}_{\mathit{X}}$ determines
+distribution $\mathbb{P}^{\mathit{X}}$}}
+
+对于 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\), 其 distribution function \(\mathit{F}_{\mathit{X}}\) 确定了 distribution \(\mathbb{P}^{\mathit{X}}\); 即 如果两个 random variable \(\mathit{X}\) 和 \(\mathit{Y}\) 满足 \(\mathit{F}_{\mathit{X}} = \mathit{F}_{\mathit{Y}}\), 那么 \(\mathbb{P}^{\mathit{X}} = \mathbb{P}^{\mathit{Y}}\).
+
+\end{corollary}
+
+\end{qlremark}
+
+\subsection{discrete random variable 与 probability mass function}\label{discrete-random-variable-ux4e0e-probability-mass-function}
+
+我们基本上研究两类 random variable: discrete random variable 和 continuous random variable.
+
+\begin{definition}{\kn{discrete random variable}}
+
+对于 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\), 如果存在一个 countable set \(\mathit{S} \subseteq \mathbb{R}\) 使得 \(\mathbb{P}(\mathit{X} \in \mathit{S}) = 1\), 那么 \(\mathit{X}\) 是一个 discrete random variable.
+
+\end{definition}
+
+\begin{qlremark}{Remark}
+
+就是说, \textbf{\(\mathit{X}\) 的 range a.s. 是 countable 的} (允许 null set 上 的值不在这个 countable set 里, 但是这是 measure theory 下的概念, 所以这些都可以忽略不计).
+
+\end{qlremark}
+
+\begin{qlremark}{Remark}
+
+对于 discrete random variable \(\mathit{X}\), 其 distribution function \(\mathit{F}_{\mathit{X}}\) 是一个 step function, 只有 countable 多个 jump discontinuity, 每个 jump 的大小就是 \(\mathit{X}\) 在那个点的 probability mass.\\
+因而, 对于 discrete random variable \(\mathit{X}\), 通常考虑其 \textbf{probability mass function (pmf)} \(\mathit{p}_{\mathit{X}}\) 更加有用:
+
+\begin{definition}{\kn{probability mass function (pmf)}}
+
+对于 discrete random variable \(\mathit{X}\), 其 pmf 定义为
+
+\[\mathit{p}_{\mathit{X}}(\mathit{x}) := \mathbb{P}(\mathit{X} = \mathit{x}),\quad\forall\mathit{x} \in \mathbb{R}\]
+
+\end{definition}
+
+这个 pmf 就是 \(\mathit{F}_{\mathit{X}}\) 的 jump size function. 当然, 根据定义明显可得:
+
+\[\sum\limits_{\mathit{x}}\mathit{p}_{\mathit{X}}(\mathit{x}) = 1\]
+
+\end{qlremark}
+
+值得一提的是, 这个 \textbf{pmf 其实就是 \(\mathit{X}\) 的 distribution \(\mathbb{P}^{\mathit{X}}\) 对于 counting measure (for range of \(\mathit{X}\))的 Radon-Nikodym derivative:}
+
+\begin{proposition}{\kn{pmf 是 distribution 对于 counting measure $\mathit{\mu}_{\mathit{S}}$
+的 Radon-Nikodym 导数}}
+
+对于一个 discrete random variable \(\mathit{X}\), 假设其 range 是 countable set \(\mathit{S}\), 则我们定义 counting measure \(\mathit{\mu}_{\mathit{S}}\) on \(\mathit{S}\) 为:
+
+\[\mathit{\mu}_{\mathit{S}}(\mathit{A}) := \sum\limits_{\mathit{x}_{\mathit{i}} \in \mathit{S}}\mathbf{1}_{\mathit{A}}(\mathit{x}_{\mathit{i}})\]
+
+那么, distribution \(\mathbb{P}^{\mathit{X}} \ll \mathit{\mu}_{\mathit{S}}\) (绝对连续), 并且有:
+
+\[\mathit{p}_{\mathit{X}} = \frac{\mathit{d}\mathbb{P}^{\mathit{X}}}{\mathit{d}\mathit{\mu}_{\mathit{S}}}\]
+
+\end{proposition}
+
+\begin{proof}
+
+这很容易证明. 首先, 这个 counting measure 即: \(\mathit{A}\) 中有多少个点在 \(\mathit{S}\) 中.\\
+那么显然, 如果 \(\mathit{\mu}_{\mathit{S}}(\mathit{A}) = 0\), 即 \(\mathit{A}\) 中没有点在 \(\mathit{S}\) 中, 那么 \(\mathbb{P}^{\mathit{X}}(\mathit{A}) = 0\). 因而 \(\mathbb{P}^{\mathit{X}} \ll \mathit{\mu}_{\mathit{S}}\).\\
+且对于任意 Borel set \(\mathit{A}\),
+
+\[\mathbb{P}^{\mathit{X}}(\mathit{A}) = \sum\limits_{\mathit{x}_{\mathit{i}} \in \mathit{A}}\mathbb{P}(\mathit{X} = \mathit{x}_{\mathit{i}}) = \sum\limits_{\mathit{x}_{\mathit{i}} \in \mathit{A} \cap \mathit{S}}\mathit{p}_{\mathit{X}}(\mathit{x}_{\mathit{i}}) = \int_{\mathit{A}}\mathit{p}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{\mu}_{\mathit{S}}(\mathit{x})\]
+
+\end{proof}
+
+\subsection{continuous random variable 与 probability density function}\label{continuous-random-variable-ux4e0e-probability-density-function}
+
+相对应 discrete random variable, 我们定义 continuous random variable:
+
+\begin{definition}{\kn{continuous random variable}}
+
+我们称一个 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\) 是一个 \textbf{continuous random variable}, 如果它的 cdf \(\mathit{F}_{\mathit{X}}\) 是一个 \textbf{absolutely continuous function.}
+
+\end{definition}
+
+\begin{qlremark}{Remark}
+
+回顾 absolutely continuous function 的定义, 这是一个比较复杂的定义: 对于任意 \(\mathit{\varepsilon} > 0\), 都存在 \(\mathit{\delta} > 0\) 使得任取 finite collection of disjoint intervals \(\left\{ {(\mathit{a}_{\mathit{i}},\mathit{b}_{\mathit{i}})} \right\}\), 都满足:
+
+\[\left. \sum\limits_{\mathit{i}}(\mathit{b}_{\mathit{i}} - \mathit{a}_{\mathit{i}}) < \mathit{\delta}\Longrightarrow\sum\limits_{\mathit{i}} \middle| \mathit{F}_{\mathit{X}}(\mathit{b}_{\mathit{i}}) - \mathit{F}_{\mathit{X}}(\mathit{a}_{\mathit{i}}) \middle| < \mathit{\varepsilon} \right.\]
+
+这是 uniform continuity 的一个加强版本. uniform continuity 对应的是 \(\mathit{n} = 1\) 的情况, 即: \textbf{任意的区间上, 只要长度足够小, 就能保证 \(\mathit{F}_{\mathit{X}}\) 在这个区间上的增量足够}小; 而 absolutely continuity 更严格: \textbf{即便是任意数量的分散的区间, 只要总长度足够小, 就能保证 \(\mathit{F}_{\mathit{X}}\) 在这些 interval 上的增量的总和足够小.}
+
+这个定义有点麻烦, 不过存在等价的条件. 为此我们要 recall 一系列定义与结论, 详细请见: \href{https://qiulinfan.github.io/mathnotes-measure_theory/12-differentiation_on_real_spaces.html}{notes on measure theory, module 12: differentiation on \(\mathbb{R}\)}:
+
+\begin{itemize}
+\item
+  给定一个 function \(\mathit{F}:\mathbb{R}\rightarrow\mathbb{C}\), 我们定义它的 \textbf{total variation function} \(\mathit{V}_{\mathit{F}}:\mathbb{R}\rightarrow\lbrack 0, + \infty\rbrack\) 为:
+
+  \[\mathit{T}_{\mathit{F}}(\mathit{x}) := \sup\left\{ \sum\limits_{\mathit{i} = 1}^{\mathit{n}} \middle| \mathit{F}(\mathit{x}_{\mathit{i}}) - \mathit{F}(\mathit{x}_{\mathit{i} - 1}) \mid - \infty < \mathit{x}_{0} < \cdots < \mathit{x}_{\mathit{n}} \right\}\]
+
+  ~
+\item
+  如果 \(\mathit{T}_{\mathit{F}}(\infty) < \infty\) (注意这是单调递增函数, 因而即对于任意的 \(\mathit{x}\) 都有 \(\mathit{T}_{\mathit{F}}(\mathit{x}) < \infty\)), 那么我们称 \(\mathit{F}\) 是一个 \textbf{function of bounded variation}, 写作 \(\mathit{F} \in \mathit{B}\mathit{V}\).
+\item
+  如果 \(\mathit{F} \in \mathit{B}\mathit{V}\), 且 \(\mathit{F}\) 是 right-continuous 的, 且 \(\mathit{F}( - \infty) = 0\), 那么我们称 \(\mathit{F} \in \mathit{N}\mathit{B}\mathit{V}\). (即 normalized function of bounded variation).
+\item
+  \textbf{任意的 \(\mathit{F} \in \mathit{N}\mathit{B}\mathit{V}\) 都 \(\mathit{m}\)-a.e. differentiable, 且导数 \(\mathit{F}' \in \mathit{L}^{1}(\mathit{m})\)}, 并且以下三个条件等价:
+
+  \[\begin{matrix}
+   & {\quad\quad\mathit{F} \in \mathit{A}\mathit{C}} \\
+   & {\Leftrightarrow\mathit{\mu}_{\mathit{F}} \ll \mathit{m}} \\
+   & {\Leftrightarrow\mathit{F}(\mathit{x}) = \int_{- \infty}^{\mathit{x}}\mathit{F}'(\mathit{t})\mathit{d}\mathit{t}\quad\forall\mathit{x} \in \mathbb{R}}
+  \end{matrix}\]
+\end{itemize}
+
+\end{qlremark}
+
+这几行字浓缩了 measure theory 的 differentiation theory 的两个星期的内容\ldots{} 具体见上文 notes 链接, 都有详细证明. 而我们这里就利用起最后这一条结论. 首先, 我们 state 一件事:
+
+\begin{lemma}{\kn{cdf 一定是 $\mathit{N}\mathit{B}\mathit{V}$ 的}}
+
+任意的 random variable 的 cdf \(\mathit{F}_{\mathit{X}}\) 都是一个 \(\mathit{N}\mathit{B}\mathit{V}\) function.
+
+\end{lemma}
+
+\begin{proof}
+
+依旧见 notes, 有一个关键 lemma: \(\mathit{F} \in \mathit{B}\mathit{V}\) 当且仅当它可以表示为两个 monotone increasing function 的差. 而 random variable 的 cdf \(\mathit{F}_{\mathit{X}}\) 自身是一个 non-decreasing function, 因而首先 \(\mathit{F}_{\mathit{X}} \in \mathit{B}\mathit{V}\).\\
+其次, 由 \ref{thm-02-random-variables-distribution-function} 我们知道, \(\mathit{F}_{\mathit{X}}\) 是 right-continuous 的, 且 \(\mathit{F}_{\mathit{X}}( - \infty) = 0\). 因而 \(\mathit{F}_{\mathit{X}} \in \mathit{N}\mathit{B}\mathit{V}\).
+
+\end{proof}
+
+因而我们自然得出:
+
+\begin{theorem}{\kn{一个 random variable 是 continuous random variable 的充要条件}}
+
+\begin{itemize}
+\item
+  一个 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\) 的 cdf 一定是 \(\mathit{m}\)-a.e. differentiable 的.
+\item
+  \(\mathit{X}\) 是一个 continuous random variable 当且 仅当 \(\mathbb{P}^{\mathit{X}} \ll \mathit{m}\), 即当且仅当存在一个函数 \(\mathit{f}_{\mathit{X}}:\mathbb{R}\rightarrow\lbrack 0,\infty)\), 使得 使得对于任意 Borel set \(\mathit{A} \subseteq \mathbb{R}\), 有
+
+  \[\mathbb{P}^{\mathit{X}}(\mathit{A}) = \int_{\mathit{A}}\mathit{f}_{\mathit{X}}\mathit{d}\mathit{m}\]
+
+  这个函数 \(\mathit{f}_{\mathit{X}}\) 即是:
+
+  \begin{itemize}
+  \item
+    \textbf{distribution 对于 Lebesgue measure 的 Radon-Nikodym derivative}: \(\mathit{f}_{\mathit{X}} = \frac{\mathit{d}\mathbb{P}^{\mathit{X}}}{\mathit{d}\mathit{m}}\).
+  \item
+    \textbf{cdf \(\mathit{F}_{\mathit{X}}\) 的 \(\mathit{m}\)-a.e.导数 \(\mathit{f}_{\mathit{X}} = \mathit{F}_{\mathit{X}}'\).}
+  \end{itemize}
+
+  我们也称这个 \(\mathit{f}_{\mathit{X}}\) 是 continuous random variable \(\mathit{X}\) 的 \textbf{probability density function (pdf).}
+\end{itemize}
+
+\end{theorem}
+
+\begin{proof}
+
+即 remark 的最后一条结论. 由于 \(\mathit{F}_{\mathit{X}}\) 是一个 \(\mathit{N}\mathit{B}\mathit{V}\) function, 因而 \(\mathit{F}_{\mathit{X}}\) 是 \(\mathit{m}\)-a.e. differentiable 的.\\
+并且, \(\mathit{F}_{\mathit{X}} \in \mathit{A}\mathit{C}\) iff 它满足 FTC of Lebesgue integral.
+
+\end{proof}
+
+\begin{qlremark}{Remark}
+
+因而, 在简化的教材中, 通常会直接定义: 一个 random variable \(\mathit{X}\) 是 continuous random variable, 如果存在一个 \(\mathit{f}_{\mathit{X}}\) 使得 \(\mathit{F}_{\mathit{X}}(\mathit{x}) = \int_{- \infty}^{\mathit{x}}\mathit{f}(\mathit{t})\mathit{d}\mathit{t}\) for all \(\mathit{x}\). 这里其实是跳过了我们刚才的所有步骤, 直接使用了这个等价条件. 因为这个条件也等价于:
+
+\[\mathit{F}_{\mathit{X}}(\mathit{x}) = \int_{- \infty}^{\mathit{x}}\mathit{F}_{\mathit{X}}'(\mathit{t})\mathit{d}\mathit{t}\quad\forall\mathit{x} \in \mathbb{R}\]
+
+\end{qlremark}
+
+\begin{definition}{\kn{probability density function (pdf)}}
+
+对于 continuous random variable \(\mathit{X}\), 其 probability density function 定义为 \(\mathit{F}_{\mathit{X}}\) 的 (\(\mathit{m}\)-a.e.)导数, 即
+
+\[\mathit{f}_{\mathit{X}}(\mathit{x}) := \mathit{F}_{\mathit{X}}'(\mathit{x}),\quad\mathit{m}\ \text{-a.e.}\ \mathit{x} \in \mathbb{R}\]
+
+\end{definition}
+
+我们最后梳理一下.
+
+\begin{itemize}
+\item
+  \textbf{任意的 random variable} 的 cdf \(\mathit{F}_{\mathit{X}}\) 都是一个 \(\mathit{N}\mathit{B}\mathit{V}\) function, 因而\textbf{一定 a.e. 可导}. 但是它的导数 \(\mathit{F}_{\mathit{X}}'\) 的积分不一定返回原函数.
+\item
+  \textbf{如果一个 \(\mathit{m}\)-a.e. 导数 \(\mathit{F}_{\mathit{X}}'\) 满足 \(\mathit{F}_{\mathit{X}}(\mathit{x}) = \int_{- \infty}^{\mathit{x}}\mathit{F}_{\mathit{X}}'(\mathit{t})\mathit{d}\mathit{t}\) 对所有 \(\mathit{x} \in \mathbb{R}\) 成立, 即导数的积分返回原函数, 那么 \(\mathit{X}\) 就是一个 continuous random variable}, 而我们定义 \(\mathit{f}_{\mathit{X}} := \mathit{F}_{\mathit{X}}'\) 为 \(\mathit{X}\) 的 probability density function.
+\end{itemize}
+
+以及, 显然 pdf 有以下性质:
+
+\begin{proposition}{\kn{probability density function 的性质}}
+
+对于 continuous random variable \(\mathit{X}\) with pdf \(\mathit{f}_{\mathit{X}}\),
+
+\begin{itemize}
+\item
+  \(\mathit{f}_{\mathit{X}}(\mathit{x}) \geq 0\) for \(\mathit{m}\)-a.e. \(\mathit{x} \in \mathbb{R}\). (因为 \(\mathit{F}_{\mathit{X}}\) 是 non-decreasing 的.)
+\item
+  \(\int_{- \infty}^{+ \infty}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x} = 1\). (因为 \(\mathit{F}_{\mathit{X}}(\infty) = 1\).)
+\item
+  对于任意 Borel set \(\mathit{A}\), 有
+
+  \[\mathbb{P}(\mathit{X} \in \mathit{A}) = \mathbb{P}^{\mathit{X}}(\mathit{A}) = \int_{\mathit{A}}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x}\]
+\item
+  对于 \(\mathit{m}\)-a.e. \(\mathit{x} \in \mathbb{R}\),
+
+  \[\mathit{f}_{\mathit{X}}(\mathit{x}) = \lim\limits_{\mathit{\varepsilon}\rightarrow 0^{+}}\frac{\mathbb{P}^{\mathit{X}}(\lbrack\mathit{x},\mathit{x} + \mathit{\varepsilon}))}{\mathit{\varepsilon}} = \lim\limits_{\mathit{\varepsilon}\rightarrow 0^{+}}\frac{\mathit{F}_{\mathit{X}}(\mathit{x} + \mathit{\varepsilon}) - \mathit{F}_{\mathit{X}}(\mathit{x})}{\mathit{\varepsilon}}\]
+\end{itemize}
+
+\end{proposition}
+
+\subsection{singular continuous random variable 与 Lebesgue Decomposition Theorem}\label{singular-continuous-random-variable-ux4e0e-lebesgue-decomposition-theorem}
+
+对于 continuous random variable 的定义, 有些地方会简化定义为: continuous random variable 就是指其 cdf 是一个 continuous function.
+
+但是我们现在知道, 这个定义是错的. 首先, 标准定义中的 absolutely continuous 要强于 continuous (它能推导出 a.e. differentiable); 而且, \textbf{这个更强的定义是 necessary 的}.
+
+因为当提及 continuous random variable 时, 通常意思是它存在一个 pdf. 而存在一个 pdf 即意味着它满足 FTC of Lebesgue integral, 也就等价于 \(\mathit{F}_{\mathit{X}}\) 一定是一个 absolutely continuous function. 而仅仅 continuous 什么都无法保证.
+
+我们这里给出一个 counterexample: Cantor distribution. 它的 cdf 是 continuous 的, 但是它并没有能够满足 FTC of Lebesgue integral (返回原函数) 的 a.e. derivative, 因而没有 pdf.
+
+\begin{example}[(\textbf{Cantor distribution})]
+
+令 \(\mathit{X}_{\mathit{n}}\) be 独立同分布 (i.i.d.) 的随机变量 \(\mathit{P}(\mathit{X}_{\mathit{n}} = 0) = \mathit{P}(\mathit{X}_{\mathit{n}} = 2) = 1/2\). 然后定义:
+
+\[\mathit{X} := \sum\limits_{\mathit{n} = 1}^{\infty}\frac{\mathit{X}_{\mathit{n}}}{3^{\mathit{n}}}\]
+
+它刻画的是:
+
+\begin{itemize}
+\item
+  把 \(\lbrack 0,1\rbrack\) 三等分, 去掉中间的部分, 然后在剩下的两部分中, 以 \(1/2\) 的概率选择左边的区间, 以 \(1/2\) 的概率选择右边的区间;
+\item
+  在选定的区间中, 再把它三等分, infinitely 重复这一过程.
+\item
+  最后, 这一行为会收敛于 Cantor set 上的一个点.
+\end{itemize}
+
+具体而言:
+
+\begin{itemize}
+\item
+  第 1 步 (\(\mathit{n} = 1\)) 我们查看 \(\frac{\mathit{X}_{1}}{3^{1}}\), 如果 \(\mathit{X}_{1} = 0\), 你选择了左边的区间 \(\lbrack 0,1/3\rbrack\); 如果 \(\mathit{X}_{1} = 2\), 你选择了右边的区间 \(\lbrack 2/3,1\rbrack\).
+\item
+  第 2 步 (\(\mathit{n} = 2\)): 在第 1 步选定的区间内，查看 \(\frac{\mathit{X}_{2}}{3^{2}} = \frac{\mathit{X}_{2}}{9}\) 如果 \(\mathit{X}_{2} = 0\), 你在当前小区间内选择了左侧的 1/3; 如果 \(\mathit{X}_{2} = 2\), 你在当前小区间内选择了右侧的 1/3.
+\item
+  \(\cdots\)
+\end{itemize}
+
+从而, \(\mathit{X}\) 的 range 是 Cantor set, recall: 这是一个 measure zero 的 uncountable set, 其 cardinality 是 continuum (与 \(\mathbb{R}\) 等势).
+
+\[\mathit{C} = \left\{ {\mathit{x} \in \lbrack 0,1\rbrack \mid \mathit{x} = (0.\mathit{a}_{1}\mathit{a}_{2}\mathit{a}_{3}\ldots)_{3},\text{where}\ \mathit{a}_{\mathit{i}} \in \left\{ {0,2} \right\}} \right\}\]
+
+它也表示了: 三进制小数中, 所有完全不包含数字 1 的小数的集合.
+
+由于其 uncountability, 对于任意单点 \(\mathit{x}\) 都有 \(\mathbb{P}(\mathit{X} = \mathit{x}) = 0\), \textbf{因而 \(\mathit{F}_{\mathit{X}}\) 在 \(\mathbb{R}\) 上处处连续}; 并且容易证明: \textbf{\(\mathit{F}_{\mathit{X}}\) 在 \(\mathit{x}\) 处的导数 \(\mathit{F}_{\mathit{X}}'(\mathit{x}) = 0\)}. (因为对于 \(\mathit{C}^{\mathit{c}}\) 中的任意被挖掉的区间, \(\mathit{F}_{\mathit{X}}\) 在这个区间上是 constant 的).
+
+然而, \(\mathit{F}_{\mathit{X}}' = 0\) 却\textbf{不满足 FTC of Lebesgue integral}. 比如反例: \(\mathit{F}_{\mathit{X}}(1) = 1\), 但是
+
+\[\int_{- \infty}^{1}\mathit{F}_{\mathit{X}}'(\mathit{t})\mathit{d}\mathit{t} = 0\]
+
+因而 \(\mathit{X}\) 没有 pdf, 也就不是 continuous random variable.
+
+\end{example}
+
+对于 Cantor distribution 这个例子, 我们称这样的 random variable 是一个 \textbf{singular continuous random variable}:
+
+\begin{definition}{\kn{singular continuous random variable}}
+
+对于 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\), 如果 \(\mathit{X}\) 的 cdf \(\mathit{F}_{\mathit{X}}\) 是一个 continuous function, 并且 \(\mathbb{P}^{\mathit{X}}\bot\mathit{m}\) (即存在一个 measure zero 的 Borel set \(\mathit{N}\) 使得 \(\mathbb{P}^{\mathit{X}}(\mathit{N}) = 1\), 也等价于 \(\mathit{F}_{\mathit{X}}\) 的导数 \(\mathit{F}_{\mathit{X}}' = 0\) a.e.), 那么我们称 \(\mathit{X}\) 是一个 singular continuous random variable.
+
+\end{definition}
+
+\begin{qlremark}{Remark}
+
+singular continuous random variable 的意思是, 在 \(\mathbb{R}\) 上, \(\mathit{X}\) 的值 a.s. 落在一个 measure zero 的 set 上, 也就是说它的 cdf 大部分是平的, 只有在 measure zero 的 set 上才有 jump.
+
+\end{qlremark}
+
+这个例子向我们说明了: 除了 discrete random variable 和 continuous random variable 以外, 还有其他的奇异的 random variables. 而下面这一定理刻画了任意的 random variable 的结构:
+
+\begin{theorem}{\kn{Lebesgue Decomposition Theorem}}
+
+对于任意 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\), 其 distribution \(\mathbb{P}^{\mathit{X}}\) 可以唯一分解为三个 mutually singular 的 measure 的和:
+
+\[\mathbb{P}^{\mathit{X}} = \mathbb{P}_{\mathit{a}\mathit{c}}^{\mathit{X}} + \mathbb{P}_{\mathit{s}\mathit{c}}^{\mathit{X}} + \mathbb{P}_{\mathit{d}}^{\mathit{X}}\]
+
+其中 \(\mathbb{P}_{\mathit{a}\mathit{c}}^{\mathit{X}} \ll \mathit{m}\) 是 absolutely continuous measure, \(\mathbb{P}_{\mathit{s}\mathit{c}}^{\mathit{X}} \perp \mathit{m}\) 是一个 singular continuous measure, \(\mathbb{P}_{\mathit{d}}^{\mathit{X}} \perp \mathit{m}\) 是 discrete measure.
+
+\end{theorem}
+
+\begin{proof}
+
+TODO.
+
+\end{proof}
+
+\begin{qlremark}{Remark}
+
+我们也可以这样展开:
+
+\[\mathit{F}_{\mathit{X}}(\mathit{x}) = \int_{- \infty}^{\mathit{x}}\mathit{f}_{\mathit{a}\mathit{c}}(\mathit{t})\,\mathit{d}\mathit{t} + \sum\limits_{\mathit{x}_{\mathit{i}} \leq \mathit{x}}\mathit{p}_{\mathit{d}}(\mathit{x}_{\mathit{i}}) + \mathit{F}_{\mathit{s}\mathit{c}}(\mathit{x})\]
+
+其中 \(\mathit{f}_{\mathit{a}\mathit{c}}\) 是 \(\mathit{X}_{\mathit{a}\mathit{c}}\) 的 pdf, \(\mathit{p}_{\mathit{d}}\) 是 \(\mathit{X}_{\mathit{d}}\) 的 pmf, 而 \(\mathit{F}_{\mathit{s}\mathit{c}}\) 由于其奇异性是无法分解的.
+
+\end{qlremark}
+
+\section{expectation and variance}\label{expectation-and-variance}
+
+Distribution 是一个 random variable 的完整刻画, 而这一节我们来谈一谈 expectation 和 variance, 这是一个 random variable 的两个重要的数值特征: 它的均值和离散程度.
+
+最后我们会谈一谈\textbf{\(\mathit{L}^{2}(\Omega,\mathcal{F},\mathbb{P})\) 空间}: all square-integrable random variables; 以及它的一个重要 subspace \(\mathit{L}_{0}^{2}(\Omega,\mathcal{F},\mathbb{P})\): 所有 square-integrable 的 zero-centered random variables. 它们都是由 random variables 组成的 Hilbert space, 并且在其中, expectation, variance, covariance 都会得到一个非常自然的 interpretation, 展现这个空间的几何结构.
+
+\subsection{expectation and variance 的 definition 和计算方法}\label{expectation-and-variance-ux7684-definition-ux548cux8ba1ux7b97ux65b9ux6cd5}
+
+随机变量的 \textbf{expectation} 是它 w.r.t. 它所在概率空间 prob measure \(\mathbb{P}\) 的积分, 表示它的值的 prob-weighted average;
+
+而其 \textbf{variance} 是 \((\mathit{X} - \mathit{E}(\mathit{X}))^{2}\) 这个 induced RV w.r.t. \(\mathbb{P}\) 的积分, 表示 \(\mathit{X}\) 离它的值的 weighted average \(\mathbb{E}(\mathit{X})\)的聚集程度:
+
+\begin{definition}{\kn{expectation and variance of random variable}}
+
+对于 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\), 其 expectation 定义为
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack := \int_{\Omega}\mathit{X}\mathit{d}\mathbb{P}\]
+
+其 variance 定义为
+
+\[\text{Var}(\mathit{X}) := \mathbb{E}\lbrack(\mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack)^{2}\rbrack = \int_{\Omega}(\mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack)^{2}\mathit{d}\mathbb{P}\]
+
+\end{definition}
+
+\begin{qlremark}{Remark}
+
+\(\int_{\Omega}\mathit{d}\mathbb{P} = \mathbb{P}(\Omega) = 1\), 因而 \(\mathbb{E}\lbrack\mathit{X}\rbrack\) 可以看作是 \(\mathit{X}\) 的值的 weighted average, 其中权重就是每个 sample point 在这个原 prob space 上的概率.
+
+Note that: \(\mathbb{E}\lbrack\mathit{X}\rbrack\) 未必是 finite 的. \(\mathbb{E}\lbrack\mathit{X}\rbrack < \infty\Leftrightarrow\mathit{X} \in \mathit{L}^{1}(\mathbb{P})\). \(\text{Var}(\mathit{X}) < \infty\Leftrightarrow\mathit{X} \in \mathit{L}^{2}(\mathbb{P})\)
+
+\end{qlremark}
+
+要计算 discrete random vairable 的 expectation 和 variance, 直接 by def, sum 就可以:
+
+\begin{proposition}{\kn{discrete random variable 的 expectation 和 variance}}
+
+对于 discrete random variable \(\mathit{X}\) with pmf \(\mathit{p}_{\mathit{X}}\),
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack = \sum\limits_{\mathit{x}}\mathit{x}\mathit{p}_{\mathit{X}}(\mathit{x}),\quad\text{Var}(\mathit{X}) = \sum\limits_{\mathit{x}}(\mathit{x} - \mathbb{E}\lbrack\mathit{X}\rbrack)^{2}\mathit{p}_{\mathit{X}}(\mathit{x})\]
+
+\end{proposition}
+
+非常简单.
+
+但是对于 continuous random variable 而言, 怎么求呢? 这里有一个 w.r.t. prob measure \(\mathbb{P}\) 的积分, 有点难计算. 我们更希望计算 w.r.t. Lebesgue measure \(\mathit{m}\) 的积分, 这样就可以用一些经典的方法来算它了.
+
+为了实现这个目标, 我们首先需要一个工具来过渡一下:
+
+\begin{lemma}{\kn{用 distribution ($\mathit{X}$ 的 push-forward measure) 计算
+expectation}}
+
+对于 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\), 如果 \(\mathit{X}\) integrable, 那么其 expectation
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack = \int_{\mathbb{R}}\mathit{x}\mathit{d}\mathbb{P}^{\mathit{X}}(\mathit{x})\]
+
+\end{lemma}
+
+\begin{proof}
+
+这个结论是 Lebesgue integral 的 change of variable formula 的一个 special case. 注意, \(\mathit{X} = \text{id} \circ \mathit{X}\) (\(\text{id}:\mathbb{R}\rightarrow\mathbb{R}\) 是恒等函数).
+
+By change of variable formula,
+
+\[\int_{\Omega}\mathit{X}\mathit{d}\mathbb{P} = \int_{\Omega}(\text{id} \circ \mathit{X})\mathit{d}\mathbb{P} = \int_{\mathbb{R}}\text{id}(\mathit{x})\mathit{d}\mathbb{P}^{\mathit{X}}(\mathit{x}) = \int_{\mathbb{R}}\mathit{x}\mathit{d}\mathbb{P}^{\mathit{X}}(\mathit{x})\]
+
+(如果不用 change of variable theorem, 也可以证明. 考虑 simple function 的 case, 显然; 然后对 simple function 自然成立, 然后用 monotone convergence theorem 推广到一般情况.)
+
+//TODO: 从 diffeomorphism version 的 change of variable formula 证明 push-forward version 的 change of variable formula, 然后 apply 这个结论. 参考: \href{https://en.wikipedia.org/wiki/Change_of_variables}{change of variable}
+
+\end{proof}
+
+\begin{proposition}{\kn{continuous random variable 的 expectation 和 variance}}
+
+对于 continuous random variable \(\mathit{X}\) with pdf \(\mathit{f}_{\mathit{X}}\), 如果 \(\mathbb{E}\lbrack\mathit{X}\rbrack\) 和 \(\text{Var}(\mathit{X})\) 都是 finite 的, 那么
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack = \int_{- \infty}^{+ \infty}\mathit{x}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x},\quad\text{Var}(\mathit{X}) = \int_{- \infty}^{+ \infty}(\mathit{x} - \mathbb{E}\lbrack\mathit{X}\rbrack)^{2}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x}\]
+
+并且, 对于任意的 measurable function \(\mathit{g}:\mathbb{R}\rightarrow\mathbb{R}\), 都有
+
+\[\mathbb{E}\lbrack\mathit{g}(\mathit{X})\rbrack = \int_{- \infty}^{+ \infty}\mathit{g}(\mathit{x})\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x}\]
+
+\end{proposition}
+
+\begin{proof}
+
+由于 \(\mathbb{E}\lbrack\mathit{X}\rbrack = \int_{\mathbb{R}}\mathit{x}\mathit{d}\mathbb{P}^{\mathit{X}}(\mathit{x})\), 而对于 ctn random variable,
+
+\[\mathit{d}\mathbb{P}^{\mathit{X}}(\mathit{x}) = \mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{\lambda}(\mathit{x})\]
+
+从而得证.
+
+\end{proof}
+
+\begin{proposition}{\kn{expectation 的性质}}
+
+令 \(\mathit{X},\mathit{Y}:\Omega\rightarrow\mathbb{R}\) 为 \textbf{integrable} random variables, 则
+
+\begin{itemize}
+\item
+  \textbf{linearity of expectation}: \(\mathbb{E}\lbrack\mathit{a}\mathit{X} + \mathit{b}\mathit{Y}\rbrack = \mathit{a}\mathbb{E}\lbrack\mathit{X}\rbrack + \mathit{b}\mathbb{E}\lbrack\mathit{Y}\rbrack\) for any \(\mathit{a},\mathit{b} \in \mathbb{R}\).
+\item
+  \textbf{monotonicity of expectation}: 如果 \(\mathit{X} \leq \mathit{Y}\) a.s., 那么 \(\mathbb{E}\lbrack\mathit{X}\rbrack \leq \mathbb{E}\lbrack\mathit{Y}\rbrack\).
+\item
+  \textbf{absolute value}: \(\left. \mathbb{E}\lbrack\mathit{X}\rbrack \leq \mathbb{E}\lbrack \middle| \mathit{X} \middle| \rbrack \right.\)
+\end{itemize}
+
+\end{proposition}
+
+这三条性质都容易验证, 直接 follow from linearity of Lebesgue integral, monotonicity of Lebesgue integral, triangle inequality of Lebesgue integral.
+
+\begin{proposition}{\kn{computing variance}}
+
+对于 random variable \(\mathit{X}\) with finite expectation,
+
+\[\text{Var}(\mathit{X}) = \mathbb{E}\lbrack\mathit{X}^{2}\rbrack - (\mathbb{E}\lbrack\mathit{X}\rbrack)^{2}\]
+
+\end{proposition}
+
+By def, 容易验证.
+
+\subsection{\texorpdfstring{\(\mathit{L}_{0}^{2}(\Omega,\mathcal{F},\mathbb{P})\) 与 covariance and correlation as inner product and cosine}{\textbackslash mathit\{L\}\_\{0\}\^{}\{2\}(\textbackslash Omega,\textbackslash mathcal\{F\},\textbackslash mathbb\{P\}) 与 covariance and correlation as inner product and cosine}}\label{mathitl_02omegamathcalfmathbbp-ux4e0e-covariance-and-correlation-as-inner-product-and-cosine}
+
+我们 recall measure theory 中的一丢丢 functional analysis 的内容:
+
+\[\mathit{L}^{2}(\Omega,\mathcal{F},\mathbb{P}) = \left\{ {\mathit{X}:\Omega\rightarrow\mathbb{R} \mid \mathit{X}\ \text{is measurable(即 RV)) and}\ \mathbb{E}\lbrack\mathit{X}^{2}\rbrack < \infty} \right\}/ \sim\]
+
+where \(\sim\) 表示 almost sure equality 的等价类, 即
+
+\[\mathit{X} \sim \mathit{Y}\Leftrightarrow\mathbb{P}(\left\{ {\mathit{\omega} \in \Omega:\mathit{X}(\mathit{\omega}) = \mathit{Y}(\mathit{\omega})} \right\}) = 1\]
+
+即把所有 a.s. 相等的 random variables 都看作相等.
+
+我们知道, 这是一个 \textbf{Hilbert space}, 即一个 complete inner product space, 其中
+
+\begin{itemize}
+\item
+  两个 random variables as vectors 的 inner product 定义为: \(\langle\mathit{X},\mathit{Y}\rangle := \mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack\) 即它们的 second
+\item
+  一个 random variable 的 norm 即: \(\parallel \mathit{X} \parallel := \sqrt{\langle\mathit{X},\mathit{X}\rangle} = \sqrt{\mathbb{E}\lbrack\mathit{X}^{2}\rbrack}\) 即它的 second moment 的 square root. 它表示了这个 random variable 的整体离散程度.
+\end{itemize}
+
+虽然这个空间已经有一定的 information geometry 了, 但是我们实际上希望能够 用一个结构来描述两个 random variables 之间的线性相关性:
+
+\begin{itemize}
+\tightlist
+\item
+  任意取一个 \(\mathit{\omega}\), \(\mathit{X}(\mathit{\omega})\) 较大 (距离它的 expectation 较远) 的时候, \(\mathit{Y}(\mathit{\omega})\) 是否也通常较大 (距离它的 expectation 较远)? \(\mathit{X}(\mathit{\omega})\) 较小的时候, \(\mathit{Y}(\mathit{\omega})\) 是否也通常较小?
+\end{itemize}
+
+而 \(\mathit{L}^{2}(\Omega,\mathcal{F},\mathbb{P})\) 这个空间作为一个 Hilbert space 时, 两个 random variables 之间的距离其实是它们作为函数的相似性而不是它们变化趋势 (波动) 的相似性.
+
+比如考虑 \(\mathit{X} = \mathit{x}\) 和 \(\mathit{Y} = \mathit{x} + 5\), 它们的线性相关性其实是 1, 即变化趋势完全相同, 但是 它们在 \(\mathit{L}^{2}(\lbrack 0,4\rbrack,\mathcal{F},\mathbb{P})\) 中的 cosine similarity 却是
+
+\[\frac{\langle\mathit{X},\mathit{Y}\rangle}{\parallel \mathit{X} \parallel \parallel \mathit{Y} \parallel} = \frac{46/3}{\sqrt{(16/3)(151/3)}} = \frac{46}{\sqrt{2416}} \approx 0.936\]
+
+我们希望的是这个 cosine similarity 应当是 1. 即, 应该忽略掉绝对数值, 而是考虑这两个 random variables 的变化趋势.
+
+因而 solution: normalize 每个 random variable, 把它们移动到 均值为 0 的位置! 即: 把每个 \(\mathit{X}\) center 为 \(\mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack\). 这就是:
+
+\begin{definition}{\kn{zero-centered square integrable random variables
+$\mathit{L}_0^2(\Omega,\mathcal{F},\mathbb{P})$}}
+
+我们定义:
+
+\[\mathit{L}_{0}^{2}(\Omega,\mathcal{F},\mathbb{P}) := \left\{ {\mathit{X} \in \mathit{L}^{2}(\Omega,\mathcal{F},\mathbb{P}) \mid \mathbb{E}\lbrack\mathit{X}\rbrack = 0} \right\}\]
+
+注意, 这个空间是 \(\mathit{L}^{2}(\Omega,\mathcal{F},\mathbb{P})\) 的一个 subspace.
+
+\end{definition}
+
+并且, \textbf{我们可以通过把每个 \(\mathit{X}\) center 为 \(\mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack\) 的行为, 把 \(\mathit{X}\) 从 \(\mathit{L}^{2}(\Omega,\mathcal{F},\mathbb{P})\) 投影到 \(\mathit{L}_{0}^{2}(\Omega,\mathcal{F},\mathbb{P})\) 这个 subspace 上.}\\
+而投影+度量的行为, 就是计算:
+
+\begin{definition}{\kn{covariance}}
+
+给定两个 random variables \(\mathit{X},\mathit{Y}\), 我们定义它们的 covariance 为
+
+\[\text{Cov}(\mathit{X},\mathit{Y}) := \mathbb{E}\lbrack(\mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack)(\mathit{Y} - \mathbb{E}\lbrack\mathit{Y}\rbrack)\rbrack = \mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack - \mathbb{E}\lbrack\mathit{X}\rbrack\mathbb{E}\lbrack\mathit{Y}\rbrack\]
+
+\end{definition}
+
+\begin{qlremark}{Remark}
+
+Geometric intuition of covariance: 考虑取这两个 random variables 的一些 sample points 并分别作为 \((\mathit{x},\mathit{y})\) 坐标.
+
+\begin{itemize}
+\item
+  如果它们的 covariance 是正的, 那么这些 sample points 倾向于拟合为一个斜率为正的 tendency line;
+\item
+  如果它们的 covariance 是负的, 那么这些 sample points 倾向于拟合为一个斜率为负的 tendency line;
+\item
+  如果它们的 covariance 是 0, 那么这些 sample points 倾向于拟合为一个水平的 tendency line.
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\csname prob-02-random-variables-diagram-01\endcsname
+
+\caption{正、负与零协方差对应的线性趋势}
+
+\label{fig-prob-02-random-variables-diagram-01}
+
+\end{figure}
+
+但是注意:
+
+\begin{itemize}
+\item
+  covariance 只捕捉 linear relationship, 即趋势是否呈直线, 不过不能捕捉 nonlinear relationship. 之后在学习 independence 的时候, 我们会知道即便 covariance 为 0, \(\mathit{X}\) 和 \(\mathit{Y}\) 仍然可能是 dependent 的. 比如, 如果 \((\mathit{X},\mathit{Y})\) 的联合分布 as a graph 是个圆圈, 那么 covariance 就是 0, 但显然这两个变量之间是有关系的.
+
+  \begin{figure}[htbp]
+  \centering
+  \csname prob-02-random-variables-diagram-02\endcsname
+
+  \caption{零协方差但不独立的圆周分布}
+
+  \label{fig-prob-02-random-variables-diagram-02}
+
+  \end{figure}
+\item
+  Covariance 的数值还包括了这两个 random variables 的 scale, 因而还不能直接用来比较不同 random variables 之间的 linear relationship 的强弱程度. 真正公平的 linear relationship 还需要 normalize by norms, 把这个关系定位到 \(\lbrack - 1,1\rbrack\) 的区间上 即等下定义的 correlation.
+\end{itemize}
+
+\end{qlremark}
+
+我们容易发现一件事情:
+
+\begin{theorem}{\kn{covariance is a positive-semidefinite symmetric bilinear form}}
+
+\begin{itemize}
+\item
+  covariance 是一个 \textbf{symmetric bilinear form} (并且 \textbf{translation-invariant}, 忽略 translation) 的 operator:
+
+  \[\text{Cov}(\mathit{a}\mathit{X} + \mathit{b},\mathit{c}\mathit{Y} + \mathit{d}) = \mathit{a}\mathit{c}\,\text{Cov}(\mathit{X},\mathit{Y})\]\[\text{Cov}(\mathit{X},\mathit{Y}) = \text{Cov}(\mathit{Y},\mathit{X})\]\[\text{Cov}(\mathit{X} + \mathit{Y},\mathit{Z}) = \text{Cov}(\mathit{X},\mathit{Z}) + \text{Cov}(\mathit{Y},\mathit{Z})\]
+\item
+  covariance 满足 positive definiteness: \(\text{Cov}(\mathit{X},\mathit{X}) = \text{Var}(\mathit{X}) \geq 0\).
+\end{itemize}
+
+\end{theorem}
+
+\begin{proof}
+
+By def.
+
+\end{proof}
+
+而当我们把空间限定在 \(\mathit{L}_{0}^{2}(\Omega,\mathcal{F},\mathbb{P})\) 上时,
+
+\begin{theorem}{\kn{$\mathit{L}_0^2(\Omega,\mathcal{F},\mathbb{P})$ 为一个 Hilbert
+space, with covariance as an inner product}}
+
+\((\mathit{L}_{0}^{2}(\Omega,\mathcal{F},\mathbb{P}),\langle \cdot , \cdot \rangle_{\text{Cov}})\) 为一个 Hilbert space, 即: covariance 在其上是一个 inner product (positive definite symmetric bilinear form).
+
+\end{theorem}
+
+\begin{proof}
+
+很显然. 因为在 \(\mathit{L}^{2}\) space 上, 一个 constant random variable 的 variance 是 0, 但是它并不是一个零函数; 而在 \(\mathit{L}_{0}^{2}\) space 上, 所有的 random variables 都是 zero-centered 的, 因而 constant random variable 就是零函数了. 从而 covariance 在 \(\mathit{L}_{0}^{2}\) space 上是 positive definite 的, 从而是 inner product.\\
+
+\end{proof}
+
+而在 \(\mathit{L}_{0}^{2}(\Omega,\mathcal{F},\mathbb{P})\) 上, 两个 random variables \(\mathit{X},\mathit{Y}\) 之间的夹角 \(\mathit{\theta}\) 的 cosine, 就是它们 真正的 linear relationship 的强弱程度, 因而我们把它叫做 correlation:
+
+\begin{definition}{\kn{correlation}}
+
+\[\mathit{\rho}(\mathit{X},\mathit{Y}) = \frac{\text{Cov}(X,Y)}{\sqrt{\text{Var}(\mathit{X})}\sqrt{\text{Var}(\mathit{Y})}}\]
+
+\end{definition}
+
+显然,
+
+\[\mathit{\rho}(\mathit{X},\mathit{Y}) = \cos\mathit{\theta}\]
+
+where \(\mathit{\theta}\) 是 \(\mathit{X},\mathit{Y}\) 之间的夹角. And we have:
+
+\[\text{Cov}(\mathit{X},\mathit{Y}) = \mathit{\sigma}_{\mathit{X}}\mathit{\sigma}_{\mathit{Y}}\mathit{\rho}(\mathit{X},\mathit{Y})\]
+
+从而有以下显然的结论:
+
+\begin{proposition}{\kn{properties of correlation}}
+
+\begin{itemize}
+\item
+  \(\mathit{\rho}(\mathit{X},\mathit{Y}) \in \lbrack - 1,1\rbrack\)
+\item
+  如果 \(\mathit{\rho}(\mathit{X},\mathit{Y}) = 1\), 那么 \(\mathit{Y} = \mathit{a}\mathit{X} + \mathit{b}\) for some \(\mathit{a} > 0\) and \(\mathit{b}\); 如果 \(\mathit{\rho}(\mathit{X},\mathit{Y}) = - 1\), 那么 \(\mathit{Y} = \mathit{a}\mathit{X} + \mathit{b}\) for some \(\mathit{a} < 0\) and \(\mathit{b}\).~
+\item
+  By Cauchy-Schwarz inequality, \(\left. |\text{Cov}(\mathit{X},\mathit{Y}) \middle| \leq \mathit{\sigma}_{\mathit{X}}\mathit{\sigma}_{\mathit{Y}} \right.\).
+\end{itemize}
+
+\end{proposition}
+
+做一个总结:
+
+{\def\LTcaptype{none} % do not increment counter
+\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.3}
+\begin{longtable}[]{@{}p{0.23\linewidth}p{0.31\linewidth}p{0.39\linewidth}@{}}
+\toprule\noalign{}
+& \textbf{\(\mathit{L}^{2}\) space} & \textbf{\(\mathit{L}_{0}^{2}\)} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+inner product \(\langle\mathit{X},\mathit{Y}\rangle\) & \(\mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack\) & \(\text{Cov}(\mathit{X},\mathit{Y})\) (covariance) \\
+norm \(\parallel \mathit{X} \parallel\) & \(\sqrt{\mathbb{E}\lbrack\mathit{X}^{2}\rbrack}\) & \(\sqrt{\text{Var}(\mathit{X})}\) (standard deviation) \\
+cosine similarity & \(\frac{\mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack}{\sqrt{\mathbb{E}\lbrack\mathit{X}^{2}\rbrack}\sqrt{\mathbb{E}\lbrack\mathit{Y}^{2}\rbrack}}\) & \(\frac{\text{Cov}(\mathit{X},\mathit{Y})}{\sqrt{\text{Var}(\mathit{X})}\sqrt{\text{Var}(\mathit{Y})}}\) (correlation) \\
+\end{longtable}
+}
+
+\textbf{求两个 random variables 之间的 correlation, 就是把它们都 center 到 zero-centered 的位置 (即投影到 \(\mathit{L}_{0}^{2}\) space 上), 然后计算它们在 \(\mathit{L}_{0}^{2}\) space 上的 cosine similarity.}\\
+此时我们看到 decomposition of variance:
+
+\begin{proposition}{\kn{两个 random variables 之和的 variance}}
+
+两个 random variables 的和的 variance 可分解成 variances 和 covariance:
+
+\[\text{Var}(\mathit{X} + \mathit{Y}) = \text{Var}(\mathit{X}) + \text{Var}(\mathit{Y}) + 2\ \text{Cov}(\mathit{X},\mathit{Y})\]
+
+\end{proposition}
+
+\begin{proof}
+
+\[\text{Var}(\mathit{X} + \mathit{Y}) = \mathbb{E}\left\lbrack {(\mathit{X} + \mathit{Y})^{2}} \right\rbrack - (\mathbb{E}\lbrack\mathit{X} + \mathit{Y}\rbrack)^{2} = \mathbb{E}\left\lbrack \mathit{X}^{2} \right\rbrack - (\mathbb{E}\lbrack\mathit{X}\rbrack)^{2} + \mathbb{E}\left\lbrack \mathit{Y}^{2} \right\rbrack - (\mathbb{E}\lbrack\mathit{Y}\rbrack)^{2} + 2(\mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack - \mathbb{E}\lbrack\mathit{X}\rbrack\mathbb{E}\lbrack\mathit{Y}\rbrack)\]
+
+\end{proof}
+
+\begin{qlremark}{Remark}
+
+它其实这就是标准的 inner product space 上的向量平方公式:
+
+\[\parallel \mathit{X} + \mathit{Y}\underset{\mathit{L}_{0}^{2}}{\overset{2}{\parallel}} = \parallel \mathit{X}\underset{\mathit{L}_{0}^{2}}{\overset{2}{\parallel}} + \parallel \mathit{Y}\underset{\mathit{L}_{0}^{2}}{\overset{2}{\parallel}} + 2\langle\mathit{X},\mathit{Y}\rangle_{\mathit{L}_{0}^{2}}\]
+
+\end{qlremark}
+
+\section{discrete random variables}\label{discrete-random-variables}
+
+Recall: discrete random variable 是指其 range a.s. 是 countable 的 random variable. (存在一个 countable set \(\mathit{S} \subseteq \mathbb{R}\) 使得 \(\mathbb{P}(\mathit{X} \in \mathit{S}) = 1\))
+
+discrete RV 的 probability mass unction (pmf):
+
+\[\mathit{p}_{\mathit{X}}(\mathit{x}) := \mathbb{P}(\mathit{X} = \mathit{x}),\quad\forall\mathit{x} \in \mathbb{R}\]
+
+就是 \(\mathit{X}\) 的 distribution \(\mathit{P}^{\mathit{X}}\) 对于 counting measure of range \(\mathit{S}\) 的 Radon-Nikodym derivative:
+
+\[\mathit{p}_{\mathit{X}} = \frac{\mathit{d}\mathbb{P}^{\mathit{X}}}{\mathit{d}\mathit{\mu}_{\text{S}}}\]
+
+因为假设 \(\mathit{X}\) 的 range 是 \(\mathit{S} = \left\{ {\mathit{x}_{1},\mathit{x}_{2},\ldots} \right\}\), 那么对于任意 Borel set \(\mathit{B}\),
+
+\[\mathbb{P}^{\mathit{X}}(\mathit{B}) = \sum\limits_{\mathit{x}_{\mathit{i}} \in \mathit{B}}\mathbb{P}(\mathit{X} = \mathit{x}_{\mathit{i}}) = \sum\limits_{\mathit{x}_{\mathit{i}} \in \mathit{B} \cap \mathit{S}}\mathit{p}_{\mathit{X}}(\mathit{x}_{\mathit{i}}) = \int_{\mathit{A}}\mathit{p}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{\mu}_{\text{S}}(\mathit{x})\]
+
+下面我们给出一些经典的 discrete random variable 的例子, 以及它们的 pmf 和 cdf.
+
+\subsection{Bernoulli distribution and Binomial distribution}\label{bernoulli-distribution-and-binomial-distribution}
+
+\begin{example}[(\textbf{Bernoulli distribution})]
+
+令 \(\Omega := \left\{ {\mathit{\omega}_{1},\mathit{\omega}_{2}} \right\}\), \(\mathcal{F} := 2^{\Omega}\).\\
+令 \(\mathbb{P}(\left\{ \mathit{\omega}_{1} \right\}) = \mathit{p}\), \(\mathbb{P}(\left\{ \mathit{\omega}_{2} \right\}) = 1 - \mathit{p}\) 来表示这两个 singular 事件的概率.\\
+令 \(\mathit{X}(\mathit{\omega}_{1}) = 1\), \(\mathit{X}(\mathit{\omega}_{2}) = 0\) 分别表示 success 和 failure.\\
+那么显然可以计算:
+
+\[\mathbb{P}(\mathit{X} = 0) = \mathbb{P}(\left\{ \mathit{\omega}_{2} \right\}) = 1 - \mathit{p},\quad\mathbb{P}(\mathit{X} = 1) = \mathbb{P}(\left\{ \mathit{\omega}_{1} \right\}) = \mathit{p}\]
+
+我们称 \((\Omega,\mathcal{F},\mathbb{P})\) 为一个 Bernoulli probability space (它 model 了一个 Bernoulli trial, 即一个 random experiment with two possible outcomes: success 和 failure)\\
+称 \(\mathit{X}:\Omega\rightarrow\left\{ {0,1} \right\}\) 这个 random variable 为一个 \textbf{Bernoulli random variable}, 并称 \(\mathit{X}\) 的 distribution \(\mathit{P}^{\mathit{X}}\) 为一个 \textbf{Bernoulli distribution}, 写作
+
+\[\mathit{X} \sim \text{Ber}(\mathit{p})\]
+
+这是最简单的 random variable 和 distribution 了. 它 model 的是: 比如我们 toss 一枚 biased coin, 以 \(\mathit{p}\) 的概率得到 heads (success), 以 \(1 - \mathit{p}\) 的概率得到 tails (failure).\\
+
+\end{example}
+
+\begin{proposition}
+
+如果 \(\mathit{X} \sim \text{Ber}(\mathit{p})\), 那么 \(\mathbb{E}\lbrack\mathit{X}\rbrack = \mathit{p}\), \(\text{Var}(\mathit{X}) = \mathit{p}(1 - \mathit{p})\).
+
+\end{proposition}
+
+显然.
+
+\begin{example}[(\textbf{Binomial distribution})]
+
+我们 independently repeat \(\mathit{n}\) 次 Bernoulli trial, 每次 trial 的 success probability 都是 \(\mathit{p}\).\\
+考虑:
+
+\[\mathit{S} := \mathit{X}_{1} + \mathit{X}_{2} + \cdots + \mathit{X}_{\mathit{n}}\]
+
+为 success 的总次数. 那么 \(\mathit{S}\) 是一个 discrete random variable \(\mathit{S}:\Omega^{\mathit{n}}\rightarrow\mathbb{Z}_{\geq 0}\) 容易计算出 \(\mathit{S}\) 的 pmf:
+
+\[\mathit{p}_{\mathit{S}}(\mathit{k}) = \mathbb{P}(\mathit{S} = \mathit{k}) = \binom{\mathit{n}}{\mathit{k}}\mathit{p}^{\mathit{k}}(1 - \mathit{p})^{\mathit{n} - \mathit{k}},\quad\mathit{k} = 0,1,\ldots,\mathit{n}\]
+
+我们称 \(\mathit{S}\) 的 distribution \(\mathit{P}^{\mathit{S}}\) 为一个 \textbf{Binomial distribution}, 写作
+
+\[\mathit{S} \sim \text{Bin}(\mathit{n},\mathit{p})\]
+
+它 model 的是: 比如我们 toss 一枚 biased coin \(\mathit{n}\) 次, 得到 heads 的总次数.\\
+
+\end{example}
+
+\begin{proposition}
+
+如果 \(\mathit{S} \sim \text{Bin}(\mathit{n},\mathit{p})\), 那么 \(\mathbb{E}\lbrack\mathit{S}\rbrack = \mathit{n}\mathit{p}\), \(\text{Var}(\mathit{S}) = \mathit{n}\mathit{p}(1 - \mathit{p})\).
+
+\end{proposition}
+
+\begin{proof}
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack = \sum\limits_{\mathit{k} = 1}^{\mathit{n}}\mathit{k} \cdot \mathbb{P}(\mathit{X} = \mathit{k}) = \sum\limits_{\mathit{k} = 1}^{\mathit{n}}\mathit{k} \cdot \binom{\mathit{n}}{\mathit{k}}\mathit{p}^{\mathit{k}}(1 - \mathit{p})^{\mathit{n} - \mathit{k}} = \mathit{p}(1 - \mathit{p})^{\mathit{n} - 1}\sum\limits_{\mathit{k} = 1}^{\mathit{n}}\mathit{k} \cdot \binom{\mathit{n}}{\mathit{k}}(\frac{\mathit{p}}{1 - \mathit{p}})^{\mathit{k} - 1}\]
+
+由于
+
+\[(1 + \mathit{t})^{\mathit{n}} = \sum\limits_{\mathit{k} = 0}^{\mathit{n}}\binom{\mathit{n}}{\mathit{k}}\mathit{t}^{\mathit{k}}\Longrightarrow\mathit{n}(1 + \mathit{t})^{\mathit{n} - 1} = \sum\limits_{\mathit{k} = 1}^{\mathit{n}}\mathit{k} \cdot \binom{\mathit{n}}{\mathit{k}}\mathit{t}^{\mathit{k} - 1}\]
+
+可以得到
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack = \mathit{p}(1 - \mathit{p})^{\mathit{n} - 1} \cdot \mathit{n}(1 + \frac{\mathit{p}}{1 - \mathit{p}})^{\mathit{n} - 1} = \mathit{n}\mathit{p}\]
+
+然后计算得 \(\text{Var}(\mathit{X}) = \mathit{n}\mathit{p}(1 - \mathit{p})\). 但是这是比较麻烦的方法. 也可以利用 \(\mathit{X} = \sum_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}\), 其中 \(\mathit{X}_{\mathit{i}} \sim \text{Ber}(\mathit{p})\) i.i.d 这个事实来计算, 那么直接通过 线性叠加 Bernoulli random variable 的 expectation 和 variance 就可以了.
+
+\end{proof}
+
+\subsection{Geometric distribution and Negative Binomial distribution}\label{geometric-distribution-and-negative-binomial-distribution}
+
+\begin{example}[(\textbf{Geometric distribution})]
+
+我们 perform independent Bernoulli trial, 每次 trial 的 success probability 都是 \(\mathit{p}\).\\
+考虑 random variable \(\mathit{T}\) 表示第一次 success 发生的 trial number. (也就是等于: 我们一直 trial, 直到第一次 success 发生, 那么这个 trial 的 number 就是 \(\mathit{T}\)).\\
+那么 \(\mathit{T}\) 是一个 discrete random variable \(\mathit{T}:\Omega^{\infty}\rightarrow\mathbb{Z}_{\geq 1}\).\\
+容易计算出 \(\mathit{T}\) 的 pmf:
+
+\[\mathit{p}_{\mathit{T}}(\mathit{k}) = \mathbb{P}(\mathit{T} = \mathit{k}) = (1 - \mathit{p})^{\mathit{k} - 1}\mathit{p},\quad\mathit{k} = 1,2,\ldots\]
+
+我们称 \(\mathit{T}\) 的 distribution \(\mathit{P}^{\mathit{T}}\) 为一个 \textbf{Geometric distribution}, 写作
+
+\[\mathit{T} \sim \text{Geom}(\mathit{p})\]
+
+它 model 的是: 比如我们 toss 一枚 biased coin, 第一次得到 heads 的 trial number.\\
+
+\end{example}
+
+\begin{proposition}
+
+如果 \(\mathit{X} \sim \text{Geom}(\mathit{p})\), 那么 \(\mathbb{E}\lbrack\mathit{X}\rbrack = 1/\mathit{p}\), \(\text{Var}(\mathit{X}) = (1 - \mathit{p})/\mathit{p}^{2}\).
+
+\end{proposition}
+
+\begin{proof}
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack = \sum\limits_{\mathit{k} = 1}^{\infty}\mathit{k}(1 - \mathit{p})^{\mathit{k} - 1}\mathit{p} = \mathit{p}\sum\limits_{\mathit{k} = 1}^{\infty}\mathit{k}(1 - \mathit{p})^{\mathit{k} - 1} = \mathit{p}( - \frac{\mathit{d}}{\mathit{d}(1 - \mathit{p})}\sum\limits_{\mathit{k} = 0}^{\infty}(1 - \mathit{p})^{\mathit{k}}) = - \mathit{p} - \frac{\mathit{d}}{\mathit{d}\mathit{p}}\frac{1}{1 - (1 - \mathit{p})} = \frac{1}{\mathit{p}}\]
+
+similarly, 可以计算得
+
+\[\mathbb{E}\lbrack\mathit{X}^{2}\rbrack = \frac{2 - \mathit{p}}{\mathit{p}^{2}}\]
+
+因而
+
+\[\text{Var}\lbrack\mathit{X}\rbrack = \mathbb{E}\lbrack\mathit{X}^{2}\rbrack - (\mathbb{E}\lbrack\mathit{X}\rbrack)^{2} = \frac{1 - \mathit{p}}{\mathit{p}^{2}}\]
+
+\end{proof}
+
+\begin{example}[(\textbf{Negative Binomial distribution})]
+
+这是 Geometric distribution 的 generalization (但不完全一样).\\
+我们 perform independent Bernoulli trial, 每次 trial 的 success probability 都是 \(\mathit{p}\). (即 independent and identically distributed)\\
+令 random variable \(\mathit{T}_{\mathit{r}}\) 表示第 \(\mathit{r}\) 次 success 发生之前 的 failures 的数量. (也就是等于: 我们一直 trial, 直到第 \(\mathit{r}\) 次 success 发生, 那么这个 trial 的 number 就是 \(\mathit{T}_{\mathit{r}} + \mathit{r}\), 因为 \(\mathit{T}_{\mathit{r}}\) 是 failures 的数量, 还要加上 \(\mathit{r} - 1\) 个 success. ).\\
+那么 \(\mathit{T}_{\mathit{r}}\) 是一个 discrete random variable \(\mathit{T}_{\mathit{r}}:\Omega^{\infty}\rightarrow\mathbb{Z}_{\geq 0}\).\\
+容易计算出 \(\mathit{T}_{\mathit{r}}\) 的 pmf:
+
+\[\mathit{p}_{\mathit{T}_{\mathit{r}}}(\mathit{k}) = \mathbb{P}(\mathit{T}_{\mathit{r}} = \mathit{k}) = \binom{\mathit{k} + \mathit{r} - 1}{\mathit{k}}(1 - \mathit{p})^{\mathit{k}}\mathit{p}^{\mathit{r}},\quad\mathit{k} = 0,1,2,\ldots\]
+
+这是因为:最后一次 success 的位置是固定的. 我们要在前 \(\mathit{k} + \mathit{r} - 1\) 次 trial 中选择 \(\mathit{k}\) 次作为 failures.\\
+我们称 \(\mathit{T}_{\mathit{r}}\) 的 distribution \(\mathit{P}^{\mathit{T}_{\mathit{r}}}\) 为一个 \textbf{Negative Binomial distribution}, 写作
+
+\[\mathit{T}_{\mathit{r}} \sim \text{NB}(\mathit{r},\mathit{p})\]
+
+它 model 的是: 比如我们 toss 一枚 biased coin, 得到第 \(\mathit{r}\) 个 heads 之前会经历的 failures 的数量.\\
+
+\end{example}
+
+\subsection{Poisson distribution}\label{poisson-distribution}
+
+\begin{example}[(\textbf{Poisson distribution})]
+
+考虑这一 pmf:
+
+\[\mathbb{P}(\mathit{X} = \mathit{k}) = \mathit{e}^{- \mathit{\lambda}}\frac{\mathit{\lambda}^{\mathit{k}}}{\mathit{k}!},\quad\mathit{k} = 0,1,2,\ldots\]
+
+我们称 \(\mathit{X}\) 的 distribution \(\mathit{P}^{\mathit{X}}\) 为一个 \textbf{Poisson distribution}, 写作
+
+\[\mathit{X} \sim \text{Poi}(\mathit{\lambda}),\quad\mathit{\lambda} > 0\]
+
+以 \(\mathit{\lambda} = 3\) 为例画出 pmf 示意图:
+
+\begin{figure}[htbp]
+\centering
+\csname prob-02-random-variables-diagram-03\endcsname
+
+\caption{参数 \(\mathit{\lambda} = 3\) 的 Poisson 概率质量函数}
+
+\label{fig-prob-02-random-variables-diagram-03}
+
+\end{figure}
+
+\begin{qlremark}{Remark}
+
+当 \(\mathit{n}\rightarrow\infty\) 时, \(\text{Bin}(\mathit{n},\mathit{\lambda}/\mathit{n})\) 的 distribution 趋近于 \(\text{Poi}(\mathit{\lambda})\).\\
+考虑 \(\mathit{X} \sim \mathit{B}\left( {\mathit{n},\frac{\mathit{\lambda}}{\mathit{n}}} \right)\), 对于固定的 \(\mathit{k}\):
+
+\[\mathbb{P}(\mathit{X} = \mathit{k}) = \binom{\mathit{n}}{\mathit{k}}\left( \frac{\mathit{\lambda}}{\mathit{n}} \right)^{\mathit{k}}\left( {1 - \frac{\mathit{\lambda}}{\mathit{n}}} \right)^{\mathit{n} - \mathit{k}}\]
+
+展开组合数 \(\binom{\mathit{n}}{\mathit{k}}\):
+
+\[\mathbb{P}(\mathit{X} = \mathit{k}) = \frac{\mathit{n}(\mathit{n} - 1)\ldots(\mathit{n} - \mathit{k} + 1)}{\mathit{k}!} \cdot \frac{\mathit{\lambda}^{\mathit{k}}}{\mathit{n}^{\mathit{k}}} \cdot \left( {1 - \frac{\mathit{\lambda}}{\mathit{n}}} \right)^{\mathit{n}} \cdot \left( {1 - \frac{\mathit{\lambda}}{\mathit{n}}} \right)^{- \mathit{k}}\]
+
+重组项:
+
+\[\mathbb{P}(\mathit{X} = \mathit{k}) = \frac{\mathit{\lambda}^{\mathit{k}}}{\mathit{k}!} \cdot \underset{(1)}{\underbrace{\frac{\mathit{n}(\mathit{n}-1)\ldots(\mathit{n}-\mathit{k}+1)}{\mathit{n}^{\mathit{k}}}}} \cdot \underset{(2)}{\underbrace{\left( {1-\frac{\mathit{\lambda}}{\mathit{n}}} \right)^{\mathit{n}}}} \cdot \underset{(3)}{\underbrace{\left( {1-\frac{\mathit{\lambda}}{\mathit{n}}} \right)^{-\mathit{k}}}}\]
+
+其中, (1) 的 limit 是 1, (2) 的 limit 是 \(\mathit{e}^{- \mathit{\lambda}}\), (3) 的 limit 是 1, 因而
+
+\[\lim\limits_{\mathit{n}\rightarrow\infty}\mathbb{P}(\mathit{X} = \mathit{k}) = \mathit{e}^{- \mathit{\lambda}}\frac{\mathit{\lambda}^{\mathit{k}}}{\mathit{k}!}\]
+
+这个极限行为的意义是:
+
+\begin{itemize}
+\item
+  \(\mathit{\lambda}\) 表示: 在一个固定时间/空间窗口内, 一个事件出现的平均次数的观测.
+\item
+  我们把这段时间间分成 \(\mathit{n}\) 个小窗口, 将这个观测作为先验知识用来 model 这类事件实现的平均概率, 那么 每个小窗口内事件出现的概率是 \(\mathit{p} = \mathit{\lambda}/\mathit{n}\).
+\item
+  每个 \(\text{Bin}(\mathit{n},\mathit{\lambda}/\mathit{n})\) 都表示: 在时间细分成 \(\mathit{n}\) 个小窗口的情况下, 这个事件出现的次数的分布. (注意不是在时间上的分布, 而是在次数上的分布)
+\item
+  当 \(\mathit{n}\rightarrow\infty\) 时, 其意义: 基于连续时间的估计, 这个事件在原固定事件窗口内出现的次数的分布. 这就是 \(\text{Poi}(\mathit{\lambda})\) 的意义.
+\end{itemize}
+
+因而 Poisson distribution 的意义本质上是: \textbf{给定对一个事件在固定窗口下出现的平均次数的观测(估计), 那么这个事件在这个窗口内出现 \(\mathit{n}\) 次 (\(\mathit{n} = 0,1,2,\cdots\))的概率是多少?}\\
+所以 Poisson 分布, 即是\textbf{根据一个事件在给定 windows 内发生次数的 expectation, 来估计这个事件在该 windows 内发生次数的分布的标准方法.}\\
+
+\end{qlremark}
+
+\begin{qlremark}{Remark}
+
+Further remark: Poisson distribution 的用途.
+
+\begin{itemize}
+\item
+  它是 model "大量级的小概率事件" 的通用模型.\\
+  即一段时间内, 一件事情的发生的概率非常小 (\(\mathit{p} \ll 1\)), 但是有很多机会发生 (\(\mathit{n} \gg 1\)). 比如放射性衰变.
+\item
+  现实世界中, 对于一些事情, 我们想要 model 其在一段时间内发生的总次数 (\(\mathit{n}\)) 和单次成功率 (\(\mathit{p}\)) 是很困难的. 比如统计今天路过百货大楼的总人数 (\(\mathit{n}\)), 以及每个人路过百货大楼时走进去的概率 (\(\mathit{p}\)). 但是我们 很容易可以知道: \(\mathit{\lambda} = \mathit{n}\mathit{p}\) 的观测. 即: 每天平均有多少人走进百货大楼. 那么我们就可以用 Poisson distribution 来 model 这件事情在一天内发生的次数的分布.\\
+\end{itemize}
+
+\end{qlremark}
+
+\end{example}
+
+\begin{proposition}
+
+如果 \(\mathit{X} \sim \text{Poi}(\mathit{\lambda})\), 那么 \(\mathbb{E}\lbrack\mathit{X}\rbrack = \mathit{\lambda}\), \(\text{Var}(\mathit{X}) = \mathit{\lambda}\).
+
+\end{proposition}
+
+\begin{proof}
+
+recall \(\mathit{e}^{\mathit{x}}\) 的 taylor expansion:
+
+\[\mathit{e}^{\mathit{x}} = \sum\limits_{\mathit{k} = 0}^{\infty}\frac{\mathit{x}^{\mathit{k}}}{\mathit{k}!}\]
+
+因而
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack = \sum\limits_{\mathit{k} = 0}^{\infty}\mathit{k}\mathit{e}^{- \mathit{\lambda}}\frac{\mathit{\lambda}^{\mathit{k}}}{\mathit{k}!} = \mathit{e}^{- \mathit{\lambda}}\mathit{\lambda}\sum\limits_{\mathit{k} = 1}^{\infty}\frac{\mathit{\lambda}^{\mathit{k} - 1}}{(\mathit{k} - 1)!} = \mathit{e}^{- \mathit{\lambda}}\mathit{\lambda}\mathit{e}^{\mathit{\lambda}} = \mathit{\lambda}\]
+
+similarly, 可以计算得
+
+\[\mathbb{E}\lbrack\mathit{X}^{2}\rbrack = \mathit{\lambda}^{2} + \mathit{\lambda}\]
+
+因此,
+
+\[\text{Var}(\mathit{X}) = \mathbb{E}\lbrack\mathit{X}^{2}\rbrack - (\mathbb{E}\lbrack\mathit{X}\rbrack)^{2} = \mathit{\lambda}\]
+
+\end{proof}
+
+\subsubsection{Poisson distribution 的 additivity}\label{poisson-distribution-ux7684-additivity}
+
+\begin{theorem}{\kn{additivity of Poisson distribution}}
+
+如果 \(\mathit{X} \sim \text{Poi}(\mathit{\lambda}_{1})\), \(\mathit{Y} \sim \text{Poi}(\mathit{\lambda}_{2})\) are independent, 那么
+
+\[\mathit{X} + \mathit{Y} \sim \text{Poi}(\mathit{\lambda}_{1} + \mathit{\lambda}_{2})\]
+
+\end{theorem}
+
+\begin{qlremark}{Remark}
+
+这个事实通过简单的计算即可得到.
+
+但是值得一提的是, 我们之后会证明一个结论: 两个 independent 的 random variable 的 sum 的 distribution 是它们 convolution 的 distribution.
+
+而 Poisson distribution 的 convolution 仍然是 Poisson distribution, 并且是 linear 的. 这就是 additivity of Poisson distribution 的本质原因.
+
+\end{qlremark}
+
+\section{continuous random variables}\label{continuous-random-variables}
+
+recall: 总而言之, continuous random variable 是指其 distribution \(\mathbb{P}^{\mathit{X}}\) 对于 Lebesgue measure \(\mathit{m}\) 是 absolutely continuous 的 random variable, 等价于存在一个 pdf \(\mathit{f}_{\mathit{X}}\) 使得
+
+\[\mathit{F}_{\mathit{X}}(\mathit{x}) = \int_{- \infty}^{\mathit{x}}\mathit{f}_{\mathit{X}}(\mathit{y})\mathit{d}\mathit{y}\]
+
+对于任意 \(\mathit{x}\) 都成立.
+
+而由 \(\mathbb{E}\lbrack\mathit{X}\rbrack = \int_{\Omega}\mathit{X}\mathit{d}\mathbb{P} = \int_{\mathbb{R}}\mathit{x}\mathit{d}\mathbb{P}^{\mathit{X}} = \int_{\mathbb{R}}\mathit{x}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x}\) 可得
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack = \int_{- \infty}^{+ \infty}\mathit{x}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x},\quad\text{Var}(\mathit{X}) = \int_{- \infty}^{+ \infty}(\mathit{x} - \mathbb{E}\lbrack\mathit{X}\rbrack)^{2}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x}\]
+
+这里还有一个额外的结论:
+
+\begin{proposition}
+
+对于任意的 measurable function \(\mathit{g}:\mathbb{R}\rightarrow\mathbb{R}\), 都有
+
+\[\mathbb{E}\lbrack\mathit{g}(\mathit{X})\rbrack = \int_{- \infty}^{+ \infty}\mathit{g}(\mathit{x})\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x}\]
+
+\end{proposition}
+
+\begin{proof}
+
+\[\begin{matrix}
+{\mathbb{E}\lbrack\mathit{g}(\mathit{X})\rbrack} & {= \int_{\Omega}\mathit{g}(\mathit{X}(\mathit{w}))\,\mathit{d}\mathbb{P}(\mathit{w})} \\
+ & {= \int_{\Omega}\mathit{g} \circ \mathit{X}\,\mathit{d}\mathbb{P}} \\
+ & {= \int_{\mathbb{R}}\mathit{g}\,\mathit{d}\mathbb{P}^{\mathit{X}}} \\
+ & {= \int_{- \infty}^{+ \infty}\mathit{g}(\mathit{x})\mathit{f}_{\mathit{X}}(\mathit{x})\,\mathit{d}\mathit{x}}
+\end{matrix}\]
+
+\end{proof}
+
+下面我们介绍一些常见的 continuous random variables, 以及它们的 pdf, cdf, expectation 和 variance.
+
+\subsection{uniform distribution: 最简单的 continuous RV}\label{uniform-distribution-ux6700ux7b80ux5355ux7684-continuous-rv}
+
+\begin{definition}{\kn{uniform distribution}}
+
+如果 \(\mathit{f}_{\mathit{X}}(\mathit{x}) = \frac{1}{\mathit{b} - \mathit{a}}\) on \((\mathit{a},\mathit{b})\) and \(0\) elsewhere, 那么我们称 \(\mathit{X}\) 的 distribution \(\mathit{P}^{\mathit{X}}\) 为一个 \textbf{uniform distribution}, 写作
+
+\[\mathit{X} \sim \mathit{U}(\lbrack\mathit{a},\mathit{b}\rbrack)\]
+
+\end{definition}
+
+对于 uniform distribution, 很容易计算得:
+
+\[\mathit{F}_{\mathit{X}}(\mathit{x}) = \frac{\mathit{x} - \mathit{b}}{\mathit{b} - \mathit{a}},\quad\mathbb{E}\lbrack\mathit{X}\rbrack = \frac{\mathit{a} + \mathit{b}}{2},\quad\text{Var}(\mathit{X}) = \frac{(\mathit{b} - \mathit{a})^{2}}{12}\]
+
+\begin{example}[(uniform distribution 的 pdf 和 cdf)]
+
+考虑 \(\mathit{X} \sim \mathit{U}(\lbrack\mathit{a},\mathit{b}\rbrack)\), 其 pdf 和 cdf 的图像如下:
+
+\begin{figure}[htbp]
+\centering
+\csname prob-02-random-variables-diagram-04\endcsname
+
+\caption{区间 \(\left\lbrack {\mathit{a},\mathit{b}} \right\rbrack\)
+上均匀分布的概率密度函数}
+
+\label{fig-prob-02-random-variables-diagram-04}
+
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\csname prob-02-random-variables-diagram-05\endcsname
+
+\caption{区间 \(\left\lbrack {\mathit{a},\mathit{b}} \right\rbrack\)
+上均匀分布的累积分布函数}
+
+\label{fig-prob-02-random-variables-diagram-05}
+
+\end{figure}
+
+\end{example}
+
+\subsection{exponential distribution: geometric distribution 的 continuous version}\label{exponential-distribution-geometric-distribution-ux7684-continuous-version}
+
+Exponential random variable model 的是一盏灯的 remaining lifetime. 它 assume: 任意时间, 这盏灯有一个 constant 的磨损速率.
+
+假设它的磨损速率是 \(\mathit{\lambda} = \mathit{\lambda}_{\mathit{X}}(\mathit{t})\) for all \(\mathit{t}\), 那么在任意时间 \(\mathit{t}\) 上:
+
+\[\mathit{\lambda}_{\mathit{X}}(\mathit{t}) = \lim\limits_{h\rightarrow 0^{+}}\frac{\mathit{P}(\mathit{X} \in (\mathit{t},\mathit{t} + h\rbrack)}{h} = \lim\limits_{h\rightarrow 0^{+}}\frac{\mathbb{P}(\mathit{t} \leq \mathit{X} \leq \mathit{t} + h)}{h} \cdot \frac{1}{\mathbb{P}(\mathit{X} > \mathit{t})} = \frac{\mathit{f}_{\mathit{X}}(\mathit{t})}{1 - \mathit{F}_{\mathit{X}}(\mathit{t})}\]
+
+即 ODE:
+
+\[\mathit{\lambda} = \frac{\mathit{F}_{\mathit{X}}'(\mathit{t})}{1 - \mathit{F}_{\mathit{X}}(\mathit{t})}\]
+
+with initial condition \(\mathit{F}_{\mathit{X}}(0) = 0\).
+
+我们知道这个 ODE 的 solution 是:
+
+\[\begin{matrix}
+{\mathit{F}_{\mathit{X}}(\mathit{t}) = \{ 1 - \mathit{e}^{- \mathit{\lambda}\mathit{t}},\quad\mathit{t} > 0} \\
+{0,\quad\mathit{t} \leq 0,\quad\mathit{f}_{\mathit{X}}(\mathit{t}) = \{\mathit{\lambda}\mathit{e}^{- \mathit{\lambda}\mathit{t}},\quad\mathit{t} > 0} \\
+{0,\quad\mathit{t} \leq 0}
+\end{matrix}\]
+
+\begin{definition}{\kn{exponential distribution}}
+
+我们称 \(\mathit{X}\) 为一个 \textbf{exponential random variable} with parameter \(\mathit{\lambda}\), 如果它的 pdf is given by:
+
+\[\begin{matrix}
+{\mathit{f}(\mathit{x}) = \{\mathit{\lambda}\mathit{e}^{- \mathit{\lambda}\mathit{x}},\quad\mathit{x} > 0} \\
+{0,\quad\mathit{x} \leq 0}
+\end{matrix}\]
+
+写作
+
+\[\mathit{X} \sim \text{Exp}(\mathit{\lambda})\]
+
+\end{definition}
+
+刚才已经计算出, exponential random variable 的 distribution 为
+
+\[\begin{matrix}
+{\mathit{F}_{\mathit{X}}(\mathit{x}) = \{\int_{- \infty}^{\mathit{x}}\mathit{f}(\mathit{t})\mathit{d}\mathit{t} = \mathit{\lambda}\int_{0}^{\mathit{x}}\mathit{e}^{- \mathit{\lambda}\mathit{t}}\mathit{d}\mathit{t} = 1 - \mathit{e}^{- \mathit{\lambda}\mathit{x}},\quad\mathit{x} > 0} \\
+{0,\quad\mathit{x} < 0}
+\end{matrix}\]
+
+容易验证, \(\mathit{F}_{\mathit{X}}(\mathit{x}) = 0\) when \(\mathit{x}\rightarrow - \infty\), 以及 \(\mathit{F}_{\mathit{X}}(\mathit{x})\rightarrow 1\) when \(\mathit{x}\rightarrow\infty\)
+
+计算其 expectation:
+
+\[\begin{matrix}
+{\mathbb{E}\lbrack\mathit{X}^{\mathit{n}}\rbrack} & {= \mathit{\lambda}\int_{0}^{\infty}\mathit{x}^{\mathit{n}}\mathit{e}^{- \mathit{\lambda}\mathit{x}}\mathit{d}\mathit{x}} \\
+ & {= - \int_{0}^{\infty}\mathit{x}^{\mathit{n}}(\mathit{e}^{- \mathit{\lambda}\mathit{x}})'\mathit{d}\mathit{x}} \\
+ & {= 0 + \int_{0}^{\infty}\mathit{n}\mathit{x}^{\mathit{n} - 1}\mathit{e}^{- \mathit{\lambda}\mathit{x}}\mathit{d}\mathit{x}} \\
+ & {= \frac{\mathit{n}}{\mathit{\lambda}}\mathbb{E}(\mathit{X}^{\mathit{n} - 1})}
+\end{matrix}\]
+
+并 notice: \(\mathbb{E}\lbrack\mathit{X}^{0}\rbrack = \mathbb{E}\lbrack 1\rbrack = 1\). 因而 recursively get:
+
+\[\mathbb{E}\lbrack\mathit{X}^{\mathit{n}}\rbrack = \frac{\mathit{n}!}{\mathit{\lambda}^{\mathit{n}}}\]
+
+即: \(\mathbb{E}\lbrack\mathit{X}\rbrack = \frac{1}{\mathit{\lambda}},\mathbb{E}\lbrack\mathit{X}^{2}\rbrack = \frac{2}{\mathit{\lambda}^{2}},\cdots\) 从而:
+
+\[\mathit{V}\mathit{a}\mathit{r}\lbrack\mathit{X}\rbrack = \frac{2}{\mathit{\lambda}^{2}} - \frac{1}{\mathit{\lambda}^{2}} = \frac{1}{\mathit{\lambda}^{2}}\]
+
+\begin{figure}[htbp]
+\centering
+\csname prob-02-random-variables-diagram-06\endcsname
+
+\caption{指数分布的概率密度函数}
+
+\label{fig-prob-02-random-variables-diagram-06}
+
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\csname prob-02-random-variables-diagram-07\endcsname
+
+\caption{指数分布的累积分布函数}
+
+\label{fig-prob-02-random-variables-diagram-07}
+
+\end{figure}
+
+\begin{qlremark}{Remark}
+
+exponential 随机变量是 geometric 随机变量的 continuous analogue. 因为 geometric random variable 是假设一个事件在 每个时间点以 constant 的概率发生, 用来 model 它第一次发生的时间;
+
+而 exponential random variable 其实也是, 只是 on a continuous time scale: 它假设的 constant 损坏率其实 implies: \textbf{在任意时间, 如果灯还没坏, 那么灯此刻坏掉的概率是 constant 的.}
+
+\begin{theorem}{\kn{memoryless property of exponential distribution}}
+
+任意 continuous RV,
+
+\[\mathbb{P}(\mathit{X} > \mathit{b} + \mathit{t} \mid \mathit{X} > \mathit{b}) = \mathbb{P}(\mathit{X} > \mathit{t})\Leftrightarrow\mathit{X}\ \text{is an exponential random variable}\]
+
+\end{theorem}
+
+\begin{proof}
+
+简单而言
+
+\[\begin{matrix}
+ & {\mathit{P}(\mathit{X} > \mathit{b} + \mathit{t} \mid \mathit{X} > \mathit{b}) = \mathit{P}(\mathit{X} > \mathit{t})} \\
+\Leftrightarrow & {\mathit{P}(\mathit{X} > \mathit{b} + \mathit{t}) = \mathit{P}(\mathit{X} > \mathit{t})\mathit{P}(\mathit{X} > \mathit{b})} \\
+\Leftrightarrow & {\mathit{X}\ \text{exponential}}
+\end{matrix}\]
+
+\end{proof}
+
+因而对于 geometric RV 的 pmf, 当我们把时间间隔 (discrete time interval) 变得越来越小, 这一行为的极限就变为了 exponential RV 的 pdf.
+
+这是一个很自然的 limit behavior, 此处不验证了.
+
+\end{qlremark}
+
+\begin{example}
+
+假设我们有一个 storage battery, 它的 lifetime 是 exponentially distributed 的, 并且 average 为 10 hours. Suppose 我们想要 use this battery for 5 hours for.
+
+计算: probability of finishing the task, if:\\
+(a) 使用一个 new battery\\
+(b) 使用一个已经用过 2 hours 的 battery\\
+
+\end{example}
+
+\begin{qlsolution}{Solution}
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack = 10 = \frac{1}{\mathit{\lambda}}\Longrightarrow\mathit{\lambda} = \frac{1}{10}\]
+
+如果我们使用一个 new battery, 则 want: \(\mathit{P}(\mathit{X} > 5) = 1 - \mathit{P}(\mathit{X} < 5) = 1 - \mathit{F}_{\mathit{X}}(5) = \mathit{e}^{- \frac{1}{2}}\) 如果我们使用一个用过 2 hours 的 battery, 则 want:
+
+\[\mathit{P}(\mathit{X} > 5 + 2 \mid \mathit{X} > 2) = \frac{\mathit{e}^{- (5 + 2)\mathit{\lambda}}}{\mathit{e}^{- 2\mathit{\lambda}}} = \mathit{e}^{- 5\mathit{\lambda}} = = \mathit{e}^{- \frac{1}{2}}\]
+
+Notice:
+
+\[\mathit{P}(\mathit{X} > 5) = \mathit{P}(\mathit{X} > 5 + 2 \mid \mathit{X} > 2)\]
+
+\end{qlsolution}
+
+\subsection{Gamma distribution: negative binomial distribution 的 continuous version}\label{gamma-distribution-negative-binomial-distribution-ux7684-continuous-version}
+
+recall Gamma 函数:
+
+\[\Gamma(\mathit{\alpha}) = \int_{0}^{\infty}\mathit{x}^{\mathit{\alpha} - 1}\mathit{e}^{- \mathit{x}}\mathit{d}\mathit{x}\]
+
+这个函数有一个重要的性质:
+
+\[\Gamma(\mathit{\alpha} + 1) = \mathit{\alpha}\Gamma(\mathit{\alpha})\]
+
+因而对于 \(\mathit{n} \in \mathbb{N}\), 我们有:
+
+\[\Gamma(\mathit{n}) = (\mathit{n} - 1)!\]
+
+Gamma 函数就是 factorial 函数的 continuous generalization.
+
+\begin{definition}{\kn{$\Gamma$-distribution}}
+
+如果 continuous random variable \(\mathit{X}\) 的 pdf 是:
+
+\[\mathit{f}_{\mathit{X}}(\mathit{x}) = \left\{ \begin{matrix}
+{\frac{\mathit{\lambda}^{\mathit{\alpha}}}{\Gamma(\mathit{\alpha})}\mathit{x}^{\mathit{\alpha} - 1}\mathit{e}^{- \mathit{\lambda}\mathit{x}},} & {\mathit{x} > 0,} \\
+{0,} & {\mathit{x} \leq 0}
+\end{matrix} \right.\]
+
+那么我们称 \(\mathit{X}\) 服从 \textbf{\(\Gamma\) distribution}, 写作
+
+\[\mathit{X} \sim \Gamma(\mathit{\alpha},\mathit{\lambda})\]
+
+其中 \(\mathit{\alpha} > 0\) 称为 shape parameter, \(\mathit{\lambda} > 0\) 称为 rate parameter.
+
+\end{definition}
+
+\(\Gamma\) distribution 的 cdf 这样求: for \(\mathit{a} \geq 0\),
+
+\[\begin{matrix}
+{\mathit{F}_{\mathit{X}}(\mathit{a}) = \int_{- \infty}^{\mathit{a}}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x}} & {= \int_{0}^{\mathit{a}}\frac{\mathit{\lambda}^{\mathit{\alpha}}}{\Gamma(\mathit{\alpha})}\mathit{x}^{\mathit{\alpha} - 1}\mathit{e}^{- \mathit{\lambda}\mathit{x}}\mathit{d}\mathit{x}} \\
+ & {= \frac{1}{\Gamma(\mathit{\alpha})}\int_{0}^{\mathit{\lambda}\mathit{a}}\mathit{t}^{\mathit{\alpha} - 1}\mathit{e}^{- \mathit{t}}\mathit{d}\mathit{t}}
+\end{matrix}\]
+
+and for \(\mathit{a} < 0\), \(\mathit{F}_{\mathit{X}}(\mathit{a}) = 0\).
+
+Expectation:
+
+\[\begin{matrix}
+{\mathbb{E}\lbrack\mathit{X}\rbrack} & {= \frac{1}{\Gamma(\mathit{\alpha})}\int_{0}^{\infty}(\mathit{\lambda}\mathit{x})^{\mathit{\alpha} - 1}\mathit{\lambda}\mathit{e}^{- \mathit{\lambda}\mathit{x}}\mathit{d}\mathit{x}} \\
+ & {= \frac{1}{\mathit{\lambda}\Gamma(\mathit{\alpha})}\int_{0}^{\infty}\mathit{x}^{\mathit{\alpha}}\mathit{e}^{- \mathit{x}}\mathit{d}\mathit{x}} \\
+ & {= \frac{\Gamma(\mathit{\alpha} + 1)}{\mathit{\lambda}\Gamma(\mathit{\alpha})} = \frac{\mathit{\alpha}}{\mathit{\lambda}}}
+\end{matrix}\]
+
+(since \(\Gamma(\mathit{\alpha} + 1) = \mathit{\alpha}\Gamma(\mathit{\alpha})\).) 同理我们可以计算得: \(\mathbb{E}\lbrack\mathit{X}^{2}\rbrack = \frac{\mathit{\alpha}(\mathit{\alpha} + 1)}{\mathit{\lambda}^{2}}\) 从而
+
+\[\text{Var}\lbrack\mathit{X}\rbrack = \mathbb{E}\lbrack\mathit{X}^{2}\rbrack - (\mathbb{E}\lbrack\mathit{X}\rbrack)^{2} = \frac{\mathit{\alpha}(\mathit{\alpha} + 1)}{\mathit{\lambda}^{2}} - \frac{\mathit{\alpha}^{2}}{\mathit{\lambda}^{2}} = \frac{\mathit{\alpha}}{\mathit{\lambda}^{2}}\]
+
+容易发现: 当 \(\mathit{\alpha} = 1\) 时, \(\Gamma\) distribution 就退化成了 exponential distribution.
+
+\[\Gamma(1,\mathit{\lambda}) = \text{Exp}(\mathit{\lambda})\]
+
+而当 \(\mathit{\alpha}\) 是一个正整数 \(\mathit{n}\) 时, \(\Gamma\) distribution 实际就是 \(\mathit{n}\) 个 independent exponential distribution 的 sum:
+
+\begin{proposition}{\kn{Gamma distribution as a sum of independent exponentials}}
+
+Let \(\mathit{X}_{1},\mathit{X}_{2},\cdots,\mathit{X}_{\mathit{n}} \sim \text{Exp}(\mathit{\lambda})\) be i.i.d., 则
+
+\[\Gamma(\mathit{n},\mathit{\lambda}) = \sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}\]
+
+\end{proposition}
+
+\begin{proof}
+
+证明这一结论除了硬算之外, 更快的方法是通过 moment generating function. //TODO
+
+\end{proof}
+
+\begin{qlremark}{Remark}
+
+Gamma distribution 即多个 i.i.d. exponential distribution 的 sum; 而我们知道 exponential distribution 是 geometric distribution 的 continuous analogue; 因而 \textbf{Gamma distribution 也是 negative binomial distribution 的 continuous analogue.}
+
+考虑固定 rate parameter \(\mathit{\lambda} = 1\)，不同 shape parameter \(\mathit{\alpha}\) 的 Gamma distribution：
+
+\begin{figure}[htbp]
+\centering
+\csname prob-02-random-variables-diagram-08\endcsname
+
+\caption{固定 \(\mathit{\lambda} = 1\) 时不同 shape 参数的 Gamma 密度}
+
+\label{fig-prob-02-random-variables-diagram-08}
+
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\csname prob-02-random-variables-diagram-09\endcsname
+
+\caption{固定 \(\mathit{\lambda} = 1\) 时不同 shape 参数的 Gamma 分布函数}
+
+\label{fig-prob-02-random-variables-diagram-09}
+
+\end{figure}
+
+\begin{itemize}
+\item
+  当 \(\mathit{\alpha} = 1\) 时, Gamma 分布退化为指数分布, pdf 单调递减;
+\item
+  随着 \(\mathit{\alpha}\) 增大, pdf 从 0 处开始上升, 形成驼峰形状, 并逐渐向右平移;
+\item
+  cdf 随 \(\mathit{\alpha}\) 增大而上升变缓, 表示分布的右尾变长。
+\end{itemize}
+
+\end{qlremark}
+
+\subsection{normal random variables: 最重要的 continuous RV, 任意 RV 的叠加极限}\label{normal-random-variables-ux6700ux91cdux8981ux7684-continuous-rv-ux4efbux610f-rv-ux7684ux53e0ux52a0ux6781ux9650}
+
+\begin{definition}
+
+我们称 \(\mathit{X}\) is \textbf{normally distributed with parameter \(\mathit{\mu}\) and \(\mathit{\sigma}\)}, if the pdf of \(\mathit{X}\) is given by:
+
+\[\mathit{p}(\mathit{x}) = \frac{1}{\mathit{\sigma}\sqrt{2\mathit{\pi}}}\mathit{e}^{- \frac{(\mathit{x} - \mathit{\mu})^{2}}{2\mathit{\sigma}^{2}}}\]
+
+写作:
+
+\[\mathit{X} \sim \mathcal{N}(\mathit{\mu},\mathit{\sigma}^{2})\]
+
+特别地, 当 \(\mathit{\mu} = 0,\mathit{\sigma} = 1\) 时,
+
+\[\mathit{X} \sim \mathcal{N}(0,1)\]
+
+被称为 \textbf{standard normal distribution.}
+
+\end{definition}
+
+\begin{itemize}
+\item
+  验证其为 valid pdf:
+
+  我们首先验证 standard normal distribution. 令:
+
+  \[\mathit{I} := \int_{0}^{\infty}\mathit{e}^{\frac{- \mathit{y}^{2}}{2}}\mathit{d}\mathit{y}\]
+
+  则
+
+  \[\begin{matrix}
+  \mathit{I}^{2} & {= \int_{0}^{\infty}\mathit{e}^{\frac{- \mathit{y}^{2}}{2}}\mathit{d}\mathit{y} \cdot \int_{0}^{\infty}\mathit{e}^{\frac{- \mathit{x}^{2}}{2}}\mathit{d}\mathit{x}} \\
+   & {= \int_{\mathbb{R}_{\geq 0}^{2}}\mathit{e}^{- \frac{\mathit{x}^{2} + \mathit{y}^{2}}{2}}\mathit{d}\mathit{x}\,\mathit{d}\mathit{y}} \\
+   & {= \int_{0}^{\mathit{\pi}/2}\int_{0}^{\infty}\mathit{e}^{- \frac{\mathit{r}^{2}}{2}}\mathit{r}\mathit{d}\mathit{r}\,\mathit{d}\mathit{\theta}} \\
+   & {= \int_{0}^{\mathit{\pi}/2}( - \mathit{e}^{- \frac{\mathit{r}^{2}}{2}}\ |_{0}^{\infty})\mathit{d}\mathit{\theta}} \\
+   & {= \int_{0}^{\mathit{\pi}/2}1\mathit{d}\mathit{\theta} = \frac{\mathit{\pi}}{2}}
+  \end{matrix}\]
+
+  从而得到 \(\mathit{I} = \frac{\sqrt{2\mathit{\pi}}}{2}\). 因而 \(\int_{- \infty}^{\infty}\mathit{e}^{- \frac{\mathit{x}^{2}}{2}}\,\mathit{d}\mathit{x} = \sqrt{2\mathit{\pi}}\), 因而 \(\int_{\mathbb{R}}\mathit{p}(\mathit{x})\,\mathit{d}\mathit{x} = 1\).
+
+  从而对于任意的 \(\mathit{\mu}\) 和 \(\mathit{\sigma}\), 通过 change of variable formula 易得 \(\int_{\mathbb{R}}\mathit{p}(\mathit{x})\,\mathit{d}\mathit{x} = 1\).
+\item
+  计算其 expectation 和 variance:
+
+  我们只需要计算 standard normal distribution 的 expectation 和 variance, 然后通过 expectation 的 linearity 和 variance 的 scale invariance 来计算.
+
+  令 \(\mathit{X} \sim \mathcal{N}(0,1)\). Then
+
+  \[\mathbb{E}\lbrack\mathit{X}\rbrack = \frac{1}{\sqrt{2\mathit{\pi}}}\int_{\mathbb{R}}\mathit{x}\mathit{e}^{- \frac{\mathit{x}^{2}}{2}}\mathit{d}\mathit{x} = 0\]
+
+  因为这是一个 \textbf{odd function}. 从而
+
+  \[\begin{matrix}
+  {\mathbb{E}\lbrack\mathit{X}^{2}\rbrack} & {= \frac{1}{\sqrt{2\mathit{\pi}}}\int_{\mathbb{R}}\mathit{x}^{2}\mathit{e}^{- \frac{\mathit{x}^{2}}{2}}\mathit{d}\mathit{x} = \frac{1}{\sqrt{2\mathit{\pi}}}\int_{\mathbb{R}}\mathit{x}(\mathit{x}\mathit{e}^{- \frac{\mathit{x}^{2}}{2}})\mathit{d}\mathit{x} = \frac{1}{\sqrt{2\mathit{\pi}}}\int_{\mathbb{R}}\mathit{x}(\mathit{e}^{- \frac{\mathit{x}^{2}}{2}})'\mathit{d}\mathit{x}} \\
+   & {= - \frac{1}{\sqrt{2\mathit{\pi}}}\mathit{x}\mathit{e}^{- \frac{\mathit{x}^{2}}{2}}\ |_{- \infty}^{\infty} + \frac{1}{\sqrt{2\mathit{\pi}}}\int_{\mathbb{R}}\mathit{e}^{- \frac{\mathit{x}^{2}}{2}}\mathit{d}\mathit{x} = 0 + 1 = 1}
+  \end{matrix}\]
+
+  从而:
+
+  \[\text{Var}(\mathit{X}) = 1\]
+
+  For general normally distributed \(\mathit{Y}\), 我们知道了 \(\mathit{X}: = \frac{\mathit{Y} - \mathit{\mu}}{\mathit{\sigma}}\) 的 \(\mathbb{E}\lbrack\mathit{X}\rbrack = 0\), \(\text{Var}(\mathit{X}) = 1\), 因而
+
+  \[\mathbb{E}\lbrack\mathit{Y}\rbrack = \mathbb{E}\lbrack\mathit{\sigma}\mathit{X} + \mathit{\mu}\rbrack = \mathit{\mu}\]
+
+  and
+
+  \[\text{Var}(\mathit{Y}) = \text{Var}(\mathit{\sigma}\mathit{X} + \mathit{\mu}) = \mathbb{E}\lbrack(\mathit{\sigma}\mathit{X} + \mathit{\mu} - \mathit{\mu})^{2}\rbrack = \mathbb{E}(\mathit{\sigma}^{2}\mathit{X}^{2}) = \mathit{\sigma}^{2}\mathbb{E}\lbrack\mathit{X}^{2}\rbrack = \mathit{\sigma}^{2}\]
+
+  对于多个 i.i.d. normally distributed \(\mathit{X}\),
+
+  \[\mathbb{E}\lbrack\mathit{X}^{\mathit{k}}\rbrack = \frac{1}{\sqrt{2\mathit{\pi}}}\int_{\mathbb{R}}\mathit{x}^{\mathit{k}}\mathit{e}^{- \frac{\mathit{x}^{2}}{2}}\mathit{d}\mathit{x}\]
+
+  For \(\mathit{k}\) odd, it is \(0\).\\
+  For \(\mathit{k}\) even:
+
+  \[\begin{matrix}
+  {\mathbb{E}\lbrack\mathit{X}^{\mathit{k}}\rbrack} & {= \frac{1}{\sqrt{2\mathit{\pi}}}\int_{\mathbb{R}}\mathit{x}^{\mathit{k} - 1}(\mathit{x}\mathit{e}^{- \frac{\mathit{x}^{2}}{2}})\mathit{d}\mathit{x}} \\
+   & {= - \frac{1}{\sqrt{2\mathit{\pi}}}\int_{\mathbb{R}}\mathit{x}^{\mathit{k} - 1}(\mathit{e}^{- \frac{\mathit{x}^{2}}{2}})'\mathit{d}\mathit{x}} \\
+   & {= 0 + \frac{1}{\sqrt{2\mathit{\pi}}}\int_{\mathbb{R}}(\mathit{x}^{\mathit{k} - 1})'\mathit{e}^{- \frac{\mathit{x}^{2}}{2}}\mathit{d}\mathit{x}} \\
+   & {= \frac{\mathit{k} - 1}{\sqrt{2\mathit{\pi}}}\int_{\mathbb{R}}\mathit{x}^{\mathit{k} - 2}\mathit{e}^{- \frac{\mathit{x}^{2}}{2}}\mathit{d}\mathit{x}} \\
+   & {= (\mathit{k} - 1)\mathbb{E}\lbrack\mathit{X}^{\mathit{k} - 2}\rbrack}
+  \end{matrix}\]
+
+  从而:
+
+  \[\begin{matrix}
+  {\mathbb{E}\lbrack\mathit{X}^{\mathit{k}}\rbrack = \{ 0,\quad\mathit{k} = 2\mathit{j} - 1} \\
+  {(2\mathit{j} - 1)(2\mathit{j} - 3)\cdots 1 = \frac{(2\mathit{j})!}{2^{\mathit{j}}\mathit{j}!},\quad\mathit{k} = 2\mathit{j}}
+  \end{matrix}\]
+\item
+  其 cdf:
+
+  \[\Phi(\mathit{a}) := \mathit{F}_{\mathit{X}}(\mathit{a}) = \int_{( - \infty,\mathit{a}\rbrack}\mathit{\rho}(\mathit{x})\mathit{d}\mathit{x} = \frac{1}{\sqrt{2\mathit{\pi}}}\int_{( - \infty,\mathit{a}\rbrack}\mathit{e}^{- \frac{\mathit{x}^{2}}{2}}\mathit{d}\mathit{x}\]
+
+  我们在微积分中知道, 这个 integral 没有 closed form solution. 因而我们只能给出数值 approximation. Important numerical values:
+
+  \[\Phi( - 3) \approx 0.0013;\quad\Phi( - 2) \approx 0.023;\quad\Phi( - 1) \approx 0.159\]
+
+  Note 由于 \(\mathit{\rho}\) (std) 是一个 even function, 有 \(\mathit{P}(\mathit{X} < - 1) = \mathit{P}(\mathit{X} > 1)\) 因而
+
+  \[\mathit{P}(\mathit{X}\ \text{is one std dev from mean}) = 2(\mathit{P}(\mathit{X} < - 1)) = 2\Phi( - 1) \approx 0.32 = 32\%\]
+
+  Similarly,
+
+  \[\mathit{P}(\mathit{X}\ \text{is two std dev from mean}) \approx 0.046 = 4.6\%\]\[\mathit{P}(\mathit{X}\ \text{is three std dev from mean}) \approx 0.0026 = 0.26\%\]
+\end{itemize}
+
+为什么 normal random variables 非常重要: 因为有一个 universality property called \textbf{central limit theorem.} 之后的章节我们会展开讨论:
+
+\paragraph{\texorpdfstring{任意的 random variable, 只要 expectation 和 variance 都是 finite 的, 那么它们的叠加极限都会服从 normal distribution.\\
+}{任意的 random variable, 只要 expectation 和 variance 都是 finite 的, 那么它们的叠加极限都会服从 normal distribution. }}\label{ux4efbux610fux7684-random-variable-ux53eaux8981-expectation-ux548c-variance-ux90fdux662f-finite-ux7684-ux90a3ux4e48ux5b83ux4eecux7684ux53e0ux52a0ux6781ux9650ux90fdux4f1aux670dux4ece-normal-distribution.}
+
+这里我们先给出一个 special case of central limit theorem:
+
+\begin{theorem}{\kn{De Moivre--Laplace theorem}}
+
+令 \(\mathit{S}_{\mathit{n}} \sim \text{Bin}(\mathit{n},\mathit{p})\), 则
+
+\[\lim\limits_{\mathit{n}\rightarrow\infty}\mathit{P}(\frac{\mathit{S}_{\mathit{n}} - \mathbb{E}(\mathit{S}_{\mathit{n}})}{\mathit{\sigma}(\mathit{S}_{\mathit{n}})} \in (\mathit{a},\mathit{b})) = \Phi(\mathit{b}) - \Phi(\mathit{a}) = \frac{1}{\sqrt{2\mathit{\pi}}}\int_{(\mathit{a},\mathit{b})}\mathit{e}^{- \frac{\mathit{x}^{2}}{2}}\mathit{d}\mathit{x}\]
+
+\end{theorem}
+
+(Proof: later chapters.)
+
+\begin{example}
+
+Toss a million times 一个 fair coin. Approximate the prob that we get more than \(501000\) heads:
+
+\[\mathbb{E}(\mathit{S}_{1000000}) = \mathit{n}\mathit{p} = 500000\]\[\mathit{\sigma}(\mathit{S}_{1000000}) = \sqrt{\mathit{n}\mathit{p}\mathit{q}} = 500\]
+
+因而:
+
+\[\begin{matrix}
+{\mathbb{P}(\mathit{S}_{1000000} > 501000)} & {= \mathbb{P}(\mathit{S}_{1000000} - \mathbb{E}(\mathit{S}_{1000000}) > 1000)} \\
+ & {= \mathbb{P}\left( {\frac{\mathit{S}_{1000000} - \mathbb{E}(\mathit{S}_{1000000})}{\mathit{\sigma}(\mathit{S}_{1000000})} > \frac{1000}{500}} \right)} \\
+ & {\approx 1 - \Phi(2) = \Phi( - 2) \approx 0.159}
+\end{matrix}\]
+
+\end{example}
+
+\paragraph{\texorpdfstring{除此之外 need to mention: Poission distribution 当 \(\mathit{\lambda}\rightarrow\infty\) 时, 也得到 normal distribution.\\
+}{除此之外 need to mention: Poission distribution 当 \textbackslash mathit\{\textbackslash lambda\}\textbackslash rightarrow\textbackslash infty 时, 也得到 normal distribution. }}\label{ux9664ux6b64ux4e4bux5916-need-to-mention-poission-distribution-ux5f53-mathitlambdarightarrowinfty-ux65f6-ux4e5fux5f97ux5230-normal-distribution.}
+
+这并不是一个令人惊讶的事情. 也可以用 central limit theorem 来解释. 因为 recall: Poisson distribution 有一个很重要的 property: additivity. 因而 \(\mathit{\lambda}\rightarrow\infty\) 也可以看作 \(\mathit{n}\) 个 i.i.d. Poisson distribution 的 sum 在 \(\mathit{n}\rightarrow\infty\) 时的极限行为, 从而通过 central limit theorem 得到 normal distribution.
+
+\begin{landscape}
+\subsection{summmary of discrete and continuous variables examples}\label{summmary-of-discrete-and-continuous-variables-examples}
+
+{\def\LTcaptype{none} % do not increment counter
+\footnotesize\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.4}
+\begin{longtable}[]{@{}p{0.12\linewidth}p{0.25\linewidth}p{0.25\linewidth}p{0.06\linewidth}p{0.07\linewidth}p{0.18\linewidth}@{}}
+\toprule\noalign{}
+\textbf{distribution} & \textbf{pmf / pdf} & \textbf{cdf} & \textbf{\(\mathbb{E}\lbrack\mathit{X}\rbrack\)} & \textbf{\(\text{Var}(\mathit{X})\)} & \textbf{meaning} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\text{Ber}(\mathit{p})\) & \(\mathbb{P}(\mathit{X} = 1) = \mathit{p}\), \(\mathbb{P}(\mathit{X} = 0) = 1 - \mathit{p}\) & \(\mathit{F}(\mathit{x}) = 1 - \mathit{p},0 \leq \mathit{x} < 1\) & \(\mathit{p}\) & \(\mathit{p}(1 - \mathit{p})\) & 一次 Bernoulli trial (unfair coin) 的结果 \\
+\(\text{Bin}(\mathit{n},\mathit{p})\) & \(\mathbb{P}(\mathit{X} = \mathit{k}) = \binom{\mathit{n}}{\mathit{k}}\mathit{p}^{\mathit{k}}(1 - \mathit{p})^{\mathit{n} - \mathit{k}}\), \(\mathit{k} = 0,\ldots,\mathit{n}\) & \(\mathit{F}(\mathit{k}) = \sum_{\mathit{j} = 0}^{\lfloor\mathit{k}\rfloor}\binom{\mathit{n}}{\mathit{j}}\mathit{p}^{\mathit{j}}(1 - \mathit{p})^{\mathit{n} - \mathit{j}}\) & \(\mathit{n}\mathit{p}\) & \(\mathit{n}\mathit{p}(1 - \mathit{p})\) & \(\mathit{n}\) 次 i.i.d. Bernoulli trials 中的成功次数 \\
+\(\text{Geom}(\mathit{p})\) & \(\mathbb{P}(\mathit{X} = \mathit{k}) = (1 - \mathit{p})^{\mathit{k} - 1}\mathit{p}\), \(\mathit{k} \geq 1\) & \(\mathit{F}(\mathit{k}) = 1 - (1 - \mathit{p})^{\mathit{k}}\) & \(\frac{1}{\mathit{p}}\) & \(\frac{1 - \mathit{p}}{\mathit{p}^{2}}\) & Bernoulli trial 第一次成功所需的试验次数 \\
+\(\text{NB}(\mathit{r},\mathit{p})\) & \(\mathbb{P}(\mathit{X} = \mathit{k}) = \binom{\mathit{k} + \mathit{r} - 1}{\mathit{k}}(1 - \mathit{p})^{\mathit{k}}\mathit{p}^{\mathit{r}},\ \mathit{k} \geq 0\) & \(\mathit{F}(\mathit{k}) = \sum_{\mathit{j} = 0}^{\mathit{k}}\binom{\mathit{j} + \mathit{r} - 1}{\mathit{j}}(1 - \mathit{p})^{\mathit{j}}\mathit{p}^{\mathit{r}}\) & \(\frac{\mathit{r}(1 - \mathit{p})}{\mathit{p}}\) & \(\frac{\mathit{r}(1 - \mathit{p})}{\mathit{p}^{2}}\) & Bernoulli trial 在 \(\mathit{r}\) 次成功之前观察到的失败次数 \\
+\(\text{Poi}(\mathit{\lambda})\) & \(\mathbb{P}(\mathit{X} = \mathit{k}) = \mathit{e}^{- \mathit{\lambda}}\frac{\mathit{\lambda}^{\mathit{k}}}{\mathit{k}!},\ \mathit{k} \geq 0\) & \(\mathit{F}(\mathit{k}) = \sum_{\mathit{j} = 0}^{\mathit{k}}\mathit{e}^{- \mathit{\lambda}}\frac{\mathit{\lambda}^{\mathit{j}}}{\mathit{j}!}\) & \(\mathit{\lambda}\) & \(\mathit{\lambda}\) & fixed window (time/space) 下某一事件的计数 \\
+\(\mathit{U}(\lbrack\mathit{a},\mathit{b}\rbrack)\) & \(\mathit{f}(\mathit{x}) = \frac{1}{\mathit{b} - \mathit{a}}\), \(\mathit{a} \leq \mathit{x} \leq \mathit{b}\) & \(\mathit{F}(\mathit{x}) = \left\{ \begin{matrix}
+{0,} & {\mathit{x} < \mathit{a}} \\
+{\frac{\mathit{x} - \mathit{a}}{\mathit{b} - \mathit{a}},} & {\mathit{a} \leq \mathit{x} \leq \mathit{b}} \\
+{1,} & {\mathit{x} > \mathit{b}}
+\end{matrix} \right.\) & \(\frac{\mathit{a} + \mathit{b}}{2}\) & \(\frac{(\mathit{b} - \mathit{a})^{2}}{12}\) & uniform choice on an interval \\
+\(\text{Exp}(\mathit{\lambda})\) & \(\mathit{f}(\mathit{x}) = \mathit{\lambda}\mathit{e}^{- \mathit{\lambda}\mathit{x}}\), \(\mathit{x} \geq 0\) & \(\mathit{F}(\mathit{x}) = \left\{ \begin{matrix}
+{0,} & {\mathit{x} \leq 0} \\
+{1 - \mathit{e}^{- \mathit{\lambda}\mathit{x}},} & {\mathit{x} > 0}
+\end{matrix} \right.\) & \(\frac{1}{\mathit{\lambda}}\) & \(\frac{1}{\mathit{\lambda}^{2}}\) & 固定平均发生率下, 某事件第一次发生要等多久 \\
+\(\Gamma(\mathit{\alpha},\mathit{\lambda})\) & \(\mathit{f}(\mathit{x}) = \frac{\mathit{\lambda}^{\mathit{\alpha}}}{\Gamma(\mathit{\alpha})}\mathit{x}^{\mathit{\alpha} - 1}\mathit{e}^{- \mathit{\lambda}\mathit{x}}\), \(\mathit{x} \geq 0\) & \(\mathit{F}(\mathit{x}) = \frac{1}{\Gamma(\mathit{\alpha})}\int_{0}^{\mathit{\lambda}\mathit{x}}\mathit{t}^{\mathit{\alpha} - 1}\mathit{e}^{- \mathit{t}}\,\mathit{d}\mathit{t}\) & \(\frac{\mathit{\alpha}}{\mathit{\lambda}}\) & \(\frac{\mathit{\alpha}}{\mathit{\lambda}^{2}}\) & \(\mathit{\alpha}\) 个 i.i.d. exponential distributions 的和 (固定平均发生率下，第 \(\mathit{\alpha}\) 次事件出现前要等多久) \\
+\(\mathit{N}(\mathit{\mu},\mathit{\sigma}^{2})\) & \(\mathit{f}(\mathit{x}) = 1/\mathit{\sigma}\sqrt{2\mathit{\pi}}\exp( - (\mathit{x} - \mathit{\mu})^{2}/2\mathit{\sigma}^{2})\) & no elementary closed form & \(\mathit{\mu}\) & \(\mathit{\sigma}^{2}\) & 大量微小独立扰动 (测量误差/自然波动) 叠加后的结果 \\
+\end{longtable}
+}
+\end{landscape}

@@ -62,10 +62,15 @@
       "root": "notes/math/measure-theory",
       "files": [
         "main.typ",
+        "main.tex",
         "extras.typ",
+        "extras.tex",
         "chapters/*.typ",
+        "chapters/*.tex",
         "homeworks/*.typ",
-        "extras/*.typ"
+        "homeworks/*.tex",
+        "extras/*.typ",
+        "extras/*.tex"
       ],
       "publish": true,
       "listed": true,
@@ -87,7 +92,17 @@
           "label": "Measurable Spaces and Measures"
         },
         {
+          "glob": "chapters/01-*.tex",
+          "id": "measurable-spaces-and-measures",
+          "label": "Measurable Spaces and Measures"
+        },
+        {
           "glob": "chapters/02-*.typ",
+          "id": "outer-measure-and-extension",
+          "label": "Outer Measure and Measure Extension"
+        },
+        {
+          "glob": "chapters/02-*.tex",
           "id": "outer-measure-and-extension",
           "label": "Outer Measure and Measure Extension"
         },
@@ -97,7 +112,17 @@
           "label": "Lebesgue–Stieltjes Measures"
         },
         {
+          "glob": "chapters/03-*.tex",
+          "id": "lebesgue-stieltjes-measures",
+          "label": "Lebesgue–Stieltjes Measures"
+        },
+        {
           "glob": "chapters/04-*.typ",
+          "id": "measurable-functions-and-nonnegative-integration",
+          "label": "Measurable Functions and Nonnegative Integration"
+        },
+        {
+          "glob": "chapters/04-*.tex",
           "id": "measurable-functions-and-nonnegative-integration",
           "label": "Measurable Functions and Nonnegative Integration"
         },
@@ -107,7 +132,17 @@
           "label": "Lebesgue Integration and Convergence"
         },
         {
+          "glob": "chapters/05-*.tex",
+          "id": "lebesgue-integration-and-convergence",
+          "label": "Lebesgue Integration and Convergence"
+        },
+        {
           "glob": "chapters/06-*.typ",
+          "id": "product-measures-and-fubini-tonelli",
+          "label": "Product Measures and Fubini–Tonelli"
+        },
+        {
+          "glob": "chapters/06-*.tex",
           "id": "product-measures-and-fubini-tonelli",
           "label": "Product Measures and Fubini–Tonelli"
         },
@@ -117,7 +152,17 @@
           "label": "Lebesgue Measure on Euclidean Space"
         },
         {
+          "glob": "chapters/07-*.tex",
+          "id": "lebesgue-measure-on-euclidean-space",
+          "label": "Lebesgue Measure on Euclidean Space"
+        },
+        {
           "glob": "chapters/08-*.typ",
+          "id": "differentiation-of-integrals",
+          "label": "Differentiation of Integrals"
+        },
+        {
+          "glob": "chapters/08-*.tex",
           "id": "differentiation-of-integrals",
           "label": "Differentiation of Integrals"
         },
@@ -127,7 +172,17 @@
           "label": "Lp Spaces and Inequalities"
         },
         {
+          "glob": "chapters/09-*.tex",
+          "id": "lp-spaces-and-inequalities",
+          "label": "Lp Spaces and Inequalities"
+        },
+        {
           "glob": "chapters/10-*.typ",
+          "id": "signed-measures",
+          "label": "Signed Measures"
+        },
+        {
+          "glob": "chapters/10-*.tex",
           "id": "signed-measures",
           "label": "Signed Measures"
         },
@@ -137,12 +192,27 @@
           "label": "Radon–Nikodym Theory"
         },
         {
+          "glob": "chapters/11-*.tex",
+          "id": "radon-nikodym-theory",
+          "label": "Radon–Nikodym Theory"
+        },
+        {
           "glob": "chapters/12-*.typ",
           "id": "functions-of-bounded-variation",
           "label": "Differentiation and Functions of Bounded Variation"
         },
         {
+          "glob": "chapters/12-*.tex",
+          "id": "functions-of-bounded-variation",
+          "label": "Differentiation and Functions of Bounded Variation"
+        },
+        {
           "glob": "chapters/13-*.typ",
+          "id": "duality-of-lp-spaces",
+          "label": "Duality of Lp Spaces"
+        },
+        {
+          "glob": "chapters/13-*.tex",
           "id": "duality-of-lp-spaces",
           "label": "Duality of Lp Spaces"
         }
@@ -161,9 +231,13 @@
       "root": "notes/math/prob",
       "files": [
         "main.typ",
+        "main.tex",
         "homeworks.typ",
+        "homeworks.tex",
         "chapters/*.typ",
-        "homeworks/*.typ"
+        "chapters/*.tex",
+        "homeworks/*.typ",
+        "homeworks/*.tex"
       ],
       "publish": true,
       "listed": true,
@@ -188,7 +262,23 @@
           ]
         },
         {
+          "glob": "chapters/01-*.tex",
+          "id": "probability-spaces-and-combinatorics",
+          "label": "Probability Spaces and Combinatorics",
+          "fields": [
+            "combinatorics"
+          ]
+        },
+        {
           "glob": "chapters/02-*.typ",
+          "id": "random-variables-and-distributions",
+          "label": "Random Variables and Distributions",
+          "fields": [
+            "measure-theory"
+          ]
+        },
+        {
+          "glob": "chapters/02-*.tex",
           "id": "random-variables-and-distributions",
           "label": "Random Variables and Distributions",
           "fields": [
@@ -205,6 +295,15 @@
           ]
         },
         {
+          "glob": "chapters/03-*.tex",
+          "id": "joint-and-conditional-distributions",
+          "label": "Joint and Conditional Distributions",
+          "fields": [
+            "analysis",
+            "measure-theory"
+          ]
+        },
+        {
           "glob": "chapters/04-*.typ",
           "id": "laws-of-large-numbers",
           "label": "Laws of Large Numbers",
@@ -213,7 +312,23 @@
           ]
         },
         {
+          "glob": "chapters/04-*.tex",
+          "id": "laws-of-large-numbers",
+          "label": "Laws of Large Numbers",
+          "fields": [
+            "analysis"
+          ]
+        },
+        {
           "glob": "chapters/05-*.typ",
+          "id": "central-limit-theorems",
+          "label": "Central Limit Theorems",
+          "fields": [
+            "analysis"
+          ]
+        },
+        {
+          "glob": "chapters/05-*.tex",
           "id": "central-limit-theorems",
           "label": "Central Limit Theorems",
           "fields": [
@@ -235,7 +350,9 @@
       "root": "notes/math/advanced-linear-algebra",
       "files": [
         "main.typ",
-        "chapters/*.typ"
+        "main.tex",
+        "chapters/*.typ",
+        "chapters/*.tex"
       ],
       "publish": false,
       "listed": false,
@@ -255,8 +372,11 @@
       "root": "notes/math/linear-algebra",
       "files": [
         "main.typ",
+        "main.tex",
         "chapters/*.typ",
-        "homeworks/*.typ"
+        "chapters/*.tex",
+        "homeworks/*.typ",
+        "homeworks/*.tex"
       ],
       "publish": false,
       "listed": false,
@@ -276,9 +396,13 @@
       "root": "notes/math/mathematical-analysis",
       "files": [
         "main.typ",
+        "main.tex",
         "homeworks.typ",
+        "homeworks.tex",
         "chapters/*.typ",
-        "homeworks/*.typ"
+        "chapters/*.tex",
+        "homeworks/*.typ",
+        "homeworks/*.tex"
       ],
       "publish": false,
       "listed": false,
@@ -298,8 +422,11 @@
       "root": "notes/math/modern-algebra",
       "files": [
         "main.typ",
+        "main.tex",
         "chapters/*.typ",
-        "homeworks/*.typ"
+        "chapters/*.tex",
+        "homeworks/*.typ",
+        "homeworks/*.tex"
       ],
       "publish": false,
       "listed": false,
@@ -319,9 +446,13 @@
       "root": "notes/math/multivariate-analysis",
       "files": [
         "main.typ",
+        "main.tex",
         "homeworks.typ",
+        "homeworks.tex",
         "chapters/*.typ",
-        "homeworks/*.typ"
+        "chapters/*.tex",
+        "homeworks/*.typ",
+        "homeworks/*.tex"
       ],
       "publish": false,
       "listed": false,
@@ -341,7 +472,9 @@
       "root": "notes/math/numerical-linear-algebra",
       "files": [
         "main.typ",
-        "chapters/*.typ"
+        "main.tex",
+        "chapters/*.typ",
+        "chapters/*.tex"
       ],
       "publish": false,
       "listed": false,
@@ -446,7 +579,9 @@
       "root": "notes/math/everything-about-linear-algebra",
       "files": [
         "main.typ",
-        "chapters/*.typ"
+        "main.tex",
+        "chapters/*.typ",
+        "chapters/*.tex"
       ],
       "publish": true,
       "listed": true,
@@ -472,7 +607,9 @@
       "root": "notes/math/single-and-multivariate-mathematical-analysis",
       "files": [
         "main.typ",
-        "chapters/*.typ"
+        "main.tex",
+        "chapters/*.typ",
+        "chapters/*.tex"
       ],
       "publish": true,
       "listed": true,
@@ -498,7 +635,9 @@
       "root": "notes/math/a-bit-of-abstract-algebra",
       "files": [
         "main.typ",
-        "chapters/*.typ"
+        "main.tex",
+        "chapters/*.typ",
+        "chapters/*.tex"
       ],
       "publish": true,
       "listed": true,
@@ -522,7 +661,9 @@
       "root": "notes/math/point-set-topology",
       "files": [
         "main.typ",
-        "chapters/*.typ"
+        "main.tex",
+        "chapters/*.typ",
+        "chapters/*.tex"
       ],
       "publish": false,
       "listed": false,

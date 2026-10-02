@@ -1,0 +1,291 @@
+% LaTeX companion of hw01.typ. Both formats are editable.
+\chapter{Homework 1}\label{homework-1}
+
+\section{Problem 1}\label{hw01-problem-1}
+
+Let \(\mathit{n} \in \mathbb{N}\).
+
+\begin{itemize}
+\item
+  Show that \(2^{\mathit{n}} = \sum_{\mathit{k} = 0}^{\mathit{n}}\binom{\mathit{n}}{\mathit{k}}\). Given that a set of \(\mathit{n}\) elements has \(2^{\mathit{n}}\) subsets, what is the combinatorial interpretation of this equality?
+\item
+  Show that
+
+  \[\sum\limits_{\mathit{k}\ \text{odd},0 \leq \mathit{k} \leq \mathit{n}}\binom{\mathit{n}}{\mathit{k}} = \sum\limits_{\mathit{k}\ \text{even},0 \leq \mathit{k} \leq \mathit{n}}\binom{\mathit{n}}{\mathit{k}}\]
+\item
+  Show that
+
+  \[\binom{2\mathit{n}}{\mathit{n}} = \sum\limits_{\mathit{k} = 0}^{\mathit{n}}\binom{\mathit{n}}{\mathit{k}}^{2}\]
+\end{itemize}
+
+Hint: You may use \(\binom{\mathit{n}}{\mathit{k}}^{2} = \binom{\mathit{n}}{\mathit{k}}\binom{\mathit{n}}{\mathit{n} - \mathit{k}}\).
+
+\begin{proof}
+
+\begin{itemize}
+\item
+  By the binomial theorem, we have:
+
+  \[(1 + 1)^{\mathit{n}} = \sum\limits_{\mathit{k} = 0}^{\mathit{n}}\binom{\mathit{n}}{\mathit{k}}1^{\mathit{k}}1^{\mathit{n} - \mathit{k}} = \sum\limits_{\mathit{k} = 0}^{\mathit{n}}\binom{\mathit{n}}{\mathit{k}}\]
+
+  The combinatorial interpretation of this equality is that: Let \(\mathit{S}_{\mathit{k}}\) be the collection of all subsets that have size \(\mathit{k}\). For collection \(\mathit{S}_{\mathit{k}}\), its size is \(\binom{\mathit{n}}{\mathit{k}}\) since it represents choosing \(\mathit{k}\) elements from \(\mathit{n}\) elements without regard to order.\\
+  Therefore the total number of subsets of \(\mathit{S}\) is:
+
+  \[\left. |\mathcal{P}(\mathit{S}) \middle| = \sum\limits_{\mathit{k} = 0}^{\mathit{n}} \middle| \mathit{S}_{\mathit{k}} \middle| = \sum\limits_{\mathit{k} = 0}^{\mathit{n}}\binom{\mathit{n}}{\mathit{k}} = 2^{\mathit{n}} \right.\]
+\item
+  Using the binomial theorem, we have:
+
+  \[0 = (1 - 1)^{\mathit{n}} = \sum\limits_{\mathit{k} = 0}^{\mathit{n}}\binom{\mathit{n}}{\mathit{k}}( - 1)^{\mathit{k}}1^{\mathit{n} - \mathit{k}} = \sum\limits_{\mathit{k} = 0}^{\mathit{n}}\binom{\mathit{n}}{\mathit{k}}( - 1)^{\mathit{k}}\]
+
+  Thus:
+
+  \[\begin{matrix}
+   & {\quad\quad\quad\quad\sum\limits_{\mathit{k} = 0}^{\mathit{n}}\binom{\mathit{n}}{\mathit{k}}( - 1)^{\mathit{k}} = 0} \\
+   & {\Longrightarrow\sum\limits_{0 \leq \mathit{k} \leq \mathit{n},\,\mathit{k}\ \text{odd}}\binom{\mathit{n}}{\mathit{k}}( - 1) + \sum\limits_{0 \leq \mathit{k} \leq \mathit{n},\,\mathit{k}\ \text{even}}\binom{\mathit{n}}{\mathit{k}}(1) = 0} \\
+   & {\Longrightarrow\sum\limits_{0 \leq \mathit{k} \leq \mathit{n},\,\mathit{k}\ \text{odd}}\binom{\mathit{n}}{\mathit{k}} = \sum\limits_{0 \leq \mathit{k} \leq \mathit{n},\,\mathit{k}\ \text{even}}\binom{\mathit{n}}{\mathit{k}}}
+  \end{matrix}\]
+\item
+  We prove by combinatorial argument.\\
+  Let \(\mathit{S}\) be a setwith \(2\mathit{n}\) distinct elements. The number of ways to choose a subset \(\mathit{P}\) containing \(\mathit{n}\) elements is \(\binom{2\mathit{n}}{\mathit{n}}\).\\
+  In another way: We can first arbitrarily divide the \(2\mathit{n}\) distinct elements into two groups: group \(\mathit{A}\) and group \(\mathit{B}\), each containing \(\mathit{n}\) elements:
+
+  \[\mathit{S} = \mathit{A} \sqcup \mathit{B}\]
+
+  And fix the two groups.\\
+  For any subset \(\mathit{P}\) of the \(2\mathit{n}\) elements with size \(\mathit{n}\), some of them are from group \(\mathit{A}\), and the rest of them are from group \(\mathit{B}\).\\
+  Let \(\mathit{k}\) be the number of elements of \(\mathit{P}\) that are chosen from \(\mathit{A}\), then the number of elements chosen from \(\mathit{B}\) must be \(\mathit{n} - \mathit{k}\).\\
+  Note the number of ways to choose \(\mathit{k}\) elements from \(\mathit{A}\) is \(\binom{\mathit{n}}{\mathit{k}}\), and the number of ways to choose \(\mathit{n} - \mathit{k}\) elements from \(\mathit{B}\) is \(\binom{\mathit{n}}{\mathit{n} - \mathit{k}}\).\\
+  Therefore, the total number of ways to get \(\mathit{P}\) from \(\mathit{S} = \mathit{A} \sqcup \mathit{B}\) with \(\mathit{k}\) elements from \(\mathit{A}\) is \(\binom{\mathit{n}}{\mathit{k}}\binom{\mathit{n}}{\mathit{n} - \mathit{k}} = \binom{\mathit{n}}{\mathit{k}}^{2}\).\\
+  Thus, summing over all possible values of \(\mathit{k} = 0,1,\ldots,\mathit{n}\), the number of ways to choose \(\mathit{n}\) elements from \(\mathit{S}\) i.e. the number of ways to get \(\mathit{P}\) from \(\mathit{S}\), is
+
+  \[\sum\limits_{\mathit{k} = 0}^{\mathit{n}}\binom{\mathit{n}}{\mathit{k}}^{2}\]
+
+  Thus, we obtain
+
+  \[\binom{2\mathit{n}}{\mathit{n}} = \sum\limits_{\mathit{k} = 0}^{\mathit{n}}\binom{\mathit{n}}{\mathit{k}}^{2}\]
+
+  as desired.
+\end{itemize}
+
+\end{proof}
+
+\section{Problem 2}\label{hw01-problem-2}
+
+We roll a fair die three times and record the outcomes \(\mathit{a},\mathit{b},\mathit{c} \in \left\{ {1,2,3,4,5,6} \right\}\). What is the probability that the equation \(\mathit{a}\mathit{x}^{2} + \mathit{b}\mathit{x} + \mathit{c} = 0\) does not have solutions in the real numbers?
+
+\begin{qlsolution}{Solution}
+
+The equation \(\mathit{a}\mathit{x}^{2} + \mathit{b}\mathit{x} + \mathit{c} = 0\) does not have solutions in the real numbers iff the the discriminant is negative, i.e. \(\Delta = \mathit{b}^{2} - 4\mathit{a}\mathit{c} < 0\).\\
+Total possible equations is \(6^{3} = 216\). For each \(\mathit{b}\), the total possible \((\mathit{a},\mathit{c})\) pairs are \(36\). We can calculate the number of \((\mathit{a},\mathit{c})\) pairs that satisfy the condition case by case.
+
+\begin{itemize}
+\item
+  For \(\mathit{b} = 1\): \(4\mathit{a}\mathit{c} > 1\) holds for all \((\mathit{a},\mathit{c})\).
+\item
+  For \(\mathit{b} = 2\): \(4\mathit{a}\mathit{c} > 4\Longrightarrow\mathit{a}\mathit{c} > 1\), which excludes only \((1,1)\).
+\item
+  For \(\mathit{b} = 3\): \(4\mathit{a}\mathit{c} > 9\Longrightarrow\mathit{a}\mathit{c} \geq 3\) since they are integers, so excluding \((1,1),(1,2),(2,1)\) (\(3\) cases).
+\item
+  For \(\mathit{b} = 4\): \(4\mathit{a}\mathit{c} > 16\Longrightarrow\mathit{a}\mathit{c} \geq 5\), excluding: \((1,3),(1,4),(2,2),(3,1),(4,1)\) besides the previous case, thus \(8\) cases excluded.
+\item
+  For \(\mathit{b} = 5\): \(4\mathit{a}\mathit{c} > 25\Longrightarrow\mathit{a}\mathit{c} \geq 7\), excluding: \((1,5),(1,6),(2,3),(3,2),(5,1),(6,1)\) besides the previous case, thus \(14\) cases excluded.
+\item
+  For \(\mathit{b} = 6\): \(4\mathit{a}\mathit{c} > 36\Longrightarrow\mathit{a}\mathit{c} \geq 10\), excluding: \((2,4),(3,3),(4,2)\) besides the previous case, thus \(17\) cases excluded.
+\end{itemize}
+
+Thus, the total number of triples for which the discriminant is not negative (exlcuded) is
+
+\[1 + 3 + 8 + 14 + 17 = 43\]
+
+Therefore, the desired probability is
+
+\[1 - \mathbb{P}(\text{the equation has solutions in the real numbers}) = 1 - \frac{43}{216} = \frac{173}{216}\]
+
+\end{qlsolution}
+
+\section{Problem 3}\label{hw01-problem-3}
+
+An ant starts at the origin \((0,0)\) on the integer lattice. At each step it moves either one unit to the right or one unit upward, each with probability \(\frac{1}{2}\). The ant continues moving until it reaches the point \((205,200)\).\\
+What is the probability that the ant visits the point \((105,100)\) at some time during its journey?\\
+Hint: Start by counting the number of paths from \((0,0)\) to \((205,200)\).
+
+\begin{qlsolution}{Solution}
+
+Any path from \((0,0)\) to \((205,200)\) must consist of \(205\) steps to the right and \(200\) steps upward, for a total of \(405\) steps. So a path is uniquely determined by the choice of 205 steps to the right (which is equivalent to the choice of 200 steps upward).\\
+Thus total number of paths from \((0,0)\) to \((205,200)\) is
+
+\[\mathit{N} = \binom{405}{205}\]
+
+A path passes through the point \((105,100)\) if and only if it first goes from \((0,0)\) to \((105,100)\) and then from \((105,100)\) to \((205,200)\).\\
+Thus the number of such paths is the product of the number of paths from \((0,0)\) to \((105,100)\) and the number of paths from \((105,100)\) to \((205,200)\), by the fundamental counting principle. For the same reason as deciding the number of total paths from \((0,0)\) to \((205,200)\), the number of paths from \((0,0)\) to \((105,100)\) is
+
+\[\mathit{N}_{1} = \binom{205}{105}\]
+
+And similarly, the number of paths from \((105,100)\) to \((205,200)\) is
+
+\[\mathit{N}_{2} = \binom{200}{100}\]
+
+Note that from a point to another point, all such paths are equally likely to be chosen. Therefore, the desired probability is
+
+\[\mathbb{P}(\text{path passes through}(105,100)) = \frac{\binom{205}{105}\binom{200}{100}}{\binom{405}{205}}\]
+
+\end{qlsolution}
+
+\section{Problem 4}\label{hw01-problem-4}
+
+From a lottery containing \(\mathit{n}\) tickets numbered \(1,2,\ldots,\mathit{n}\), a ticket is drawn, its number is recorded, and then it is returned to the lottery. This process is repeated \(\mathit{k} \geq 3\) times. Find the probabilities of the following events:
+
+\begin{itemize}
+\item
+  Ticket 1 is selected at least once.
+\item
+  Tickets 1, 2, and 3 are each selected at least once.
+\end{itemize}
+
+\begin{qlsolution}{Solution}
+
+\begin{itemize}
+\item
+  Let \(\mathit{E}\) be the event that ticket \(1\) is selected at least once.
+
+  \begin{align*}
+        \mathbb{P}(E) &= 1 - \mathbb{P}(\text{ticket $1$ is never selected in $k$ draws}) \\
+        &= 1 - \left(\frac{n-1}{n}\right)^k \tag*{\text{(by independence of each draw)}}
+    \end{align*}
+\item
+  Let \(\mathit{F}\) be the event that tickets \(1,2,3\) are each selected at least once.\\
+  For \(\mathit{i} = 1,2,3\), let
+
+  \[\mathit{A}_{\mathit{i}} := \left\{ {\text{ticket}\ \mathit{i}\ \text{is never selected in the}\ \mathit{k}\ \text{draws}} \right\}\]
+
+  Thus
+
+  \[\mathit{P}(\mathit{F}) = 1 - \mathit{P}(\mathit{A}_{1} \cup \mathit{A}_{2} \cup \mathit{A}_{3})\]
+
+  By the principle of inclusion-exclusion,
+
+  \[\mathit{P}(\mathit{A}_{1} \cup \mathit{A}_{2} \cup \mathit{A}_{3}) = \mathit{P}(\mathit{A}_{1}) + \mathit{P}(\mathit{A}_{2}) + \mathit{P}(\mathit{A}_{3}) - \mathit{P}(\mathit{A}_{1} \cap \mathit{A}_{2}) - \mathit{P}(\mathit{A}_{1} \cap \mathit{A}_{3}) - \mathit{P}(\mathit{A}_{2} \cap \mathit{A}_{3}) + \mathit{P}(\mathit{A}_{1} \cap \mathit{A}_{2} \cap \mathit{A}_{3})\]
+
+  Since similar to part (a), we have:\(\mathbb{P}(\mathit{A}_{\mathit{i}}) = \left( \frac{\mathit{n} - 1}{\mathit{n}} \right)^{\mathit{k}}\), \(\mathbb{P}(\mathit{A}_{\mathit{i}} \cap \mathit{A}_{\mathit{j}}) = \left( \frac{\mathit{n} - 2}{\mathit{n}} \right)^{\mathit{k}}\), \(\mathbb{P}(\mathit{A}_{1} \cap \mathit{A}_{2} \cap \mathit{A}_{3}) = \left( \frac{\mathit{n} - 3}{\mathit{n}} \right)^{\mathit{k}}\), we then calculate:
+
+  \[\begin{matrix}
+  {\mathbb{P}(\mathit{F})} & {= 1 - \binom{3}{1}\left( \frac{\mathit{n} - 1}{\mathit{n}} \right)^{\mathit{k}} + \binom{3}{2}\left( \frac{\mathit{n} - 2}{\mathit{n}} \right)^{\mathit{k}} - \binom{3}{3}\left( \frac{\mathit{n} - 3}{\mathit{n}} \right)^{\mathit{k}}} \\
+   & {= 1 - 3\left( \frac{\mathit{n} - 1}{\mathit{n}} \right)^{\mathit{k}} + 3\left( \frac{\mathit{n} - 2}{\mathit{n}} \right)^{\mathit{k}} - \left( \frac{\mathit{n} - 3}{\mathit{n}} \right)^{\mathit{k}}}
+  \end{matrix}\]
+\end{itemize}
+
+\end{qlsolution}
+
+\section{Problem 5}\label{hw01-problem-5}
+
+In a house, drawer \(\mathit{S}_{1}\) contains 3 gold coins and 3 silver coins, while drawer \(\mathit{S}_{2}\) contains 3 gold coins and 6 silver coins. A thief (in the dark) randomly opens one drawer and then randomly takes two coins from it.
+
+\begin{itemize}
+\item
+  What is the probability that both coins are gold?
+\item
+  If it is discovered (upon his arrest) that he has stolen two gold coins, what is the probability that he opened drawer \(\mathit{S}_{1}\) ?
+\end{itemize}
+
+\begin{qlsolution}{Solution}
+
+The thief chooses a drawer uniformly at random, so for each pick, \(\mathbb{P}(\mathit{S}_{1}\ \text{is chosen}) = \mathbb{P}(\mathit{S}_{2}\ \text{is chosen}) = \frac{1}{2}\). Given a drawer, he draws two coins without replacement.
+
+\begin{itemize}
+\item
+  Using the law of total probability,
+
+  \[\begin{matrix}
+  {\mathbb{P}(\text{two gold})} & {= \mathbb{P}(\text{two gold} \mid \mathit{S}_{1}\ \text{is chosen})\mathbb{P}(\text{drawer}\ \mathit{S}_{1}) + \mathbb{P}(\text{two gold} \mid \mathit{S}_{2}\ \text{is chosen})\mathbb{P}(\text{drawer}\ \mathit{S}_{2})} \\
+   & {= \frac{1}{2} \cdot \frac{\binom{3}{2}}{\binom{6}{2}} + \frac{1}{2} \cdot \frac{\binom{3}{2}}{\binom{9}{2}}} \\
+   & {= \frac{1}{2}\left( {\frac{3}{15} + \frac{3}{36}} \right)} \\
+   & {= \frac{36 + 15}{360}} \\
+   & {= \frac{17}{120}}
+  \end{matrix}\]
+\item
+  Let \(\mathit{G}\) be the event that the thief stole two gold coins. By Bayes' rule,
+
+  \[\mathbb{P}(\mathit{S}_{1} \mid \mathit{G}) = \frac{\mathbb{P}(\mathit{G} \mid \mathit{S}_{1})\mathbb{P}(\mathit{S}_{1})}{\mathbb{P}(\mathit{G})}\]
+
+  Since we have \(\mathbb{P}(\mathit{G} \mid \mathit{S}_{1}) = \frac{\binom{3}{2}}{\binom{6}{2}} = \frac{1}{5}\), \(\mathbb{P}(\mathit{S}_{1}) = \frac{1}{2}\), and \(\mathbb{P}(\mathit{G}) = \frac{17}{120}\) from part (a), we get:
+
+  \[\mathbb{P}(\mathit{S}_{1} \mid \mathit{G}) = \frac{\frac{1}{5} \cdot \frac{1}{2}}{\frac{17}{120}} = \frac{12}{17}\]
+\end{itemize}
+
+\end{qlsolution}
+
+\section{Problem 6}\label{hw01-problem-6}
+
+Let \(\mathit{A}\) and \(\mathit{B}\) be events of a probability space with \(\mathbb{P}(\mathit{A}) > 0\). Show that:
+
+\begin{itemize}
+\item
+  \(\mathbb{P}(\mathit{A} \cup \mathit{B}) > 0\) and \(\mathbb{P}(\mathit{A} \cap \mathit{B} \mid \mathit{A} \cup \mathit{B}) \leq \mathbb{P}(\mathit{A} \cap \mathit{B} \mid \mathit{A})\).
+\item
+  \(\mathbb{P}(\mathit{B} \mid \mathit{B} \cup \mathit{A}) \geq \mathbb{P}(\mathit{B} \mid \mathit{A})\).
+\end{itemize}
+
+\begin{proof}
+
+\begin{itemize}
+\item
+  Since \(\mathit{A} \subseteq \mathit{A} \cup \mathit{B}\), we have by monotonicity of probability measure:
+
+  \[\mathbb{P}(\mathit{A} \cup \mathit{B}) \geq \mathbb{P}(\mathit{A}) > 0\]
+
+  Also, since \(\mathit{A} \cap \mathit{B} \subseteq \mathit{A}\) and \(\mathbb{P}(\mathit{A} \cup \mathit{B}) \geq \mathbb{P}(\mathit{A}) > 0\), both conditional probabilities below are well-defined. Then
+
+  \[\begin{matrix}
+  {\mathbb{P}(\mathit{A} \cap \mathit{B} \mid \mathit{A} \cup \mathit{B})} & {= \frac{\mathbb{P}((\mathit{A} \cap \mathit{B}) \cap (\mathit{A} \cup \mathit{B}))}{\mathbb{P}(\mathit{A} \cup \mathit{B})}} \\
+   & {= \frac{\mathbb{P}(\mathit{A} \cap \mathit{B})}{\mathbb{P}(\mathit{A} \cup \mathit{B})}} \\
+   & {\leq \frac{\mathbb{P}(\mathit{A} \cap \mathit{B})}{\mathbb{P}(\mathit{A})}} \\
+   & {= \mathbb{P}(\mathit{A} \cap \mathit{B} \mid \mathit{A})}
+  \end{matrix}\]
+
+  This finishes the proof.
+\item
+  Let \(\mathit{x} := \mathbb{P}(\mathit{A} \cap \mathit{B})\), \(\mathit{y} := \mathbb{P}(\mathit{A}\backslash\mathit{B})\), \(\mathit{z} := \mathbb{P}(\mathit{B}\backslash\mathit{A})\).\\
+  so \(\mathit{x},\mathit{y},\mathit{z} \geq 0\) by non-negativity of probability measure.\\
+  And since
+
+  \[\mathit{A} = (\mathit{A} \cap \mathit{B}) \sqcup (\mathit{A}\backslash\mathit{B})\]
+
+  Thus, we have:
+
+  \[\mathbb{P}(\mathit{A}) = \mathbb{P}(\mathit{A} \cap \mathit{B}) + \mathbb{P}(\mathit{A}\backslash\mathit{B}) = \mathit{x} + \mathit{y}\]
+
+  By similar reason, we have:
+
+  \[\mathbb{P}(\mathit{A} \cup \mathit{B}) = \mathit{x} + \mathit{y} + \mathit{z},\quad\mathbb{P}(\mathit{B}) = \mathit{x} + \mathit{z}\]
+
+  Thus we have:
+
+  \[\mathbb{P}(\mathit{B} \mid \mathit{A} \cup \mathit{B}) = \frac{\mathbb{P}(\mathit{B} \cap (\mathit{A} \cup \mathit{B}))}{\mathbb{P}(\mathit{A} \cup \mathit{B})} = \frac{\mathbb{P}(\mathit{B})}{\mathbb{P}(\mathit{A} \cup \mathit{B})} = \frac{\mathit{x} + \mathit{z}}{\mathit{x} + \mathit{y} + \mathit{z}}\]
+
+  and
+
+  \[\mathbb{P}(\mathit{B} \mid \mathit{A}) = \frac{\mathbb{P}(\mathit{A} \cap \mathit{B})}{\mathbb{P}(\mathit{A})} = \frac{\mathit{x}}{\mathit{x} + \mathit{y}}\]
+
+  Note the two probabilities are well-defined since \(\mathit{x} + \mathit{y} = \mathbb{P}(\mathit{A}) > 0\) (and so \(\mathit{x} + \mathit{y} + \mathit{z} > 0\)).\\
+  Now it remains to show that:
+
+  \[\frac{\mathit{x} + \mathit{z}}{\mathit{x} + \mathit{y} + \mathit{z}} \geq \frac{\mathit{x}}{\mathit{x} + \mathit{y}}\]
+
+  i.e.
+
+  \[(\mathit{x} + \mathit{z})(\mathit{x} + \mathit{y}) \geq \mathit{x}(\mathit{x} + \mathit{y} + \mathit{z})\]
+
+  which is equivalent to:
+
+  \[\mathit{x}(\mathit{x} + \mathit{y}) + \mathit{z}(\mathit{x} + \mathit{y}) \geq \mathit{x}(\mathit{x} + \mathit{y}) + \mathit{x}\mathit{z}\]
+
+  Eliminating common terms, this is equivalent to:
+
+  \[\mathit{z}\mathit{y} \geq 0\]
+
+  which is true by non-negativity of \(\mathit{z}\) and \(\mathit{y}\). This finishes the proof that:
+
+  \[\mathbb{P}(\mathit{B} \mid \mathit{A} \cup \mathit{B}) \geq \mathbb{P}(\mathit{B} \mid \mathit{A})\]
+\end{itemize}
+
+\end{proof}

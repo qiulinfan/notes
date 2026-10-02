@@ -1,0 +1,461 @@
+% LaTeX companion of hw07-on_differentiaion.typ. Both formats are editable.
+\chapter{Homework 7: on differentiaion (50/50)}\label{homework-7-on-differentiaion-5050}
+
+\emph{None of the following questions will be graded. Do them, but do not hand them in}.
+
+\section{\texorpdfstring{Completion of \((X \times Y,\mathcal{A} \otimes \mathcal{B},\mu \times \nu)\) = Completion of \((X \times Y,\bar{\mathcal{A}} \otimes \bar{\mathcal{B}},\bar{\mu} \times \bar{\nu})\)}{Completion of (X \textbackslash times Y,\textbackslash mathcal\{A\} \textbackslash otimes \textbackslash mathcal\{B\},\textbackslash mu \textbackslash times \textbackslash nu) = Completion of (X \textbackslash times Y,\textbackslash bar\{\textbackslash mathcal\{A\}\} \textbackslash otimes \textbackslash bar\{\textbackslash mathcal\{B\}\},\textbackslash bar\{\textbackslash mu\} \textbackslash times \textbackslash bar\{\textbackslash nu\})}}\label{completion-of-xtimes-y-mathcalaotimes-mathcalb-mutimes-nu-completion-of-xtimes-y-barmathcalaotimes-barmathcalb-barmutimes-barnu}
+
+Let \((X,\mathcal{A},\mu)\) and \((Y,\mathcal{B},\nu)\) be measure spaces. Let \((X,\bar{\mathcal{A}},\bar{\mu})\) and \((Y,\bar{\mathcal{B}},\bar{\nu})\) be their completions, respectively. Then, the completion of \((X \times Y,\mathcal{A} \otimes \mathcal{B},\mu \times \nu)\) is same as the completion of \((X \times Y,\bar{\mathcal{A}} \otimes \bar{\mathcal{B}},\bar{\mu} \times \bar{\nu})\).
+
+\section{\texorpdfstring{Modified HL maximal inequality (\(\geq\) instead of \(>\))}{Modified HL maximal inequality (\textbackslash geq instead of \textgreater)}}\label{modified-hl-maximal-inequality-geq-instead-of}
+
+Prove that there is a constant \(C_{n} > 0\) that only depends on \(n\) such that for every \(f \in L^{1}(\mathbb{R}^{n})\) and \(\alpha > 0\),
+
+\[\left. m(\left\{ {x \in \mathbb{R}^{n} \mid Hf(x) \geq \alpha} \right\}) \leq \frac{C_{n}}{\alpha}\int_{\mathbb{R}^{n}} \middle| f(x) \middle| dx \right.\]
+
+(Remark: We had \(Hf(x) > \alpha\) for the HL maximal inequality. Here we have \(Hf(x) \geq \alpha\).)
+
+\section{\texorpdfstring{density of a mble set at a point: \(D_{E}(x) = 1\) for a.e. \(x \in E\), \(0\) for a.e. \(x \in E^{c}\)}{density of a mble set at a point: D\_\{E\}(x) = 1 for a.e. x \textbackslash in E, 0 for a.e. x \textbackslash in E\^{}\{c\}}}
+
+For a Lebesgue measurable subset \(E\) of \(\mathbb{R}^{n}\), the \emph{density of \(E\) at \(x\)} is defined as
+
+\[D_{E}(x) = \lim\limits_{r\rightarrow 0}\frac{m(E \cap B(x,r))}{m(B(x,r)}\]
+
+provided that the limit exists. Prove that \(D_{E}(x) = 1\) for a.e. \(x \in E\) and \(D_{E}(x) = 0\) for a.e. \(x \in E^{c}\). \emph{Hint}: ask Lebesgue.
+
+\emph{Some of the following questions will be graded. Do them, and do hand them in}.
+
+\section{\texorpdfstring{An identity: \(\int_{0}^{\infty}e^{- 2sx}\frac{\sin^{2}x}{x} dx = \frac{1}{4}\log(1 + s^{- 2})\)}{An identity: \textbackslash int\_\{0\}\^{}\{\textbackslash infty\}e\^{}\{- 2sx\}\textbackslash frac\{\textbackslash sin\^{}\{2\}x\}\{x\} dx = \textbackslash frac\{1\}\{4\}\textbackslash log(1 + s\^{}\{- 2\})}}\label{an-identity-int_0infty-e-2sxfracsin2xxd-xfrac14log1s-2}
+
+Prove that \(\int_{0}^{\infty}e^{- 2sx}\frac{\sin^{2}x}{x} dx = \frac{1}{4}\log(1 + s^{- 2})\) for \(s > 0\) by integrating the function \(e^{- 2sx}\sin(2xy)\) with respect to \(x\) and \(y\) over suitable regions.
+
+\begin{proof}
+
+For fixed \(x > 0\), by FTC we have:
+
+\[\sin^{2}(x) = \int_{0}^{x}\sin(2t)\, dt\]
+
+We do change of variable \(t = xy\). This is a valid diffeomorphism mapping \(y \in (0,1)\) to \(t \in (0,x)\).\\
+Then by change of variable theorem we have:
+
+\[\int_{(0,x)}\sin(2t)\, dt = \int_{(0,1)}x\sin(2xy)\, dy\]
+
+Thus
+
+\[\frac{\sin^{2}x}{x} = \int_{0}^{1}\sin(2xy)\, dy\]
+
+Then we get:
+
+\[\int_{0}^{\infty}e^{- 2sx}\frac{\sin^{2}x}{x} dx = \int_{0}^{\infty}e^{- 2sx}\lbrack\int_{0}^{1}\sin(2xy)\, dy\rbrack dx\]
+
+Consider the function
+
+\[f(x,y) := e^{- 2sx}\sin(2xy),\quad(x,y) \in (0,\infty) \times (0,1)\]
+
+\(f\) is a composition of continuous functions, thus continuous. Note that it is also in \(L^{1}((0,\infty) \times (0,1))\) since \(|f(x,y)|\) is bounded by \(g(x,y) := e^{- 2sx}\), which is \(L^{1}\) on the same domain (its integral is \(\frac{1}{2s}\)), then by DCT, \(f \in L^{1}((0,\infty) \times (0,1))\).\\
+Thus we can apply Fubini's theorem to switch the order of integration:
+
+\[\begin{matrix}
+{\int_{0}^{\infty}e^{- 2sx}\lbrack\int_{0}^{1}\sin(2xy)\, dy\rbrack dx} & {= \int_{(0,\infty) \times (0,1)}e^{- 2sx}\,\sin(2xy)\, d(x \times y)} \\
+ & {= \int_{0}^{1}(\int_{0}^{\infty}e^{- 2sx}\sin(2xy)\, dx)dy}
+\end{matrix}\]
+
+Recall back in Calculus we use integration by part to get:
+
+\[\int_{0}^{\infty}e^{- ax}\,\sin(bx)\, dx = \frac{b}{a^{2} + b^{2}}\]
+
+for \(a > 0\). In our case, \(a = 2s\) and \(b = 2y\). Thus
+
+\[\int_{0}^{\infty}e^{- 2sx}\,\sin(2xy)\, dx = \frac{2y}{(2s)^{2} + (2y)^{2}} = \frac{y}{2\,(s^{2} + y^{2})}\]
+
+Therefore we here get
+
+\[\begin{matrix}
+{\int_{0}^{\infty}e^{- 2sx}\frac{\sin^{2}x}{x} dx} & {= \int_{0}^{1}(\int_{0}^{\infty}e^{- 2sx}\sin(2xy)\, dx)dy} \\
+ & {= \int_{0}^{1}\frac{y}{2\,(s^{2} + y^{2})}\, dy} \\
+ & {= \frac{1}{2}\int_{0}^{1}\frac{y}{s^{2} + y^{2}}\, dy}
+\end{matrix}\]
+
+By Calculus we have (by chain rule):
+
+\[\int_{0}^{1}\frac{y}{s^{2} + y^{2}}\, dy = \lbrack\frac{1}{2}\log(s^{2} + y^{2})\rbrack_{0}^{1} = \frac{1}{2}\log(\frac{s^{2} + 1}{s^{2}}) = \frac{1}{2}\log(1 + \frac{1}{s^{2}})\]
+
+Thus we conclude:
+
+\[\begin{matrix}
+{\int_{0}^{\infty}e^{- 2sx}\frac{\sin^{2}x}{x} dx} & {= \frac{1}{2}\int_{0}^{1}\frac{y}{s^{2} + y^{2}}\, dy} \\
+ & {= \frac{1}{2} \cdot \frac{1}{2}\log(1 + \frac{1}{s^{2}})} \\
+ & {= \frac{1}{4}\log(1 + \frac{1}{s^{2}})}
+\end{matrix}\]
+
+as desired.
+
+\end{proof}
+
+\section{\texorpdfstring{\(E \in \mathcal{A} \otimes \mathcal{A}\Longrightarrow\)diagonal of \(E \in \mathcal{A}\)}{E \textbackslash in \textbackslash mathcal\{A\} \textbackslash otimes \textbackslash mathcal\{A\}\textbackslash Longrightarrowdiagonal of E \textbackslash in \textbackslash mathcal\{A\}}}\label{einmathcalaotimesmathcala-impliesdiagonal-of-e-in-mathcala}
+
+\begin{itemize}
+\item
+  Prove that if \(E \in \mathcal{A} \otimes \mathcal{A}\), then
+
+  \[\left\{ {x \in X:(x,x) \in E} \right\} \in \mathcal{A}\]
+\item
+  Using this fact, find an example of a subset \(E \subset \mathbb{R} \times \mathbb{R}\) such that \(E_{x} \in \mathcal{L}(\mathbb{R})\) for all \(x \in \mathbb{R}\) and \(E^{y} \in \mathcal{L}(\mathbb{R})\) for all \(y \in \mathbb{R}\), but \(E \notin \mathcal{L}(\mathbb{R}) \otimes \mathcal{L}(\mathbb{R})\). \emph{Hint}: ask Vitali.
+\end{itemize}
+
+\begin{proof}
+
+\textbf{of (a):}\\
+We consider the map:
+
+\[\begin{matrix}
+{\varphi:X} & {\rightarrow X \times X} \\
+x & {\mapsto(x,x)}
+\end{matrix}\]
+
+Then it suffices to show that \(\varphi\) is \((\mathcal{A},\mathcal{A} \otimes \mathcal{A})\)-measurable. Since if so, then for each \(E \in \mathcal{A} \otimes \mathcal{A}\), \(\varphi^{- 1}(E) = \left\{ {x \in X:(x,x) \in E} \right\} \in \mathcal{A}\), which is exactly what we want.\\
+Let \(A \times B \in \mathcal{A} \otimes \mathcal{A}\) be a measurable rectangle, we discover that:
+
+\[\varphi^{- 1}(A \times B) = \left\{ {x \in X:x \in A,x \in B} \right\} = A \cap B \in \mathcal{A}\]
+
+\begin{center}
+
+\includegraphics[width=0.3\linewidth,height=\textheight,keepaspectratio]{../measure-theory/assets/hw7-image-20250314182209267.png}
+
+\captionof{figure}{{ }}
+
+\end{center}
+
+We first prove a lemma:
+
+\begin{lemma}
+
+Suppose \(f:X\rightarrow Y \times Z\) is a function from a measurable space \((X,\mathcal{A})\) to a product measure space \((Y \times Z,\mathcal{B}_{1} \otimes \mathcal{B}_{2})\).\\
+Claim: If \(f^{- 1}(B_{1} \times B_{2}) \in \mathcal{A}\) for each measurable rectangle \(B_{1} \times B_{2} \in \mathcal{B}_{1} \otimes \mathcal{B}_{2}\), then \(f\) is an \((\mathcal{A},\mathcal{B}_{1} \otimes \mathcal{B}_{2})\)-measurable function.
+
+\end{lemma}
+
+\begin{proof}
+
+\textbf{of Lemma:}\\
+Since \(f^{- 1}(B \times C) \in \mathcal{A}\) for each measurable rectangle \(B_{1} \times B_{2} \in \mathcal{B}_{1} \otimes \mathcal{B}_{2}\), the preimage of any countable disjoint unions of measurable rectangles, is also in \(\mathcal{A}\), since \(\mathcal{A}\) is an \(\sigma\)-algebra.\\
+We want to show: \(f^{- 1}(E) \in \mathcal{A}\) for any \(E \in \mathcal{B}_{1} \otimes \mathcal{B}_{2}\). It is equivalent to show that
+
+\[\mathcal{B}_{1} \otimes \mathcal{B}_{2} \subset \mathcal{C}: = \left\{ {E \in Y \times Z:\varphi^{- 1}(E) \in \mathcal{A}} \right\}\]
+
+Note that, it suffices to show that: \(\mathcal{C}\) is an \(\sigma\)-algebra. This is because we have shown
+
+\[\left\{ {\text{all disjoint unions of measurable rectangles in}\ Y \times Z} \right\} \subset \mathcal{C}\]
+
+, and this is an algebra generating \(\mathcal{B}_{1} \otimes \mathcal{B}_{2}\). Thus, if \(\mathcal{C}\) is an \(\sigma\)-algebra, we must have \(\mathcal{B}_{1} \otimes \mathcal{B}_{2} \subset \mathcal{C}\).\\
+And since \(\left\{ {\text{all disjoint unions of measurable rectangles in}\ Y \times Z} \right\}\) is an algebra, it suffices to show that \(\mathcal{C}\) is a monotone class, by the monotone class lemma.\\
+Suppose \(E_{1} \subseteq E_{2} \subseteq \cdots\) with each \(E_{n} \in \mathcal{C}\), i.e. \(\varphi^{- 1}(E_{n}) \in \mathcal{A}\). Since \(\left\{ E_{n} \right\}\) is increasing, we hve
+
+\[\varphi^{- 1}(E_{1}) \subseteq \varphi^{- 1}(E_{2}) \subseteq \cdots \subseteq \varphi^{- 1}(E_{n}) \subseteq \cdots\]
+
+Since \(\mathcal{A}\) is an \(\sigma\)-algebra, we have
+
+\[\varphi^{- 1}(\bigcup\limits_{n = 1}^{\infty}E_{n}) = \bigcup\limits_{n = 1}^{\infty}\varphi^{- 1}(E_{n}) \in \mathcal{A}\]
+
+Thus
+
+\[\bigcup\limits_{n = 1}^{\infty}E_{n} \in \mathcal{C}\]
+
+This is dually true for decreasing intersection, \textbf{finishing the proof that \(\mathcal{C}\) is a monotone class thus \(\sigma\)-algebra,} \textbf{thus proving the lemma.}\\
+
+\end{proof}
+
+After we proved the Lemma, we return to the original statement, concluding that \(\varphi\) is \((\mathcal{A},\mathcal{A} \otimes \mathcal{A})\)-measurable, thus finishing the proof: if \(E \in \mathcal{A} \otimes \mathcal{A}\), then
+
+\[\left\{ {x \in X:(x,x) \in E} \right\} \in \mathcal{A}\]
+
+\end{proof}
+
+\begin{qlsolution}{Solution}
+
+\textbf{of (b):}\\
+Take a Vitali set \(V \subset \mathbb{R}\), and consider:
+
+\[E := \left\{ {(x,y) \in \mathbb{R}^{2}:x \neq y} \right\} \cup \left\{ {(x,x):x \in V} \right\}.\]
+
+\begin{center}
+
+\includegraphics[width=0.3\linewidth,height=\textheight,keepaspectratio]{../measure-theory/assets/hw7-image-20250314185531013.png}
+
+\captionof{figure}{{ }}
+
+\end{center}
+
+Then for any fixed \(x \in \mathbb{R}\), we have:
+
+\[E_{x} = \left\{ {y:(x,y) \in E} \right\} = \left\{ \begin{matrix}
+{\mathbb{R},} & {x \in V} \\
+{\mathbb{R}\backslash\left\{ x \right\},} & {x \notin V}
+\end{matrix} \right.\]
+
+And for any fixed \(y \in \mathbb{R}\), we have:
+
+\[E^{y} = \left\{ {x:(x,y) \in E} \right\} = \left\{ \begin{matrix}
+{\mathbb{R},} & {y \in V} \\
+{\mathbb{R}\backslash\left\{ y \right\},} & {y \notin V}
+\end{matrix} \right.\]
+
+Thus \(E_{x} \in \mathcal{L}(\mathbb{R})\) for all \(x \in \mathbb{R}\) and \(E^{y} \in \mathcal{L}(\mathbb{R})\) for all \(y \in \mathbb{R}\).\\
+However, we have \(E \notin \mathcal{L}(\mathbb{R}) \otimes \mathcal{L}(\mathbb{R})\), since by (a) we have proved that if \(E \in \mathcal{L}(\mathbb{R}) \otimes \mathcal{L}(\mathbb{R})\), then
+
+\[V = \left\{ {x \in \mathbb{R}:(x,x) \in E} \right\} \in \mathcal{L}(\mathbb{R})\]
+
+But it contradicts with the fact that \(V\) is not Lebesgue measurable.\\
+Thus \(E\) satisfies our requirements.\\
+(This happends since, as shown in class, the product measure space of two complete measure space is not necesarily complete. Here, the diagonal is a null set in \(\mathbb{R}^{2}\) and thus our Vitali portion is a subnull set, but \(\mathcal{L}(\mathbb{R}) \otimes \mathcal{L}(\mathbb{R})\) is not complete (its completion is \(\mathcal{L}(\mathbb{R}^{2})\).)
+
+\end{qlsolution}
+
+\section{\texorpdfstring{Too dense: \(m(E \cap I) \leq \alpha m(I)\) for all \(I\) \(\Longrightarrow m(E) = 0\) for mble \(E\)}{Too dense: m(E \textbackslash cap I) \textbackslash leq \textbackslash alpha m(I) for all I \textbackslash Longrightarrow m(E) = 0 for mble E}}\label{too-dense-mecap-ile-alpha-mi-for-all-i-implies-me0-for-mble-e}
+
+Prove that if \(E \subset \mathcal{L}(\mathbb{R})\) is a Lebesgue measurable subset such that
+
+\[m(E \cap I) \leq 0.123m(I)\]
+
+for all open intervals \(I \subset \mathcal{L}(\mathbb{R})\), then \(m(E) = 0\).
+
+\begin{proof}
+
+Since \(E\) is Lebesgue measurable, \(m(E) = m^{\ast}(E)\).\\
+Let \(\varepsilon > 0\).\\
+Then by definition of outer mesure, we can pick open intervals seq \(\left\{ I_{k} \right\}_{k = 1}^{\infty}\) covering \(E\) s.t.
+
+\[m(E) > \sum\limits_{k = 1}^{\infty}m(I_{k}) - \varepsilon\]
+
+Since \(E \subset \bigcup_{k}I_{k}\), we have
+
+\[\begin{matrix}
+E & {= (\bigcup\limits_{k}I_{k}) \cap E} \\
+ & {= \bigcup\limits_{k}(I_{k} \cap E)}
+\end{matrix}\]
+
+Thus
+
+\[\begin{matrix}
+{m(E) = m(\bigcup\limits_{k}(I_{k} \cap E))} & {\leq \sum\limits_{k}m(I_{k} \cap E)\quad\text{by ctbl subadditivity}} \\
+ & {\leq 0.123\sum\limits_{k}\, m(I_{k})\quad\text{by our requirement}}
+\end{matrix}\]
+
+Thus we have:
+
+\[\begin{matrix}
+{\sum\limits_{k}m(I_{k}) - \varepsilon} & {< 0.123\sum\limits_{k}m(I_{k})} \\
+{0.877\sum\limits_{k}m(I_{k})} & {< \varepsilon} \\
+{\sum\limits_{k}m(I_{k})} & {< \frac{\varepsilon}{0.877}}
+\end{matrix}\]
+
+Thus
+
+\[m(E) \leq \sum\limits_{k}m(I_{k}) < \frac{\varepsilon}{0.877}\]
+
+Since \(\varepsilon > 0\) is arbitrary, this proves that
+
+\[m(E) = 0\]
+
+\end{proof}
+
+\section{\texorpdfstring{给定任意 \(0 < \alpha < 1\), prescribe 出一个在 \(0\) 处 density 为 \(\alpha/2\) 的集合}{给定任意 0 \textless{} \textbackslash alpha \textless{} 1, prescribe 出一个在 0 处 density 为 \textbackslash alpha/2 的集合}}\label{ux7ed9ux5b9aux4efbux610f-0alpha-1-prescribe-ux51faux4e00ux4e2aux5728-0-ux5904-density-ux4e3a-alpha2-ux7684ux96c6ux5408}
+
+Let \(0 < \alpha < 1\). Find an example of a Lebesgue measurable subset \(E\) of \(\lbrack 0,\infty) \subset \mathcal{L}(\mathbb{R})\) whose density at \(0\) is \(\alpha/2\). \emph{Hint}: Consider \(E = \bigcup_{n = 1}^{\infty}I_{n}\). where \(I_{n} = (x_{n},x_{n} + \delta_{n})\) are disjoint small intervals accumulating at \(0\).
+
+\begin{proof}
+
+Consider take
+
+\[E := \bigcup\limits_{n = 1}^{\infty}(\frac{1}{n},\frac{1}{n} + \frac{\alpha}{n(n - 1)})\]
+
+as the union of a countable sequence of intervals drawing near \(0\).\\
+Notice: There intervals are \textbf{mutually disjoint}, since
+
+\[\frac{1}{n - 1} - \frac{1}{n} = \frac{1}{n(n - 1)} > \frac{\alpha}{n(n - 1)}\]
+
+we thus have for \(n \geq 2\),
+
+\[\frac{1}{n} + \frac{\alpha}{n(n - 1)} < \frac{1}{n - 1}\]
+
+We use \(x_{n}: = \frac{1}{n}\); \(I_{n} := (x_{n},\, x_{n} + \delta_{n})\) to denote each component interval; \(J_{n}: = (x_{n},x_{n - 1})\) to denote the open interval where \(I_{n}\) is located at; and \(\delta_{n} := \frac{\alpha}{n(n - 1)}\) to denote the length of each interval. Note that for each \(n\),
+
+\[\delta_{n} = \alpha(\frac{1}{n - 1} - \frac{1}{n}) = \alpha(x_{n - 1} - x_{n}) = \alpha J_{n}\]
+
+\begin{center}
+
+\includegraphics[width=0.4\linewidth,height=\textheight,keepaspectratio]{../measure-theory/assets/hw7-image-20250314233130795.png}
+
+\captionof{figure}{{ }}
+
+\end{center}
+
+Now we show that this set has Lebesgue density \(\frac{\alpha}{2}\) at \(0\) below.\\
+Let \(r > 0\) (WLOG \(r < 1\)), then we have
+
+\[\frac{1}{n + 1} < r \leq \frac{1}{n}\quad\text{for some}\ n \in \mathbb{N}\]
+
+Then for each \(k \geq n + 2\), we have \(\frac{1}{k} < \frac{1}{n + 1} < r\). Hence \(I_{k}\) is \textbf{entirely contained} in \((0,r)\):
+
+\[\bigcup\limits_{k = n + 2}^{\infty}I_{k} \subseteq E \cap ( - r,r)\]
+
+We know that by telescoping,
+
+\[\sum\limits_{k = n + 2}^{\infty}\frac{1}{k(k - 1)} = \left( {\frac{1}{n + 1} - \frac{1}{n + 2}} \right) + \left( {\frac{1}{n + 2} - \frac{1}{n + 3}} \right) + \cdots = \frac{1}{n + 1}\]
+
+Multiplying this by \(\frac{\alpha}{2}\) gives:
+
+\[\sum\limits_{k = n + 2}^{\infty}\frac{\alpha}{k(k - 1)} = \frac{\alpha}{n + 1}\]
+
+Thus by monotonicity of measure:
+
+\[m(E \cap ( - r,r)) \geq \frac{\alpha}{n + 1}\]
+
+And for each \(k \leq n\), \(I_{k}\) exceeds \((0,r)\) on the right, thus we get dually:
+
+\[m(E \cap ( - r,r)) \leq \frac{\alpha}{n - 1}\]
+
+And we have:
+
+\[\frac{2}{n + 1} \leq m( - r,r) \leq \frac{2}{n}\]
+
+since \(\frac{1}{n + 1} \leq r \leq \frac{1}{n}\).\\
+Therefore we get:
+
+\[\frac{\frac{\frac{\alpha}{n + 1}}{2}}{n} \leq \frac{m(E \cap ( - r,r))}{m(( - r,r))} \leq \frac{\frac{\alpha}{n - 1}}{\frac{2}{n + 1}}\]
+
+Further simplify:
+
+\[\frac{n}{n + 1} \cdot \frac{\alpha}{2} \leq \frac{m(E \cap ( - r,r))}{m(( - r,r))} \leq \frac{n + 1}{n - 1} \cdot \frac{\alpha}{2}\]
+
+As \(r\rightarrow 0^{+}\), we must have \(n\rightarrow\infty\), and we know
+
+\[\lim\limits_{n\rightarrow\infty}\frac{n}{n + 1} \cdot \frac{\alpha}{2} = \lim\limits_{n\rightarrow\infty}\frac{n + 1}{n - 1} \cdot \frac{\alpha}{2} = \frac{\alpha}{2}\]
+
+Thus by \textbf{Squeeze Theorem}, we have:
+
+\[\lim\limits_{r\rightarrow 0^{+}}\frac{m(E \cap ( - r,r))}{m(( - r,r))} = \frac{\alpha}{2}\]
+
+Hence by def, \(E\) indeed has Lebesgue density \(\alpha/2\) at \(0\).\\
+(My note: The key point here is that, the harmonic seq shrinks very slowly in proportion as \(n\) grows, \(J_{n}\) almost have same length as \(J_{n + 1}\) for large \(n\), thus \(m(J_{n})/m( \cup_{k > N}J_{k}) = 0\) as we knows, so that whether \(r\) lies in \(I_{n}\) or \(J_{n}\backslash I_{n}\) does not quite matter.\\
+On the other hand, the counterexample in class, using the geometric sequence as build block of \(J_{n}\), fails since the length of \(J_{n}\) is too much compared to \(\cup_{k \geq n}J_{k}\), actually \(m(J_{n}) = m( \cup_{k > n}J_{k})\), thus whether \(r\) lies in \(I_{n}\) or \(J_{n}\backslash I_{n}\) makes a lot difference, making the density at \(0\) undefined.)
+
+\end{proof}
+
+\section{\texorpdfstring{Seqs of complex numbers: \(\mathcal{l}^{1} \subsetneq \bigcap_{1 < p < \infty}\mathcal{l}^{p}\) and \(\bigcup_{1 < p < \infty}\mathcal{l}^{p} \subsetneq \mathcal{l}^{\infty}\)}{Seqs of complex numbers: \textbackslash mathcal\{l\}\^{}\{1\} \textbackslash subsetneq \textbackslash bigcap\_\{1 \textless{} p \textless{} \textbackslash infty\}\textbackslash mathcal\{l\}\^{}\{p\} and \textbackslash bigcup\_\{1 \textless{} p \textless{} \textbackslash infty\}\textbackslash mathcal\{l\}\^{}\{p\} \textbackslash subsetneq \textbackslash mathcal\{l\}\^{}\{\textbackslash infty\}}}\label{seqs-of-complex-numbers-ell1subsetneqbigcap_1pinftyellp-and-bigcup_1pinftyellpsubsetneqellinfty}
+
+\begin{itemize}
+\item
+  Prove that \(\mathcal{l}^{1} \subsetneq \bigcap_{1 < p < \infty}\mathcal{l}^{p}\).
+\item
+  Prove that \(\bigcup_{1 < p < \infty}\mathcal{l}^{p} \subsetneq \mathcal{l}^{\infty}\).
+\end{itemize}
+
+\begin{proof}
+
+\textbf{of (a):}\\
+We first want to show: for any \(1 < p < \infty\), we have:
+
+\[\mathcal{l}^{1} \subseteq \mathcal{l}^{p}\]
+
+Fix \(p > 1\).\\
+Let \((x_{n}) \in \mathcal{l}^{1}\). By definition,
+
+\[\left. \sum\limits_{n = 1}^{\infty} \middle| x_{n} \middle| < \infty \right.\]
+
+We need to show that \(\left. \sum_{n = 1}^{\infty} \middle| x_{n} \middle| {}_{p} < \infty \right.\).\\
+\textbf{Claim: There are at most finitely many \(n \in \mathbb{N}\) s.t. \(\left. |x_{n} \middle| \geq 1 \right.\)}.\\
+Proof of Claim: Suppose for contradiction that there are inifinitely many \(n \in \mathbb{N}\) s.t. \(\left. |x_{n} \middle| \geq 1 \right.\), say, all terms in the subseqence \(\left\{ x_{n_{j}} \right\}_{j = 1}^{\infty}\) has \(\left. |x_{n_{j}} \middle| \geq 1 \right.\). Then
+
+\[\left. \sum\limits_{n = 1}^{\infty} \middle| x_{n} \middle| \geq \sum\limits_{j = 1}^{\infty} \middle| x_{n_{j}} \middle| \geq \sum\limits_{j = 1}^{\infty}1 = \infty \right.\]
+
+which contradicts with \((x_{n}) \in \mathcal{l}^{1}\).\\
+Thus, suppose only on the finite terms \(\left\{ x_{n_{j}} \right\}_{j = 1}^{N}\) we have \(\left. |x_{n_{j}} \middle| \geq 1 \right.\) (WLOG \(N \geq 1\)). Then
+
+\[\left. \sum\limits_{n = 1}^{\infty} \middle| x_{n} \middle| = \sum\limits_{j = 1}^{N} \middle| x_{n_{j}} \middle| + \sum\limits_{n \neq n_{j}\ \text{for any}\ j} \middle| x_{n}| \right.\]
+
+Since for \(n\) s.t. n \(\neq n_{j}\ \text{for any subseq index}\ j\), we have \(\left. |x_{n} \middle| < 1 \right.\), for these indexes we have:
+
+\[\left. |x_{n} \middle| {}_{p} < \middle| x_{n} \middle| \quad\text{for any}\ p > 1 \right.\]
+
+Thus we have
+
+\[\left. \sum\limits_{n \neq n_{j}\ \text{for any}\ j} \middle| x_{n} \middle| {}_{p} < \sum\limits_{n \neq n_{j}\ \text{for any}\ j} \middle| x_{n} \middle| < \infty \right.\]
+
+And also,
+
+\[\left. \sum\limits_{j = 1}^{N} \middle| x_{n_{j}} \middle| {}_{p} < \infty\quad\text{since only have finite terms} \right.\]
+
+Thus
+
+\[\left. \sum\limits_{n = 1}^{\infty} \middle| x_{n} \middle| {}_{p} = \sum\limits_{j = 1}^{N} \middle| x_{n_{j}} \middle| {}_{p} + \sum\limits_{n \neq n_{j}\ \text{for any}\ j} \middle| x_{n} \middle| {}_{p} < \infty \right.\]
+
+Thus
+
+\[\mathcal{l}^{1} \subseteq \mathcal{l}^{p}\]
+
+Since \(p > 1\) is arbitrary, this proves that
+
+\[\mathcal{l}^{1} \subseteq \bigcap\limits_{1 < p < \infty}\mathcal{l}^{p}\]
+
+To show the strictness of the inclusion, we consider the \textbf{harmonic series} \(\sum_{n = 1}^{\infty}\frac{1}{n}\). We know that it diverges and for any \(p > 1\), the \textbf{\(p\)-series} \(\sum_{n = 1}^{\infty}\frac{1}{n^{p}}\) (absolutely for sure) converges, thus \((\frac{1}{n}) \notin \mathcal{l}^{1}\) but \((\frac{1}{n}) \in \mathcal{l}^{p}\) for every \(p > 1\), showing that
+
+\[\mathcal{l}^{1} \neq \bigcap\limits_{1 < p < \infty}\mathcal{l}^{p}\]
+
+This finishes the proof that
+
+\[\mathcal{l}^{1} \subsetneq \bigcap\limits_{1 < p < \infty}\mathcal{l}^{p}\]
+
+\end{proof}
+
+\begin{proof}
+
+\textbf{of (b):}\\
+Fix \(p > 1\).\\
+Suppose sequence \((x_{n})\) belongs \(\mathcal{l}^{p}\), then
+
+\[\left. \sum\limits_{n = 1}^{\infty} \middle| x_{n} \middle| {}_{p} < \infty \right.\]
+
+This implies that \(x_{n}\rightarrow 0\) as \(n\rightarrow\infty\), because if it did not, there would be infinitely many terms where \(|x_{n}|\) is bounded away from zero, leading to divergence of the sum.\\
+Suppose for contradiction that
+
+\[\left. \sup\limits_{n} \middle| x_{n} \middle| = \infty \right.\]
+
+Then there are infinitely many terms \(n\) s.t. \(\left. |x_{n} \middle| > 1 \right.\), since otherwise, exists some \(N\) s.t. all \(\left. |x_{n} \middle| \leq 1 \right.\) for \(n \geq N\), then \(\left. \sup \middle| x_{n} \middle| \leq \max(1,\max_{1 \leq n \leq N - 1} \middle| x_{n} \middle| ) < \infty \right.\).\\
+Suppose for the subseq \(\left\{ x_{n_{j}} \right\}_{j = 1}^{\infty}\) we have \(\left. |x_{n_{j}} \middle| > 1 \right.\). Thus
+
+\[\left. \sum\limits_{n = 1}^{\infty} \middle| x_{n} \middle| {}_{p} \geq \sum\limits_{j = 1}^{\infty} \middle| x_{n_{j}} \middle| {}_{p} > \sum\limits_{j = 1}^{\infty}1^{p} = \infty \right.\]
+
+which contradicts with \(\left. \sum_{n = 1}^{\infty} \middle| x_{n} \middle| {}_{p} < \infty \right.\). Therefore we have:
+
+\[\left. \sup\limits_{n} \middle| x_{n} \middle| < \infty \right.\]
+
+This shows that
+
+\[\mathcal{l}^{p} \subseteq \mathcal{l}^{\infty}\]
+
+Since \(p > 1\) is arbitrary, this proves that
+
+\[\bigcup\limits_{1 < p < \infty}\mathcal{l}^{p} \subseteq \mathcal{l}^{\infty}\]
+
+Now we show the inclusion is strict. Consider the sequence \(x_{n} = 1\) for all \(n\). Clearly, \((x_{n}) \in \mathcal{l}^{\infty}\) because it is bounded. However, \(x_{n} \notin \mathcal{l}^{p}\) for any \(p > 1\):
+
+\[\left. \sum\limits_{n = 1}^{\infty} \middle| 1 \middle| {}_{p} = \sum\limits_{n = 1}^{\infty}1 = \infty \right.\]
+
+This shows
+
+\[\bigcup\limits_{1 < p < \infty}\mathcal{l}^{p} \neq \mathcal{l}^{\infty}\]
+
+Thus we have
+
+\[\bigcup\limits_{1 < p < \infty}\mathcal{l}^{p} \subsetneq \mathcal{l}^{\infty}\]
+
+\end{proof}
+
+\emph{Nur für Verrückte}
+
+(It's \textbf{really} not necessary to attempt these problems. Do not, under any circumstances, hand them in!)
+
+\section{Prescribing a Lebesgue density, Season 2}\label{prescribing-a-lebesgue-density-season-2}
+
+Let \(0 < \alpha < 1\) and \(n \geq 1\). Find an example of a Lebesgue measurable subset \(E\) of \(\mathcal{L}(\mathbb{R})^{n}\) whose density at \(0\) is \(\alpha\). \emph{Hint}: think spherically.

@@ -1,0 +1,475 @@
+% LaTeX companion of hw07.typ. Both formats are editable.
+\section{Homework 7 --- submitted work}
+
+\chapter{Part A}
+
+\section{4.3 Exercise 14}
+
+For \(T(M) = \begin{pmatrix}
+1 & 1 \\
+2 & 2
+\end{pmatrix}M\) relative to \(\mathcal{B} = \left( {\begin{pmatrix}
+1 & 0 \\
+{- 1} & 0
+\end{pmatrix},\begin{pmatrix}
+0 & 1 \\
+0 & {- 1}
+\end{pmatrix},\begin{pmatrix}
+1 & 0 \\
+2 & 0
+\end{pmatrix},\begin{pmatrix}
+0 & 1 \\
+0 & 2
+\end{pmatrix}} \right)\), the submission forms \(\lbrack T\rbrack_{\mathcal{B}}\) from \(\left\lbrack {T\left( b_{i} \right)} \right\rbrack_{\mathcal{B}}\). It finds
+
+\(T\left( b_{1} \right) = T\left( b_{2} \right) = \begin{pmatrix}
+0 & 0 \\
+0 & 0
+\end{pmatrix},\quad T\left( b_{3} \right) = \begin{pmatrix}
+3 & 0 \\
+6 & 0
+\end{pmatrix},\quad T\left( b_{4} \right) = \begin{pmatrix}
+0 & 3 \\
+0 & 6
+\end{pmatrix},\)
+
+so
+
+\(\lbrack T\rbrack_{\mathcal{B}} = \begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 3 & 0 \\
+0 & 0 & 0 & 3
+\end{pmatrix}\mapsto\begin{pmatrix}
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}.\)
+
+Hence
+
+\(\left\lbrack {\text{ker}\ T} \right\rbrack_{M} = \text{span}\left( {\begin{pmatrix}
+1 \\
+0 \\
+0 \\
+0
+\end{pmatrix},\begin{pmatrix}
+0 \\
+1 \\
+0 \\
+0
+\end{pmatrix}} \right),\)
+
+\(\left\lbrack {\text{im}\ T} \right\rbrack_{M} = \text{span}\left( {\begin{pmatrix}
+0 \\
+0 \\
+1 \\
+0
+\end{pmatrix},\begin{pmatrix}
+0 \\
+0 \\
+0 \\
+1
+\end{pmatrix}} \right).\)
+
+A basis for the kernel is \(\left( {\begin{pmatrix}
+1 & 0 \\
+{- 1} & 0
+\end{pmatrix},\begin{pmatrix}
+0 & 1 \\
+0 & {- 1}
+\end{pmatrix}} \right)\); a basis for the image is \(\left( {\begin{pmatrix}
+1 & 0 \\
+2 & 0
+\end{pmatrix},\begin{pmatrix}
+0 & 1 \\
+0 & 2
+\end{pmatrix}} \right)\); and \(\text{rank}(T) = 2\).
+
+\section{4.3 Exercise 28}
+
+For \(T\left( {f(t)} \right) = f\left( {2t - 1} \right)\) and \(\mathcal{B} = \left( {1,t - 1,\left( {t - 1} \right)^{2}} \right)\),
+
+\(\lbrack T\rbrack_{\mathcal{B}} = \left( {\lbrack 1\rbrack_{\mathcal{B}}\left\lbrack {2t - 2} \right\rbrack_{\mathcal{B}}\left\lbrack {4\left( {t - 1} \right)^{2}} \right\rbrack_{\mathcal{B}}} \right) = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 4
+\end{pmatrix}.\)
+
+This has full rank, so \(T\) is invertible, is an isomorphism, and \(\text{rank}(T) = 3\).
+
+\section{4.3 Exercise 60}
+
+In \(2x_{1} + x_{2} - 2x_{3} = 0\) let
+
+\(\mathcal{A} = \left( {\begin{pmatrix}
+1 \\
+2 \\
+2
+\end{pmatrix},\begin{pmatrix}
+2 \\
+{- 2} \\
+1
+\end{pmatrix}} \right),\quad\mathcal{B} = \left( {\begin{pmatrix}
+1 \\
+2 \\
+2
+\end{pmatrix},\begin{pmatrix}
+3 \\
+0 \\
+3
+\end{pmatrix}} \right).\)
+
+The submitted change-of-basis matrices are
+
+\(S_{\mathcal{B}\rightarrow\mathcal{A}} = \begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix},\quad S_{\mathcal{A}\rightarrow\mathcal{B}} = \begin{pmatrix}
+1 & {- 1} \\
+0 & 1
+\end{pmatrix},\)
+
+and \(\left\lbrack {\overrightarrow{a_{1}}\overrightarrow{a_{2}}} \right\rbrack = S_{\mathcal{B}\rightarrow\mathcal{A}}\left\lbrack {\overrightarrow{b_{1}}\overrightarrow{b_{2}}} \right\rbrack\).
+
+\section{5.1 Exercise 6}
+
+For \(u = \begin{pmatrix}
+1 \\
+{- 1} \\
+2 \\
+{- 2}
+\end{pmatrix}\) and \(v = \begin{pmatrix}
+2 \\
+3 \\
+4 \\
+5
+\end{pmatrix}\),
+
+\(\cos\theta = \frac{u \cdot v}{\left\| u \right\|\left\| v \right\|} = \frac{- 3}{\sqrt{540}} = \frac{- 1}{2\sqrt{15}}.\)
+
+Thus \(\theta = \arccos\left( {- \frac{\sqrt{15}}{30}} \right) \approx 1.7\) rad (approximately 97.4 degrees).
+
+\section{5.1 Exercise 17}
+
+For \(W = \text{span}\left( {\begin{pmatrix}
+1 \\
+2 \\
+3 \\
+4
+\end{pmatrix},\begin{pmatrix}
+5 \\
+6 \\
+7 \\
+8
+\end{pmatrix}} \right)\), the equations for \(x = \begin{pmatrix}
+x_{1} \\
+x_{2} \\
+x_{3} \\
+x_{4}
+\end{pmatrix} \in W^{\perp}\) reduce as
+
+\(\begin{pmatrix}
+1 & 2 & 3 & 4 \\
+5 & 6 & 7 & 8
+\end{pmatrix}\mapsto\begin{pmatrix}
+1 & 0 & {- 1} & {- 2} \\
+0 & 1 & 2 & 3
+\end{pmatrix}.\)
+
+Thus \(x_{1} = x_{3} + 2x_{4}\), \(x_{2} = - 2x_{3} - 3x_{4}\), and
+
+\(W^{\perp} = \left\{ r\begin{pmatrix}
+1 \\
+{- 2} \\
+1 \\
+0
+\end{pmatrix} + s\begin{pmatrix}
+2 \\
+{- 3} \\
+0 \\
+1
+\end{pmatrix}\  \middle| \ r,s \in \mathbb{R} \right\}.\)
+
+\section{5.1 Exercise 26}
+
+With \(u_{1} = \frac{1}{7}\begin{pmatrix}
+2 \\
+3 \\
+6
+\end{pmatrix}\) and \(u_{2} = \frac{1}{7}\begin{pmatrix}
+3 \\
+{- 6} \\
+2
+\end{pmatrix}\),
+
+\(\text{proj}_{W{(x)}} = \left( {u_{1} \cdot x} \right)u_{1} + \left( {u_{2} \cdot x} \right)u_{2}\)
+
+\(= \left( {2 + 3 + 6} \right)\begin{pmatrix}
+2 \\
+3 \\
+6
+\end{pmatrix} + \left( {3 - 6 + 2} \right)\begin{pmatrix}
+3 \\
+{- 6} \\
+2
+\end{pmatrix} = \begin{pmatrix}
+19 \\
+35 \\
+64
+\end{pmatrix}.\)
+
+\chapter{Part B}
+
+\section{Problem 1}
+
+For ordered bases \(A,B,C\), writing \(C = \left( {c_{1},c_{2},\ldots,c_{n}} \right)\) and taking \(f \in W\),
+
+\(\lbrack f\rbrack_{A} = S_{C\rightarrow A}\lbrack f\rbrack_{C} = S_{B\rightarrow A}\lbrack f\rbrack_{B},\quad\lbrack f\rbrack_{B} = S_{C\rightarrow B}\lbrack f\rbrack_{C}.\)
+
+So
+
+\(S_{C\rightarrow A}\lbrack f\rbrack_{C} = \left( {S_{B\rightarrow A}S_{C\rightarrow B}} \right)\lbrack f\rbrack_{C}.\)
+
+Taking \(\lbrack f\rbrack_{C} = e_{i}\) makes corresponding columns equal; therefore
+
+\(S_{C\rightarrow A} = S_{B\rightarrow A}S_{C\rightarrow B}.\)
+
+Consequently,
+
+\(S_{C\rightarrow A}S_{B\rightarrow C}S_{A\rightarrow B} = S_{B\rightarrow A}S_{C\rightarrow B}S_{B\rightarrow C}S_{A\rightarrow B} = S_{B\rightarrow A}I_{n}S_{A\rightarrow B} = I_{n}.\)
+
+\section{Problem 2}
+
+For \(f_{1} = \sin\left( {2x} \right)\), \(f_{2} = \cos\left( {2x} \right)\), \(f_{3} = e^{3x}\) and \(\mathcal{B} = \left( {f_{1},f_{2},f_{3}} \right)\),
+
+\(\left\lbrack {D\left( f_{1} \right)} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+0 \\
+2 \\
+0
+\end{pmatrix},\quad\left\lbrack {D\left( f_{2} \right)} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+{- 2} \\
+0 \\
+0
+\end{pmatrix},\quad\left\lbrack {D\left( f_{3} \right)} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+0 \\
+0 \\
+3
+\end{pmatrix},\)
+
+so \(\lbrack D\rbrack_{\mathcal{B}} = \begin{pmatrix}
+0 & {- 2} & 0 \\
+2 & 0 & 0 \\
+0 & 0 & 3
+\end{pmatrix}\).
+
+The submitted interpretation is that it rotates every vector in \(\mathbb{R}^{2}\) counterclockwise by \(\frac{\pi}{2}\), stretches the \(x,y\) coordinates to twice their length, and the \(z\) coordinate to three times its length.
+
+\section{Problem 3}
+
+Let \(B = \lbrack T\rbrack_{\mathcal{B}}\) and \(C = \lbrack T\rbrack_{\mathcal{C}}\). By the change-of-basis theorem, \(C = S^{- 1}BS\), where \(S = S_{C\rightarrow B}\). The submission proves by induction that
+
+\(B^{k} = S^{- 1}C^{k}S\)
+
+for each integer \(k \geq 1\). The inductive step is
+
+\(B^{k + 1} = B^{k}B = \left( {S^{- 1}C^{k}S} \right)\left( {S^{- 1}CS} \right) = S^{- 1}C^{k + 1}S.\)
+
+Thus \(B^{k}\) and \(C^{k}\) are similar.
+
+For the false kernel claim, it takes
+
+\(A = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0
+\end{pmatrix},\)
+
+\(\mathcal{E} = \left( {\begin{pmatrix}
+1 \\
+0 \\
+0
+\end{pmatrix},\begin{pmatrix}
+0 \\
+1 \\
+0
+\end{pmatrix},\begin{pmatrix}
+0 \\
+0 \\
+1
+\end{pmatrix}} \right),\)
+
+\(\mathcal{B} = \left( {\begin{pmatrix}
+0 \\
+1 \\
+0
+\end{pmatrix},\begin{pmatrix}
+1 \\
+0 \\
+0
+\end{pmatrix},\begin{pmatrix}
+0 \\
+0 \\
+1
+\end{pmatrix}} \right).\)
+
+It records
+
+\(\lbrack A\rbrack_{\mathcal{E}} = A,\quad\lbrack A\rbrack_{\mathcal{B}} = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 1 & 1
+\end{pmatrix},\)
+
+but
+
+\(\text{ker}\left( \lbrack A\rbrack_{\mathcal{E}} \right) = \left\{ r\begin{pmatrix}
+0 \\
+0 \\
+1
+\end{pmatrix}\  \middle| \ r \in \mathbb{R} \right\},\)
+
+\(\text{ker}\left( \lbrack A\rbrack_{\mathcal{B}} \right) = \left\{ r\begin{pmatrix}
+0 \\
+1 \\
+{- 1}
+\end{pmatrix}\  \middle| \ r \in \mathbb{R} \right\}.\)
+
+For equal nullities, rank-nullity gives
+
+\(\text{dim}\left( {\text{ker}\ B} \right) = n - \text{rank}(B),\quad\text{dim}\left( {\text{ker}\ C} \right) = n - \text{rank}(C).\)
+
+The page proves \(\text{rank}\left( {MN} \right) \leq \text{rank}(N)\) from \(\text{ker}\ N \subseteq \text{ker}\left( {MN} \right)\), the analogous bound for \(M\) by transposition, and equality \(\text{rank}\left( {MN} \right) = \text{rank}(N)\) when \(M\) is invertible. Since \(B = S^{- 1}CS\), \(\text{rank}(B) = \text{rank}(C)\), so the kernel dimensions agree.
+
+\section{Problem 4}
+
+For \(T:U\rightarrow W\), bases \(\mathcal{B} = \left( {u_{1},\ldots,u_{k}} \right)\) and \(\mathcal{C} = \left( {w_{1},\ldots,w_{d}} \right)\), define
+
+\(T'\left( \lbrack u\rbrack_{\mathcal{B}} \right) = \lbrack w\rbrack_{\mathcal{C}}\quad\text{whenever}\quad T(u) = w.\)
+
+The source diagram verifies
+
+\(T' \circ L_{\mathcal{B}}(u) = T'\left( \lbrack u\rbrack_{\mathcal{B}} \right) = \lbrack w\rbrack_{\mathcal{C}} = L_{\mathcal{C}} \circ T(u),\)
+
+hence \(T' \circ L_{\mathcal{B}} = L_{\mathcal{C}} \circ T\). Thus
+
+\(\left\lbrack {T(u)} \right\rbrack_{\mathcal{C}} = \lbrack T\rbrack_{\mathcal{B},\mathcal{C}}\lbrack u\rbrack_{\mathcal{B}}.\)
+
+For \(u = a_{1}u_{1} + \ldots + a_{k}u_{k}\),
+
+\(\left\lbrack {T(u)} \right\rbrack_{\mathcal{C}} = a_{1}\left\lbrack {T\left( u_{1} \right)} \right\rbrack_{\mathcal{C}} + \ldots + a_{{k{\lbrack{T{(u_{k})}}\rbrack}}_{\mathcal{C}}},\)
+
+and therefore
+
+\(\lbrack T\rbrack_{\mathcal{B},\mathcal{C}} = \left( {\left\lbrack {T\left( u_{1} \right)} \right\rbrack_{\mathcal{C}}\left\lbrack {T\left( u_{2} \right)} \right\rbrack_{\mathcal{C}}\ldots\left\lbrack {T\left( u_{k} \right)} \right\rbrack_{\mathcal{C}}} \right).\)
+
+\section{Problem 5}
+
+For \(f_{1} = \sin x\), \(f_{2} = \cos x\), \(f_{3} = e^{x}\):
+
+\(T\left( f_{1} \right) = x - \frac{x^{3}}{6},\quad T\left( f_{2} \right) = 1 - \frac{x^{2}}{2},\)
+
+\(T\left( f_{3} \right) = 1 + x + \frac{x^{2}}{2} + \frac{x^{3}}{6}.\)
+
+The source chooses \(\mathcal{C} = \left( {1,x,\frac{x^{2}}{2},\frac{x^{3}}{6}} \right)\). For \(\mathcal{B} = \left( {f_{1} + f_{2},f_{1} - f_{2},f_{3} + f_{1}} \right)\) it computes
+
+\(\left\lbrack {T\left( {f_{1} + f_{2}} \right)} \right\rbrack_{\mathcal{C}} = \begin{pmatrix}
+1 \\
+1 \\
+{- 1} \\
+{- 1}
+\end{pmatrix},\)
+
+\(\left\lbrack {T\left( {f_{1} - f_{2}} \right)} \right\rbrack_{\mathcal{C}} = \begin{pmatrix}
+{- 1} \\
+1 \\
+1 \\
+{- 1}
+\end{pmatrix},\)
+
+\(\left\lbrack {T\left( {f_{3} + f_{1}} \right)} \right\rbrack_{\mathcal{C}} = \begin{pmatrix}
+1 \\
+2 \\
+1 \\
+0
+\end{pmatrix},\)
+
+so
+
+\(\lbrack T\rbrack_{\mathcal{B},\mathcal{C}} = \begin{pmatrix}
+1 & {- 1} & 1 \\
+1 & 1 & 2 \\
+{- 1} & 1 & 1 \\
+{- 1} & {- 1} & 0
+\end{pmatrix}.\)
+
+\section{Problem 6}
+
+Let \(A = \begin{pmatrix}
+{- 6} & {- 30} \\
+{- 30} & 19
+\end{pmatrix}\) and \(V = \text{span}\left( \begin{pmatrix}
+3 \\
+2
+\end{pmatrix} \right)\). For \(v = a\begin{pmatrix}
+3 \\
+2
+\end{pmatrix}\),
+
+\(Av = a\begin{pmatrix}
+{- 78} \\
+{- 52}
+\end{pmatrix} = - 26a\begin{pmatrix}
+3 \\
+2
+\end{pmatrix} \in V.\)
+
+\(V^{\perp} = \left\{ r\begin{pmatrix}
+{- 2} \\
+3
+\end{pmatrix}\  \middle| \ r \in \mathbb{R} \right\}\), and
+
+\(A\begin{pmatrix}
+{- 2r} \\
+{3r}
+\end{pmatrix} = r\begin{pmatrix}
+{- 78} \\
+117
+\end{pmatrix} = - 39r\begin{pmatrix}
+{- 2} \\
+3
+\end{pmatrix} \in V^{\perp}.\)
+
+With \(\mathcal{B} = \left( {\begin{pmatrix}
+{- 2} \\
+3
+\end{pmatrix},\begin{pmatrix}
+3 \\
+2
+\end{pmatrix}} \right)\),
+
+\(\lbrack T\rbrack_{\mathcal{B}} = \begin{pmatrix}
+26 & 0 \\
+0 & {- 39}
+\end{pmatrix},\quad\left\lbrack T^{10} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+26^{10} & 0 \\
+0 & 39^{10}
+\end{pmatrix}.\)
+
+The source uses
+
+\(S_{\mathcal{B}\rightarrow\mathcal{E}} = \begin{pmatrix}
+{- 2} & 3 \\
+3 & 2
+\end{pmatrix},\quad S_{\mathcal{B}\rightarrow\mathcal{E}}^{- 1} = \begin{pmatrix}
+\frac{2}{13} & {- \frac{3}{13}} \\
+{- \frac{3}{13}} & {- \frac{2}{13}}
+\end{pmatrix}\)
+
+to obtain
+
+\(\left\lbrack T^{10} \right\rbrack_{\mathcal{E}} = \begin{pmatrix}
+\frac{4 \cdot 26^{10} + 9 \cdot 39^{10}}{13} & \frac{- 6 \cdot 26^{10} + 6 \cdot 39^{10}}{13} \\
+\frac{- 6 \cdot 26^{10} + 6 \cdot 39^{10}}{13} & \frac{9 \cdot 26^{10} + 4 \cdot 39^{10}}{13}
+\end{pmatrix}.\)

@@ -1,0 +1,265 @@
+% LaTeX companion of hw04.typ. Both formats are editable.
+\chapter{Homework 4}\label{homework-4}
+
+\section{Problem 1}\label{hw04-problem-1}
+
+Let \(\mathit{X}\) be a random variable with values in \(\lbrack 0, + \infty\rbrack\) such that \(\mathbb{E}\lbrack\mathit{X}\rbrack = 0\). Explain why \(\mathit{X} < \infty\) almost surely and show that \(\mathit{X} = 0\) almost surely.
+
+\begin{proof}
+
+Since \(\mathit{X} \geq 0\) and \(\mathbb{E}\lbrack\mathit{X}\rbrack = 0 < \infty\), by Markov's inequality, for any \(\mathit{t} > 0\),
+
+\[\mathbb{P}(\mathit{X} \geq \mathit{t}) \leq \frac{\mathbb{E}\lbrack\mathit{X}\rbrack}{\mathit{t}} = 0\]
+
+Hence \(\mathbb{P}(\mathit{X} \geq \mathit{t}) = 0\) for all \(\mathit{t} > 0\). In particular,
+
+\[\mathbb{P}(\mathit{X} = + \infty) = \lim\limits_{\mathit{t}\rightarrow + \infty}\mathbb{P}(\mathit{X} \geq \mathit{t}) = \lim\limits_{\mathit{t}\rightarrow + \infty}0 = 0\]
+
+that is, \(\mathit{X} < \infty\) almost surely.
+
+Also notice that
+
+\[\left\{ {\mathit{X} > 0} \right\} = \bigcup\limits_{\mathit{n} = 1}^{\infty}\left\{ {\mathit{X} \geq \frac{1}{\mathit{n}}} \right\}\]
+
+and by countable subadditivity,
+
+\[\mathbb{P}(\mathit{X} > 0) \leq \sum\limits_{\mathit{n} = 1}^{\infty}\mathbb{P}\left( {\mathit{X} \geq \frac{1}{\mathit{n}}} \right) = 0\]
+
+Thus \(\mathbb{P}(\mathit{X} > 0) = 0\). And since \(\mathit{X}\) takes values in \(\lbrack 0, + \infty\rbrack\), we have
+
+\[\mathbb{P}(\left\{ {\mathit{X} = 0} \right\}) = \mathbb{P}(\left\{ {\mathit{X} \leq 0} \right\}) = 1 - \mathbb{P}(\left\{ {\mathit{X} > 0} \right\}) = 1\]
+
+, and
+
+This finishes the proof that \(\mathit{X} < \infty\) a.s. and \(\mathit{X} = 0\) a.s.
+
+\end{proof}
+
+\section{Problem 2}\label{hw04-problem-2}
+
+Let \(\mathit{X}\) be a random variable with \(\mathbb{E}\lbrack\mathit{X}\rbrack = 3\) and \(\mathbb{E}\lbrack\mathit{X}^{2}\rbrack = 13\). Show that:
+
+\[\mathbb{P}( - 2 \leq \mathit{X} \leq 8) \geq \frac{21}{25}\]
+
+\begin{qlsolution}{Solution}
+
+Compute the variance of \(\mathit{X}\):
+
+\[Var(\mathit{X}) = \mathbb{E}\lbrack\mathit{X}^{2}\rbrack - (\mathbb{E}\lbrack\mathit{X}\rbrack)^{2} = 13 - 3^{2} = 4\]
+
+Observe that
+
+\[\left. \mathbb{P}( - 2 \leq \mathit{X} \leq 8) = \mathbb{P}( \middle| \mathit{X} - 3 \middle| \leq 5) \right.\]
+
+By Chebyshev's inequality,
+
+\[\left. \mathbb{P}( \middle| \mathit{X} - 3 \middle| \geq 5) \leq \frac{Var(\mathit{X})}{5^{2}} = \frac{4}{25} \right.\]
+
+Therefore,
+
+\[\left. \mathbb{P}( \middle| \mathit{X} - 3 \middle| \leq 5) = 1 - \mathbb{P}( \middle| \mathit{X} - 3 \middle| \geq 5) \geq 1 - \frac{4}{25} = \frac{21}{25} \right.\]
+
+Thus,
+
+\[\mathbb{P}( - 2 \leq \mathit{X} \leq 8) \geq \frac{21}{25}\]
+
+\end{qlsolution}
+
+\section{Problem 3}\label{hw04-problem-3}
+
+Let \(\mathit{X},\mathit{Y}\) be two random variables such that \(\mathbb{P}(\mathit{Y} = 1) = 1/5,\mathbb{P}(\mathit{Y} = 2) = 3/5\) and \(\mathbb{P}(\mathit{Y} = 3) = 1/5\). In addition
+
+\[\left. \mathit{X} \middle| \left\{ {\mathit{Y} = 1} \right\} \sim \text{Exp}(2),\mathit{X} \middle| \left\{ {\mathit{Y} = 2} \right\} \sim \text{Exp}(3)\text{and}\ \mathit{X} \mid \left\{ {\mathit{Y} = 3} \right\} = 7. \right.\]
+
+Compute the moment generating function of \(\mathit{X}\).
+
+\begin{qlsolution}{Solution}
+
+Compute each conditional moment generating function:
+
+For \(\mathit{X} \mid \left\{ {\mathit{Y} = 1} \right\} \sim \text{Exp}(2)\)
+
+\[\mathbb{E}\lbrack\mathit{e}^{\mathit{t}\mathit{X}} \mid \mathit{Y} = 1\rbrack = \frac{2}{2 - \mathit{t}},\quad\mathit{t} < 2\]
+
+For \(\mathit{X} \mid \left\{ {\mathit{Y} = 2} \right\} \sim \text{Exp}(3)\)
+
+\[\mathbb{E}\lbrack\mathit{e}^{\mathit{t}\mathit{X}} \mid \mathit{Y} = 2\rbrack = \frac{3}{3 - \mathit{t}},\quad\mathit{t} < 3\]
+
+For \(\mathit{X} \mid \left\{ {\mathit{Y} = 3} \right\} = 7\),
+
+\[\mathbb{E}\lbrack\mathit{e}^{\mathit{t}\mathit{X}} \mid \mathit{Y} = 3\rbrack = \mathit{e}^{7\mathit{t}}\]
+
+Then we use the law of total expectation conditioning on \(\mathit{Y}\): for any \(\mathit{t}\) such that the expectations below are finite, we have
+
+\[\begin{matrix}
+{\mathit{M}_{\mathit{X}}(\mathit{t}) = \mathbb{E}\lbrack\mathit{e}^{\mathit{t}\mathit{X}}\rbrack} & {= \sum\limits_{\mathit{y} = 1}^{3}\mathbb{E}\lbrack\mathit{e}^{\mathit{t}\mathit{X}} \mid \mathit{Y} = \mathit{y}\rbrack\mathbb{P}(\mathit{Y} = \mathit{y})} \\
+ & {= \frac{1}{5} \cdot \frac{2}{2 - \mathit{t}} + \frac{3}{5} \cdot \frac{3}{3 - \mathit{t}} + \frac{1}{5}\mathit{e}^{7\mathit{t}}} \\
+ & {= \frac{2}{5(2 - \mathit{t})} + \frac{9}{5(3 - \mathit{t})} + \frac{1}{5}\mathit{e}^{7\mathit{t}},\quad\mathit{t} < 2}
+\end{matrix}\]
+
+So the moment generating function of \(\mathit{X}\) is
+
+\[\mathit{M}_{\mathit{X}}(\mathit{t}) = \frac{2}{5(2 - \mathit{t})} + \frac{9}{5(3 - \mathit{t})} + \frac{1}{5}\mathit{e}^{7\mathit{t}},\quad\mathit{t} < 2\]
+
+\end{qlsolution}
+
+\section{Problem 4}\label{hw04-problem-4}
+
+For any \(\mathit{n} \in \mathbb{N}\) with \(\mathit{n} \geq 1\) we set \(\mathit{a}_{\mathit{n}} = 1/\left( {2\mathit{n}^{2}} \right)\). Consider the sequence of random variables \(\left( \mathit{X}_{\mathit{n}} \right)_{\mathit{n} \in \mathbb{N}}\) with
+
+\[\mathit{X}_{\mathit{n}} = \left\{ \begin{matrix}
+{0,} & {\text{with probability}\ \mathit{a}_{\mathit{n}}} \\
+{1,} & {\text{with probability}\ 1 - 2\mathit{a}_{\mathit{n}}} \\
+{\mathit{n}^{2},} & {\text{with probability}\ \mathit{a}_{\mathit{n}}}
+\end{matrix} \right.\]
+
+Check if \(\left( \mathit{X}_{\mathit{n}} \right)\) converges in probability and if \(\left( \mathit{X}_{\mathit{n}} \right)\) converges in \(\mathit{L}^{1}\).
+
+\begin{qlsolution}{Solution}
+
+We first show that \(\mathit{X}_{\mathit{n}}\rightarrow 1\) in probability.
+
+Let \(\mathit{\varepsilon} > 0\).\\
+For \(\mathit{n}\) large enough s.t. \(\mathit{n}^{2} - 1 > \mathit{\varepsilon}\), \(\left. |\mathit{X}_{\mathit{n}} - 1 \middle| > \mathit{\varepsilon} \right.\) iff \(\mathit{X}_{\mathit{n}} = 0\) or \(\mathit{X}_{\mathit{n}} = \mathit{n}^{2}\). Therefore,
+
+\[\left. \mathbb{P}( \middle| \mathit{X}_{\mathit{n}} - 1 \middle| > \mathit{\varepsilon}) = \mathbb{P}(\mathit{X}_{\mathit{n}} = 0) + \mathbb{P}(\mathit{X}_{\mathit{n}} = \mathit{n}^{2}) = \mathit{a}_{\mathit{n}} + \mathit{a}_{\mathit{n}} = 2\mathit{a}_{\mathit{n}} = \frac{1}{\mathit{n}^{2}} \right.\]
+
+Since \(\frac{1}{\mathit{n}^{2}}\rightarrow 0\), we have:
+
+\[\left. \lim\limits_{\mathit{n}\rightarrow\infty}\ \mathbb{P}( \middle| \mathit{X}_{\mathit{n}} - 1 \middle| > \mathit{\varepsilon}) = 0 \right.\]
+
+Since \(\mathit{\varepsilon} > 0\) is arbitrary, we conclude that
+
+\[\mathit{X}_{\mathit{n}}\overset{\mathbb{P}}{\rightarrow}1\]
+
+We then show that \(\mathit{X}_{\mathit{n}}\) does not converge to \(1\) in \(\mathit{L}^{1}\).
+
+We compute
+
+\[\begin{matrix}
+\left. \mathbb{E}\lbrack \middle| \mathit{X}_{\mathit{n}} - 1 \middle| \rbrack \right. & \left. = \middle| 0 - 1 \middle| \mathit{a}_{\mathit{n}} + \middle| 1 - 1 \middle| (1 - 2\mathit{a}_{\mathit{n}}) + \middle| \mathit{n}^{2} - 1 \middle| \mathit{a}_{\mathit{n}} \right. \\
+ & {= \mathit{a}_{\mathit{n}} + (\mathit{n}^{2} - 1)\mathit{a}_{\mathit{n}}} \\
+ & {= \mathit{n}^{2}\mathit{a}_{\mathit{n}} = \frac{1}{2}\operatorname{\rightarrow\not{}}0}
+\end{matrix}\]
+
+Hence
+
+\[X_n \not\xrightarrow{L^1} 1\]
+
+\end{qlsolution}
+
+\section{Problem 5}\label{hw04-problem-5}
+
+Let \(\mathit{X}\) and \(\mathit{Y}\) be independent random variables with densities
+
+\[\begin{matrix}
+{\mathit{f}_{\mathit{X}}(\mathit{x}) = \{ 2\mathit{x},} & {0 \leq \mathit{x} \leq 1,} \\
+{0,} & {\text{otherwise}\quad\mathit{f}_{\mathit{Y}}(\mathit{y}) = \left\{ \begin{matrix}
+{1/2,} & {0 \leq \mathit{y} \leq 2} \\
+{0,} & \text{otherwise}
+\end{matrix} \right.}
+\end{matrix}\]
+
+Find the distribution function of the sum \(\mathit{Z} = \mathit{X} + \mathit{Y}\).
+
+\begin{qlsolution}{Solution}
+
+Since \(\mathit{X}\) and \(\mathit{Y}\) are independent, the density of \(\mathit{Z} = \mathit{X} + \mathit{Y}\) is given by convolution:
+
+\[\mathit{f}_{\mathit{Z}}(\mathit{z}) = \int_{- \infty}^{\infty}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{f}_{\mathit{Y}}(\mathit{z} - \mathit{x})\,\mathit{d}\mathit{x}\]
+
+where we know
+
+\[\mathit{f}_{\mathit{X}}(\mathit{x}) = 2\mathit{x}\mathbf{1}_{\lbrack 0,1\rbrack}(\mathit{x}),\quad\mathit{f}_{\mathit{Y}}(\mathit{y}) = \frac{1}{2}\mathbf{1}_{\lbrack 0,2\rbrack}(\mathit{y})\]
+
+Thus
+
+\[\begin{matrix}
+{\mathit{f}_{\mathit{Z}}(\mathit{z})} & {= \int_{- \infty}^{\infty}2\mathit{x} \cdot \frac{1}{2}\mathbf{1}_{\lbrack 0,1\rbrack}(\mathit{x})\mathbf{1}_{\lbrack 0,2\rbrack}(\mathit{z} - \mathit{x})\,\mathit{d}\mathit{x}} \\
+ & {= \int_{- \infty}^{\infty}\mathit{x}(\mathbf{1}_{\lbrack 0,1\rbrack}(\mathit{x}))(\mathbf{1}_{\lbrack 0,2\rbrack}(\mathit{z} - \mathit{x}))\,\mathit{d}\mathit{x}} \\
+ & {= \int_{\max(0,\mathit{z} - 2)}^{\min(1,\mathit{z})}\mathit{x}\,\mathit{d}\mathit{x}}
+\end{matrix}\]
+
+Compute this piecewise: If \(0 \leq \mathit{z} \leq 1\), then the interval is \(\lbrack 0,\mathit{z}\rbrack\), so
+
+\[\mathit{f}_{\mathit{Z}}(\mathit{z}) = \int_{0}^{\mathit{z}}\mathit{x}\,\mathit{d}\mathit{x} = \frac{\mathit{z}^{2}}{2}\]
+
+If \(1 \leq \mathit{z} \leq 2\), then the interval is \(\lbrack 0,1\rbrack\), so
+
+\[\mathit{f}_{\mathit{Z}}(\mathit{z}) = \int_{0}^{1}\mathit{x}\,\mathit{d}\mathit{x} = \frac{1}{2}\]
+
+If \(2 \leq \mathit{z} \leq 3\), then the interval is \(\lbrack\mathit{z} - 2,1\rbrack\), so
+
+\[\mathit{f}_{\mathit{Z}}(\mathit{z}) = \int_{\mathit{z} - 2}^{1}\mathit{x}\,\mathit{d}\mathit{x} = \frac{1 - (\mathit{z} - 2)^{2}}{2}\]
+
+Outside \(\lbrack 0,3\rbrack\), clearly \(\mathit{f}_{\mathit{Z}}(\mathit{z}) = 0\). Therefore,
+
+\[\mathit{f}_{\mathit{Z}}(\mathit{z}) = \left\{ \begin{matrix}
+{0,} & {\mathit{z} < 0,} \\
+{\frac{\mathit{z}^{2}}{2},} & {0 \leq \mathit{z} \leq 1,} \\
+{\frac{1}{2},} & {1 \leq \mathit{z} \leq 2,} \\
+{\frac{1 - (\mathit{z} - 2)^{2}}{2},} & {2 \leq \mathit{z} \leq 3,} \\
+{0,} & {\mathit{z} > 3}
+\end{matrix} \right.\]
+
+Now we integrate to get the cdf. For \(\mathit{z} < 0\), \(\mathit{F}_{\mathit{Z}}(\mathit{z}) = 0\).
+
+For \(0 \leq \mathit{z} \leq 1\),
+
+\[\mathit{F}_{\mathit{Z}}(\mathit{z}) = \int_{0}^{\mathit{z}}\frac{\mathit{t}^{2}}{2}\,\mathit{d}\mathit{t} = \frac{\mathit{z}^{3}}{6}\]
+
+For \(1 \leq \mathit{z} \leq 2\),
+
+\[\mathit{F}_{\mathit{Z}}(\mathit{z}) = \mathit{F}_{\mathit{Z}}(1) + \int_{1}^{\mathit{z}}\frac{1}{2}\,\mathit{d}\mathit{t} = \frac{1}{6} + \frac{\mathit{z} - 1}{2} = \frac{\mathit{z}}{2} - \frac{1}{3}\]
+
+For \(2 \leq \mathit{z} \leq 3\),
+
+\[\mathit{F}_{\mathit{Z}}(\mathit{z}) = \mathit{F}_{\mathit{Z}}(2) + \int_{2}^{\mathit{z}}\frac{1 - (\mathit{t} - 2)^{2}}{2}\,\mathit{d}\mathit{t} = \frac{2}{3} + \frac{\mathit{z} - 2}{2} - \frac{(\mathit{z} - 2)^{3}}{6}\]
+
+And for \(\mathit{z} \geq 3\), \(\mathit{F}_{\mathit{Z}}(\mathit{z}) = 1\).
+
+Hence the cdf of \(\mathit{Z} = \mathit{X} + \mathit{Y}\) is
+
+\[\mathit{F}_{\mathit{Z}}(\mathit{z}) = \left\{ \begin{matrix}
+{0,} & {\mathit{z} < 0,} \\
+{\frac{\mathit{z}^{3}}{6},} & {0 \leq \mathit{z} \leq 1,} \\
+{\frac{\mathit{z}}{2} - \frac{1}{3},} & {1 \leq \mathit{z} \leq 2,} \\
+{\frac{2}{3} + \frac{\mathit{z} - 2}{2} - \frac{(\mathit{z} - 2)^{3}}{6},} & {2 \leq \mathit{z} \leq 3,} \\
+{1,} & {\mathit{z} \geq 3}
+\end{matrix} \right.\]
+
+\end{qlsolution}
+
+\section{Problem 6}\label{hw04-problem-6}
+
+Let \(\mathit{a}_{1},\mathit{a}_{2},\ldots,\mathit{a}_{\mathit{n}}\) and \(\mathit{\lambda}\) be positive constants and let \(\left\{ {\mathit{X}_{\mathit{i}}:1 \leq \mathit{i} \leq \mathit{n}} \right\}\) be independent random variables with
+
+\[\mathit{X}_{\mathit{i}} \sim \Gamma\left( {\mathit{a}_{\mathit{i}},\mathit{\lambda}} \right),\quad\mathit{i} = 1,2,\ldots,\mathit{n}\]
+
+(i.e., with the same second parameter \(\mathit{\lambda}\) ). Show that \(\mathit{X}_{1} + \mathit{X}_{2} + \cdots + \mathit{X}_{\mathit{n}} \sim \Gamma(\mathit{a},\mathit{\lambda})\), with \(\mathit{a} = \sum_{\mathit{i} = 1}^{\mathit{n}}\mathit{a}_{\mathit{i}}\).
+
+\begin{proof}
+
+Let
+
+\[\mathit{S}_{\mathit{n}} := \mathit{X}_{1} + \mathit{X}_{2} + \cdots + \mathit{X}_{\mathit{n}},\quad\mathit{a} = \sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathit{a}_{\mathit{i}}\]
+
+We need to show that \(\mathit{S}_{\mathit{n}} \sim \Gamma(\mathit{a},\mathit{\lambda})\).
+
+Since \(\mathit{X}_{\mathit{i}} \sim \Gamma(\mathit{a}_{\mathit{i}},\mathit{\lambda})\), its moment generating function is
+
+\[\mathit{M}_{\mathit{X}_{\mathit{i}}}(\mathit{t}) = \mathbb{E}\lbrack\mathit{e}^{\mathit{t}\mathit{X}_{\mathit{i}}}\rbrack = \left( \frac{\mathit{\lambda}}{\mathit{\lambda} - \mathit{t}} \right)^{\mathit{a}_{\mathit{i}}},\quad\mathit{t} < \mathit{\lambda}\]
+
+Since \(\mathit{X}_{1},\ldots,\mathit{X}_{\mathit{n}}\) are independent, the moment generating function of \(\mathit{S}_{\mathit{n}}\) is
+
+\[\mathit{M}_{\mathit{S}_{\mathit{n}}}(\mathit{t}) = \mathbb{E}\lbrack\mathit{e}^{\mathit{t}(\mathit{X}_{1} + \cdots + \mathit{X}_{\mathit{n}})}\rbrack = \prod\limits_{\mathit{i} = 1}^{\mathit{n}}\mathbb{E}\lbrack\mathit{e}^{\mathit{t}\mathit{X}_{\mathit{i}}}\rbrack = \prod\limits_{\mathit{i} = 1}^{\mathit{n}}\mathit{M}_{\mathit{X}_{\mathit{i}}}(\mathit{t})\]
+
+Therefore,
+
+\[\mathit{M}_{\mathit{S}_{\mathit{n}}}(\mathit{t}) = \prod\limits_{\mathit{i} = 1}^{\mathit{n}}\left( \frac{\mathit{\lambda}}{\mathit{\lambda} - \mathit{t}} \right)^{\mathit{a}_{\mathit{i}}} = \left( \frac{\mathit{\lambda}}{\mathit{\lambda} - \mathit{t}} \right)^{\sum_{\mathit{i} = 1}^{\mathit{n}}\mathit{a}_{\mathit{i}}} = \left( \frac{\mathit{\lambda}}{\mathit{\lambda} - \mathit{t}} \right)^{\mathit{a}},\quad\mathit{t} < \mathit{\lambda}\]
+
+Note this is exactly the moment generating function of a \(\Gamma(\mathit{a},\mathit{\lambda})\) random variable. Hence,
+
+\[\mathit{S}_{\mathit{n}} = \mathit{X}_{1} + \cdots + \mathit{X}_{\mathit{n}} \sim \Gamma(\mathit{a},\mathit{\lambda}),\quad\mathit{a} = \sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathit{a}_{\mathit{i}}\]
+
+\end{proof}

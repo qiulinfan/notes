@@ -1,0 +1,159 @@
+% LaTeX companion of hw10.typ. Both formats are editable.
+\section{Homework 10 --- submitted work}
+
+\chapter{Part A}
+
+The assigned exercises are 6.1: 20, 54; 6.2: 42, 50; 6.3: 14; and 7.1: 12, 18, 42.
+
+\section{6.1 Exercise 20}
+
+By the row operations shown in the submission, the determinant of the given \(k \times k\) matrix reduces to
+
+\(\det(A) = 1\)
+
+for every \(k\).
+
+\section{6.1 Exercise 54}
+
+The answer uses positivity to conclude that the determinant of the displayed \(5 \times 5\) matrix is positive, and records
+
+\(\det(A) = 1000.\)
+
+\section{6.2 Exercise 42}
+
+For a QR factorization \(A = QR\), the submission writes
+
+\(\det\left( {A^{T}A} \right) = \det\left( {R^{T}Q^{T}QR} \right) = {\det(R)}^{2},\)
+
+so the determinant is positive.
+
+\section{6.2 Exercise 50}
+
+For the matrix whose \(\left( {i,j} \right)\) entry is \(\min\left( {i,j} \right)\), repeated determinant reduction gives
+
+\(\det(A) = 1.\)
+
+\section{6.3 Exercise 14}
+
+The parallelepiped volume is found from the determinant. Since the displayed vectors are linearly dependent, the result is
+
+\(\text{volume} = 0.\)
+
+\section{7.1 Exercise 12}
+
+For
+
+\(A = \begin{pmatrix}
+2 & 0 \\
+3 & 4
+\end{pmatrix},\)
+
+the characteristic equation gives eigenvalues \(2\) and \(4\). The corresponding eigenvector directions in the work are
+
+\(\lambda = 2:\begin{pmatrix}
+{- \frac{2}{3}} \\
+1
+\end{pmatrix},\quad\lambda = 4:\begin{pmatrix}
+0 \\
+1
+\end{pmatrix}.\)
+
+Thus it diagonalizes to \(D = \begin{pmatrix}
+2 & 0 \\
+0 & 4
+\end{pmatrix}\).
+
+\section{7.1 Exercise 18}
+
+For reflection in a plane, the plane is the \(1\)-eigenspace and has dimension two; its normal direction is the \(- 1\)-eigenspace. With an eigenbasis, the submitted diagonal form is
+
+\(\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & {- 1}
+\end{pmatrix}.\)
+
+\section{7.1 Exercise 42}
+
+The matrices in \(V\) are written as
+
+\(\begin{pmatrix}
+a & b & 0 \\
+0 & c & 0 \\
+0 & d & e
+\end{pmatrix}.\)
+
+The five matrix units in positions \(\left( {1,1} \right),\left( {1,2} \right),\left( {2,2} \right),\left( {3,2} \right),\left( {3,3} \right)\) form the submitted basis, so
+
+\(\dim(V) = 5.\)
+
+\chapter{Part B}
+
+\section{Problem 1}
+
+The proof shows that an alternating bilinear form \(F\) is antisymmetric:
+
+\(F\left( {u + v,u + v} \right) = 0 = F\left( {u,v} \right) + F\left( {v,u} \right).\)
+
+Conversely, antisymmetry gives \(F\left( {u,u} \right) = 0\). Since \(F\left( {e_{1},e_{2}} \right) = 1\), bilinearity then identifies the form with the determinant:
+
+\(F\left( {\begin{pmatrix}
+a \\
+b
+\end{pmatrix},\begin{pmatrix}
+c \\
+d
+\end{pmatrix}} \right) = ad - bc.\)
+
+\section{Problem 2}
+
+Let \(M = \begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}\) and let \(T(A) = AM\). The submission verifies linearity. In the ordered basis
+
+\(\mathcal{E} = \left( {E_{11},E_{12},E_{21},E_{22}} \right),\)
+
+it computes
+
+\(\lbrack T\rbrack_{\mathcal{E}} = \begin{pmatrix}
+a & c & 0 & 0 \\
+b & d & 0 & 0 \\
+0 & 0 & a & c \\
+0 & 0 & b & d
+\end{pmatrix}.\)
+
+The determinant calculation is
+
+\(\det\left( \lbrack T\rbrack_{\mathcal{E}} \right) = \left( {ad - bc} \right)^{2},\)
+
+which agrees with the determinant in any other basis. Finally, for
+
+\(M = \begin{pmatrix}
+2 & 1 \\
+0 & 2
+\end{pmatrix},\)
+
+the only eigenvalue is \(2\), with an eigenspace of dimension \(2 < 4\) for the induced map; therefore the submitted conclusion is that \(T\) is not diagonalizable.
+
+\section{Problem 3}
+
+The construction defines \(z\) by the determinant/cross-product functional in \(\mathbb{R}^{4}\). For the standard choice \(u = e_{1}\), \(v = e_{2}\), \(w = e_{3}\), the work finds
+
+\(z = - e_{4}.\)
+
+It proves that \(z = 0\) exactly when \(u,v,w\) are linearly dependent, that \(z\) is orthogonal to each of \(u,v,w\), and that
+
+\(\det\left( {z,u,v,w} \right) = \left\| z \right\|^{2}.\)
+
+\section{Problem 4}
+
+The response uses the characteristic polynomial to find eigenvalues, and uses similarity to preserve the polynomial. It then applies the displayed eigenvector criterion to decide diagonalizability.
+
+\section{Problem 5}
+
+For a \(2 \times 2\) matrix satisfying \(A^{2} = I\), the submission separates the \(+ 1\) and \(- 1\) eigenvector cases and obtains a diagonal form. The final argument extends this to every dimension by decomposing an arbitrary vector as
+
+\(v = \frac{1}{2}\left( {v + Av} \right) + \frac{1}{2}\left( {v - Av} \right),\)
+
+where the two summands lie in the \(1\)- and \(- 1\)-eigenspaces respectively. Thus \(A\) is diagonalizable.

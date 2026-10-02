@@ -1,0 +1,25 @@
+% LaTeX companion of main.typ. Both formats are editable.
+% !TeX program = xelatex
+\documentclass{../toolchain/latex/qlnotes-native}
+\usepackage{pdflscape}
+\input{diagrams/probability-diagrams.tex}
+\title{Math 525: Probability}
+\subtitle{Typst-first course notes}
+\author{Qiulin Fan}
+\date{2026}
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents
+\mainmatter
+\input{chapters/01-combinatorics&prob_space.tex}
+
+\input{chapters/02-random-variables.tex}
+
+\input{chapters/03-joint&conditional-distribution.tex}
+
+\input{chapters/04-LLN.tex}
+
+\input{chapters/05-CLT.tex}
+
+\end{document}

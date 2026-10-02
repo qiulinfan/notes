@@ -1,0 +1,138 @@
+% LaTeX companion of hw09.typ. Both formats are editable.
+\section{Homework 9 --- submitted work}
+
+\chapter{Part A}
+
+The assigned exercises are 5.4: 27, 31; and 5.5: 15, 23, 32(a--d).
+
+\section{5.4 Exercise 27}
+
+The work observes that \(S^{\perp}\) means the least-squares error is orthogonal to \(S\). Thus, for the displayed vector, the least-squares solution is unchanged:
+
+\(x^{=}\begin{pmatrix}
+7 \\
+11
+\end{pmatrix}.\)
+
+\section{5.4 Exercise 31}
+
+For the three points \(\left( {0,3} \right),\left( {1,3} \right),\left( {1,6} \right)\), the line of best fit uses
+
+\(A = \begin{pmatrix}
+1 & 0 \\
+1 & 1 \\
+1 & 1
+\end{pmatrix},\quad b = \begin{pmatrix}
+3 \\
+3 \\
+6
+\end{pmatrix}.\)
+
+The normal equations recorded in the submission are
+
+\(\begin{pmatrix}
+3 & 2 \\
+2 & 2
+\end{pmatrix}\begin{pmatrix}
+c_{0} \\
+c_{1}
+\end{pmatrix} = \begin{pmatrix}
+12 \\
+9
+\end{pmatrix},\)
+
+and solving them gives \(c_{0} = 3\) and \(c_{1} = \frac{3}{2}\). Hence the submitted line is
+
+\(f(x) = 3 + 3\frac{x}{2}.\)
+
+\section{5.5 Exercise 15}
+
+For the bilinear expression in the exercise, symmetry requires \(b = c\). The submitted positive-definiteness test yields the additional condition
+
+\(d > b^{2}.\)
+
+\section{5.5 Exercise 23}
+
+With
+
+\(\angle\left( {f,g} \right) = \frac{1}{2}\left( {f(0)g(0) + f(1)g(1)} \right),\)
+
+the answer verifies the inner-product properties and gives the orthonormal basis
+
+\(1,\quad 2x - 1.\)
+
+\section{5.5 Exercise 32}
+
+For the weighted integral inner product
+
+\(\angle\left( {f,g} \right) = \frac{1}{2}\int_{- 1}^{1}f(t)g(t)\, dt,\)
+
+the computation in the submitted pages records
+
+when \(n + m\) is even, and
+
+\(\angle\left( {t^{n},t^{m}} \right) = \frac{1}{n + m + 1}\)
+
+when \(n + m\) is odd. Also \(\left\| t^{n} \right\| = \sqrt{\frac{1}{2n + 1}}\). Applying Gram--Schmidt, it writes
+
+\(g_{0} = 1,\quad g_{1} = \sqrt{3}t,\quad g_{2} = \sqrt{\frac{5}{2}}\left( {3t^{2} - 1} \right),\)
+
+\(g_{3} = \frac{1}{\sqrt{\frac{4}{175}}}\left( {t^{3} - \frac{3}{5}t} \right).\)
+
+The associated polynomial sequence is recorded as
+
+\(1,\quad t,\quad\frac{3t^{2} - 1}{2},\quad\frac{5t^{3} - 3t}{2}.\)
+
+\chapter{Part B}
+
+\section{Problem 1}
+
+The submitted solution finds the plane of best fit for the three displayed points by writing its normal-equation system. Its computed coefficient vector is
+
+\(\begin{pmatrix}
+\frac{7}{3} \\
+1 \\
+{- \frac{8}{3}}
+\end{pmatrix},\)
+
+which is also plotted on the graph in the original submission.
+
+\section{Problem 2}
+
+\subsection{(a)}
+
+For (i), the proposed expression is not an inner product: the work uses
+
+\(f(x) = x^{2} - 4x + 3,\)
+
+which is nonzero while \(f(1) = f(3) = 0\). For (ii), it verifies the nonnegativity and definiteness of the sum-of-squares evaluation expression, and concludes that it is an inner product.
+
+\subsection{(b)}
+
+For (i), the weighted integral with weight \(x\) fails positive definiteness; the submission gives \(f(x) = \sin(x)\) as the counterexample. For (ii), the weight \(x^{2}\) gives the required symmetric, bilinear, positive-definite inner product.
+
+\section{Problem 3}
+
+Let
+
+\(\angle\left( {f,g} \right) = \int_{- \frac{\pi}{2}}^{\frac{\pi}{2}}f(x)g(x)\sin^{2}(x)\, dx.\)
+
+\subsection{(a)}
+
+The work finds \(\angle\left( {1,x} \right) = 0\) and \(\left\| 1 \right\| = \sqrt{\frac{\pi}{2}}\), then evaluates the remaining displayed polynomial inner products to prepare Gram--Schmidt.
+
+\subsection{(b)}
+
+The submitted orthonormalized functions are recorded approximately as
+
+\(u_{1} = \frac{2}{\sqrt{\pi}},\quad u_{2} = 0.974x,\quad u_{3} = \frac{x^{2} - 4.435}{15.8376}.\)
+
+\subsection{(c)}
+
+For \(f(x) = e^{x}\), the work records
+
+\(\text{proj}_{W{(f)}} = 1.7521u_{1} + 0.2492u_{2} - 8.1697u_{3}\)
+
+and, after expansion,
+
+\(\text{proj}_{W{(f)}} \approx 3.3472 + 0.0236x - 0.5142x^{2}.\)

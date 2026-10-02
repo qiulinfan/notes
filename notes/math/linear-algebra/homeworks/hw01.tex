@@ -1,0 +1,278 @@
+% LaTeX companion of hw01.typ. Both formats are editable.
+\section{Homework 1 --- submitted work}
+
+\begin{qlnote}{Note}
+
+Visual transcription of the personal finished submission. Source: \texttt{217-Hw-1-finished.pdf}; page references below are PDF pages.
+
+\end{qlnote}
+
+\subsection{Source p. 1 --- Exercise 20}
+
+Find the values of \(k\) for which the system has infinitely many solutions, no solution, or one solution:
+
+\(\begin{pmatrix}
+1 & 1 & {- 1} \\
+1 & 2 & 1 \\
+1 & 1 & {k^{2} - 5}
+\end{pmatrix}x = \begin{pmatrix}
+2 \\
+3 \\
+k
+\end{pmatrix}\).
+
+The submitted row reduction is \(\begin{pmatrix}
+1 & 1 & {- 1} & 2 \\
+1 & 2 & 1 & 3 \\
+1 & 1 & {k^{2} - 5} & k
+\end{pmatrix}\rightarrow\begin{pmatrix}
+1 & 1 & {- 1} & 2 \\
+0 & 1 & 2 & 1 \\
+0 & 0 & {k^{2} - 4} & {k - 2}
+\end{pmatrix}\rightarrow\begin{pmatrix}
+1 & 0 & {- 3} & 1 \\
+0 & 1 & 2 & 1 \\
+0 & 0 & {k^{2} - 4} & {k - 2}
+\end{pmatrix}\). For infinitely many solutions, the final row must be zero, so \(k^{2} - 4 = 0\) and \(k - 2 = 0\). Thus \(k = 2\).
+
+\subsection{Source p. 2 --- Exercise 20; Exercise 32 begins}
+
+For no solution, \(k^{2} - 4 = 0\) while \(k - 2 \neq 0\), hence \(k = - 2\). For one solution, \(k \neq - 2\) and \(k \neq 2\), namely \(\left( {- \infty, - 2} \right) \cup \left( {- 2,2} \right) \cup \left( {2,\infty} \right)\).
+
+Exercise 32 asks for a polynomial of degree at most two, \(f(t) = a + bt + ct^{2}\), passing through \(\left( {1,p} \right)\), \(\left( {2,q} \right)\), and \(\left( {3,r} \right)\). The submitted equations are \(a + b + c = p\), \(a + 2b + 4c = q\), and \(a + 3b + 9c = r\).
+
+\subsection{Source p. 3 --- Exercise 32}
+
+The augmented matrix is reduced as \(\begin{pmatrix}
+1 & 1 & 1 & p \\
+1 & 2 & 4 & q \\
+1 & 3 & 9 & r
+\end{pmatrix}\rightarrow\begin{pmatrix}
+1 & 1 & 1 & p \\
+0 & 1 & 3 & {q - p} \\
+0 & 2 & 8 & {r - p}
+\end{pmatrix}\), giving \(a = 3p - 3q + r\), \(b = - 5\frac{p}{2} + 4q - 3\frac{r}{2}\), and \(c = \frac{p}{2} - q + \frac{r}{2}\). Therefore a polynomial exists for all choices of \(p\), \(q\), and \(r\).
+
+\subsection{Source p. 4 --- Exercise 34}
+
+Find a polynomial of degree at most two which passes through \(\left( {1,1} \right)\) and \(\left( {2,0} \right)\) and satisfies \(\int_{1}^{2}f(t)\, dt = - 1\). The submitted system is \(a + b + c = 1\), \(a + 2b + 4c = 0\), and \(a + 3\frac{b}{2} + 7\frac{c}{3} = - 1\), with its augmented matrix set up for row reduction.
+
+\subsection{Source p. 5 --- Exercise 34; Exercise 44}
+
+The reduction for Exercise 34 ends at \(\begin{pmatrix}
+1 & 0 & 0 & 20 \\
+0 & 1 & 0 & {- 28} \\
+0 & 0 & 1 & 9
+\end{pmatrix}\), so the submitted answer is \(f(t) = 20 - 28t + 9t^{2}\).
+
+For Exercise 44, the line through \(\left( {1,1,1} \right)\) and \(\left( {3,5,0} \right)\) has direction \(\begin{pmatrix}
+2 \\
+4 \\
+{- 1}
+\end{pmatrix}\). The submitted vector equation is \(\begin{pmatrix}
+x \\
+y \\
+z
+\end{pmatrix} = \begin{pmatrix}
+1 \\
+1 \\
+1
+\end{pmatrix} + t\begin{pmatrix}
+2 \\
+4 \\
+{- 1}
+\end{pmatrix}\), or \(x = 1 + 2t\), \(y = 1 + 4t\), \(z = 1 - t\), for arbitrary \(t\). Its equations are \(2x - y = - 3\) and \(x + 2z = 3\).
+
+\subsection{Source p. 6 --- Exercise 12}
+
+The homogeneous augmented matrix recorded is \(\begin{pmatrix}
+2 & 0 & {- 3} & 0 & 7 & 7 & 0 \\
+{- 2} & 1 & 6 & 0 & {- 6} & {- 12} & 0 \\
+0 & 1 & {- 3} & 0 & 1 & 5 & 0 \\
+0 & {- 2} & 0 & 1 & 1 & 1 & 0 \\
+2 & 1 & {- 3} & 0 & 8 & 7 & 0
+\end{pmatrix}\). The first displayed operation divides the first row by \(2\) before continuing the row reduction.
+
+\subsection{Source p. 7 --- Exercise 12}
+
+The submitted reduction clears the first column, then the second column. Its displayed intermediate rows include \(\begin{pmatrix}
+1 & 0 & {- \frac{3}{2}} & 0 & \frac{7}{2} & \frac{7}{2} & 0 \\
+0 & 1 & {- 3} & 0 & 1 & 5 & 0 \\
+0 & {- 2} & 0 & 1 & 1 & 1 & 0 \\
+0 & 1 & 0 & 0 & 1 & 0 & 0
+\end{pmatrix}\), followed by clearing the remaining pivot columns.
+
+\subsection{Source p. 8 --- Exercise 12}
+
+The final reduced matrix is \(\begin{pmatrix}
+1 & 0 & 0 & 0 & \frac{7}{2} & 1 & 0 \\
+0 & 1 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & {- \frac{5}{3}} & 0 \\
+0 & 0 & 0 & 1 & 3 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{pmatrix}\). Setting \(x_{5} = t\) and \(x_{6} = r\), the submission gives \(\begin{pmatrix}
+x_{1} \\
+x_{2} \\
+x_{3} \\
+x_{4} \\
+x_{5} \\
+x_{6}
+\end{pmatrix} = \begin{pmatrix}
+{7\frac{t}{2} + r} \\
+{- t} \\
+{5\frac{r}{3}} \\
+{- 3t - r} \\
+t \\
+r
+\end{pmatrix} = t\begin{pmatrix}
+\frac{7}{2} \\
+{- 1} \\
+0 \\
+{- 3} \\
+1 \\
+0
+\end{pmatrix} + r\begin{pmatrix}
+1 \\
+0 \\
+\frac{5}{3} \\
+{- 1} \\
+0 \\
+1
+\end{pmatrix}\).
+
+\subsection{Source p. 9 --- Exercise 36}
+
+For a vector \(p\) perpendicular to \(\begin{pmatrix}
+1 \\
+3 \\
+{- 1}
+\end{pmatrix}\), let \(p = \begin{pmatrix}
+a \\
+b \\
+c
+\end{pmatrix}\). The condition is \(a + 3b - c = 0\). Setting \(b = t\) and \(c = r\) gives \(p = \begin{pmatrix}
+{- 3t + r} \\
+t \\
+r
+\end{pmatrix}\), where \(t\) and \(r\) are arbitrary real numbers.
+
+\subsection{Source p. 10 --- Exercise 44}
+
+For the traffic-flow diagram, the submitted equations are \(300 + x = 400 + y\), \(300 + w = 320 + x\), \(150 + 120 = w + z\), and \(y + z + 100 = 250\). They are rearranged as \(x - y = 100\), \(w - x = 20\), \(w + z = 270\), and \(y + z = 150\).
+
+\subsection{Source p. 11 --- Exercise 44}
+
+The submitted row reduction reaches \(\begin{pmatrix}
+1 & 0 & 0 & 1 & 270 \\
+0 & 1 & 0 & 1 & 250 \\
+0 & 0 & 1 & 1 & 150 \\
+0 & 0 & 0 & 0 & 0
+\end{pmatrix}\). The free variable is recorded as \(z = t\).
+
+\subsection{Source p. 12 --- Exercise 44}
+
+The submitted solution is \(\begin{pmatrix}
+w \\
+x \\
+y \\
+z
+\end{pmatrix} = \begin{pmatrix}
+{270 - t} \\
+{250 - t} \\
+{150 - t} \\
+t
+\end{pmatrix}\). Nonnegativity gives \(0 \leq t \leq 150\). The recorded flow ranges are \(w \in \left\lbrack {120,270} \right\rbrack\), \(x \in \left\lbrack {100,250} \right\rbrack\), \(y \in \left\lbrack {0,150} \right\rbrack\), and \(z \in \left\lbrack {0,150} \right\rbrack\).
+
+\subsection{Source p. 13 --- Problem 1(a)--(c)}
+
+(a) True: ``2 is even'' and ``3 is odd'' are true, hence their disjunction is true.
+
+(b) True: \(217 = 7 \times 31\), so the conclusion is true; an if--then statement is true regardless of the truth value of its hypothesis.
+
+(c) False: the derivative claim is true, but the submitted work states that \(\tan\left( \frac{\pi}{6} \right) = \sqrt{3}\) is false; thus the biconditional is false.
+
+\subsection{Source p. 14 --- Problem 1(d)--(e); Problem 2(a)}
+
+(d) True: the premise ``there are infinitely many even primes'' is false, since the only even prime is \(2\), so the implication is true.
+
+(e) True: each right triangle has two acute angles and every positive real number has a positive cube root; the implication is true.
+
+For Problem 2(a), the table in the submission says that a proof proves nothing for a universal statement and that an existential statement is true; a counterexample proves a universal statement false and proves nothing for an existential statement.
+
+\subsection{Source p. 15 --- Problem 2(b)--(d)}
+
+(b) True: every prime integer is either even or odd.
+
+(c) False: \(2\) is a prime which is even, so not every prime is odd; \(3\) is a prime which is odd, so not every prime is even. Hence the asserted ``or'' is false.
+
+(d) False: the submitted contradiction uses \(x = n - 1\) to refute the stated universal claim.
+
+\subsection{Source p. 16 --- Problem 2(e)--(g)}
+
+(e) True: the submitted argument chooses the integer immediately above \(x\), so there is an integer \(n > x\). {[}TODO(217-Hw-1-finished.pdf, p. 16): one handwritten bracket symbol in the displayed floor/ceiling argument is not visually unambiguous.{]}
+
+(f) True: every square is a rectangle.
+
+(g) False: \(4\) has two square roots, \(2\) and \(- 2\), which disproves the uniqueness statement.
+
+\subsection{Source p. 17 --- Problem 3}
+
+The submitted negations are:
+
+\begin{itemize}
+\tightlist
+\item
+  (a) 2 is not even and 3 is not odd.
+\item
+  (b) the Riemann hypothesis is true and 217 is prime.
+\item
+  (c) the derivative is not \(2x\) or \(\tan\left( \frac{\pi}{6} \right) \neq \sqrt{3}\).
+\item
+  (d) there are infinitely many even primes, and 10 is not even or \(10^{10}\) is not odd.
+\item
+  (e) every right triangle in \(\mathbb{R}^{2}\) has two acute angles, and some real number has no positive cube root.
+\item
+  (f) \(\forall n \in \mathbb{N}\) there exists \(x \in \mathbb{R}\) with \(x \geq n\).
+\item
+  (g) all squares are not rectangles.
+\end{itemize}
+
+\subsection{Source p. 18 --- Problem 4}
+
+The submitted converses and contrapositives are:
+
+\begin{itemize}
+\tightlist
+\item
+  (a) Converse: ``If something exists, it can think.'' Contrapositive: ``If something does not exist, it cannot think.''
+\item
+  (b) Converse: ``If \(p^{2}\) is irrational, then \(p\) is irrational.'' Contrapositive: ``If \(p^{2}\) is not rational, then \(p\) is not rational.''
+\item
+  (c) Converse: ``If \(n^{2} + 1\) is prime, then \(n\) is a natural number greater than 2 such that its Collatz sequence does not reach 1.'' The contraposition is also written in terms of \(n^{2} + 1\) not being prime and the alternatives concerning \(n\) and its Collatz sequence.
+\end{itemize}
+
+\subsection{Source p. 19 --- Problem 5}
+
+(a1) The set is all odd natural numbers. (a2) The graph is the right half of the unit circle centred at the origin, including the boundary.
+
+(b1) The submitted set notation is \texttt{\{(x,y,z)\ in\ RR\^{}3\ :\ x\^{}2+y\^{}2+z\^{}2=1\}}. (b2) The submitted set notation is \texttt{\{sqrt(2)n\ :\ n\ in\ ZZ\}}.
+
+(c) The submitted truth values are: \(\sqrt{2} \in \mathbb{R}\) true; \(\sqrt{2} \subset \mathbb{R}\) false; \texttt{\{sqrt(2)\}\ in\ RR} false; \texttt{\{sqrt(2)\}\ subset\ RR} true; \(\varnothing \in \mathbb{R}\) false; \(\varnothing \subset \mathbb{R}\) true; \(\varnothing \in \varnothing\) false; and \(\varnothing \subset \varnothing\) true.
+
+\subsection{Source p. 20 --- Problem 6(a)}
+
+The submitted lists are \texttt{1/2\ NN\ =\ \{1/2,1,3/2,2,5/2,3,...\}}, \texttt{1/3\ NN\ =\ \{1/3,2/3,1,4/3,5/3,2,...\}}, and \texttt{3NN\ =\ \{3,6,9,12,15,18,...\}}. It records \texttt{1/2\ NN\ intersect\ 1/3\ NN\ =\ NN}, and writes the union beginning \texttt{\{1/3,1/2,2/3,1,4/3,3/2,...\}}. It also gives \texttt{1/2\ NN\ without\ 1/3\ NN\ =\ \{1/2,3/2,5/2,7/2,9/2,11/2,...\}} and \texttt{(3NN)\^{}c\ =\ NN\ without\ 3NN\ =\ \{1,2,4,5,7,8,10,...\}}.
+
+\subsection{Source p. 21 --- Problem 6(b)}
+
+The claimed least \(n\) is \(6\). For \(x \in \frac{1}{2}\mathbb{N} \cup \frac{1}{3}\mathbb{N}\), the submission writes \(x = \frac{3m + 2p}{6}\) (with one of \(m,p\) allowed to be zero), proving inclusion in \(\frac{1}{6}\mathbb{N}\). It then rules out \(n = 1,3,5\) because \(\frac{1}{2}\) is not in \(\frac{1}{n}\mathbb{N}\), and \(n = 2,4\) because \(\frac{1}{3}\) is not in \(\frac{1}{n}\mathbb{N}\).
+
+\subsection{Source p. 22 --- Problem 7}
+
+Let \(F\left( {x,t} \right)\) mean ``you can fool \(x\) at time \(t\).'' The submitted formalization of the recreational statement is \(\left( {\exists t\forall xF\left( {x,t} \right)} \right) \land \left( {\exists x\forall tF\left( {x,t} \right)} \right) \land \neg\left( {\forall t\forall xF\left( {x,t} \right)} \right)\).
+
+\subsection{Source p. 23 --- Problem 7}
+
+Applying De Morgan's law, the submitted negation is \(\left( {\forall t\exists x\neg F\left( {x,t} \right)} \right) \vee \left( {\forall x\exists t\neg F\left( {x,t} \right)} \right) \vee \left( {\forall t\forall xF\left( {x,t} \right)} \right)\).
+
+The accompanying English reads: ``for all time there are some people you cannot fool, or for some time you can fool no people in the world, or for all time you can fool all people. (You can at least achieve one of three things).''

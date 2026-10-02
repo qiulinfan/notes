@@ -1,0 +1,53 @@
+% LaTeX companion of 11-eigenvalues-and-eigenspaces.typ. Both formats are editable.
+\chapter{Eigenvalues and eigenspaces}
+
+\section{WS 24, p. 1: characteristic polynomial and multiplicities}
+
+\begin{theorem}{Eigenvalues are roots}
+
+The eigenvalues of \(T\) are precisely the roots of its characteristic polynomial.
+
+\end{theorem}
+
+简明 proof: \(\lambda\) 是 \(T\) 的 eigenvalue iff \(E_{\lambda} \neq \left\{ 0 \right\}\) iff \(\text{ker}\left( {T - \lambda I} \right) \neq \left\{ 0 \right\}\) iff nullity\(\left( {T - \lambda I} \right) > 0\) iff \(\text{rank}\left( {T - \lambda I} \right) < n\) iff \(T - \lambda I\) 不可逆 iff \(\text{det}\left( {T - \lambda I} \right) = 0\). Thus \(\lambda\) is a root of \(\text{det}\left( {T - \lambda I} \right) = 0\).
+
+\begin{theorem}{Distinct-eigenvalue eigenspaces}
+
+\(\forall x \in E_{\lambda_{1}}\) 且 \(x \neq 0\), and \(y \in E_{\lambda_{2}}\) 且 \(y \neq 0\), if \(\lambda_{1} \neq \lambda_{2}\), then \(x,y\) are linearly independent.
+
+\end{theorem}
+
+因而 eigenbases of distinct eigenspaces have linearly independent union, and if \(\sum_{i}\text{dim}\left( E_{\lambda_{i}} \right) = \text{dim}V\), that union is an eigenbasis of \(V\) for \(T\).
+
+\begin{theorem}{Geometric and algebraic multiplicity}
+
+For eigenvalue \(\lambda\), \(\text{gem}(\lambda) \leq \text{alm}(\lambda)\).
+
+\end{theorem}
+
+Let \(A \in \mathbb{R}^{n \times n}\), let \(\lambda\) be an eigenvalue and \(\text{gem}(\lambda) = m\). Let \(\left( {v_{1},\ldots,v_{m}} \right)\) be a basis of \(E_{\lambda}\), put \(S = \begin{pmatrix}
+v_{1} & \ldots & v_{m}
+\end{pmatrix}\), and define \(B = S^{- 1}AS\). Then for \(1 \leq i \leq m\),
+
+\[Be_{i} = S^{- 1}ASe_{i} = S^{- 1}Av_{i} = S^{- 1}\lambda v_{i} = \lambda e_{i}.\]
+
+Therefore
+
+\[B = \begin{pmatrix}
+{\lambda I_{m}} & P \\
+0 & Q
+\end{pmatrix},\]
+
+so
+
+\[f_{A{(x)}} = f_{B{(x)}} = \text{det}\left( {B - xI_{n}} \right) = \left( {x - \lambda} \right)^{m}f_{Q{(x)}},\]
+
+and \(\text{alm}(\lambda) \geq m\).
+
+\begin{theorem}{Degree of the characteristic polynomial}
+
+For \(T:V\rightarrow V\), \(\chi_{T{(x)}}\) has degree \(\text{dim}V\).
+
+\end{theorem}
+
+This is the corollary of the preceding two theorems: if \(T\) has \(n\) different eigenvalues, then \(\sum_{i}\text{alm}\left( \lambda_{i} \right) \leq \text{dim}V\). Proof: 见 P9.

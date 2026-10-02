@@ -1,0 +1,145 @@
+% LaTeX companion of practice_problems.typ. Both formats are editable.
+\chapter{Use FTC and Tonelli for series}\label{use-ftc-and-tonelli-for-series}
+
+Let \(g_{k},k = 1,2,\ldots\), be a sequence of functions that are absolutely continuous on the interval \(\lbrack a,b\rbrack\). Suppose that there is a \(c \in \lbrack a,b\rbrack\), such that the series \(\sum_{k = 1}^{\infty}g_{k}(c)\) is convergent, and
+
+\[\sum\limits_{k = 1}^{\infty}\int_{a}^{b}\left| {g_{k}'(x)} \right|dx < \infty\]
+
+(a) Show that \(\sum_{k = 1}^{\infty}g_{k}(x)\) is convergent for all \(x \in \lbrack a,b\rbrack\). (b) Let \(f(x) = \sum_{k = 1}^{\infty}g_{k}(x)\). Show that \(f\) is absolutely continuous on \(\lbrack a,b\rbrack\) and
+
+\[f'(x) = \sum\limits_{k = 1}^{\infty}g_{k}'(x)\quad\text{for almost every} \in \lbrack a,b\rbrack\]
+
+
+
+\chapter{Use FTC and Holder}\label{use-ftc-and-holder}
+
+Let \(f:\lbrack 0,1\rbrack\rightarrow R\) be absolutely continuous, satisfy \(f(0) = 0\) and \(f' \in L^{2}(\lbrack 0,1\rbrack)\). Show that
+
+\[\lim\limits_{x\rightarrow 0 +}x^{- 1/2}f(x)\]
+
+exists and determine the value of this limit.
+
+\chapter{Use density of compactly supported continuous functions in a suitable space}\label{use-density-of-compactly-supported-continuous-functions-in-a-suitable-space}
+
+Let \(f\) be a real Lebesgue measurable function on the interval \(\lbrack 0,1\rbrack\) such that \(\parallel f\underset{\infty}{\parallel} < \infty\). Show that for any \(\varepsilon,\delta > 0\), there is a continuous function \(g\) on \(\lbrack 0,1\rbrack\) such that \(m\left\{ x \in \lbrack 0,1\rbrack: \middle| f(x) - g(x) \middle| > \varepsilon \right\} < \delta\).
+
+\chapter{Use one of the convergence theorems}\label{use-one-of-the-convergence-theorems}
+
+Let A be a sequence of measurable subsets of \(\lbrack 0,1\rbrack\) such that \(\inf m\left( A_{n} \right) > 0\), where \(m\) stands for the Lebesgue measure. (a) Prove that there exists \(x \in \lbrack 0,1\rbrack\) which belongs to infinitely many of the sets \(A_{n}\). (b) Does there necessarily exist a point which belongs to any of the sets \(A_{n}\), except finitely many?
+
+\chapter{How can we recover E from its indicator function}\label{how-can-we-recover-e-from-its-indicator-function}
+
+Let \(E \subset \mathbb{R}^{1}\). Show that the characteristic function \(\chi_{E}(x)\) is the limit of a sequence of continuous functions if and only if \(E\) is both \(F_{\sigma}\) and \(G_{\delta}\).
+
+\chapter{be an artisan}\label{be-an-artisan}
+
+Let \(f:\lbrack 0,1\rbrack\rightarrow\mathbb{R}\) be a positive function of bounded variation. (a) Show that if \(\inf(f) > 0\), then the function \(g(x) = 1/f(x)\) is also of bounded variation on \(\lbrack 0,1\rbrack\). (b) Give an example of a positive function \(f:\lbrack 0,1\rbrack\rightarrow\mathbb{R}\) of bounded variation such that \(g(x) = 1/f(x)\) is integrable but not of bounded variation.
+
+\chapter{\texorpdfstring{Use a suitable theorem allowing you to differentiate \(\exp(g)\) under the integral sign}{Use a suitable theorem allowing you to differentiate \textbackslash exp(g) under the integral sign}}\label{use-a-suitable-theorem-allowing-you-to-differentiate-exp-g-under-the-integral-sign}
+
+Let \(f\) be a real Lebesgue measurable function on the interval \(\lbrack 0,1\rbrack\) such that \(\parallel f\underset{\infty}{\parallel} < \infty\). For \(\alpha \in \mathbb{R}\) define a function \(g(\alpha)\) by
+
+\[g(\alpha) = \log\left\lbrack {\int_{0}^{1}\exp\lbrack\alpha f(x)\rbrack dx} \right\rbrack\]
+
+
+
+(a) Prove that the function \(g( \cdot )\) is twice continuously differentiable and that \(g^{''}(\alpha) \geq 0\) for all \(\alpha \in \mathbb{R}\), i.e. the function \(g( \cdot )\) is convex. (b) Prove that if \(f\) is a non-constant function, i.e. \(m\left\{ x \in \lbrack 0,1\rbrack: \middle| f(x) - c \middle| \neq 0 \right\} > 0\) for all constants \(c \in \mathbb{R}\), then \(g^{''}(\alpha) > 0,\alpha \in \mathbb{R}\).
+
+\chapter{Use DCT}\label{use-dct}
+
+Let
+
+\[f \in L_{1}(\lbrack 0,1\rbrack,dx)\]
+
+Find:
+
+\[\lim\limits_{n\rightarrow\infty}\frac{1}{n}\int_{0}^{1}\log\left( {1 + e^{nf(x)}} \right)dx\]
+
+
+
+\chapter{Use Egoroff and Hölder}\label{use-egoroff-and-huxf6lder}
+
+Let \(\left\{ f_{n} \right\}\) be a sequence of functions in \(L^{p}\left( \mathbb{R}^{n} \right),1 < p < \infty\), which converge almost everywhere to a function \(f \in L^{p}\left( \mathbb{R}^{n} \right)\), and suppose that there is a constant \(M\) such that \(\parallel f_{n}\underset{p}{\parallel} \leq M\) for all \(n\). Show that for every \(g \in L^{q}\left( \mathbb{R}^{n} \right),q\) the conjugate of \(p\),
+
+\[\int fg = \lim\limits_{n\rightarrow\infty}\int f_{n}g\]
+
+Is the statement true for \(p = 1\) ? (Hint: you may want to use Egorov's Theorem.)
+
+\chapter{Read up on HL}\label{read-up-on-hl}
+
+Let \(f( \cdot )\) be a locally integrable function on \(\mathbb{R}^{n}\) and \(Mf\) the corresponding Hardy-Littlewood maximal function
+
+\[\left. Mf(x) = \sup\limits_{R > 0}\frac{1}{|B(x,R)|}\int_{B(x,R)} \middle| f(y) \middle| dy,\quad x \in \mathbb{R}^{n} \right.\]
+
+where \(B(x,R)\) denotes the ball centered at \(x\) with radius \(R\). a) Show that if \(f\) is integrable on \(\mathbb{R}^{n}\) then \(\sup_{\lambda > 0}\lambda m\left\{ x \in \mathbb{R}^{n}: \middle| \ f(x)\  \middle| > \lambda \right\} < \infty\). b) Let \(f\) be the function
+
+\[f(x) = \left\{ \begin{matrix}
+{1\ } & {\text{if}\left| x \middle| < 1 \right.} \\
+{0\ } & {\text{if}\left| x \middle| \geq 1 \right.}
+\end{matrix} \right.\]
+
+Show that \(Mf\) is not integrable on \(\mathbb{R}^{n}\), but \(\sup_{\lambda > 0}\lambda m\left\{ {x \in \mathbb{R}^{n}:Mf(x) > \lambda} \right\} <\) \(\infty\).
+
+\chapter{Use density of such functions g somewhere, and then Hölder.}
+
+Fix \(1 < p < \infty\). Let \(f \in L^{p}(E)\), where \(E\) is a measurable subset of \(\mathbb{R}^{d}\). Assume that
+
+\[\int_{E}f(x)g(x)dx = 0\]
+
+for all compactly supported continuous functions \(g:\mathbb{R}^{d}\rightarrow\mathbb{R}\). Is \(f(x) = 0\) for almost every \(x\) in \(E\) ? If your answer is positive, prove it. Otherwise, given a counterexample.
+
+\chapter{Fubini and Tonelli}\label{fubini-and-tonelli}
+
+Suppose that \(f(x),x > 0\), is a real valued Lebesgue measurable square integrable function. (a) Prove that for any \(\alpha > 0\), the inequality \(\left. 2 \middle| f(z) \middle| \middle| f(y) \middle| \leq \alpha f(z)^{2} + f(y)^{2}/\alpha \right.\) holds for all \(z,y,\alpha > 0\). (b) Express the double integral
+
+\[\int_{0}^{\infty}\int_{0}^{\infty}\frac{\left. |f(z) \middle| \middle| f(y)| \right.}{y + z}dzdy\]
+
+as an integral over the region \(\left\{ {0 < z < y < \infty} \right\}\). (c) Show using your work from (a) and (b) that \(\left. |f(z) \middle| \middle| f(y) \middle| /(y + z),y,z > 0 \right.\), is integrable and
+
+\[\int_{0}^{\infty}\int_{0}^{\infty}\frac{\left. |f(z) \middle| \middle| f(y)| \right.}{y + z}dzdy \leq 4\int_{0}^{\infty}f(x)^{2}dx\]
+
+Hint: Use the inequality in (a) with \(\alpha = (z/y)^{1/2}\).
+
+\chapter{Try a very nice function f first}\label{try-a-very-nice-function-f-first}
+
+Let \(\left\{ {f_{n}(x)} \right\}\) be a sequence of continuous, strictly positive functions on \(\mathbb{R}\) which converges uniformly to the function \(f(x)\). Suppose that all the functions \(\left\{ f_{n} \right\},f\) are integrable. Is
+
+\[\lim\limits_{n\rightarrow\infty}\int f_{n}(x)dx = \int f(x)dx\]
+
+Justify your answer.
+
+\chapter{Use Lebesgue. Can you get the same equality for more sets E?}
+
+Let \(f \in L_{1}(\lbrack 0,1\rbrack,dx)\) be a function such that \(\int_{E}f(x)dx = 0\) for any measurable set \(E \subset \lbrack 0,1\rbrack\) of Lebesgue measure .99. Prove that \(f = 0\) a.e.
+
+\chapter{Lebesgue}\label{lebesgue}
+
+Let \(f \in L^{2}(I)\), for any finite interval \(I \subset \mathbb{R}\). Assume that
+
+\[\left. \int_{- a}^{a} \middle| t \middle| \middle| f(x + t) \middle| dt \geq \frac{2}{\sqrt{3}}a^{2} \right.\]
+
+for all \(a > 0\) and \(x \in \mathbb{R}\). Show that \(\left. |f(x) \middle| \geq 1 \right.\) for a.e. \(x \in \mathbb{R}\).
+
+\chapter{Integration can be a trick to prove that a nonnegative function can't be identically zero.}
+
+Let \(f\) and \(g\) be nonnegative functions in \(L^{1}(\mathbb{R})\). Suppose that each function is positive on some set of positive measure. (However, there need not be a single set of positive measure where both functions are positive.) Prove that the convolution
+
+\[h(x) = \int_{- \infty}^{\infty}f(x - t)g(t)dt\]
+
+is positive on some set of positive measure.
+
+\chapter{\texorpdfstring{Check what happens on some set \(\left\{ {f < c} \right\}\) with \(\left. c < \middle| \middle| f \middle| |_{\infty} \right.\)}{Check what happens on some set \textbackslash left\textbackslash\{ \{f \textless{} c\} \textbackslash right\textbackslash\} with \textbackslash left. c \textless{} \textbackslash middle\textbar{} \textbackslash middle\textbar{} f \textbackslash middle\textbar{} \textbar\_\{\textbackslash infty\} \textbackslash right.}}\label{check-what-happens-on-some-set-fc-with-cf_infty}
+
+Let \(E\) be a measurable subset of \(\mathbb{R}\) such that \(m(E) < \infty\). Let \(f \in L^{\infty}(E)\) with \(\parallel f\underset{\infty}{\parallel} > 0\). Show that
+
+\[\lim\limits_{n\rightarrow\infty}\frac{\parallel f\underset{n + 1}{\overset{n + 1}{\parallel}}}{\parallel f\underset{n}{\overset{n}{\parallel}}} = \parallel f\underset{\infty}{\parallel}\]
+
+Here \(\parallel f\underset{n}{\parallel} := \parallel f\underset{L^{n}(E)}{\parallel}, \parallel f\underset{n + 1}{\parallel} := \parallel f\underset{L^{n + 1}(E)}{\parallel}\).
+
+\chapter{Use distribution functions}\label{use-distribution-functions}
+
+Let \(f:\mathbb{R}\rightarrow\mathbb{R}\) be a measurable function which has the property that
+
+\[\left. m( \middle| f \middle| > \alpha) \leq \frac{1}{1 + \alpha^{3}}\quad\text{for}\ \alpha > 0 \right.\]
+
+(a) Show that \(|f|^{p}\) is integrable for \(p < 3\). (b) Give an example of a function satisfying the above for which \(|f|^{3}\) is not integrable.

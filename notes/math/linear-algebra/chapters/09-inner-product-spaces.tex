@@ -1,0 +1,73 @@
+% LaTeX companion of 09-inner-product-spaces.typ. Both formats are editable.
+\chapter{Inner-product spaces}
+
+\section{WS 20, p. 1: examples and generalized Gram--Schmidt}
+
+For the \kn{Inner product space} \(V\) of functions on \(\left\lbrack {- \pi,\pi} \right\rbrack\), \(< f,g \geq \frac{1}{\pi}\int_{- \pi}^{\pi}f(t)g(t)\, dt\):
+
+\begin{enumerate}
+\tightlist
+\item
+  \(< f,g \geq < g,f >\).
+\item
+  Linearity: \(< af_{1} + bf_{2},g \geq \frac{a}{\pi}\int_{- \pi}^{\pi}f_{1}(t)g(t)\, dt + \frac{b}{\pi}\int_{- \pi}^{\pi}f_{2}(t)g(t)\, dt = a < f_{1},g > + b < f_{2},g >\).
+\item
+  Positive definite: \(< f,f \geq \frac{1}{\pi}\int_{- \pi}^{\pi}f^{2}(t)\, dt\), and \(f^{2}(t) > 0\rightarrow < f,f \gg 0\).
+\end{enumerate}
+
+(b) 同 (a)，inner product space \(V\). (c) 不是 inner prod space: can diverge, \(\infty\) 不在 \(\mathbb{R}\).
+
+P4: find two different inner products in \(\mathbb{R}^{2}\): \(< x,y \geq x_{1}y_{1} + x_{2}y_{2}\) (dot product; here \(e_{1},e_{2}\) are orthonormal), and different weight \(< x,y \geq 3x_{1}y_{1} + 2x_{2}y_{2}\).
+
+P5: Every finite dimensional inner product space has an orthonormal basis. Take
+
+\[u_{1} = \frac{v_{1}}{\text{norm}\left( v_{1} \right)},\quad u_{2} = \frac{v_{2} - \left( {v_{2} \cdot u_{1}} \right)u_{1}}{\left\| {v_{2} - \left( {v_{2} \cdot u_{1}} \right)u_{1}} \right\|},\]
+
+and, in general,
+
+\[u_{n} = \frac{v_{n} - \sum_{j = 1}^{n - 1}\left( {v_{n} \cdot u_{j}} \right)u_{j}}{\left\| {v_{n} - \sum_{j = 1}^{n - 1}\left( {v_{n} \cdot u_{j}} \right)u_{j}} \right\|}.\]
+
+proof: generalized Gram--Schmidt.
+
+\section{WS 20, p. 2: coordinates and matrix inner products}
+
+P8: 任选 orthonormal basis \(U\) for inner product \(< \cdot , \cdot >\). Then \(\left( {V, < \cdot , \cdot >} \right)\) 上
+
+\[< x,y \geq \lbrack x\rbrack_{U} \cdot \lbrack y\rbrack_{U}.\]
+
+Indeed \(x = \sum_{i}a_{i}u_{i}\), \(y = \sum_{j}b_{j}u_{j}\), so
+
+\[< x,y \geq \sum\limits_{i}\sum\limits_{j}a_{i}b_{j} < u_{i},u_{j} > = \sum\limits_{i}a_{i}b_{i} = \lbrack x\rbrack_{U}{\cdot \lbrack y\rbrack}_{U}.\]
+
+P9: \(\forall\) inner product \(< \cdot , \cdot >\) on \(\mathbb{R}^{n}\), \(\exists\) an \(n \times n\) symmetric matrix \(A\) such that
+
+\[\forall x,y \in \mathbb{R}^{n}, < x,y \geq x^{t}Ay.\]
+
+For the standard basis, the \(\left( {i,j} \right)\)th entry of \(A\) is \(< e_{i},e_{j} >\). Hence
+
+\[< x,y \geq \sum\limits_{i}\sum\limits_{j}x_{i}y_{j} < e_{i},e_{j} > = x^{t}Ay.\]
+
+Because the inner product is symmetric, so is \(A\). Its diagonal entries are positive; \(A\) is 可逆 (full rank).
+
+P10: All inner products on \(\mathbb{R}^{2}\) have
+
+\[B_{A{({x,y})}} = x^{t}Ay,\quad A = \begin{pmatrix}
+a & b \\
+b & c
+\end{pmatrix},\]
+
+where (1) \(A\) is symmetric; (2) \(a > 0\) and \(\text{det}\ A = ac - b^{2} > 0\). Indeed
+
+\[\begin{pmatrix}
+x & y
+\end{pmatrix}\begin{pmatrix}
+a & b \\
+b & c
+\end{pmatrix}\begin{pmatrix}
+x \\
+y
+\end{pmatrix} = ax^{2} + 2bxy + cy^{2} > 0.\]
+
+(这个条件等价：充分条件为 \(c > 0\) 且 \(ac - b^{2} > 0 = \text{det}\ A\).) Linearity is guaranteed by matrix multiplication. 因而这三条为完整条件。
+
+实际上的理解为：把 \(\mathbb{R}^{n}\) 的任何 inner product 都是：把一个 vector 做一个 linear trans 后再做一个 dot product.

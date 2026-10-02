@@ -1,0 +1,58 @@
+% LaTeX companion of 08-least-squares.typ. Both formats are editable.
+\chapter{Least squares}
+
+\section{WS 19, p. 1: projection and image/kernel theorem}
+
+\begin{theorem}{Projection and \kn{Least squares method}}
+
+对于任意 subspace \(V \subseteq \mathbb{R}^{n}\), \(\forall x \in \mathbb{R}^{n}\), \(\text{proj}_{V{(x)}}\) is \(V\) 中离 \(x\) 最近的 vector, i.e. \(v \in V\), \(\left\| {x - \text{proj}_{V{(x)}}} \right\| \leq \left\| {x - v} \right\|\).
+
+\end{theorem}
+
+The source diagram labels \(\left\| {x - \text{proj}_{V{(x)}}} \right\|\) as the 垂直距离.
+
+(a) \(Ax = b\) is consistent iff \(b \in \text{im}A\): if \(\exists x\) such that \(Ax = b\), then \(b \in \text{im}A\), and conversely. (b) 不可能 \(b\) 不在 \(\text{span}\left( \text{cols of A} \right)\) 而 \(Ax = b\) be consistent. (c), least squares solutions: if \(Ax = b\) is not consistent, let \(V = \text{im}A\), \(b' = \text{proj}_{V{(b)}}\). Then \(Ax = b'\) has a solution because \(b' \in V\); the solutions in that solution set are the least squares solution to this system.
+
+The worksheet also records
+
+\[Ax \cdot y = \left( {Ax} \right)^{t}y = x^{t}A^{t}y = x \cdot \left( {A^{t}y} \right).\]
+
+\begin{theorem}{Image-kernel orthogonality}
+
+For an \(m \times n\) matrix \(A\), \(\text{ker}\left( A^{t} \right) = \left( {\text{im}A} \right)^{\perp}\).
+
+\end{theorem}
+
+Write \(A = \begin{pmatrix}
+v_{1} & \ldots & v_{n}
+\end{pmatrix}\), so \(A^{t} = \begin{pmatrix}
+v_{1}^{t} \\
+\ldots \\
+v_{n}^{t}
+\end{pmatrix}\). If \(x \in \text{ker}\ A^{t}\), then \(v_{i} \cdot x = 0\) for every \(i\), so \(x \perp \text{im}A\). Conversely, if \(x{\in \left( {\text{im}A} \right)}^{\perp}\), then every \(v_{i} \cdot x = 0\), so \(A^{t}x = 0\).
+
+A second proof uses the displayed transpose identity: \(y \in \text{ker}\ A^{t}\rightarrow Ax \cdot y = 0\) for all \(x\), hence \(y{\in \left( {\text{im}A} \right)}^{\perp}\); conversely \(Ax \cdot y = 0\) for all \(x\) implies \(A^{t}y = 0\).
+
+Consequently \(\left( {\text{ker}\ A^{t}} \right)^{\perp} = \text{im}A\), and \(\text{ker}\ A = \left( {\text{im}A^{t}} \right)^{\perp}\). The rank computation is
+
+\[\text{rank}\left( A^{t} \right) = n - \text{dim}\left( {\text{ker}\ A^{t}} \right) = \text{dim}\left( {\text{im}A} \right) = \text{rank}(A).\]
+
+\section{WS 19, p. 2: normal equations}
+
+The normal equation: \(Ax = b\) 的 least square 解当且仅当 \(Ax = \text{proj}(b)\) is a solution of
+
+\[A^{t}Ax = A^{t}b.\]
+
+\begin{theorem}{Kernel of \(A^{t}A\)}
+
+For an \(m \times n\) matrix \(A\), \(\text{ker}\ A = \text{ker}\left( {A^{t}A} \right)\).
+
+\end{theorem}
+
+If \(x \in \text{ker}\left( {A^{t}A} \right)\), then \(A^{t}Ax = 0\), so \(Ax \in \text{ker}\ A^{t} = \left( {\text{im}A} \right)^{\perp}\). Since \(Ax \in \text{im}A\) and \(\text{im}A\) 与 \(\left( {\text{im}A} \right)^{\perp}\) only meet at \(0\), so \(Ax = 0\). Conversely \(Ax = 0\) directly implies \(A^{t}Ax = 0\).
+
+For the rest proof of normal equation, the source diagram records \(b - \text{proj}_{\text{im}A}(b){\in \left( {\text{im}A} \right)}^{\perp} = \text{ker}\left( A^{t} \right)\). Thus \(Ax - b \in \text{ker}\left( A^{t} \right)\), whence
+
+\[A^{t{({Ax - b})}} = 0,\quad A^{t}Ax = A^{t}b.\]
+
+总结：对于 \(T_{A}:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}\), \(T_{A^{t}}:\mathbb{R}^{m}\rightarrow\mathbb{R}^{n}\), 使得对于 \(x \in \mathbb{R}^{n}\) 及 \(y \in \mathbb{R}^{m}\)，\(\left( {Ax} \right) \cdot y = x\dot{A^{t}y}\) 是 transpose 本质的性质；它告诉我们 \(A\) 是 \(\mathbb{R}^{n}\) 到 \(\mathbb{R}^{m}\) 的 linear map.

@@ -1,0 +1,1122 @@
+% LaTeX companion of 03-joint&conditional-distribution.typ. Both formats are editable.
+\chapter{joint and conditional distributions}\label{joint-and-conditional-distributions}
+
+\section{random vector and joint distributions}\label{random-vector-and-joint-distributions}
+
+\subsection{random vector}\label{random-vector}
+
+\begin{definition}{\kn{random vector}}
+
+对于 prob space \((\Omega,\mathcal{F},\mathit{P})\), 一个 function \(\mathbf{X}:\Omega\rightarrow\mathbb{R}^{\mathit{n}}\) 如果是一个 \((\mathcal{F},\mathcal{B}(\mathbb{R}^{\mathit{n}}))\)-measurable function (即 \knref{$(\mathcal{M},\mathcal{N})$-measurable function} 在这两个 measurable spaces 上的情形), 则 称它为一个 \(\mathit{n}\)-dimensional \knref{random variable}, 或者 \(\mathit{n}\)-dimensional random vector.
+
+通常我们将 random vector 写成分量形式
+
+\[\mathbf{X}(\mathit{\omega}) = (\mathit{X}_{1}(\mathit{\omega}),\mathit{X}_{2}(\mathit{\omega}),\ldots,\mathit{X}_{\mathit{n}}(\mathit{\omega}))^{\mathit{T}}\]
+
+\end{definition}
+
+random vector 相当于在一个 prob space 上, 考虑多个重新分配 mass 的方法, 并把它们并列起来.
+
+\begin{proposition}{\kn{由 $\mathit{n}$ 个 random variable 构成的 vector 是一个 random vector}}
+
+令 \(\mathit{X}_{1},\mathit{X}_{2},\cdots,\mathit{X}_{\mathit{n}}\) 是定义在\textbf{同一个 prob space} \((\Omega,\mathcal{F},\mathbb{P})\) 上的 \(\mathit{n}\) 个 random variables. 则函数 \(\mathbf{X}:\Omega\rightarrow\mathbb{R}^{\mathit{n}}\) defined by
+
+\[\mathit{\omega}\mapsto(\mathit{X}_{1}(\mathit{\omega}),\mathit{X}_{2}(\mathit{\omega}),\cdots,\mathit{X}_{\mathit{n}}(\mathit{\omega}))^{\mathit{T}}\]
+
+是一个 random vector.
+
+\end{proposition}
+
+\begin{proof}
+
+我们在 measure theory 中证明过: 对于任意的 finite seq of Borel measureable functions \((\mathit{f}_{\mathit{i}}:\Omega\rightarrow\mathbb{R})_{\mathit{i} = 1}^{\mathit{k}}\), 其各作为一个维度组成的函数 \(\mathit{f} = (\mathit{f}_{1},\cdots,\mathit{f}_{\mathit{k}})\) 也是一个 Borel measurable function (from \(\Omega\) 到 \(\mathbb{R}^{\mathit{k}}\)).
+
+\end{proof}
+
+\begin{proposition}{\kn{一个 random vector 的每个分量都是一个 random variable}}
+
+令 \(\mathbf{X} = (\mathit{X}_{1},\mathit{X}_{2},\cdots,\mathit{X}_{\mathit{n}})^{\mathit{T}}\) 是一个 random vector. 则对于任意 \(\mathit{i}\), \(\mathit{X}_{\mathit{i}}\) 都是一个 random variable.
+
+\end{proposition}
+
+\begin{proof}
+
+对于 \(\mathbf{X}:\Omega\rightarrow\mathbb{R}^{\mathit{n}}\) 是 \((\mathcal{F},\mathcal{B}(\mathbb{R}^{\mathit{n}}))\)-measurable, 我们可以将第 \(\mathit{i}\) 个分量 \(\mathit{X}_{\mathit{i}}\) 看作是 composition of two maps:
+
+\[\mathit{X}_{\mathit{i}} = \mathit{\pi}_{\mathit{i}} \circ \mathbf{X}\]
+
+其中 \(\mathit{\pi}_{\mathit{i}}:\mathbb{R}^{\mathit{n}}\rightarrow\mathbb{R}\) projection map \(\mathit{\pi}_{\mathit{i}}(\mathit{x}_{1},\ldots,\mathit{x}_{\mathit{n}}) = \mathit{x}_{\mathit{i}}\).\\
+由于 projection map \(\mathit{\pi}_{\mathit{i}}\) 是一个 Borel measurable function, 我们可以得出: \(\mathit{X}_{\mathit{i}} = \mathit{\pi}_{\mathit{i}}(\mathbf{X})\) 也是 一个 Borel measurable function, 也就是一个 random variable.
+
+\end{proof}
+
+\begin{qlremark}{Remark}
+
+上两条 propositions 说明了一个事情: random vectors 和其分量 random variables 完全相互决定.
+
+\begin{itemize}
+\item
+  \textbf{random variables 组合起来一定是一个 random vector.}
+\item
+  \textbf{random vector 拆开每个分量一定是 random variable.}
+\end{itemize}
+
+因而, 研究一个 random vector 也就相当于研究分量 random variables 之间的关系.
+
+这一章节我们会从 random vector 的性质 (比如 \textbf{joint distribution 和 marginal distribution, conditional distribution}) 出发, 研究分量 random variables 之间的关系.
+
+(但是注意: 前提是这些 random variables 必须定义在同一个 prob space 上. 也就是, 它们的 base probability measure 一定相同. 如果我们考虑不同 prob space 上的 random variables 的话, 那它们没有一个公共的 base probability measure, 很难说它们之间有什么关系. 这种情况下, 我们需要 coupling: 构造一个新的 prob space (说白了就是 product space), 让这两个 random variables 都有一个新 version. 这一问题我们之后再讨论.)
+
+\end{qlremark}
+
+\subsection{joint distribution}\label{joint-distribution}
+
+\begin{definition}{\kn{joint distribution} and \kn{joint cdf}}
+
+令 \(\mathit{X}_{1},\cdots,\mathit{X}_{\mathit{n}}\) 为 RV from the same prob space. 即 \(\mathbf{X} := (\mathit{X}_{1},\cdots,\mathit{X}_{\mathit{n}})\) 是一个 random vector. 下面的两个对象分别将 \knref{probability distribution} 和 \knref{distribution function (也称 \textbf{cumulative distribution function,
+cdf})} 推广到 random vector.
+
+我们称 \(\mathbb{P}^{\mathbf{X}}:\mathbb{R}^{\mathit{n}}\rightarrow\mathbb{R}\) defined by
+
+\[\mathbb{P}^{\mathbf{X}}(\mathit{B}) = \mathbb{P}(\mathbf{X}^{- 1}(\mathit{B})),\quad\forall\mathit{B} \in \mathcal{B}(\mathbb{R}^{\mathit{n}})\]
+
+为 \(\mathit{X}_{1},\cdots,\mathit{X}_{\mathit{n}}\) 的 \textbf{joint distribution}.
+
+而我们称 \(\mathit{F}_{\mathbf{X}} = \mathit{F}_{\mathit{X}_{1},\cdots,\mathit{X}_{\mathit{n}}}:\mathbb{R}^{\mathit{n}}\rightarrow\mathbb{R}\) defined by
+
+\[\mathit{F}_{\mathbf{X}}(\mathit{x}_{1},\cdots,\mathit{x}_{\mathit{n}}) = \mathbb{P}(\mathit{X}_{1} \leq \mathit{x}_{1},\cdots,\mathit{X}_{\mathit{n}} \leq \mathit{x}_{\mathit{n}})\]
+
+(即 \(\mathbb{P}^{\mathbf{X}}\) restricted to the set of rectangles \(\left\{ {( - \infty,\mathit{x}_{1}\rbrack \times \cdots \times ( - \infty,\mathit{x}_{\mathit{n}}\rbrack:(\mathit{x}_{1},\cdots,\mathit{x}_{\mathit{n}}) \in \mathbb{R}^{\mathit{n}}} \right\}\)) 为它们的 \textbf{joint distribution function (或称 joint cdf)}.
+
+\end{definition}
+
+joint distribution 的定义已经包括了如何从多个 random variables 的 distributions 得到一个 joint distribution. 而, 我们也可以从一个 joint distribution 的 limit behavior 得到每个 random variable 分量的 distributions, 称之为 marginal distribution:
+
+\begin{definition}{\kn{marginal distribution}}
+
+令 \(\mathbf{X} = (\mathit{X}_{1},\cdots,\mathit{X}_{\mathit{n}})^{\mathit{T}}\) 是一个 random vector. 则对于任意 \(\mathit{i}\), \(\mathit{X}_{\mathit{i}}\) 的 distribution \(\mathbb{P}^{\mathit{X}_{\mathit{i}}}\) 被称为 \(\mathbf{X}\) 的第 \(\mathit{i}\) 个分量的 \textbf{marginal distribution}.
+
+\end{definition}
+
+我们以 \(\mathbb{R}^{2}\) 为例. 得出的结论可以推广到 \(\mathbb{R}^{\mathit{n}}\).
+
+\begin{proposition}{\kn{通过 joint distribution 的极限得到 marginal distribution}}
+
+令 \(\mathbf{X} = (\mathit{X}_{1},\mathit{X}_{2})^{\mathit{T}}\) 是一个 random vector. 则对于任意 \(\mathit{x} \in \mathbb{R}\), 有
+
+\[\mathbb{P}(\mathit{X}_{1} \leq \mathit{x}) = \lim\limits_{\mathit{y}\rightarrow\infty}\mathit{F}_{\mathbf{X}}(\mathit{x},\mathit{y})\]
+
+\(\mathit{X}_{2}\) 的 marginal distribution 也可以通过同样的方法得到.
+
+此外, joint distribution 有其他明显的 limit behaviors:
+
+\begin{itemize}
+\item
+  \[\lim\limits_{\mathit{x}\rightarrow - \infty}\mathit{F}(\mathit{x},\mathit{y}) = \lim\limits_{\mathit{y}\rightarrow - \infty}\mathit{F}(\mathit{x},\mathit{y}) = 0\]
+\item
+  \(\mathit{F}_{\mathbf{X}}\) 对于每个维度都是 increasing 且 right-continuous 的.
+\item
+  \[\mathbb{P}(\mathit{X} \leq \mathit{x},\mathit{Y} \leq \mathit{y}) = \lim\limits_{\mathit{z} \uparrow \mathit{y}}\mathit{F}(\mathit{x},\mathit{z}) = \lim\limits_{\mathit{z} \uparrow \mathit{x}}\mathit{F}(\mathit{z},\mathit{y}) = \lim\limits_{\mathit{z}_{1} \uparrow \mathit{x},\mathit{z}_{2} \uparrow \mathit{y}}\mathit{F}(\mathit{z}_{1},\mathit{z}_{2})\]
+\item
+  \[\mathbb{P}(\mathit{x}_{1} \leq \mathit{X} \leq \mathit{x}_{2},\mathit{y}_{1} \leq \mathit{Y} \leq \mathit{y}_{2}) = \mathit{F}(\mathit{x}_{2},\mathit{y}_{2}) - \mathit{F}(\mathit{x}_{1},\mathit{y}_{2}) = \mathit{F}(\mathit{x}_{2},\mathit{y}_{1}) + \mathit{F}(\mathit{x}_{1},\mathit{y}_{1})\]
+\end{itemize}
+
+\end{proposition}
+
+\begin{qlremark}{Remark}
+
+最后一条: 右边相当于
+
+\[\mathbb{P}(\mathit{x}_{1} < \mathit{X} < \mathit{x}_{2},\mathit{Y} < \mathit{y}_{2}) - \mathbb{P}(\mathit{x}_{1} < \mathit{X} < \mathit{x}_{2},\mathit{Y} < \mathit{y}_{1})\]
+
+因而成立.
+
+\end{qlremark}
+
+discrete random vector 很容易处理. 我们可以直接定义 joint pmf. 而 continuous random vector 需要展开讨论. 接下来我们讲单独讨论 continuous random vector 的 joint distribution.
+
+\subsection{condinuous joint cdf 与 joint pdf}\label{condinuous-joint-cdf-ux4e0e-joint-pdf}
+
+recall: \knref{continuous random variable} \(\mathit{X}\) 的 cdf 是 absolutely continuous 的. 这个条件也等价于, 存在一个函数 \(\mathit{f}_{\mathit{X}}:\mathbb{R}\rightarrow\lbrack 0,\infty)\) 使得
+
+\[\mathit{F}_{\mathit{X}}(\mathit{x}) = \int_{- \infty}^{\mathit{x}}\mathit{f}_{\mathit{X}}(\mathit{t})\,\mathit{d}\mathit{t}\]
+
+这个定义可以 generalize 到 random vector 上.
+
+\begin{definition}{\kn{continuous random vector} 和 \kn{continuous joint cdf}}
+
+对于 random vector \(\mathbf{X} = (\mathit{X}_{1},\cdots,\mathit{X}_{\mathit{n}})^{\mathit{T}}\) 如果 \(\mathbb{P}^{\mathbf{X}} \ll \mathit{\lambda}^{\mathit{n}}\), 即它满足 \knref{absolute continuity of signed measures} 中的绝对连续性条件, 即存在一个函数 \(\mathit{f}_{\mathbf{X}}:\mathbb{R}^{\mathit{n}}\rightarrow\lbrack 0,\infty)\) 使得对于任意 Borel set \(\mathit{B} \subseteq \mathbb{R}^{\mathit{n}}\), 有
+
+\[\mathbb{P}^{\mathbf{X}}(\mathit{B}) = \int_{\mathit{B}}\mathit{f}_{\mathbf{X}}(\mathit{x}_{1},\cdots,\mathit{x}_{\mathit{n}})\,\mathit{d}\mathit{\lambda}^{\mathit{n}}(\mathit{x}_{1},\cdots,\mathit{x}_{\mathit{n}})\]
+
+则称 \(\mathbf{X}\) 是一个 \textbf{continuous random vector}.
+
+注意: 由于是在 \(\mathbb{R}^{\mathit{n}}\) 上, 这等价于存在一个函数 \(\mathit{f}_{\mathbf{X}}:\mathbb{R}^{\mathit{n}}\rightarrow\lbrack 0,\infty)\) 使得对于任意 \(\mathit{x}_{1},\cdots,\mathit{x}_{\mathit{n}}\), 有
+
+\[\mathit{F}_{\mathbf{X}}(\mathit{x}_{1},\cdots,\mathit{x}_{\mathit{n}}) = \int_{- \infty}^{\mathit{x}_{1}}\cdots\int_{- \infty}^{\mathit{x}_{\mathit{n}}}\mathit{f}_{\mathbf{X}}(\mathit{t}_{1},\cdots,\mathit{t}_{\mathit{n}})\,\mathit{d}\mathit{t}_{\mathit{n}}\cdots\mathit{d}\mathit{t}_{1}\]
+
+\end{definition}
+
+\begin{qlremark}{Remark}
+
+这个函数 \(\mathit{f}_{\mathbf{X}}\) 就是 continuous random vector \(\mathbf{X}\) 的 \textbf{joint probability density function (joint pdf).} 它是 \knref{probability density function (pdf)} 在 random vector 上的对应概念. 它是 joint distribution measure \(\mathbb{P}^{\mathbf{X}}\) 对于 Lebesgue measure \(\mathit{\lambda}^{\mathit{n}}\) 的 \knref{Radon-Nikodym derivative}:
+
+\[\frac{\mathit{d}\mathbb{P}^{\mathbf{X}}}{\mathit{d}\mathit{\lambda}^{\mathit{n}}} = \mathit{f}_{\mathbf{X}}\]
+
+\end{qlremark}
+
+\begin{qlremark}{Remark}
+
+我们已经知道, 只要存在导数 \(\mathit{f}_{\mathbf{X}}\) 可以对于任意 \(\mathbf{x} \in \mathbb{R}^{\mathit{n}}\) 还原出 joint cdf \(\mathit{F}_{\mathbf{X}}\) 的值, 那么 \(\mathit{f}_{\mathbf{X}}\) 就是 joint pdf, 这个 random vector 就是一个 continuous random vector.
+
+那么这个还原积分的计算可以任意换序吗?
+
+显然是可以的. 因为 recall \knref{Fubini's Theorem}: 只要 \(\mathit{f}\) 绝对可积, 即 \(\left. \int_{\mathbb{R}^{\mathit{n}}} \middle| \mathit{f} \middle| \,\mathit{d}\mathit{\lambda}^{\mathit{n}} < \infty \right.\), 那么对于任意的 permutation \(\mathit{\sigma}\) of \(\left\{ {1,2,\cdots,\mathit{n}} \right\}\), 我们都可以将积分的顺序换成
+
+\[\int_{- \infty}^{\mathit{x}_{\mathit{\sigma}(1)}}\cdots\int_{- \infty}^{\mathit{x}_{\mathit{\sigma}(\mathit{n})}}\mathit{f}(\mathit{t}_{1},\cdots,\mathit{t}_{\mathit{n}})\,\mathit{d}\mathit{t}_{\mathit{\sigma}(\mathit{n})}\cdots\mathit{d}\mathit{t}_{\mathit{\sigma}(1)}\]
+
+而我们知道, \(\mathit{f}\) 一定是非负的, 而且积分一定是 1, 因而可以任意换序积分.
+
+这就很舒服. 这也给出了 margin distribution 的计算方法: 只要对 joint pdf \(\mathit{f}_{\mathbf{X}}\) 在其他维度上积分掉就行了.
+
+\end{qlremark}
+
+\begin{qlremark}{Remark}
+
+注意: \textbf{多个 continuous random variables 的 joint distribution 不一定是 continuous 的.} 反例: 考虑 random vector \(\mathbf{X} = (\mathit{X},\mathit{X})^{\mathit{T}}\) where \(\mathit{X} \sim \text{Uniform}(0,1)\) 则 \(\mathbb{P}((\mathit{X},\mathit{X}) \in \left\{ {\mathit{y} = \mathit{x}} \right\}) = 1\). 而注意, \(\left\{ {\mathit{y} = \mathit{x}} \right\}\) 在 \(\mathbb{R}^{2}\) 中的 Lebesgue measure 为 0, 而 absolute continuity 要求: 对于一个零测集, 其 \(\mathbb{P}^{\mathbf{X}}\) 测度也必须是 0 (这是 \(\mathbb{P}^{\mathbf{X}} \ll \mathit{\lambda}^{\mathit{n}}\) 的标准定义), 因而 joint distribution 不是 continuous 的.
+
+\end{qlremark}
+
+\begin{proposition}{\kn{joint pdf 和 joint cdf 的性质}}
+
+令 \(\mathbf{X} = (\mathit{X}_{1},\cdots,\mathit{X}_{\mathit{n}})^{\mathit{T}}\) 是一个 continuous random vector, 则它的 joint pdf \(\mathit{f}_{\mathbf{X}}\) 和 joint cdf \(\mathit{F}_{\mathbf{X}}\) 有以下性质:
+
+\begin{itemize}
+\item
+  \(\mathit{f}_{\mathbf{X}} \geq 0\) a.e. 并且 \(\int_{\mathbb{R}^{\mathit{n}}}\mathit{f}_{\mathbf{X}}\,\mathit{d}\mathit{\lambda}^{\mathit{n}} = 1\).
+\item
+  (如果一个集合 \(\mathit{A}\) 有一个零测维度, 那么 \(\mathbb{P}^{\mathbf{X}}(\mathit{A}) = 0\))
+
+  \[\mathbb{P}(\mathit{X}_{1} = \mathit{x}_{1},\mathit{x}_{2} \leq \mathit{X}_{2} \leq \mathit{x}_{2}'\cdots,\mathit{x}_{\mathit{n}} \leq \mathit{X}_{\mathit{n}} \leq \mathit{x}_{\mathit{n}}') = 0\]
+\item
+  每个 \(\mathit{X}_{\mathit{i}}\) 的 marginal distribution 也是 (absolutely) continuous 的, 并且
+
+  \[\mathit{f}_{\mathit{X}_{\mathit{i}}}(\mathit{x}) = \int_{\mathbb{R}^{\mathit{n} - 1}}\mathit{f}_{\mathbf{X}}(\mathit{t}_{1},\cdots,\mathit{t}_{\mathit{i} - 1},\mathit{x},\mathit{t}_{\mathit{i} + 1},\cdots,\mathit{t}_{\mathit{n}})\,\mathit{d}\mathit{t}_{1}\cdots\mathit{d}\mathit{t}_{\mathit{i} - 1}\mathit{d}\mathit{t}_{\mathit{i} + 1}\cdots\mathit{d}\mathit{t}_{\mathit{n}}\]
+
+  例如,
+
+  \[\mathit{f}_{\mathit{X}}(\mathit{x}) = \int_{- \infty}^{\infty}\mathit{f}_{\mathbf{X}}(\mathit{x},\mathit{y})\,\mathit{d}\mathit{y}\]
+\item
+  对每个 \(\mathit{x}_{1},\cdots,\mathit{x}_{\mathit{n}} \in \mathbb{R}\), 都可以通过偏导数从 joint cdf 得到 joint pdf (这个偏导数一定 (a.e.) 存在):
+
+  \[\mathit{f}_{\mathbf{X}}(\mathit{x}_{1},\cdots,\mathit{x}_{\mathit{n}}) = \frac{\mathit{\partial}^{\mathit{n}}}{\mathit{\partial}\mathit{x}_{1}\cdots\mathit{\partial}\mathit{x}_{\mathit{n}}}\mathit{F}_{\mathbf{X}}(\mathit{x}_{1},\cdots,\mathit{x}_{\mathit{n}})\]
+
+  并且 by Fubini's theorem 可以 (a.e.) 任意换序:
+
+  \[\frac{\mathit{\partial}^{\mathit{n}}}{\mathit{\partial}\mathit{x}_{\mathit{\sigma}(1)}\ldots\mathit{\partial}\mathit{x}_{\mathit{\sigma}(\mathit{n})}}\mathit{F}_{\mathbf{X}}\overset{\mathit{a}.\mathit{e}.}{=}\mathit{f}_{\mathbf{X}}\]
+\end{itemize}
+
+\end{proposition}
+
+\begin{proof}
+
+\begin{itemize}
+\item
+  由于 \(\mathit{f}_{\mathbf{X}}\) 是 \(\mathbb{P}^{\mathbf{X}}\) 对于 \(\mathit{\lambda}^{\mathit{n}}\) 的 Radon-Nikodym derivative, 因为任何 Borel 集 \(\mathit{B}\) 都有 \(\mathit{P}^{\mathbf{X}}(\mathit{B}) \geq 0\), 假设存在一个集合 \(\mathit{A} \in \mathcal{B}(\mathbb{R}^{\mathit{n}})\) 使得在其上 \(\mathit{f}_{\mathbf{X}} < 0\) 且 \(\mathit{\lambda}^{\mathit{n}}(\mathit{A}) > 0\), 那么根据积分定义
+
+  \[\mathbb{P}^{\mathbf{X}}(\mathit{A}) = \int_{\mathit{A}}\mathit{f}_{\mathbf{X}}\,\mathit{d}\mathit{\lambda}^{\mathit{n}} < 0\]
+
+  因而反证得 \(\mathit{f}_{\mathbf{X}} \geq 0\) a.e.
+
+  并且
+
+  \[\int_{\mathbb{R}^{\mathit{n}}}\mathit{f}_{\mathbf{X}}\,\mathit{d}\mathit{\lambda}^{\mathit{n}} = \mathbb{P}^{\mathbf{X}}(\mathbb{R}^{\mathit{n}}) = 1\]
+\item
+  natural.
+\item
+  即 marginal distribution 的定义在 continuous case 中的展开
+\item
+  by Fubini's theorem, 以及 joint cdf 的定义.
+\end{itemize}
+
+\end{proof}
+
+\begin{example}
+
+考虑
+
+\[\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \left\{ \begin{matrix}
+{\mathit{c}\mathit{e}^{- \mathit{x}}\mathit{e}^{- 2\mathit{y}},} & {\text{if}\ \mathit{x},\mathit{y} > 0} \\
+{0,} & \text{otherwise}
+\end{matrix} \right.\]
+
+Find \(\mathit{c}\) 使得这是一个合法的 joint pdf, 并且计算 \(\mathit{X}\) 和 \(\mathit{Y}\) 的 marginal pdfs, 以及 \(\mathbb{P}(\mathit{X} > 1,\mathit{Y} < 1)\).
+
+\end{example}
+
+\begin{qlsolution}{Solution}
+
+我们需要
+
+\[\mathit{c}\left( {\int_{0}^{\infty}\mathit{e}^{- \mathit{x}}\mathit{d}\mathit{x}} \right)\left( {\int_{0}^{\infty}\mathit{e}^{- 2\mathit{y}}\mathit{d}\mathit{y}} \right) = 1\]
+
+evaluate 这两个积分:
+
+\[\int_{0}^{\infty}\mathit{e}^{- \mathit{x}}\mathit{d}\mathit{x} = \left\lbrack {- \mathit{e}^{- \mathit{x}}} \right\rbrack_{0}^{\infty} = 1,\]\[\int_{0}^{\infty}\mathit{e}^{- 2\mathit{y}}\mathit{d}\mathit{y} = \left\lbrack {- \frac{1}{2}\mathit{e}^{- 2\mathit{y}}} \right\rbrack_{0}^{\infty} = \frac{1}{2}\]
+
+因为 \(\mathit{c}\) 必须为 2.
+
+计算 \(\mathit{X}\) 的 marginal pdf:
+
+\[\mathit{f}_{\mathit{X}}(\mathit{x}) = \int_{0}^{\infty}2\mathit{e}^{- \mathit{x}}\mathit{e}^{- 2\mathit{y}}\mathit{d}\mathit{y} = 2\mathit{e}^{- \mathit{x}}\left\lbrack {- \frac{1}{2}\mathit{e}^{- 2\mathit{y}}} \right\rbrack_{0}^{\infty} = \mathit{e}^{- \mathit{x}}\]
+
+然后计算 \(\mathit{Y}\) 的 marginal pdf:
+
+\[\mathit{f}_{\mathit{Y}}(\mathit{y}) = \int_{0}^{\infty}2\mathit{e}^{- \mathit{x}}\mathit{e}^{- 2\mathit{y}}\mathit{d}\mathit{x} = 2\mathit{e}^{- 2\mathit{y}}\left\lbrack {- \mathit{e}^{- \mathit{x}}} \right\rbrack_{0}^{\infty} = 2\mathit{e}^{- 2\mathit{y}}\]
+
+最后计算 \(\mathbb{P}(\mathit{X} > 1,\mathit{Y} < 1)\):
+
+\[\mathbb{P}(\mathit{X} > 1,\mathit{Y} < 1) = \int_{1}^{\infty}\int_{0}^{1}2\mathit{e}^{- \mathit{x}}\mathit{e}^{- 2\mathit{y}}\mathit{d}\mathit{y}\mathit{d}\mathit{x} = \left( {\int_{1}^{\infty}\mathit{e}^{- \mathit{x}}\mathit{d}\mathit{x}} \right)\left( {\int_{0}^{1}2\mathit{e}^{- 2\mathit{y}}\mathit{d}\mathit{y}} \right)\]
+
+这两个定积分分别为:
+
+\[\int_{1}^{\infty}\mathit{e}^{- \mathit{x}}\mathit{d}\mathit{x} = \left\lbrack {- \mathit{e}^{- \mathit{x}}} \right\rbrack_{1}^{\infty} = \mathit{e}^{- 1},\]\[\int_{0}^{1}2\mathit{e}^{- 2\mathit{y}}\mathit{d}\mathit{y} = \left\lbrack {- \mathit{e}^{- 2\mathit{y}}} \right\rbrack_{0}^{1} = 1 - \mathit{e}^{- 2}\]
+
+因而
+
+\[\mathbb{P}(\mathit{X} > 1,\mathit{Y} < 1) = \mathit{e}^{- 1}(1 - \mathit{e}^{- 2}) = \mathit{e}^{- 1} - \mathit{e}^{- 3}\]
+
+\end{qlsolution}
+
+\begin{theorem}
+
+对于 continuous random vector \(\mathbf{X} = (\mathit{X}_{1},\cdots,\mathit{X}_{\mathit{n}})^{\mathit{T}}\), 取任意 Borel measurable function \(\mathit{g}:\mathbb{R}^{\mathit{n}}\rightarrow\mathbb{R}\), 则 \(\mathit{g}(\mathbf{X})\) 是一个 random variable, 并且如果 \(\left. \mathbb{E}\lbrack \middle| \mathit{g}(\mathbf{X}) \middle| \rbrack < \infty \right.\), 则 , 则
+
+\[\mathbb{E}\lbrack\mathit{g}(\mathbf{X})\rbrack = \int_{\mathbb{R}^{\mathit{n}}}\mathit{g}(\mathbf{x})\mathit{f}_{\mathbf{X}}(\mathbf{x})\,\mathit{d}\mathit{\lambda}^{\mathit{n}}(\mathbf{x})\]
+
+\end{theorem}
+
+\begin{example}
+
+Let \((\mathit{X},\mathit{Y})\) be a two-dimensional random variable with joint density function
+
+\[\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \left\{ \begin{matrix}
+{1,} & {0 < \frac{\mathit{y}}{2} < \mathit{x} < 1} \\
+{0,} & \text{otherwise}
+\end{matrix} \right.\]
+
+\begin{itemize}
+\item
+  求 marginal density \(\mathit{f}_{\mathit{Y}}\)
+\item
+  计算概率 \(\mathbb{P}(\mathit{X} = 1/2)\) 和 \(\mathbb{P}(\mathit{X} + \mathit{Y} \leq 3/2)\)
+\end{itemize}
+
+\end{example}
+
+\begin{qlsolution}{Solution}
+
+\begin{itemize}
+\item
+  对固定 \(\mathit{y}\) 需要满足 \(0 < \mathit{y} < 2\mathit{x}\) 且 \(\mathit{x} < 1\), 等价于 \(\mathit{x} > \mathit{y}/2\) 且 \(\mathit{x} < 1\). 因而 \(0 < \mathit{y} < 2\)
+
+  \[\mathit{f}_{\mathit{Y}}(\mathit{y}) = \int_{- \infty}^{\infty}\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})\mathit{d}\mathit{x} = \int_{\mathit{y}/2}^{1}1\mathit{d}\mathit{x} = 1 - \frac{\mathit{y}}{2},\quad 0 < \mathit{y} < 2\]
+
+  否则 \(\mathit{f}_{\mathit{Y}}(\mathit{y}) = 0\).
+\item
+  由于 \(\mathit{X}\) 是一个 continuous random variable, \(\mathbb{P}(\mathit{X} = 1/2) = 0\).
+
+  \(\mathbb{P}(\mathit{X} + \mathit{Y} \leq 3/2)\) 略微难算一点: 满足条件的区域为 \(\left\{ {(\mathit{x},\mathit{y}):0 < \frac{\mathit{y}}{2} < \mathit{x} < 1,\mathit{y} \leq 3/2 - \mathit{x}} \right\}\),
+
+  \[0 < \mathit{y} < \min(2\mathit{x},3/2 - \mathit{x})\]
+
+  比较两条上界直线: \(2\mathit{x} = 3/2 - \mathit{x}\Rightarrow\mathit{x} = 1/2\) 当 \(0 < \mathit{x} < 1/2\), 有 \(2\mathit{x} < 3/2 - \mathit{x}\), 所以上界是 \(2\mathit{x}\); 当 \(1/2 < \mathit{x} < 1\), 上界是 \(3/2 - \mathit{x}\).
+
+  所以概率等于面积积分：
+
+  \[\mathbb{P}(\mathit{X} + \mathit{Y} \leq 3/2) = \int_{0}^{1/2}\int_{0}^{2\mathit{x}}1\mathit{d}\mathit{y}\mathit{d}\mathit{x} + \int_{1/2}^{1}\int_{0}^{3/2 - \mathit{x}}1\mathit{d}\mathit{y}\mathit{d}\mathit{x}\]
+
+  计算：
+
+  \[\begin{matrix}
+  {\int_{0}^{1/2}2\mathit{x}\mathit{d}\mathit{x} = \left\lbrack \mathit{x}^{2} \right\rbrack_{0}^{1/2} = \frac{1}{4}} \\
+  {\int_{1/2}^{1}\left( {\frac{3}{2} - \mathit{x}} \right)\mathit{d}\mathit{x} = \left\lbrack {\frac{3}{2}\mathit{x} - \frac{\mathit{x}^{2}}{2}} \right\rbrack_{1/2}^{1} = 1 - \frac{5}{8} = \frac{3}{8}}
+  \end{matrix}\]
+
+  合并得
+
+  \[\mathbb{P}(\mathit{X} + \mathit{Y} \leq 3/2) = \frac{1}{4} + \frac{3}{8} = \frac{5}{8}\]
+
+  也可以通过画图来做. 我们画出 support set 的图:
+
+  \begin{figure}[htbp]
+  \centering
+  \csname prob-03-joint-conditional-distribution-diagram-01\endcsname
+
+  \caption{联合分布 support 中满足 \(\mathit{X} + \mathit{Y} \leq \frac{3}{2}\)
+  的积分区域}
+
+  \label{fig-prob-03-joint-conditional-distribution-diagram-01}
+
+  \end{figure}
+
+  在这个图上对联合函数积分即可.
+\end{itemize}
+
+\end{qlsolution}
+
+\section{independence of two random variables}\label{independence-of-two-random-variables}
+
+\subsection{independence of two random variables 的三种等价定义}\label{independence-of-two-random-variables-ux7684ux4e09ux79cdux7b49ux4ef7ux5b9aux4e49}
+
+\begin{definition}{\kn{independence via product distribution of marginal distributions}}
+
+两个 random variables \(\mathit{X},\mathit{Y}:\Omega\rightarrow\mathbb{R}\) 被称为 independent 的, 如果对于任意的 Borel sets \(\mathit{A},\mathit{B} \subseteq \mathbb{R}\), 都有
+
+\[\mathbb{P}(\mathit{X} \in \mathit{A},\mathit{Y} \in \mathit{B}) = \mathbb{P}(\mathit{X} \in \mathit{A}) \cdot \mathbb{P}(\mathit{Y} \in \mathit{B})\]
+
+注意这个定义等价于 for all points \((\mathit{x},\mathit{y}) \in \mathbb{R}^{2}\),
+
+\[\mathit{F}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \mathit{F}_{\mathit{X}}(\mathit{x})\mathit{F}_{\mathit{Y}}(\mathit{y})\]
+
+即\textbf{它们的 joint distribution 是它们 marginal distributions 的 product.}
+
+\end{definition}
+
+对于 discrete 和 continuous random variables 而言, 这还意味着 independence 等价于:
+
+\begin{itemize}
+\item
+  joint pmf 是 marginal pmfs 的 product, for discrete case.
+\item
+  joint pdf 是 marginal pdfs 的 product, for continuous case.
+\end{itemize}
+
+这里离散情形沿用 \knref{discrete random variable} 的定义. 详细而言:
+
+\begin{theorem}{\kn{independence via joint-density factorization marginal densities}}
+
+令 \(\mathit{X},\mathit{Y}\) 是两个 random variables.
+
+\begin{itemize}
+\item
+  如果 \(\mathit{X},\mathit{Y}\) 是 discrete random variables, 则它们 independent 的条件等价于对于任意 \(\mathit{x},\mathit{y}\), 都有
+
+  \[\mathit{p}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \mathit{p}_{\mathit{X}}(\mathit{x}) \cdot \mathit{p}_{\mathit{Y}}(\mathit{y})\]
+\item
+  如果 \(\mathit{X},\mathit{Y}\) 是 continuous random variables, 则它们 independent 的条件等价于对于任意 \(\mathit{x},\mathit{y}\), 都有
+
+  \[\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \mathit{f}_{\mathit{X}}(\mathit{x}) \cdot \mathit{f}_{\mathit{Y}}(\mathit{y})\]
+\end{itemize}
+
+\end{theorem}
+
+\begin{proof}
+
+discrete case: 显然可得.
+
+continuous case:
+
+\begin{itemize}
+\item
+  \(\mathit{F}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \mathit{F}_{\mathit{X}}(\mathit{x})\mathit{F}_{\mathit{Y}}(\mathit{y})\Longrightarrow\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \mathit{f}_{\mathit{X}}(\mathit{x}) \cdot \mathit{f}_{\mathit{Y}}(\mathit{y})\): 取偏导数即可.
+\item
+  \(\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \mathit{f}_{\mathit{X}}(\mathit{x}) \cdot \mathit{f}_{\mathit{Y}}(\mathit{y})\Longrightarrow\mathit{F}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \mathit{F}_{\mathit{X}}(\mathit{x})\mathit{F}_{\mathit{Y}}(\mathit{y})\): 积分即可.
+\end{itemize}
+
+\end{proof}
+
+因而对于 independent 的两个 random variables, 固定 \(\mathit{X} = \mathit{x}_{0}\), 那么联合密度函数 \(\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x}_{0},\mathit{y})\) 就是 \(\mathit{Y}\) 的边际密度函数 \(\mathit{f}_{\mathit{Y}}(\mathit{y})\) 乘上 一个常数 \(\mathit{f}_{\mathit{X}}(\mathit{x}_{0})\).\\
+
+\begin{qlremark}{Remark}
+
+Recall \knref{independence of events} 的定义:
+
+\[\mathbb{P}(\mathit{A} \cap \mathit{B}) = \mathbb{P}(\mathit{A}) \cdot \mathbb{P}(\mathit{B})\]
+
+也等价于对于任意的 Borel sets \(\mathit{A},\mathit{B}\) where \(\mathbb{P}(\mathit{B}) > 0\), 都有
+
+\[\mathbb{P}(\mathit{A} \mid \mathit{B}) = \mathbb{P}(\mathit{A})\]
+
+即: 一个事件发生与否都不会对另一个事件发生的概率产生任何影响.
+
+而再看到两个 random variables independence 的定义是:
+
+\[\mathbb{P}(\mathit{X} \in \mathit{A},\mathit{Y} \in \mathit{B}) = \mathbb{P}(\mathit{X} \in \mathit{A}) \cdot \mathbb{P}(\mathit{Y} \in \mathit{B})\]
+
+这个定义也当然等价于:
+
+\begin{proposition}{\kn{independence via conditional distribution: marginal distribution}}
+
+两个 random variables \(\mathit{X},\mathit{Y}\) 是 independent 的, iff: 对于任意的 Borel sets \(\mathit{A},\mathit{B}\), 如果\(\mathbb{P}(\mathit{Y} \in \mathit{B}) > 0\), 则
+
+\[\mathbb{P}(\mathit{X} \in \mathit{A} \mid \mathit{Y} \in \mathit{B}) = \mathbb{P}(\mathit{X} \in \mathit{A})\]
+
+即: \textbf{\(\mathit{X}\) 的 conditional distribution, 不论给定 \(\mathit{Y}\) 的任何信息, 都等于 \(\mathit{X}\) 的 marginal distribution.}
+
+\end{proposition}
+
+所以它实际上意义是: \textbf{知道一个 random variable 的任何信息, 对于另外一个都没有任何帮助.}
+
+因而\textbf{它们的 joint distribution 可以分解成 marginal distributions 的 product}.\\
+
+\end{qlremark}
+
+\begin{qlremark}{Remark}
+
+Furthermore: 我们不难发现一件事情, 可以\textbf{在 independence of two events 和 independence of two random variables 之间建立一个桥梁:}
+
+\begin{proposition}{\kn{independence via generated sigma-algebras}}
+
+令 \(\mathit{X},\mathit{Y}\) 是两个 random variables. 则 \(\mathit{X},\mathit{Y}\) 是 independent 的 iff: \(\mathit{X}\) 和 \(\mathit{Y}\) 按 \knref{$\mathit{\sigma}$-algebra generated by a random variable (measurable
+function)} 分别生成的 \(\mathit{\sigma}(\mathit{X})\) 和 \(\mathit{\sigma}(\mathit{Y})\) 中分别任取一个事件, 这两个事件都是 independent 的. 即:
+
+\[\forall\mathit{A} \in \mathit{\sigma}(\mathit{X}),\forall\mathit{B} \in \mathit{\sigma}(\mathit{Y}),\quad\mathbb{P}(\mathit{A} \cap \mathit{B}) = \mathbb{P}(\mathit{A}) \cdot \mathbb{P}(\mathit{B})\]
+
+\end{proposition}
+
+这严格说明了: \textbf{两个 random variables 之间的 independence, 本质上是它们各自蕴含的 information (由 generated sigma-algebra 严格刻画) 的完全不相关}: 对 \(\mathit{X}\) 的观测对于 预测 \(\mathit{Y}\) 的任何行为都不提供任何帮助, 反之亦然.\\
+
+\end{qlremark}
+
+以上就是 independence of two random variables 的定义, 以及其 information geometric intuition.
+
+下面我们讲 independence between two random variables, generalize 到 mutual independence among 任意的 family of random variables.
+
+\subsection{mutual independence of a family of random variables: 强于 pairwise independence}\label{mutual-independence-of-a-family-of-random-variables-ux5f3aux4e8e-pairwise-independence}
+
+我们定义了两个 random variables 的 independence, 但是这个定义可以推广到多个 (甚至 uncountably many) random variables 上.
+
+\begin{definition}{\kn{\textbf{mutual independence} of multiple random variables}}
+
+令 \(\left\{ {\mathit{X}_{\mathit{i}}:\mathit{i} \in \mathit{I}} \right\}\) 是一个 random variables 的 family, 其中 \(\mathit{I}\) 是一个 index set. 则如果对于任意的 finite subset \(\mathit{J} \subseteq \mathit{I}\), 以及对于任意的 Borel sets \(\left\{ {\mathit{A}_{\mathit{j}}:\mathit{j} \in \mathit{J}} \right\}\), 都有
+
+\[\mathbb{P}(\mathit{X}_{\mathit{j}} \in \mathit{A}_{\mathit{j}},\forall\mathit{j} \in \mathit{J}) = \prod\limits_{\mathit{j} \in \mathit{J}}\mathbb{P}(\mathit{X}_{\mathit{j}} \in \mathit{A}_{\mathit{j}})\]
+
+则称这个 family of random variables 是 independent 的.
+
+\end{definition}
+
+注意: \textbf{joint mass \& density 的 factorization 也可以推广到多个 random variables 上.} 有一件事情值得说明: 这里定义的是\textbf{mutual independence}, 也就是说, 对于任意的 finite subset \(\mathit{J}\), 它们的 joint distribution 都 factorizes into product of marginal distributions.
+
+而\textbf{两两 independent 的 random variables family 不一定是 mutual independent 的.} 即: 如果对于任意的 \(\mathit{i} \neq \mathit{j}\), \(\mathit{X}_{\mathit{i}}\) 和 \(\mathit{X}_{\mathit{j}}\) 是 independent 的, 并不意味着对于任意的 finite subset \(\mathit{J}\), \(\left\{ {\mathit{X}_{\mathit{j}}:\mathit{j} \in \mathit{J}} \right\}\) 是 independent 的.
+
+举个例子:
+
+\begin{example}[pairwise independence does NOT imply mutual independence]
+
+假设我们抛掷两枚公平的硬币. 令 \(\mathit{X},\mathit{Y}\) 是两个 independent 的 random variables, 且都服从 uniform distribution on \(\left\{ {- 1,1} \right\}\). 即:
+
+\[\mathbb{P}(\mathit{X} = 1) = \mathbb{P}(\mathit{X} = - 1) = \frac{1}{2},\quad\mathbb{P}(\mathit{Y} = 1) = \mathbb{P}(\mathit{Y} = - 1) = \frac{1}{2}\]
+
+现在, 我们定义第三个 random variable \(\mathit{Z}\) 为前两者的 product:
+
+\[\mathit{Z} = \mathit{X} \cdot \mathit{Y}\]
+
+容易验证: \(\mathit{X},\mathit{Y},\mathit{Z}\) 两两 independent, 但不 mutual independent. 因为如果只是知道 \(\mathit{X}\) 的值, 那么我们对于 \(\mathit{Z}\) 的值完全没有信息 (因为有一个完全随机的 \(\mathit{Y}\) 没有任何已知信息); 同样, 如果只是知道 \(\mathit{Y}\) 的值, 那么我们对于 \(\mathit{Z}\) 的值也完全没有信息;
+
+但是, 如果我们同时知道 \(\mathit{X}\) 和 \(\mathit{Y}\) 的值, 那么 \(\mathit{Z}\) 的值就完全确定了.
+
+这说明 \textbf{pairwise independence 只能保证局部的信息解耦, 而 mutual independence 则保证了在这个 family of random variables 之间的全局信息解耦.}
+
+\end{example}
+
+\subsection{\texorpdfstring{independent \(\Longrightarrow\) uncorrelated}{independent \textbackslash Longrightarrow uncorrelated}}\label{independent-longrightarrow-uncorrelated}
+
+Independence 的概念会让我们回忆起另外一个刻画两个 random variables 之间关系的概念: covariance, 它丈量了\textbf{两个 random variables 之间的线性关系}.
+
+\knref{covariance} 的定义:
+
+\[\text{Cov}(\mathit{X},\mathit{Y}) := \mathbb{E}\lbrack(\mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack)(\mathit{Y} - \mathbb{E}\lbrack\mathit{Y}\rbrack)\rbrack = \mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack - \mathbb{E}\lbrack\mathit{X}\rbrack\mathbb{E}\lbrack\mathit{Y}\rbrack\]
+
+我们称 covariance 为 0 的两个 random variables 为 \kn{uncorrelated random variables}. 我们容易发现: \textbf{independence 是一个比 uncorrelated 更强的概念:}
+
+\begin{proposition}{\kn{independent 严格强于 uncorrelated}}
+
+令 \(\mathit{X},\mathit{Y}\) 是两个 random variables. 则 \(\mathit{X},\mathit{Y}\) 是 independent 的 \(\Longrightarrow\) \(\text{Cov}(\mathit{X},\mathit{Y}) = 0\). 但是 \(\text{Cov}(\mathit{X},\mathit{Y}) = 0\) 不一定 \(\Longrightarrow\) \(\mathit{X},\mathit{Y}\) 是 independent 的.
+
+\end{proposition}
+
+\begin{proof}
+
+\begin{itemize}
+\item
+  independence \(\Longrightarrow\) covariance 是 0, 因为 independence 显然 imply\(\mathit{E}\lbrack\mathit{X}\mathit{Y}\rbrack = \mathit{E}\lbrack\mathit{X}\rbrack\mathit{E}\lbrack\mathit{Y}\rbrack\), 从而 covariance 的定义式中 \(\mathit{E}\lbrack\mathit{X}\mathit{Y}\rbrack - \mathit{E}\lbrack\mathit{X}\rbrack\mathit{E}\lbrack\mathit{Y}\rbrack = 0\).
+\item
+  有一个经典反例: 考虑 \(\mathit{X}\) 是任意按原点对称的分布, 比如一个 standard normal distribution; 而定义 \(\mathit{Y} = \mathit{X}^{2}\), 此时
+
+  \[\text{Cov}(\mathit{X},\mathit{X}^{2}) = \mathit{E}\lbrack\mathit{X} \cdot \mathit{X}^{2}\rbrack - \mathit{E}\lbrack\mathit{X}\rbrack\mathit{E}\lbrack\mathit{X}^{2}\rbrack = \mathit{E}\lbrack\mathit{X}^{3}\rbrack - \mathit{E}\lbrack\mathit{X}\rbrack\mathit{E}\lbrack\mathit{X}^{2}\rbrack\]
+
+  由于 \(\mathit{X}\) 的分布是关于原点对称的, \(\mathit{E}\lbrack\mathit{X}^{3}\rbrack = 0\) 且 \(\mathit{E}\lbrack\mathit{X}\rbrack = 0\), 因而 covariance 是 0. 但是 \(\mathit{X}\) 和 \(\mathit{Y}\) 显然不是 independent 的.
+\end{itemize}
+
+\end{proof}
+
+\begin{qlremark}{Remark}
+
+本质上, independence 是一种最强的全局信息不相关性. 而 covariance 只度量 linear relationship. 试想: 如果这两个随机变量之间的关系是这样的呢?
+
+\begin{figure}[htbp]
+\centering
+\csname prob-03-joint-conditional-distribution-diagram-02\endcsname
+
+\caption{圆周关系说明零协方差不蕴含独立性}
+
+\label{fig-prob-03-joint-conditional-distribution-diagram-02}
+
+\end{figure}
+
+那么它们的 covariance 是 0, 但是它们显然不是 independent 的. 所以 covariance 忽略了很多非线性的关系, 而 independence 则完全捕捉了所有的关系.\\
+
+\end{qlremark}
+
+刚才说到, 两个 random variables 的 independence 显然 imply \(\mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack = \mathbb{E}\lbrack\mathit{X}\rbrack\mathbb{E}\lbrack\mathit{Y}\rbrack\). 而 BTW: 这个性质其实\textbf{可以 generalize 到任意 finite number of independent random variables 的 product 上, 并且 我们可以在这些 random variables 上任意地施加 Borel measurable functions}, 只要保证这些函数的 expectation 是 finite 的,
+
+\begin{theorem}{\kn{independence $\Longrightarrow$ expectation is closed under product}}
+
+令 \(\left\{ {\mathit{X}_{\mathit{i}}:\mathit{i} \in \mathit{I}} \right\}\) 是一个 independent 的 random variables 的 family, 则对于任意的 finite subset \(\mathit{J} \subseteq \mathit{I}\), 以及对于任意的 Borel measurable functions \(\left\{ {\mathit{g}_{\mathit{j}}:\mathit{j} \in \mathit{J}} \right\}\), 如果 \(\left. \mathbb{E}\lbrack \middle| \mathit{g}_{\mathit{j}}(\mathit{X}_{\mathit{j}}) \middle| \rbrack < \infty \right.\) for all \(\mathit{j} \in \mathit{J}\), 则
+
+\[\mathbb{E}\left\lbrack {\prod\limits_{\mathit{j} \in \mathit{J}}\mathit{g}_{\mathit{j}}(\mathit{X}_{\mathit{j}})} \right\rbrack = \prod\limits_{\mathit{j} \in \mathit{J}}\mathbb{E}\lbrack\mathit{g}_{\mathit{j}}(\mathit{X}_{\mathit{j}})\rbrack\]
+
+特别地, 取每个 \(\mathit{g}_{\mathit{j}}(\mathit{x}) = \mathit{x}\), 则
+
+\[\mathbb{E}\left\lbrack {\prod\limits_{\mathit{j} \in \mathit{J}}\mathit{X}_{\mathit{j}}} \right\rbrack = \prod\limits_{\mathit{j} \in \mathit{J}}\mathbb{E}\lbrack\mathit{X}_{\mathit{j}}\rbrack\]
+
+\end{theorem}
+
+\begin{proof}
+
+令 \(\mathit{J} = \left\{ {1,2,\ldots,\mathit{n}} \right\}\). 由于 \(\mathit{X}_{1},\ldots,\mathit{X}_{\mathit{n}}\) 是 independent 的, 它们的 joint distribution \(\mathit{\mu}_{\mathbf{X}}\) 是其 marginal distributions \(\mathit{\mu}_{\mathit{X}_{\mathit{j}}}\) 的 product measure:
+
+\[\mathit{\mu}_{\mathbf{X}} = \mathit{\mu}_{\mathit{X}_{1}} \times \mathit{\mu}_{\mathit{X}_{2}} \times \ldots \times \mathit{\mu}_{\mathit{X}_{\mathit{n}}}\]
+
+根据 Change of Variables Formula,
+
+\[\mathbb{E}\left\lbrack {\prod\limits_{\mathit{j} = 1}^{\mathit{n}}\mathit{g}_{\mathit{j}}(\mathit{X}_{\mathit{j}})} \right\rbrack = \int_{\mathbb{R}^{\mathit{n}}}\left( {\prod\limits_{\mathit{j} = 1}^{\mathit{n}}\mathit{g}_{\mathit{j}}(\mathit{x}_{\mathit{j}})} \right)\,\mathit{d}\mathit{\mu}_{\mathbf{X}}(\mathit{x}_{1},\ldots,\mathit{x}_{\mathit{n}}) = \int_{\mathbb{R}}\ldots\int_{\mathbb{R}}\left( {\prod\limits_{\mathit{j} = 1}^{\mathit{n}}\mathit{g}_{\mathit{j}}(\mathit{x}_{\mathit{j}})} \right)\,\mathit{d}\mathit{\mu}_{\mathit{X}_{1}}(\mathit{x}_{1})\ldots\mathit{d}\mathit{\mu}_{\mathit{X}_{\mathit{n}}}(\mathit{x}_{\mathit{n}})\]
+
+由于被积函数 \(\prod\mathit{g}_{\mathit{j}}(\mathit{x}_{\mathit{j}})\) 是变量分离的, 根据 Fubini's Theorem 可以把积分分解成多个积分的 product:
+
+\[= \left( {\int_{\mathbb{R}}\mathit{g}_{1}(\mathit{x}_{1})\,\mathit{d}\mathit{\mu}_{\mathit{X}_{1}}(\mathit{x}_{1})} \right) \times \ldots \times \left( {\int_{\mathbb{R}}\mathit{g}_{\mathit{n}}(\mathit{x}_{\mathit{n}})\,\mathit{d}\mathit{\mu}_{\mathit{X}_{\mathit{n}}}(\mathit{x}_{\mathit{n}})} \right)\]
+
+其中每一项都是\(\mathbb{E}\lbrack\mathit{g}_{\mathit{j}}(\mathit{X}_{\mathit{j}})\rbrack\).
+
+\end{proof}
+
+\begin{qlremark}{Remark}
+
+recall: expectation is a linear operator (因而 linearity 是 regardless of independence). 但是它不一定是一个 multiplicative operator.
+
+而这里我们说, \textbf{如果 random variables 是 independent 的, 那么 expectation 就是一个 multiplicative operator.}
+
+\end{qlremark}
+
+实际上: 当这些 Borel measurable functions \(\left\{ {\mathit{g}_{\mathit{j}}:\mathit{j} \in \mathit{J}} \right\}\) 全都 bounded 时, 这个定理其实反向也是成立的:
+
+\begin{theorem}
+
+令 \(\left\{ {\mathit{X}_{\mathit{i}}:\mathit{i} \in \mathit{I}} \right\}\) 是一个family of random variables. 如果对于任意的 finite subset \(\mathit{J} \subseteq \mathit{I}\), 以及任意的 bounded Borel measurable functions \(\left\{ {\mathit{g}_{\mathit{j}}:\mathit{j} \in \mathit{J}} \right\}\), 都有
+
+\[\mathbb{E}\left\lbrack {\prod\limits_{\mathit{j} \in \mathit{J}}\mathit{g}_{\mathit{j}}(\mathit{X}_{\mathit{j}})} \right\rbrack = \prod\limits_{\mathit{j} \in \mathit{J}}\mathbb{E}\lbrack\mathit{g}_{\mathit{j}}(\mathit{X}_{\mathit{j}})\rbrack\]
+
+则这个 family of random variables 是 independent 的.
+
+\end{theorem}
+
+\begin{proof}
+
+不妨特取 indicator functions. 对于任意的 Borel sets \(\mathit{A},\mathit{B} \subseteq \mathbb{R}\), 令 \(\mathit{f}(\mathit{x}) = \mathit{I}_{\mathit{A}}(\mathit{x})\), \(\mathit{g}(\mathit{y}) = \mathit{I}_{\mathit{B}}(\mathit{y})\). 代入等式得到:
+
+\[\mathbb{E}\lbrack\mathit{I}_{\mathit{A}}(\mathit{X}) \cdot \mathit{I}_{\mathit{B}}(\mathit{Y})\rbrack = \mathbb{E}\lbrack\mathit{I}_{\mathit{A}}(\mathit{X})\rbrack \cdot \mathbb{E}\lbrack\mathit{I}_{\mathit{B}}(\mathit{Y})\rbrack\]
+
+注意到 \(\mathit{I}_{\mathit{A}}(\mathit{X}) \cdot \mathit{I}_{\mathit{B}}(\mathit{Y}) = \mathit{I}_{\{{\mathit{X} \in \mathit{A},\mathit{Y} \in \mathit{B}}\}}\). 根 据 expectation of indicator function 等于 probability, 我们立刻得到:
+
+\[\mathbb{P}(\mathit{X} \in \mathit{A},\mathit{Y} \in \mathit{B}) = \mathbb{P}(\mathit{X} \in \mathit{A}) \cdot \mathbb{P}(\mathit{Y} \in \mathit{B})\]
+
+\end{proof}
+
+注意: \textbf{\(\mathit{g}(\mathit{x}) = \mathit{x}\) 并不是 bounded 的 function, 因而 uncorrelation \(\operatorname{\Longrightarrow\not{}}\) independence.}\\
+OK. 以上是 pretty much general properties of independence. 最后我们看一下, 对于 discrete 和 continuous random variables 而言, independence 的 characterization 具体长什么样子.
+
+\subsection{discrete RV independence 的 characterization}\label{discrete-rv-independence-ux7684-characterization}
+
+\begin{qlremark}{Remark}
+
+关于两个 discrete random variables \(\mathit{X},\mathit{Y}\) 是否 independent 的判断, 还有一个直观的方法.
+
+\begin{proposition}{\kn{discrete RV independence 的 characterization}}
+
+两个 discrete random variables \(\mathit{X},\mathit{Y}\) 是 independent 的 iff 它们的 joint pmf as a matrix 有 rank 1(每行每列都互为倍数).
+
+\end{proposition}
+
+\begin{proof}
+
+note: 一个矩阵 \(\mathit{M}\) 的 rank 等于 1 iff 它可以被分解为两个向量的 outer product :
+
+\[\mathit{M} = \mathbf{u}\mathbf{v}^{\top}\]
+
+~where \(\mathbf{u}\) 和 \(\mathbf{v}\) 是非零列向量.
+
+(\(\Longrightarrow\)): 如果 independent, 那么对于所有 \(\mathit{i},\mathit{j}\), joint probability \(\mathit{p}_{\mathit{i}\mathit{j}} = \mathbb{P}(\mathit{X} = \mathit{x}_{\mathit{i}},\mathit{Y} = \mathit{y}_{\mathit{j}})\) 满足:
+
+\[\mathit{p}_{\mathit{i}\mathit{j}} = \mathbb{P}(\mathit{X} = \mathit{x}_{\mathit{i}}) \cdot \mathbb{P}(\mathit{Y} = \mathit{y}_{\mathit{j}})\]
+
+如果我们定义向量 \(\mathbf{p}_{\mathit{X}} = \lbrack\mathit{p}_{\mathit{X}}(\mathit{x}_{1}),\mathit{p}_{\mathit{X}}(\mathit{x}_{2}),\ldots\rbrack^{\top}\) 和 \(\mathbf{p}_{\mathit{Y}} = \lbrack\mathit{p}_{\mathit{Y}}(\mathit{y}_{1}),\mathit{p}_{\mathit{Y}}(\mathit{y}_{2}),\ldots\rbrack^{\top}\), 那么整个联合分布矩阵 \(\mathit{P}\) 就可以写成:
+
+\[\mathit{P} = \mathbf{p}_{\mathit{X}}\mathbf{p}_{\mathit{Y}}^{\top}\]
+
+这正是 Rank 1 矩阵的标准形式.
+
+(\(\Longleftarrow\)) 如果 \(\mathit{P}\) 的 rank 为 1, 那么存在向量 \(\mathbf{u}\) 和 \(\mathbf{v}\) 使得 \(\mathit{p}_{\mathit{i}\mathit{j}} = \mathit{u}_{\mathit{i}}\mathit{v}_{\mathit{j}}\).由于 \(\sum_{\mathit{i},\mathit{j}}\mathit{p}_{\mathit{i}\mathit{j}} = 1\), 我们可以归一化这两个向量, 使得 \(\sum\mathit{u}_{\mathit{i}} = 1\) 且 \(\sum\mathit{v}_{\mathit{j}} = 1\).此时, \(\mathit{u}_{\mathit{i}}\) 恰好就是 \(\mathit{X}\) 的 marginal PMF, \(\mathit{v}_{\mathit{j}}\) 恰好就是 \(\mathit{Y}\) 的 marginal PMF. 因此满足 \(\mathit{p}_{\mathit{i}\mathit{j}} = \mathit{p}_{\mathit{i}} \cdot \mathit{p}_{\mathit{j}}\), 即两个变量独立.
+
+\end{proof}
+
+\begin{example}
+
+\[\begin{matrix}
+{\mathit{P} = \mathit{X} \smallsetminus \mathit{Y}} & 0 & {1\ } & {\text{Marginal}\ \mathbb{P}(\mathit{X})} \\
+0 & 0.4 & 0.1 & 0.5 \\
+1 & 0.4 & 0.1 & 0.5 \\
+{\text{Marginal}\ \mathbb{P}(\mathit{Y})} & 0.8 & 0.2 & 1.0
+\end{matrix}\]
+
+这里的 \(\mathit{X},\mathit{Y}\) 就是 independent 的 random variables.
+
+\end{example}
+
+\end{qlremark}
+
+\subsection{continuous RV independence 的 geometric intuition}\label{continuous-rv-independence-ux7684-geometric-intuition}
+
+对于 independent continuous random variables \(\mathit{X},\mathit{Y}\), 它的 characterization 我们已经知道了: 即 joint pdf factorizes into marginal pdfs. 这一个 characterization 的 geometric intuition 是:
+
+\begin{itemize}
+\item
+  joint pdf 的 support set 一定是一个矩形 (不一定 bounded)
+\item
+  joint pdf 的\textbf{每个维度上的任意截面的形状都是一样的} (因为固定 \(\mathit{x}\), 则 \(\mathit{y}\) 方向的性质只由 \(\mathit{f}_{\mathit{Y}}\) 决定.)
+
+  即: 固定 \(\mathit{x}\), \(\mathit{y}\)-distribution 的横截面永远长得像 \(\mathit{f}_{\mathit{Y}}\), 只是乘上了一个常数 \(\mathit{f}_{\mathit{X}}(\mathit{x})\) 而已. 同样的, 固定 \(\mathit{y}\), \(\mathit{x}\) 分布的横截面永远长得像 \(\mathit{f}_{\mathit{X}}\), 只是乘上了一个常数 \(\mathit{f}_{\mathit{Y}}(\mathit{y})\) 而已.
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\csname prob-03-joint-conditional-distribution-diagram-03\endcsname
+
+\caption{独立连续随机变量的矩形 support 与等形横截面}
+
+\label{fig-prob-03-joint-conditional-distribution-diagram-03}
+
+\end{figure}
+
+\section{conditional distribution function and density}\label{conditional-distribution-function-and-density}
+
+\subsection{conditional distribution and its distribution function}\label{conditional-distribution-and-its-distribution-function}
+
+\begin{definition}{\kn{conditional distribution}}
+
+给定 random variables \(\mathit{X},\mathit{Y}:\Omega\rightarrow\mathbb{R}\), 其中下面极限里的条件概率按 \knref{conditional probability} 理解. 我们定义 the conditional distribution of \(\mathit{X}\) given \(\mathit{Y} = \mathit{y}\) 为 the probability measure \(\mathbb{P}^{\mathit{X}|\mathit{Y} = \mathit{y}}\):
+
+\[\mathbb{P}^{\mathit{X}|\mathit{Y} = \mathit{y}}(\mathit{A}) := \lim\limits_{h\rightarrow 0^{+}}\mathbb{P}(\mathit{X} \in \mathit{A} \mid \mathit{y} \leq \mathit{Y} \leq \mathit{y} + h),\quad\forall\mathit{A} \in \mathcal{B}(\mathbb{R})\]
+
+并将 function \(\mathit{F}_{\mathit{X}|\mathit{Y} = \mathit{y}}:\mathbb{R}\rightarrow\mathbb{R}\) defined by \(\mathit{F}_{\mathit{X}|\mathit{Y} = \mathit{y}}(\mathit{x}) := \mathbb{P}^{\mathit{X}|\mathit{Y} = \mathit{y}}(( - \infty,\mathit{x}\rbrack)\):
+
+\[\left. \mathit{F}_{\mathit{X}|\mathit{Y}}(\mathit{x} \middle| \mathit{y}) := \lim\limits_{h\rightarrow 0^{+}}\mathbb{P}(\mathit{X} \leq \mathit{x} \mid \mathit{y} \leq \mathit{Y} \leq \mathit{y} + h) \right.\]
+
+称为 the conditional distribution function of \(\mathit{X}\) given \(\mathit{Y} = \mathit{y}\).
+
+\end{definition}
+
+\begin{qlremark}{Remark}
+
+注意: 每个取值 \(\mathit{y}\) 都对应一个 conditional distribution measure \(\mathbb{P}^{\mathit{X}|\mathit{Y} = \mathit{y}}\) 和一个 conditional distribution function \(\mathit{F}_{\mathit{X}|\mathit{Y} = \mathit{y}}\). 因此, conditional distribution 和 conditional distribution function 都是一个 family of measures/functions, 而不是一个 measure/function.
+
+也就是说, 一个 random variable 可以 induce 出另一个 random variable 的可能 uncountably many 个 conditional distribution.
+
+\end{qlremark}
+
+\begin{qlremark}{Remark}
+
+如果 \(\mathit{X},\mathit{Y}\) 是两个 discrete random variables, 那么它们的 conditional distribution 就很简单了.
+
+\[\mathbb{P}^{\mathit{X}|\mathit{Y} = \mathit{y}}(\left\{ \mathit{x} \right\}) = \frac{\mathbb{P}(\mathit{X} = \mathit{x},\mathit{Y} = \mathit{y})}{\mathbb{P}(\mathit{Y} = \mathit{y})}\]
+
+以及
+
+\[\mathit{F}_{\mathit{X}|\mathit{Y} = \mathit{y}}(\mathit{x}) = \sum\limits_{\mathit{t} \leq \mathit{x}}\frac{\mathbb{P}(\mathit{X} = \mathit{t},\mathit{Y} = \mathit{y})}{\mathbb{P}(\mathit{Y} = \mathit{y})}\]
+
+其他情况稍复杂一些. 但是我们可以确定的是:
+
+\end{qlremark}
+
+\subsection{conditional density for random variables jointly continuous}\label{conditional-density-for-random-variables-jointly-continuous}
+
+% qlnotes: kind=theorem; id=thm-03-joint-conditional-distribution-jointly-continuous-rvs-defined-conditional-density
+\begin{theorem}{\kn{jointly continuous RVs 之间所有 defined 处总有 conditional density}}\label{thm-03-joint-conditional-distribution-jointly-continuous-rvs-defined-conditional-density}
+
+令 \(\mathbf{X} = (\mathit{X},\mathit{Y})^{\mathit{T}}\) 是一个 continuous random vector, 则对于任意 \(\mathit{y}\) 使得 \(\mathit{f}_{\mathit{Y}}(\mathit{y}) > 0\), 都有 conditional distribution of \(\mathit{X}\) given \(\mathit{Y} = \mathit{y}\) 的 pdf:
+
+\[\left. \mathit{f}_{\mathit{X}|\mathit{Y}}(\mathit{x} \middle| \mathit{y}) := \frac{\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})}{\mathit{f}_{\mathit{Y}}(\mathit{y})} \right.\]
+
+即: \(\forall\mathit{x} \in \mathbb{R}\) 有:
+
+\[\left. \mathit{F}_{\mathit{X}|\mathit{Y}}(\mathit{x} \middle| \mathit{y}) = \int_{- \infty}^{\mathit{x}}\frac{\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{t},\mathit{y})}{\mathit{f}_{\mathit{Y}}(\mathit{y})}\,\mathit{d}\mathit{t} \right.\]
+
+\end{theorem}
+
+\begin{proof}
+
+注意: \((\mathit{X},\mathit{Y})^{\mathit{T}}\) 是 continuous random vector \(\Longrightarrow\) \(\mathit{Y}\) 是一个 continuous random variable. 因而 因而 \(\mathit{f}_{\mathit{Y}}(\mathit{y})\) 是 well-defined 的. (反过来不成立) 取 \(\mathit{y}\) s.t. \(\mathit{f}_{\mathit{Y}}(\mathit{y}) > 0\).
+
+则
+
+\[\begin{matrix}
+{\mathbb{P}^{\mathit{X} \mid \mathit{Y} = \mathit{y}}(\mathit{A})} & {= \lim\limits_{h\rightarrow 0^{+}}\mathbb{P}(\mathit{X} \in \mathit{A} \mid \mathit{y} \leq \mathit{Y} \leq \mathit{y} + h)} \\
+ & {= \lim\limits_{h\rightarrow 0^{+}}\frac{\mathbb{P}(\mathit{X} \leq \mathit{x},\mathit{y} \leq \mathit{Y} \leq \mathit{y} + h)}{\mathbb{P}(\mathit{y} \leq \mathit{Y} \leq \mathit{y} + h)} = \lim\limits_{h\rightarrow 0^{+}}\frac{\mathit{F}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y} + h) - \mathit{F}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})}{\mathit{F}_{\mathit{Y}}(\mathit{y} + h) - \mathit{F}_{\mathit{Y}}(\mathit{y})}} \\
+ & {= \frac{\mathit{\partial}_{\mathit{y}}\mathit{F}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})}{\mathit{f}_{\mathit{Y}}(\mathit{y})} = \int_{- \infty}^{\mathit{x}}\frac{\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{s},\mathit{y})}{\mathit{f}_{\mathit{Y}}(\mathit{y})}\mathit{d}\mathit{s}}
+\end{matrix}\]
+
+因而, \(\left. \mathit{f}_{\mathit{X}|\mathit{Y}}(\mathit{x} \middle| \mathit{y}) := \frac{\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})}{\mathit{f}_{\mathit{Y}}(\mathit{y})} \right.\) 是 \(\mathit{F}_{\mathit{X}|\mathit{Y} = \mathit{y}}\) 的 pdf.
+
+\end{proof}
+
+\begin{qlremark}{Remark}
+
+为了保证 continuous random vector 下分量之间的 conditional distribution 总是 (a.e.) 拥有 pdf 的, 我们可以 给 not well-defined 处下定义: 如果 \(\mathit{f}_{\mathit{Y}}(\mathit{y}) = 0\), 就直接 set \(\left. \mathit{f}_{\mathit{X}|\mathit{Y}}(\mathit{x} \middle| \mathit{y}) = 0 \right.\) for all \(\mathit{x}\).
+
+在这个定义下: continuous random vector 下分量之间的 conditional distribution 也总是 continuous 的.
+
+\end{qlremark}
+
+\subsection{Law of Total Probability for continuous random vector}\label{law-of-total-probability-for-continuous-random-vector}
+
+\begin{theorem}
+
+令 \(\mathbf{X} = (\mathit{X},\mathit{Y})^{\mathit{T}}\) 是一个 continuous random vector, 则对于任意 \(\mathit{A} \in \mathcal{B}(\mathbb{R})\),
+
+\[\mathbb{P}((\mathit{X},\mathit{Y}) \in \mathit{A}) = \int_{- \infty}^{+ \infty}\mathbb{P}((\mathit{X},\mathit{y}) \in \mathit{A} \mid \mathit{Y} = \mathit{y})\mathit{f}_{\mathit{Y}}(\mathit{y})\mathit{d}\mathit{y}\]
+
+\end{theorem}
+
+\begin{proof}
+
+注意:
+
+\[\mathbb{P}\left( {\mathit{Y} \in \left\{ {\mathit{y} \in \mathbb{R}:\mathit{f}_{\mathit{Y}}(\mathit{y}) = 0} \right\}} \right) = 0\]
+
+即, \(\left\{ {\mathit{Y} \in \mathit{f}_{\mathit{Y}}^{- 1}(\left\{ 0 \right\})} \right\}\) 是一个 null set. (不是说 \(\mathit{f}_{\mathit{Y}}(\mathit{y}) = 0\) 的 \(\mathit{y}\) 是 null set, 意思是说 \(\mathit{Y}\) 落在这些 \(\mathit{y}\) 上的事件是 null set.)
+
+因而 compute:
+
+\[\begin{aligned}
+ & \mathbb{P}(\mathit{X} \in ( - \infty,\mathit{x}\rbrack,\mathit{Y} \leq \mathit{y}) \\
+ & = \mathbb{P}\left( {\mathit{X} \in ( - \infty,\mathit{x}\rbrack,\left\{ {\mathit{Y} \leq \mathit{y}} \right\} \cap \left\{ {\mathit{Y} \notin \mathit{f}_{\mathit{Y}}^{- 1}(\left\{ 0 \right\})} \right\}} \right) \\
+ & = \int_{( - \infty,\mathit{y}\rbrack \cap \mathit{f}_{\mathit{Y}}^{- 1}{({\{ 0\}}^{\mathit{c}})}}\int_{- \infty}^{\infty}\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{s},\mathit{t})\mathit{d}\mathit{s}\mathit{d}\mathit{t} \\
+ & = \int_{( - \infty,\mathit{y}\rbrack \cap \mathit{f}_{\mathit{Y}}^{- 1}((0, + \infty))}\left( {\int_{- \infty}^{\mathit{x}}\frac{\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{s},\mathit{t})}{\mathit{f}_{\mathit{Y}}(\mathit{t})}\mathit{d}\mathit{s}} \right)\mathit{f}_{\mathit{Y}}(\mathit{t})\mathit{d}\mathit{t} \\
+ & = \int_{( - \infty,\mathit{y}\rbrack \cap \mathit{f}_{\mathit{Y}}^{- 1}((0, + \infty))}\mathbb{P}(\mathit{X} \leq \mathit{x} \mid \mathit{Y} = \mathit{t})\mathit{f}_{\mathit{Y}}(\mathit{t})\mathit{d}\mathit{t} \\
+ & = \int_{( - \infty,\mathit{y}\rbrack \cap \mathit{f}_{\mathit{Y}}^{- 1}((0, + \infty))}\mathbb{P}(\mathit{X} \leq \mathit{x} \mid \mathit{Y} = \mathit{t})\mathit{f}_{\mathit{Y}}(\mathit{t})\mathit{d}\mathit{t} \\
+ &\quad + \int_{( - \infty,\mathit{y}\rbrack \cap \mathit{f}_{\mathit{Y}}^{- 1}({\{ 0\}})}\mathbb{P}(\mathit{X} \leq \mathit{x} \mid \mathit{Y} = \mathit{t})\mathit{f}_{\mathit{Y}} \\
+ & = \int_{( - \infty,\mathit{y}\rbrack}\mathbb{P}(\mathit{X} \leq \mathit{x} \mid \mathit{Y} = \mathit{t})\mathit{f}_{\mathit{Y}}(\mathit{t})\mathit{d}\mathit{t} \\
+ & = \int_{- \infty}^{\mathit{y}}\mathbb{P}(\mathit{X} \leq \mathit{x} \mid \mathit{Y} = \mathit{t})\mathit{f}_{\mathit{Y}}(\mathit{t})\mathit{d}\mathit{t}
+\end{aligned}\]
+
+\end{proof}
+
+\begin{qlremark}{Remark}
+
+recall 最普通的全概率公式: 把样本空间 partition 成几个 disjoint 的事件 \(\mathit{B}_{1},\cdots,\mathit{B}_{\mathit{n}}\), 则任意事件\(\mathit{A}\) 等于它在每个 \(\mathit{B}_{\mathit{i}}\) 上的 conditional probability 的和:
+
+\[\mathbb{P}(\mathit{A}) = \sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathbb{P}(\mathit{A} \cap \mathit{B}_{\mathit{i}}) = \sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathbb{P}(\mathit{A} \mid \mathit{B}_{\mathit{i}})\mathbb{P}(\mathit{B}_{\mathit{i}})\]
+
+这很容易理解. 而这里的 law of total probability for continuous random vector 就是这个公式在 continuous case 的推广:
+
+由于在每一点 \(\mathit{y}\) 上, \((\mathit{X},\mathit{Y}) \in \mathit{A}\) 的概率都有一个 conditional distribution \(\left. (\mathit{X},\mathit{Y}) \in \mathit{A} \middle| \mathit{Y} = \mathit{y} \right.\), 因而 \((\mathit{X},\mathit{Y}) \in \mathit{A}\) 的概率就等于这个 conditional distribution 在所有 \(\mathit{y}\) 上的加权和, 权重就是 \(\mathit{Y}\) 的 pdf \(\mathit{f}_{\mathit{Y}}(\mathit{y})\). 因而才有
+
+\[\mathbb{P}((\mathit{X},\mathit{Y}) \in \mathit{A}) = \int_{- \infty}^{+ \infty}\mathbb{P}((\mathit{X},\mathit{y}) \in \mathit{A} \mid \mathit{Y} = \mathit{y})\mathit{f}_{\mathit{Y}}(\mathit{y})\mathit{d}\mathit{y}\]
+
+\end{qlremark}
+
+\begin{example}
+
+考虑 random vector \(\mathbf{X} = (\mathit{X},\mathit{Y})^{\mathit{T}}\) with joint pdf
+
+\[\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \left\{ \begin{matrix}
+{4\mathit{x}\mathit{y},} & {\text{if}\ 0 \leq \mathit{x} \leq 1,0 \leq \mathit{y} \leq 1} \\
+{0,} & \text{otherwise}
+\end{matrix} \right.\]
+
+计算: \(\mathit{f}_{\mathit{X}},\mathit{f}_{\mathit{Y}},\mathit{f}_{\mathit{X}|\mathit{Y}},\mathit{f}_{\mathit{Y}|\mathit{X}}\).
+
+\end{example}
+
+\begin{qlsolution}{Solution}
+
+首先计算 margianl pdfs:
+
+\[\mathit{f}_{\mathit{X}}(\mathit{x}) = \int_{- \infty}^{+ \infty}\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})\mathit{d}\mathit{y} = \int_{0}^{1}4\mathit{x}\mathit{y}\mathit{d}\mathit{y} = 2\mathit{x},\text{for}\ 0 \leq \mathit{x} \leq 1\]
+
+and
+
+\[\mathit{f}_{\mathit{Y}}(\mathit{y}) = \int_{- \infty}^{+ \infty}\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})\mathit{d}\mathit{x} = \int_{0}^{1}4\mathit{x}\mathit{y}\mathit{d}\mathit{x} = 2\mathit{y},\text{for}\ 0 \leq \mathit{y} \leq 1\]
+
+由于这是一个 continuous random vector, 因而根据\ref{thm-03-joint-conditional-distribution-jointly-continuous-rvs-defined-conditional-density} 可以得到:
+
+\[\mathit{f}_{\mathit{X} \mid \mathit{Y}}(\mathit{x} \mid \mathit{y}) = \left\{ \begin{matrix}
+{\frac{\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})}{\mathit{f}_{\mathit{Y}}(\mathit{y})} = \frac{4\mathit{x}\mathit{y}}{2\mathit{y}} = 2\mathit{x},} & {\text{if}\ \mathit{x} \in \lbrack 0,1\rbrack,} \\
+{0,} & \text{otherwise.}
+\end{matrix} \right.\]
+
+同理计算出
+
+\[\mathit{f}_{\mathit{Y} \mid \mathit{X}}(\mathit{y} \mid \mathit{x}) = \left\{ \begin{matrix}
+{\frac{\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})}{\mathit{f}_{\mathit{X}}(\mathit{x})} = \frac{4\mathit{x}\mathit{y}}{2\mathit{x}} = 2\mathit{y},} & {\text{if}\ \mathit{y} \in \lbrack 0,1\rbrack,} \\
+{0,} & \text{otherwise.}
+\end{matrix} \right.\]
+
+\end{qlsolution}
+
+\section{conditional expectation}\label{conditional-expectation}
+
+% qlnotes: kind=definition; id=def-03-joint-conditional-distribution-conditional-expectation
+\begin{definition}{\kn{conditional expectation}}\label{def-03-joint-conditional-distribution-conditional-expectation}
+
+令 \(\mathit{X},\mathit{Y}:\Omega\rightarrow\mathbb{R}\) 为 RVs. 这里沿用 \knref{expectation and variance of random variable} 中 expectation 的积分定义. 对于 \(\mathit{y} \in \mathbb{R}\) where \(\mathit{F}_{\mathit{X}|\mathit{Y}} = \mathbb{P}^{\mathit{X}|\mathit{Y} = \mathit{y}}(\mathit{X} \leq \mathit{x})\) is defined (这个条件对于 discrete 是筛选掉 \(\mathbb{P}(\mathit{y}) = 0\) 的点, 对于 continuous 这是为了筛选掉 \(\mathit{f}_{\mathit{Y}} = 0\) 的点), 我们定义 conditional expectation:
+
+\[\left. \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y} = \mathit{y}\rbrack := \int_{- \infty}^{\infty}\mathit{x}\,\mathit{d}\mathbb{P}^{\mathit{X}|\mathit{Y} = \mathit{y}}(\mathit{x}) \right.\]
+
+特别地, 如果\((\mathit{X},\mathit{Y})\) 是一个 discrete random vector, 则它即是:
+
+\[\left. \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y} = \mathit{y}\rbrack = \sum\limits_{\mathit{x}}\mathit{x}\mathbb{P}(\mathit{X} \middle| \mathit{Y})(\mathit{x} \middle| \mathit{y}) = \sum\limits_{\mathit{x}}\mathit{x}\mathbb{P}(\mathit{X} = \mathit{x} \middle| \mathit{Y} = \mathit{y}) \right.\]
+
+而如果 \((\mathit{X},\mathit{Y})\) 是一个 (absolutely) continuous random vector, 则它即是:
+
+\[\left. \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y} = \mathit{y}\rbrack = \int_{- \infty}^{\infty}\mathit{x}\mathit{f}_{\mathit{X}|\mathit{Y}}(\mathit{x} \middle| \mathit{y})\,\mathit{d}\mathit{x} \right.\]
+
+\end{definition}
+
+\begin{qlremark}{Remark}
+
+注意: conditional expectation 对于给定的 \(\mathit{y}\) 是一个值; 而它也整体是一个 function of \(\mathit{y}\), 同时也是 function from the sample space \(\Omega\) (更准确而言是 \(\left\{ {\mathit{\omega} \in \Omega:\mathit{f}_{\mathit{Y}}(\mathit{Y}(\mathit{\omega})) > 0} \right\}\), 但是去掉的 这个集合的测度为零, 所以不用管, a.e. define 即可).
+
+对于 \(\mathit{\omega} \in \Omega\),
+
+\[\left. \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y}\rbrack:\mathit{\omega}\mapsto\mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y} = \mathit{Y}(\mathit{\omega})\rbrack \right.\]
+
+Notice: 这个函数是一个 random variable. 同理, 我们可以构造 conditional expectation given multiple random variables \(\left. \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y}_{1},\cdots,\mathit{Y}_{\mathit{n}}\rbrack \right.\). 但是暂时不谈论这个.
+
+\end{qlremark}
+
+\begin{proposition}{\kn{independence 下 conditional distribution 不变},
+\kn{independence 下 conditional density 不变} 和
+\kn{independence 下 conditional expectation 不变}}
+
+如果 \(\mathit{X},\mathit{Y}\) 是 independent 的, 那么在任意 defined \(\mathit{y}\) 上,
+
+\[\mathit{F}_{\mathit{X}|\mathit{Y} = \mathit{y}} = \mathit{F}_{\mathit{X}},\quad\mathit{f}_{\mathit{X}|\mathit{Y} = \mathit{y}} = \mathit{f}_{\mathit{X}},\]
+
+以及
+
+\[\left. \quad\mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y}\rbrack = \mathbb{E}\lbrack\mathit{X}\rbrack \right.\]
+
+\end{proposition}
+
+\begin{example}
+
+\textbf{(constant random variable 的 conditional expectation)}
+
+令 \(\mathit{X} := \mathit{b}\) 为一个 constant random variable. \(\mathit{Y}\) 为一个 (absolutely) continuous random variable. compute: \(\left. \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y}\rbrack \right.\) when \(\mathit{f}_{\mathit{Y}}(\mathit{y}) > 0\).
+
+\end{example}
+
+\begin{qlsolution}{Solution}
+
+\[\begin{matrix}
+{\mathit{F}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \mathbb{P}(\mathit{X} \leq \mathit{x},\mathit{Y} \leq \mathit{y}) = \{\mathit{F}_{\mathit{Y}}(\mathit{y}),} & {\text{if}\ \mathit{x} \leq \mathit{b},} \\
+{0,} & {\text{if}\ \mathit{x} > \mathit{b} = \mathit{F}_{\mathit{X}}(\mathit{x}) \cdot \mathit{F}_{\mathit{Y}}(\mathit{y})}
+\end{matrix}\]
+
+因而它们 independent (当然,,) 因而
+
+\[\left. \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y}\rbrack = \mathbb{E}\lbrack\mathit{X}\rbrack = \mathit{b} \right.\]
+
+\end{qlsolution}
+
+为什么我们要提及这个很呆的例子 因为我们要说一个很呆但是要说一下的事情:
+
+\begin{proposition}
+
+conditional expectation 满足 linear property. 即任取 \(\mathit{a},\mathit{b} \in \mathbb{R}\),
+
+\[\left. \mathbb{E}\lbrack\mathit{a}\mathit{X} + \mathit{b} \middle| \mathit{Y}\rbrack = \mathit{a}\mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y}\rbrack + \mathit{b} \right.\]
+
+\end{proposition}
+
+\begin{example}
+
+(computation exercise) 令 \(\mathit{X},\mathit{Y}\) 为 RVs with joint pdf
+
+\[\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \left\{ \begin{matrix}
+{\frac{1}{\mathit{y}}\mathit{e}^{- \frac{\mathit{x}}{\mathit{y}}}\mathit{e}^{- \mathit{y}},} & {\mathit{x} > 0,\mathit{y} > 0} \\
+{0,} & \text{otherwise}
+\end{matrix} \right.\]
+
+计算: \(\left. \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y} = \mathit{y}\rbrack \right.\).
+
+\end{example}
+
+\begin{qlsolution}{Solution}
+
+根据 \ref{thm-03-joint-conditional-distribution-jointly-continuous-rvs-defined-conditional-density} 和 \ref{def-03-joint-conditional-distribution-conditional-expectation}, 我们就是要做两件事情: 一个是计算 \(\mathit{f}_{\mathit{Y}}\), 然后 根据 \(\mathit{f}_{\mathit{Y}}\) 和 \(\mathit{f}_{\mathit{X},\mathit{Y}}\) 计算出 \(\mathit{f}_{\mathit{X}|\mathit{Y}}\), 最后根据 \(\mathit{f}_{\mathit{X}|\mathit{Y}}\) 积分计算出 \(\left. \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y}\rbrack \right.\).
+
+那么
+
+\[\mathit{f}_{\mathit{Y}}(\mathit{y}) = \int_{- \infty}^{+ \infty}\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})\mathit{d}\mathit{x} = \mathit{e}^{- \mathit{y}}\int_{0}^{+ \infty}\frac{1}{\mathit{y}}\mathit{e}^{- \mathit{x}/\mathit{y}}\mathit{d}\mathit{x} = \mathit{e}^{- \mathit{y}},\mathit{y} > 0\]
+
+我们发现 \(\mathit{Y} \sim \text{Exp}(1)\). 然后对于 \(\mathit{y} > 0\),
+
+\[\mathit{f}_{\mathit{X} \mid \mathit{Y}}(\mathit{x} \mid \mathit{y}) = \frac{\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})}{\mathit{f}_{\mathit{Y}}(\mathit{y})} = \frac{1}{\mathit{y}}\mathit{e}^{- \mathit{x}/\mathit{y}}\]
+
+因而 \(\left. \mathit{X} \middle| \mathit{Y} = \mathit{y} \sim \text{Exp}(1/\mathit{y}) \right.\). 最后,
+
+\[\mathbb{E}\lbrack\mathit{X} \mid \mathit{Y} = \mathit{y}\rbrack = \int_{- \infty}^{+ \infty}\mathit{x}\mathit{f}_{\mathit{X} \mid \mathit{Y}}(\mathit{x} \mid \mathit{y})\mathit{d}\mathit{x} = \frac{1}{\mathit{y}}\int_{0}^{+ \infty}\mathit{x}\mathit{e}^{- \mathit{x}/\mathit{y}}\mathit{d}\mathit{x} = \mathit{y}\]
+
+而对于 \(\mathit{y} \leq 0\), 因为 \(\mathit{f}_{\mathit{Y}}(\mathit{y}) = 0\), \(\mathbb{E}\lbrack\mathit{X} \mid \mathit{Y} = \mathit{y}\rbrack\) is not defined.
+
+\end{qlsolution}
+
+//TODO: 如果 \(\mathit{X}\) 是 continous 的, 而 \(\mathit{Y}\) 是 discrete 的, 那么我们怎么 define conditional distribution, 以及 expectation 呢? 这个时候我们就需要用到 之前说的 generated \(\mathit{\sigma}\)-algebra 的概念了.
+
+\section{law of total expectation}\label{law-of-total-expectation}
+
+\begin{theorem}{\kn{law of total expectation}}
+
+令 \(\mathit{X},\mathit{Y}:\Omega\rightarrow\mathbb{R}\) 为 RVs, 我们知道它们的 conditional expectation \(\left. \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y}\rbrack \right.\) 也是一个 \(\Omega\rightarrow\mathbb{R}\) 的 RV.
+
+如果 \(\left. \mathbb{E}\lbrack \middle| \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y}\rbrack \middle| \rbrack < \infty \right.\), 则
+
+\[\left. \mathbb{E}\lbrack\mathit{X}\rbrack = \mathbb{E}\lbrack\mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y}\rbrack\rbrack \right.\]
+
+\end{theorem}
+
+\begin{proof}
+
+对于更加严格的 conditional expectation 的定义而言 (as an orthogonal projection from \(\mathit{L}^{2}(\Omega,\mathcal{F},\mathbb{P})\) onto the subspace of \(\mathit{Y}\)-measurable functions), 这个定理是 trivial 的, 直接 follow from def. 这个定义在 indicator function 上也包含 \knref{Kolmogorov definition of conditional probability} 的情形. 在该定义中, \(\left. \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y}\rbrack \right.\) 被定义为一个 \(\mathit{\sigma}(\mathit{Y})\)-measurable function \(\mathit{Z}\), 使得对于任意 \(\mathit{A} \in \mathit{\sigma}(\mathit{Y})\), 都有
+
+\[\int_{\mathit{A}}\mathit{Z}\,\mathit{d}\mathbb{P} = \int_{\mathit{A}}\mathit{X}\,\mathit{d}\mathbb{P}\]
+
+那么取 \(\mathit{A} = \Omega\), 自然得到.
+
+而我们目前的定义下, 要证明它则要对于 discrete 和 continuous 两种情况分别计算证明. (recall Lebesgue Decomposition Theorem: 任意 measure 都可以被分解成一个 discrete 的部分和一个 continuous 的部分以及一个 可以忽略的 singular 的部分. 因而证明了 discrete 和 continuous 两种情况即可.)
+
+For discrete case:
+
+\[\begin{matrix}
+{\mathbb{E}\lbrack\mathbb{E}\lbrack\mathit{X} \mid \mathit{Y}\rbrack\rbrack} & {= \mathbb{E}_{\mathit{\omega}}\lbrack\mathbb{E}\lbrack\mathit{X} \mid \mathit{Y} = \mathit{Y}(\mathit{\omega})\rbrack\rbrack = \mathbb{E}_{\mathit{\omega}}\left\lbrack {\sum\limits_{\mathit{x}}\mathit{x}\mathbb{P}(\mathit{X} = \mathit{x} \mid \mathit{Y} = \mathit{Y}(\mathit{\omega}))} \right\rbrack} \\
+ & {= \sum\limits_{\mathit{x}}\mathit{x}\mathbb{E}_{\mathit{\omega}}\lbrack\mathbb{P}(\mathit{X} = \mathit{x} \mid \mathit{Y} = \mathit{Y}(\mathit{\omega}))\rbrack} \\
+ & {= \sum\limits_{\mathit{x}}\mathit{x}\sum\limits_{\mathit{y}}\mathbb{P}(\mathit{X} = \mathit{x} \mid \mathit{Y} = \mathit{y}) \cdot \mathbb{P}(\mathit{Y} = \mathit{y})} \\
+ & {= \sum\limits_{\mathit{x}}\mathit{x}\sum\limits_{\mathit{y}}\mathbb{P}(\mathit{X} = \mathit{x},\mathit{Y} = \mathit{y})} \\
+ & {= \sum\limits_{\mathit{x}}\mathit{x}\mathbb{P}(\mathit{X} = \mathit{x}) = \mathbb{E}\lbrack\mathit{X}\rbrack}
+\end{matrix}\]
+
+For continuous case:
+
+\[\begin{matrix}
+{\mathbb{E}\lbrack\mathbb{E}\lbrack\mathit{X} \mid \mathit{Y}\rbrack\rbrack} & {= \mathbb{E}_{\mathit{\omega}}\left\lbrack {\int_{- \infty}^{+ \infty}\mathit{x}\mathit{f}_{\mathit{X} \mid \mathit{Y}}(\mathit{x} \mid \mathit{Y}(\mathit{\omega}))\mathit{d}\mathit{x}} \right\rbrack = \int_{- \infty}^{+ \infty}\mathit{x}\mathbb{E}_{\mathit{\omega}}\left\lbrack {\mathit{f}_{\mathit{X} \mid \mathit{Y}}(\mathit{x} \mid \mathit{Y}(\mathit{\omega}))} \right\rbrack\mathit{d}\mathit{x}} \\
+ & {= \int_{- \infty}^{+ \infty}\mathit{x}\int_{- \infty}^{+ \infty}\mathit{f}_{\mathit{X} \mid \mathit{Y}}(\mathit{x} \mid \mathit{y})\mathit{f}_{\mathit{Y}}(\mathit{y})\mathit{d}\mathit{y}\mathit{d}\mathit{x}} \\
+ & {= \int_{- \infty}^{+ \infty}\int_{- \infty}^{+ \infty}\mathit{x}\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})\mathit{d}\mathit{x}\mathit{d}\mathit{y}} \\
+ & {= \int_{- \infty}^{+ \infty}\mathit{x}\int_{- \infty}^{+ \infty}\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})\mathit{d}\mathit{x}\mathit{d}\mathit{x}} \\
+ & {= \int_{- \infty}^{+ \infty}\mathit{x}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x} = \mathbb{E}\lbrack\mathit{X}\rbrack}
+\end{matrix}\]
+
+\end{proof}
+
+\begin{example}
+
+(\textbf{fair coin toss}) 我们投掷一枚 fair coin. \(\mathit{X}_{1}\): 直到 HH 出现钱, 投掷的次数;
+
+\(\mathit{X}_{2}\): 直到 HT 出现钱, 投掷的次数.
+
+问题: 计算 \(\mathbb{E}\lbrack\mathit{X}_{1}\rbrack\) 和 \(\mathbb{E}\lbrack\mathit{X}_{2}\rbrack\).
+
+\end{example}
+
+\begin{qlsolution}{Solution}
+
+We condition on 第一次 toss \(\mathit{Y}_{1}\), 以及第二次 toss \(\mathit{Y}_{2}\).
+
+\[\begin{matrix}
+{\mathbb{E}\left\lbrack \mathit{X}_{1} \right\rbrack} & {= \mathbb{E}\left\lbrack {\mathbb{E}\left\lbrack {\mathit{X}_{1} \mid \mathit{Y}_{1}} \right\rbrack} \right\rbrack = \frac{1}{2}\mathbb{E}\left\lbrack {\mathit{X}_{1} \mid \mathit{Y}_{1} = \mathit{H}} \right\rbrack + \frac{1}{2}\mathbb{E}\left\lbrack {\mathit{X}_{1} \mid \mathit{Y}_{1} = \mathit{T}} \right\rbrack} \\
+ & {= \frac{1}{2}\left( {\frac{1}{2}\mathbb{E}\left\lbrack {\mathit{X} \mid \mathit{Y}_{1} = \mathit{H},\mathit{Y}_{2} = \mathit{H}} \right\rbrack + \frac{1}{2}\mathbb{E}\left\lbrack {\mathit{X} \mid \mathit{Y}_{1} = \mathit{H},\mathit{Y}_{2} = \mathit{T}} \right\rbrack} \right) + \frac{1}{2}\left( {1 + \mathbb{E}\left\lbrack \mathit{X}_{1} \right\rbrack} \right)} \\
+ & {= \frac{1}{2}\left( {\frac{2}{2} + \frac{1}{2}\left( {\mathbb{E}\left\lbrack \mathit{X}_{1} \right\rbrack + 2} \right)} \right) + \frac{1}{2}\left( {1 + \mathbb{E}\left\lbrack \mathit{X}_{1} \right\rbrack} \right).}
+\end{matrix}\]
+
+解出 \(\mathbb{E}\lbrack\mathit{X}_{1}\rbrack = 6\). 同理, 可以解出 \(\mathbb{E}\lbrack\mathit{X}_{2}\rbrack = 4\).
+
+\end{qlsolution}
+
+\begin{example}
+
+一只鸡在一段时间内下 \(\mathit{N}\) 个蛋, 其中 \(\mathit{N} \sim \text{Pois}(\mathit{\lambda})\). 每只蛋孵化成小鸡的概率为 \(\mathit{p}\), 互相独立. 令 \(\mathit{K}\) 表示孵化成小鸡的蛋的数量, 计算 \(\left. \mathit{K} \middle| \mathit{N},\mathbb{E}\lbrack\mathit{K}\rbrack \right.\), 以及 \(\mathit{K}\) 的 distribution.
+
+\end{example}
+
+\begin{qlsolution}{Solution}
+
+由题意得
+
+\[\left. \mathbb{P}(\mathit{K} = \mathit{k} \middle| \mathit{N} = \mathit{n}) = \binom{\mathit{n}}{\mathit{k}}\mathit{p}^{\mathit{k}}(1 - \mathit{p})^{\mathit{n} - \mathit{k}} \right.\]
+
+因此, \(\left. \mathit{K} \middle| \mathit{N} = \mathit{n} \sim \text{Bin}(\mathit{n},\mathit{p}) \right.\) 因而 \(\left. \mathbb{E}\lbrack\mathit{K} \middle| \mathit{N} = \mathit{n}\rbrack = \mathit{n}\mathit{p} \right.\). 由 law of total expectation,
+
+\[\left. \mathbb{E}\lbrack\mathit{K}\rbrack = \mathbb{E}\lbrack\mathbb{E}\lbrack\mathit{K} \middle| \mathit{N}\rbrack\rbrack = \mathbb{E}\lbrack\mathit{N}\rbrack \cdot \mathit{p} = \mathit{\lambda} \right.\]
+
+然后由 law of total probability,
+
+\[\begin{matrix}
+{\mathbb{P}(\mathit{K} = \mathit{k})} & \left. = \sum\limits_{\mathit{n} = \mathit{k}}^{+ \infty}\mathbb{P}(\mathit{K} = \mathit{k},\mathit{N} = \mathit{n}) = \sum\limits_{\mathit{n} = \mathit{k}}^{+ \infty}\mathbb{P}(\mathit{K} = \mathit{k} \middle| \mathit{N} = \mathit{n}) \cdot \mathbb{P}(\mathit{N} = \mathit{n}) \right. \\
+ & {= \sum\limits_{\mathit{n} = \mathit{k}}^{+ \infty}\binom{\mathit{n}}{\mathit{k}}\mathit{p}^{\mathit{k}}(1 - \mathit{p})^{\mathit{n} - \mathit{k}} \cdot \frac{\mathit{\lambda}^{\mathit{n}}\mathit{e}^{- \mathit{\lambda}}}{\mathit{n}!}} \\
+ & {= \sum\limits_{\mathit{n} = \mathit{k}}^{+ \infty}\frac{\mathit{n}!}{\mathit{k}!(\mathit{n} - \mathit{k})!}\mathit{p}^{\mathit{k}}(1 - \mathit{p})^{\mathit{n} - \mathit{k}} \cdot \frac{\mathit{\lambda}^{\mathit{n}}\mathit{e}^{- \mathit{\lambda}}}{\mathit{n}!}} \\
+ & {= \sum\limits_{\mathit{n} = \mathit{k}}^{+ \infty}\frac{\mathit{\lambda}^{\mathit{n}}\mathit{e}^{- \mathit{\lambda}}}{\mathit{k}!(\mathit{n} - \mathit{k})!}\mathit{p}^{\mathit{k}}(1 - \mathit{p})^{\mathit{n} - \mathit{k}}} \\
+ & {= \sum\limits_{\mathit{n} = \mathit{k}}^{+ \infty}\frac{(\mathit{\lambda}\mathit{p})^{\mathit{k}}(\mathit{\lambda}(1 - \mathit{p}))^{\mathit{n} - \mathit{k}}\mathit{e}^{- \mathit{\lambda}}}{\mathit{k}!(\mathit{n} - \mathit{k})!}} \\
+ & {= \frac{(\mathit{\lambda}\mathit{p})^{\mathit{k}}\mathit{e}^{- \mathit{\lambda}}}{\mathit{k}!}\sum\limits_{\mathit{n} = \mathit{k}}^{+ \infty}\frac{(\mathit{\lambda}(1 - \mathit{p}))^{\mathit{n} - \mathit{k}}}{(\mathit{n} - \mathit{k})!}} \\
+ & {= \frac{(\mathit{\lambda}\mathit{p})^{\mathit{k}}\mathit{e}^{- \mathit{\lambda}}}{\mathit{k}!}\sum\limits_{\mathit{m} = 0}^{+ \infty}\frac{(\mathit{\lambda}(1 - \mathit{p}))^{\mathit{m}}}{\mathit{m}!}} \\
+ & {= \frac{(\mathit{\lambda}\mathit{p})^{\mathit{k}}\mathit{e}^{- \mathit{\lambda}}}{\mathit{k}!} \cdot \mathit{e}^{\mathit{\lambda}(1 - \mathit{p})} = \frac{(\mathit{\lambda}\mathit{p})^{\mathit{k}}\mathit{e}^{- \mathit{\lambda}\mathit{p}}}{\mathit{k}!}}
+\end{matrix}\]
+
+因而 \(\mathit{K} \sim \text{Pois}(\mathit{\lambda}\mathit{p})\).
+
+\end{qlsolution}
+
+\begin{example}
+
+令 \((\mathit{X},\mathit{Y})\) 为一对 continuous RVs with joint pdf:
+
+\[\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = 2\mathit{e}^{- (\mathit{x} + 2\mathit{y})}\mathbf{1}_{\{{\mathit{x} > 0,\mathit{y} > 0}\}}\]
+
+首先, verify \(\mathit{f}_{\mathit{X},\mathit{Y}}\) is a valid joint pdf, 然后计算 \(\left. \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y} = \mathit{y}\rbrack \right.\) 和 \(\mathbb{E}\lbrack\mathit{X}\rbrack\).
+
+\end{example}
+
+\begin{qlsolution}{Solution}
+
+\[\int_{0}^{\infty}\int_{0}^{\infty}2\mathit{e}^{- (\mathit{x} + 2\mathit{y})}\mathit{d}\mathit{x}\mathit{d}\mathit{y} = \int_{0}^{\infty}2\mathit{e}^{- 2\mathit{y}}\left( {\int_{0}^{\infty}\mathit{e}^{- \mathit{x}}\mathit{d}\mathit{x}} \right)\mathit{d}\mathit{y} = \int_{0}^{\infty}2\mathit{e}^{- 2\mathit{y}}\mathit{d}\mathit{y} = 1\]
+
+verify 很简单. 然后我们首先计算 density of \(\mathit{Y}\):
+
+\[\mathit{f}_{\mathit{Y}}(\mathit{y}) = \int_{0}^{\infty}2\mathit{e}^{- (\mathit{x} + 2\mathit{y})}\mathit{d}\mathit{x} = 2\mathit{e}^{- 2\mathit{y}},\quad\mathit{y} > 0\]
+
+然后计算 conditional density of \(\mathit{X}\) given \(\mathit{Y} = \mathit{y}\):
+
+\[\mathit{f}_{\mathit{X} \mid \mathit{Y}}(\mathit{x} \mid \mathit{y}) = \frac{\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})}{\mathit{f}_{\mathit{Y}}(\mathit{y})} = \mathit{e}^{- \mathit{x}},\quad\mathit{x} > 0\]
+
+因而 by \ref{def-03-joint-conditional-distribution-conditional-expectation},
+
+\[\mathbb{E}\lbrack\mathit{X} \mid \mathit{Y} = \mathit{y}\rbrack = \int_{0}^{\infty}\mathit{x}\mathit{e}^{- \mathit{x}}\mathit{d}\mathit{x} = 1\]
+
+然后 by law of total expectation,
+
+\[\left. \mathbb{E}\lbrack\mathit{X}\rbrack = \mathbb{E}\lbrack\mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y}\rbrack\rbrack = \mathbb{E}\lbrack 1\rbrack = 1 \right.\]
+
+since \(\left. \mathbb{E}\lbrack\mathit{X} \middle| \mathit{Y}\rbrack \right.\) is a constant function.
+
+\end{qlsolution}

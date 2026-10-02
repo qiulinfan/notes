@@ -1,0 +1,209 @@
+% LaTeX companion of 03-linear-combinations.typ. Both formats are editable.
+\chapter{Linear combinations}
+
+\section{WS 3, p. 1: geometry and number of solutions}
+
+Geometric Interpretation: three planes can have a point of intersection \(\left( {x,y,z} \right)\), three planes having a line in common, or three planes with no common intersection. 这是 common situation. 然而还有下面这两种 situation：
+
+\begin{itemize}
+\tightlist
+\item
+  \(3\) planes having a line in common: a system with infinitely many sols.
+\item
+  \(3\) planes with no common intersection: a system without sols.
+\end{itemize}
+
+For
+
+\[\left\{ \begin{matrix}
+{2x + 4y + 6z = 0} \\
+{4x + 5y + 6z = 3} \\
+{7x + 8y + 9z = 6}
+\end{matrix} \right.\]
+
+reduction gives \(x - z = 2\), \(y + 2z = - 1\). Generally choose \(z = t\); then \(x = t + 2\), \(y = - 2t - 1\), and the general solution is \(\left( {x,y,z} \right) = \left( {t + 2, - 2t - 1,t} \right) = \left( {2, - 1,0} \right) + t\left( {1, - 2,1} \right)\). The general sol represents a line in space; the source sketch marks \(t = 0:\left( {2, - 1,0} \right)\), \(t = 1:\left( {3, - 3,1} \right)\), and \(t = 2:\left( {9, - 5,2} \right)\).
+
+For
+
+\[\left\{ \begin{matrix}
+{x + 2y + 3z = 0} \\
+{4x + 5y + 6z = 3} \\
+{7x + 8y + 9z = 0}
+\end{matrix} \right.\]
+
+reduction yields \(x - z = 2\), \(y + 2z = - 1\), \(0 = - 6\). Whatever value we choose, \(0 = - 6\) cannot be satisfied; this system is inconsistent and has no sol.
+
+Complement (Joy of sets): To say a set is close under some operation \(\Diamond\) is to mean that \(a,b \in S\rightarrow a\Diamond b \in S\).
+
+\section{Number of solutions of a linear system}
+
+本章：① examine how many sols a system of linear equations can possibly can. ② Then we will present some definitions and rules of matrix algebra.
+
+A system of equa. is said to be consistent if it has at least \(1\) sol; inconsistent: no sol (iff rref of its augmented matrix contains \(\begin{pmatrix}
+0 & \ldots & 0 & | & c
+\end{pmatrix}\) with \(c \neq 0\)).
+
+If consistent, either infinitely many sols (at least one free variable) or exactly one sol (if all variables are leading).
+
+\begin{definition}{\kn{Matrix rank}}
+
+The number of leading \(1\)′s in \(\text{rref}(A)\) is denoted \(\text{rank}(A)\). For \(A = \begin{pmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{pmatrix}\), \(\text{rref}(A) = \begin{pmatrix}
+1 & 0 & {- 1} \\
+0 & 1 & 2 \\
+0 & 0 & 0
+\end{pmatrix}\), so \(\text{rank}(A) = 2\).
+
+\end{definition}
+
+For an \(n \times m\) coefficient matrix \(A\) and the \(n \times \left( {m + 1} \right)\) augmented matrix \(\left\lbrack A \middle| b \right\rbrack\):
+
+\begin{enumerate}
+\tightlist
+\item
+  \(\text{rank}(A) \leq m\) and \(\text{rank}(A) \leq n\).
+\item
+  If the system is inconsistent, \(\text{rank}(A) < n\).
+\item
+  If the system has one sol, \(\text{rank}(A) = m\).
+\item
+  If the system has infin sols, \(\text{rank}(A) < m\).
+\end{enumerate}
+
+If system inconsistent, rref of augmented matrix contains a row \(\left\lbrack 0\ldots 0 \middle| 1 \right\rbrack\), so no leading \(1\) in that row for the coefficient part. Number of variables = total number of variables \(-\) number of leading variables \(= m - \text{rank}(A)\). Thus exactly one sol gives \(m - \text{rank}(A) = 0\), whereas infinitely many sols gives \(m - \text{rank}(A) > 0\).
+
+As contrapositive: (1) if \(\text{rank}(A) = n\), the system has a sol; (2) if \(\text{rank}(A) < m\), the system has no sol or infin sols; (3) if \(\text{rank}(A) = m\), the system has no sol or exactly one sol.
+
+\begin{theorem}{Number of equations vs. number of unknowns}
+
+If a linear system has exactly one sol, then it has at least as many equations as variables (i.e. \(m \leq n\) for coefficient matrix \(A^{n \times m}\)). Its contrapositive: a linear system with fewer equations than variables (\(n < m\)) has either no sol or infin sols.
+
+\end{theorem}
+
+To illustrate it: consider \(2\) linear equations in \(3\) variables. 每个 \(ax + by + cz = d\) 都表示一个 plane，而两个 plane 要么平行无交点，要么交于一直线 (infin sols)，不可能只有一个交点。
+
+\section{WS 3, pp. 2--3: matrix algebra and linear combinations}
+
+\begin{definition}{Sum and scalar multiples of matrices}
+
+For same-size matrices, addition is entrywise; for \(k \in \mathbb{R}\), multiplication by \(k\) multiplies every entry by \(k\).
+
+\end{definition}
+
+\begin{definition}{Dot products of vectors}
+
+For \(v = < v_{1},\ldots,v_{n} >\) and \(w = < w_{1},\ldots,w_{n} >\), \(v \cdot w = v_{1}w_{1} + v_{2}w_{2} + \ldots + v_{n}w_{n}\). Note that the definition is not row-column-sensitive; it does not distinguish between row and col vectors.
+
+\end{definition}
+
+\begin{definition}{The product of \(Ax\)}
+
+Let \(A\) be an \(n \times m\) matrix with row vectors \(w_{1},\ldots,w_{n}\) and let \(x \in \mathbb{R}^{m}\). Then \(Ax = \begin{pmatrix}
+{w_{1} \cdot x} \\
+\ldots \\
+{w_{n} \cdot x}
+\end{pmatrix}\). In words, the \(i\)th component of \(Ax\) is the dot product of the \(i\)th row of \(A\) with \(x\).
+
+\end{definition}
+
+Example: \(\begin{pmatrix}
+1 & 2 & 3 \\
+1 & 0 & {- 1}
+\end{pmatrix}\begin{pmatrix}
+3 \\
+1 \\
+2
+\end{pmatrix} = \begin{pmatrix}
+{3 + 2 + 6} \\
+{3 + 0 - 2}
+\end{pmatrix} = \begin{pmatrix}
+11 \\
+1
+\end{pmatrix}\). The product \(Ax\) is defined only when the num of col of \(A\) equals the num of components in \(x\).
+
+\begin{theorem}{\(Ax\) in terms of columns of \(A\)}
+
+Let the columns of \(A\) be \(v_{1},\ldots,v_{m}\). Then \(Ax = x_{1}v_{1} + x_{2}v_{2} + \ldots + x_{m}v_{m}\).
+
+\end{theorem}
+
+\begin{definition}{\kn{Linear combination}}
+
+A vector \(b \in \mathbb{R}^{n}\) is called a linear combination of vectors \(v_{1},\ldots,v_{m} \in \mathbb{R}^{n}\) if there are scalars \(x_{1},\ldots,x_{m}\) such that \(b = x_{1}v_{1} + \ldots + x_{m}v_{m}\).
+
+\end{definition}
+
+Example: is \(b = \begin{pmatrix}
+1 \\
+1 \\
+1
+\end{pmatrix}\) a linear combination of \(v = \begin{pmatrix}
+1 \\
+2 \\
+3
+\end{pmatrix}\) and \(w = \begin{pmatrix}
+4 \\
+5 \\
+6
+\end{pmatrix}\)? Solve \(\begin{pmatrix}
+1 \\
+1 \\
+1
+\end{pmatrix} = x\begin{pmatrix}
+1 \\
+2 \\
+3
+\end{pmatrix} + y\begin{pmatrix}
+4 \\
+5 \\
+6
+\end{pmatrix} = \begin{pmatrix}
+{x + 4y} \\
+{2x + 5y} \\
+{3x + 6y}
+\end{pmatrix}\). Row reduction gives \(x = - \frac{1}{3}\), \(y = \frac{1}{3}\), hence \(b = - \frac{1}{3}v + \frac{1}{3}w\).
+
+\begin{theorem}{Algebraic rule for \(Ax\)}
+
+If \(A\) is an \(n \times m\) matrix, \(x,y \in \mathbb{R}^{m}\), and \(k\) is a scalar, then \(A\left( {x + y} \right) = Ax + Ay\) and \(A\left( {kx} \right) = k\left( {Ax} \right)\).
+
+\end{theorem}
+
+\begin{theorem}{Matrix form of a linear system}
+
+With augmented matrix \(\left\lbrack A \middle| \ b \right\rbrack\), a linear system can be written \(Ax = b\). Its \(i\)th component is \(a_{i1}x_{1} + \ldots + a_{im}x_{m} = b_{i}\), the \(i\)th equation. For \(3x_{1} + x_{2} = 7\), \(x_{1} + 2x_{2} = 4\): \(\begin{pmatrix}
+3 & 1 \\
+1 & 2
+\end{pmatrix}\begin{pmatrix}
+x_{1} \\
+x_{2}
+\end{pmatrix} = \begin{pmatrix}
+7 \\
+4
+\end{pmatrix}\), equivalently \(x_{1}\begin{pmatrix}
+3 \\
+1
+\end{pmatrix} + x_{2}\begin{pmatrix}
+1 \\
+2
+\end{pmatrix} = \begin{pmatrix}
+7 \\
+4
+\end{pmatrix}\).
+
+For \(2x_{1} - 3x_{2} + 5x_{3} = 7\), \(9x_{1} + 4x_{2} - 6x_{3} = 8\): \(\begin{pmatrix}
+2 & {- 3} & 5 \\
+9 & 4 & {- 6}
+\end{pmatrix}\begin{pmatrix}
+x_{1} \\
+x_{2} \\
+x_{3}
+\end{pmatrix} = \begin{pmatrix}
+7 \\
+8
+\end{pmatrix}\). 如果我们可以 divide by matrix \(A\)，\(x = \frac{b}{A}\)，就能直接解 \(x\)。 换言之我们是否能够找到 \(A^{- 1}\) 呢？ Chapter 2.
+
+\end{theorem}

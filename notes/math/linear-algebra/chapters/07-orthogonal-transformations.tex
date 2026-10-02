@@ -1,0 +1,103 @@
+% LaTeX companion of 07-orthogonal-transformations.typ. Both formats are editable.
+\chapter{Orthogonal transformations}
+
+\section{WS 18, p. 1: definition and matrix criteria}
+
+\begin{definition}{\kn{Orthogonal transformation}}
+
+\(T:\mathbb{R}^{n}\rightarrow\mathbb{R}^{n}\) is orthogonal (正交变换) if it preserves dot products: \(\forall x,y \in \mathbb{R}^{n}\), \(x \cdot y = T(x) \cdot T(y)\).
+
+\end{definition}
+
+\begin{theorem}{Equivalent characterizations}
+
+\(T:\mathbb{R}^{n}\rightarrow\mathbb{R}^{n}\) is orthogonal iff it preserves the length of vectors: \(\forall x \in \mathbb{R}^{n}\), \(\left\| {T(x)} \right\| = \left\| x \right\|\).
+
+\end{theorem}
+
+因而 linear trans 保留 dot product iff 保留 length. The proof expands \(\left\| {T\left( {x + y} \right)} \right\|^{2} = \left\| {x + y} \right\|^{2}\):
+
+\[\left\| {T(x)} \right\|^{2} + 2T(x) \cdot T(y) + \left\| {T(y)} \right\|^{2} = \left\| x \right\|^{2} + 2x \cdot y + \left\| y \right\|^{2},\]
+
+then cancels equal norm terms.
+
+(a) An orthogonal trans \(T\) is injective: \(T(x) = 0\rightarrow\left\| {T(x)} \right\| = 0\rightarrow\left\| x \right\| = 0\), so \(\text{ker}\ T = \left\{ 0 \right\}\) and \(T\) is inj. (b) It is an isomorphism because a same-dimension linear trans is inj iff surj. (c) The standard matrix of \(T\) has orthonormal columns. (d) The composition of orthogonal trans is orthogonal, since
+
+\[\left\| {T_{k} \cdot T_{k - 1} \cdot \ldots \cdot T_{1}(x)} \right\| = \ldots = \left\| x \right\|.\]
+
+\begin{definition}{Orthogonal matrix}
+
+A square matrix \(A\) is orthogonal if \(A^{t}A = I_{n}\) (即 \(A^{t} = A^{- 1}\)).
+
+\end{definition}
+
+If \(A = \begin{pmatrix}
+v_{1} & \ldots & v_{n}
+\end{pmatrix}\), then the \(ij\)th entry of \(A^{t}A\) is \(v_{i} \cdot v_{j}\). Therefore \(A\) is orthogonal iff its cols are orthonormal. 我们也由此知道：由 orthonormal basis 组成的 matrix \(A\)， \(A^{- 1}\) 就是 \(A^{t}\).
+
+The worksheet proves \(\left( {AB} \right)^{t} = B^{t}A^{t}\): the \(ij\)th entry of \(AB\) is the \(i\)th row of \(A\) dot the \(j\)th col of \(B\), while the \(ij\)th entry of \(B^{t}A^{t}\) is \(b_{i} \cdot a_{j}\). Thus they agree.
+
+\section{WS 18, p. 2: products and change of basis}
+
+If \(A\) is orthogonal, then \(A^{- 1}\) (也是 \(A^{t}\)) is orthogonal, since \(\mathbb{A}^{t} = I_{n}\) implies \(\left( A^{t} \right)\left( A^{t} \right)^{t} = \mathbb{A}^{t} = I_{n}\). 结论：这意味着对于 \(A\) 的 cols 是 orthonormal 的，那 \(A\) 的 rows 也是 orthonormal 的.
+
+\begin{theorem}{Products of orthogonal matrices}
+
+If \(A,B\) are orthogonal \(n \times n\) matrices, then \(AB\) is orthogonal.
+
+\end{theorem}
+
+Indeed,
+
+\[\left( {AB} \right)\left( {AB} \right)^{t} = A\left( {BB^{t}} \right)A^{t} = I_{n},\]
+
+so \(\left( {AB} \right)^{t} = \left( {AB} \right)^{- 1}\).
+
+\begin{theorem}{Orthogonal maps and their matrices}
+
+\(T:\mathbb{R}^{n}\rightarrow\mathbb{R}^{n}\) is orthogonal iff \(\lbrack T\rbrack_{\varepsilon}\) is orthogonal, where \(\varepsilon\) is the standard basis. More generally, \(T\) is orthogonal iff \(\lbrack T\rbrack_{\beta}\) is orthogonal for any orthonormal basis \(\beta\).
+
+\end{theorem}
+
+For the reverse direction,
+
+\[T(a) \cdot T(b) = \left( {\lbrack T\rbrack_{\varepsilon}a} \right)\dot{\lbrack T\rbrack_{\varepsilon}b} = a_{\varepsilon_{\varepsilon}^{t{\lbrack T\rbrack}}}^{t{\lbrack T\rbrack}}b = a \cdot b.\]
+
+Claim 1: If \(A,B\) are orthonormal basis matrices, their change-of-basis matrices are orthogonal. On WS 16, the entries are
+
+\[S_{A\rightarrow B} = \begin{pmatrix}
+{a_{1} \cdot b_{1}} & {a_{2} \cdot b_{1}} & \ldots & {a_{n} \cdot b_{1}} \\
+{a_{1} \cdot b_{2}} & \ldots & & \\
+\ldots & \ldots & {a_{n} \cdot b_{n}} &
+\end{pmatrix}\]
+
+and
+
+\[S_{B\rightarrow A} = \begin{pmatrix}
+{b_{1} \cdot a_{1}} & {b_{2} \cdot a_{1}} & \ldots \\
+\ldots & \ldots & {b_{n} \cdot a_{n}}
+\end{pmatrix} = S_{A\rightarrow B}^{t}.\]
+
+Thus \(S_{A\rightarrow B} = S_{B\rightarrow A}^{- 1}\).
+
+\section{WS 18, p. 3: conclusion}
+
+Claim 2: orthogonal matrices 的 product 也是 orthogonal matrix. 这是因为 orthogonal transformations 的 composition 也是 orthogonal transformation， 且它的自身的 matrix 代表为 orthogonal matrix。
+
+Claim 3: 如果 \(T\) orthogonal，则 \(\lbrack T\rbrack_{\beta}\) orthogonal for 任意 orthonormal basis \(\beta\):
+
+\[\lbrack T\rbrack_{\beta} = S_{\varepsilon\rightarrow\beta}\lbrack T\rbrack_{\varepsilon}S_{\beta\rightarrow\varepsilon}.\]
+
+All three factors are orthogonal, hence so is \(\lbrack T\rbrack_{\beta}\).
+
+Claim 4: \(\beta\) 为任意 orthonormal basis; 如果 \(\lbrack T\rbrack_{\beta}\) orthogonal，则 \(T\) orthogonal. Since
+
+\[\lbrack T\rbrack_{\beta} = S_{\varepsilon\rightarrow\beta}\lbrack T\rbrack_{\varepsilon}S_{\beta\rightarrow\varepsilon},\]
+
+we obtain
+
+\[\lbrack T\rbrack_{\varepsilon} = S_{\beta\rightarrow\varepsilon}\lbrack T\rbrack_{\beta}S_{\varepsilon\rightarrow\beta},\]
+
+a product of orthogonal matrices; hence \(\lbrack T\rbrack_{\varepsilon}\) is orthogonal and therefore \(T\) is orthogonal.
+
+总结：\(T\) is orthogonal (保留 dot product) \(= T\) 保留 length \(= T\) 保留 distance \(= T\) 把 \(\mathbb{R}^{n}\) 的某个 orthonormal basis map 到另一个 orthonormal basis \(= \lbrack T\rbrack_{\beta}\) 为 orthogonal 的，\(\beta\) 为任意 orthonormal basis \(= \lbrack T\rbrack_{\beta}\) 的 rows/cols 为一个 orthonormal basis of \(\mathbb{R}^{n}\).

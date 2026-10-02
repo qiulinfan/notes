@@ -1,0 +1,88 @@
+% LaTeX companion of 12-complex-eigenvalues.typ. Both formats are editable.
+\chapter{Complex eigenvalues}
+
+\section{\texorpdfstring{WS 26, p. 1: complex roots and real \(2 \times 2\) matrices}{WS 26, p. 1: complex roots and real 2 \textbackslash times 2 matrices}}
+
+P5(b). Let \(z = a + bi\) and \(w = c + di\). Then
+
+\[z + w = \left( {a + c} \right) + \left( {b + d} \right)i,\]
+
+z w=(a c-b d)+(b c+a d)i\(,\)
+
+\[\text{conjugate}(z)\ \text{conjugate}(w) = \left( {a - bi} \right)\left( {c - di} \right) = ac - bd - \left( {bc + ad} \right)i = \text{conjugate}\left( {zw} \right).\]
+
+(c) Fact: \(\lambda\) is a root of \(f(x)\) iff \(\lambda\) is a root when the coefficients of \(f(x)\) are real. If \(\lambda^{n} + a_{n - 1}\lambda^{n - 1} + \ldots + a_{0} = 0\), then
+
+\[\sum\limits_{k}a_{k}\lambda^{k} = \text{conjugate}\left( {\sum\limits_{k}a_{k}\lambda^{k}} \right) = 0.\]
+
+For
+
+\[A = \begin{pmatrix}
+a & {- b} \\
+b & a
+\end{pmatrix} \in \mathbb{R}^{2 \times 2},\]\[\chi_{A{(\lambda)}} = \left( {a - \lambda} \right)^{2} + b^{2},\quad\chi_{A{(\lambda)}} = 0\rightarrow\lambda = a \pm bi.\]
+
+(b) Factor \(A\) into a scalar matrix \(rI_{2}\) and a rotation matrix \(R_{\theta}\):
+
+\[A = \sqrt{a^{2} + b^{2}}\begin{pmatrix}
+{\cos(\theta)} & {- \sin(\theta)} \\
+{\sin(\theta)} & {\cos(\theta)}
+\end{pmatrix},\]
+
+where
+
+\[\cos(\theta) = \frac{a}{\sqrt{a^{2} + b^{2}}},\quad\sin(\theta) = \frac{b}{\sqrt{a^{2} + b^{2}}},\quad\theta = \arctan\left( \frac{b}{a} \right).\]
+
+(c) Diagonalization over \(\mathbb{C}\):
+
+\[D = \begin{pmatrix}
+{a + bi} & 0 \\
+0 & {a - bi}
+\end{pmatrix}.\]
+
+For \(\lambda_{1} = a + bi\),
+
+\[\text{det}\left( {A - \lambda_{1}I_{2}} \right) = \text{det}\left( \begin{pmatrix}
+{- bi} & {- b} \\
+b & {- bi}
+\end{pmatrix} \right),\]
+
+so \(\begin{pmatrix}
+i \\
+1
+\end{pmatrix}\) is a basis for \(E_{\lambda_{1}}\); similarly \(\begin{pmatrix}
+{- i} \\
+1
+\end{pmatrix}\) is a basis for \(E_{\lambda_{2}}\). Hence
+
+\[D = S^{- 1}AS = \begin{pmatrix}
+i & {- i} \\
+1 & 1
+\end{pmatrix}^{- 1}A\begin{pmatrix}
+i & {- i} \\
+1 & 1
+\end{pmatrix},\]
+
+and
+
+\[A = \begin{pmatrix}
+i & {- i} \\
+1 & 1
+\end{pmatrix}\begin{pmatrix}
+{a + bi} & 0 \\
+0 & {a - bi}
+\end{pmatrix}\begin{pmatrix}
+i & {- i} \\
+1 & 1
+\end{pmatrix}^{- 1}.\]
+
+P9: 任何有一对 complex eigenvalue \(a \pm bi\) 的 \(A \in \mathbb{R}^{2 \times 2}\) 都 similar to \(\begin{pmatrix}
+a & {- b} \\
+b & a
+\end{pmatrix}\)（一个 scaling matrix）. 因为 \(A\) diagonalizable: \(D = \begin{pmatrix}
+{a + bi} & 0 \\
+0 & {a - bi}
+\end{pmatrix}\)，而 \(D\) 又 similar to \(\begin{pmatrix}
+a & {- b} \\
+b & a
+\end{pmatrix}\) by P8.

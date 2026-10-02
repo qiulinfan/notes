@@ -1,0 +1,496 @@
+% LaTeX companion of hw06.typ. Both formats are editable.
+\section{Homework 6 - submitted work}
+
+\subsection{Exercise 50 - hexagonal coordinates}
+
+For the basis \(\mathcal{B} = \left( {v,w} \right)\) in the hexagonal tiling,
+
+\(\left\lbrack \overrightarrow{\text{OP}} \right\rbrack_{\mathcal{B}} = \left\lbrack {2v + w} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+2 \\
+1
+\end{pmatrix},\)
+
+\(\left\lbrack \overrightarrow{\text{OQ}} \right\rbrack_{\mathcal{B}} = \left\lbrack {v + 2w} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+1 \\
+2
+\end{pmatrix}.\)
+
+The point with \(\left\lbrack \overrightarrow{\text{OR}} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+3 \\
+2
+\end{pmatrix}\) is the center of a tile. Further,
+
+\(\begin{pmatrix}
+17 \\
+13
+\end{pmatrix} = 8\begin{pmatrix}
+2 \\
+1
+\end{pmatrix} + \begin{pmatrix}
+1 \\
+2
+\end{pmatrix} + \begin{pmatrix}
+0 \\
+3
+\end{pmatrix}.\)
+
+Moving by the first two summands means moving in parallel to \(\overrightarrow{\text{OQ}}\) and \(\overrightarrow{\text{OP}}\) by whole tile lengths, which does not change whether a point is a vertex or center. Since \(\begin{pmatrix}
+0 \\
+3
+\end{pmatrix}\) is a vertex, \(\begin{pmatrix}
+17 \\
+13
+\end{pmatrix}\) is a vertex.
+
+\subsection{Exercise 70 - upper triangular coordinate matrix}
+
+There is no basis \(\mathcal{B} = \left( {v_{1},v_{2}} \right)\) of \(\mathbb{R}^{2}\) whose \(\mathcal{B}\)-matrix for
+
+\(T(x) = \begin{pmatrix}
+0 & {- 1} \\
+1 & 0
+\end{pmatrix}x\)
+
+is upper triangular. Suppose, for a contradiction, that
+
+\(\lbrack T\rbrack_{\mathcal{B}} = \begin{pmatrix}
+a & b \\
+0 & c
+\end{pmatrix}.\)
+
+Then the generalized key theorem gives
+
+\(\begin{pmatrix}
+0 & {- 1} \\
+1 & 0
+\end{pmatrix}v_{1} = av_{1}.\)
+
+Writing \(v_{1} = \begin{pmatrix}
+x \\
+y
+\end{pmatrix}\) yields
+
+\(- y = ax,\quad x = ay,\quad\left( {a - 1} \right)x = \left( {- a - 1} \right)y.\)
+
+Thus \(x = y = 0\), since \(a - 1\) and \(- a - 1\) cannot both vanish. This is impossible because \(0\) cannot be a basis vector.
+
+\subsection{\texorpdfstring{Exercise 58 - the solutions of \(f^{''} = - f\)}{Exercise 58 - the solutions of f\^{}\{\textquotesingle\textquotesingle\} = - f}}
+
+\subsubsection{(a)}
+
+For \(g \in V\), \(g^{''} = - g\). Let
+
+\(f(x) = {g(x)}^{2} + g'(x)^{2}.\)
+
+Then
+
+\(f'(x) = 2g(x)g'(x) + 2g'(x)g^{''}(x) = 2g(x)g'(x) - 2g(x)g'(x) = 0,\)
+
+so \(f\) is constant.
+
+\subsubsection{(b)}
+
+If \(g(0) = g'(0) = 0\), the constant from part (a) is \(k = {g(0)}^{2} + g'(0)^{2} = 0\). Therefore \({g(x)}^{2} + g'(x)^{2} = 0\) for all \(x\), and \(g(x) = g'(x) = 0\) for all \(x\).
+
+\subsubsection{(c)}
+
+\(V\) is a vector space; moreover, \(\left( {\sin x} \right)^{''} = - \sin x\) and \(\left( {\cos x} \right)^{''} = - \cos x\). Hence for \(f \in V\),
+
+\(g(x) = f(x) - f(0)\cos x - f'(0)\sin x\)
+
+is in \(V\). We have \(g(0) = 0\) and
+
+\(g'(x) = f'(x) + f(0)\sin x - f'(0)\cos x,\quad g'(0) = 0.\)
+
+Part (b) gives \(g = 0\), so
+
+\(f(x) = f(0)\cos x + f'(0)\sin x.\)
+
+Thus \(\left( {\cos x,\sin x} \right)\) spans \(V\).
+
+\subsection{\texorpdfstring{Exercise 46 - multiplication by \(t - 1\)}{Exercise 46 - multiplication by t - 1}}
+
+For \(T\left( {f(t)} \right) = \left( {t - 1} \right)f(t)\),
+
+\(T\left( {f + g} \right) = \left( {t - 1} \right)\left( {f + g} \right) = T(f) + T(g),\)
+
+\(T\left( {kf} \right) = \left( {t - 1} \right)kf = kT(f).\)
+
+Thus \(T\) is linear. It is not an isomorphism because it is not surjective: a nonzero constant target polynomial cannot be \(\left( {t - 1} \right)f(t)\) for a polynomial \(f\).
+
+\subsection{Exercise 68 - isomorphism condition}
+
+For \(M = \begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}\),
+
+\(T(M) = \begin{pmatrix}
+{5a} & b \\
+{5c} & d
+\end{pmatrix} - \begin{pmatrix}
+{2a} & {2b} \\
+{kc} & {kd}
+\end{pmatrix} = \begin{pmatrix}
+{3a} & {- b} \\
+{\left( {5 - k} \right)c} & {\left( {1 - k} \right)d}
+\end{pmatrix}.\)
+
+The source and target have equal dimension, so \(T\) is an isomorphism exactly when it is injective, equivalently when \(\text{ker}(T) = \left\{ 0 \right\}\). This holds for \(k \neq 1,5\). For \(k = 1\) or \(k = 5\), the kernel has dimension \(1\), so \(T\) is not an isomorphism.
+
+\section{Part B}
+
+\subsection{Problem 1 - coefficient map}
+
+Let \(T:\mathbb{R}^{n}\rightarrow V\) be defined by
+
+\(T\left( \begin{pmatrix}
+c_{1} \\
+\vdots \\
+c_{n}
+\end{pmatrix} \right) = c_{1}v_{1} + \ldots + c_{n}v_{n}.\)
+
+\subsubsection{(a)}
+
+For coefficient columns \(a = \left( a_{i} \right)\) and \(c = \left( c_{i} \right)\),
+
+\(T\left( {a + c} \right) = \sum\left( {a_{i} + c_{i}} \right)v_{i} = T(a) + T(c),\)
+
+and \(T\left( {ka} \right) = \sum ka_{i}v_{i} = kT(a)\). Hence \(T\) is linear.
+
+\subsubsection{(b)}
+
+If \(T\) is injective and \(c_{1}v_{1} + \ldots + c_{n}v_{n} = 0\), then
+
+\(T\left( \begin{pmatrix}
+c_{1} \\
+\vdots \\
+c_{n}
+\end{pmatrix} \right) = T\left( \begin{pmatrix}
+0 \\
+\vdots \\
+0
+\end{pmatrix} \right),\)
+
+so \(c_{i} = 0\) for every \(i\). The list is linearly independent. Conversely, if \(\left( {v_{1},\ldots,v_{n}} \right)\) is linearly independent and \(T(a) = T(b)\), then
+
+\(\left( {a_{1} - b_{1}} \right)v_{1} + \ldots + \left( {a_{n} - b_{n}} \right)v_{n} = 0.\)
+
+Thus \(a_{i} = b_{i}\) for all \(i\), and \(T\) is injective.
+
+\subsubsection{(c)}
+
+If \(T\) is surjective, every \(v \in V\) equals \(T\left( \begin{pmatrix}
+a_{1} \\
+\vdots \\
+a_{n}
+\end{pmatrix} \right) = a_{1}v_{1} + \ldots + a_{n}v_{n}\), so the list spans \(V\). Conversely, if it spans \(V\), each \(v \in V\) has this form and is in the image of \(T\). Therefore \(T\) is surjective.
+
+\subsubsection{(d)}
+
+An isomorphism is injective and surjective, so by (b) and (c) its list is linearly independent and spans \(V\): it is an ordered basis. Conversely, an ordered basis gives both properties, so the linear map \(T\) is a bijection and hence an isomorphism.
+
+\subsection{Problem 2 - coordinate matrices for symmetrization}
+
+Let \(T(A) = \frac{1}{2}\left( {A + A^{T}} \right)\) for \(A = \begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}\).
+
+\subsubsection{(a)}
+
+\(T(A) = \begin{pmatrix}
+a & \frac{b + c}{2} \\
+\frac{b + c}{2} & d
+\end{pmatrix}.\)
+
+With \(\lbrack A\rbrack_{\mathcal{E}} = \begin{pmatrix}
+a \\
+b \\
+c \\
+d
+\end{pmatrix}\), the \(\mathcal{E}\)-matrix is
+
+\(\lbrack T\rbrack_{\mathcal{E}} = \begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & \frac{1}{2} & \frac{1}{2} & 0 \\
+0 & \frac{1}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}.\)
+
+\subsubsection{(b)}
+
+For \(\mathcal{C} = \left( {\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix},\begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix},\begin{pmatrix}
+0 & 0 \\
+0 & 1
+\end{pmatrix},\begin{pmatrix}
+0 & 1 \\
+{- 1} & 0
+\end{pmatrix}} \right)\),
+
+\(\lbrack T\rbrack_{\mathcal{C}} = \begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}.\)
+
+\subsubsection{(c)}
+
+Solving \(\lbrack T\rbrack_{\mathcal{E}}\begin{pmatrix}
+a \\
+b \\
+c \\
+d
+\end{pmatrix} = 0\) gives
+
+\(\text{ker}\left( \lbrack T\rbrack_{\mathcal{E}} \right) = \left\{ r\begin{pmatrix}
+0 \\
+{- 1} \\
+1 \\
+0
+\end{pmatrix}\  \middle| \ r \in \mathbb{R} \right\}.\)
+
+\subsubsection{(d)}
+
+The corresponding subspace of \(\mathbb{R}^{2 \times 2}\) is
+
+\(\left\{ r\begin{pmatrix}
+0 & {- 1} \\
+1 & 0
+\end{pmatrix}\  \middle| \ r \in \mathbb{R} \right\},\)
+
+with basis \(\begin{pmatrix}
+0 & {- 1} \\
+1 & 0
+\end{pmatrix}\).
+
+\subsubsection{(e)}
+
+Solving \(\lbrack T\rbrack_{\mathcal{C}}\begin{pmatrix}
+a \\
+b \\
+c \\
+d
+\end{pmatrix} = 0\) gives
+
+\(\text{ker}\left( \lbrack T\rbrack_{\mathcal{C}} \right) = \left\{ r\begin{pmatrix}
+0 \\
+0 \\
+0 \\
+1
+\end{pmatrix}\  \middle| \ r \in \mathbb{R} \right\}.\)
+
+\subsubsection{(f) and (g)}
+
+The coordinate isomorphism sends
+
+\(\begin{pmatrix}
+x \\
+y \\
+z \\
+w
+\end{pmatrix}\mapsto\begin{pmatrix}
+y & {x + w} \\
+{x - w} & z
+\end{pmatrix}.\)
+
+Hence the image of the \(\mathcal{C}\)-coordinate kernel is
+
+\(\left\{ r\begin{pmatrix}
+0 & 1 \\
+{- 1} & 0
+\end{pmatrix}\  \middle| \ r \in \mathbb{R} \right\},\)
+
+the same subspace as in part (d). Both are \(\text{ker}(T)\).
+
+\subsubsection{(h)}
+
+Using \(\mathcal{C}\)-coordinates, the image is spanned by the first three coordinate vectors. A basis is therefore
+
+\(\left( {\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix},\begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix},\begin{pmatrix}
+0 & 0 \\
+0 & 1
+\end{pmatrix}} \right).\)
+
+\subsection{Problem 3 - a trigonometric vector space}
+
+Let
+
+\(f_{1} = 1,\quad f_{2} = \sin\left( {2x} \right),\quad f_{3} = \cos\left( {2x} \right),\quad f_{4} = \sin^{2}(x),\quad f_{5} = \cos^{2}(x),\quad f_{6} = \sin x\cos x,\)
+
+and \(V = \text{Span}\left( {f_{1},\ldots,f_{6}} \right)\), \(\mathcal{B} = \left( {f_{1},f_{2},f_{4}} \right)\).
+
+\subsubsection{(a)}
+
+For \(f = a_{1} + a_{2}\sin\left( {2x} \right) + a_{3}\cos\left( {2x} \right) + a_{4}\sin^{2}(x) + a_{5}\cos^{2}(x) + a_{6}\sin x\cos x\), the identities \(\cos\left( {2x} \right) = 1 - 2\sin^{2}(x)\), \(\cos^{2}(x) = 1 - \sin^{2}(x)\), and \(\sin x\cos x = \frac{1}{2}\sin\left( {2x} \right)\) give
+
+\(f = \left( {a_{1} + a_{3} + a_{5}} \right) + \left( {a_{2} + \frac{1}{2}a_{6}} \right)\sin\left( {2x} \right) + \left( {a_{4} - 2a_{3} - a_{5}} \right)\sin^{2}(x).\)
+
+So \(\left( {f_{1},f_{2},f_{4}} \right)\) spans \(V\). If \(b_{1} + b_{2}\sin\left( {2x} \right) + b_{4}\sin^{2}(x) = 0\), evaluate at \(x = \pi\), \(x = \frac{\pi}{2}\), and \(x = \frac{\pi}{4}\) to get \(b_{1} = b_{4} = b_{2} = 0\). Thus \(\mathcal{B}\) is an ordered basis.
+
+\subsubsection{(b)}
+
+\[\left\lbrack f_{1} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+1 \\
+0 \\
+0
+\end{pmatrix},\quad\left\lbrack f_{2} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+0 \\
+1 \\
+0
+\end{pmatrix},\quad\left\lbrack f_{3} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+1 \\
+0 \\
+{- 2}
+\end{pmatrix},\]\[\left\lbrack f_{4} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+0 \\
+0 \\
+1
+\end{pmatrix},\quad\left\lbrack f_{5} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+1 \\
+0 \\
+{- 1}
+\end{pmatrix},\quad\left\lbrack f_{6} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+0 \\
+\frac{1}{2} \\
+0
+\end{pmatrix}.\]
+
+\subsubsection{(c)}
+
+For \(f = a_{1} + a_{2}\sin\left( {2x} \right) + a_{3}\sin^{2}(x)\),
+
+\(f' = 2a_{2}\cos\left( {2x} \right) + a_{3}\sin\left( {2x} \right) = 2a_{2} + a_{3}\sin\left( {2x} \right) - 4a_{2}\sin^{2}(x) \in V.\)
+
+Thus \(V\) is closed under differentiation.
+
+\subsubsection{(d)}
+
+\(T(f) = f' + 2f\) has
+
+\(\left\lbrack {T(f)} \right\rbrack_{\mathcal{B}} = \begin{pmatrix}
+{2a_{1} + 2a_{2}} \\
+{2a_{2} + a_{3}} \\
+{- 4a_{2} + 2a_{3}}
+\end{pmatrix},\)
+
+so
+
+\(\lbrack T\rbrack_{\mathcal{B}} = \begin{pmatrix}
+2 & 2 & 0 \\
+0 & 2 & 1 \\
+0 & {- 4} & 2
+\end{pmatrix}.\)
+
+\subsubsection{(e)}
+
+Row reduction of \(\left( \lbrack T\rbrack_{\mathcal{B}} \middle| I_{3} \right)\) gives
+
+\(\lbrack T\rbrack_{\mathcal{B}}^{- 1} = \begin{pmatrix}
+\frac{1}{2} & {- \frac{1}{4}} & \frac{1}{8} \\
+0 & \frac{1}{4} & {- \frac{1}{8}} \\
+0 & \frac{1}{2} & \frac{1}{4}
+\end{pmatrix}.\)
+
+Therefore
+
+\(T^{- 1}\left( {a_{1} + a_{2}\sin\left( {2x} \right) + a_{3}\sin^{2}(x)} \right) = \left( {\frac{1}{2}a_{1} - \frac{1}{4}a_{2} + \frac{1}{8}a_{3}} \right) + \left( {\frac{1}{4}a_{2} - \frac{1}{8}a_{3}} \right)\sin\left( {2x} \right) + \left( {\frac{1}{2}a_{2} + \frac{1}{4}a_{3}} \right)\sin^{2}(x).\)
+
+\subsubsection{(f)}
+
+The coordinate vector of \(4 + 8\sin^{2}(x)\) is \(\begin{pmatrix}
+4 \\
+0 \\
+8
+\end{pmatrix}\). Applying the inverse matrix gives \(\begin{pmatrix}
+3 \\
+{- 1} \\
+2
+\end{pmatrix}\), so
+
+\(f(x) = 3 - \sin\left( {2x} \right) + 2\sin^{2}(x).\)
+
+\subsection{Problem 4 - products of vector spaces}
+
+\subsubsection{(a)}
+
+If \(0_{X}\) and \(0_{Y}\) are the zero vectors of \(X\) and \(Y\), the zero vector of \(X \times Y\) is \(\left( {0_{X},0_{Y}} \right)\).
+
+\subsubsection{(b)}
+
+Let \(\left( {x_{1},\ldots,x_{m}} \right)\) be a basis of \(X\) and \(\left( {y_{1},\ldots,y_{n}} \right)\) a basis of \(Y\). For \(\left( {a,b} \right) \in X \times Y\), write
+
+\(a = \sum a_{i}x_{i},\quad b = \sum b_{j}y_{j}.\)
+
+Then
+
+\(\left( {a,b} \right) = \sum a_{i{({x_{i},0_{Y}})}} + \sum b_{j{({0_{X},y_{j}})}},\)
+
+so the listed vectors span. If their linear combination is \(\left( {0_{X},0_{Y}} \right)\), then \(\sum a_{i}x_{i} = 0_{X}\) and \(\sum b_{j}y_{j} = 0_{Y}\). Independence of the two bases forces all coefficients to vanish. Therefore
+
+\(\left( {\left( {x_{1},0_{Y}} \right),\ldots,\left( {x_{m},0_{Y}} \right),\left( {0_{X},y_{1}} \right),\ldots,\left( {0_{X},y_{n}} \right)} \right)\)
+
+is a basis of \(X \times Y\).
+
+\subsubsection{(c)}
+
+The basis in (b) has \(m + n\) vectors, so
+
+\(\text{dim}\left( {X \times Y} \right) = \text{dim}(X) + \text{dim}(Y).\)
+
+\subsection{Problem 5 - sum and intersection}
+
+Let \(T:X \times Y\rightarrow X + Y\) be \(T\left( {x,y} \right) = x + y\).
+
+\subsubsection{(a)}
+
+\(T\left( {\left( {x_{1},y_{1}} \right) + \left( {x_{2},y_{2}} \right)} \right) = x_{1} + x_{2} + y_{1} + y_{2} = T\left( {x_{1},y_{1}} \right) + T\left( {x_{2},y_{2}} \right)\), and \(T\left( {k\left( {x,y} \right)} \right) = kT\left( {x,y} \right)\), so \(T\) is linear. Each \(z \in X + Y\) has the form \(z = x + y = T\left( {x,y} \right)\), so \(T\) is surjective.
+
+\subsubsection{(b)}
+
+If \(x + y = 0\), then \(x = - y\), so it belongs to both \(X\) and \(Y\). Hence
+
+\(\text{ker}(T) = \left\{ \left( {a, - a} \right)\  \middle| \ a \in X \cap Y \right\}.\)
+
+The map \(T_{1}:\text{ker}(T)\rightarrow X \cap Y\), \(\left( {a, - a} \right)\mapsto a\), is linear, injective, and surjective; hence it is an isomorphism.
+
+\subsubsection{(c)}
+
+Since \(\text{ker}(T)\) is isomorphic to \(X \cap Y\) and \(T\) is surjective, rank-nullity with part 4(c) gives
+
+\(\text{dim}\left( {X + Y} \right) + \text{dim}\left( {X \cap Y} \right) = \text{dim}(X) + \text{dim}(Y).\)
+
+\subsubsection{(d)}
+
+For three-dimensional subspaces of \(\mathbb{R}^{5}\), \(X \cap Y = \left\{ 0 \right\}\) would give \(\text{dim}\left( {X + Y} \right) = 6\), contradicting \(\text{dim}\left( {X + Y} \right) \leq 5\). Thus it is impossible. In \(\mathbb{R}^{6}\) it is possible; for example,
+
+\(X = \left\{ \begin{pmatrix}
+a \\
+b \\
+c \\
+0 \\
+0 \\
+0
+\end{pmatrix}\  \middle| \ a,b,c \in \mathbb{R} \right\},\quad Y = \left\{ \begin{pmatrix}
+0 \\
+0 \\
+0 \\
+x \\
+y \\
+z
+\end{pmatrix}\  \middle| \ x,y,z \in \mathbb{R} \right\}.\)
+
+Then \(X + Y = \mathbb{R}^{6}\) and \(X \cap Y = \left\{ 0 \right\}\).

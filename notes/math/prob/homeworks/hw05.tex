@@ -1,0 +1,322 @@
+% LaTeX companion of hw05.typ. Both formats are editable.
+\chapter{Homework 5}\label{homework-5}
+
+\section{Problem 1}\label{hw05-problem-1}
+
+Let \(\left( \mathit{U}_{\mathit{i}} \right)_{\mathit{i} \in \mathbb{N}}\) be an i.i.d sequence of random variables with \(\mathit{U}_{\mathit{i}} \sim \mathit{U}(\lbrack 0,1\rbrack)\). Show that
+
+\begin{itemize}
+\item
+  \(\lim_{\mathit{n}\rightarrow\infty}\left( {\mathit{U}_{1}\mathit{U}_{2}\ldots\mathit{U}_{\mathit{n}}} \right)^{1/\mathit{n}} = \mathit{e}^{- 1}\) almost surely.
+\item
+  \(\lim_{\mathit{n}\rightarrow\infty}\mathit{U}_{1}\mathit{U}_{2}\ldots\mathit{U}_{\mathit{n}} = 0\) almost surely.
+\end{itemize}
+
+\begin{proof}
+
+\begin{itemize}
+\item
+  Let
+
+  \[\mathit{X}_{\mathit{i}} := - \log\mathit{U}_{\mathit{i}},\quad\mathit{i} \in \mathbb{N}\]
+
+  Since \(\mathit{U}_{\mathit{i}} \sim \mathit{U}(\lbrack 0,1\rbrack)\), for \(\mathit{x} \geq 0\),
+
+  \[\mathbb{P}(\mathit{X}_{\mathit{i}} \leq \mathit{x}) = \mathbb{P}( - \log\mathit{U}_{\mathit{i}} \leq \mathit{x}) = \mathbb{P}(\mathit{U}_{\mathit{i}} \geq \mathit{e}^{- \mathit{x}}) = 1 - \mathit{e}^{- \mathit{x}}\]
+
+  Thus \(\mathit{X}_{\mathit{i}} \sim Exp(1)\), so \(\mathbb{E}\lbrack\mathit{X}_{\mathit{i}}\rbrack = 1\). Also,
+
+  \[\log\left( {(\mathit{U}_{1}\mathit{U}_{2}\cdots\mathit{U}_{\mathit{n}})^{1/\mathit{n}}} \right) = \frac{1}{\mathit{n}}\sum\limits_{\mathit{i} = 1}^{\mathit{n}}\log\mathit{U}_{\mathit{i}} = - \frac{1}{\mathit{n}}\sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}\]
+
+  By the Strong Law of Large Numbers,
+
+  \[\frac{1}{\mathit{n}}\sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}} = \frac{1}{\mathit{n}}\sum\limits_{\mathit{i} = 1}^{\mathit{n}}\log\mathit{U}_{\mathit{i}}\rightarrow 1\quad\text{a.s.}\]
+
+  Since the exponential function is continuous,
+
+  \[(\mathit{U}_{1}\mathit{U}_{2}\cdots\mathit{U}_{\mathit{n}})^{1/\mathit{n}} = \exp\left( {\frac{1}{\mathit{n}}\sum\limits_{\mathit{i} = 1}^{\mathit{n}}\log\mathit{U}_{\mathit{i}}} \right)\rightarrow\mathit{e}^{- 1}\quad\text{a.s.}\]
+\item
+  Let
+
+  \[\mathit{P}_{\mathit{n}} := \mathit{U}_{1}\mathit{U}_{2}\cdots\mathit{U}_{\mathit{n}}\]
+
+  Then from the first part we instantly have
+
+  \[\mathit{P}_{\mathit{n}}^{1/\mathit{n}}\rightarrow\mathit{e}^{- 1} < 1\quad\text{a.s.}\]
+
+  Then for any event \(\mathit{\omega}\) in the event of probability one where this convergence holds, choose \(\mathit{r}\) s.t. \(\mathit{e}^{- 1} < \mathit{r} < 1\), then for all sufficiently large \(\mathit{n}\),
+
+  \[\mathit{P}_{\mathit{n}}(\mathit{\omega})^{1/\mathit{n}} < \mathit{r},\quad\text{i.e.}\quad\mathit{P}_{\mathit{n}}(\mathit{\omega}) < \mathit{r}^{\mathit{n}}\]
+
+  Since \(0 < \mathit{r} < 1\), we have \(\mathit{r}^{\mathit{n}}\rightarrow 0\). Therefore \(\mathit{P}_{\mathit{n}}(\mathit{\omega})\rightarrow 0\). Therefore
+
+  \[\mathit{U}_{1}\mathit{U}_{2}\cdots\mathit{U}_{\mathit{n}}\rightarrow 0\quad\text{a.s.}\]
+\end{itemize}
+
+\end{proof}
+
+\section{Problem 2}\label{hw05-problem-2}
+
+A factory produces small resistors, and the resistance of each resistor is a random variable \(\mathit{X}_{\mathit{i}}\) with unknown mean \(\mathit{\mu}\) and variance \(\mathit{\sigma}^{2} = 0.25\) ohms \(\begin{matrix}
+\end{matrix}^{2}\). The quality control engineer wants to estimate the average resistance of a batch. She decides to measure \(\mathit{n}\) resistors and compute the sample average
+
+\[{\bar{\mathit{X}}}_{\mathit{n}} := \frac{\mathit{X}_{1} + \mathit{X}_{2} + \cdots + \mathit{X}_{\mathit{n}}}{\mathit{n}}\]
+
+Determine approximately the number of resistors \(\mathit{n}\) she needs to measure so that the probability that the sample mean differs from the true mean by more than 0.005 ohms is less than \(1\%\), i.e.,
+
+\[\mathbb{P}\left( {\left| {{\bar{\mathit{X}}}_{\mathit{n}} - \mathit{\mu}} \right| > 0.005} \right) < 0.01\]
+
+\begin{proof}
+
+By linearity of expectation,
+
+\[\mathbb{E}\lbrack{\bar{\mathit{X}}}_{\mathit{n}}\rbrack = \mathit{\mu}\]
+
+And (assmuming the \(\mathit{X}_{\mathit{i}}\) are independent), we have
+
+\[Var\left( {\sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}} \right) = \sum\limits_{\mathit{i} = 1}^{\mathit{n}}Var(\mathit{X}_{\mathit{i}}) + \sum\limits_{\mathit{i} \neq \mathit{j}}Cov(\mathit{X}_{\mathit{i}},\mathit{X}_{\mathit{j}}) = \mathit{n}\mathit{\sigma}^{2} = 0.25\mathit{n}\]
+
+Thus
+
+\[Var({\bar{\mathit{X}}}_{\mathit{n}}) = \frac{\mathit{\sigma}^{2}}{\mathit{n}} = \frac{0.25}{\mathit{n}}\]
+
+By Chebyshev's inequality, for any \(\mathit{\varepsilon} > 0\),
+
+\[\mathbb{P}\left( |\ {\bar{\mathit{X}}}_{\mathit{n}} - \mathit{\mu}\  \middle| > \mathit{\varepsilon} \right) \leq \frac{Var({\bar{\mathit{X}}}_{\mathit{n}})}{\mathit{\varepsilon}^{2}}\]
+
+Taking \(\mathit{\varepsilon} = 0.005\), we get
+
+\[\mathbb{P}\left( |\ {\bar{\mathit{X}}}_{\mathit{n}} - \mathit{\mu}\  \middle| > 0.005 \right) \leq \frac{0.25/\mathit{n}}{(0.005)^{2}} = \frac{0.25}{\mathit{n} \cdot 0.000025} = \frac{10000}{\mathit{n}}\]
+
+We want this upper bound to be less than \(0.01\), so it is enough to require
+
+\[\frac{10000}{\mathit{n}} < 0.01\]
+
+Therefore, she needs to measure approximately \(\mathit{n} \approx 1,000,000\) resistors.
+
+\end{proof}
+
+\section{Problem 3}\label{hw05-problem-3}
+
+Let \(\left( \mathit{X}_{\mathit{n}} \right)_{\mathit{n} \in \mathbb{N}}\) be a sequence of random variables with \(\mathbb{P}\left( {\mathit{X}_{\mathit{n}} \neq 0} \right) = 1/\mathit{n}^{2}\) for all \(\mathit{n} \in \mathbb{N}\). Show that with probability 1, there exists an \(\mathit{n}_{0} \in \mathbb{N}\) such that \(\mathit{X}_{\mathit{n}} = 0\) for all \(\mathit{n} \geq \mathit{n}_{0}\).
+
+\begin{proof}
+
+Let
+
+\[\mathit{A}_{\mathit{n}} := \left\{ {\mathit{X}_{\mathit{n}} \neq 0} \right\},\quad\mathit{n} \in \mathbb{N}\]
+
+Then \(\mathbb{P}(\mathit{A}_{\mathit{n}}) = \frac{1}{\mathit{n}^{2}}\) by assumption. Hence
+
+\[\sum\limits_{\mathit{n} = 1}^{\infty}\mathbb{P}(\mathit{A}_{\mathit{n}}) = \sum\limits_{\mathit{n} = 1}^{\infty}\frac{1}{\mathit{n}^{2}} < \infty\]
+
+By Borel-Cantelli lemma,
+
+\[\mathbb{P}\left( {\operatorname{lim\, sup}\limits_{\mathit{n}\rightarrow\infty}\mathit{A}_{\mathit{n}}} \right) = 0\]
+
+So with probability \(1\), only finitely many of the events \(\mathit{A}_{\mathit{n}}\) occur. In other words, with probability \(1\), there exists \(\mathit{n}_{0} \in \mathbb{N}\) such that for all \(\mathit{n} \geq \mathit{n}_{0}\),
+
+\[\mathit{A}_{\mathit{n}}^{\mathit{c}} = \left\{ {\mathit{X}_{\mathit{n}} = 0} \right\}\]
+
+occurs. Equivalently,
+
+\[\mathit{X}_{\mathit{n}} = 0\qquad\text{for all}\ \mathit{n} \geq \mathit{n}_{0}\]
+
+Therefore, with probability \(1\), there exists \(\mathit{n}_{0} \in \mathbb{N}\) such that \(\mathit{X}_{\mathit{n}} = 0\) for all \(\mathit{n} \geq \mathit{n}_{0}\).
+
+\end{proof}
+
+\section{Problem 4}\label{hw05-problem-4}
+
+Assume that \(\left( \mathit{X}_{\mathit{n}} \right)_{\mathit{n} \in \mathbb{N}}\) be a sequence of i.i.d random variables with density
+
+\[\mathit{f}(\mathit{x}) = \left\{ \begin{matrix}
+{\frac{1}{2\sqrt{\mathit{x}}},} & {\text{if}\ \mathit{x} \in (0,1),} \\
+{0,} & \text{otherwise}
+\end{matrix} \right.\]
+
+\begin{itemize}
+\item
+  Find the distribution function of \(\mathit{X}_{1}\).
+\item
+  Let \(\mathit{Y}_{\mathit{n}} = \min\left\{ {\mathit{X}_{1},\ldots,\mathit{X}_{\mathit{n}}} \right\}\) for any \(\mathit{n} \in \mathbb{N}\). Show that \(\mathit{n}^{2}\mathit{Y}_{\mathit{n}}\overset{\mathit{d}}{\rightarrow}\mathit{Y}\), where \(\mathit{Y}\) has distribution function
+
+  \[\mathit{F}_{\mathit{Y}}(\mathit{x}) = \left\{ \begin{matrix}
+  {0,} & {\text{if}\ \mathit{x} \leq 0} \\
+  {1 - \mathit{e}^{- \sqrt{\mathit{x}}},} & \text{otherwise}
+  \end{matrix} \right.\]
+\end{itemize}
+
+\begin{proof}
+
+\begin{itemize}
+\item
+  For \(\mathit{x} \in \mathbb{R}\),
+
+  \[\mathit{F}_{\mathit{X}_{1}}(\mathit{x}) = \mathbb{P}(\mathit{X}_{1} \leq \mathit{x}) = \int_{- \infty}^{\mathit{x}}\mathit{f}(\mathit{t})\,\mathit{d}\mathit{t} = \left\{ \begin{matrix}
+  {0,} & {\mathit{x} \leq 0,} \\
+  {\int_{0}^{\mathit{x}}\frac{1}{2\sqrt{\mathit{t}}}\,\mathit{d}\mathit{t} = \sqrt{\mathit{x}},} & {0 < \mathit{x} < 1,} \\
+  {1,} & {\mathit{x} \geq 1.}
+  \end{matrix} \right.\]
+\item
+  If \(\mathit{x} \leq 0\), then \(\mathit{n}^{2}\mathit{Y}_{\mathit{n}} \geq 0\), so
+
+  \[\mathbb{P}(\mathit{n}^{2}\mathit{Y}_{\mathit{n}} \leq \mathit{x}) = 0\]
+
+  Now consider \(\mathit{x} > 0\). Then
+
+  \[\mathbb{P}(\mathit{n}^{2}\mathit{Y}_{\mathit{n}} > \mathit{x}) = \mathbb{P}\left( {\mathit{Y}_{\mathit{n}} > \frac{\mathit{x}}{\mathit{n}^{2}}} \right)\]
+
+  Since
+
+  \[\mathit{Y}_{\mathit{n}} > \frac{\mathit{x}}{\mathit{n}^{2}}\Leftrightarrow\mathit{X}_{1} > \frac{\mathit{x}}{\mathit{n}^{2}},\ldots,\mathit{X}_{\mathit{n}} > \frac{\mathit{x}}{\mathit{n}^{2}}\]
+
+  and the \(\mathit{X}_{\mathit{i}}\) are independent,
+
+  \[\mathbb{P}\left( {\mathit{Y}_{\mathit{n}} > \frac{\mathit{x}}{\mathit{n}^{2}}} \right) = \left( {\mathbb{P}\left( {\mathit{X}_{1} > \frac{\mathit{x}}{\mathit{n}^{2}}} \right)} \right)^{\mathit{n}}\]
+
+  For all sufficiently large \(\mathit{n}\), we have \(0 < \frac{\mathit{x}}{\mathit{n}^{2}} < 1\), hence
+
+  \[\mathbb{P}\left( {\mathit{X}_{1} > \frac{\mathit{x}}{\mathit{n}^{2}}} \right) = 1 - \mathit{F}_{\mathit{X}_{1}}\left( \frac{\mathit{x}}{\mathit{n}^{2}} \right) = 1 - \sqrt{\frac{\mathit{x}}{\mathit{n}^{2}}} = 1 - \frac{\sqrt{\mathit{x}}}{\mathit{n}}\]
+
+  Therefore,
+
+  \[\mathbb{P}(\mathit{n}^{2}\mathit{Y}_{\mathit{n}} > \mathit{x}) = \left( {1 - \frac{\sqrt{\mathit{x}}}{\mathit{n}}} \right)^{\mathit{n}}\]
+
+  so
+
+  \[\mathit{F}_{\mathit{n}^{2}\mathit{Y}_{\mathit{n}}}(\mathit{x}) = \mathbb{P}(\mathit{n}^{2}\mathit{Y}_{\mathit{n}} \leq \mathit{x}) = 1 - \left( {1 - \frac{\sqrt{\mathit{x}}}{\mathit{n}}} \right)^{\mathit{n}}\]
+
+  Taking \(\mathit{n}\rightarrow\infty\), we use the standard limit
+
+  \[\left( {1 - \frac{\mathit{a}}{\mathit{n}}} \right)^{\mathit{n}}\rightarrow\mathit{e}^{- \mathit{a}}\]
+
+  with \(\mathit{a} = \sqrt{\mathit{x}}\), we obtain
+
+  \[\mathit{F}_{\mathit{n}^{2}\mathit{Y}_{\mathit{n}}}(\mathit{x})\rightarrow 1 - \mathit{e}^{- \sqrt{\mathit{x}}},\quad\mathit{x} > 0\]
+
+  Thus,
+
+  \[\mathit{F}_{\mathit{n}^{2}\mathit{Y}_{\mathit{n}}}(\mathit{x})\rightarrow\left\{ \begin{matrix}
+  {0,} & {\mathit{x} \leq 0,} \\
+  {1 - \mathit{e}^{- \sqrt{\mathit{x}}},} & {\mathit{x} > 0}
+  \end{matrix} \right.\]
+
+  which is exactly \(\mathit{F}_{\mathit{Y}}(\mathit{x})\). Hence
+
+  \[\mathit{n}^{2}\mathit{Y}_{\mathit{n}}\overset{\mathit{d}}{\rightarrow}\mathit{Y}\]
+\end{itemize}
+
+\end{proof}
+
+\section{Problem 5}\label{hw05-problem-5}
+
+Let \(\left( \mathit{X}_{\mathit{n}} \right)_{\mathit{n} \in \mathbb{N}}\) be a sequence of random variables with values in \(\mathbb{R}\). Show that there exists a sequence \(\left( \mathit{a}_{\mathit{n}} \right)_{\mathit{n} \in \mathbb{N}}\) with \(\mathit{a}_{\mathit{n}} > 0\) such that
+
+\[\frac{\mathit{X}_{\mathit{n}}}{\mathit{a}_{\mathit{n}}}\overset{\text{a.s.}}{\rightarrow}0\]
+
+For simplicity you may assume that \(\mathit{X}_{\mathit{n}} \sim \text{Exp}(1/\mathit{n})\).
+
+Hint: For any \(\mathit{n} \in \mathbb{N}\) construct \(\mathit{b}_{\mathit{n}}\) such that \(\mathbb{P}\left( {\left| \mathit{X}_{\mathit{n}} \right| \geq \mathit{b}_{\mathit{n}}} \right) \leq \frac{1}{2^{\mathit{n}}}\) and use Borel-Cantelli for the events \(\left\{ {\left| \mathit{X}_{\mathit{n}} \right|/\mathit{b}_{\mathit{n}} \geq \mathit{n}} \right\}\).
+
+\begin{proof}
+
+For each \(\mathit{n} \in \mathbb{N}\), choose \(\mathit{b}_{\mathit{n}} > 0\) such that
+
+\[\left. \mathbb{P}( \middle| \mathit{X}_{\mathit{n}} \middle| \geq \mathit{b}_{\mathit{n}}) \leq \frac{1}{2^{\mathit{n}}} \right.\]
+
+Notice such a choice is always possible, since \(|\mathit{X}_{\mathit{n}}|\) is a well-defined random variable, which implies \(\left. \mathbb{P}( \middle| \mathit{X}_{\mathit{n}} \middle| \geq \mathit{t})\rightarrow 0 \right.\) as \(\mathit{t}\rightarrow\infty\).
+
+Now define
+
+\[\mathit{a}_{\mathit{n}} := \mathit{n}\mathit{b}_{\mathit{n}} > 0\]
+
+Consider the sequence of events
+
+\[\mathit{E}_{\mathit{n}} := \left\{ {\frac{|\mathit{X}_{\mathit{n}}|}{\mathit{a}_{\mathit{n}}} \geq \frac{1}{\mathit{n}}} \right\}\]
+
+By the definition of \(\mathit{a}_{\mathit{n}}\), we have
+
+\[\mathit{E}_{\mathit{n}} = \left\{ {\frac{|\mathit{X}_{\mathit{n}}|}{\mathit{n}\mathit{b}_{\mathit{n}}} \geq \frac{1}{\mathit{n}}} \right\} = \left\{ |\mathit{X}_{\mathit{n}} \middle| \geq \mathit{b}_{\mathit{n}} \right\}\]
+
+It follows that
+
+\[\left. \sum\limits_{\mathit{n} = 1}^{\infty}\mathbb{P}(\mathit{E}_{\mathit{n}}) = \sum\limits_{\mathit{n} = 1}^{\infty}\mathbb{P}( \middle| \mathit{X}_{\mathit{n}} \middle| \geq \mathit{b}_{\mathit{n}}) \leq \sum\limits_{\mathit{n} = 1}^{\infty}\frac{1}{2^{\mathit{n}}} < \infty \right.\]
+
+By the first Borel-Cantelli lemma,
+
+\[\mathbb{P}(\mathit{E}_{\mathit{n}}\ \text{infinitely often}) = 0\]
+
+This means that for almost all \(\mathit{\omega} \in \Omega\), there exists \(\mathit{N}(\mathit{\omega}) \in \mathbb{N}\) such that: for all \(\mathit{n} \geq \mathit{N}(\mathit{\omega})\), the event \(\mathit{E}_{\mathit{n}}\) does not occur, i.e.,
+
+\[\frac{|\mathit{X}_{\mathit{n}}(\mathit{\omega})|}{\mathit{a}_{\mathit{n}}} < \frac{1}{\mathit{n}}\]
+
+Since \(1/\mathit{n}\rightarrow 0\) as \(\mathit{n}\rightarrow\infty\), it follows immediately that
+
+\[\frac{\mathit{X}_{\mathit{n}}}{\mathit{a}_{\mathit{n}}}\rightarrow 0\quad\text{a.s.}\]
+
+If we assume \(\mathit{X}_{\mathit{n}} \sim Exp(1/\mathit{n})\), we can provide an explicit sequence. Since
+
+\[\mathbb{P}(\mathit{X}_{\mathit{n}} \geq \mathit{t}) = \mathit{e}^{- \mathit{t}/\mathit{n}}\quad\text{for}\ \mathit{t} \geq 0\]
+
+we can choose \(\mathit{b}_{\mathit{n}} = \mathit{n}^{2}\log 2\). So that
+
+\[\mathbb{P}(\mathit{X}_{\mathit{n}} \geq \mathit{b}_{\mathit{n}}) = \mathit{e}^{- (\mathit{n}^{2}\log 2)/\mathit{n}} = \mathit{e}^{- \mathit{n}\log 2} = \frac{1}{2^{\mathit{n}}}\]
+
+Then \(\mathit{a}_{\mathit{n}} = \mathit{n}\mathit{b}_{\mathit{n}} = \mathit{n}^{3}\log 2\), the general argument above guarantees that
+
+\[\frac{\mathit{X}_{\mathit{n}}}{\mathit{a}_{\mathit{n}}} = \frac{\mathit{X}_{\mathit{n}}}{\mathit{n}^{3}\log 2}\overset{\text{a.s.}}{\rightarrow}0\]
+
+This completes the proof.
+
+\end{proof}
+
+\section{Problem 6}\label{hw05-problem-6}
+
+Let \(\left\{ \mathit{X}_{\mathit{i}} \right\}_{\mathit{i} \geq 1}\) be i.i.d. positive integer-valued random variables with \(0 < \mathbb{E}\left\lbrack \mathit{X}_{1} \right\rbrack < \infty\). Interpret \(\mathit{X}_{\mathit{i}}\) as the number of children in family \(\mathit{i}\). From the first \(\mathit{n}\) families, choose a child uniformly at random among all children. Let \(\mathit{N}_{\mathit{n}}\) denote the number of children in the selected child's family. Show that \(\mathit{N}_{\mathit{n}}\overset{\mathit{d}}{\rightarrow}\mathit{X}_{1}^{\ast}\), where \(\mathit{X}_{1}^{\ast}\) has distribution
+
+\[\mathbb{P}\left( {\mathit{X}_{1}^{\ast} = \mathit{k}} \right) = \frac{\mathit{k}\mathbb{P}\left( {\mathit{X}_{1} = \mathit{k}} \right)}{\mathbb{E}\left\lbrack \mathit{X}_{1} \right\rbrack}\]
+
+\begin{proof}
+
+For each \(\mathit{n} \in \mathbb{N}\), let
+
+\[\mathit{S}_{\mathit{n}} := \mathit{X}_{1} + \cdots + \mathit{X}_{\mathit{n}}\]
+
+be the total number of children in the first \(\mathit{n}\) families.
+
+Given \(\mathit{X}_{1},\ldots,\mathit{X}_{\mathit{n}}\), we choose one child uniformly at random among these \(\mathit{S}_{\mathit{n}}\) children. Hence, conditionally on \(\mathit{X}_{1},\ldots,\mathit{X}_{\mathit{n}}\), the probability that the chosen child comes from a family with exactly \(\mathit{k}\) children is
+
+\[\mathbb{P}(\mathit{N}_{\mathit{n}} = \mathit{k} \mid \mathit{X}_{1},\ldots,\mathit{X}_{\mathit{n}}) = \frac{\sum_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}\mathbf{1}_{\{{\mathit{X}_{\mathit{i}} = \mathit{k}}\}}}{\mathit{S}_{\mathit{n}}}\]
+
+Since \(\mathit{X}_{\mathit{i}}\mathbf{1}_{\{{\mathit{X}_{\mathit{i}} = \mathit{k}}\}} = \mathit{k}\mathbf{1}_{\{{\mathit{X}_{\mathit{i}} = \mathit{k}}\}}\), this becomes
+
+\[\mathbb{P}(\mathit{N}_{\mathit{n}} = \mathit{k} \mid \mathit{X}_{1},\ldots,\mathit{X}_{\mathit{n}}) = \frac{\mathit{k}\sum_{\mathit{i} = 1}^{\mathit{n}}\mathbf{1}_{\{{\mathit{X}_{\mathit{i}} = \mathit{k}}\}}}{\mathit{S}_{\mathit{n}}} = \frac{\mathit{k} \cdot \frac{1}{\mathit{n}}\sum_{\mathit{i} = 1}^{\mathit{n}}\mathbf{1}_{\{{\mathit{X}_{\mathit{i}} = \mathit{k}}\}}}{\frac{1}{\mathit{n}}\sum_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}}\]
+
+By the Strong Law of Large Numbers,
+
+\[\frac{1}{\mathit{n}}\sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathbf{1}_{\{{\mathit{X}_{\mathit{i}} = \mathit{k}}\}}\rightarrow\mathbb{E}\lbrack\mathbf{1}_{\{{\mathit{X}_{1} = \mathit{k}}\}}\rbrack = \mathbb{P}(\mathit{X}_{1} = \mathit{k})\quad\text{a.s.}\]
+
+and
+
+\[\frac{1}{\mathit{n}}\sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}\rightarrow\mathbb{E}\lbrack\mathit{X}_{1}\rbrack\quad\text{a.s.}\]
+
+Since \(0 < \mathbb{E}\lbrack\mathit{X}_{1}\rbrack < \infty\), it follows that
+
+\[\mathbb{P}(\mathit{N}_{\mathit{n}} = \mathit{k} \mid \mathit{X}_{1},\ldots,\mathit{X}_{\mathit{n}})\rightarrow\frac{\mathit{k}\mathbb{P}(\mathit{X}_{1} = \mathit{k})}{\mathbb{E}\lbrack\mathit{X}_{1}\rbrack}\quad\text{a.s.}\]
+
+Taking expectations on both sides, and using dominated convergence because
+\[0 \leq \mathbb{P}(\mathit{N}_{\mathit{n}} = \mathit{k} \mid \mathit{X}_{1},\ldots,\mathit{X}_{\mathit{n}}) \leq 1\]
+we obtain
+
+\[\mathbb{P}(\mathit{N}_{\mathit{n}} = \mathit{k}) = \mathbb{E}\lbrack\mathbb{P}(\mathit{N}_{\mathit{n}} = \mathit{k} \mid \mathit{X}_{1},\ldots,\mathit{X}_{\mathit{n}})\rbrack\rightarrow\frac{\mathit{k}\mathbb{P}(\mathit{X}_{1} = \mathit{k})}{\mathbb{E}\lbrack\mathit{X}_{1}\rbrack}\]
+
+Thus, for every \(\mathit{k} \in \mathbb{N}\),
+
+\[\mathbb{P}(\mathit{N}_{\mathit{n}} = \mathit{k})\rightarrow\mathbb{P}(\mathit{X}_{1}^{\ast} = \mathit{k})\]
+
+Hence
+
+\[\mathit{N}_{\mathit{n}}\overset{\mathit{d}}{\rightarrow}\mathit{X}_{1}^{\ast}\]
+
+\end{proof}

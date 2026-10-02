@@ -1,4 +1,2996 @@
 {
   "errors": [],
-  "warnings": []
+  "warnings": [
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "a-borel-measure-on-0-infty-times-s-n-1",
+      "source": "notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "a-sum-of-indicator-functions-of-measurable-sets-simple-function",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "absolute-continuity-of-signed-measures",
+      "source": "notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "absolutely-continuous",
+      "source": "notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "absolutely-continuous-function",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "absolutely-continuous-function-on-a-cpt-interval",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "additivity-of-poisson-distribution",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "algebra-of-sets",
+      "source": "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "almost-everywhere",
+      "source": "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "another-criterion-for-banach-space",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "approximate-an-open-set-by-disjoint-interior-cubes",
+      "source": "notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "approximating-a-nonneg-measurable-function-by-simple-function",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "arithmetic-preserves-measurability",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "associativity-of-product-measure",
+      "source": "notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "average",
+      "source": "notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "banach-space",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "bayes-theorem",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "berry-esseen-theorem",
+      "source": "notes/math/prob/chapters/05-CLT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "binomial-theorem",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "borel-cantelli-lemma",
+      "source": "notes/math/measure-theory/homeworks/hw02-on_Carathéodorys&Hahn-Kolmogrov-thm.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "borel-measurable-random-variables",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "borel-sigma-algebra-defined-on-a-topological-space",
+      "source": "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "bounded-linear-functional",
+      "source": "notes/math/measure-theory/chapters/13-the_dual_of_L^p-spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "bv-complex-vector-space",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "bv-or-bv-i",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "c-c-x",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "c-c-x-subset-l-1-mu-dense-linear-subspace",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "caratheodory-s-criterion",
+      "source": "notes/math/multivariate-analysis/chapters/09-ibl-limits-and-carathéodory.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "caratheodory-theorem",
+      "source": "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "cauchy-schwarz-inequality",
+      "source": "notes/math/prob/chapters/04-LLN.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "cauchy-sequence",
+      "source": "notes/math/mathematical-analysis/chapters/03-sequences-and-topology.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "cdf-nbv",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "centered-l2-hilbert-space-under-covariance",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "centered-square-integrable-random-variables",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "change-of-variables-theorem",
+      "source": "notes/math/multivariate-analysis/chapters/05-integration-and-change-of-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "characteristic-indicator-function",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "characterization-for-lipschitz-ctn",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "characterization-of-mu-f-perp-m-mu-f-ll-m-for-f-in-nbv",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "chebyshev-inequality",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "combinations",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "combinations-with-repetition",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "compactness",
+      "source": "notes/math/multivariate-analysis/chapters/01-metric-spaces-and-compactness.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "complete-fubini-tonelli",
+      "source": "notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "complete-measure-space",
+      "source": "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "complete-ordered-field",
+      "source": "notes/math/mathematical-analysis/chapters/01-real-number-system.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "complex-measure",
+      "source": "notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "complex-valued-integrable-function",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "complex-valued-measurable-functions",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "composition-preserves-measurability",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "computing-variance",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "condition-number",
+      "source": "notes/math/numerical-linear-algebra/chapters/07-conditioning-and-stability.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "conditional-distribution",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "conditional-expectation",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "conditional-probability",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "conditional-probability-space-and-trace-sigma-algebra",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "congruence-modulo-n",
+      "source": "notes/math/modern-algebra/chapters/02-gcd-primes-and-congruence.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "conjugate-exponent-p-q-l-p-l-q-dual-space",
+      "source": "notes/math/measure-theory/chapters/13-the_dual_of_L^p-spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "construct-outer-measure-out-of-an-elementary-length-function",
+      "source": "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "continuity-of-signed-measures",
+      "source": "notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "continuous-joint-cdf",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "continuous-random-variable",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "continuous-random-variable-expectation-variance",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "continuous-random-vector-continuous-joint-cdf",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "convergence-in-distribution",
+      "source": "notes/math/prob/chapters/05-CLT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "convergence-in-l-infty-iffuniform-convergence-a-e",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "correlation",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "covariance",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "covariance-positive-semidefinite-bilinear-form",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "criterion-for-l-p-convergence",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "de-moivre-laplace-theorem",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "decomposing-probability-of-intersection-of-events",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "density-of-a-set-at-a-point",
+      "source": "notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "density-of-compactly-supported-continuous-functions-in-lp",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "density-of-simple-functions-in-l-1-mu",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "derivative",
+      "source": "notes/math/mathematical-analysis/chapters/05-differentiation.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "diagonalization",
+      "source": "notes/math/linear-algebra/chapters/10-diagonalization.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "differentiability",
+      "source": "notes/math/multivariate-analysis/chapters/02-multivariable-differentiation.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "direct-sum",
+      "source": "notes/math/advanced-linear-algebra/chapters/01-review-on-basic-concepts.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "discrete-random-variable",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "discrete-random-variable-expectation-variance",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "discrete-rv-independence-characterization",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "distribution-function",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "distribution-function-cumulative-distribution-function-cdf",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "distribution-function-f-x-determines-distribution-mathbb-p-x",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "distribution-function-is-increasing-and-right-ctn",
+      "source": "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "distribution-function-of-mu",
+      "source": "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "distribution-x-push-forward-measure-expectation",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "division-algorithm",
+      "source": "notes/math/modern-algebra/chapters/01-integers-and-division.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "dominated-convergence-theorem",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "dual-space",
+      "source": "notes/math/measure-theory/chapters/13-the_dual_of_L^p-spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "dual-space-is-always-banach",
+      "source": "notes/math/measure-theory/chapters/13-the_dual_of_L^p-spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "dynkins-pi-lambda-theorem",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "easier-fubini",
+      "source": "notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "egoroff-s-theorem",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "eigenspace",
+      "source": "notes/math/linear-algebra/chapters/10-diagonalization.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "elementary-row-operation",
+      "source": "notes/math/linear-algebra/chapters/01-linear-equations.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "ell-infty",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "elliptic-curve",
+      "source": "notes/math/modern-algebra/chapters/07-elliptic-curves.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "essential-supremum",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "event-space",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "every-measure-space-can-be-completed",
+      "source": "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "expectation",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "expectation-and-variance-of-random-variable",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "exponential-distribution",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "f-in-bv-right-ctn-implies-t-f-right-ctn",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "f-in-nbv-abs-ctn-iff-mu-f-ll-m",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "fast-l-1-conv-implies-a-e-conv",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "fatou-lemma",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "first-isomorphism-theorem",
+      "source": "notes/math/modern-algebra/chapters/06-normal-subgroups-and-isomorphisms.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "ftc-ii-for-lebesgue-integral-on-a-cpt-interval",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "ftc-in-lebesgue",
+      "source": "notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "fubini-for-series-and-integral",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "fubini-theorem",
+      "source": "notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "fubini-tonelli-for-m-n",
+      "source": "notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "function-of-bounded-variation",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "function-of-bounded-variation-on-an-interval",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "g-delta-f-sigma-sets",
+      "source": "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "gamma-as-sum-of-independent-exponentials",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "gamma-distribution",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "general-change-of-variable-theorem",
+      "source": "notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "generalized-dct",
+      "source": "notes/math/measure-theory/homeworks/hw08-on_L^p-spacecs.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "generalized-ldt",
+      "source": "notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "h-interval",
+      "source": "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "h-intervals-form-an-algebra-and-generate-borel-set",
+      "source": "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "hahn-decomposition-theorem",
+      "source": "notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "hahn-kolmogorov-theorem",
+      "source": "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "hardy-littlewood-maximal-function",
+      "source": "notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "hl-maximal-function-measurable",
+      "source": "notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "hl-maximal-theorem",
+      "source": "notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "holder-inequality",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "implies-support-sigma-finite",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "inclusion-exclusion-principle",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "inclusion-properties-of-generated-sigma-algebra",
+      "source": "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "inclusion-relation-between-l-p-spaces-when-base-space-is-finite",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "increasing-right-ctn-regular-borel-measure-distribution",
+      "source": "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "independence-conditional-density",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "independence-conditional-distribution-density-expectation",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "independence-conditional-expectation",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "independence-implies-expectation-is-closed-under-product",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "independence-of-events",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "independence-of-two-events",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "independence-via-conditional-distribution",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "independence-via-generated-sigma-algebras",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "independence-via-joint-density-factorization",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "independence-via-product-distribution",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "independent-uncorrelated",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "inner-product-space",
+      "source": "notes/math/linear-algebra/chapters/09-inner-product-spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "inner-regularity",
+      "source": "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "integral-of-simple-functions",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "integral-restricted-to-a-measurable-set",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "integration-on-a-subset",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "integration-w-r-t-signed-measure",
+      "source": "notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "inverse-function-theorem",
+      "source": "notes/math/multivariate-analysis/chapters/03-implicit-and-inverse-functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "jensen-inequality",
+      "source": "notes/math/prob/chapters/04-LLN.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "joint-cdf",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "joint-distribution-and-joint-cdf",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "joint-pdf-joint-cdf",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "jointly-continuous-rvs-defined-conditional-density",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "jordan-decomposition-for-f-in-bv",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "jordan-decomposition-theorem",
+      "source": "notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "jordan-measure",
+      "source": "notes/math/multivariate-analysis/chapters/06-ibl-baire-to-jordan-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "kolmogorov-definition-of-conditional-probability",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "l-1-convergence-impliesconv-in-measure-implies-subseq-a-e-conv",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "l-1-mu-cdot-banach-space",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "l-1-mu-integral-w-r-t-mu-norm-normed-vs",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "l-1-mu-space",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "l-infty-space",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "l-m-l-n-l-r-0-n-m-r-leq-infty",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "l-p-1-leq-p-leq-infty-is-banach",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "l-p-space-1-leq-p-infty-is-banach",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "l-p-space-is-a-vector-space",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "l-p-spaces",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "l-space-and-integration-on-it",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "law-of-total-expectation",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "law-of-total-probability",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "ldt-meets-lrnt-computing-rn-derivative-on-mathbb-r-n",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "least-squares-method",
+      "source": "notes/math/linear-algebra/chapters/08-least-squares.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lebesgue-decomposition-theorem",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lebesgue-differentiation-theorem",
+      "source": "notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lebesgue-measurable-functions-borel-measurable-functions",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lebesgue-measure",
+      "source": "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lebesgue-measure-and-integral-is-invariant-under-translation",
+      "source": "notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lebesgue-measure-and-integration-is-scaled-det-t-by-linear-map",
+      "source": "notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lebesgue-measure-is-invariant-under-rotation",
+      "source": "notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lebesgue-outer-measure",
+      "source": "notes/math/multivariate-analysis/chapters/07-ibl-lebesgue-outer-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lebesgue-radon-nikodym-theorem",
+      "source": "notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lebesgue-s-characterization-of-riemann-integrability",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lebesgue-set",
+      "source": "notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lebesgue-stieltjes-measurable",
+      "source": "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lebesgue-stieltjes-measure-associated-with-f",
+      "source": "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "liminf-version-of-mct",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lindeberg-levy-central-limit-theorem",
+      "source": "notes/math/prob/chapters/05-CLT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "linear-combination",
+      "source": "notes/math/linear-algebra/chapters/03-linear-combinations.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "linear-functional-bounded-iff-ctn-at-0",
+      "source": "notes/math/measure-theory/chapters/13-the_dual_of_L^p-spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "linear-transformation",
+      "source": "notes/math/linear-algebra/chapters/04-linear-transformations.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "locally-integrable",
+      "source": "notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "ls-measure-space-l-1-space-density-of-step-functions",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "lusin-s-theorem",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "mapping-from-euclidean-coord-to-polar-coord",
+      "source": "notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "marginal-distribution",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "marginal-distribution-from-joint-limits",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "markov-inequality",
+      "source": "notes/math/prob/chapters/04-LLN.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "mathcal-l-preserves-translation-and-scaling",
+      "source": "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "mathcal-m-mathcal-n-measurable-function",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "matrix-rank",
+      "source": "notes/math/linear-algebra/chapters/03-linear-combinations.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "measurable-space-and-measure-space",
+      "source": "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "measurable-subset-preserves-sign",
+      "source": "notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "measure",
+      "source": "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "measure-is-finitely-additive",
+      "source": "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "measure-space",
+      "source": "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "memoryless-property-of-exponential-distribution",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "metric-space",
+      "source": "notes/math/mathematical-analysis/chapters/02-functions-countability-and-metric-spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "minkowski-inequality",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "modes-of-convergence-for-functions",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "modes-of-convergence-for-random-variables",
+      "source": "notes/math/prob/chapters/04-LLN.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "moment-generating-function",
+      "source": "notes/math/prob/chapters/05-CLT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "monotone-class",
+      "source": "notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "monotone-class-lemma",
+      "source": "notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "monotone-convergence-theorem",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "monotone-differentiation-theorem",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "mu-f-total-variation-measure-mu-t-f",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "mu-measurable",
+      "source": "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "multinomial-coefficient",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "mutual-independence-of-multiple-random-variables",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "mutually-singular",
+      "source": "notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "n-random-variable-vector-random-vector",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "nbv",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "norm-of-dual-space-dual-norm",
+      "source": "notes/math/measure-theory/chapters/13-the_dual_of_L^p-spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "nul-set-subnull-set-almost-everywhere",
+      "source": "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "open-interval-covers-for-lebesgue-stieltjes-measure",
+      "source": "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "operator-norm",
+      "source": "notes/math/numerical-linear-algebra/chapters/03-norms.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "orthogonal-projection",
+      "source": "notes/math/linear-algebra/chapters/05-geometry-of-linear-transformations.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "orthogonal-projector",
+      "source": "notes/math/numerical-linear-algebra/chapters/05-qr-factorization.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "orthogonal-transformation",
+      "source": "notes/math/linear-algebra/chapters/07-orthogonal-transformations.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "outer-measure",
+      "source": "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "outer-regularity",
+      "source": "notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "permutation-matrix",
+      "source": "notes/math/modern-algebra/chapters/05-groups-and-permutations.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "permutations",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "pmf-distribution-counting-measure-mu-s-radon-nikodym",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "polynomial-division",
+      "source": "notes/math/modern-algebra/chapters/04-polynomials-and-quotients.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "positive-negative-null-set-measure-space",
+      "source": "notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "positive-set-negative-set-null-set",
+      "source": "notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "premeasure",
+      "source": "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "premeasure-extension-via-induced-outer-measure",
+      "source": "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "probability-density-function",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "probability-density-function-pdf",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "probability-distribution",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "probability-mass-function-pmf",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "probability-measure",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "probability-space",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "product-sigma-algebra",
+      "source": "notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "properties-of-correlation",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "properties-of-measure",
+      "source": "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "qr-factorization",
+      "source": "notes/math/linear-algebra/chapters/06-gram-schmidt-and-qr.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "radon-nikodym-derivative",
+      "source": "notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "radon-nikodym-theorem",
+      "source": "notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "random-variable",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "random-variable-continuous-random-variable",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "random-variables-variance",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "random-vector",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "random-vector-random-variable",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "real-valued-integrable-function",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "real-valued-measurable-functions",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "regular-borel-measure",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "regular-borel-measure-regularity",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "regular-signed-complex-measure",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "regularities-of-mathcal-l-n",
+      "source": "notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "riemann-integrability",
+      "source": "notes/math/mathematical-analysis/chapters/07-riemann-integration.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "riemann-integrability-in-r-n",
+      "source": "notes/math/multivariate-analysis/chapters/04-partitions-and-lebesgue-characterization.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "riemann-integral-lebesgue-integral",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "ring-homomorphism",
+      "source": "notes/math/modern-algebra/chapters/03-rings-and-homomorphisms.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "row-reduction",
+      "source": "notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "sample-space",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "semi-norm-norm",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "sequential-behavior-of-real-valued-measurable-function",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "series",
+      "source": "notes/math/mathematical-analysis/chapters/06-numerical-series.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "series-convergence-absolute-convergence",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "sigma-algebra",
+      "source": "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "sigma-algebra-closure-properties",
+      "source": "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "sigma-algebra-generated-by-a-random-variable-measurable-function",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "sigma-algebra-generated-by-a-subset",
+      "source": "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "sigma-algebra-intersection-sigma-algebra",
+      "source": "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "sigma-finite-measure",
+      "source": "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "signed-measure",
+      "source": "notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "simple-approximation-of-complex-measurable-functions",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "simple-function",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "singular-continuous-random-variable",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "singular-value",
+      "source": "notes/math/numerical-linear-algebra/chapters/04-svd.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "slightly-more-general-version-of-lrnt-meets-ldt",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "spectral-theorem",
+      "source": "notes/math/linear-algebra/chapters/13-spectral-theorem.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "strong-law-of-large-numbers",
+      "source": "notes/math/prob/chapters/04-LLN.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "subnull-set",
+      "source": "notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "subspace",
+      "source": "notes/math/advanced-linear-algebra/chapters/01-review-on-basic-concepts.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "symmetric-difference",
+      "source": "notes/math/multivariate-analysis/chapters/08-ibl-measurability-regularity-and-additivity.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "tensor-product",
+      "source": "notes/math/numerical-linear-algebra/chapters/01-tensor-products-and-matrix-multiplication.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "text-complex-borel-measures-on-mathbb-r-simeq-nbv",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "tilde-l-x-mu-mathbb-r-tilde-l-x-mu-mathbb-c-space",
+      "source": "notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "tonelli-for-sets",
+      "source": "notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "tonelli-for-sum-and-integrals",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "tonelli-theorem",
+      "source": "notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "total-variation-function",
+      "source": "notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "total-variation-measure",
+      "source": "notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "trace-sigma-algebra",
+      "source": "notes/math/prob/chapters/01-combinatorics&prob_space.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "uncorrelated-random-variables",
+      "source": "notes/math/prob/chapters/03-joint&conditional-distribution.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "uniform-continuity",
+      "source": "notes/math/mathematical-analysis/chapters/04-limits-and-continuity.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "uniform-convergence",
+      "source": "notes/math/mathematical-analysis/chapters/08-sequences-and-series-of-functions.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "uniform-distribution",
+      "source": "notes/math/prob/chapters/02-random-variables.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "unique-smallest-sigma-algebra-containing-a-collection-of-subsets",
+      "source": "notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "unitary-matrix",
+      "source": "notes/math/numerical-linear-algebra/chapters/02-orthogonal-vectors-and-matrices.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "vector-space",
+      "source": "notes/math/linear-algebra/chapters/01-linear-equations.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "vitali-covering-lemma",
+      "source": "notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "weak-law-of-large-numbers",
+      "source": "notes/math/prob/chapters/04-LLN.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "why-it-is-called-absolutely-continuous",
+      "source": "notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "x-section-y-section",
+      "source": "notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "young-s-inequality-for-products",
+      "source": "notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex"
+    },
+    {
+      "code": "stale-node-entry",
+      "message": "knowledge entry predates the current authoritative definition",
+      "node": "zero-integral-iff-zero-almost-everywhere",
+      "source": "notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "absolute-continuity-of-signed-measures"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "absolute-continuity-of-signed-measures"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "absolute-continuity-of-signed-measures"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "absolute-continuity-of-signed-measures"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "absolute-continuity-of-signed-measures"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "absolute-continuity-of-signed-measures"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "absolutely-continuous-function"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "algebra-of-sets"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "almost-everywhere"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "bayes-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "binomial-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "borel-sigma-algebra-defined-on-a-topological-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "bounded-linear-functional"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "caratheodory-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "caratheodory-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "caratheodory-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "centered-square-integrable-random-variables"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "chebyshev-inequality"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "combinations"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "combinations"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "complete-measure-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "complete-measure-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "complete-measure-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "computing-variance"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "conditional-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "conditional-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "conditional-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "conditional-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "conditional-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "conditional-expectation"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "conditional-expectation"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "conditional-probability-space-and-trace-sigma-algebra"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "conditional-probability-space-and-trace-sigma-algebra"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "conditional-probability-space-and-trace-sigma-algebra"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "construct-outer-measure-out-of-an-elementary-length-function"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "continuous-joint-cdf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "continuous-random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "continuous-random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "continuous-random-variable-expectation-variance"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "continuous-random-vector-continuous-joint-cdf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "continuous-random-vector-continuous-joint-cdf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "continuous-random-vector-continuous-joint-cdf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "correlation"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "covariance"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "covariance"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "covariance"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "covariance-positive-semidefinite-bilinear-form"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "de-moivre-laplace-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "decomposing-probability-of-intersection-of-events"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "discrete-random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "discrete-random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "discrete-random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "discrete-random-variable-expectation-variance"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "discrete-rv-independence-characterization"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "distribution-function-cumulative-distribution-function-cdf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "distribution-function-cumulative-distribution-function-cdf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "dual-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "dynkins-pi-lambda-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "event-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "every-measure-space-can-be-completed"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "expectation-and-variance-of-random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "expectation-and-variance-of-random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "expectation-and-variance-of-random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "fatou-lemma"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "fubini-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "function-of-bounded-variation"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "gamma-as-sum-of-independent-exponentials"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "generalized-dct"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "hahn-decomposition-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "hahn-decomposition-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "hahn-kolmogorov-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "hahn-kolmogorov-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "hahn-kolmogorov-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "hahn-kolmogorov-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "hardy-littlewood-maximal-function"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "hl-maximal-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "holder-inequality"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "inclusion-properties-of-generated-sigma-algebra"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-implies-expectation-is-closed-under-product"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-implies-expectation-is-closed-under-product"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-of-events"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-of-two-events"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-of-two-events"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-via-conditional-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-via-generated-sigma-algebras"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-via-joint-density-factorization"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-via-product-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-via-product-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-via-product-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-via-product-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-via-product-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-via-product-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-via-product-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-via-product-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independence-via-product-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independent-uncorrelated"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "independent-uncorrelated"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "joint-cdf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "joint-cdf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "joint-distribution-and-joint-cdf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "joint-distribution-and-joint-cdf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "joint-distribution-and-joint-cdf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "jointly-continuous-rvs-defined-conditional-density"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "jointly-continuous-rvs-defined-conditional-density"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "jointly-continuous-rvs-defined-conditional-density"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "jordan-decomposition-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "jordan-decomposition-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "jordan-decomposition-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "jordan-decomposition-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "kolmogorov-definition-of-conditional-probability"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "kolmogorov-definition-of-conditional-probability"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "l-p-spaces"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "l-p-spaces"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "l-space-and-integration-on-it"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "l-space-and-integration-on-it"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "law-of-total-expectation"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "law-of-total-probability"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "lebesgue-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "lebesgue-radon-nikodym-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "lindeberg-levy-central-limit-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "locally-integrable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "marginal-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "marginal-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "marginal-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "marginal-distribution-from-joint-limits"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "markov-inequality"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "mathcal-m-mathcal-n-measurable-function"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "mathcal-m-mathcal-n-measurable-function"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "mathcal-m-mathcal-n-measurable-function"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "measurable-space-and-measure-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "measurable-space-and-measure-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "measurable-space-and-measure-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "measure-is-finitely-additive"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "measure-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "measure-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "measure-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "memoryless-property-of-exponential-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "minkowski-inequality"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "modes-of-convergence-for-random-variables"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "modes-of-convergence-for-random-variables"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "moment-generating-function"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "monotone-convergence-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "monotone-convergence-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "mu-measurable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "multinomial-coefficient"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "mutual-independence-of-multiple-random-variables"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "mutually-singular"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "mutually-singular"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "nbv"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "nul-set-subnull-set-almost-everywhere"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "pmf-distribution-counting-measure-mu-s-radon-nikodym"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "premeasure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "premeasure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "premeasure-extension-via-induced-outer-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "premeasure-extension-via-induced-outer-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-density-function"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-density-function-pdf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-density-function-pdf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-distribution"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-mass-function-pmf"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "probability-space"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "product-sigma-algebra"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "properties-of-correlation"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "properties-of-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "properties-of-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "radon-nikodym-derivative"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "radon-nikodym-derivative"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "random-variable"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "random-variables-variance"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "random-vector"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "random-vector"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "random-vector"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "random-vector"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "random-vector"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "real-valued-integrable-function"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "real-valued-integrable-function"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "real-valued-integrable-function"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "real-valued-measurable-functions"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "semi-norm-norm"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "sigma-algebra"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "sigma-algebra"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "sigma-algebra"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "sigma-algebra-closure-properties"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "sigma-algebra-generated-by-a-random-variable-measurable-function"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "sigma-algebra-generated-by-a-subset"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "sigma-algebra-intersection-sigma-algebra"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "sigma-finite-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "sigma-finite-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "sigma-finite-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "signed-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "signed-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "signed-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "signed-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "simple-function"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "strong-law-of-large-numbers"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "subnull-set"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "subspace"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "tonelli-theorem"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "total-variation-measure"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "trace-sigma-algebra"
+    },
+    {
+      "code": "stale-semantic-edge",
+      "message": "semantic edge evidence predates a changed or orphaned authority",
+      "node": "unique-smallest-sigma-algebra-containing-a-collection-of-subsets"
+    }
+  ]
 }

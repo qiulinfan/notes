@@ -1,0 +1,211 @@
+% LaTeX companion of hw02.typ. Both formats are editable.
+\section{Homework 2 --- submitted work}
+
+\begin{qlnote}{Note}
+
+Visual transcription of the personal finished submission. Source: \texttt{217-Hw-2-finished.pdf}; page references below are PDF pages.
+
+\end{qlnote}
+
+\subsection{Source p. 1 --- Exercise 26}
+
+Let \(A\) be a \(4 \times 3\) matrix and assume \(Ax = b\) has a unique solution. The submission records \(\text{rank}(A) = \text{rank}\left( A \middle| b \right) = 3\). For \(Ax = c\), it begins the two RREF cases.
+
+\subsection{Source p. 2 --- Exercise 26; Exercise 34 begins}
+
+If \(\left\lbrack {A:c} \right\rbrack\) reduces to a form with three pivots, it has one solution. If it has a row \(\begin{pmatrix}
+0 & 0 & 0 & \varepsilon
+\end{pmatrix}\) with \(\varepsilon \neq 0\), it has no solution. By Theorem 1.3.1, infinitely many solutions cannot occur because there is no free variable.
+
+Exercise 34 introduces the standard coordinate vectors \(e_{1},e_{2},e_{3}\).
+
+\subsection{Source p. 3 --- Exercise 34}
+
+For \(A = \begin{pmatrix}
+a & b & c \\
+d & e & f \\
+g & h & k
+\end{pmatrix}\), the submitted work writes
+
+\(Ae_{1} = \begin{pmatrix}
+a \\
+d \\
+g
+\end{pmatrix} = v_{1}\), \(Ae_{2} = \begin{pmatrix}
+b \\
+e \\
+h
+\end{pmatrix} = v_{2}\), and \(Ae_{3} = \begin{pmatrix}
+c \\
+f \\
+k
+\end{pmatrix} = v_{3}\).
+
+For a matrix \(B\) with columns \(v_{1},v_{2},v_{3}\), it likewise records \(Be_{i} = v_{i}\).
+
+\subsection{Source p. 4 --- Exercise 48(a)--(b)}
+
+(a) If \(x_{h}\) solves \(Ax = 0\) and \(x_{1}\) solves \(Ax = b\), then \(A\left( {x_{1} + x_{h}} \right) = Ax_{1} + Ax_{h} = b + 0 = b\).
+
+(b) If \(x_{1}\) and \(x_{2}\) solve \(Ax = b\), then \(A\left( {x_{2} - x_{1}} \right) = Ax_{2} - Ax_{1} = b - b = 0\); hence \(x_{2} - x_{1}\) is a homogeneous solution.
+
+\subsection{Source p. 5 --- Exercise 48(c)}
+
+The drawing places the homogeneous solutions on a line through the origin and the particular solution \(x_{1}\) off that line. The submitted answer is the parallel affine line \(x_{1} + x_{h}\).
+
+\subsection{Source p. 6 --- Exercise 48(c)}
+
+The geometric explanation concludes: all solutions form the line parallel to the homogeneous-solution line through the head of \(x_{1}\), with its tail at \(0\).
+
+\subsection{Source p. 7 --- Exercise 6}
+
+For \(T:\mathbb{R}^{2}\rightarrow\mathbb{R}^{3}\),
+
+\(T\begin{pmatrix}
+x_{1} \\
+x_{2}
+\end{pmatrix} = x_{1}\begin{pmatrix}
+1 \\
+2 \\
+3
+\end{pmatrix} + x_{2}\begin{pmatrix}
+4 \\
+5 \\
+6
+\end{pmatrix}\).
+
+The submitted standard matrix is \(\begin{pmatrix}
+1 & 4 \\
+2 & 5 \\
+3 & 6
+\end{pmatrix}\), and the work verifies linearity by the definition cited on Worksheet 4.
+
+\subsection{Source p. 8 --- Exercise 38; Exercise 44 begins}
+
+For Exercise 38,
+
+\(T\begin{pmatrix}
+2 \\
+{- 1}
+\end{pmatrix} = 2v_{1} - v_{2}\).
+
+The submitted sketch shows this vector combination. Exercise 44 begins with \(T(x)\) equal to the cross product of \(v\) and \(x\).
+
+\subsection{Source p. 9 --- Exercise 44}
+
+With \(v = \begin{pmatrix}
+v_{1} \\
+v_{2} \\
+v_{3}
+\end{pmatrix}\) and \(x = \begin{pmatrix}
+x_{1} \\
+x_{2} \\
+x_{3}
+\end{pmatrix}\), the work expands
+
+\(v \times x = \begin{pmatrix}
+{v_{2}x_{3} - v_{3}x_{2}} \\
+{v_{3}x_{1} - v_{1}x_{3}} \\
+{v_{1}x_{2} - v_{2}x_{1}}
+\end{pmatrix} = \begin{pmatrix}
+0 & {- v_{3}} & v_{2} \\
+v_{3} & 0 & {- v_{1}} \\
+{- v_{2}} & v_{1} & 0
+\end{pmatrix}x\).
+
+Thus the submitted matrix for \(T\) is \(\begin{pmatrix}
+0 & {- v_{3}} & v_{2} \\
+v_{3} & 0 & {- v_{1}} \\
+{- v_{2}} & v_{1} & 0
+\end{pmatrix}\); the work also verifies addition and scalar multiplication.
+
+\subsection{Source p. 10 --- Exercise 46}
+
+For \(A = \begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}\) and \(B = \begin{pmatrix}
+p & q \\
+r & s
+\end{pmatrix}\), \(T(x) = B\left( {Ax} \right)\). The submitted column computation gives
+
+\(T\left( e_{1} \right) = \begin{pmatrix}
+{ap + cq} \\
+{ar + cs}
+\end{pmatrix}\) and \(T\left( e_{2} \right) = \begin{pmatrix}
+{bp + dq} \\
+{br + ds}
+\end{pmatrix}\).
+
+Hence the matrix is \(\begin{pmatrix}
+{ap + cq} & {bp + dq} \\
+{ar + cs} & {br + ds}
+\end{pmatrix}\).
+
+\subsection{Source p. 11 --- Part B, Problem 1(a)--(b)}
+
+(a) \(f:\left\lbrack {0,4} \right\rbrack\rightarrow\left\lbrack {0,18} \right\rbrack\), \(f(x) = x^{2} + 2\), is injective but not surjective. A counterexample to surjectivity is \(y = 0\). For injectivity, \(a^{2} + 2 = b^{2} + 2\) implies \(a = + - \vee - - b\), and nonnegativity gives \(a = b\).
+
+(b) \(g:\mathbb{R}\rightarrow\mathbb{R}\), \(g(x) = 2x - 5\), is bijective. Surjectivity uses \(x = \frac{y + 5}{2}\), and \(2x_{1} - 5 = 2x_{2} - 5\) gives injectivity.
+
+\subsection{Source p. 12 --- Part B, Problem 1(c)--(d)}
+
+(c) \(h:\mathbb{R}^{2}\rightarrow\mathbb{R}\), \(h\left( {x,y} \right) = 2x^{2} + 5y^{2}\), is neither injective nor surjective: \(h\left( {1,2} \right) = h\left( {- 1, - 2} \right) = 22\), and no negative number is in its image.
+
+(d) \(q:\mathbb{N}\rightarrow\mathbb{N}\) sends odd \(n\) to \(n\) and even \(n\) to \(\frac{n}{2}\). It is surjective but not injective: \(q(1) = q(2) = 1\); for a target \(y\), choose \(x = y\) when \(y\) is odd and \(x = 2y\) when \(y\) is even.
+
+\subsection{Source p. 13 --- Part B, Problem 2(a)--(b)}
+
+The submitted truth values are (a) false, (b) true, (c) false, (d) false, (e) true.
+
+For (a), take \(f:\left\lbrack {- 2,2} \right\rbrack\rightarrow\left\lbrack {0,4} \right\rbrack\), \(f(x) = x^{2}\), \(A = \left\lbrack {- 2, - 1} \right\rbrack\), and \(B = \left\lbrack {1,2} \right\rbrack\). Then \texttt{A\ intersect\ B\ =\ emptyset} but \(4\) belongs to both images. The proof of (b) begins by contradiction.
+
+\subsection{Source p. 14 --- Part B, Problem 2(b)--(c)}
+
+For (b), if \(A\) and \(B\) had a common \(a\), then \(f(a)\) would lie in both \(f\lbrack A\rbrack\) and \(f\lbrack B\rbrack\), contradicting their disjointness.
+
+For (c), the same squaring map with \(A = \left\lbrack {0,2} \right\rbrack\) gives \(f^{-}1\left\lbrack {f\lbrack A\rbrack} \right\rbrack = \left\lbrack {- 2,2} \right\rbrack \neq A\).
+
+\subsection{Source p. 15 --- Part B, Problem 2(d)--(e)}
+
+For (d), using the same \(f\) and \(A = \left\lbrack {0,2} \right\rbrack\), the submission gets \(f\left\lbrack {X \smallsetminus A} \right\rbrack = f\left\lbrack {- 2,0} \right\rbrack = \left\lbrack {0,4} \right\rbrack\), whereas \(Y \smallsetminus f\lbrack A\rbrack = \varnothing\).
+
+For (e), it begins the two inclusions for a bijection \(f\).
+
+\subsection{Source p. 16 --- Part B, Problem 2(e)}
+
+If \texttt{m\ in\ f{[}A\ intersect\ B{]}}, then \(m = f(x)\) for some \texttt{x\ in\ A\ intersect\ B}, so \texttt{m\ in\ f{[}A{]}\ intersect\ f{[}B{]}}. Conversely, \(m = f(x) = f(y)\) with \(x \in A\) and \(y \in B\); injectivity gives \(x = y\), thus \texttt{m\ in\ f{[}A\ intersect\ B{]}}.
+
+\subsection{Source p. 17 --- Part B, Problem 3(a)}
+
+Assume \(f\left( {cx} \right) = cf(x)\). The submission first records \(f(0) = 0\) and \(f\left( {- x} \right) = - f(x)\). If \(x + y = 0\), additivity follows. Otherwise, writing \(c = x + y\) and applying the assumption to \(\frac{x}{x + y}\) and \(\frac{y}{x + y}\) gives
+
+\(\left( {x + y} \right)f\left( {x + y} \right) = \left( {x + y} \right)\left( {f(x) + f(y)} \right)\),
+
+then division yields \(f\left( {x + y} \right) = f(x) + f(y)\).
+
+\subsection{Source p. 18 --- Part B, Problem 3(b)}
+
+The submitted example is \(f(x) = \left\| x \right\|\). It records \(f\left( {cx} \right) = cf(x)\), but says it is not additive: with \(x = \begin{pmatrix}
+1 \\
+2
+\end{pmatrix}\) and \(y = \begin{pmatrix}
+2 \\
+2
+\end{pmatrix}\), the displayed norm values give \(f\left( {x + y} \right) \neq f(x) + f(y)\).
+
+\subsection{Source p. 19 --- Part B, Problem 4(a)--(b)}
+
+For an additive \(f\), \(f(0) = f(0) + f(0)\), hence \(f(0) = 0\); also \(f\left( {- x} \right) = - f(x)\).
+
+\subsection{Source p. 20 --- Part B, Problem 4(c)--(d) begins}
+
+The induction for \(f\left( {nx} \right) = nf(x)\) has base case \(n = 1\) and the inductive step
+
+\(f\left( {\left( {n + 1} \right)x} \right) = f\left( {nx + x} \right) = f\left( {nx} \right) + f(x) = \left( {n + 1} \right)f(x)\).
+
+Part (d), for negative integers, begins on this page.
+
+\subsection{Source p. 21 --- Part B, Problem 4(d); recreational part (e)}
+
+The work completes the negative-integer case using \(f\left( {- x} \right) = - f(x)\). For the recreational rational case it concludes that \(f\left( {qx} \right) = qf(x)\) for rational \(q\), using numerator/denominator multiplication and the preceding integer cases.

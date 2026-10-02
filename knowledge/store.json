@@ -1,0 +1,377 @@
+{
+  "alignment_sha256": "1821ed20b9b2fc1e5057e8796cbc565f854486df648b0e8bb9fd7a3441ae401c",
+  "documents": {
+    "count": 259,
+    "sha256": "8c6acb905d4e4dd403be32d9debc9ea2fb39510a1b5fa685c1664b438d633d43",
+    "source_snapshot_sha256": "0e0c48ace27fe41d6919a582e87b8d2cfc009e86d532f9c32d3a9168fdc90fcf"
+  },
+  "generator": "kgdistiller",
+  "graph_artifacts": [
+    {
+      "bytes": 122063,
+      "path": "knowledge/graph/diagnostics.json",
+      "sha256": "dcddf803a0d03a5ef5644dd0836d1dfa7798c46d7f453e5386ca66b97fb063cd"
+    },
+    {
+      "bytes": 221055,
+      "path": "knowledge/graph/edges.jsonl",
+      "sha256": "49b0de85a9a55860fc16a34ab5f73c2d5c59d2b639c650743fa8adfc22493c46"
+    },
+    {
+      "bytes": 498,
+      "path": "knowledge/graph/entries/by-source/notes/math/advanced-linear-algebra/chapters/01-review-on-basic-concepts.tex.jsonl",
+      "sha256": "e28441154ae96a275c6d95595225dfa0d33eb0606e535a65c7934f16dbe1d2ad"
+    },
+    {
+      "bytes": 362,
+      "path": "knowledge/graph/entries/by-source/notes/math/linear-algebra/chapters/01-linear-equations.tex.jsonl",
+      "sha256": "743358c9ee9df11c75326bbdd17c30a842b8c48fc7b5c318016b7eb5ec855725"
+    },
+    {
+      "bytes": 381,
+      "path": "knowledge/graph/entries/by-source/notes/math/linear-algebra/chapters/03-linear-combinations.tex.jsonl",
+      "sha256": "669c9e9dfeab4b6f292f988f520fdda0c4d61dfb80601d989236b581e479acd7"
+    },
+    {
+      "bytes": 204,
+      "path": "knowledge/graph/entries/by-source/notes/math/linear-algebra/chapters/04-linear-transformations.tex.jsonl",
+      "sha256": "9ceed90a846392535515d5bac18b062d1bd56a40fbe55c06d7d1c489e2394ccc"
+    },
+    {
+      "bytes": 212,
+      "path": "knowledge/graph/entries/by-source/notes/math/linear-algebra/chapters/05-geometry-of-linear-transformations.tex.jsonl",
+      "sha256": "97f21befec84f050164b0e7211f2c20ca983458ac97615c0e3504945bd7b5a73"
+    },
+    {
+      "bytes": 267,
+      "path": "knowledge/graph/entries/by-source/notes/math/linear-algebra/chapters/06-gram-schmidt-and-qr.tex.jsonl",
+      "sha256": "3143a88199eeb6bd7854a84f146160ce5c5225e46ff0e540958cce4db18633ef"
+    },
+    {
+      "bytes": 256,
+      "path": "knowledge/graph/entries/by-source/notes/math/linear-algebra/chapters/07-orthogonal-transformations.tex.jsonl",
+      "sha256": "1cc3673e7d440408b4b4cff95ab1083851f6eccf23ad45c8704da2352e8a1b58"
+    },
+    {
+      "bytes": 217,
+      "path": "knowledge/graph/entries/by-source/notes/math/linear-algebra/chapters/08-least-squares.tex.jsonl",
+      "sha256": "289911216e84012ed9c2fca62e9d85a0b7e2fa7c7c3e0b5e02adc2a6d673cac5"
+    },
+    {
+      "bytes": 234,
+      "path": "knowledge/graph/entries/by-source/notes/math/linear-algebra/chapters/09-inner-product-spaces.tex.jsonl",
+      "sha256": "f3fa4871ef9fc1f1774dc4f947d8e1b3b7b95c9a82ba3a1feef42536475f5982"
+    },
+    {
+      "bytes": 457,
+      "path": "knowledge/graph/entries/by-source/notes/math/linear-algebra/chapters/10-diagonalization.tex.jsonl",
+      "sha256": "ea2a74acf4fa67e31544616822edb5f46f33e918302952de8120df2acfc34e2b"
+    },
+    {
+      "bytes": 189,
+      "path": "knowledge/graph/entries/by-source/notes/math/linear-algebra/chapters/13-spectral-theorem.tex.jsonl",
+      "sha256": "e06dc44676fb3da4fc86a099450cc24836e05dbee63ca517ee7a9cfdbbf877ff"
+    },
+    {
+      "bytes": 217,
+      "path": "knowledge/graph/entries/by-source/notes/math/mathematical-analysis/chapters/01-real-number-system.tex.jsonl",
+      "sha256": "16fccc9c0d31966dab96c9f4f117f5a791bddd6a2e3cdcd204c4a70232326479"
+    },
+    {
+      "bytes": 267,
+      "path": "knowledge/graph/entries/by-source/notes/math/mathematical-analysis/chapters/02-functions-countability-and-metric-spaces.tex.jsonl",
+      "sha256": "2c2cf60d615343045498182f5b10c2979d40567c3e861e261966afbc9e50cb32"
+    },
+    {
+      "bytes": 202,
+      "path": "knowledge/graph/entries/by-source/notes/math/mathematical-analysis/chapters/03-sequences-and-topology.tex.jsonl",
+      "sha256": "7cb6454dc6bd5142632c269b04c9ae5d241aa9b543719c94f5a958ac3164e6f0"
+    },
+    {
+      "bytes": 269,
+      "path": "knowledge/graph/entries/by-source/notes/math/mathematical-analysis/chapters/04-limits-and-continuity.tex.jsonl",
+      "sha256": "803a6ed39d26aa13976b8da6848e44ca6fbf1e40ecf8dcc798a8c476a36c0a09"
+    },
+    {
+      "bytes": 259,
+      "path": "knowledge/graph/entries/by-source/notes/math/mathematical-analysis/chapters/05-differentiation.tex.jsonl",
+      "sha256": "2594b15343fcbcab0aeb6e82d0284528f80320e29a50fdbe033b7ffe0cfbab5d"
+    },
+    {
+      "bytes": 213,
+      "path": "knowledge/graph/entries/by-source/notes/math/mathematical-analysis/chapters/06-numerical-series.tex.jsonl",
+      "sha256": "2d05d237d58ad4c6c50f620fcce92df1156b1e8a3579abc2d274eed0daaad958"
+    },
+    {
+      "bytes": 276,
+      "path": "knowledge/graph/entries/by-source/notes/math/mathematical-analysis/chapters/07-riemann-integration.tex.jsonl",
+      "sha256": "68aa41da32774cdac9fed0e7c2528bebbb7b2955beacdb7836f8257ce6fccdf1"
+    },
+    {
+      "bytes": 286,
+      "path": "knowledge/graph/entries/by-source/notes/math/mathematical-analysis/chapters/08-sequences-and-series-of-functions.tex.jsonl",
+      "sha256": "4ef5090e0b223aa20a4e801be9130e18e6513b8abeee9ad570988e07df56575c"
+    },
+    {
+      "bytes": 11128,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex.jsonl",
+      "sha256": "3b0843176fb2a84a4aeccd1db8339033e606e2f05aa3a90275bd56847c06804e"
+    },
+    {
+      "bytes": 11015,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex.jsonl",
+      "sha256": "c2a1347febc62ae27ebe59b236bf4969d6b8ee6eaf23a70f2bb87392db296d0b"
+    },
+    {
+      "bytes": 9904,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex.jsonl",
+      "sha256": "d70f1fed9caee29c204490b427b92fd0c71f12ee590f928eb034e446fa7604d2"
+    },
+    {
+      "bytes": 14783,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex.jsonl",
+      "sha256": "2df5f3409e60b1471ccce58353eb84b8cbfedfefca43a569eb93bee2657ea2a4"
+    },
+    {
+      "bytes": 12152,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex.jsonl",
+      "sha256": "a6dfd4c94648458c0cb220bb8358a8dd1b2c02a028d69ea51c9c90f092d55262"
+    },
+    {
+      "bytes": 9173,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.tex.jsonl",
+      "sha256": "55623b51a8fba8e71881c489b0b9073d9d25ecaa1a57d6913dfaf058c015a39f"
+    },
+    {
+      "bytes": 7415,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/chapters/07-Lebesgue_measure_on_R^n.tex.jsonl",
+      "sha256": "2a854bb6f7c537ff1584327dc76cf3b634d7f327aa4bf6bff7c43b9ead445593"
+    },
+    {
+      "bytes": 6588,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex.jsonl",
+      "sha256": "1c248a9760638b9843591951d5996b8469cec22b5188d54dbc7b7d234533fcaf"
+    },
+    {
+      "bytes": 10715,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex.jsonl",
+      "sha256": "d24c92eecebb7c9347f110a01ff121dd0cb777f0bc3131e3b39e4f2e9e425ced"
+    },
+    {
+      "bytes": 8140,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.tex.jsonl",
+      "sha256": "b817157c0f11731d8744c3d1566a8508734e73fe11f37b87863b9171cc10d26f"
+    },
+    {
+      "bytes": 5496,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.tex.jsonl",
+      "sha256": "b0fb734fc67922a33a59371f482d862745bdf47ad5dda98f97c1342b6f977236"
+    },
+    {
+      "bytes": 14379,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex.jsonl",
+      "sha256": "9945863f5e646ffa909beb373ea6a8427a109f75a3d0d1daadc4b2149fb3e333"
+    },
+    {
+      "bytes": 2883,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/chapters/13-the_dual_of_L^p-spaces.tex.jsonl",
+      "sha256": "6769fcdd9d1f9d7a0e60199b7a2a8261598dd8ff71daec49bd3293acb59c4006"
+    },
+    {
+      "bytes": 401,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/homeworks/hw02-on_Carathéodorys&Hahn-Kolmogrov-thm.tex.jsonl",
+      "sha256": "b9126a3ea93f8b208925dc0d9748ac7d1942d0eba9a9a4c8d04bf9e4c44cbffa"
+    },
+    {
+      "bytes": 1059,
+      "path": "knowledge/graph/entries/by-source/notes/math/measure-theory/homeworks/hw08-on_L^p-spacecs.tex.jsonl",
+      "sha256": "a994f49148f84b406c039a5c9bccb64226075e9df3c19dbc48f10430d36b6b4f"
+    },
+    {
+      "bytes": 265,
+      "path": "knowledge/graph/entries/by-source/notes/math/modern-algebra/chapters/01-integers-and-division.tex.jsonl",
+      "sha256": "16b210cf2427f8369b2badc161d2a6c6cb1ffcacb1f6262b4ae415c8c0ffbe7a"
+    },
+    {
+      "bytes": 212,
+      "path": "knowledge/graph/entries/by-source/notes/math/modern-algebra/chapters/02-gcd-primes-and-congruence.tex.jsonl",
+      "sha256": "f8d233451101ed06ff439adf224052e7012ac46b7498ef7556b69a94c23b0441"
+    },
+    {
+      "bytes": 260,
+      "path": "knowledge/graph/entries/by-source/notes/math/modern-algebra/chapters/03-rings-and-homomorphisms.tex.jsonl",
+      "sha256": "ed9eaa9837ec2bd037d1903e7d9db0d9df43196280d424a40c3937942fabd496"
+    },
+    {
+      "bytes": 288,
+      "path": "knowledge/graph/entries/by-source/notes/math/modern-algebra/chapters/04-polynomials-and-quotients.tex.jsonl",
+      "sha256": "cbebaa46439b11c85a3cc5505a9d5687b2552b500e05b945fcd3b474cdf40a19"
+    },
+    {
+      "bytes": 341,
+      "path": "knowledge/graph/entries/by-source/notes/math/modern-algebra/chapters/05-groups-and-permutations.tex.jsonl",
+      "sha256": "c37ef2e06905b4a8355f817d6218608974be8c8072f17209bf84800927930005"
+    },
+    {
+      "bytes": 222,
+      "path": "knowledge/graph/entries/by-source/notes/math/modern-algebra/chapters/06-normal-subgroups-and-isomorphisms.tex.jsonl",
+      "sha256": "fc5fefe2bb62629664265483a0b455e09c1178a8efe06eeba52d4c875d1f3104"
+    },
+    {
+      "bytes": 389,
+      "path": "knowledge/graph/entries/by-source/notes/math/modern-algebra/chapters/07-elliptic-curves.tex.jsonl",
+      "sha256": "c82cf08f5fe3fd64f13c33ac0a8641b1d5421cbb0766fd9766a24e07367816f0"
+    },
+    {
+      "bytes": 292,
+      "path": "knowledge/graph/entries/by-source/notes/math/multivariate-analysis/chapters/01-metric-spaces-and-compactness.tex.jsonl",
+      "sha256": "4294a4a6db13e2d23b475baff05126317f136f58b72b4afe2896fd70029f4a90"
+    },
+    {
+      "bytes": 332,
+      "path": "knowledge/graph/entries/by-source/notes/math/multivariate-analysis/chapters/02-multivariable-differentiation.tex.jsonl",
+      "sha256": "29b64965e72e522c87967d6e45992be8916a4553183eff290a60eac8063560cd"
+    },
+    {
+      "bytes": 295,
+      "path": "knowledge/graph/entries/by-source/notes/math/multivariate-analysis/chapters/03-implicit-and-inverse-functions.tex.jsonl",
+      "sha256": "0d76dc7ac2c35522084c38216f3aae658d2dbd7c31eede0c4c8aad0af4c9f2d1"
+    },
+    {
+      "bytes": 321,
+      "path": "knowledge/graph/entries/by-source/notes/math/multivariate-analysis/chapters/04-partitions-and-lebesgue-characterization.tex.jsonl",
+      "sha256": "b57c6daf44dcca8ce4a327c360e87163e06ae9ab3d01640c0da32055669100ea"
+    },
+    {
+      "bytes": 318,
+      "path": "knowledge/graph/entries/by-source/notes/math/multivariate-analysis/chapters/05-integration-and-change-of-variables.tex.jsonl",
+      "sha256": "00f641df033e8cc912bcef53fb736a20fe2e0868af50b3c7341a27cadb159260"
+    },
+    {
+      "bytes": 343,
+      "path": "knowledge/graph/entries/by-source/notes/math/multivariate-analysis/chapters/06-ibl-baire-to-jordan-measure.tex.jsonl",
+      "sha256": "27443b9b99329089dd299e9a54bf56eb3a178b32231f9a8622491c7071107610"
+    },
+    {
+      "bytes": 285,
+      "path": "knowledge/graph/entries/by-source/notes/math/multivariate-analysis/chapters/07-ibl-lebesgue-outer-measure.tex.jsonl",
+      "sha256": "284cd51e0e1a2c59660f0828287ecad1763037b242dd30030286c0a0ac7cf369"
+    },
+    {
+      "bytes": 245,
+      "path": "knowledge/graph/entries/by-source/notes/math/multivariate-analysis/chapters/08-ibl-measurability-regularity-and-additivity.tex.jsonl",
+      "sha256": "18d280c7c0cd2e322158c97fb4bfcc9f0e63b8f938756926b6e82bcb2280d961"
+    },
+    {
+      "bytes": 311,
+      "path": "knowledge/graph/entries/by-source/notes/math/multivariate-analysis/chapters/09-ibl-limits-and-carathéodory.tex.jsonl",
+      "sha256": "70d0638687d4b464e9e4939676c6e46a1247902ad8c15c23109a4e3e4376a037"
+    },
+    {
+      "bytes": 285,
+      "path": "knowledge/graph/entries/by-source/notes/math/numerical-linear-algebra/chapters/01-tensor-products-and-matrix-multiplication.tex.jsonl",
+      "sha256": "38989cd544074e14473562bba0e0f842082de041430b63c3ae0d338d509604f3"
+    },
+    {
+      "bytes": 255,
+      "path": "knowledge/graph/entries/by-source/notes/math/numerical-linear-algebra/chapters/02-orthogonal-vectors-and-matrices.tex.jsonl",
+      "sha256": "0c82332665e9afaec0b8ac7d67adcb6cc1a23d5ca08380b3cc894769b29499b2"
+    },
+    {
+      "bytes": 294,
+      "path": "knowledge/graph/entries/by-source/notes/math/numerical-linear-algebra/chapters/03-norms.tex.jsonl",
+      "sha256": "df96b012bb3dadcf2901b7ab917967d42ea0248eeb9d7ceb2d4c44072d1da24e"
+    },
+    {
+      "bytes": 299,
+      "path": "knowledge/graph/entries/by-source/notes/math/numerical-linear-algebra/chapters/04-svd.tex.jsonl",
+      "sha256": "5c064c20b41c3f0a7c9eec1661389589068dc9443b096bf9b59c44f6fa171a66"
+    },
+    {
+      "bytes": 251,
+      "path": "knowledge/graph/entries/by-source/notes/math/numerical-linear-algebra/chapters/05-qr-factorization.tex.jsonl",
+      "sha256": "71b9664578d20b16a889a3dd3e41aa6e8e141c03095e8a9208f6869fe18e6a5c"
+    },
+    {
+      "bytes": 271,
+      "path": "knowledge/graph/entries/by-source/notes/math/numerical-linear-algebra/chapters/07-conditioning-and-stability.tex.jsonl",
+      "sha256": "28210f9080bb0c105d66aae0ee2d5860edf52d480aa4524a2f88931c4e19680a"
+    },
+    {
+      "bytes": 7871,
+      "path": "knowledge/graph/entries/by-source/notes/math/prob/chapters/01-combinatorics&prob_space.tex.jsonl",
+      "sha256": "be2fb0a69c96df667f94f6163eccf1429a0cb210f69229dea8410c6065ca4206"
+    },
+    {
+      "bytes": 11521,
+      "path": "knowledge/graph/entries/by-source/notes/math/prob/chapters/02-random-variables.tex.jsonl",
+      "sha256": "41ed7b9fb3b11d7482870c43c59844df2c684804197a08d613ca9b5392469656"
+    },
+    {
+      "bytes": 10152,
+      "path": "knowledge/graph/entries/by-source/notes/math/prob/chapters/03-joint&conditional-distribution.tex.jsonl",
+      "sha256": "dce16295e5b02dc734465068d3b03770918ff1e7215ecc8498554bd224ac9d38"
+    },
+    {
+      "bytes": 1639,
+      "path": "knowledge/graph/entries/by-source/notes/math/prob/chapters/04-LLN.tex.jsonl",
+      "sha256": "97276d4554481798d0b37c70ae62cd43022e544bee00b78b5c3132e0afa07d31"
+    },
+    {
+      "bytes": 1280,
+      "path": "knowledge/graph/entries/by-source/notes/math/prob/chapters/05-CLT.tex.jsonl",
+      "sha256": "522d7a819f39bbe3bd9004735f512cb48af712679f7e8ac65d709518fd4c0b0a"
+    },
+    {
+      "bytes": 1246,
+      "path": "knowledge/graph/entries/meta/global/unscoped.jsonl",
+      "sha256": "e34a9f637ffcdee82cd8bb60d206776fc80c34176f99f12dad0435c01590729e"
+    },
+    {
+      "bytes": 2129,
+      "path": "knowledge/graph/entries/meta/math/measure-theory.jsonl",
+      "sha256": "13e6afd3f48f6eaba0ccf2a69e30d0b39bf6cfbf5520f97d906c2b1a2ca9291f"
+    },
+    {
+      "bytes": 837,
+      "path": "knowledge/graph/entries/meta/math/probability.jsonl",
+      "sha256": "e8c9b83b690f592b986d7018559bdbbee069e3603f78d2f845186f164057cedd"
+    },
+    {
+      "bytes": 120834,
+      "path": "knowledge/graph/manifest.json",
+      "sha256": "5ed90e3668f9adc71d5bb6cc163f7c0cc470170caa1818d77e4d9dae76ab0d79"
+    },
+    {
+      "bytes": 561652,
+      "path": "knowledge/graph/nodes.jsonl",
+      "sha256": "0c1876e116acbab7865c3689a2d9de505007ba9cf6ded0fb24bc76233bd25e2b"
+    },
+    {
+      "bytes": 22819,
+      "path": "knowledge/graph/references.jsonl",
+      "sha256": "749f14837c3c088a570d1579559b470b3d1b46ba92e61346c8e2ab85d9ce6fbd"
+    }
+  ],
+  "graph_sha256": "0f3adf192824dcd1c5951d54fa9ad1c6d9c783d7708c6935d24ec3bd167ec633",
+  "identity_sha256": "7fc70e77532ba1be431628f953dbdc7c38a81c786b2eba986aea36f0d2e9bdf4",
+  "layout": "in-place",
+  "managed_paths": [
+    "knowledge/documents.jsonl",
+    "knowledge/store.json"
+  ],
+  "paths": {
+    "alignments": "knowledge/alignments.json",
+    "documents": "knowledge/documents.jsonl",
+    "graph": "knowledge/graph",
+    "identities": "knowledge/identities.json",
+    "registry": "knowledge/sources.json",
+    "vault": "knowledge/vault.json"
+  },
+  "registry_sha256": "07935c6fad9f7d7e505c4eeb0bc82682733151b1f785961192a98fe600eb5f85",
+  "schema": "kgdistiller-store-v1",
+  "store_generation_sha256": "fce64f5c2f9e73b483122cf951007bdcf9525b0e899a3389aa0f0a1deb7b1f7b",
+  "store_sha256": "92ed413af80554ec43b9763304fa658311fcce633ba785b04918521edf4b6de8",
+  "vault_id": "b53441e3-4122-432f-9fa2-744692c68295",
+  "vault_sha256": "4e0998746f0dff9a8dc28515fb18496c3044135d84aa3b94727a046eda339139"
+}

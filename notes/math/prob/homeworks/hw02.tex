@@ -1,0 +1,244 @@
+% LaTeX companion of hw02.typ. Both formats are editable.
+\chapter{Homework 2}\label{homework-2}
+
+\section{Problem 1}\label{hw02-problem-1}
+
+Suppose that the cumulative distribution function (CDF) of a random variable \(\mathit{F}:\mathbb{R}\rightarrow\mathbb{R}\) is strictly increasing and continuous. Let \(\mathit{U}\) be a random variable with the uniform distribution on \((0,1)\) and define
+
+\[\mathit{X} := \mathit{F}^{- 1}(\mathit{U})\]
+
+Show that \(\mathit{X}\) has CDF equal to \(\mathit{F}\). This exercise shows us how to construct a random variable with given distribution, assuming that we have a uniform random variable.
+
+\begin{proof}
+
+Since \(\mathit{F}\) is strictly increasing and continuous, it has an inverse function \(\mathit{F}^{- 1}\) on its range, and \(\mathit{F}^{- 1}\) is also strictly increasing. Thus for any \(\mathit{x},\mathit{y} \in \mathbb{R}\),
+
+\[\mathit{F}^{- 1}(\mathit{y}) \leq \mathit{x}\Leftrightarrow\mathit{y} \leq (\mathit{F}^{- 1})^{- 1}(\mathit{x}) = \mathit{F}(\mathit{x})\]
+
+Therefore for any \(\mathit{x} \in \mathbb{R}\), we have
+
+\[\left\{ {\mathit{x} \mid \mathit{X}(\mathit{x}) \leq \mathit{x}} \right\} = \left\{ {\mathit{x} \mid \mathit{F}^{- 1}(\mathit{U}(\mathit{x})) \leq \mathit{x}} \right\} = \left\{ {\mathit{x} \mid \mathit{U}(\mathit{x}) \leq \mathit{F}(\mathit{x})} \right\}\]
+
+Therefore
+
+\[\mathbb{P}(\mathit{X} \leq \mathit{x}) = \mathbb{P}(\mathit{U}(\mathit{x}) \leq \mathit{F}(\mathit{x}))\]
+
+Since \(\mathit{U} \sim Unif(0,1)\) and for a CDF we have \(\mathit{F}(\mathit{x}) \in \lbrack 0,1\rbrack\), we get
+
+\[\mathbb{P}(\mathit{U}(\mathit{x}) \leq \mathit{F}(\mathit{x})) = \mathit{F}(\mathit{x})\]
+
+Thus for all \(\mathit{x}\) \(\mathbb{P}(\mathit{X} \leq \mathit{x}) = \mathit{F}(\mathit{x})\), i.e., the CDF of \(\mathit{X}\) equals \(\mathit{F}\).
+
+\end{proof}
+
+\section{Problem 2}\label{hw02-problem-2}
+
+A gas station fills its tank completely once a week. Let the weekly sales volume (in thousands of liters) be a random variable with density
+
+\[\mathit{f}(\mathit{x}) = \left\{ \begin{matrix}
+{\mathit{a}(1 - \mathit{x})^{4},} & {\mathit{x} \in (0,1),} \\
+{0,} & \text{otherwise}
+\end{matrix} \right.\]
+
+Find the constant \(\mathit{a}\). What should be the tank capacity so that the probability of running out of fuel during a given week is \(1/100\) ?
+
+\begin{qlsolution}{Solution}
+
+Since the density integrates to 1,
+
+\[1 = \int_{- \infty}^{\infty}\mathit{f}(\mathit{x})\,\mathit{d}\mathit{x} = \int_{0}^{1}\mathit{a}(1 - \mathit{x})^{4}\,\mathit{d}\mathit{x} = \mathit{a}\int_{0}^{1}(1 - \mathit{x})^{4}\,\mathit{d}\mathit{x}\]
+
+Let \(\mathit{u} = 1 - \mathit{x}\), then
+
+\[\int_{0}^{1}(1 - \mathit{x})^{4}\mathit{d}\mathit{x} = \int_{0}^{1}\mathit{u}^{4}\mathit{d}\mathit{u} = \frac{1}{5}\]
+
+So \(\frac{1}{5}\mathit{a} = 1\), which gives
+
+\[\mathit{a} = 5\]
+
+Now we look for the tank capacity \(\mathit{c}\) such that \(\mathbb{P}(\mathit{X} > \mathit{c}) = \frac{1}{100}\).\\
+Let the tank capacity be \(\mathit{c}\) (in thousands of liters). Running out of fuel in a week occurs when sales exceed \(\mathit{c}\), i.e., the event \(\left\{ {\mathit{X} > \mathit{c}} \right\}\). We need
+
+\[\mathbb{P}(\mathit{X} > \mathit{c}) = \frac{1}{100}\]
+
+Since \(\mathit{a} = 5\),
+
+\[\mathbb{P}(\mathit{X} > \mathit{c}) = \int_{\mathit{c}}^{1}5(1 - \mathit{x})^{4}\,\mathit{d}\mathit{x}\]
+
+Again let \(\mathit{u} = 1 - \mathit{x}\), then we have
+
+\[\int_{\mathit{c}}^{1}5(1 - \mathit{x})^{4}\mathit{d}\mathit{x} = 5\int_{1 - \mathit{c}}^{0}\mathit{u}^{4}( - \mathit{d}\mathit{u}) = 5\int_{0}^{1 - \mathit{c}}\mathit{u}^{4}\mathit{d}\mathit{u} = 5 \cdot \frac{(1 - \mathit{c})^{5}}{5} = (1 - \mathit{c})^{5}\]
+
+Therefore
+
+\[(1 - \mathit{c})^{5} = \frac{1}{100}\Longrightarrow 1 - \mathit{c} = 100^{- 1/5} = 10^{- 2/5}\Longrightarrow\mathit{c} = 1 - 10^{- 2/5}\]
+
+So the tank capacity should be \(1 - 10^{- 2/5}\) thousand liters.
+
+\end{qlsolution}
+
+\section{Problem 3}\label{hw02-problem-3}
+
+Let the random variable \(\mathit{X}\) have density
+
+\[\mathit{f}_{\mathit{X}}(\mathit{x}) = \left\{ \begin{matrix}
+{\frac{1}{2\mathit{x}^{2}},} & \left. |\mathit{x} \middle| \geq 1, \right. \\
+{0,} & \left. |\mathit{x} \middle| < 1. \right.
+\end{matrix} \right.\]
+
+Find the probability density function of \(\mathit{Y} := \mathit{X}^{2}\) and compute the probability \(\mathbb{P}(2\mathit{Y} + 3 \leq 10)\).
+
+\begin{qlsolution}{Solution}
+
+Since \(\mathit{f}_{\mathit{X}}(\mathit{x}) = 0\) for \(\left. |\mathit{x} \middle| < 1 \right.\), we have \(\left. \mathbb{P}( \middle| \mathit{X} \middle| \geq 1) = 1 \right.\). Hence \(\mathit{Y} = \mathit{X}^{2} \geq 1\) almost surely, so \(\mathit{F}_{\mathit{Y}}(\mathit{y}) = 0\) for \(\mathit{y} < 1\) and therefore \(\mathit{f}_{\mathit{Y}}(\mathit{y}) = 0\) for \(\mathit{y} < 1\) (a.e.).
+
+For \(\mathit{y} \geq 1\),
+
+\[\mathit{F}_{\mathit{Y}}(\mathit{y}) = \mathbb{P}(\mathit{X}^{2} \leq \mathit{y}) = \mathbb{P}( - \sqrt{\mathit{y}} \leq \mathit{X} \leq \sqrt{\mathit{y}}) = \int_{- \sqrt{\mathit{y}}}^{- 1}\frac{1}{2\mathit{x}^{2}}\,\mathit{d}\mathit{x} + \int_{1}^{\sqrt{\mathit{y}}}\frac{1}{2\mathit{x}^{2}}\,\mathit{d}\mathit{x}\]
+
+Compute each integral:
+
+\[\int_{1}^{\sqrt{\mathit{y}}}\frac{1}{2\mathit{x}^{2}}\,\mathit{d}\mathit{x} = \frac{1}{2}\int_{1}^{\sqrt{\mathit{y}}}\mathit{x}^{- 2}\,\mathit{d}\mathit{x} = \frac{1}{2}\lbrack - \mathit{x}^{- 1}\rbrack_{1}^{\sqrt{\mathit{y}}} = \frac{1}{2}\left( {1 - \frac{1}{\sqrt{\mathit{y}}}} \right)\]
+
+and similarly \(\int_{- \sqrt{\mathit{y}}}^{- 1}\frac{1}{2\mathit{x}^{2}}\,\mathit{d}\mathit{x} = \frac{1}{2}\left( {1 - \frac{1}{\sqrt{\mathit{y}}}} \right)\) since the function is even. Therefore, for \(\mathit{y} \geq 1\),
+
+\[\mathit{F}_{\mathit{Y}}(\mathit{y}) = 1 - \frac{1}{\sqrt{\mathit{y}}}\]
+
+Combining both cases we have
+
+\[\mathit{F}_{\mathit{Y}}(\mathit{y}) = \left\{ \begin{matrix}
+{0,} & {\mathit{y} < 1,} \\
+{1 - \frac{1}{\sqrt{\mathit{y}}}} & {\mathit{y} \geq 1}
+\end{matrix} \right.\]
+
+Notice that on \(\mathit{y} \geq 1\), \(\mathit{F}_{\mathit{Y}}(\mathit{y})\) is differentiable (except on \(\mathit{y} = 1\)):
+
+\[\mathit{F}_{\mathit{Y}}'(\mathit{y}) = \frac{\mathit{d}}{\mathit{d}\mathit{y}}\left( {1 - \mathit{y}^{- 1/2}} \right) = \frac{1}{2}\,\mathit{y}^{- 3/2}\]
+
+So consider the function
+
+\[\mathit{g}(\mathit{y}) = \left\{ \begin{matrix}
+{\frac{1}{2\mathit{y}^{3/2}},} & {\mathit{y} \geq 1,} \\
+{0,} & {\mathit{y} < 1.}
+\end{matrix} \right.\]
+
+Then for \(\mathit{x} < 1\),
+
+\[\int_{- \infty}^{\mathit{x}}\mathit{g}(\mathit{y})\,\mathit{d}\mathit{y} = 0 = \mathit{F}_{\mathit{Y}}(\mathit{x})\]
+
+and for \(\mathit{x} \geq 1\)
+
+\[\int_{- \infty}^{\mathit{x}}\mathit{g}(\mathit{y})\,\mathit{d}\mathit{y} = \int_{1}^{\mathit{x}}\frac{1}{2\mathit{y}^{3/2}}\,\mathit{d}\mathit{y} = \left\lbrack {- \mathit{y}^{- 1/2}} \right\rbrack_{1}^{\mathit{x}} = 1 - \frac{1}{\sqrt{\mathit{x}}} = \mathit{F}_{\mathit{Y}}(\mathit{x})\]
+
+This shows that \textbf{\(\mathit{Y}\) is absolutely continuous and \(\mathit{g}\) is a probability density of \(\mathit{Y}\)}. Hence
+
+\[\mathit{f}_{\mathit{Y}}(\mathit{y}) = \left\{ \begin{matrix}
+{\frac{1}{2\mathit{y}^{3/2}},} & {\mathit{y} \geq 1,} \\
+{0,} & {\mathit{y} < 1}
+\end{matrix} \right.\]
+
+Now we compute \(\mathbb{P}(2\mathit{Y} + 3 \leq 10)\).
+
+We have \(2\mathit{Y} + 3 \leq 10\Leftrightarrow\mathit{Y} \leq \frac{7}{2}\). Thus
+
+\[\mathbb{P}(2\mathit{Y} + 3 \leq 10) = \mathbb{P}\left( {\mathit{Y} \leq \frac{7}{2}} \right) = \mathit{F}_{\mathit{Y}}\mspace{-18mu}\left( \frac{7}{2} \right) = 1 - \frac{1}{\sqrt{7/2}} = 1 - \sqrt{\frac{2}{7}}\]
+
+Thus,
+
+\[\mathbb{P}(2\mathit{Y} + 3 \leq 10) = 1 - \sqrt{\frac{2}{7}}\]
+
+\end{qlsolution}
+
+\section{Problem 4}\label{hw02-problem-4}
+
+Let the random variable \(\mathit{X}\) have density \(\mathit{f}\), which is symmetric about \(\mathit{\mu} \in \mathbb{R}\), that is, \(\mathit{f}(\mathit{\mu} + \mathit{x}) = \mathit{f}(\mathit{\mu} - \mathit{x})\), for all \(\mathit{x} \in \mathbb{R}\). Show that \(\mathbb{P}(\mathit{X} \leq \mathit{\mu}) = \mathbb{P}(\mathit{X} \geq \mathit{\mu})\). If in addition \(\left. \mathbb{E} \middle| \mathit{X} \middle| < \infty \right.\), show that \(\mathbb{E}(\mathit{X}) = \mathit{\mu}\). Can you use this observation if \(\mathit{X} \sim \mathit{N}(0,1)\) ?
+
+\begin{proof}
+
+Since \(\mathit{X}\) has density \(\mathit{f}\),
+
+\[\mathbb{P}(\mathit{X} \leq \mathit{\mu}) = \int_{- \infty}^{\mathit{\mu}}\mathit{f}(\mathit{t})\,\mathit{d}\mathit{t}\]
+
+Let \(\mathit{t} = \mathit{\mu} - \mathit{x}\) so that \(\mathit{d}\mathit{t} = - \mathit{d}\mathit{x}\). Then
+
+\[\int_{- \infty}^{\mathit{\mu}}\mathit{f}(\mathit{t})\,\mathit{d}\mathit{t} = \int_{\infty}^{0}\mathit{f}(\mathit{\mu} - \mathit{x})( - \mathit{d}\mathit{x}) = \int_{0}^{\infty}\mathit{f}(\mathit{\mu} - \mathit{x})\,\mathit{d}\mathit{x}\]
+
+Similarly,
+
+\[\mathbb{P}(\mathit{X} \geq \mathit{\mu}) = \int_{\mathit{\mu}}^{\infty}\mathit{f}(\mathit{t})\,\mathit{d}\mathit{t} = \int_{0}^{\infty}\mathit{f}(\mathit{\mu} + \mathit{x})\,\mathit{d}\mathit{x}\]
+
+By symmetry \(\mathit{f}(\mathit{\mu} - \mathit{x}) = \mathit{f}(\mathit{\mu} + \mathit{x})\) for all \(\mathit{x}\), hence the two integrals are equal, i.e. proved
+
+\[\mathbb{P}(\mathit{X} \leq \mathit{\mu}) = \mathbb{P}(\mathit{X} \geq \mathit{\mu})\]
+
+If \(\left. \mathbb{E} \middle| \mathit{X} \middle| < \infty \right.\), then \(\mathbb{E}\lbrack\mathit{X}\rbrack = \mathit{\mu}\) for some \(\mathit{\mu} \in \mathbb{R}\), We want to show that this \(\mathit{\mu}\) is the same as the one in the symmetry condition. Consider \(\mathbb{E}\lbrack\mathit{X} - \mathit{\mu}\rbrack\). Since \(\left. \mathbb{E} \middle| \mathit{X} \middle| < \infty \right.\), we also have \(\left. \mathbb{E} \middle| \mathit{X} - \mathit{\mu} \middle| < \infty \right.\), so the following integral is well-defined:
+
+\[\mathbb{E}\lbrack\mathit{X} - \mathit{\mu}\rbrack = \int_{- \infty}^{\infty}(\mathit{t} - \mathit{\mu})\mathit{f}(\mathit{t})\,\mathit{d}\mathit{t}\]
+
+Let \(\mathit{t} = \mathit{\mu} + \mathit{x}\); then
+
+\[\mathbb{E}\lbrack\mathit{X} - \mathit{\mu}\rbrack = \int_{- \infty}^{\infty}\mathit{x}\,\mathit{f}(\mathit{\mu} + \mathit{x})\,\mathit{d}\mathit{x}\]
+
+Define \(\mathit{g}(\mathit{x}) := \mathit{f}(\mathit{\mu} + \mathit{x})\). The symmetry condition \(\mathit{f}(\mathit{\mu} + \mathit{x}) = \mathit{f}(\mathit{\mu} - \mathit{x})\) implies that \(\mathit{g}\) is an even function, thus \(\mathit{x}\mathit{g}(\mathit{x})\) is an odd function. Since \(\left. \int \middle| \mathit{x} \middle| \mathit{g}(\mathit{x})\,\mathit{d}\mathit{x} < \infty \right.\), we may integrate over symmetric limits to get
+
+\[\int_{- \infty}^{\infty}\mathit{x}\mathit{g}(\mathit{x})\,\mathit{d}\mathit{x} = 0\]
+
+Therefore \(\mathbb{E}\lbrack\mathit{X} - \mathit{\mu}\rbrack = 0\), thus
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack = \mathit{\mu}\]
+
+Application to \(\mathit{X} \sim \mathit{N}(0,1)\): Since the standard normal density \(\mathit{\varphi}(\mathit{x}) = \frac{1}{\sqrt{2\mathit{\pi}}}\mathit{e}^{- \mathit{x}^{2}/2}\) satisfies \(\mathit{\varphi}(0 + \mathit{x}) = \mathit{\varphi}(0 - \mathit{x})\), so it is symmetric about \(\mathit{\mu} = 0\). Hence
+
+\[\mathbb{P}(\mathit{X} \leq 0) = \mathbb{P}(\mathit{X} \geq 0) = \frac{1}{2}\quad\text{and}\quad\mathbb{E}\lbrack\mathit{X}\rbrack = 0\]
+
+\end{proof}
+
+\section{Problem 5}\label{hw02-problem-5}
+
+An airline has observed that \(5\%\) of ticket holders do not show up for their flight. Today's flight has an airplane with 200 seats, and the airline has sold 203 tickets. What is the probability that the airline will not be able to accommodate a ticketed passenger? Assume that, for each passenger \(\mathit{i}\), the event \(\mathit{A}_{\mathit{i}}\) that passenger \(\mathit{i}\) shows up is independent of all others, for \(1 \leq \mathit{i} \leq 203\).
+
+\begin{qlsolution}{Solution}
+
+Let \(\mathit{S}\) be the number of passengers who show up. The condition indicates that \(\mathit{S}\) is a binomial random variable with parameters \(\mathit{n} = 203\) and \(\mathit{p} = 0.95\):
+
+\[\mathit{S} \sim Binomial(\mathit{n} = 203,\mathit{p} = 0.95)\]
+
+The airline cannot accommodate everyone exactly when more than 200 passengers show up, i.e.
+
+\[\mathbb{P}(\text{cannot accommodate}) = \mathbb{P}(\mathit{S} \geq 201) = \sum\limits_{\mathit{k} = 201}^{203}\binom{203}{\mathit{k}}(0.95)^{\mathit{k}}(0.05)^{203 - \mathit{k}}\]
+
+Equivalently, letting \(\mathit{N} := 203 - \mathit{S}\) be the number of no-shows, we have \(\mathit{N} \sim Binomial(203,0.05)\) and
+
+\[\mathbb{P}(\mathit{S} \geq 201) = \mathbb{P}(\mathit{N} \leq 2) = \sum\limits_{\mathit{j} = 0}^{2}\binom{203}{\mathit{j}}(0.05)^{\mathit{j}}(0.95)^{203 - \mathit{j}}\]
+
+Numerically we can calculate
+
+\[\mathbb{P}(\text{cannot accommodate}) \approx 0.206\%\]
+
+\end{qlsolution}
+
+\section{Problem 6}\label{hw02-problem-6}
+
+Consider a sequence of tosses of a fair die. We continue tossing until both outcomes 3 and 4 have appeared at least once. For example, one possible sequence of results is
+
+\[5,1,1,4,6,5,4,2,6,3,\]
+
+and we then stop. Let \(\mathit{X}\) be the number of tosses required (in this example, \(\mathit{X} = 10\) ). What is the expected value of the random variable \(\mathit{X}\) ?
+
+\begin{qlsolution}{Solution}
+
+We can decompose the waiting time into two stages.
+
+Stage 1: wait until the first time we see either 3 or 4: On each toss, the probability to get a 3 or 4 is \(2/6 = 1/3\). Hence the number of tosses \(\mathit{T}_{1}\) until the first occurrence of \(\left\{ {3,4} \right\}\) is geometric with success probability \(1/3\), so
+
+\[\mathbb{E}\lbrack\mathit{T}_{1}\rbrack = \frac{1}{1/3} = 3\]
+
+Stage 2: after seeing one of them, wait until we see the other: Once 3 has appeared, each subsequent toss produces a 4 with probability \(1/6\); otherwise we are still missing a 4. Thus the additional waiting time \(\mathit{T}_{2}\) is geometric with success probability \(1/6\), so
+
+\[\mathbb{E}\lbrack\mathit{T}_{2}\rbrack = \frac{1}{1/6} = 6\]
+
+Since \(\mathit{X} = \mathit{T}_{1} + \mathit{T}_{2}\), by linearity of expectation we get
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack = \mathbb{E}\lbrack\mathit{T}_{1}\rbrack + \mathbb{E}\lbrack\mathit{T}_{2}\rbrack = 3 + 6 = 9\]
+
+\end{qlsolution}

@@ -1,4 +1,4 @@
-.PHONY: check typst-version web hooks-install notes-source-check knowledge-export-check knowledge-check knowledge-build knowledge-subject knowledge-course knowledge-file knowledge-authoring-check knowledge-search knowledge-context knowledge-agent-status knowledge-candidate knowledge-align knowledge-compare knowledge-propose knowledge-ingest-plan knowledge-ingest-apply knowledge-serve
+.PHONY: check latex-check typst-version web hooks-install notes-source-check knowledge-export-check knowledge-check knowledge-build knowledge-subject knowledge-course knowledge-file knowledge-authoring-check knowledge-search knowledge-context knowledge-agent-status knowledge-candidate knowledge-align knowledge-compare knowledge-propose knowledge-ingest-plan knowledge-ingest-apply knowledge-serve
 
 # The single Typst pin for local checks, this repository's CI, and the homepage build.
 TYPST_VERSION := 0.15.1
@@ -10,6 +10,9 @@ KGDISTILLER_INSTANCE := $(KGDISTILLER) --repo-root .
 PUBLISHED_WEB_ROOTS = $(shell python3 -c 'import json; print(" ".join(s["root"] for s in json.load(open("knowledge/sources.json"))["sources"] if s["publish"] and s.get("web_artifacts")))')
 
 check: knowledge-check web
+
+latex-check:
+	@python3 notes/math/toolchain/scripts/check_native_tex.py
 
 typst-version:
 	@echo $(TYPST_VERSION)

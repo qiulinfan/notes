@@ -1,0 +1,215 @@
+% LaTeX companion of 05-geometry-of-linear-transformations.typ. Both formats are editable.
+\chapter{Geometry of linear transformations}
+
+\section{WS 5, p. 1: examples, scaling, and projection}
+
+在 2-1 我们知道 \(\begin{pmatrix}
+0 & {- 1} \\
+1 & 0
+\end{pmatrix}\) 是 \(\mathbb{R}^{2}\) 中 counter clockwise 转 \(90\) 度的 linear transformation。现在再看几个：
+
+\[A = \begin{pmatrix}
+2 & 0 \\
+0 & 2
+\end{pmatrix},\quad B = \begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix},\quad C = \begin{pmatrix}
+{- 1} & 0 \\
+0 & 1
+\end{pmatrix},\]\[D = \begin{pmatrix}
+0 & 1 \\
+{- 1} & 0
+\end{pmatrix},\quad E = \begin{pmatrix}
+1 & 0.2 \\
+0 & 1
+\end{pmatrix},\quad F = \begin{pmatrix}
+1 & {- 1} \\
+1 & 1
+\end{pmatrix}.\]
+
+The source diagrams apply them to \(\left( {1,2} \right)\) and \(\left( {1, - 1} \right)\):
+
+\begin{itemize}
+\tightlist
+\item
+  \(A\): 放大一倍, sending them to \(\left( {2,4} \right)\) and \(\left( {- 2, - 2} \right)\).
+\item
+  \(B\): orthogonal projection onto \(x\)-axis, sending both to \(\left( {1,0} \right)\).
+\item
+  \(C\): reflection about \(y\)-axis.
+\item
+  \(D\): clockwise 转 \(90\) degrees, sending them to \(\left( {- 2, - 1} \right)\) and \(\left( {1, - 1} \right)\).
+\item
+  \(E\): 向右 shear, sending them to \(\left( {1.4,2} \right)\) and \(\left( {0.8, - 1} \right)\).
+\item
+  \(F\): counterclockwise shift + 放大 \(\sqrt{2}\) 倍, sending them to \(\left( {- 1,3} \right)\) and \(\left( {2,0} \right)\).
+\end{itemize}
+
+\begin{theorem}{Scalings}
+
+\(\begin{pmatrix}
+k & 0 \\
+0 & k
+\end{pmatrix}\) defines a scaling by \(k\), since \(\begin{pmatrix}
+k & 0 \\
+0 & k
+\end{pmatrix}\begin{pmatrix}
+x_{1} \\
+x_{2}
+\end{pmatrix} = \begin{pmatrix}
+{kx_{1}} \\
+{kx_{2}}
+\end{pmatrix} = k\begin{pmatrix}
+x_{1} \\
+x_{2}
+\end{pmatrix} = kx\).
+
+\end{theorem}
+
+\begin{definition}{\kn{Orthogonal projection}}
+
+Consider a line \(L\) in coordinate plane, 经过 \(\left( {0,0} \right)\). 任何 \(x \in \mathbb{R}^{2}\) 都可以写成 \(x = x^{\parallel} + x^{\perp}\), where \(x^{\parallel}\ \|\ L\) and \(x^{\perp} \perp L\). The transformation \(T(x) = x^{\parallel}\) is the orthogonal projection of \(x\) onto \(L\), denoted \(\text{proj}_{L{(x)}}\).
+
+随意取 \(w\ \|\ L\), \(\text{proj}_{L{(x)}} = \frac{x \cdot w}{w \cdot w}w\). 特别地，如果 \(w\) 是 unit vector \(u = \begin{pmatrix}
+u_{1} \\
+u_{2}
+\end{pmatrix}\ \|\ L\), then \(\text{proj}_{L{(x)}} = \left( {x \cdot u} \right)u\). 这一个 transformation 是 linear 的；with matrix \(P = \begin{pmatrix}
+u_{1}^{2} & {u_{1}u_{2}} \\
+{u_{1}u_{2}} & u_{2}^{2}
+\end{pmatrix}\).
+
+\end{definition}
+
+\begin{definition}{Reflection}
+
+Consider a line \(L\) in coordinate plane, 过 \(\left( {0,0} \right)\), and write \(x = x^{\parallel} + x^{\perp}\). Then \(T(x) = x^{\parallel} - x^{\perp}\) is reflection of \(x\) about \(L\), denoted \(\text{ref}_{L{(x)}}\). 由 Definition 2.2.1, \(\text{ref}_{L{(x)}} = x^{\parallel} - \left( {x - x^{\parallel}} \right) = 2\text{proj}_{L{(x)}} - x = \left( {2P - I_{2}} \right)x\).
+
+\end{definition}
+
+The matrix of \(T\) has form \(\begin{pmatrix}
+a & b \\
+b & {- a}
+\end{pmatrix}\) where \(a^{2} + b^{2} = 1\): \(S = 2P - I_{2} = \begin{pmatrix}
+{2u_{1}^{2} - 1} & {2u_{1}u_{2}} \\
+{2u_{1}u_{2}} & {2u_{2}^{2} - 1}
+\end{pmatrix} = \begin{pmatrix}
+{u_{1}^{2} - u_{2}^{2}} & {2u_{1}u_{2}} \\
+{2u_{1}u_{2}} & {u_{2}^{2} - u_{1}^{2}}
+\end{pmatrix}\).
+
+\section{WS 5, p. 2: rotations and shearing}
+
+\begin{theorem}{Rotations}
+
+\(T(x) = Ax\) is a counterclockwise rotation in \(\mathbb{R}^{2}\) (rotate by \(\theta\)) iff \(A = \begin{pmatrix}
+{\cos(\theta)} & {- \sin(\theta)} \\
+{\sin(\theta)} & {\cos(\theta)}
+\end{pmatrix} = \begin{pmatrix}
+a & {- b} \\
+b & a
+\end{pmatrix}\), where \(a^{2} + b^{2} = 1\).
+
+\end{theorem}
+
+For a nonzero vector \(x\), write its coordinate in polar form \(\left( {r\cos(\varphi),r\sin(\varphi)} \right)\). Rotation gives \(x' = \left( {r\cos\left( {\varphi + \theta} \right),r\sin\left( {\varphi + \theta} \right)} \right)\), so \(x_{1'} = x\cos(\theta) - y\sin(\theta)\) and \(y' = x\sin(\theta) + y\cos(\theta)\), which gives the displayed matrix.
+
+\begin{theorem}{Rotations combined with a scaling}
+
+将 \(v \in \mathbb{R}^{2}\) counterclockwise rotate \(\theta\) 并放大至 \(r\) 倍. Let \(T\left( {a,b} \right) = \begin{pmatrix}
+{r\cos(\theta)} \\
+{r\sin(\theta)}
+\end{pmatrix}\). Then \(T(x) = Ax\), \(A = \begin{pmatrix}
+a & {- b} \\
+b & a
+\end{pmatrix} = r\begin{pmatrix}
+{\cos(\theta)} & {- \sin(\theta)} \\
+{\sin(\theta)} & {\cos(\theta)}
+\end{pmatrix}\).
+
+\end{theorem}
+
+\section{5. Shearing}
+
+Vertical shear:
+
+\[T\left( \begin{pmatrix}
+x_{1} \\
+x_{2}
+\end{pmatrix} \right) = \begin{pmatrix}
+x_{1} \\
+{kx_{1} + x_{2}}
+\end{pmatrix} = \begin{pmatrix}
+1 & 0 \\
+k & 1
+\end{pmatrix}\begin{pmatrix}
+x_{1} \\
+x_{2}
+\end{pmatrix}.\]
+
+Horizontal shear:
+
+\[T\left( \begin{pmatrix}
+x_{1} \\
+x_{2}
+\end{pmatrix} \right) = \begin{pmatrix}
+{x_{1} + kx_{2}} \\
+x_{2}
+\end{pmatrix} = \begin{pmatrix}
+1 & k \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+x_{1} \\
+x_{2}
+\end{pmatrix}.\]
+
+\begin{theorem}{Horizontal and vertical shearing}
+
+Horizontal shearing of slope \(kx_{2}\) has matrix \(\begin{pmatrix}
+1 & k \\
+0 & 1
+\end{pmatrix}\); vertical shearing of slope \(kx_{1}\) has matrix \(\begin{pmatrix}
+1 & 0 \\
+k & 1
+\end{pmatrix}\).
+
+\end{theorem}
+
+The source's concluding table records:
+
+\begin{itemize}
+\tightlist
+\item
+  Scaling by \(k\): \(kI_{2} = \begin{pmatrix}
+  k & 0 \\
+  0 & k
+  \end{pmatrix}\).
+\item
+  Orthogonal projection onto line \(L\): \(\begin{pmatrix}
+  u_{1}^{2} & {u_{1}u_{2}} \\
+  {u_{1}u_{2}} & u_{2}^{2}
+  \end{pmatrix}\), for \(u\ \|\ L\) and \(\left\| u \right\| = 1\).
+\item
+  Reflection about line \(L\): \(\begin{pmatrix}
+  {2u_{1}^{2} - 1} & {2u_{1}u_{2}} \\
+  {2u_{1}u_{2}} & {2u_{2}^{2} - 1}
+  \end{pmatrix}\).
+\item
+  Rotation through angle \(\theta\) (逆时针): \(\begin{pmatrix}
+  {\cos(\theta)} & {- \sin(\theta)} \\
+  {\sin(\theta)} & {\cos(\theta)}
+  \end{pmatrix}\).
+\item
+  Rotation through \(\theta\) with scaling by \(r\): \(r\begin{pmatrix}
+  {\cos(\theta)} & {- \sin(\theta)} \\
+  {\sin(\theta)} & {\cos(\theta)}
+  \end{pmatrix}\).
+\item
+  Shear: horizontal \(\begin{pmatrix}
+  1 & k \\
+  0 & 1
+  \end{pmatrix}\); vertical \(\begin{pmatrix}
+  1 & 0 \\
+  k & 1
+  \end{pmatrix}\).
+\end{itemize}

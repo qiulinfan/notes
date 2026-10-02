@@ -1,0 +1,56 @@
+% LaTeX companion of 06-gram-schmidt-and-qr.typ. Both formats are editable.
+\chapter{Gram--Schmidt and QR factorization}
+
+\section{\texorpdfstring{WS 17, p. 1: proof of QR factorization \kn{QR factorization}}{WS 17, p. 1: proof of QR factorization }}
+
+Let \(M = \begin{pmatrix}
+m_{1} & \ldots & m_{d}
+\end{pmatrix}\) be \(n \times d\). Gram--Schmidt produces \(Q = \begin{pmatrix}
+q_{1} & \ldots & q_{d}
+\end{pmatrix}\):
+
+\[q_{1} = \frac{m_{1}}{\left\| m_{1} \right\|},\]\[q_{i} = \frac{m_{i} - \sum_{k = 1}^{i - 1}\left( {m_{i} \cdot q_{k}} \right)q_{k}}{\left\| {m_{i} - \sum_{k = 1}^{i - 1}\left( {m_{i} \cdot q_{k}} \right)q_{k}} \right\|}.\]
+
+The \(\left( {q_{1},\ldots,q_{d}} \right)\) are orthonormal. 因而 \(Q\) is an orthogonal matrix, and
+
+\[S_{M\rightarrow Q} = \begin{pmatrix}
+\left\lbrack m_{1} \right\rbrack_{Q} & \ldots & \left\lbrack m_{d} \right\rbrack_{Q}
+\end{pmatrix}.\]
+
+The worksheet computes
+
+\[Q^{t}M = \begin{pmatrix}
+{m_{1} \cdot q_{1}} & {m_{2} \cdot q_{1}} & \ldots & {m_{d} \cdot q_{1}} \\
+{m_{1} \cdot q_{2}} & {m_{2} \cdot q_{2}} & \ldots & \\
+\ldots & \ldots & {m_{d} \cdot q_{d}} &
+\end{pmatrix}.\]
+
+Because \(q_{i} \perp \text{span}\left( {m_{1},\ldots,m_{i - 1}} \right)\), the entry \(q_{i} \cdot m_{j}\) is \(0\) when \(i > j\); the result is upper triangular. Thus \(M = QR\), with \(R = Q^{t}M\) upper triangular.
+
+\section{Proof of matrix product theorem}
+
+For ordered bases \(B = \left( {b_{1},\ldots,b_{d}} \right)\) and \(A = \left( {a_{1},\ldots,a_{d}} \right)\) of \(W \subseteq \mathbb{R}^{n}\):
+
+\[\begin{pmatrix}
+b_{1} & \ldots & b_{d}
+\end{pmatrix} = \begin{pmatrix}
+a_{1} & \ldots & a_{d}
+\end{pmatrix}S_{B\rightarrow A},\]
+
+where
+
+\[S_{B\rightarrow A} = \begin{pmatrix}
+\left\lbrack b_{1} \right\rbrack_{A} & \ldots & \left\lbrack b_{d} \right\rbrack_{A}
+\end{pmatrix}.\]
+
+Note that if \(b_{i} = c_{1}a_{1} + \ldots + c_{d}a_{d}\), then \(\left\lbrack b_{i} \right\rbrack_{A} = \begin{pmatrix}
+c_{1} \\
+\ldots \\
+c_{d}
+\end{pmatrix}\); hence
+
+\[AS_{B\rightarrow A} = \begin{pmatrix}
+{A\left\lbrack b_{1} \right\rbrack}_{A} & \ldots & {A\left\lbrack b_{d} \right\rbrack}_{A}
+\end{pmatrix} = \begin{pmatrix}
+b_{1} & \ldots & b_{d}
+\end{pmatrix} = B.\]

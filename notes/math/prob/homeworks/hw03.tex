@@ -1,0 +1,329 @@
+% LaTeX companion of hw03.typ. Both formats are editable.
+\chapter{Homework 3}\label{homework-3}
+
+\section{Problem 1}\label{hw03-problem-1}
+
+Let \(\mathit{Z}\) be a standard normal random variable \(\mathit{Z} \sim \mathit{N}(0,1)\). We denote by \(\Phi\) its distribution function. Answer the questions below
+
+\begin{itemize}
+\item
+  If \(\mathit{a},\mathit{b} \in \mathbb{R}\) with \(\mathit{a} > 0\), show that the random variable \(\mathit{a}\mathit{Z} + \mathit{b}\) is also normal and find its mean and variance.
+\item
+  Show that \(\Phi(0) = 1/2\).
+\item
+  Show that \(\Phi( - \mathit{x}) = 1 - \Phi(\mathit{x})\) for any \(\mathit{x} \in \mathbb{R}\).
+\end{itemize}
+
+\begin{qlsolution}{Solution}
+
+\begin{itemize}
+\item
+  \(\mathit{Z} \sim \mathit{N}(0,1)\) has density
+
+  \[\mathit{f}_{\mathit{Z}}(\mathit{z}) = \frac{1}{\sqrt{2\mathit{\pi}}}\mathit{e}^{- \mathit{z}^{2}/2}\]\[\begin{matrix}
+  {\mathit{F}_{\mathit{X}}(\mathit{x}) = \mathbb{P}(\mathit{X} \leq \mathit{x})} & {= \mathbb{P}(\mathit{a}\mathit{Z} + \mathit{b} \leq \mathit{x})} \\
+   & {= \mathbb{P}\left( {\mathit{Z} \leq \frac{\mathit{x} - \mathit{b}}{\mathit{a}}} \right)} \\
+   & {= \Phi\left( \frac{\mathit{x} - \mathit{b}}{\mathit{a}} \right)}
+  \end{matrix}\]
+
+  Thus
+
+  \[\mathit{f}_{\mathit{X}}(\mathit{x}) = \frac{\mathit{d}}{\mathit{d}\mathit{x}}\Phi\left( \frac{\mathit{x} - \mathit{b}}{\mathit{a}} \right) = \frac{1}{\mathit{a}}\mathit{\varphi}\left( \frac{\mathit{x} - \mathit{b}}{\mathit{a}} \right) = \frac{1}{\sqrt{\mathit{a}^{22}\mathit{\pi}}}\mathit{e}^{- \frac{(\mathit{x} - \mathit{b})^{2}}{2\mathit{a}^{2}}}\]
+
+  Note this is the density of a normal distribution with mean \(\mathit{b}\) and variance \(\mathit{a}^{2}\). Therefore
+
+  \[\mathit{a}\mathit{Z} + \mathit{b} \sim \mathit{N}(\mathit{b},\mathit{a}^{2})\]
+
+  Since \(\mathit{Z}\) has mean \(0\) and variance \(1\), use linearity we have
+
+  \[\mathbb{E}\lbrack\mathit{a}\mathit{Z} + \mathit{b}\rbrack = \mathit{a}\mathbb{E}\lbrack\mathit{Z}\rbrack + \mathit{b} = \mathit{b}\]
+
+  and
+
+  \[Var(\mathit{a}\mathit{Z} + \mathit{b}) = \mathit{a}^{2}Var(\mathit{Z}) = \mathit{a}^{2}\]
+\item
+  Note the standard normal density is an even function:
+
+  \[\mathit{\varphi}(\mathit{x}) = \frac{1}{\sqrt{2\mathit{\pi}}}\mathit{e}^{- \mathit{x}^{2}/2} = \mathit{\varphi}( - \mathit{x})\]
+
+  Thus
+
+  \[\Phi(0) = \int_{- \infty}^{0}\mathit{\varphi}(\mathit{x})\,\mathit{d}\mathit{x} = \int_{0}^{\infty}\mathit{\varphi}(\mathit{x})\,\mathit{d}\mathit{x}\]
+
+  Since \(\int_{- \infty}^{\infty}\mathit{\varphi}(\mathit{x})\,\mathit{d}\mathit{x} = 1\), the two equal halves are each \(1/2\), so \(\Phi(0) = 1/2\).
+\item
+  For any \(\mathit{x} \in \mathbb{R}\),
+
+  \[\Phi( - \mathit{x}) = \int_{- \infty}^{- \mathit{x}}\mathit{\varphi}(\mathit{t})\,\mathit{d}\mathit{t}\]
+
+  Let \(\mathit{u} = - \mathit{t}\), using \(\mathit{\varphi}( - \mathit{u}) = \mathit{\varphi}(\mathit{u})\) we have
+
+  \[\Phi( - \mathit{x}) = \int_{\infty}^{\mathit{x}}\mathit{\varphi}( - \mathit{u})( - \mathit{d}\mathit{u}) = \int_{\mathit{x}}^{\infty}\mathit{\varphi}(\mathit{u})\,\mathit{d}\mathit{u} = 1 - \int_{- \infty}^{\mathit{x}}\mathit{\varphi}(\mathit{u})\,\mathit{d}\mathit{u} = 1 - \Phi(\mathit{x})\]
+\end{itemize}
+
+\end{qlsolution}
+
+\section{Problem 2}\label{hw03-problem-2}
+
+Let \(\mathit{X}\) and \(\mathit{Y}\) be random variables with joint density
+
+\[\mathit{f}(\mathit{x},\mathit{y}) = \left\{ \begin{matrix}
+{- \mathit{x}\mathit{y},} & {(\mathit{x},\mathit{y}) \in ( - 1,0) \times (0,1) \cup (1,2) \times ( - 1,0),} \\
+{0,} & \text{otherwise}
+\end{matrix} \right.\]
+
+\begin{itemize}
+\item
+  Compute the probability \(\mathbb{P}(\mathit{X} + \mathit{Y} < 0)\).
+\item
+  Compute the expected value \(\mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack\).
+\item
+  Are \(\mathit{X}\) and \(\mathit{Y}\) independent?
+\end{itemize}
+
+\begin{qlsolution}{Solution}
+
+\begin{itemize}
+\item
+  On \((1,2) \times ( - 1,0)\) we have \(\mathit{x} + \mathit{y} > 0\) since \(\mathit{x} > 1\) and \(\mathit{y} > - 1\), hence this region contributes nothing to \(\left\{ {\mathit{X} + \mathit{Y} < 0} \right\}\).
+
+  On \(( - 1,0) \times (0,1)\), the ineq \(\mathit{x} + \mathit{y} < 0\) is equivalent to \(0 < \mathit{y} < - \mathit{x}\). Therefore,
+
+  \[\mathbb{P}(\mathit{X} + \mathit{Y} < 0) = \int_{- 1}^{0}\int_{0}^{- \mathit{x}}( - \mathit{x}\mathit{y})\,\mathit{d}\mathit{y}\,\mathit{d}\mathit{x}\]
+
+  Compute the inner integral:
+
+  \[\int_{0}^{- \mathit{x}}( - \mathit{x}\mathit{y})\,\mathit{d}\mathit{y} = - \mathit{x} \cdot \frac{( - \mathit{x})^{2}}{2} = - \frac{\mathit{x}^{3}}{2}\]
+
+  Hence,
+
+  \[\mathbb{P}(\mathit{X} + \mathit{Y} < 0) = \int_{- 1}^{0}\left( {- \frac{\mathit{x}^{3}}{2}} \right)\mathit{d}\mathit{x} = - \frac{1}{2} \cdot \frac{\mathit{x}^{4}}{4}\ |_{- 1}^{0} = \frac{1}{8}\]
+\item
+  By def,
+
+  \[\begin{matrix}
+  {\mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack} & {= \int_{\mathbb{R}^{2}}\mathit{x}\mathit{y}\,\mathit{f}(\mathit{x},\mathit{y})\,\mathit{d}\mathit{x}\,\mathit{d}\mathit{y}} \\
+   & {= - \int_{( - 1,0) \times (0,1) \cup (1,2) \times ( - 1,0)}\mathit{x}^{2}\mathit{y}^{2}\,\mathit{d}\mathit{x}\,\mathit{d}\mathit{y}} \\
+   & {= - \int_{- 1}^{0}\int_{0}^{1}\mathit{x}^{2}\mathit{y}^{2}\,\mathit{d}\mathit{y}\,\mathit{d}\mathit{x} - \int_{1}^{2}\int_{- 1}^{0}\mathit{x}^{2}\mathit{y}^{2}\,\mathit{d}\mathit{y}\,\mathit{d}\mathit{x}}
+  \end{matrix}\]
+
+  Split over the two rectangles. On \(( - 1,0) \times (0,1)\),
+
+  \[- \int_{- 1}^{0}\int_{0}^{1}\mathit{x}^{2}\mathit{y}^{2}\,\mathit{d}\mathit{y}\,\mathit{d}\mathit{x} = - \left( {\int_{- 1}^{0}\mathit{x}^{2}\,\mathit{d}\mathit{x}} \right)\left( {\int_{0}^{1}\mathit{y}^{2}\,\mathit{d}\mathit{y}} \right) = - \left( \frac{1}{3} \right)\left( \frac{1}{3} \right) = - \frac{1}{9}\]
+
+  On \((1,2) \times ( - 1,0)\),
+
+  \[- \int_{1}^{2}\int_{- 1}^{0}\mathit{x}^{2}\mathit{y}^{2}\,\mathit{d}\mathit{y}\,\mathit{d}\mathit{x} = - \left( {\int_{1}^{2}\mathit{x}^{2}\,\mathit{d}\mathit{x}} \right)\left( {\int_{- 1}^{0}\mathit{y}^{2}\,\mathit{d}\mathit{y}} \right) = - \left( \frac{7}{3} \right)\left( \frac{1}{3} \right) = - \frac{7}{9}\]
+
+  Thus,
+
+  \[\mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack = - \frac{1}{9} - \frac{7}{9} = - \frac{8}{9}\]
+\item
+  Consider: For \(\mathit{x} \in ( - 1,0)\),
+
+  \[\mathit{f}_{\mathit{X}}(\mathit{x}) = \int_{0}^{1}( - \mathit{x}\mathit{y})\,\mathit{d}\mathit{y} = \frac{- \mathit{x}}{2}\]
+
+  For \(\mathit{y} \in (0,1)\),
+
+  \[\mathit{f}_{\mathit{Y}}(\mathit{y}) = \int_{- 1}^{0}( - \mathit{x}\mathit{y})\,\mathit{d}\mathit{x} = \mathit{y}\int_{- 1}^{0}( - \mathit{x})\,\mathit{d}\mathit{x} = \frac{\mathit{y}}{2}\]
+
+  And for \((\mathit{x},\mathit{y}) \in ( - 1,0) \times (0,1)\),
+
+  \[\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{f}_{\mathit{Y}}(\mathit{y}) = \left( \frac{- \mathit{x}}{2} \right)\left( \frac{\mathit{y}}{2} \right) = \frac{- \mathit{x}\mathit{y}}{4} \neq - \mathit{x}\mathit{y} = \mathit{f}(\mathit{x},\mathit{y})\]
+
+  Thus \(\mathit{X}\) and \(\mathit{Y}\) are not independent.
+\end{itemize}
+
+\end{qlsolution}
+
+\section{Problem 3}\label{hw03-problem-3}
+
+Let \(\mathit{X} \sim \text{Exp}(1)\) and \(\mathit{Y} = \mathit{X} + \frac{1}{\mathit{X} + 1}\). Find \(\mathbb{P}((\mathit{X} + 1)\mathit{Y} \leq 2)\) and \(\text{Cov}(\mathit{X},\mathit{Y})\).\\
+Hint: You may leave your answer as a function of the integral \(\int_{0}^{\infty}\frac{\mathit{e}^{- \mathit{x}}}{1 + \mathit{x}}\mathit{d}\mathit{x}\).
+
+\begin{qlsolution}{Solution}
+
+Note
+
+\[(\mathit{X} + 1)\mathit{Y} = (\mathit{X} + 1)\left( {\mathit{X} + \frac{1}{\mathit{X} + 1}} \right) = \mathit{X}(\mathit{X} + 1) + 1 = \mathit{X}^{2} + \mathit{X} + 1\]
+
+Thus,
+
+\[(\mathit{X} + 1)\mathit{Y} \leq 2\Leftrightarrow\mathit{X}^{2} + \mathit{X} - 1 \leq 0\]
+
+The roots of \(\mathit{x}^{2} + \mathit{x} - 1 = 0\) are \(\frac{- 1 \pm \sqrt{5}}{2}\). Since \(\mathit{X} \geq 0\), the event is
+
+\[0 \leq \mathit{X} \leq \frac{\sqrt{5} - 1}{2}\]
+
+Therefore, using the CDF of \(Exp(1)\),
+
+\[\mathbb{P}((\mathit{X} + 1)\mathit{Y} \leq 2) = \mathbb{P}(\mathit{X} \leq \frac{\sqrt{5} - 1}{2}) = 1 - \mathit{e}^{- \frac{\sqrt{5} - 1}{2}} = 1 - \exp\mspace{-18mu}\left( {- \frac{\sqrt{5} - 1}{2}} \right)\]
+
+Nowe we compute the covariance. By def,
+
+\[Cov(\mathit{X},\mathit{Y}) = \mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack - \mathbb{E}\lbrack\mathit{X}\rbrack\mathbb{E}\lbrack\mathit{Y}\rbrack\]
+
+For \(\mathit{X} \sim Exp(1)\), \(\mathbb{E}\lbrack\mathit{X}\rbrack = 1\) and \(\mathbb{E}\lbrack\mathit{X}^{2}\rbrack = 2\). Let
+
+\[\mathit{I} := \int_{0}^{\infty}\frac{\mathit{e}^{- \mathit{x}}}{1 + \mathit{x}}\,\mathit{d}\mathit{x} = \mathbb{E}\mspace{-18mu}\left\lbrack \frac{1}{1 + \mathit{X}} \right\rbrack\]
+
+Then
+
+\[\mathbb{E}\lbrack\mathit{Y}\rbrack = \mathbb{E}\lbrack\mathit{X}\rbrack + \mathbb{E}\mspace{-18mu}\left\lbrack \frac{1}{1 + \mathit{X}} \right\rbrack = 1 + \mathit{I}\]
+
+Also,
+
+\[\mathit{X}\mathit{Y} = \mathit{X}\left( {\mathit{X} + \frac{1}{1 + \mathit{X}}} \right) = \mathit{X}^{2} + \frac{\mathit{X}}{1 + \mathit{X}} = \mathit{X}^{2} + \left( {1 - \frac{1}{1 + \mathit{X}}} \right)\]
+
+so
+
+\[\mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack = \mathbb{E}\lbrack\mathit{X}^{2}\rbrack + 1 - \mathbb{E}\mspace{-18mu}\left\lbrack \frac{1}{1 + \mathit{X}} \right\rbrack = 2 + 1 - \mathit{I} = 3 - \mathit{I}\]
+
+Hence,
+
+\[Cov(\mathit{X},\mathit{Y}) = (3 - \mathit{I}) - (1)(1 + \mathit{I}) = 2 - 2\mathit{I} = 2 - 2\int_{0}^{\infty}\frac{\mathit{e}^{- \mathit{x}}}{1 + \mathit{x}}\,\mathit{d}\mathit{x}\]
+
+\end{qlsolution}
+
+\section{Problem 4}\label{hw03-problem-4}
+
+Find the conditional density \(\mathit{f}_{\mathit{Y} \mid \mathit{X}}(\mathit{y} \mid \mathit{x})\) of \(\mathit{Y}\) given that \(\mathit{X} = \mathit{x}\) and the corresponding conditional expectation \(\mathbb{E}\lbrack\mathit{Y} \mid \mathit{X} = \mathit{x}\rbrack\) if the pair of random variables \((\mathit{X},\mathit{Y})\) has absolutely continuous distribution with joint density: \(\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \mathit{\lambda}^{2}\mathit{e}^{- \mathit{\lambda}\mathit{y}}\mathbf{1}_{\{{0 \leq \mathit{x} \leq \mathit{y}}\}}\).
+
+\begin{qlsolution}{Solution}
+
+Given the joint density \(\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \mathit{\lambda}^{2}\mathit{e}^{- \mathit{\lambda}\mathit{y}}\mathbf{1}_{\{{0 \leq \mathit{x} \leq \mathit{y}}\}}\), we first compute the marginal density of \(\mathit{X}\). For \(\mathit{x} \geq 0\),
+
+\[\mathit{f}_{\mathit{X}}(\mathit{x}) = \int_{\mathit{y} = \mathit{x}}^{\infty}\mathit{\lambda}^{2}\mathit{e}^{- \mathit{\lambda}\mathit{y}}\,\mathit{d}\mathit{y} = \mathit{\lambda}^{2} \cdot \frac{\mathit{e}^{- \mathit{\lambda}\mathit{x}}}{\mathit{\lambda}} = \mathit{\lambda}\mathit{e}^{- \mathit{\lambda}\mathit{x}}\]
+
+and \(\mathit{f}_{\mathit{X}}(\mathit{x}) = 0\) for \(\mathit{x} < 0\).
+
+Therefore, for \(\mathit{x} \geq 0\),
+
+\[\left. \mathit{f}_{\mathit{Y}|\mathit{X}}(\mathit{y} \middle| \mathit{x}) = \frac{\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})}{\mathit{f}_{\mathit{X}}(\mathit{x})} = \frac{\mathit{\lambda}^{2}\mathit{e}^{- \mathit{\lambda}\mathit{y}}\mathbf{1}_{\{{\mathit{y} \geq \mathit{x}}\}}}{\mathit{\lambda}\mathit{e}^{- \mathit{\lambda}\mathit{x}}} = \mathit{\lambda}\mathit{e}^{- \mathit{\lambda}(\mathit{y} - \mathit{x})}\mathbf{1}_{\{{\mathit{y} \geq \mathit{x}}\}} \right.\]
+
+This shows that \(\left. \mathit{Y} \middle| \mathit{X} = \mathit{x} \right.\) has the same distribution as \(\mathit{x} + \mathit{E}\) where \(\mathit{E} \sim Exp(\mathit{\lambda})\), hence
+
+\[\left. \mathbb{E}\lbrack\mathit{Y} \middle| \mathit{X} = \mathit{x}\rbrack = \mathit{x} + \frac{1}{\mathit{\lambda}} \right.\]
+
+\end{qlsolution}
+
+\section{Problem 5}\label{hw03-problem-5}
+
+A machine produces a coin that shows heads with a random probability \(\mathit{p}\). The value of \(\mathit{p}\) is unknown to us, but from many observations of the coins produced by the machine we know that the distribution of the random parameter \(\mathit{p}\) is uniform on \((0,1/2)\). We start tossing the coin. Compute the following probabilities:
+
+\begin{itemize}
+\item
+  The coin shows heads on the first toss.
+\item
+  The expected number of tosses until tails show up.
+\end{itemize}
+
+\begin{qlsolution}{Solution}
+
+\begin{itemize}
+\item
+  The head probability \(\mathit{p} \sim Unif(0,1/2)\). Thus the density is:
+
+  \[\mathit{f}_{\mathit{P}}(\mathit{p}) = 2\,\mathbf{1}_{(0,1/2)}(\mathit{p})\]
+
+  The unconditional probability of heads on the first toss is
+
+  \[\mathbb{P}(\text{H on first toss}) = \mathbb{E}\lbrack\mathit{p}\rbrack = \int_{0}^{1/2}\mathit{p} \cdot 2\,\mathit{d}\mathit{p} = 2 \cdot \frac{\mathit{p}^{2}}{2}\ |_{0}^{1/2} = \frac{1}{4}\]
+\item
+  Let \(\mathit{T}\) be the number of tosses until the first tail occurs. Conditional on \(\mathit{p}\), tails occurs with probability \(1 - \mathit{p}\) each toss, so \(\mathit{T}\) is geometric with parameter \(1 - \mathit{p}\). Hence
+
+  \[\left. \mathbb{E}\lbrack\mathit{T}\, \middle| \,\mathit{p}\rbrack = \frac{1}{1 - \mathit{p}} \right.\]
+
+  Taking expectation over \(\mathit{p}\),
+
+  \[\mathbb{E}\lbrack\mathit{T}\rbrack = \mathbb{E}\mspace{-18mu}\left\lbrack \frac{1}{1 - \mathit{p}} \right\rbrack = \int_{0}^{1/2}\frac{1}{1 - \mathit{p}} \cdot 2\,\mathit{d}\mathit{p} = 2\lbrack - \ln(1 - \mathit{p})\rbrack_{0}^{1/2} = 2\ln 2\]
+\end{itemize}
+
+\end{qlsolution}
+
+\section{Problem 6}\label{hw03-problem-6}
+
+The joint probability density function of the random variables \(\mathit{X}\) and \(\mathit{Y}\) is given by
+
+\[\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y}) = \left\{ \begin{matrix}
+{\mathit{c}\left( {\mathit{x}^{2} + \frac{\mathit{x}\mathit{y}}{2}} \right),} & {(\mathit{x},\mathit{y}) \in (0,1) \times (0,2)} \\
+{0,} & \text{otherwise}
+\end{matrix} \right.\]
+
+\begin{itemize}
+\item
+  Find the constant \(\mathit{c}\).
+\item
+  Find the marginal density of \(\mathit{X}\) and compute \(\mathbb{E}\lbrack\mathit{X}\rbrack\).
+\item
+  Compute \(\mathbb{P}(\mathit{X} > \mathit{Y})\).
+\item
+  Compute \(\mathbb{P}\left( \mathit{Y} > \frac{1}{2} \middle| \,\mathit{X} < \frac{1}{2} \right)\).
+\end{itemize}
+
+\begin{qlsolution}{Solution}
+
+\begin{itemize}
+\item
+  Determine \(\mathit{c}\) from normalization:
+
+  \[1 = \int_{0}^{1}\int_{0}^{2}\mathit{c}\left( {\mathit{x}^{2} + \frac{\mathit{x}\mathit{y}}{2}} \right)\,\mathit{d}\mathit{y}\,\mathit{d}\mathit{x}\]
+
+  For fixed \(\mathit{x}\),
+
+  \[\int_{0}^{2}\left( {\mathit{x}^{2} + \frac{\mathit{x}\mathit{y}}{2}} \right)\mathit{d}\mathit{y} = 2\mathit{x}^{2} + \frac{\mathit{x}}{2} \cdot \frac{\mathit{y}^{2}}{2}\ |_{0}^{2} = 2\mathit{x}^{2} + \mathit{x}\]
+
+  Thus
+
+  \[1 = \mathit{c}\int_{0}^{1}(2\mathit{x}^{2} + \mathit{x})\,\mathit{d}\mathit{x} = \mathit{c}\left( {\frac{2}{3} + \frac{1}{2}} \right) = \mathit{c} \cdot \frac{7}{6}\]
+
+  so \(\mathit{c} = \frac{6}{7}\)
+\item
+  The marginal density of \(\mathit{X}\) (for \(0 < \mathit{x} < 1\)) is
+
+  \[\mathit{f}_{\mathit{X}}(\mathit{x}) = \int_{0}^{2}\mathit{c}\left( {\mathit{x}^{2} + \frac{\mathit{x}\mathit{y}}{2}} \right)\,\mathit{d}\mathit{y} = \mathit{c}(2\mathit{x}^{2} + \mathit{x}) = \frac{6}{7}(2\mathit{x}^{2} + \mathit{x})\]
+
+  and \(\mathit{f}_{\mathit{X}}(\mathit{x}) = 0\) otherwise.
+
+  Thus
+
+  \[\mathbb{E}\lbrack\mathit{X}\rbrack = \int_{0}^{1}\mathit{x}\mathit{f}_{\mathit{X}}(\mathit{x})\,\mathit{d}\mathit{x} = \frac{6}{7}\int_{0}^{1}(2\mathit{x}^{3} + \mathit{x}^{2})\,\mathit{d}\mathit{x} = \frac{6}{7}\left( {\frac{1}{2} + \frac{1}{3}} \right) = \frac{5}{7}\]
+\item
+  The event \(\left\{ {\mathit{X} > \mathit{Y}} \right\}\) corresponds to the region \(0 < \mathit{y} < \mathit{x} < 1\) (since \(\mathit{x} \in (0,1)\)). Hence
+
+  \[\mathbb{P}(\mathit{X} > \mathit{Y}) = \int_{0}^{1}\int_{0}^{\mathit{x}}\mathit{c}\left( {\mathit{x}^{2} + \frac{\mathit{x}\mathit{y}}{2}} \right)\,\mathit{d}\mathit{y}\,\mathit{d}\mathit{x}\]
+
+  For fixed \(\mathit{x}\),
+
+  \[\int_{0}^{\mathit{x}}\left( {\mathit{x}^{2} + \frac{\mathit{x}\mathit{y}}{2}} \right)\mathit{d}\mathit{y} = \mathit{x}^{3} + \frac{\mathit{x}}{2} \cdot \frac{\mathit{y}^{2}}{2}\ |_{0}^{\mathit{x}} = \mathit{x}^{3} + \frac{\mathit{x}^{3}}{4} = \frac{5}{4}\mathit{x}^{3}\]
+
+  Therefore
+
+  \[\mathbb{P}(\mathit{X} > \mathit{Y}) = \mathit{c}\int_{0}^{1}\frac{5}{4}\mathit{x}^{3}\,\mathit{d}\mathit{x} = \mathit{c} \cdot \frac{5}{4} \cdot \frac{1}{4} = \mathit{c} \cdot \frac{5}{16} = \frac{6}{7} \cdot \frac{5}{16} = \frac{15}{56}\]
+\item
+  By definition,
+
+  \[\mathbb{P}\mspace{-18mu}\left( \mathit{Y} > \frac{1}{2} \middle| \ \mathit{X} < \frac{1}{2} \right) = \frac{\mathbb{P}\left( {\mathit{Y} > \frac{1}{2},\ \mathit{X} < \frac{1}{2}} \right)}{\mathbb{P}\left( {\mathit{X} < \frac{1}{2}} \right)}\]
+
+  Calculate each part. First the denominator:
+
+  \[\mathbb{P}\left( {\mathit{X} < \frac{1}{2}} \right) = \int_{0}^{1/2}\mathit{f}_{\mathit{X}}(\mathit{x})\,\mathit{d}\mathit{x} = \mathit{c}\int_{0}^{1/2}(2\mathit{x}^{2} + \mathit{x})\,\mathit{d}\mathit{x} = \mathit{c}\left( {\frac{1}{12} + \frac{1}{8}} \right) = \mathit{c} \cdot \frac{5}{24} = \frac{5}{28}\]
+
+  And the numerator:
+
+  \[\mathbb{P}\left( {\mathit{Y} > \frac{1}{2},\ \mathit{X} < \frac{1}{2}} \right) = \int_{0}^{1/2}\int_{1/2}^{2}\mathit{c}\left( {\mathit{x}^{2} + \frac{\mathit{x}\mathit{y}}{2}} \right)\,\mathit{d}\mathit{y}\,\mathit{d}\mathit{x}\]
+
+  For fixed \(\mathit{x}\),
+
+  \[\int_{1/2}^{2}\left( {\mathit{x}^{2} + \frac{\mathit{x}\mathit{y}}{2}} \right)\mathit{d}\mathit{y} = \mathit{x}^{2}\left( {2 - \frac{1}{2}} \right) + \frac{\mathit{x}}{2} \cdot \frac{\mathit{y}^{2}}{2}\ |_{1/2}^{2} = \frac{3}{2}\mathit{x}^{2} + \frac{\mathit{x}}{4}\left( {4 - \frac{1}{4}} \right) = \frac{3}{2}\mathit{x}^{2} + \frac{15}{16}\mathit{x}\]
+
+  Thus
+
+  \[\mathbb{P}\left( {\mathit{Y} > \frac{1}{2},\ \mathit{X} < \frac{1}{2}} \right) = \mathit{c}\int_{0}^{1/2}\left( {\frac{3}{2}\mathit{x}^{2} + \frac{15}{16}\mathit{x}} \right)\mathit{d}\mathit{x} = \mathit{c}\left( {\frac{1}{16} + \frac{15}{128}} \right) = \mathit{c} \cdot \frac{23}{128} = \frac{69}{448}\]
+
+  Therefore,
+
+  \[\mathbb{P}\mspace{-18mu}\left( \mathit{Y} > \frac{1}{2} \middle| \ \mathit{X} < \frac{1}{2} \right) = \frac{69/448}{5/28} = \frac{69}{80}\]
+\end{itemize}
+
+\end{qlsolution}

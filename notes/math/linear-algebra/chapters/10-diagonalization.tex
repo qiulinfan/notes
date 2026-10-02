@@ -1,0 +1,59 @@
+% LaTeX companion of 10-diagonalization.typ. Both formats are editable.
+\chapter{\texorpdfstring{\kn{Diagonalization} and eigenspaces}{ and eigenspaces}}
+
+\section{WS 23, p. 1: four theorems}
+
+\begin{theorem}{Eigenbasis and diagonal matrix}
+
+For a finite-dimensional vector space \(V\), a basis \(\beta\) of \(V\) is an eigenbasis for \(T:V\rightarrow V\) iff \(\lbrack T\rbrack_{\beta}\) is diagonal.
+
+\end{theorem}
+
+Indeed,
+
+\[\lbrack T\rbrack_{\beta} = \begin{pmatrix}
+\left\lbrack {T\left( b_{1} \right)} \right\rbrack_{\beta} & \ldots & \left\lbrack {T\left( b_{n} \right)} \right\rbrack_{\beta}
+\end{pmatrix} = \begin{pmatrix}
+{\lambda_{1}b_{1}} & \ldots & {\lambda_{n}b_{n}}
+\end{pmatrix}.\]
+
+\begin{theorem}{Diagonalizable transformation}
+
+\(T:V\rightarrow V\) is diagonalizable iff \(\lbrack T\rbrack_{\beta}\) is similar to some diagonal matrix \(D\).
+
+\end{theorem}
+
+The definition notes: \(T\) diagonalizable iff 其 \(D = n \times n\) matrix of \(T\) is diagonal. 因而（所有 \(\lbrack T\rbrack_{\alpha}\) 都相似于 \(\lbrack T\rbrack_{\beta}\)）.
+
+\begin{theorem}{Diagonalizable matrix}
+
+\(A \in \mathbb{R}^{n \times n}\) is diagonalizable iff \(A\) is similar to some diagonal \(D\).
+
+\end{theorem}
+
+\begin{theorem}{\kn{Eigenspace}}
+
+\(E_{\lambda} = \text{ker}\left( {T - \lambda I_{n}} \right)\), so \(\text{dim}\left( E_{\lambda} \right) = \text{dim}\left( {\text{ker}\left( {T - \lambda I_{n}} \right)} \right) = n - \text{rank}\left( {T - \lambda I_{n}} \right)\).
+
+\end{theorem}
+
+Proof: \(\left( {T - \lambda I} \right)(v) = 0\) iff \(T(v) = \lambda I(v) = \lambda v\), so the kernel is exactly the vectors changed only by \(T\) stretching by \(\lambda\), i.e. the eigenvectors with eigenvalue \(\lambda\) together with zero. 没有被 \(T - \lambda I\) 改变的 vectors，即只被 \(T\) 拉伸 \(\lambda\) 倍的 vectors.
+
+(Thm 7.1.3) 如果 \(D = \left( {v_{1},\ldots,v_{n}} \right)\) 是 an eigenbasis of \(V\) for \(T\), then
+
+\[\lbrack T\rbrack_{D} = S_{D\rightarrow\varepsilon}^{- 1}\lbrack T\rbrack_{\varepsilon}S_{D\rightarrow\varepsilon} = \begin{pmatrix}
+\lambda_{1} & \ldots \\
+\ldots & \lambda_{n}
+\end{pmatrix}.\]
+
+Proof note: \(T_{A{(x)}} = Ax\) (\(A = \lbrack T\rbrack_{\varepsilon}\)). Then \(S_{D\rightarrow\varepsilon} = \begin{pmatrix}
+v_{1} & \ldots & v_{n}
+\end{pmatrix}\) and
+
+\[\lbrack T\rbrack_{\varepsilon}S_{D\rightarrow\varepsilon} = \begin{pmatrix}
+{Av_{1}} & \ldots & {Av_{n}}
+\end{pmatrix} = \begin{pmatrix}
+{\lambda_{1}v_{1}} & \ldots & {\lambda_{n}v_{n}}
+\end{pmatrix}.\]
+
+Hence the change of basis yields the diagonal matrix.

@@ -1,0 +1,395 @@
+% LaTeX companion of 04-LLN.typ. Both formats are editable.
+\chapter{Behaviors of a sequence of random variables}\label{behaviors-of-a-sequence-of-random-variables}
+
+\section{Toolbox review: inequalities in probability}\label{toolbox-review-inequalities-in-probability}
+
+这一节是一个 review, 复习一些在 measure theory 中我们已经证明过, 在 probability theory 中经常用到的 inequalities.
+
+\subsection{Markov's ineqaulity and Chebyshev's inequality}\label{markovs-ineqaulity-and-chebyshevs-inequality}
+
+\begin{theorem}{\kn{Markov's inequality}}
+
+下文的 expectation 与 variance 采用 \knref{expectation and variance of random variable} 的定义。对于一个 non-negative random variable \(\mathit{X}\) (即 \(\mathit{X} \geq 0\) a.s.), 任取 \(\mathit{t} > 0\), 都有
+
+\[\mathbb{P}(\mathit{X} \geq \mathit{t}) \leq \frac{\mathbb{E}\lbrack\mathit{X}\rbrack}{\mathit{t}}\]
+
+\end{theorem}
+
+\begin{qlremark}{Remark}
+
+这是一个很直观的 geometric intuition: 如果 \(\mathit{t}\) 是均值 \(\mathit{\mu}\) 的 3 倍, 那么 \(\mathit{X}\) 大于 \(\mathit{t}\) 的测度就不应该超过均值 \(\mathit{\mu}\) 的 1/3; 否则, \(\mathit{X}\) 的均值 就一定大于 \(\mathit{\mu}\) 了 (即便其他地方的值都为 0).
+
+它 imply 这样一个时期: 对于 density function, 只要我们知道这个 RV 的均值, 那么对于 density function 截取任意点后面的 tail, 我们总是能够给出一个 upper bound:
+
+\begin{figure}[htbp]
+\centering
+\csname prob-04-lln-diagram-01\endcsname
+
+\caption{密度曲线在阈值 \(\mathit{t}\) 右侧的尾部概率}
+
+\label{fig-prob-04-lln-diagram-01}
+
+\end{figure}
+
+\end{qlremark}
+
+\begin{proof}
+
+我们考虑一个 indicator function \(\mathbf{1}_{\{{\mathit{X} \geq \mathit{t}}\}}\), 这也是 一个 non-negative random variable. 显然:
+
+\[\mathit{X} \geq \mathit{t} \cdot \mathbf{1}_{\{{\mathit{X} \geq \mathit{t}}\}}\]
+
+(在 \(\mathit{X} \geq \mathit{t}\) 的事件上等于, 其他事件上小于), 并且这个 indicator function 的 expectation 正是 \(\mathit{X}\) 大于 \(\mathit{t}\) 的概率 \(\mathbb{P}(\mathit{X} \geq \mathit{t})\).
+
+因而 by linearity of expectation,
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack \geq \mathit{t}\mathbb{E}\lbrack\mathbf{1}_{\{{\mathit{X} \geq \mathit{t}}\}}\rbrack = \mathit{t}\mathbb{P}(\mathit{X} \geq \mathit{t})\]
+
+其值为 1 当 \(\mathit{X} \geq \mathit{t}\) 时, 否则为 0. 对于任意的 \(\mathit{t} > 0\), 有
+
+\end{proof}
+
+\begin{corollary}{\knref{Chebyshev's inequality}}
+
+对于一个 random variable \(\mathit{X}\) 和任意的 \(\mathit{t} > 0\), 如果它的方差 \(\text{Var}(\mathit{X})\) 是有限的, 那么 有
+
+\[\left. \mathbb{P}( \middle| \mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack \middle| \geq \mathit{t}) \leq \frac{\text{Var}(\mathit{X})}{\mathit{t}^{2}} \right.\]
+
+\end{corollary}
+
+\begin{qlremark}{Remark}
+
+Markov's ineq 是通过均值来 bound 非负随机变量 达到一定大小的概率 (在多少事件上是大于 \(\mathit{t}\) 的);
+
+Chebyshev's ineq 则是通过方差来 bound 任意随机变量 偏离均值达到一定程度的概率 (在多少事件上是偏离均值超过 \(\mathit{t}\) 的).
+
+\end{qlremark}
+
+\begin{proof}
+
+考虑 non-negative random variable \((\mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack)^{2}\), 那么
+
+\[\left. \mathbb{P}( \middle| \mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack \middle| \geq \mathit{t}) = \mathbb{P}((\mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack)^{2} \geq \mathit{t}^{2}) \leq \frac{\mathbb{E}\lbrack(\mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack)^{2}\rbrack}{\mathit{t}^{2}} = \frac{\text{Var}(\mathit{X})}{\mathit{t}^{2}} \right.\]
+
+\end{proof}
+
+\subsection{Cauchy-Schwarz and Jensen's ineq}\label{cauchy-schwarz-and-jensens-ineq}
+
+\begin{theorem}{\kn{Cauchy-Schwarz inequality}}
+
+对于任意的 random variables \(\mathit{X}\) 和 \(\mathit{Y}\), 都有
+
+\[\left. |\mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack \middle| \leq \sqrt{\mathbb{E}\lbrack\mathit{X}^{2}\rbrack \cdot \mathbb{E}\lbrack\mathit{Y}^{2}\rbrack} \right.\]
+
+\end{theorem}
+
+这是 prob space 作为一个 measure space, 其上的函数空间 \(\mathit{L}^{2}(\Omega,\mathcal{F},\mathbb{P})\) 作为一个 Hilbert space, 自然的 Cauchy-Schwarz inequality. 不赘述了.
+
+\begin{theorem}{\kn{Jensen's inequality}}
+
+对于一个 convex function \(\mathit{\varphi}\) 和 任意的 random variable \(\mathit{X}\), 只要 \(\mathbb{E}\lbrack\mathit{X}\rbrack\) 和 \(\mathbb{E}\lbrack\mathit{\varphi}(\mathit{X})\rbrack\) 都是 well-defined 的 (即 finite), 都有
+
+\[\mathit{\varphi}(\mathbb{E}\lbrack\mathit{X}\rbrack) \leq \mathbb{E}\lbrack\mathit{\varphi}(\mathit{X})\rbrack\]
+
+\end{theorem}
+
+\begin{proof}
+
+Let \(\mathit{x}_{0} := \mathbb{E}\lbrack\mathit{X}\rbrack\).
+
+Since \(\mathit{\varphi}\) is convex, for any \(\mathit{x}\), there exists a supporting line to the graph of \(\mathit{\varphi}\) at \(\mathit{x}\). 即 存在一个 \(\mathit{m} \in \mathbb{R}\) s.t. 对于任意的 \(\mathit{y}\), 都有
+
+\[\mathit{\varphi}(\mathit{x}) \geq \mathit{\varphi}\left( \mathit{x}_{0} \right) + \mathit{m}\left( {\mathit{x} - \mathit{x}_{0}} \right)\]
+
+因而 apply to \(\mathit{X}\), 我们 a.s. 有
+
+\[\mathit{\varphi}(\mathit{X}) \geq \mathit{\varphi}(\mathbb{E}\lbrack\mathit{X}\rbrack) + \mathit{m}(\mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack)\]
+
+因此 by linearity of expectation,
+
+\[\mathbb{E}\lbrack\mathit{\varphi}(\mathit{X})\rbrack \geq \mathit{\varphi}(\mathbb{E}\lbrack\mathit{X}\rbrack) + \mathit{m}(\mathbb{E}\lbrack\mathit{X}\rbrack - \mathbb{E}\lbrack\mathit{X}\rbrack) = \mathit{\varphi}(\mathbb{E}\lbrack\mathit{X}\rbrack)\]
+
+\end{proof}
+
+\subsection{Fatou's Lemma, MCT and DCT}\label{fatous-lemma-mct-and-dct}
+
+我们在 measure theory 中最熟悉的三个定理. 复习一下. 这里不 prove 了. proof 请左转 measure theory notes.
+
+\begin{theorem}{\knref{Fatou's Lemma}}
+
+令 \(\left\{ \mathit{X}_{\mathit{n}} \right\}\) 是一列 non-negative random variables, 那么
+
+\[\mathbb{E}\lbrack\operatorname{lim\, inf}\limits_{\mathit{n}\rightarrow\infty}\mathit{X}_{\mathit{n}}\rbrack \leq \operatorname{lim\, inf}\limits_{\mathit{n}\rightarrow\infty}\mathbb{E}\lbrack\mathit{X}_{\mathit{n}}\rbrack\]
+
+\end{theorem}
+
+\begin{qlremark}{Remark}
+
+pointwise 下极限的积分, 得到的结果不会大于每个函数积分的下极限.
+
+因为 pointwise 下极限即: 在每个 \(\mathit{\omega}\) 上, 整个序列中最终稳定的最低水平 , 这是最稳定的一层.
+
+而逐个函数可能会有一些 spike, 使得它的 expectation 很大, 但是这个 spike 只出现有限次, 导致 pointwise limitinf 的函数没有受到它的影响; 但是, 不同的 spike 可能 finitely 出现在不同的位置上, 而这个出现的行为是无限的(比如 typewritter 函数), 使得每个函数的 expectation 都很大, 从而导致 expectation 的 limit 很大.
+
+而 pointwise liminf 的 expectation 就是对每个点都取最终稳定的最低水平, 从而避免了这些 spikes 的影响.
+
+\end{qlremark}
+
+\begin{theorem}{\knref{monotone convergence theorem}}
+
+令 \(\left\{ \mathit{X}_{\mathit{n}} \right\}\) 是一列递增的 non-negative random variables (即 \(\mathit{X}_{\mathit{n}} \uparrow \mathit{X}\) a.s.), 那么 suppose \(\mathit{X} := \lim_{\mathit{n}\rightarrow\infty}\mathit{X}_{\mathit{n}}\) a.e. exists, 那么 a.s. 有
+
+\[\lim\limits_{\mathit{n}\rightarrow\infty}\mathbb{E}\lbrack\mathit{X}_{\mathit{n}}\rbrack = \mathbb{E}\lbrack\mathit{X}\rbrack\]
+
+\end{theorem}
+
+\begin{qlremark}{Remark}
+
+如果 \(\mathit{X}_{\mathit{n}}\) 是递减的, 那么 expectation 的 limit 就等于逐点 limit 的 expectation 了.
+
+\end{qlremark}
+
+\begin{theorem}{\knref{dominated convergence theorem}}
+
+令 \(\left\{ \mathit{X}_{\mathit{n}} \right\}\) 是一列 random variables, 并且存在一个 a.e. pointwise limit \(\mathit{X}\) (即 \(\mathit{X}_{\mathit{n}}\rightarrow\mathit{X}\) a.s.), 并且存在一个 integrable random variable \(\mathit{Y}\) 作为一个 bound: 使得 \(\left. |\mathit{X}_{\mathit{n}} \middle| \leq \mathit{Y} \right.\) a.s. 对所有的 \(\mathit{n}\) 成立,
+
+那么
+
+\[\lim\limits_{\mathit{n}\rightarrow\infty}\mathbb{E}\lbrack\mathit{X}_{\mathit{n}}\rbrack = \mathbb{E}\lbrack\mathit{X}\rbrack\]
+
+\end{theorem}
+
+\begin{qlremark}{Remark}
+
+只要这个序列有一个 integrable 的 uniform bound (不要有很多 unbounded 的 spike 就行了), 那么 expectation 的 limit 就等于逐点 limit 的 expectation 了.
+
+\end{qlremark}
+
+\subsection{Tonneli and fubini}\label{tonneli-and-fubini}
+
+\begin{theorem}{\knref{Tonelli}}
+
+对于一列 non-negative random variables \(\left\{ \mathit{X}_{\mathit{n}} \right\}\), 累加和积分(求期望)的顺序可以交换:
+
+\[\mathbb{E}\left\lbrack {\sum\limits_{\mathit{n} = 1}^{+ \infty}\mathit{X}_{\mathit{n}}} \right\rbrack = \sum\limits_{\mathit{n} = 1}^{+ \infty}\mathbb{E}\left\lbrack \mathit{X}_{\mathit{n}} \right\rbrack\]
+
+\end{theorem}
+
+\begin{theorem}{\knref{Fubini's Theorem}}
+
+对于一列任意的 random variables \(\left\{ \mathit{X}_{\mathit{n}} \right\}\), 只要其绝对值的 sum 的 expectation 是 finite 的 (或者绝对值的 expectation 的 sum 是 finite 的, by Tonneli 都是一样的), 那么就有 linearity of expectation 的推广:
+
+\[\mathbb{E}\left\lbrack {\sum\limits_{\mathit{n} = 1}^{+ \infty}\mathit{X}_{\mathit{n}}} \right\rbrack = \sum\limits_{\mathit{n} = 1}^{+ \infty}\mathbb{E}\left\lbrack \mathit{X}_{\mathit{n}} \right\rbrack\]
+
+\end{theorem}
+
+\begin{qlremark}{Remark}
+
+Fubini 和 Tonelli 即: 把 linearity of expectation 推广到 countable sum 的情况, 前提是 either 非负(因而无穷不用管) or 它们的 expectation 是一个绝对 收敛的 series 就行了.
+
+\end{qlremark}
+
+\section{Definition review: modes of convergence}\label{definition-review-modes-of-convergence}
+
+这一个 section 也是一个 review. 讲讲 不同的 convergence mode 的定义, 以及它们之间的关系.
+
+首先, 我们对 pointwise limit 和 uniform limit 的定义已经很熟悉了, 这里就不赘述了. (算了 uniform 还是提一嘴, 意思是我们需要 pointwise limit 的 收敛速度也是 uniform 的, 即对任意的 \(\mathit{\varepsilon} > 0\), 都存在一个 \(\mathit{N}\) 使得对于所有的 \(\mathit{n} \geq \mathit{N}\) 和所有的 \(\mathit{\omega}\), 都有 \(\left. |\mathit{X}_{\mathit{n}}(\mathit{\omega}) - \mathit{X}(\mathit{\omega}) \middle| < \mathit{\varepsilon} \right.\), 是一个严格强于 pointwise 的收敛方式. )
+
+\begin{definition}{\kn{RV 序列的三种收敛方式}}
+
+\begin{itemize}
+\item
+  \textbf{converge a.s. (almost surely)} 或称 converge with probability 1:
+
+  \[\mathbb{P}\left( {\lim\limits_{\mathit{n}\rightarrow\infty}\mathit{X}_{\mathit{n}} = \mathit{X}} \right) = 1\]
+
+  即:
+
+  \[\mathbb{P}\left( \left\{ {\mathit{\omega} \in \Omega:\lim\limits_{\mathit{n}\rightarrow\infty}\mathit{X}_{\mathit{n}}(\mathit{\omega}) = \mathit{X}(\mathit{\omega})} \right\} \right) = 1\]
+
+  也就是说 \(\mathit{X}_{\mathit{n}}\) 的 a.e. pointwise limit 是 \(\mathit{X}\).
+\item
+  \textbf{converge in \(\mathit{L}^{\mathit{p}}\)}: 对于 \(\mathit{L}^{\mathit{p}}\)-integrable 的 random variables sequence \(\mathit{X}_{\mathit{n}}\) 和 \(\mathit{X}\), 我们称 \(\mathit{X}_{\mathit{n}}\overset{\mathit{L}^{\mathit{p}}}{\rightarrow}\mathit{X}\), 如果
+
+  \[\lim\limits_{\mathit{n}\rightarrow\infty}\mathbb{E}\left\lbrack \left| {\mathit{X}_{\mathit{n}} - \mathit{X}} \right|^{\mathit{p}} \right\rbrack = 0\]
+
+  即: 这个 seq of RVs 与这个 limit function 之间的 \(\mathit{L}^{\mathit{p}}\) distance 收敛到 0; 也就是它们的偏差 as a random variable, 其 \(\mathit{p}\)-th moment 收敛到 0.
+\item
+  \textbf{converge in probability}: 对于任意的 \(\mathit{\varepsilon} > 0\), 如果
+
+  \[\left. \lim\limits_{\mathit{n}\rightarrow\infty}\mathbb{P}( \middle| \mathit{X}_{\mathit{n}} - \mathit{X} \middle| > \mathit{\varepsilon}) = 0 \right.\]
+
+  即 \(\mathit{X}_{\mathit{n}}\) 与 \(\mathit{X}\) 之间的偏差超过 \(\mathit{\varepsilon}\) 的概率收敛到 0.
+\end{itemize}
+
+\end{definition}
+
+\section{Borel-Cantelli Lemma}\label{borel-cantelli-lemma}
+
+\section{Laws of Large Numbers}\label{laws-of-large-numbers}
+
+\subsection{weak and strong LLN}\label{weak-and-strong-lln}
+
+下面是概率论中最重要的定律之一: 大数定律 (Laws of Large Numbers, LLN).
+
+它证明的是一个十分符合直觉的结论: 一个 random variable 的 sample mean (即 \(\mathit{n}\) 个 i.i.d. 的 copy 的均值), 随着 sample 数量的增加, 会 converge to 它的 expectation.
+
+就是说: 我们重复做一个相同的实验并 取结果的平均值, 当我们做的实验足够多时, 这个平均值就会非常接近于这个实验的 expectation, 也就是理论的均值.\\
+例如最经典的例子就是抛硬币: 我们连续抛 \(\mathit{n}\) 次一个公平的硬币, 记录每次抛出正面 (记为 1) 或者反面 (记为 0), 然后计算这些结果的平均值, 随着 \(\mathit{n}\) 的增加, 这个平均值会趋近于 0.5, 等于 理论的 expectation (这是个 Bernouli random variable, expectation = \(\mathit{p}\)).\\
+LLN 有两个阶段, weak LLN 和 strong LLN, weak LLN 证明的是这个 convergence 是 in probability 的, 而 strong LLN 证明的是这个 convergence 是 a.s. 的. 就是说 strong LLN 是严格强于 weak LLN 的.
+
+% qlnotes: kind=theorem; id=thm-04-lln-weak-law-of-large-numbers
+\begin{theorem}{\kn{weak Law of Large Numbers}}\label{thm-04-lln-weak-law-of-large-numbers}
+
+对于一列 i.i.d. 的 random variables \(\left\{ \mathit{X}_{\mathit{i}} \right\}\), 只要这个 random variable 的 expectation 是 finite 的 \(\mathbb{E}\lbrack\mathit{X}_{1}^{2}\rbrack < \infty\), 那么就有:
+
+\[\frac{\mathit{X}_{1} + \mathit{X}_{2} + \cdots + \mathit{X}_{\mathit{n}}}{\mathit{n}}\overset{\mathit{p}}{\rightarrow}\mathbb{E}\lbrack\mathit{X}_{1}\rbrack\quad\text{as}\ \mathit{n}\rightarrow\infty\]
+
+\end{theorem}
+
+\begin{proof}
+
+简写 \(\mathit{\mu} := \mathbb{E}\lbrack\mathit{X}_{1}\rbrack\), \(\mathit{S}_{\mathit{n}} := \frac{\mathit{X}_{1} + \mathit{X}_{2} + \cdots + \mathit{X}_{\mathit{n}}}{\mathit{n}}\) for each \(\mathit{n}\).
+
+Let \(\mathit{\varepsilon} > 0\). It suffices to show: \(\left. \mathbb{P}( \middle| \mathit{S}_{\mathit{n}} - \mathit{\mu} \middle| > \mathit{\varepsilon})\rightarrow 0 \right.\) as \(\mathit{n}\rightarrow\infty\). By Chebyshev's inequality, we have
+
+\[\begin{matrix}
+{\mathbb{P}\left( {\left| {\mathit{S}_{\mathit{n}}/\mathit{n} - \mathit{\mu}} \right| > \mathit{\varepsilon}} \right)} & {\leq \frac{\text{Var}(\mathit{S}_{\mathit{n}}/\mathit{n})}{\mathit{\varepsilon}^{2}}} \\
+ & {= \frac{1}{\mathit{n}^{2}\mathit{\varepsilon}^{2}}\left( \sum\limits_{\mathit{n} = 1}^{\mathit{n}}\mathbb{E}\lbrack \middle| \ \mathit{X}_{\mathit{i}} - \mathit{\mu}\  \middle| {}_{2}\rbrack + 2\sum\limits_{1 \leq \mathit{i} < \mathit{j} \leq \mathit{n}}\mathbb{E}\lbrack(\mathit{X}_{\mathit{i}} - \mathit{\mu})(\mathit{X}_{\mathit{j}} - \mathit{\mu})\rbrack \right)}
+\end{matrix}\]
+
+notice: 由于每个 \(\mathit{X}_{\mathit{i}}\) 都是 i.i.d. 的, independence \(\Longrightarrow\) uncorrelatedness \(\Longrightarrow\text{Cov}(\mathit{X},\mathit{Y}) = \mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack - \mathbb{E}\lbrack\mathit{X}\rbrack\mathbb{E}\lbrack\mathit{Y}\rbrack = 0\), 因而 \(\mathbb{E}\lbrack(\mathit{X}_{\mathit{i}} - \mathit{\mu})(\mathit{X}_{\mathit{j}} - \mathit{\mu})\rbrack = \mathbb{E}\lbrack(\mathit{X}_{\mathit{i}} - \mathit{\mu})\rbrack\mathbb{E}\lbrack(\mathit{X}_{\mathit{j}} - \mathit{\mu})\rbrack = 0 \cdot 0 = 0\) for each \(\mathit{i} \neq \mathit{j}\).
+
+因而
+
+\[\left. \mathbb{P}\left( {\left| {\mathit{S}_{\mathit{n}}/\mathit{n} - \mathit{\mu}} \right| > \mathit{\varepsilon}} \right) = \frac{1}{\mathit{\varepsilon}^{2}\mathit{n}^{2}}\sum\limits_{\mathit{n} = 1}^{\mathit{n}}\mathbb{E}\lbrack \middle| \mathit{X}_{\mathit{i}} - \mathit{\mu} \middle| {}_{2}\rbrack = \frac{1}{\mathit{\varepsilon}^{2}\mathit{n}} \cdot \mathit{n}\ \text{Var}(\mathit{X}_{1})\overset{\mathit{n}\rightarrow\infty}{\rightarrow}0 \right.\]
+
+\end{proof}
+
+\begin{theorem}{\kn{strong Law of Large Numbers}}
+
+在 weak LLN\ref{thm-04-lln-weak-law-of-large-numbers} 的相同条件 (其实可以更弱, 让 \(\mathit{E}\lbrack\mathit{X}_{1}\rbrack < \infty\) 即可) 下, 我们其实可以得到一个更强的结论:
+
+\[\frac{\mathit{X}_{1} + \ldots + \mathit{X}_{\mathit{n}}}{\mathit{n}}\overset{\text{a.s.}}{\rightarrow}\mathbb{E}\left\lbrack \mathit{X}_{1} \right\rbrack,\quad\text{as}\ \mathit{n}\rightarrow\infty\]
+
+\end{theorem}
+
+\begin{proof}
+
+For simplicity, 我们不证明更弱的条件 (\(\mathit{E}\lbrack\mathit{X}_{1}\rbrack < \infty\)) 下的 strong LLN 了. 只沿用相同的条件.
+
+简写 \(\mathit{\mu} := \mathbb{E}\lbrack\mathit{X}_{1}\rbrack\), \(\mathit{\sigma}^{2} := \text{Var}(\mathit{X}_{1})\), \(\mathit{S}_{\mathit{n}} := \frac{\mathit{X}_{1} + \mathit{X}_{2} + \cdots + \mathit{X}_{\mathit{n}}}{\mathit{n}}\) for each \(\mathit{n}\), 以及
+
+\[\mathit{Y}_{\mathit{n}} := \frac{\mathit{S}_{\mathit{n}}}{\mathit{n}} - \mathit{\mu}\]
+
+我们将要证明: \(\mathit{Y}_{\mathit{n}}\overset{\mathit{a}.\mathit{s}.}{\rightarrow}0\).
+
+首先, 在 weak LLN 的 proof 中, 我们已经证明了:
+
+\[\mathbb{E}(\mathit{Y}_{\mathit{n}}) = 0,\quad\mathbb{E}\lbrack\mathit{Y}_{\mathit{n}}^{2}\rbrack = \frac{\mathit{\sigma}^{2}}{\mathit{n}}\]
+
+我们发现: 当我们只采样 \(\mathit{n}^{2}\) indexed 的时候, 它们的 expectation 的 sum 是 finite 的, by p-test (因为 \(\sum_{\mathit{n} = 1}^{\infty}\frac{1}{\mathit{n}^{\mathit{p}}}\) 收敛当且仅当 \(\mathit{p} > 1\)), 即:
+
+\[\mathbb{E}\left\lbrack {\sum\limits_{\mathit{n} = 1}^{+ \infty}\mathit{Y}_{\mathit{n}^{2}}^{2}} \right\rbrack = \sum\limits_{\mathit{n} = 1}^{+ \infty}\mathbb{E}\left\lbrack \mathit{Y}_{\mathit{n}^{2}}^{2} \right\rbrack = \sum\limits_{\mathit{n} = 1}^{+ \infty}\frac{\mathit{\sigma}^{2}}{\mathit{n}^{2}} < \infty\]
+
+先考虑所有 \(\mathit{Y}_{\mathit{n}}\) 都非负的 case. 我们知道: expectation of 一个 non-negative random variable 是 finite 的, 就 imply 它是 a.e. finite 的. 因而
+
+\[\sum\limits_{\mathit{n} = 1}^{+ \infty}\mathit{Y}_{\mathit{n}^{2}}^{2} < \infty\quad\text{a.s.}\]
+
+因而
+
+\[\lim\limits_{\mathit{n}\rightarrow\infty}\mathit{Y}_{\mathit{n}^{2}} = 0\quad\text{a.s.}\]
+
+意味把在 \(1,4,9,16...\) 这些 index 的 \(\mathit{Y}_{\mathit{i}}\) 求 average, 确实收敛到了 \(\mathit{\mu}\).
+
+而我们可以通过 squeeze theorem 得到 general case: 对于任意正整数 \(\mathit{k}\), 总能找到一对平方数把它夹在中间. 比如令 \(\mathit{n}^{2} < \mathit{k} < (\mathit{n} + 1)^{2}\).
+
+我们发现:
+
+\[\frac{\mathit{S}_{\mathit{n}^{2}}}{(\mathit{n} + 1)^{2}} \leq \frac{\mathit{S}_{\mathit{k}}}{\mathit{k}} \leq \frac{\mathit{S}_{(\mathit{n} + 1)^{2}}}{\mathit{n}^{2}}\]
+
+notice: \(\frac{\mathit{S}_{\mathit{n}^{2}}}{(\mathit{n} + 1)^{2}} = \frac{\mathit{S}_{\mathit{n}^{2}}}{\mathit{n}^{2}} \cdot \frac{\mathit{n}^{2}}{(\mathit{n} + 1)^{2}}\), 前向 converge to \(\mathit{\mu}\), 后向 converge to 1, 因而 \(\frac{\mathit{S}_{\mathit{n}^{2}}}{(\mathit{n} + 1)^{2}}\rightarrow\mathit{\mu}\), 后面那个也同理. 因而夹逼得到 \(\mathit{S}_{\mathit{k}}/\mathit{k}\rightarrow\mathit{\mu}\). 从而得证.
+
+General case:
+
+\[\mathit{X}_{\mathit{n}} = \max\left\{ {\mathit{X}_{\mathit{n}},0} \right\} - \max\left\{ {- \mathit{X}_{\mathit{n}},0} \right\} = :\mathit{X}_{\mathit{n}}^{+} - \mathit{X}_{\mathit{n}}^{-}\]
+
+因而
+
+\[\frac{\mathit{X}_{1} + \ldots + \mathit{X}_{\mathit{n}}}{\mathit{n}} = \frac{\mathit{X}_{1}^{+} + \ldots + \mathit{X}_{\mathit{n}}^{+}}{\mathit{n}} - \frac{\mathit{X}_{1}^{-} + \ldots + \mathit{X}_{\mathit{n}}^{-}}{\mathit{n}}\overset{\text{a.s.}}{\rightarrow}\mathbb{E}\left\lbrack \mathit{X}_{1}^{+} \right\rbrack - \mathbb{E}\left\lbrack \mathit{X}_{1}^{-} \right\rbrack = \mathbb{E}\left\lbrack \mathit{X}_{1} \right\rbrack\]
+
+得证.
+
+\end{proof}
+
+\begin{qlremark}{Remark}
+
+我们要求 \(\left. \mathbb{E}\lbrack \middle| \mathit{X}_{1} \middle| \rbrack \right.\) 是 finite 的, 或者 \(\left. \mathbb{E}\lbrack \middle| \mathit{X}_{1} \middle| {}_{2}\rbrack \right.\) 是 finite 的, 并不是一个硬性的条件, 只是结果确实 converge to \(\mathbb{E}\lbrack\mathit{X}_{1}\rbrack\) 这个 finite value 的条件.
+
+实际上在 \(\mathbb{E}\lbrack\mathit{X}_{1}\rbrack\) infinite (等于 \(\infty\) 或者 \(- \infty\)) 时, 我们会得到这个 average 发散, 因而也是 和 \(\mathbb{E}\lbrack\mathit{X}_{1}\rbrack\) 一样, 只不过不是 converge 而是 diverge.
+
+此处不证明了.
+
+\end{qlremark}
+
+\subsection{application: Monte Carlo methods}\label{application-monte-carlo-methods}
+
+任何利用 LLN 来近似计算 一个 quantity 的方法, 都可以称之为 Monte Carlo 方法.
+
+它的核心思想是:
+
+\begin{itemize}
+\item
+  选择一个随机变量, 其 expectation 等于我们要计算的 quantity.
+\item
+  大量重复采样这个随机变量, 并计算样本的平均值
+\item
+  根据大数定律, 这个平均值近似于我们要计算的 quantity.
+\item
+  我们可以用 Chebyshev's inequality 来给出这个近似的误差 bound.
+\end{itemize}
+
+\begin{example}[估算 \(\mathit{\pi}\)]
+
+我们令 \(\mathit{X},\mathit{Y} \sim \mathit{U}(\lbrack - 1,1\rbrack)\)
+
+那么
+
+\[\mathbb{E}\left\lbrack {\mathbf{1}_{\mathit{C}}(\mathit{X},\mathit{Y})} \right\rbrack = \int_{- 1}^{1}\int_{- 1}^{1}\mathbf{1}_{\mathit{C}}(\mathit{x},\mathit{y})\mathit{f}_{\mathit{X},\mathit{Y}}(\mathit{x},\mathit{y})\mathit{d}\mathit{x}\mathit{d}\mathit{y} = \frac{1}{4}\int_{- 1}^{1}\int_{- 1}^{1}\mathbf{1}_{\mathit{C}}(\mathit{x},\mathit{y})\mathit{d}\mathit{x}\mathit{d}\mathit{y} = \frac{\mathit{\pi}}{4}\]
+
+注意我们每次随机采样 \(\mathit{X},\mathit{Y}\) 的时候, 都是在 \(\lbrack - 1,1\rbrack \times \lbrack - 1,1\rbrack\) 这个正方形里随机选一个点, 即创建了一个 random variable \((\mathit{X}_{\mathit{i}},\mathit{Y}_{\mathit{i}})\) 并进行观测.
+
+根据 LLN, 不论单次的采样结果如何, 我们都可以得到
+
+\[\lim\limits_{\mathit{n}\rightarrow\infty}\frac{\mathbf{1}_{\mathit{C}}\left( {\mathit{X}_{1},\mathit{Y}_{1}} \right) + \ldots + \mathbf{1}_{\mathit{C}}\left( {\mathit{X}_{\mathit{n}},\mathit{Y}_{\mathit{n}}} \right)}{\mathit{n}} = \frac{\mathit{\pi}}{4},\quad\text{a.s.}\]
+
+我们还可以用 Chebyshev's inequality 来给出这个近似的误差 bound:
+
+\[\mathbb{P}\left( {\left| {4\mathit{S}_{\mathit{n}}/\mathit{n} - \mathit{\pi}} \right| > \mathit{\varepsilon}} \right) \leq \frac{\text{Var}\ \left( {4\mathit{S}_{\mathit{n}}/\mathit{n}} \right)}{\mathit{\varepsilon}^{2}} = \frac{4^{2}}{\mathit{n}^{2}\mathit{\varepsilon}^{2}}\ \text{Var}\ \left( {\sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathbf{1}_{\mathit{C}}\left( {\mathit{X}_{\mathit{i}},\mathit{Y}_{\mathit{i}}} \right)} \right) = \frac{16}{\mathit{n}\mathit{\varepsilon}^{2}}\ \text{Var}\ \left( {\mathbf{1}_{\mathit{C}}\left( {\mathit{X}_{1},\mathit{Y}_{1}} \right)} \right) \approx \frac{1}{\mathit{n}\mathit{\varepsilon}^{2}}\]
+
+因而当 \(\mathit{n}\) 足够大时, 几乎一定可以得到目标值.
+
+\begin{verbatim}
+import random
+def estimate_pi(n):
+    S_n = 0 # This step 1
+    for _ in range(n):
+        # Here is step 2 (and 3)
+        X = random.uniform(-1, 1)
+        Y = random.uniform(-1, 1)
+        # Check if the point is inside the unit circle
+        if X**2 + Y**2 <= 1:
+            S_n += 1
+    pi_estimate = 4 * S_n / n
+    return pi_estimate
+# Example usage
+n = 1000000
+pi_approx = estimate_pi(n)
+print(pi_approx)
+\end{verbatim}
+
+\end{example}
+
+\subsection{application: Bernstein Polynomials}\label{application-bernstein-polynomials}
+
+\subsection{application: Hypothesis testing}\label{application-hypothesis-testing}

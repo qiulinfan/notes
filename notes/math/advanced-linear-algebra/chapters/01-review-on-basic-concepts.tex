@@ -1,0 +1,77 @@
+% LaTeX companion of 01-review-on-basic-concepts.typ. Both formats are editable.
+\chapter{Review on Basic Concepts}
+
+\section{Subspace and direct sum}
+
+% qlnotes: kind=definition; id=subspace
+\begin{definition}{\kn{Subspace}}\label{subspace}
+
+vector space 的 subset \(U \subset V\) 为一个 subspace，if 它满足条件：
+
+\begin{enumerate}
+\tightlist
+\item
+  包含 0
+\item
+  对 addition 和 scalar multiplication 闭合
+\end{enumerate}
+
+\end{definition}
+
+两个 subset 的和就是各取一个元素相加的所有情况.\\
+很显然我们知道：
+
+\begin{proposition}
+
+两个 subspace \(U_{1},U_{2}\) 的 sum \(U_{1} + U_{2}\) 也是一个 subspace, 并且
+
+\[\dim\left( {U_{1} + U_{2}} \right) \leq \dim\left( U_{1} \right) + \dim\left( U_{2} \right)\]
+
+且 \(U_{1} + U_{2}\) 是同时包含 \(U_{1}\) 和 \(U_{2}\) 的 \(V\) 的最小 subspace.
+
+\end{proposition}
+
+显然可以随便和。同一个 \(U\) 自己和自己的和就是自己。所以 subspace sum 这个概念比较大，没什么用。我们需要用 direct sum 来作为一个小一点但是更有用的概念，表达出一种垂直的 subspace 的直观.
+
+% qlnotes: kind=definition; id=direct sum
+\begin{definition}{\kn{Direct sum}}\label{direct sum}
+
+如果 \(U_{1} + U_{2} + \ldots + U_{m}\) 中的任意元素 \(v\)，都存在唯一的 \(v_{k} \in U_{k}\) for each \(k\) 使得 \(v = \sum_{k}v_{k}\)，就称 \(U_{1} + \ldots + U_{m} = \oplus_{i = 1}^{m}U_{i}\) 为一个 direct sum.
+
+\end{definition}
+
+我们显然发现：
+
+\begin{proposition}
+
+\[\dim\left( {\oplus_{i = 1}^{m}U_{i}} \right) = \sum\limits_{i = 1}^{m}\dim\left( U_{i} \right)\]
+
+\end{proposition}
+
+我们发现，其实可以 direct sum 的 subspaces 是 ``垂直的''，意思是:
+
+\begin{theorem}
+
+\(U_{1} + U_{2} + \ldots + U_{m}\) 是一个 direct sum (这几个空间``垂直'') iff 任取 \(u_{1},u_{2},\ldots,u_{m}\) 分别来自 \(U_{1},U_{2},\ldots,U_{m}\)，它们都 lin. ind.
+
+\end{theorem}
+
+并且：
+
+\begin{theorem}
+
+\(U_{1} + U_{2}\) 为一个 direct sum iff \(U_{1} \cap U_{2} = \left\{ 0 \right\}\).
+
+\end{theorem}
+
+\begin{qlremark}{Remark}
+
+实际上两个 subspace 的交集里只要有一个非 0 点，那么这个点 span 的整个 dim 为 1 的线都在交集里.
+
+\end{qlremark}
+
+\begin{qlnote}{Note}
+
+\(\mathbb{F}^{n} = \oplus_{i = 1}^{n}\text{span}\left( e_{i} \right)\)
+
+\end{qlnote}

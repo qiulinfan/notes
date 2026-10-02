@@ -1,0 +1,382 @@
+% LaTeX companion of hw06.typ. Both formats are editable.
+\chapter{Homework 6}\label{homework-6}
+
+\section{Problem 1}\label{hw06-problem-1}
+
+Let \(\mathit{X}\) be a random variable such that \(\mathbb{E}\left\lbrack \left| \mathit{X} \right| \right\rbrack < \infty\), that is \(\mathit{X} \in \mathit{L}^{1}\). Denote by \(\mathit{\varphi}_{\mathit{X}}(\mathit{t}) := \mathbb{E}\left\lbrack \mathit{e}^{\mathit{i}\mathit{t}\mathit{X}} \right\rbrack,\mathit{t} \in \mathbb{R}\), its characteristic function.
+
+\begin{itemize}
+\item
+  Show that \(\mathit{\varphi}_{\mathit{X}}\) is differentiable with \(\mathit{\varphi}_{\mathit{X}}'(\mathit{t}) = \mathit{i}\mathbb{E}\left\lbrack {\mathit{X}\mathit{e}^{\mathit{i}\mathit{t}\mathit{X}}} \right\rbrack\). (Hint: DCT)
+\item
+  If, in addition, \(\mathit{X}\) has symmetric distribution(i.e. \(\mathit{X}, - \mathit{X}\) have the same distribution), then show that \(\mathit{\varphi}_{\mathit{X}}(\mathit{t}) \in \mathbb{R}\) for any \(\mathit{t} \in \mathbb{R}\).
+\end{itemize}
+
+\begin{proof}
+
+\begin{itemize}
+\item
+  Fix \(\mathit{t} \in \mathbb{R}\). Consider the difference quotient
+
+  \[\frac{\mathit{\varphi}_{\mathit{X}}(\mathit{t} + h) - \mathit{\varphi}_{\mathit{X}}(\mathit{t})}{h} = \mathbb{E}\left\lbrack {\mathit{e}^{\mathit{i}\mathit{t}\mathit{X}}\frac{\mathit{e}^{\mathit{i}h\mathit{X}} - 1}{h}} \right\rbrack\]
+
+  Notice we have (for a.e. \(\mathit{\omega}\)):
+
+  \[\lim\limits_{h\rightarrow 0}\frac{\mathit{e}^{\mathit{i}h\mathit{X}} - 1}{h} = \mathit{i}\mathit{X}\]
+
+  Hence
+
+  \[\mathit{e}^{\mathit{i}\mathit{t}\mathit{X}}\frac{\mathit{e}^{\mathit{i}h\mathit{X}} - 1}{h}\rightarrow\mathit{i}\mathit{X}\mathit{e}^{\mathit{i}\mathit{t}\mathit{X}}\quad\text{a.s.}\quad\text{as}\ h\rightarrow 0\]
+
+  Using the mean value theorem for the function \(\mathit{u}\mapsto\mathit{e}^{\mathit{i}\mathit{u}\mathit{X}}\), for \(\left. |h \middle| \leq 1 \right.\) we have
+
+  \[\left. \left| \frac{\mathit{e}^{\mathit{i}h\mathit{X}} - 1}{h} \right| \leq \middle| \mathit{X}| \right.\]
+
+  Also, \(\left. |\mathit{e}^{\mathit{i}\mathit{t}\mathit{X}} \middle| = 1 \right.\), so
+
+  \[\left. \left| {\mathit{e}^{\mathit{i}\mathit{t}\mathit{X}}\frac{\mathit{e}^{\mathit{i}h\mathit{X}} - 1}{h}} \right| = \middle| \mathit{e}^{\mathit{i}\mathit{t}\mathit{X}} \middle| \left| \frac{\mathit{e}^{\mathit{i}h\mathit{X}} - 1}{h} \right| \leq \middle| \mathit{X}| \right.\]
+
+  Since \(\mathit{X} \in \mathit{L}^{1}\), we have \(\left. \mathbb{E}\lbrack \middle| \mathit{X} \middle| \rbrack < \infty \right.\), therefore \(|\mathit{X}|\) is a dominating integrable random variable for \(\mathit{e}^{\mathit{i}\mathit{t}\mathit{X}}\frac{\mathit{e}^{\mathit{i}h\mathit{X}} - 1}{h}\). Then by DCT,
+
+  \[\lim\limits_{h\rightarrow 0}\frac{\mathit{\varphi}_{\mathit{X}}(\mathit{t} + h) - \mathit{\varphi}_{\mathit{X}}(\mathit{t})}{h} = \mathbb{E}\left\lbrack {\lim\limits_{h\rightarrow 0}\mathit{e}^{\mathit{i}\mathit{t}\mathit{X}}\frac{\mathit{e}^{\mathit{i}h\mathit{X}} - 1}{h}} \right\rbrack = \mathbb{E}\lbrack\mathit{i}\mathit{X}\mathit{e}^{\mathit{i}\mathit{t}\mathit{X}}\rbrack\]
+
+  Thus \(\mathit{\varphi}_{\mathit{X}}\) is differentiable and
+
+  \[\mathit{\varphi}_{\mathit{X}}'(\mathit{t}) = \mathit{i}\mathbb{E}\lbrack\mathit{X}\mathit{e}^{\mathit{i}\mathit{t}\mathit{X}}\rbrack\]
+\item
+  Since random variables with the same distribution have the same expectation under measurable functions for which the expectation exists, we get
+
+  \[\mathit{\varphi}_{\mathit{X}}(\mathit{t}) = \mathbb{E}\lbrack\mathit{e}^{\mathit{i}\mathit{t}\mathit{X}}\rbrack = \mathbb{E}\lbrack\mathit{e}^{\mathit{i}\mathit{t}( - \mathit{X})}\rbrack = \mathbb{E}\lbrack\mathit{e}^{- \mathit{i}\mathit{t}\mathit{X}}\rbrack = \mathit{\varphi}_{\mathit{X}}( - \mathit{t})\]
+
+  On the other hand since \(\mathit{\varphi}_{\mathit{X}}( - \mathit{t}) = \bar{\mathit{\varphi}_{\mathit{X}}(\mathit{t})}\), we thus have
+
+  \[\mathit{\varphi}_{\mathit{X}}(\mathit{t}) = \bar{\mathit{\varphi}_{\mathit{X}}(\mathit{t})}\]
+
+  A complex number equal to its own conjugate must be real. Therefore,
+
+  \[\mathit{\varphi}_{\mathit{X}}(\mathit{t}) \in \mathbb{R},\qquad\forall\mathit{t} \in \mathbb{R}\]
+
+  Writing
+
+  \[\mathit{\varphi}_{\mathit{X}}(\mathit{t}) = \mathbb{E}\lbrack\cos(\mathit{t}\mathit{X})\rbrack + \mathit{i}\mathbb{E}\lbrack\sin(\mathit{t}\mathit{X})\rbrack\]
+
+  Since \(\mathit{X}\) is symmetric, \(\sin(\mathit{t}\mathit{x})\) is odd, so
+
+  \[\mathbb{E}\lbrack\sin(\mathit{t}\mathit{X})\rbrack = 0\]
+
+  Therefore \(\mathit{\varphi}_{\mathit{X}}(\mathit{t}) = \mathbb{E}\lbrack\cos(\mathit{t}\mathit{X})\rbrack \in \mathbb{R}\).
+\end{itemize}
+
+\end{proof}
+
+\section{Problem 2}\label{hw06-problem-2}
+
+Let \(\mathit{X} \sim \text{Bin}(\mathit{n},\mathit{p})\), where \(\mathit{n} \in \mathbb{N},\mathit{p} \in (0,1)\) and \(\mathit{Y} \sim \text{Pois}(\mathit{\lambda})\), where \(\mathit{\lambda} > 0\).
+
+\begin{itemize}
+\item
+  Compute the characteristic functions of \(\mathit{X},\mathit{Y}\).
+\item
+  Let \(\left( \mathit{p}_{\mathit{n}} \right)_{\mathit{n} \in \mathbb{N}}\) be a sequence in \((0,1)\) such that \(\lim_{\mathit{n}\rightarrow\infty}\mathit{n}\mathit{p}_{\mathit{n}} = \mathit{\lambda}\) and \(\left( \mathit{X}_{\mathit{n}} \right)_{\mathit{n} \in \mathbb{N}}\) be a sequence of random variables with \(\mathit{X}_{\mathit{n}} \sim \text{Bin}\ \left( {\mathit{n},\mathit{p}_{\mathit{n}}} \right)\). Show that \(\mathit{X}_{\mathit{n}}\overset{\mathit{d}}{\rightarrow}\mathit{Y}\).
+\end{itemize}
+
+\begin{proof}
+
+\begin{itemize}
+\item
+  We have
+
+  \[\mathbb{P}(\mathit{X} = \mathit{k}) = \binom{\mathit{n}}{\mathit{k}}\mathit{p}^{\mathit{k}}(1 - \mathit{p})^{\mathit{n} - \mathit{k}},\quad\mathit{k} = 0,1,\ldots,\mathit{n}\]
+
+  Therefore,
+
+  \[\mathit{\varphi}_{\mathit{X}}(\mathit{t}) = \mathbb{E}\lbrack\mathit{e}^{\mathit{i}\mathit{t}\mathit{X}}\rbrack = \sum\limits_{\mathit{k} = 0}^{\mathit{n}}\mathit{e}^{\mathit{i}\mathit{t}\mathit{k}}\binom{\mathit{n}}{\mathit{k}}\mathit{p}^{\mathit{k}}(1 - \mathit{p})^{\mathit{n} - \mathit{k}}\]
+
+  We factor \(\mathit{e}^{\mathit{i}\mathit{t}\mathit{k}}\) into \((\mathit{p}\mathit{e}^{\mathit{i}\mathit{t}})^{\mathit{k}}/\mathit{p}^{\mathit{k}}\) and obtain
+
+  \[\mathit{\varphi}_{\mathit{X}}(\mathit{t}) = \sum\limits_{\mathit{k} = 0}^{\mathit{n}}\binom{\mathit{n}}{\mathit{k}}(\mathit{p}\mathit{e}^{\mathit{i}\mathit{t}})^{\mathit{k}}(1 - \mathit{p})^{\mathit{n} - \mathit{k}}\]
+
+  By the binomial formula,
+
+  \[\mathit{\varphi}_{\mathit{X}}(\mathit{t}) = (1 - \mathit{p} + \mathit{p}\mathit{e}^{\mathit{i}\mathit{t}})^{\mathit{n}}\]
+
+  Next for \(\mathit{Y} \sim \text{Pois}(\mathit{\lambda})\) we have
+
+  \[\mathbb{P}(\mathit{Y} = \mathit{k}) = \mathit{e}^{- \mathit{\lambda}}\frac{\mathit{\lambda}^{\mathit{k}}}{\mathit{k}!},\quad\mathit{k} = 0,1,2,\ldots\]
+
+  Hence
+
+  \[\mathit{\varphi}_{\mathit{Y}}(\mathit{t}) = \mathbb{E}\lbrack\mathit{e}^{\mathit{i}\mathit{t}\mathit{Y}}\rbrack = \sum\limits_{\mathit{k} = 0}^{\infty}\mathit{e}^{\mathit{i}\mathit{t}\mathit{k}}\mathit{e}^{- \mathit{\lambda}}\frac{\mathit{\lambda}^{\mathit{k}}}{\mathit{k}!}\]
+
+  Thus
+
+  \[\mathit{\varphi}_{\mathit{Y}}(\mathit{t}) = \mathit{e}^{- \mathit{\lambda}}\sum\limits_{\mathit{k} = 0}^{\infty}\frac{(\mathit{\lambda}\mathit{e}^{\mathit{i}\mathit{t}})^{\mathit{k}}}{\mathit{k}!} = \mathit{e}^{- \mathit{\lambda}}\mathit{e}^{\mathit{\lambda}\mathit{e}^{\mathit{i}\mathit{t}}} = \mathit{e}^{\mathit{\lambda}(\mathit{e}^{\mathit{i}\mathit{t}} - 1)}\]
+
+  So the characteristic functions are
+
+  \[\mathit{\varphi}_{\mathit{X}}(\mathit{t}) = (1 - \mathit{p} + \mathit{p}\mathit{e}^{\mathit{i}\mathit{t}})^{\mathit{n}},\quad\mathit{\varphi}_{\mathit{Y}}(\mathit{t}) = \mathit{e}^{\mathit{\lambda}(\mathit{e}^{\mathit{i}\mathit{t}} - 1)}\]
+\item
+  By part (a),
+
+  \[\mathit{\varphi}_{\mathit{X}_{\mathit{n}}}(\mathit{t}) = (1 - \mathit{p}_{\mathit{n}} + \mathit{p}_{\mathit{n}}\mathit{e}^{\mathit{i}\mathit{t}})^{\mathit{n}} = \left( {1 + \mathit{p}_{\mathit{n}}(\mathit{e}^{\mathit{i}\mathit{t}} - 1)} \right)^{\mathit{n}}\]
+
+  We now compute the limit as \(\mathit{n}\rightarrow\infty\).
+
+  Set
+
+  \[\mathit{a}_{\mathit{n}} := \mathit{p}_{\mathit{n}}(\mathit{e}^{\mathit{i}\mathit{t}} - 1)\]
+
+  Since \(\mathit{p}_{\mathit{n}}\rightarrow 0\) (as \(\mathit{n}\mathit{p}_{\mathit{n}}\rightarrow\mathit{\lambda} < \infty\)), we have \(\mathit{a}_{\mathit{n}}\rightarrow 0\). Therefore,
+
+  \[\log(1 + \mathit{a}_{\mathit{n}})\rightarrow\mathit{a}_{\mathit{n}},\quad\mathit{n}\rightarrow\infty\]
+
+  Hence
+
+  \[\mathit{n}\log(1 + \mathit{a}_{\mathit{n}})\rightarrow\mathit{n}\mathit{a}_{\mathit{n}} = \mathit{n}\mathit{p}_{\mathit{n}}(\mathit{e}^{\mathit{i}\mathit{t}} - 1)\Longrightarrow\mathit{\lambda}(\mathit{e}^{\mathit{i}\mathit{t}} - 1)\]
+
+  Exponentiating, we get
+
+  \[\mathit{\varphi}_{\mathit{X}_{\mathit{n}}}(\mathit{t}) = \exp(\mathit{n}\log(1 + \mathit{a}_{\mathit{n}}))\rightarrow\exp(\mathit{\lambda}(\mathit{e}^{\mathit{i}\mathit{t}} - 1))\]
+
+  But by part (a),
+
+  \[\exp(\mathit{\lambda}(\mathit{e}^{\mathit{i}\mathit{t}} - 1)) = \mathit{\varphi}_{\mathit{Y}}(\mathit{t})\]
+
+  Thus for every \(\mathit{t} \in \mathbb{R}\),
+
+  \[\mathit{\varphi}_{\mathit{X}_{\mathit{n}}}(\mathit{t})\rightarrow\mathit{\varphi}_{\mathit{Y}}(\mathit{t})\]
+
+  Since \(\mathit{\varphi}_{\mathit{Y}}\) is the characteristic function of \(\mathit{Y} \sim \text{Pois}(\mathit{\lambda})\), by the uniqueness theorem for characteristic functions, this implies
+
+  \[\mathit{X}_{\mathit{n}}\overset{\mathit{d}}{\rightarrow}\mathit{Y}\]
+\end{itemize}
+
+\end{proof}
+
+\section{Problem 3}\label{hw06-problem-3}
+
+Show that
+
+\[\lim\limits_{\mathit{n}\rightarrow\infty}\int_{0}^{\mathit{n}/2}\frac{2^{\mathit{n}}}{(\mathit{n} - 1)!}\mathit{t}^{\mathit{n} - 1}\mathit{e}^{- 2\mathit{t}}\mathit{d}\mathit{t} = \frac{1}{2}\]
+
+Hint: Observe that the integral is the probability of an event related to a Gamma distribution. Can we apply the central limit theorem?
+
+\begin{proof}
+
+Let
+
+\[\mathit{I}_{\mathit{n}} := \int_{0}^{\mathit{n}/2}\frac{2^{\mathit{n}}}{(\mathit{n} - 1)!}\mathit{t}^{\mathit{n} - 1}\mathit{e}^{- 2\mathit{t}}\,\mathit{d}\mathit{t}\]
+
+Then
+
+\[\mathit{f}_{\mathit{n}}(\mathit{t}) = \frac{2^{\mathit{n}}}{(\mathit{n} - 1)!}\mathit{t}^{\mathit{n} - 1}\mathit{e}^{- 2\mathit{t}}\mathbf{1}_{(0,\infty)}(\mathit{t})\]
+
+is the density of a Gamma distribution with parameters \((\mathit{n},2)\), that is, \(\mathit{T}_{\mathit{n}} \sim \Gamma(\mathit{n},2)\). Hence
+
+\[\mathit{I}_{\mathit{n}} = \mathbb{P}(\mathit{T}_{\mathit{n}} \leq \mathit{n}/2)\]
+
+Now let \(\mathit{X}_{1},\mathit{X}_{2},\ldots\) be i.i.d. random variables with
+
+\[\mathit{X}_{\mathit{i}} \sim \text{Exp}(2)\]
+
+We know that
+
+\[\mathit{T}_{\mathit{n}} = \mathit{X}_{1} + \cdots + \mathit{X}_{\mathit{n}}\]
+
+Also,
+
+\[\mathit{\mu} := \mathbb{E}\lbrack\mathit{X}_{1}\rbrack = \frac{1}{2},\quad\mathit{\sigma}^{2} := \text{Var}(\mathit{X}_{1}) = \frac{1}{4}\]
+
+Therefore,
+
+\[\mathit{I}_{\mathit{n}} = \mathbb{P}(\mathit{X}_{1} + \cdots + \mathit{X}_{\mathit{n}} \leq \mathit{n}/2) = \mathbb{P}\mspace{-18mu}\left( {\frac{\mathit{T}_{\mathit{n}} - \mathit{n}\mathit{\mu}}{\mathit{\sigma}\sqrt{\mathit{n}}} \leq 0} \right)\]
+
+Since \(\mathit{\mu} = 1/2\) and \(\mathit{\sigma} = 1/2\), this is
+
+\[\mathit{I}_{\mathit{n}} = \mathbb{P}\mspace{-18mu}\left( {\frac{\mathit{T}_{\mathit{n}} - \mathit{n}/2}{\sqrt{\mathit{n}}/2} \leq 0} \right)\]
+
+By the Central Limit Theorem,
+
+\[\frac{\mathit{T}_{\mathit{n}} - \mathit{n}\mathit{\mu}}{\mathit{\sigma}\sqrt{\mathit{n}}} = \frac{\mathit{T}_{\mathit{n}} - \mathit{n}/2}{\sqrt{\mathit{n}}/2}\overset{\mathit{d}}{\rightarrow}\mathit{Z},\quad\mathit{Z} \sim \mathit{N}(0,1)\]
+
+Hence, since the standard normal distribution function is continuous at \(0\),
+
+\[\lim\limits_{\mathit{n}\rightarrow\infty}\mathit{I}_{\mathit{n}} = \lim\limits_{\mathit{n}\rightarrow\infty}\mathbb{P}\mspace{-18mu}\left( {\frac{\mathit{T}_{\mathit{n}} - \mathit{n}/2}{\sqrt{\mathit{n}}/2} \leq 0} \right) = \mathbb{P}(\mathit{Z} \leq 0) = \frac{1}{2}\]
+
+Thus
+
+\[\lim\limits_{\mathit{n}\rightarrow\infty}\int_{0}^{\mathit{n}/2}\frac{2^{\mathit{n}}}{(\mathit{n} - 1)!}\mathit{t}^{\mathit{n} - 1}\mathit{e}^{- 2\mathit{t}}\mathit{d}\mathit{t} = \frac{1}{2}\]
+
+\end{proof}
+
+\section{Problem 4}\label{hw06-problem-4}
+
+A casino offers the following random game: A player rolls a fair die once. If the outcome is 2 or 4, then the player wins 3 euros from the casino. If the outcome is \(1,3,5\), then the player loses 4 euros to the casino. If the outcome is 6 , then the player neither wins nor loses. If 90 players play the above game independently, find approximately the probability that the casino wins at least 30 euros in total.
+
+\begin{qlsolution}{Solution}
+
+Let \(\mathit{X}_{\mathit{i}}\) be the gain of the casino from the \(\mathit{i}\)-th player, for \(\mathit{i} = 1,\ldots,90\). Then the random variables \(\mathit{X}_{1},\ldots,\mathit{X}_{90}\) are independent and identically distributed, with
+
+\[\mathit{X}_{\mathit{i}} = \left\{ \begin{matrix}
+{- 3,} & \text{if the player wins 3 euros} \\
+{4,} & \text{if the player loses 4 euros} \\
+{0,} & \text{if the outcome is 6}
+\end{matrix} \right.\]
+
+Since the die is fair, we have
+
+\[\mathbb{P}(\mathit{X}_{\mathit{i}} = - 3) = \frac{2}{6} = \frac{1}{3},\qquad\mathbb{P}(\mathit{X}_{\mathit{i}} = 4) = \frac{3}{6} = \frac{1}{2},\qquad\mathbb{P}(\mathit{X}_{\mathit{i}} = 0) = \frac{1}{6}\]
+
+Let
+
+\[\mathit{S}_{90} = \mathit{X}_{1} + \cdots + \mathit{X}_{90}\]
+
+be the total gain of the casino after 90 players. We want to approximate
+
+\[\mathbb{P}(\mathit{S}_{90} \geq 30)\]
+
+We first compute the mean and variance of \(\mathit{X}_{1}\). The mean is
+
+\[\mathit{\mu} := \mathbb{E}\lbrack\mathit{X}_{1}\rbrack = ( - 3) \cdot \frac{1}{3} + 4 \cdot \frac{1}{2} + 0 \cdot \frac{1}{6} = - 1 + 2 = 1\]
+
+Also,
+
+\[\mathbb{E}\lbrack\mathit{X}_{1}^{2}\rbrack = 9 \cdot \frac{1}{3} + 16 \cdot \frac{1}{2} + 0 = 3 + 8 = 11\]
+
+Hence
+
+\[\mathit{\sigma}^{2} := \text{Var}(\mathit{X}_{1}) = \mathbb{E}\lbrack\mathit{X}_{1}^{2}\rbrack - \mathit{\mu}^{2} = 11 - 1 = 10\]
+
+Therefore,
+
+\[\mathbb{E}\lbrack\mathit{S}_{90}\rbrack = 90\mathit{\mu} = 90,\quad\text{Var}(\mathit{S}_{90}) = 90\mathit{\sigma}^{2} = 900\]
+
+So the standard deviation of \(\mathit{S}_{90}\) is
+
+\[\sqrt{900} = 30\]
+
+By the Central Limit Theorem,
+
+\[\frac{\mathit{S}_{90} - 90}{30} \approx \mathit{N}(0,1)\]
+
+Thus,
+
+\[\mathbb{P}(\mathit{S}_{90} \geq 30) = \mathbb{P}\left( {\frac{\mathit{S}_{90} - 90}{30} \geq \frac{30 - 90}{30}} \right) \approx \mathbb{P}(\mathit{Z} \geq - 2)\]
+
+where \(\mathit{Z} \sim \mathit{N}(0,1)\). Since
+
+\[\mathbb{P}(\mathit{Z} \geq - 2) = \mathbb{P}(\mathit{Z} \leq 2) \approx 0.9772\]
+
+we conclude that
+
+\[\mathbb{P}(\mathit{S}_{90} \geq 30) \approx 0.9772\]
+
+Hence, the probability that the casino wins at least 30 euros in total is approximately 0.9772.
+
+\end{qlsolution}
+
+\section{Problem 5}\label{hw06-problem-5}
+
+Assume that \(\left( \mathit{X}_{\mathit{n}} \right)_{\mathit{n} \in \mathbb{N}}\) is an i.i.d. sequence of random variables such that \(\mathbb{E}\left\lbrack \mathit{X}_{1} \right\rbrack = 0\) and \(\mathbb{E}\left\lbrack \mathit{X}_{1}^{2} \right\rbrack = 1\). Show that
+
+\[\frac{\sum_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}}{\sqrt{\sum_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}^{2}}}\overset{\mathit{d}}{\rightarrow}\mathit{Z},\quad\mathit{Z} \sim \mathit{N}(0,1)\]
+
+\begin{proof}
+
+Let
+
+\[\mathit{S}_{\mathit{n}} := \sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}},\quad\mathit{Q}_{\mathit{n}} := \sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}^{2}\]
+
+We want to show that
+
+\[\frac{\mathit{S}_{\mathit{n}}}{\sqrt{\mathit{Q}_{\mathit{n}}}}\overset{\mathit{d}}{\rightarrow}\mathit{Z},\quad\mathit{Z} \sim \mathit{N}(0,1)\]
+
+First, since \((\mathit{X}_{\mathit{n}})_{\mathit{n} \in \mathbb{N}}\) are i.i.d. with \(\mathbb{E}\lbrack\mathit{X}_{1}\rbrack = 0,\) and \(\mathbb{E}\lbrack\mathit{X}_{1}^{2}\rbrack = 1\), we have \(\text{Var}(\mathit{X}_{1}) = 1\). And thus by the Central Limit Theorem,
+
+\[\frac{\mathit{S}_{\mathit{n}}}{\sqrt{\mathit{n}}}\overset{\mathit{d}}{\rightarrow}\mathit{Z},\quad\mathit{Z} \sim \mathit{N}(0,1)\]
+
+And then, consider \(\mathit{Q}_{\mathit{n}}\). Since \((\mathit{X}_{\mathit{i}}^{2})\) are i.i.d. and \(\mathbb{E}\lbrack\mathit{X}_{1}^{2}\rbrack = 1 < \infty\), by the Law of Large Numbers we have
+
+\[\frac{\mathit{Q}_{\mathit{n}}}{\mathit{n}}\overset{\mathit{P}}{\rightarrow}1\]
+
+By continuity of the square root function,
+
+\[\sqrt{\frac{\mathit{Q}_{\mathit{n}}}{\mathit{n}}}\overset{\mathit{P}}{\rightarrow}1\]
+
+Write
+
+\[\frac{\mathit{S}_{\mathit{n}}}{\sqrt{\mathit{Q}_{\mathit{n}}}} = \frac{\mathit{S}_{\mathit{n}}}{\sqrt{\mathit{n}}} \cdot \frac{1}{\sqrt{\mathit{Q}_{\mathit{n}}/\mathit{n}}}\]
+
+Define
+
+\[\mathit{A}_{\mathit{n}} := \frac{\mathit{S}_{\mathit{n}}}{\sqrt{\mathit{n}}},\quad\mathit{B}_{\mathit{n}} := \frac{1}{\sqrt{\mathit{Q}_{\mathit{n}}/\mathit{n}}}\]
+
+Then we have shown that \(\mathit{A}_{\mathit{n}}\overset{\mathit{d}}{\rightarrow}\mathit{Z}\) and \(\mathit{B}_{\mathit{n}}\overset{\mathit{P}}{\rightarrow}1\).
+
+\textbf{Now we claim that: \(\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}}\overset{\mathit{d}}{\rightarrow}\mathit{Z}\).}
+
+It suffices to show that \(\mathbb{E}\lbrack\mathit{f}(\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}})\rbrack\rightarrow\mathbb{E}\lbrack\mathit{f}(\mathit{Z})\rbrack\) for every bounded continuous function \(\mathit{f}:\mathbb{R}\rightarrow\mathbb{R}\).
+
+Let \(\mathit{f}:\mathbb{R}\rightarrow\mathbb{R}\) be bounded and continuous. Then
+
+\[\mathbb{E}\lbrack\mathit{f}(\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}})\rbrack - \mathbb{E}\lbrack\mathit{f}(\mathit{Z})\rbrack = (\mathbb{E}\lbrack\mathit{f}(\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}})\rbrack - \mathbb{E}\lbrack\mathit{f}(\mathit{A}_{\mathit{n}})\rbrack) + (\mathbb{E}\lbrack\mathit{f}(\mathit{A}_{\mathit{n}})\rbrack - \mathbb{E}\lbrack\mathit{f}(\mathit{Z})\rbrack)\]
+
+Since \(\mathit{A}_{\mathit{n}}\overset{\mathit{d}}{\rightarrow}\mathit{Z}\), the second term converges to \(0\). It remains to show that \(\mathbb{E}\lbrack\mathit{f}(\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}})\rbrack - \mathbb{E}\lbrack\mathit{f}(\mathit{A}_{\mathit{n}})\rbrack\rightarrow 0\).
+
+Observe \(\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}} - \mathit{A}_{\mathit{n}} = \mathit{A}_{\mathit{n}}(\mathit{B}_{\mathit{n}} - 1)\). Because \(\mathit{A}_{\mathit{n}}\overset{\mathit{d}}{\rightarrow}\mathit{Z}\), the sequence \((\mathit{A}_{\mathit{n}})\) is tight. Also, since \(\mathit{B}_{\mathit{n}}\overset{\mathit{P}}{\rightarrow}1\), we have
+
+\[\mathit{B}_{\mathit{n}} - 1\overset{\mathit{P}}{\rightarrow}0\]
+
+It follows that
+
+\[\mathit{A}_{\mathit{n}}(\mathit{B}_{\mathit{n}} - 1) = \mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}} - \mathit{A}_{\mathit{n}}\overset{\mathit{P}}{\rightarrow}0\]
+
+We now show that
+
+\[\mathit{f}(\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}}) - \mathit{f}(\mathit{A}_{\mathit{n}})\overset{\mathit{P}}{\rightarrow}0\]
+
+Fix \(\mathit{\varepsilon} > 0\). Since \((\mathit{A}_{\mathit{n}})\) is tight, there exists \(\mathit{M} > 0\) such that
+
+\[\left. \sup\limits_{\mathit{n} \geq 1}\mathbb{P}( \middle| \mathit{A}_{\mathit{n}} \middle| > \mathit{M}) < \mathit{\varepsilon} \right.\]
+
+Since \(\mathit{f}\) is continuous on the compact interval \(\lbrack - \mathit{M} - 1,\mathit{M} + 1\rbrack\), it is uniformly continuous there. Thus there exists \(\mathit{\delta} > 0\) such that whenever \(\mathit{x},\mathit{y} \in \lbrack - \mathit{M} - 1,\mathit{M} + 1\rbrack\) and \(\left. |\mathit{x} - \mathit{y} \middle| < \mathit{\delta} \right.\), we have
+
+\[\left. |\mathit{f}(\mathit{x}) - \mathit{f}(\mathit{y}) \middle| < \mathit{\varepsilon} \right.\]
+
+Now on the event
+
+\[\left\{ |\mathit{A}_{\mathit{n}} \middle| \leq \mathit{M},\  \middle| \mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}} - \mathit{A}_{\mathit{n}} \middle| < \min(\mathit{\delta},1) \right\}\]
+
+we also have \(\left. |\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}} \middle| \leq \mathit{M} + 1 \right.\), so
+
+\[\left. |\mathit{f}(\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}}) - \mathit{f}(\mathit{A}_{\mathit{n}}) \middle| < \mathit{\varepsilon} \right.\]
+
+Therefore,
+
+\[\left. \mathbb{P}( \middle| \mathit{f}(\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}}) - \mathit{f}(\mathit{A}_{\mathit{n}}) \middle| > \mathit{\varepsilon}) \leq \mathbb{P}( \middle| \mathit{A}_{\mathit{n}} \middle| > \mathit{M}) + \mathbb{P}( \middle| \mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}} - \mathit{A}_{\mathit{n}} \middle| \geq \min(\mathit{\delta},1)) \right.\]
+
+The first term is less than \(\mathit{\varepsilon}\), and the second term tends to \(0\). Hence
+
+\[\mathit{f}(\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}}) - \mathit{f}(\mathit{A}_{\mathit{n}})\overset{\mathit{P}}{\rightarrow}0\]
+
+Since \(\mathit{f}\) is bounded, the random variables \(\mathit{f}(\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}}) - \mathit{f}(\mathit{A}_{\mathit{n}})\) are uniformly bounded. Therefore,
+
+\[\mathbb{E}\lbrack\mathit{f}(\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}}) - \mathit{f}(\mathit{A}_{\mathit{n}})\rbrack\rightarrow 0\]
+
+Combining this with \(\mathbb{E}\lbrack\mathit{f}(\mathit{A}_{\mathit{n}})\rbrack\rightarrow\mathbb{E}\lbrack\mathit{f}(\mathit{Z})\rbrack\), we get
+
+\[\mathbb{E}\lbrack\mathit{f}(\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}})\rbrack\rightarrow\mathbb{E}\lbrack\mathit{f}(\mathit{Z})\rbrack\]
+
+Thus
+
+\[\mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}}\overset{\mathit{d}}{\rightarrow}\mathit{Z}\]
+
+This finishes the proof that
+
+\[\frac{\mathit{S}_{\mathit{n}}}{\sqrt{\mathit{Q}_{\mathit{n}}}} = \mathit{A}_{\mathit{n}}\mathit{B}_{\mathit{n}}\overset{\mathit{d}}{\rightarrow}\mathit{Z}\]
+
+That is,
+
+\[\frac{\sum_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}}{\sqrt{\sum_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}^{2}}}\overset{\mathit{d}}{\rightarrow}\mathit{Z},\quad\mathit{Z} \sim \mathit{N}(0,1)\]
+
+\end{proof}
