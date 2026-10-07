@@ -4,8 +4,6 @@ Thumbs.db
 
 # Editor and temporary files
 .vscode/
-!notes/math/**/.vscode/
-!notes/math/**/.vscode/**
 *~
 *.swp
 *.swo
@@ -54,40 +52,26 @@ node_modules/
 # Disposable local knowledge builds, candidate reviews, deltas, and receipts
 knowledge/build/
 
-# Obsidian community plugins are installed from the official marketplace on each
-# machine. Keep reusable plugin data in Git without republishing bundled code.
-/.obsidian/workspace.json
-/.obsidian/workspace-mobile.json
-/.obsidian/graph.json
-/.obsidian/plugins/*/main.js
-/.obsidian/plugins/*/manifest.json
-/.obsidian/plugins/*/styles.css
-/.obsidian/plugins/obsidian-tinymist/data.json
-
-# Obsidian YOLO contains credentials, OAuth tokens and generated runtimes
-/.obsidian/plugins/yolo/
-/YOLO/
-
-# Obsidian local state and private plugin configuration.
-# Only reviewed Completr and Quick LaTeX preferences are versioned.
-/.obsidian/*
-!/.obsidian/app.json
-!/.obsidian/appearance.json
-!/.obsidian/core-plugins.json
-!/.obsidian/community-plugins.json
-!/.obsidian/hotkeys.json
-!/.obsidian/plugins/
-/.obsidian/workspace*.json
-/.obsidian/graph.json
-/.obsidian/cache/
-/.obsidian/*.local.json
-/.obsidian/secrets.json
-/.obsidian/secret-storage.json
-/.obsidian/plugins/**
-!/.obsidian/plugins/obsidian-completr/
-!/.obsidian/plugins/obsidian-completr/data.json
-!/.obsidian/plugins/obsidian-completr/callout_suggestions.json
-!/.obsidian/plugins/obsidian-completr/latex_commands.json
-!/.obsidian/plugins/quick-latex/
-!/.obsidian/plugins/quick-latex/data.json
-/YOLO/
+# Personal editor, vault and agent environment stays local, at every depth.
+.obsidian/
+.vscode/
+.idea/
+.vs/
+.fleet/
+.zed/
+.history/
+.cursor/
+.windsurf/
+.codex/
+.claude/
+.opencode/
+.pi/
+.omp/
+*.code-workspace
+.ipynb_checkpoints/
+YOLO/
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template

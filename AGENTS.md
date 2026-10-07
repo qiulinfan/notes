@@ -106,8 +106,10 @@ static bundle as a second commit. A dirty checkout is refused.
 ## Obsidian vault
 
 The repository root is an Obsidian vault usable on macOS, Windows, and Linux.
-`.obsidian/` commits app settings, hotkeys, the enabled plugin list, and
-credential-free plugin settings; open the root with **Open folder as vault**.
+Open the root with **Open folder as vault**. Personal vault, editor, and agent
+configuration stays local: never track `.obsidian/`, `.vscode/`, `.codex/`,
+other personal environment directories, or `*.code-workspace` files in this
+public repository. Keep their ignore rules without allowlist exceptions.
 Each machine must trust the vault and allow community plugins, which are
 installed from the official community plugin browser and never committed.
 YOLO's `data.json`, OAuth tokens, and `YOLO/` state are git-ignored and hold
