@@ -7,23 +7,57 @@ the owner asks, and keep development documentation here. The READMEs inside
 
 ## Rules
 
-- This repository is the authority for personal notes (`notes/`) and one personal kgdistiller instance (`.knowledge/`). It is not the kgdistiller product checkout: never vendor or submodule the engine.
+- This repository is the authority for personal notes (`notes/`), the notes
+  website's course registry (`courses.json`), and one personal kgdistiller
+  instance (`.knowledge/`). It is not the kgdistiller product checkout: never
+  vendor or submodule the engine. kgdistiller manages knowledge only; it has no
+  publishing role, and nothing on the website reads `.knowledge/`.
 - The homepage repository `qiulinfan/qiulinfan.github.io` consumes this repository as its `notes` dock and is the only publisher. Never enable GitHub Pages here, and never add site frontend or deployment code here.
-- Refreshing the knowledge instance is an explicit local authoring operation through an installed, selected kgdistiller product revision. `make check` and CI only validate the committed export; they never run the engine.
-- The export manifest records `https://github.com/qiulinfan/notes` as its source repository; keep that value when exporting.
+- `courses.json` (schema `notes-courses-v1`) is the website registry: each
+  course's title, description, subject, course slug, `root`, `files`, `fields`,
+  `topics`, `web`, `publish`, `listed` and `web_artifacts`, plus the field
+  labels. `make web`, the homepage dock and the `create-math-notes` Skill read
+  it. A course is published only through its `publish`, `listed` and
+  `web_artifacts` there. The marker registry covers only published courses,
+  so after changing `publish`, run `make knowledge-registry` and commit the
+  regenerated files in `notes/math/toolchain/generated/`.
+- `.knowledge/sources.json` holds only kgdistiller sources:
+  `{id, root, files, document_type?}` per source and optional top-level
+  `document_types`; kgdistiller rejects any other key. Its identity registry
+  `.knowledge/identities.json` concerns kgdistiller identity only.
+- Knowledge markers are a notes and homepage frontend convention: Typst
+  `#kn[...]`/`#ref[...]`, LaTeX `\kn{...}`/`\knref{...}`, and Markdown
+  `--[[X]]--`/`[[X]]` (resolved by the homepage). A marker's ID is its exact
+  spelling's entry in `notes/math/toolchain/knowledge-ids.json`, otherwise the
+  slug of the spelling; the map also lists the extra spellings Typst
+  references use. These IDs are public `#kn-<id>` anchors, so keep them stable.
+  `notes/math/toolchain/scripts/knowledge_registry.py` generates the committed
+  `notes/math/toolchain/generated/knowledge-registry.typ` and its JSON twin
+  `knowledge-registry.json` (which the homepage reads to link Markdown `[[X]]`
+  references to these anchors) from the published courses' Typst
+  definitions; run `make knowledge-registry` after editing markers, and
+  `make check` verifies both are current. The generator fails only on what
+  the registry needs (published Typst definitions, duplicate Typst names,
+  stale map entries). LaTeX marker problems, such as an unresolved `\knref`,
+  and unresolved published Typst `#ref`s are printed as warnings; a Typst one
+  renders as plain text, and a LaTeX one fails the LaTeX web export.
+  Comments, verbatim-like environments, `\verb`, inactive `\iffalse` branches
+  and macro or environment definitions hold no LaTeX markers.
+- Refreshing the knowledge instance is an explicit local authoring operation through an installed, selected kgdistiller product revision. `make check` and CI never run the engine.
 - `notes/math/toolchain/web.css` is the standalone projection of the homepage palette (`site/src/styles/variables.styl` in the homepage repository). The homepage build verifies the pair, so change both together.
-- A course is published only through `.knowledge/sources.json` (`publish`, `listed`, `web_artifacts`); `make web` derives its build list from that registry.
-- Native LaTeX web export uses `notes/math/toolchain/scripts/export_latex_web.py`
-  and `kgdistiller export latex` with the obsidian-latex-live converter. Follow
-  the selected product's `docs/latex-sources.md`; do not use Typst/Pandoc as this
-  web route or register generated HTML as an authority. Explicit format
-  migration tools remain separate.
+- Native LaTeX web export uses `notes/math/toolchain/scripts/export_latex_web.py`,
+  which sends one document request directly to the obsidian-latex-live
+  converter `latex-live-export` (or the JSON argv in
+  `LATEX_LIVE_EXPORT_COMMAND`) with the LaTeX marker rows from
+  `knowledge_registry.py`. Do not use Typst/Pandoc as this web route or
+  register generated HTML as an authority. Explicit format migration tools
+  remain separate.
 - Validate changes with `make check`.
 - Mathematics course sources have editable, same-directory `.typ` and `.tex`
   companions. Preserve their include structure and explicit knowledge markers.
-  Registered pairs select TeX for knowledge authoring; source and topic globs
-  admit both formats. Converted mathematical name spellings have explicit
-  aliases in `.knowledge/identities.json`, retaining the registered IDs.
+  Registered pairs select TeX for knowledge authoring; source globs admit both
+  formats. Converted mathematical name spellings have explicit aliases in
+  `.knowledge/identities.json`, retaining the registered IDs.
 - `notes/math/toolchain/latex/qlnotes-native.cls` is the shared XeLaTeX class.
   Course entry points load it by relative path; avoid copying classes per course.
   Run `make latex-check` for pair/include auditing and two-pass compilation of
@@ -42,10 +76,10 @@ the owner asks, and keep development documentation here. The READMEs inside
 
 - `notes/`: Markdown, Typst, and LaTeX sources with the shared rendering
   toolchain. Never commit PDFs, course archives, or build outputs.
+- `courses.json`: the website's course registry.
 - `.knowledge/`: one local kgdistiller instance, with its configuration,
-  decisions, private graph, and adopted static export. Its authority, public
-  bundle contract, and adoption flow are in `.knowledge/SPEC.md` and
-  `.knowledge/WORKFLOW.md`.
+  decisions and private graph. Its authority and refresh flow are in
+  `.knowledge/SPEC.md` and `.knowledge/WORKFLOW.md`.
 - The homepage repository builds the site: it reads this repository as the
   `notes` dock and publishes it at `https://qiulinfan.github.io/notes/`.
   Enabling GitHub Pages here would make this project site take over that path
@@ -53,55 +87,43 @@ the owner asks, and keep development documentation here. The READMEs inside
 
 ## Publishing
 
-1. Commit and push to `main`.
-2. The pre-push hook checks the registered sources. When they changed, it syncs
-   the private graph, refreshes the static export, commits automatically, and
-   stops the push; run `git push` again.
-3. CI runs `make check`: export validation, the source policy, and the Typst
-   web build of published courses.
-4. When the checks pass, CI triggers the homepage Pages workflow, which rebuilds
+1. Commit and push to `main`. There is no export, adoption step or pre-push
+   hook.
+2. CI runs `make check`: the source policy, the knowledge-marker registry
+   freshness check, and the Typst web build of published courses.
+3. When the checks pass, CI triggers the homepage Pages workflow, which rebuilds
    from the latest `main` here.
 
-Step 4 needs the repository secret `HOMEPAGE_DISPATCH_TOKEN`, a fine-grained
+Step 3 needs the repository secret `HOMEPAGE_DISPATCH_TOKEN`, a fine-grained
 personal access token scoped to `qiulinfan/qiulinfan.github.io` with only
 Actions read and write; the owner replaces it when it expires. A failed check
 triggers no homepage build, so the site keeps its last successful deployment.
 Local preview needs no push: the homepage dev server reads the sibling
 `../notes` working copy.
 
-Run `make hooks-install` once per machine to enable the pre-push hook. A dirty
-worktree, sync results that need human review, and changes outside the expected
-generated directories fail closed; files outside the source registry are never
-discovered or ingested.
-
 ## Checks and builds
 
-`make check` runs what CI runs. `make web` runs `make release` for every course
-in `.knowledge/sources.json` that is published and has `web_artifacts`. The
+`make check` runs what CI runs: `notes-source-check`,
+`knowledge-registry-check` and `web`. `make web` runs `make release` for every
+course in `courses.json` that is published and has `web_artifacts`. The
 Typst version is pinned once, as `TYPST_VERSION` in the `Makefile`; this
-repository's CI and the homepage build both read it.
+repository's CI and the homepage build both read it. Run the toolchain tests
+with `python3 -m unittest discover -s notes/math/toolchain/tests`.
 
 ## Refreshing the knowledge instance
 
-Only knowledge authoring or adopting a new product version needs the installed
-kgdistiller CLI:
+Only knowledge authoring needs the installed kgdistiller CLI:
 
 ```sh
 make knowledge-build
 make knowledge-authoring-check
-
-kgdistiller --repo-root . export site \
-  --output .knowledge/export/site \
-  --product-commit <full-kgdistiller-commit> \
-  --source-repository https://github.com/qiulinfan/notes \
-  --replace
-make knowledge-check
+kgdistiller --repo-root . export obsidian
 ```
 
-Before exporting, commit the sources, the registry, and the private graph as
-one clean commit; the manifest pins that source commit and the clean
-kgdistiller commit that ran the export. After validation, commit the four-file
-static bundle as a second commit. A dirty checkout is refused.
+The last command refreshes the Obsidian plugin's graph feed under the ignored
+`.knowledge/build/obsidian/`. Nothing syncs the private graph automatically;
+refresh it before committing source changes whose knowledge should be current.
+None of this affects the website.
 
 ## Obsidian vault
 

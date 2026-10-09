@@ -1,4 +1,4 @@
-.PHONY: check latex-check typst-version web hooks-install notes-source-check knowledge-export-check knowledge-check knowledge-build knowledge-subject knowledge-course knowledge-file knowledge-authoring-check knowledge-search knowledge-context knowledge-agent-status knowledge-candidate knowledge-align knowledge-compare knowledge-propose knowledge-ingest-plan knowledge-ingest-apply knowledge-serve
+.PHONY: check latex-check typst-version web notes-source-check knowledge-registry knowledge-registry-check knowledge-build knowledge-file knowledge-authoring-check knowledge-search knowledge-context knowledge-agent-status knowledge-candidate knowledge-align knowledge-compare knowledge-propose knowledge-ingest-plan knowledge-ingest-apply
 
 # The single Typst pin for local checks, this repository's CI, and the homepage build.
 TYPST_VERSION := 0.15.1
@@ -6,10 +6,10 @@ TYPST_VERSION := 0.15.1
 KGDISTILLER ?= kgdistiller
 KGDISTILLER_INSTANCE := $(KGDISTILLER) --repo-root .
 
-# Course roots whose standalone web pages the site publishes, read from the source registry.
-PUBLISHED_WEB_ROOTS = $(shell python3 -c 'import json; print(" ".join(s["root"] for s in json.load(open(".knowledge/sources.json"))["sources"] if s["publish"] and s.get("web_artifacts")))')
+# Course roots whose standalone web pages the site publishes, read from the course registry.
+PUBLISHED_WEB_ROOTS = $(shell python3 -c 'import json; print(" ".join(c["root"] for c in json.load(open("courses.json"))["courses"] if c["publish"] and c.get("web_artifacts")))')
 
-check: knowledge-check web
+check: notes-source-check knowledge-registry-check web
 
 latex-check:
 	@python3 notes/math/toolchain/scripts/check_native_tex.py
@@ -20,28 +20,17 @@ typst-version:
 web:
 	@for root in $(PUBLISHED_WEB_ROOTS); do $(MAKE) -C "$$root" release || exit 1; done
 
-hooks-install:
-	@scripts/install-git-hooks.sh
-
 notes-source-check:
 	@python3 notes/scripts/check_source_policy.py --repo-root .
 
-knowledge-export-check:
-	@python3 .knowledge/export/site/verify_export.py .knowledge/export/site
-	@node tests/knowledge-export.test.mjs
+knowledge-registry:
+	@python3 notes/math/toolchain/scripts/knowledge_registry.py
 
-knowledge-check: notes-source-check knowledge-export-check
+knowledge-registry-check:
+	@python3 notes/math/toolchain/scripts/knowledge_registry.py --check
 
 knowledge-build:
 	@$(KGDISTILLER_INSTANCE) sync
-
-knowledge-subject:
-	@test -n "$(SUBJECT)" || (echo '用法: make knowledge-subject SUBJECT=math' && exit 1)
-	@$(KGDISTILLER_INSTANCE) sync --subject "$(SUBJECT)"
-
-knowledge-course:
-	@test -n "$(COURSE)" || (echo '用法: make knowledge-course COURSE=measure-theory' && exit 1)
-	@$(KGDISTILLER_INSTANCE) sync --course "$(COURSE)"
 
 knowledge-file:
 	@test -n "$(FILE)" || (echo '用法: make knowledge-file FILE=notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.typ' && exit 1)
@@ -92,6 +81,3 @@ knowledge-ingest-apply:
 	@test -n "$(REQUEST)" || (echo 'REQUEST 不能为空' && exit 1)
 	@test -n "$(RECEIPT)" || (echo 'RECEIPT 不能为空' && exit 1)
 	@$(KGDISTILLER_INSTANCE) ingest apply "$(REQUEST)" --receipt "$(RECEIPT)"
-
-knowledge-serve:
-	@$(KGDISTILLER_INSTANCE) serve

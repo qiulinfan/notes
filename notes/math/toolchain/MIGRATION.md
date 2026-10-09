@@ -106,8 +106,8 @@ acceptance path:
 - active TikZ count equals the number of authored CeTZ diagrams;
 - `make export` succeeds and emits one `.tex` and `.md` per level-one chapter;
 - the main and secondary web checks succeed;
-- the adopted static export verifier and repository `make knowledge-check`
-  succeed without running kgdistiller.
+- `make knowledge-registry-check` (after `make knowledge-registry`) and the
+  repository `make check` succeed without running kgdistiller.
 
 Stop after these commands pass. Do not create PDFs or contact sheets,
 independently compile exported LaTeX, or run broad visual regressions unless the

@@ -1,0 +1,1904 @@
+{
+  "schema": "notes-knowledge-registry-v1",
+  "entries": [
+    {
+      "names": [
+        "a Borel measure on $\\(0\\,oo\\)times S^(n - 1)$"
+      ],
+      "id": "a-borel-measure-on-0-infty-times-s-n-1",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-a-borel-measure-on-0-infty-times-s-n-1"
+    },
+    {
+      "names": [
+        "使用 #strong[a sum of indicator functions of measurable sets] 来定义\nsimple function"
+      ],
+      "id": "a-sum-of-indicator-functions-of-measurable-sets-simple-function",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-a-sum-of-indicator-functions-of-measurable-sets-simple-function"
+    },
+    {
+      "names": [
+        "absolute continuity of signed measures"
+      ],
+      "id": "absolute-continuity-of-signed-measures",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-absolute-continuity-of-signed-measures"
+    },
+    {
+      "names": [
+        "absolutely continuous 的性质"
+      ],
+      "id": "absolutely-continuous",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-absolutely-continuous"
+    },
+    {
+      "names": [
+        "absolutely continuous function"
+      ],
+      "id": "absolutely-continuous-function",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-absolutely-continuous-function"
+    },
+    {
+      "names": [
+        "absolutely continuous function on a cpt interval"
+      ],
+      "id": "absolutely-continuous-function-on-a-cpt-interval",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-absolutely-continuous-function-on-a-cpt-interval"
+    },
+    {
+      "names": [
+        "additivity of Poisson distribution"
+      ],
+      "id": "additivity-of-poisson-distribution",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-additivity-of-poisson-distribution"
+    },
+    {
+      "names": [
+        "algebra of sets"
+      ],
+      "id": "algebra-of-sets",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-algebra-of-sets"
+    },
+    {
+      "names": [
+        "almost everywhere"
+      ],
+      "id": "almost-everywhere",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-almost-everywhere"
+    },
+    {
+      "names": [
+        "another criterion for Banach space"
+      ],
+      "id": "another-criterion-for-banach-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-another-criterion-for-banach-space"
+    },
+    {
+      "names": [
+        "approximate an open set by disjoint interior cubes"
+      ],
+      "id": "approximate-an-open-set-by-disjoint-interior-cubes",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-approximate-an-open-set-by-disjoint-interior-cubes"
+    },
+    {
+      "names": [
+        "approximating a nonneg measurable function by simple function"
+      ],
+      "id": "approximating-a-nonneg-measurable-function-by-simple-function",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-approximating-a-nonneg-measurable-function-by-simple-function"
+    },
+    {
+      "names": [
+        "addition and multiplication preserve measurability"
+      ],
+      "id": "arithmetic-preserves-measurability",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-arithmetic-preserves-measurability"
+    },
+    {
+      "names": [
+        "associativity of product measure"
+      ],
+      "id": "associativity-of-product-measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-associativity-of-product-measure"
+    },
+    {
+      "names": [
+        "average"
+      ],
+      "id": "average",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-average"
+    },
+    {
+      "names": [
+        "Banach space"
+      ],
+      "id": "banach-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-banach-space"
+    },
+    {
+      "names": [
+        "Bayes theorem"
+      ],
+      "id": "bayes-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-bayes-theorem"
+    },
+    {
+      "names": [
+        "Berry-Esseen Theorem"
+      ],
+      "id": "berry-esseen-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-berry-esseen-theorem"
+    },
+    {
+      "names": [
+        "Binomial Theorem"
+      ],
+      "id": "binomial-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-binomial-theorem"
+    },
+    {
+      "names": [
+        "Borel--Cantelli Lemma"
+      ],
+      "id": "borel-cantelli-lemma",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-borel-cantelli-lemma"
+    },
+    {
+      "names": [
+        "以 Borel measurable 的方式组合起多个 random variables"
+      ],
+      "id": "borel-measurable-random-variables",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-borel-measurable-random-variables"
+    },
+    {
+      "names": [
+        "Borel $sigma$-algebra defined on a topological space"
+      ],
+      "id": "borel-sigma-algebra-defined-on-a-topological-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-borel-sigma-algebra-defined-on-a-topological-space"
+    },
+    {
+      "names": [
+        "bounded linear functional"
+      ],
+      "id": "bounded-linear-functional",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-bounded-linear-functional"
+    },
+    {
+      "names": [
+        "$B V$ 是一个 complex vector space"
+      ],
+      "id": "bv-complex-vector-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-bv-complex-vector-space"
+    },
+    {
+      "names": [
+        "哪些函数一定 $B V$ or $B V\\(I\\)$"
+      ],
+      "id": "bv-or-bv-i",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-bv-or-bv-i"
+    },
+    {
+      "names": [
+        "$C_c\\(X\\)$"
+      ],
+      "id": "c-c-x",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-c-c-x"
+    },
+    {
+      "names": [
+        "$C_c\\(X\\)subset L^1\\(mu\\)$ 是一个 dense linear subspace"
+      ],
+      "id": "c-c-x-subset-l-1-mu-dense-linear-subspace",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-c-c-x-subset-l-1-mu-dense-linear-subspace"
+    },
+    {
+      "names": [
+        "Carathéodory theorem"
+      ],
+      "id": "caratheodory-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-caratheodory-theorem"
+    },
+    {
+      "names": [
+        "Cauchy-Schwarz inequality"
+      ],
+      "id": "cauchy-schwarz-inequality",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-cauchy-schwarz-inequality"
+    },
+    {
+      "names": [
+        "cdf 一定是 $N B V$ 的"
+      ],
+      "id": "cdf-nbv",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-cdf-nbv"
+    },
+    {
+      "names": [
+        "$L_0^2\\(Omega\\,cal(F)\\,bb(P)\\)$ 为一个 Hilbert space, with covariance as\nan inner product"
+      ],
+      "id": "centered-l2-hilbert-space-under-covariance",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-centered-l2-hilbert-space-under-covariance"
+    },
+    {
+      "names": [
+        "zero-centered square integrable random variables\n$L_0^2\\(Omega\\,cal(F)\\,bb(P)\\)$"
+      ],
+      "id": "centered-square-integrable-random-variables",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-centered-square-integrable-random-variables"
+    },
+    {
+      "names": [
+        "characteristic (indicator) function"
+      ],
+      "id": "characteristic-indicator-function",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-characteristic-indicator-function"
+    },
+    {
+      "names": [
+        "characterization for Lipschitz ctn"
+      ],
+      "id": "characterization-for-lipschitz-ctn",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-characterization-for-lipschitz-ctn"
+    },
+    {
+      "names": [
+        "characterization of $mu_F perp m$ 和 $mu_F lt.double m$, for\n$F in N B V$"
+      ],
+      "id": "characterization-of-mu-f-perp-m-mu-f-ll-m-for-f-in-nbv",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-characterization-of-mu-f-perp-m-mu-f-ll-m-for-f-in-nbv"
+    },
+    {
+      "names": [
+        "Chebyshev's inequality"
+      ],
+      "id": "chebyshev-inequality",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-chebyshev-inequality"
+    },
+    {
+      "names": [
+        "combinations"
+      ],
+      "id": "combinations",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-combinations"
+    },
+    {
+      "names": [
+        "combinations with repetition"
+      ],
+      "id": "combinations-with-repetition",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-combinations-with-repetition"
+    },
+    {
+      "names": [
+        "complete Fubini-Tonelli"
+      ],
+      "id": "complete-fubini-tonelli",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-complete-fubini-tonelli"
+    },
+    {
+      "names": [
+        "complete measure space"
+      ],
+      "id": "complete-measure-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-complete-measure-space"
+    },
+    {
+      "names": [
+        "complex measure"
+      ],
+      "id": "complex-measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-complex-measure"
+    },
+    {
+      "names": [
+        "complex-valued integrable function"
+      ],
+      "id": "complex-valued-integrable-function",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-complex-valued-integrable-function"
+    },
+    {
+      "names": [
+        "\\(complex-valued) measurable functions"
+      ],
+      "id": "complex-valued-measurable-functions",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-complex-valued-measurable-functions"
+    },
+    {
+      "names": [
+        "composition preserves measurability"
+      ],
+      "id": "composition-preserves-measurability",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-composition-preserves-measurability"
+    },
+    {
+      "names": [
+        "computing variance"
+      ],
+      "id": "computing-variance",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-computing-variance"
+    },
+    {
+      "names": [
+        "conditional distribution"
+      ],
+      "id": "conditional-distribution",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-conditional-distribution"
+    },
+    {
+      "names": [
+        "conditional expectation"
+      ],
+      "id": "conditional-expectation",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-conditional-expectation"
+    },
+    {
+      "names": [
+        "conditional probability"
+      ],
+      "id": "conditional-probability",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-conditional-probability"
+    },
+    {
+      "names": [
+        "conditional probability space"
+      ],
+      "id": "conditional-probability-space-and-trace-sigma-algebra",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-conditional-probability-space-and-trace-sigma-algebra"
+    },
+    {
+      "names": [
+        "对于互为 conjugate exponent 的 $p\\,q$, $L^p$ 是 $L^q$ 的 dual space"
+      ],
+      "id": "conjugate-exponent-p-q-l-p-l-q-dual-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-conjugate-exponent-p-q-l-p-l-q-dual-space"
+    },
+    {
+      "names": [
+        "construct outer measure out of an \\\"elementary length function\\\""
+      ],
+      "id": "construct-outer-measure-out-of-an-elementary-length-function",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-construct-outer-measure-out-of-an-elementary-length-function"
+    },
+    {
+      "names": [
+        "continuity from below and above for signed measures"
+      ],
+      "id": "continuity-of-signed-measures",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-continuity-of-signed-measures"
+    },
+    {
+      "names": [
+        "continuous joint cdf"
+      ],
+      "id": "continuous-joint-cdf",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-continuous-joint-cdf"
+    },
+    {
+      "names": [
+        "continuous random variable"
+      ],
+      "id": "continuous-random-variable",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-continuous-random-variable"
+    },
+    {
+      "names": [
+        "continuous random variable 的 expectation 和 variance"
+      ],
+      "id": "continuous-random-variable-expectation-variance",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-continuous-random-variable-expectation-variance"
+    },
+    {
+      "names": [
+        "continuous random vector"
+      ],
+      "id": "continuous-random-vector-continuous-joint-cdf",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-continuous-random-vector-continuous-joint-cdf"
+    },
+    {
+      "names": [
+        "convergence in distribution"
+      ],
+      "id": "convergence-in-distribution",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-convergence-in-distribution"
+    },
+    {
+      "names": [
+        "convergence in $L^oo$ $arrow.l.r.double$uniform convergence a.e."
+      ],
+      "id": "convergence-in-l-infty-iffuniform-convergence-a-e",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-convergence-in-l-infty-iffuniform-convergence-a-e"
+    },
+    {
+      "names": [
+        "correlation"
+      ],
+      "id": "correlation",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-correlation"
+    },
+    {
+      "names": [
+        "covariance"
+      ],
+      "id": "covariance",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-covariance"
+    },
+    {
+      "names": [
+        "covariance is a positive-semidefinite symmetric bilinear form"
+      ],
+      "id": "covariance-positive-semidefinite-bilinear-form",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-covariance-positive-semidefinite-bilinear-form"
+    },
+    {
+      "names": [
+        "Criterion for $L^p$ convergence"
+      ],
+      "id": "criterion-for-l-p-convergence",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-criterion-for-l-p-convergence"
+    },
+    {
+      "names": [
+        "De Moivre–Laplace theorem"
+      ],
+      "id": "de-moivre-laplace-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-de-moivre-laplace-theorem"
+    },
+    {
+      "names": [
+        "decomposing probability of intersection of events"
+      ],
+      "id": "decomposing-probability-of-intersection-of-events",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-decomposing-probability-of-intersection-of-events"
+    },
+    {
+      "names": [
+        "density of a set at a point"
+      ],
+      "id": "density-of-a-set-at-a-point",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-density-of-a-set-at-a-point"
+    },
+    {
+      "names": [
+        "$C_c^0\\(bb(R)^n\\)$ is dense in $L^p\\(bb(R)\\,m\\)$ for $1 lt.eq p < oo$"
+      ],
+      "id": "density-of-compactly-supported-continuous-functions-in-lp",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-density-of-compactly-supported-continuous-functions-in-lp"
+    },
+    {
+      "names": [
+        "density of simple functions in $L^1\\(mu\\)$"
+      ],
+      "id": "density-of-simple-functions-in-l-1-mu",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-density-of-simple-functions-in-l-1-mu"
+    },
+    {
+      "names": [
+        "discrete random variable"
+      ],
+      "id": "discrete-random-variable",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-discrete-random-variable"
+    },
+    {
+      "names": [
+        "discrete random variable 的 expectation 和 variance"
+      ],
+      "id": "discrete-random-variable-expectation-variance",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-discrete-random-variable-expectation-variance"
+    },
+    {
+      "names": [
+        "discrete RV independence 的 characterization"
+      ],
+      "id": "discrete-rv-independence-characterization",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-discrete-rv-independence-characterization"
+    },
+    {
+      "names": [
+        "distribution function 的性质"
+      ],
+      "id": "distribution-function",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-distribution-function"
+    },
+    {
+      "names": [
+        "distribution function (也称 #strong[cumulative distribution function,\ncdf])",
+        "distribution function (也称 #strong[cumulative distribution function, cdf])"
+      ],
+      "id": "distribution-function-cumulative-distribution-function-cdf",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-distribution-function-cumulative-distribution-function-cdf"
+    },
+    {
+      "names": [
+        "distribution function $F_X$ determines distribution $bb(P)^X$"
+      ],
+      "id": "distribution-function-f-x-determines-distribution-mathbb-p-x",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-distribution-function-f-x-determines-distribution-mathbb-p-x"
+    },
+    {
+      "names": [
+        "distribution function is increasing and right ctn"
+      ],
+      "id": "distribution-function-is-increasing-and-right-ctn",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-distribution-function-is-increasing-and-right-ctn"
+    },
+    {
+      "names": [
+        "distribution function of $mu$"
+      ],
+      "id": "distribution-function-of-mu",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-distribution-function-of-mu"
+    },
+    {
+      "names": [
+        "用 distribution ($X$ 的 push-forward measure) 计算 expectation"
+      ],
+      "id": "distribution-x-push-forward-measure-expectation",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-distribution-x-push-forward-measure-expectation"
+    },
+    {
+      "names": [
+        "dominated convergence theorem"
+      ],
+      "id": "dominated-convergence-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-dominated-convergence-theorem"
+    },
+    {
+      "names": [
+        "dual space"
+      ],
+      "id": "dual-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-dual-space"
+    },
+    {
+      "names": [
+        "dual space is always Banach"
+      ],
+      "id": "dual-space-is-always-banach",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-dual-space-is-always-banach"
+    },
+    {
+      "names": [
+        "Dynkin's $pi - lambda$ theorem"
+      ],
+      "id": "dynkins-pi-lambda-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-dynkins-pi-lambda-theorem"
+    },
+    {
+      "names": [
+        "easier Fubini"
+      ],
+      "id": "easier-fubini",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-easier-fubini"
+    },
+    {
+      "names": [
+        "Egoroff's Theorem"
+      ],
+      "id": "egoroff-s-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-egoroff-s-theorem"
+    },
+    {
+      "names": [
+        "$ell^oo$"
+      ],
+      "id": "ell-infty",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-ell-infty"
+    },
+    {
+      "names": [
+        "essential supremum"
+      ],
+      "id": "essential-supremum",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-essential-supremum"
+    },
+    {
+      "names": [
+        "event space"
+      ],
+      "id": "event-space",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-event-space"
+    },
+    {
+      "names": [
+        "every measure space can be completed"
+      ],
+      "id": "every-measure-space-can-be-completed",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-every-measure-space-can-be-completed"
+    },
+    {
+      "names": [
+        "expectation 的性质"
+      ],
+      "id": "expectation",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-expectation"
+    },
+    {
+      "names": [
+        "expectation and variance of random variable"
+      ],
+      "id": "expectation-and-variance-of-random-variable",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-expectation-and-variance-of-random-variable"
+    },
+    {
+      "names": [
+        "exponential distribution"
+      ],
+      "id": "exponential-distribution",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-exponential-distribution"
+    },
+    {
+      "names": [
+        "$F in B V$ right ctn $arrow.r.double.long T_F$ right ctn"
+      ],
+      "id": "f-in-bv-right-ctn-implies-t-f-right-ctn",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-f-in-bv-right-ctn-implies-t-f-right-ctn"
+    },
+    {
+      "names": [
+        "$F in N B V$ abs ctn $arrow.l.r.double$ $mu_F lt.double m$"
+      ],
+      "id": "f-in-nbv-abs-ctn-iff-mu-f-ll-m",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-f-in-nbv-abs-ctn-iff-mu-f-ll-m"
+    },
+    {
+      "names": [
+        "#strong[fast $L^1$-conv $arrow.r.double.long$ a.e. conv.]"
+      ],
+      "id": "fast-l-1-conv-implies-a-e-conv",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-fast-l-1-conv-implies-a-e-conv"
+    },
+    {
+      "names": [
+        "Fatou's Lemma"
+      ],
+      "id": "fatou-lemma",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-fatou-lemma"
+    },
+    {
+      "names": [
+        "FTC-II for Lebesgue integral on a cpt interval"
+      ],
+      "id": "ftc-ii-for-lebesgue-integral-on-a-cpt-interval",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-ftc-ii-for-lebesgue-integral-on-a-cpt-interval"
+    },
+    {
+      "names": [
+        "FTC in Lebesgue"
+      ],
+      "id": "ftc-in-lebesgue",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-ftc-in-lebesgue"
+    },
+    {
+      "names": [
+        "Fubini for series and integral"
+      ],
+      "id": "fubini-for-series-and-integral",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-fubini-for-series-and-integral"
+    },
+    {
+      "names": [
+        "Fubini's Theorem"
+      ],
+      "id": "fubini-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-fubini-theorem"
+    },
+    {
+      "names": [
+        "Fubini-Tonelli for $m^n$"
+      ],
+      "id": "fubini-tonelli-for-m-n",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-fubini-tonelli-for-m-n"
+    },
+    {
+      "names": [
+        "function of bounded variation"
+      ],
+      "id": "function-of-bounded-variation",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-function-of-bounded-variation"
+    },
+    {
+      "names": [
+        "function of bounded variation on an interval"
+      ],
+      "id": "function-of-bounded-variation-on-an-interval",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-function-of-bounded-variation-on-an-interval"
+    },
+    {
+      "names": [
+        "$G_delta\\,F_sigma$ sets"
+      ],
+      "id": "g-delta-f-sigma-sets",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-g-delta-f-sigma-sets"
+    },
+    {
+      "names": [
+        "Gamma distribution as a sum of independent exponentials"
+      ],
+      "id": "gamma-as-sum-of-independent-exponentials",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-gamma-as-sum-of-independent-exponentials"
+    },
+    {
+      "names": [
+        "$Gamma$-distribution"
+      ],
+      "id": "gamma-distribution",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-gamma-distribution"
+    },
+    {
+      "names": [
+        "general change of variable theorem"
+      ],
+      "id": "general-change-of-variable-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-general-change-of-variable-theorem"
+    },
+    {
+      "names": [
+        "Generalized DCT"
+      ],
+      "id": "generalized-dct",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-generalized-dct"
+    },
+    {
+      "names": [
+        "generalized LDT"
+      ],
+      "id": "generalized-ldt",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-generalized-ldt"
+    },
+    {
+      "names": [
+        "h-interval"
+      ],
+      "id": "h-interval",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-h-interval"
+    },
+    {
+      "names": [
+        "h-intervals form an algebra and generate borel set"
+      ],
+      "id": "h-intervals-form-an-algebra-and-generate-borel-set",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-h-intervals-form-an-algebra-and-generate-borel-set"
+    },
+    {
+      "names": [
+        "Hahn Decomposition Theorem"
+      ],
+      "id": "hahn-decomposition-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-hahn-decomposition-theorem"
+    },
+    {
+      "names": [
+        "Hahn–Kolmogorov theorem"
+      ],
+      "id": "hahn-kolmogorov-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-hahn-kolmogorov-theorem"
+    },
+    {
+      "names": [
+        "Hardy-Littlewood maximal function"
+      ],
+      "id": "hardy-littlewood-maximal-function",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-hardy-littlewood-maximal-function"
+    },
+    {
+      "names": [
+        "HL maximal function 是 measurable 的"
+      ],
+      "id": "hl-maximal-function-measurable",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-hl-maximal-function-measurable"
+    },
+    {
+      "names": [
+        "HL maximal theorem"
+      ],
+      "id": "hl-maximal-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-hl-maximal-theorem"
+    },
+    {
+      "names": [
+        "Hölder's ineq"
+      ],
+      "id": "holder-inequality",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-holder-inequality"
+    },
+    {
+      "names": [
+        "积分收敛 $arrow.r.double.long$ 发散点集零测, 以及 support $sigma$-finite"
+      ],
+      "id": "implies-support-sigma-finite",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-implies-support-sigma-finite"
+    },
+    {
+      "names": [
+        "inclusion-exclusion principle"
+      ],
+      "id": "inclusion-exclusion-principle",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-inclusion-exclusion-principle"
+    },
+    {
+      "names": [
+        "inclusion properties of generated $sigma$-algebra"
+      ],
+      "id": "inclusion-properties-of-generated-sigma-algebra",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-inclusion-properties-of-generated-sigma-algebra"
+    },
+    {
+      "names": [
+        "inclusion relation between $L^p$ spaces (when base space is finite\nmeasure)"
+      ],
+      "id": "inclusion-relation-between-l-p-spaces-when-base-space-is-finite",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-inclusion-relation-between-l-p-spaces-when-base-space-is-finite"
+    },
+    {
+      "names": [
+        "#strong[任意 increasing 且 right ctn 函数都是某个 regular Borel measure\n的 distribution 函数]"
+      ],
+      "id": "increasing-right-ctn-regular-borel-measure-distribution",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-increasing-right-ctn-regular-borel-measure-distribution"
+    },
+    {
+      "names": [
+        "independence 下 conditional density 不变"
+      ],
+      "id": "independence-conditional-density",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-independence-conditional-density"
+    },
+    {
+      "names": [
+        "independence 下 conditional distribution 不变"
+      ],
+      "id": "independence-conditional-distribution-density-expectation",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-independence-conditional-distribution-density-expectation"
+    },
+    {
+      "names": [
+        "independence 下 conditional expectation 不变"
+      ],
+      "id": "independence-conditional-expectation",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-independence-conditional-expectation"
+    },
+    {
+      "names": [
+        "independence $arrow.r.double.long$ expectation is closed under product"
+      ],
+      "id": "independence-implies-expectation-is-closed-under-product",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-independence-implies-expectation-is-closed-under-product"
+    },
+    {
+      "names": [
+        "independence of events"
+      ],
+      "id": "independence-of-events",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-independence-of-events"
+    },
+    {
+      "names": [
+        "independence of two events 的等价定义"
+      ],
+      "id": "independence-of-two-events",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-independence-of-two-events"
+    },
+    {
+      "names": [
+        "independence via conditional distribution:\nmarginal distribution"
+      ],
+      "id": "independence-via-conditional-distribution",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-independence-via-conditional-distribution"
+    },
+    {
+      "names": [
+        "independence via generated sigma-algebras"
+      ],
+      "id": "independence-via-generated-sigma-algebras",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-independence-via-generated-sigma-algebras"
+    },
+    {
+      "names": [
+        "independence via joint-density factorization\nmarginal densities"
+      ],
+      "id": "independence-via-joint-density-factorization",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-independence-via-joint-density-factorization"
+    },
+    {
+      "names": [
+        "independence via product distribution\nof marginal distributions"
+      ],
+      "id": "independence-via-product-distribution",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-independence-via-product-distribution"
+    },
+    {
+      "names": [
+        "independent 严格强于 uncorrelated"
+      ],
+      "id": "independent-uncorrelated",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-independent-uncorrelated"
+    },
+    {
+      "names": [
+        "#strong[inner regularity]"
+      ],
+      "id": "inner-regularity",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-inner-regularity"
+    },
+    {
+      "names": [
+        "integral of simple functions 的性质"
+      ],
+      "id": "integral-of-simple-functions",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-integral-of-simple-functions"
+    },
+    {
+      "names": [
+        "integral restricted to a measurable set"
+      ],
+      "id": "integral-restricted-to-a-measurable-set",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-integral-restricted-to-a-measurable-set"
+    },
+    {
+      "names": [
+        "integration on a subset"
+      ],
+      "id": "integration-on-a-subset",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-integration-on-a-subset"
+    },
+    {
+      "names": [
+        "integration w.r.t. signed measure"
+      ],
+      "id": "integration-w-r-t-signed-measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-integration-w-r-t-signed-measure"
+    },
+    {
+      "names": [
+        "Jensen's inequality"
+      ],
+      "id": "jensen-inequality",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-jensen-inequality"
+    },
+    {
+      "names": [
+        "joint cdf"
+      ],
+      "id": "joint-cdf",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-joint-cdf"
+    },
+    {
+      "names": [
+        "joint distribution"
+      ],
+      "id": "joint-distribution-and-joint-cdf",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-joint-distribution-and-joint-cdf"
+    },
+    {
+      "names": [
+        "joint pdf 和 joint cdf 的性质"
+      ],
+      "id": "joint-pdf-joint-cdf",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-joint-pdf-joint-cdf"
+    },
+    {
+      "names": [
+        "jointly continuous RVs 之间所有 defined 处总有 conditional density"
+      ],
+      "id": "jointly-continuous-rvs-defined-conditional-density",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-jointly-continuous-rvs-defined-conditional-density"
+    },
+    {
+      "names": [
+        "Jordan decomposition for $F in B V$"
+      ],
+      "id": "jordan-decomposition-for-f-in-bv",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-jordan-decomposition-for-f-in-bv"
+    },
+    {
+      "names": [
+        "Jordan decomposition theorem"
+      ],
+      "id": "jordan-decomposition-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-jordan-decomposition-theorem"
+    },
+    {
+      "names": [
+        "Kolmogorov definition of conditional probability"
+      ],
+      "id": "kolmogorov-definition-of-conditional-probability",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-kolmogorov-definition-of-conditional-probability"
+    },
+    {
+      "names": [
+        "$L^1$-convergence ($arrow.r.double.long$conv. in measure)\n$arrow.r.double.long$ subseq a.e. conv."
+      ],
+      "id": "l-1-convergence-impliesconv-in-measure-implies-subseq-a-e-conv",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-l-1-convergence-impliesconv-in-measure-implies-subseq-a-e-conv"
+    },
+    {
+      "names": [
+        "$\\(L^1\\(mu\\)\\,\\|\\|dot.op\\|\\|\\)$ 是一个 Banach space"
+      ],
+      "id": "l-1-mu-cdot-banach-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-l-1-mu-cdot-banach-space"
+    },
+    {
+      "names": [
+        "$L^1\\(mu\\)$ 以 integral w.r.t. $mu$ 作为 norm 是一个 normed VS"
+      ],
+      "id": "l-1-mu-integral-w-r-t-mu-norm-normed-vs",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-l-1-mu-integral-w-r-t-mu-norm-normed-vs"
+    },
+    {
+      "names": [
+        "$L^1\\(mu\\)$ space"
+      ],
+      "id": "l-1-mu-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-l-1-mu-space"
+    },
+    {
+      "names": [
+        "$L^oo$ space"
+      ],
+      "id": "l-infty-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-l-infty-space"
+    },
+    {
+      "names": [
+        "每个 $L^m$ 函数都是一个 $L^n$ 函数和一个 $L^r$ 函数的和\n($0 < n < m < r lt.eq oo$)"
+      ],
+      "id": "l-m-l-n-l-r-0-n-m-r-leq-infty",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-l-m-l-n-l-r-0-n-m-r-leq-infty"
+    },
+    {
+      "names": [
+        "$L^p$ ($1 lt.eq p lt.eq oo$) is Banach"
+      ],
+      "id": "l-p-1-leq-p-leq-infty-is-banach",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-l-p-1-leq-p-leq-infty-is-banach"
+    },
+    {
+      "names": [
+        "$L^p$ space ($1 lt.eq p < oo$) is Banach"
+      ],
+      "id": "l-p-space-1-leq-p-infty-is-banach",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-l-p-space-1-leq-p-infty-is-banach"
+    },
+    {
+      "names": [
+        "$L_p$ space is a vector space"
+      ],
+      "id": "l-p-space-is-a-vector-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-l-p-space-is-a-vector-space"
+    },
+    {
+      "names": [
+        "$L_p$ spaces"
+      ],
+      "id": "l-p-spaces",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-l-p-spaces"
+    },
+    {
+      "names": [
+        "$L^(+)$ space and integration on it"
+      ],
+      "id": "l-space-and-integration-on-it",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-l-space-and-integration-on-it"
+    },
+    {
+      "names": [
+        "law of total expectation"
+      ],
+      "id": "law-of-total-expectation",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-law-of-total-expectation"
+    },
+    {
+      "names": [
+        "law of total probability"
+      ],
+      "id": "law-of-total-probability",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-law-of-total-probability"
+    },
+    {
+      "names": [
+        "LDT meets LRNT: computing RN derivative on $bb(R)^n$"
+      ],
+      "id": "ldt-meets-lrnt-computing-rn-derivative-on-mathbb-r-n",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-ldt-meets-lrnt-computing-rn-derivative-on-mathbb-r-n"
+    },
+    {
+      "names": [
+        "Lebesgue Decomposition Theorem"
+      ],
+      "id": "lebesgue-decomposition-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-lebesgue-decomposition-theorem"
+    },
+    {
+      "names": [
+        "Lebesgue differentiation theorem"
+      ],
+      "id": "lebesgue-differentiation-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-lebesgue-differentiation-theorem"
+    },
+    {
+      "names": [
+        "Lebesgue measurable functions, Borel measurable functions"
+      ],
+      "id": "lebesgue-measurable-functions-borel-measurable-functions",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-lebesgue-measurable-functions-borel-measurable-functions"
+    },
+    {
+      "names": [
+        "Lebesgue measure"
+      ],
+      "id": "lebesgue-measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-lebesgue-measure"
+    },
+    {
+      "names": [
+        "Lebesgue measure and integral is invariant under translation"
+      ],
+      "id": "lebesgue-measure-and-integral-is-invariant-under-translation",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-lebesgue-measure-and-integral-is-invariant-under-translation"
+    },
+    {
+      "names": [
+        "Lebesgue measure and integration is scaled $\\|det T\\|$ by linear map"
+      ],
+      "id": "lebesgue-measure-and-integration-is-scaled-det-t-by-linear-map",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-lebesgue-measure-and-integration-is-scaled-det-t-by-linear-map"
+    },
+    {
+      "names": [
+        "Lebesgue measure is invariant under rotation"
+      ],
+      "id": "lebesgue-measure-is-invariant-under-rotation",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-lebesgue-measure-is-invariant-under-rotation"
+    },
+    {
+      "names": [
+        "Lebesgue-Radon-Nikodym Theorem"
+      ],
+      "id": "lebesgue-radon-nikodym-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-lebesgue-radon-nikodym-theorem"
+    },
+    {
+      "names": [
+        "Lebesgue's characterization of Riemann integrability"
+      ],
+      "id": "lebesgue-s-characterization-of-riemann-integrability",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-lebesgue-s-characterization-of-riemann-integrability"
+    },
+    {
+      "names": [
+        "Lebesgue set"
+      ],
+      "id": "lebesgue-set",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-lebesgue-set"
+    },
+    {
+      "names": [
+        "Lebesgue-Stieltjes measurable 的等价条件"
+      ],
+      "id": "lebesgue-stieltjes-measurable",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-lebesgue-stieltjes-measurable"
+    },
+    {
+      "names": [
+        "Lebesgue-Stieltjes measure associated with $F$"
+      ],
+      "id": "lebesgue-stieltjes-measure-associated-with-f",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-lebesgue-stieltjes-measure-associated-with-f"
+    },
+    {
+      "names": [
+        "liminf version of MCT"
+      ],
+      "id": "liminf-version-of-mct",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-liminf-version-of-mct"
+    },
+    {
+      "names": [
+        "Lindeberg-Levy Central Limit Theorem"
+      ],
+      "id": "lindeberg-levy-central-limit-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-lindeberg-levy-central-limit-theorem"
+    },
+    {
+      "names": [
+        "linear functional bounded $arrow.l.r.double$ ctn at $0$"
+      ],
+      "id": "linear-functional-bounded-iff-ctn-at-0",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-linear-functional-bounded-iff-ctn-at-0"
+    },
+    {
+      "names": [
+        "locally integrable"
+      ],
+      "id": "locally-integrable",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-locally-integrable"
+    },
+    {
+      "names": [
+        "LS measure space 的 $L^1$ space 上的 density of step functions"
+      ],
+      "id": "ls-measure-space-l-1-space-density-of-step-functions",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-ls-measure-space-l-1-space-density-of-step-functions"
+    },
+    {
+      "names": [
+        "Lusin's Theorem"
+      ],
+      "id": "lusin-s-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-lusin-s-theorem"
+    },
+    {
+      "names": [
+        "mapping from Euclidean coord to polar coord"
+      ],
+      "id": "mapping-from-euclidean-coord-to-polar-coord",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-mapping-from-euclidean-coord-to-polar-coord"
+    },
+    {
+      "names": [
+        "marginal distribution"
+      ],
+      "id": "marginal-distribution",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-marginal-distribution"
+    },
+    {
+      "names": [
+        "通过 joint distribution 的极限得到 marginal distribution"
+      ],
+      "id": "marginal-distribution-from-joint-limits",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-marginal-distribution-from-joint-limits"
+    },
+    {
+      "names": [
+        "Markov's inequality"
+      ],
+      "id": "markov-inequality",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-markov-inequality"
+    },
+    {
+      "names": [
+        "$cal(L)$ preserves translation and scaling"
+      ],
+      "id": "mathcal-l-preserves-translation-and-scaling",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-mathcal-l-preserves-translation-and-scaling"
+    },
+    {
+      "names": [
+        "$\\(cal(M)\\,cal(N)\\)$-measurable function"
+      ],
+      "id": "mathcal-m-mathcal-n-measurable-function",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-mathcal-m-mathcal-n-measurable-function"
+    },
+    {
+      "names": [
+        "measurable space"
+      ],
+      "id": "measurable-space-and-measure-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-measurable-space-and-measure-space"
+    },
+    {
+      "names": [
+        "measurable subset preserves sign"
+      ],
+      "id": "measurable-subset-preserves-sign",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-measurable-subset-preserves-sign"
+    },
+    {
+      "names": [
+        "measure"
+      ],
+      "id": "measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-measure"
+    },
+    {
+      "names": [
+        "measure is finitely additive"
+      ],
+      "id": "measure-is-finitely-additive",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-measure-is-finitely-additive"
+    },
+    {
+      "names": [
+        "measure space"
+      ],
+      "id": "measure-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-measure-space"
+    },
+    {
+      "names": [
+        "memoryless property of exponential distribution"
+      ],
+      "id": "memoryless-property-of-exponential-distribution",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-memoryless-property-of-exponential-distribution"
+    },
+    {
+      "names": [
+        "Minkowski inequality"
+      ],
+      "id": "minkowski-inequality",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-minkowski-inequality"
+    },
+    {
+      "names": [
+        "modes of convergence for measurable functions"
+      ],
+      "id": "modes-of-convergence-for-functions",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-modes-of-convergence-for-functions"
+    },
+    {
+      "names": [
+        "RV 序列的三种收敛方式"
+      ],
+      "id": "modes-of-convergence-for-random-variables",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-modes-of-convergence-for-random-variables"
+    },
+    {
+      "names": [
+        "moment generating function"
+      ],
+      "id": "moment-generating-function",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-moment-generating-function"
+    },
+    {
+      "names": [
+        "monotone class"
+      ],
+      "id": "monotone-class",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-monotone-class"
+    },
+    {
+      "names": [
+        "monotone class lemma"
+      ],
+      "id": "monotone-class-lemma",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-monotone-class-lemma"
+    },
+    {
+      "names": [
+        "monotone convergence theorem"
+      ],
+      "id": "monotone-convergence-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-monotone-convergence-theorem"
+    },
+    {
+      "names": [
+        "Monotone Differentiation Theorem"
+      ],
+      "id": "monotone-differentiation-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-monotone-differentiation-theorem"
+    },
+    {
+      "names": [
+        "$mu_F$ 的 total variation measure $=$ $mu_(T_F)$"
+      ],
+      "id": "mu-f-total-variation-measure-mu-t-f",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-mu-f-total-variation-measure-mu-t-f"
+    },
+    {
+      "names": [
+        "$mu^(*)$-measurable"
+      ],
+      "id": "mu-measurable",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-mu-measurable"
+    },
+    {
+      "names": [
+        "multinomial coefficient"
+      ],
+      "id": "multinomial-coefficient",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-multinomial-coefficient"
+    },
+    {
+      "names": [
+        "#strong[mutual independence] of multiple random variables"
+      ],
+      "id": "mutual-independence-of-multiple-random-variables",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-mutual-independence-of-multiple-random-variables"
+    },
+    {
+      "names": [
+        "mutually singular"
+      ],
+      "id": "mutually-singular",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-mutually-singular"
+    },
+    {
+      "names": [
+        "由 $n$ 个 random variable 构成的 vector 是一个 random vector"
+      ],
+      "id": "n-random-variable-vector-random-vector",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-n-random-variable-vector-random-vector"
+    },
+    {
+      "names": [
+        "NBV"
+      ],
+      "id": "nbv",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-nbv"
+    },
+    {
+      "names": [
+        "norm of dual space: 即 #strong[dual norm]"
+      ],
+      "id": "norm-of-dual-space-dual-norm",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-norm-of-dual-space-dual-norm"
+    },
+    {
+      "names": [
+        "null set"
+      ],
+      "id": "nul-set-subnull-set-almost-everywhere",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-nul-set-subnull-set-almost-everywhere"
+    },
+    {
+      "names": [
+        "open-interval covers for Lebesgue–Stieltjes measure"
+      ],
+      "id": "open-interval-covers-for-lebesgue-stieltjes-measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-open-interval-covers-for-lebesgue-stieltjes-measure"
+    },
+    {
+      "names": [
+        "outer measure"
+      ],
+      "id": "outer-measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-outer-measure"
+    },
+    {
+      "names": [
+        "#strong[outer regularity]"
+      ],
+      "id": "outer-regularity",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-outer-regularity"
+    },
+    {
+      "names": [
+        "permutations"
+      ],
+      "id": "permutations",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-permutations"
+    },
+    {
+      "names": [
+        "pmf 是 distribution 对于 counting measure $mu_S$ 的 Radon-Nikodym 导数"
+      ],
+      "id": "pmf-distribution-counting-measure-mu-s-radon-nikodym",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-pmf-distribution-counting-measure-mu-s-radon-nikodym"
+    },
+    {
+      "names": [
+        "positive, negative, null set 内的局部性质和普通的 measure space 一样"
+      ],
+      "id": "positive-negative-null-set-measure-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-positive-negative-null-set-measure-space"
+    },
+    {
+      "names": [
+        "positive set, negative set, null set"
+      ],
+      "id": "positive-set-negative-set-null-set",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-positive-set-negative-set-null-set"
+    },
+    {
+      "names": [
+        "premeasure"
+      ],
+      "id": "premeasure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-premeasure"
+    },
+    {
+      "names": [
+        "premeasure extension via induced outer measure"
+      ],
+      "id": "premeasure-extension-via-induced-outer-measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-premeasure-extension-via-induced-outer-measure"
+    },
+    {
+      "names": [
+        "probability density function 的性质"
+      ],
+      "id": "probability-density-function",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-probability-density-function"
+    },
+    {
+      "names": [
+        "probability density function (pdf)"
+      ],
+      "id": "probability-density-function-pdf",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-probability-density-function-pdf"
+    },
+    {
+      "names": [
+        "probability distribution"
+      ],
+      "id": "probability-distribution",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-probability-distribution"
+    },
+    {
+      "names": [
+        "probability mass function (pmf)"
+      ],
+      "id": "probability-mass-function-pmf",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-probability-mass-function-pmf"
+    },
+    {
+      "names": [
+        "probability measure"
+      ],
+      "id": "probability-measure",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-probability-measure"
+    },
+    {
+      "names": [
+        "probability space"
+      ],
+      "id": "probability-space",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-probability-space"
+    },
+    {
+      "names": [
+        "product $sigma$-algebra"
+      ],
+      "id": "product-sigma-algebra",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-product-sigma-algebra"
+    },
+    {
+      "names": [
+        "properties of correlation"
+      ],
+      "id": "properties-of-correlation",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-properties-of-correlation"
+    },
+    {
+      "names": [
+        "properties of measure"
+      ],
+      "id": "properties-of-measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-properties-of-measure"
+    },
+    {
+      "names": [
+        "Radon-Nikodym derivative"
+      ],
+      "id": "radon-nikodym-derivative",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-radon-nikodym-derivative"
+    },
+    {
+      "names": [
+        "Radon-Nikodym Theorem"
+      ],
+      "id": "radon-nikodym-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-radon-nikodym-theorem"
+    },
+    {
+      "names": [
+        "random variable"
+      ],
+      "id": "random-variable",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-random-variable"
+    },
+    {
+      "names": [
+        "一个 random variable 是 continuous random variable 的充要条件"
+      ],
+      "id": "random-variable-continuous-random-variable",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-random-variable-continuous-random-variable"
+    },
+    {
+      "names": [
+        "两个 random variables 之和的 variance"
+      ],
+      "id": "random-variables-variance",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-random-variables-variance"
+    },
+    {
+      "names": [
+        "random vector"
+      ],
+      "id": "random-vector",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-random-vector"
+    },
+    {
+      "names": [
+        "一个 random vector 的每个分量都是一个 random variable"
+      ],
+      "id": "random-vector-random-variable",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-random-vector-random-variable"
+    },
+    {
+      "names": [
+        "real-valued integrable function"
+      ],
+      "id": "real-valued-integrable-function",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-real-valued-integrable-function"
+    },
+    {
+      "names": [
+        "\\(real-valued) measurable functions"
+      ],
+      "id": "real-valued-measurable-functions",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-real-valued-measurable-functions"
+    },
+    {
+      "names": [
+        "regular Borel measure"
+      ],
+      "id": "regular-borel-measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-regular-borel-measure"
+    },
+    {
+      "names": [
+        "regular Borel measure: 蕴含了 regularity"
+      ],
+      "id": "regular-borel-measure-regularity",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-regular-borel-measure-regularity"
+    },
+    {
+      "names": [
+        "regular signed/complex measure"
+      ],
+      "id": "regular-signed-complex-measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-regular-signed-complex-measure"
+    },
+    {
+      "names": [
+        "regularities of $cal(L)^n$"
+      ],
+      "id": "regularities-of-mathcal-l-n",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-regularities-of-mathcal-l-n"
+    },
+    {
+      "names": [
+        "Riemann integral 是 Lebesgue integral 的特殊情况"
+      ],
+      "id": "riemann-integral-lebesgue-integral",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-riemann-integral-lebesgue-integral"
+    },
+    {
+      "names": [
+        "row reduction"
+      ],
+      "id": "row-reduction",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-row-reduction"
+    },
+    {
+      "names": [
+        "sample space"
+      ],
+      "id": "sample-space",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-sample-space"
+    },
+    {
+      "names": [
+        "semi-norm, norm"
+      ],
+      "id": "semi-norm-norm",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-semi-norm-norm"
+    },
+    {
+      "names": [
+        "sequential behavior of real-valued measurable function"
+      ],
+      "id": "sequential-behavior-of-real-valued-measurable-function",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-sequential-behavior-of-real-valued-measurable-function"
+    },
+    {
+      "names": [
+        "series: convergence 和 absolute convergence"
+      ],
+      "id": "series-convergence-absolute-convergence",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-series-convergence-absolute-convergence"
+    },
+    {
+      "names": [
+        "$sigma$-algebra",
+        "sigma-algebra"
+      ],
+      "id": "sigma-algebra",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-sigma-algebra"
+    },
+    {
+      "names": [
+        "$sigma$-algebra closure properties: set difference, symmetric difference\nand countable intersection"
+      ],
+      "id": "sigma-algebra-closure-properties",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-sigma-algebra-closure-properties"
+    },
+    {
+      "names": [
+        "$sigma$-algebra generated by a random variable (measurable function)"
+      ],
+      "id": "sigma-algebra-generated-by-a-random-variable-measurable-function",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-sigma-algebra-generated-by-a-random-variable-measurable-function"
+    },
+    {
+      "names": [
+        "$sigma$-algebra generated by a subset"
+      ],
+      "id": "sigma-algebra-generated-by-a-subset",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-sigma-algebra-generated-by-a-subset"
+    },
+    {
+      "names": [
+        "任意 $sigma$-algebra 的 intersection 仍是 $sigma$-algebra"
+      ],
+      "id": "sigma-algebra-intersection-sigma-algebra",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-sigma-algebra-intersection-sigma-algebra"
+    },
+    {
+      "names": [
+        "$sigma$-finite measure"
+      ],
+      "id": "sigma-finite-measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-sigma-finite-measure"
+    },
+    {
+      "names": [
+        "signed measure"
+      ],
+      "id": "signed-measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-signed-measure"
+    },
+    {
+      "names": [
+        "simple approximation of complex measurable functions"
+      ],
+      "id": "simple-approximation-of-complex-measurable-functions",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-simple-approximation-of-complex-measurable-functions"
+    },
+    {
+      "names": [
+        "simple function"
+      ],
+      "id": "simple-function",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-simple-function"
+    },
+    {
+      "names": [
+        "singular continuous random variable"
+      ],
+      "id": "singular-continuous-random-variable",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-singular-continuous-random-variable"
+    },
+    {
+      "names": [
+        "slightly more general version of LRNT meets LDT"
+      ],
+      "id": "slightly-more-general-version-of-lrnt-meets-ldt",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-slightly-more-general-version-of-lrnt-meets-ldt"
+    },
+    {
+      "names": [
+        "strong Law of Large Numbers"
+      ],
+      "id": "strong-law-of-large-numbers",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-strong-law-of-large-numbers"
+    },
+    {
+      "names": [
+        "subnull set"
+      ],
+      "id": "subnull-set",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-subnull-set"
+    },
+    {
+      "names": [
+        "${ upright(\"complex Borel measures on \") bb(R) } tilde.eq N B V$"
+      ],
+      "id": "text-complex-borel-measures-on-mathbb-r-simeq-nbv",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-text-complex-borel-measures-on-mathbb-r-simeq-nbv"
+    },
+    {
+      "names": [
+        "$tilde(L)\\(X\\,mu\\,bb(R)\\)$ 以及$tilde(L)\\(X\\,mu\\,bb(C)\\)$ space"
+      ],
+      "id": "tilde-l-x-mu-mathbb-r-tilde-l-x-mu-mathbb-c-space",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-tilde-l-x-mu-mathbb-r-tilde-l-x-mu-mathbb-c-space"
+    },
+    {
+      "names": [
+        "Tonelli for sets"
+      ],
+      "id": "tonelli-for-sets",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-tonelli-for-sets"
+    },
+    {
+      "names": [
+        "Tonelli for sum and integrals"
+      ],
+      "id": "tonelli-for-sum-and-integrals",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-tonelli-for-sum-and-integrals"
+    },
+    {
+      "names": [
+        "Tonelli"
+      ],
+      "id": "tonelli-theorem",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-tonelli-theorem"
+    },
+    {
+      "names": [
+        "total variation function"
+      ],
+      "id": "total-variation-function",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-total-variation-function"
+    },
+    {
+      "names": [
+        "total variation measure"
+      ],
+      "id": "total-variation-measure",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-total-variation-measure"
+    },
+    {
+      "names": [
+        "trace $sigma$-algebra"
+      ],
+      "id": "trace-sigma-algebra",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-trace-sigma-algebra"
+    },
+    {
+      "names": [
+        "uncorrelated random variables"
+      ],
+      "id": "uncorrelated-random-variables",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-uncorrelated-random-variables"
+    },
+    {
+      "names": [
+        "uniform distribution"
+      ],
+      "id": "uniform-distribution",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-uniform-distribution"
+    },
+    {
+      "names": [
+        "unique smallest $sigma$-algebra containing a collection of subsets"
+      ],
+      "id": "unique-smallest-sigma-algebra-containing-a-collection-of-subsets",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-unique-smallest-sigma-algebra-containing-a-collection-of-subsets"
+    },
+    {
+      "names": [
+        "Vitali-type covering lemma"
+      ],
+      "id": "vitali-covering-lemma",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-vitali-covering-lemma"
+    },
+    {
+      "names": [
+        "weak Law of Large Numbers"
+      ],
+      "id": "weak-law-of-large-numbers",
+      "url": "https://qiulinfan.github.io/notes/math/probability/#kn-weak-law-of-large-numbers"
+    },
+    {
+      "names": [
+        "why it is called \\\"absolutely continuous\\\""
+      ],
+      "id": "why-it-is-called-absolutely-continuous",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-why-it-is-called-absolutely-continuous"
+    },
+    {
+      "names": [
+        "$x$-section, $y$-section"
+      ],
+      "id": "x-section-y-section",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-x-section-y-section"
+    },
+    {
+      "names": [
+        "Young's inequality for products"
+      ],
+      "id": "young-s-inequality-for-products",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-young-s-inequality-for-products"
+    },
+    {
+      "names": [
+        "非负函数积分为 0 等价于几乎处处为 0"
+      ],
+      "id": "zero-integral-iff-zero-almost-everywhere",
+      "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-zero-integral-iff-zero-almost-everywhere"
+    }
+  ]
+}

@@ -16,11 +16,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: 24
-
       - name: Read the Typst pin
         id: typst
         run: echo "version=$(make -s typst-version)" >> "$GITHUB_OUTPUT"
@@ -30,7 +25,7 @@ jobs:
         with:
           typst-version: ${{ steps.typst.outputs.version }}
 
-      - name: Check the knowledge export, source policy, and published web pages
+      - name: Check the source policy, knowledge marker registry, and published web pages
         run: make check
 
   rebuild-homepage:

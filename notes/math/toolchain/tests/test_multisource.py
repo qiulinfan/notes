@@ -28,6 +28,9 @@ assert WEB_SPEC is not None and WEB_SPEC.loader is not None
 export_latex_web = importlib.util.module_from_spec(WEB_SPEC)
 sys.modules[WEB_SPEC.name] = export_latex_web
 WEB_SPEC.loader.exec_module(export_latex_web)
+# The real converter integration runs only when its argv is configured; the
+# mocked tests clear the variable so they always exercise the default command.
+REAL_CONVERTER = os.environ.get("LATEX_LIVE_EXPORT_COMMAND")
 
 
 class MultiSourceExportTest(unittest.TestCase):
@@ -108,6 +111,54 @@ class MultiSourceExportTest(unittest.TestCase):
         self.assertIn('#include "chapters/01-measure.typ"', rendered_main)
 
 
+class FakeConverter:
+    """Stand-in for subprocess.Popen that records one converter request."""
+
+    def __init__(self, stdout: str, *, returncode: int = 0, stderr: str = "", timeout: bool = False) -> None:
+        self.stdout = stdout
+        self.returncode = returncode
+        self.stderr = stderr
+        self.timeout = timeout
+        self.command: list[str] | None = None
+        self.options: dict[str, object] = {}
+        self.request: dict[str, object] | None = None
+        self.source_text = ""
+        self.timeouts: list[object] = []
+        self.terminated = False
+
+    def __call__(self, command: list[str], **options: object) -> "FakeConverter":
+        self.command = command
+        self.options = options
+        return self
+
+    def communicate(self, input: str | None = None, timeout: object = None) -> tuple[str, str]:
+        self.timeouts.append(timeout)
+        if input is not None:
+            self.request = json.loads(input)
+            self.source_text = Path(str(self.request["source"])).read_text(encoding="utf-8")
+            if self.timeout:
+                raise subprocess.TimeoutExpired(self.command or [], timeout or 0)
+        return self.stdout, self.stderr
+
+    def terminate(self) -> None:
+        self.terminated = True
+
+    def kill(self) -> None:
+        raise AssertionError("the converter should stop after SIGTERM")
+
+
+def converter_result(**changes: object) -> str:
+    result: dict[str, object] = {
+        "schema": "latex-live-html-result-v1",
+        "operation": "document",
+        "html": '<!doctype html><html><body><span id="kn-measure-space" data-ql-kn="measure-space">'
+                'measure space</span></body></html>',
+        "report": {},
+    }
+    result.update(changes)
+    return json.dumps(result)
+
+
 class DirectLatexWebTest(unittest.TestCase):
     def setUp(self) -> None:
         self.temporary = tempfile.TemporaryDirectory(prefix="qlnotes-direct-latex-")
@@ -115,20 +166,25 @@ class DirectLatexWebTest(unittest.TestCase):
         self.source = self.repo / "notes/math/demo/knowledge.tex"
         self.source.parent.mkdir(parents=True)
         shutil.copyfile(Path(__file__).parent / "fixtures/knowledge.tex", self.source)
-        registry = self.repo / ".knowledge/sources.json"
-        registry.parent.mkdir()
-        registry.write_text(json.dumps({
-            "schema": "kgdistiller-sources-v1",
-            "fields": [{"id": "analysis", "label": "Analysis", "text": "Synthetic fixture."}],
-            "sources": [{
-                "id": "math:demo", "subject": "math", "course": "demo",
+        (self.repo / "courses.json").write_text(json.dumps({
+            "schema": "notes-courses-v1",
+            "fields": [],
+            "courses": [{
+                "id": "math:demo", "title": "Demo", "description": "Synthetic fixture.",
+                "subject": "math", "course": "demo",
                 "root": "notes/math/demo", "files": ["*.tex"],
-                "fields": ["analysis"],
+                "fields": [], "topics": [], "publish": False, "listed": False,
                 "web": "https://example.test/demo",
             }],
         }), encoding="utf-8")
+        ids = self.repo / "notes/math/toolchain/knowledge-ids.json"
+        ids.parent.mkdir(parents=True)
+        ids.write_text("{}\n", encoding="utf-8")
         self.output = self.repo / "build/index.html"
-        self.wrapper_text = ""
+        environment = patch.dict(os.environ)
+        environment.start()
+        self.addCleanup(environment.stop)
+        os.environ.pop("LATEX_LIVE_EXPORT_COMMAND", None)
 
     def tearDown(self) -> None:
         self.temporary.cleanup()
@@ -139,62 +195,77 @@ class DirectLatexWebTest(unittest.TestCase):
             title="LaTeX Knowledge Fixture", course="Demo & Tests", author="Test_One",
         )
 
-    def fake_export(self, command: list[str], **options: object) -> subprocess.CompletedProcess[str]:
-        self.assertEqual(["--repo-root", str(self.repo), "export", "latex"], command[1:5])
-        self.assertEqual(["--output", str(self.output), "--replace"], command[6:])
-        self.assertTrue(options["capture_output"])
-        self.wrapper_text = Path(command[5]).read_text(encoding="utf-8")
-        self.output.parent.mkdir(parents=True, exist_ok=True)
-        self.output.write_text(
-            '<!doctype html><html><body><a id="kn-measure-space" data-ql-kn="measure-space"></a>'
-            '<a data-ql-ref="measure-space" href="#kn-measure-space">measure space</a></body></html>',
-            encoding="utf-8",
-        )
-        return subprocess.CompletedProcess(command, 0, json.dumps({
-            "schema": "kgdistiller-latex-html-export-v1",
-            "status": "exported", "output": str(self.output),
-        }), "")
+    def run_with(self, converter: FakeConverter, sources: list[Path] | None = None) -> FakeConverter:
+        with patch.object(export_latex_web.subprocess, "Popen", side_effect=converter) as popen:
+            self.export(sources)
+        self.assertEqual(1, popen.call_count)
+        return converter
 
-    def test_fragments_use_direct_cli_and_temporary_article_wrapper(self) -> None:
+    def test_fragments_send_one_document_request_with_notes_markers(self) -> None:
         original = self.source.read_bytes()
-        with patch.object(export_latex_web.shutil, "which", return_value="/tools/kgdistiller"), \
-                patch.object(export_latex_web.subprocess, "run", side_effect=self.fake_export) as run:
-            self.export()
-        self.assertEqual(1, run.call_count)
-        self.assertIn(r"\documentclass{article}", self.wrapper_text)
-        self.assertIn(r"\newtheorem{definition}{Definition}", self.wrapper_text)
-        self.assertIn(r"\title{LaTeX Knowledge Fixture\\Demo \& Tests}", self.wrapper_text)
-        self.assertIn(r"\author{Test\_One}", self.wrapper_text)
-        self.assertIn(rf'\input{{"{self.source.as_posix()}"}}', self.wrapper_text)
+        converter = self.run_with(FakeConverter(converter_result()))
+        self.assertEqual(["latex-live-export"], converter.command)
+        self.assertNotIn("shell", converter.options)
+        self.assertEqual(subprocess.PIPE, converter.options["stdin"])
+        request = converter.request
+        assert request is not None
+        self.assertEqual("latex-live-html-request-v1", request["schema"])
+        self.assertEqual("document", request["operation"])
+        self.assertEqual(str(self.repo), request["project_root"])
+        self.assertEqual([{
+            "name": "measure space", "id": "measure-space",
+            "url": "https://example.test/demo/#kn-measure-space",
+        }], request["markers"])
+        self.assertEqual(600, converter.timeouts[0])
+        wrapper = Path(str(request["source"]))
+        self.assertEqual(self.repo / "build/work", wrapper.parent.parent)
+        self.assertFalse(wrapper.exists())
+        self.assertIn(r"\documentclass{article}", converter.source_text)
+        self.assertIn(r"\newtheorem{definition}{Definition}", converter.source_text)
+        self.assertIn(r"\title{LaTeX Knowledge Fixture\\Demo \& Tests}", converter.source_text)
+        self.assertIn(r"\author{Test\_One}", converter.source_text)
+        self.assertIn(rf'\input{{"{self.source.as_posix()}"}}', converter.source_text)
         self.assertEqual(original, self.source.read_bytes())
-        self.assertFalse(Path(run.call_args.args[0][5]).exists())
-        self.assertTrue(self.output.is_file())
+        self.assertIn('data-ql-kn="measure-space"', self.output.read_text(encoding="utf-8"))
+        self.assertEqual(["index.html"], [path.name for path in self.output.parent.iterdir() if path.is_file()])
 
-    def test_complete_root_is_forwarded_without_template_restrictions(self) -> None:
+    def test_complete_root_is_forwarded_to_the_configured_command(self) -> None:
         self.source.write_text(
             r"\documentclass{book}" + "\n" + r"\input{chapters/one}" + "\n",
             encoding="utf-8",
         )
         original = self.source.read_bytes()
-        with patch.dict(os.environ, {"KGDISTILLER_BIN": "custom-kgd"}), \
-                patch.object(export_latex_web.shutil, "which", return_value="/tools/custom-kgd") as which, \
-                patch.object(export_latex_web.subprocess, "run", side_effect=self.fake_export) as run:
-            self.export()
-        which.assert_called_once_with("custom-kgd")
-        self.assertEqual(str(self.source), run.call_args.args[0][5])
+        os.environ["LATEX_LIVE_EXPORT_COMMAND"] = json.dumps(["node", "/tools/latex live/export.mjs"])
+        converter = self.run_with(FakeConverter(converter_result()))
+        self.assertEqual(["node", "/tools/latex live/export.mjs"], converter.command)
+        assert converter.request is not None
+        self.assertEqual(str(self.source), converter.request["source"])
+        self.assertEqual([], converter.request["markers"])
         self.assertEqual(original, self.source.read_bytes())
-        self.assertNotIn("LaTeX Knowledge Fixture", self.wrapper_text)
+        self.assertNotIn("LaTeX Knowledge Fixture", converter.source_text)
+
+    def test_command_override_must_be_a_nonempty_string_list(self) -> None:
+        for value in ("not JSON", "[]", '"latex-live-export"', "[1]", '[""]'):
+            with self.subTest(value=value), \
+                    patch.object(export_latex_web.subprocess, "Popen") as popen:
+                os.environ["LATEX_LIVE_EXPORT_COMMAND"] = value
+                with self.assertRaisesRegex(export_latex_web.LatexWebError, "LATEX_LIVE_EXPORT_COMMAND"):
+                    self.export()
+                popen.assert_not_called()
 
     def test_cjk_fragment_selects_portable_fonts_and_keeps_quoted_source_path(self) -> None:
         source = self.source.with_name("知识 片段.tex")
         self.source.rename(source)
         self.source = source
         source.write_text("\\kn{测度空间}\n", encoding="utf-8")
-        with patch.object(export_latex_web.shutil, "which", return_value="/tools/kgdistiller"), \
-                patch.object(export_latex_web.subprocess, "run", side_effect=self.fake_export):
-            self.export()
-        self.assertIn(r"\usepackage[UTF8,fontset=fandol]{ctex}", self.wrapper_text)
-        self.assertIn(rf'\input{{"{source.as_posix()}"}}', self.wrapper_text)
+        (self.repo / "notes/math/toolchain/knowledge-ids.json").write_text(
+            json.dumps({"测度空间": "measure-space"}, ensure_ascii=False), encoding="utf-8",
+        )
+        converter = self.run_with(FakeConverter(converter_result()))
+        self.assertIn(r"\usepackage[UTF8,fontset=fandol]{ctex}", converter.source_text)
+        self.assertIn(rf'\input{{"{source.as_posix()}"}}', converter.source_text)
+        assert converter.request is not None
+        self.assertEqual("测度空间", converter.request["markers"][0]["name"])
         self.assertEqual("\\kn{测度空间}\n", source.read_text(encoding="utf-8"))
 
     def test_cjk_metadata_selects_portable_fonts_for_ascii_fragment(self) -> None:
@@ -203,64 +274,66 @@ class DirectLatexWebTest(unittest.TestCase):
         )
         self.assertIn(r"\usepackage[UTF8,fontset=fandol]{ctex}", wrapper)
 
-    def test_provider_rejection_is_not_reported_as_success(self) -> None:
-        with patch.object(export_latex_web.shutil, "which", return_value="/tools/kgdistiller"), \
-                patch.object(export_latex_web.subprocess, "run", return_value=subprocess.CompletedProcess(
-                    [], 1, "", "unregistered knowledge marker: fixture concept",
-                )):
-            with self.assertRaisesRegex(export_latex_web.LatexWebError, "unregistered knowledge marker"):
-                self.export()
-        self.assertFalse(self.output.exists())
-        self.assertFalse(list((self.repo / "build/work").iterdir()))
+    def test_invalid_converter_results_fail_without_output(self) -> None:
+        self.output.parent.mkdir()
+        self.output.write_text("<html><body>old output</body></html>", encoding="utf-8")
+        cases = (
+            (FakeConverter("", returncode=1, stderr="Unmapped explicit knowledge marker: x"), "Unmapped explicit"),
+            (FakeConverter(converter_result(schema="latex-live-html-result-v0")), "latex-live-html-result-v1"),
+            (FakeConverter(converter_result(operation="labels")), "another operation"),
+            (FakeConverter(converter_result(html="<body>fragment</body>")), "complete HTML"),
+            (FakeConverter(converter_result(html=None)), "complete HTML"),
+            (FakeConverter("not JSON"), "did not return JSON"),
+        )
+        for converter, message in cases:
+            with self.subTest(message=message):
+                with self.assertRaisesRegex(export_latex_web.LatexWebError, message):
+                    self.run_with(converter)
+                self.assertEqual("<html><body>old output</body></html>", self.output.read_text(encoding="utf-8"))
+                self.assertFalse(list((self.repo / "build/work").iterdir()))
 
-    def test_paths_outside_the_repository_fail_before_cli(self) -> None:
-        with patch.object(export_latex_web.subprocess, "run") as run:
+    def test_oversized_result_is_rejected(self) -> None:
+        with patch.object(export_latex_web, "MAX_RESULT_CHARACTERS", 10):
+            with self.assertRaisesRegex(export_latex_web.LatexWebError, "64 MiB"):
+                self.run_with(FakeConverter(converter_result()))
+        self.assertFalse(self.output.exists())
+
+    def test_timeout_terminates_the_converter(self) -> None:
+        converter = FakeConverter("", timeout=True)
+        with self.assertRaisesRegex(export_latex_web.LatexWebError, "failed"):
+            self.run_with(converter)
+        self.assertTrue(converter.terminated)
+        self.assertEqual([600, 10], converter.timeouts)
+        self.assertFalse(self.output.exists())
+
+    def test_missing_converter_is_reported(self) -> None:
+        with patch.object(export_latex_web.subprocess, "Popen", side_effect=FileNotFoundError("latex-live-export")):
+            with self.assertRaisesRegex(export_latex_web.LatexWebError, "latex-live-export"):
+                self.export()
+
+    def test_unresolved_registered_reference_fails_before_the_converter(self) -> None:
+        self.source.write_text("\\knref{unknown concept}\n", encoding="utf-8")
+        with patch.object(export_latex_web.subprocess, "Popen") as popen:
+            with self.assertRaisesRegex(export_latex_web.LatexWebError, "unresolved LaTeX knowledge reference"):
+                self.export()
+        popen.assert_not_called()
+
+    def test_paths_outside_the_repository_fail_before_the_converter(self) -> None:
+        with patch.object(export_latex_web.subprocess, "Popen") as popen:
             with self.assertRaisesRegex(export_latex_web.LatexWebError, "inside repo root"):
                 export_latex_web.export_latex_web(
                     [self.source], self.repo, self.repo / "build", self.repo.parent / "outside.html",
                     title=None, course=None, author=None,
                 )
-        run.assert_not_called()
+        popen.assert_not_called()
 
-    def test_missing_output_and_invalid_status_fail(self) -> None:
-        for stdout, message in (("{}", "requested HTML"), ("not JSON", "JSON export")):
-            with self.subTest(stdout=stdout), \
-                    patch.object(export_latex_web.shutil, "which", return_value="/tools/kgdistiller"), \
-                    patch.object(export_latex_web.subprocess, "run", return_value=subprocess.CompletedProcess(
-                        [], 0, stdout, "",
-                    )):
-                with self.assertRaisesRegex(export_latex_web.LatexWebError, message):
-                    self.export()
+    def real_converter(self) -> None:
+        if not REAL_CONVERTER:
+            self.skipTest("Set LATEX_LIVE_EXPORT_COMMAND to run the real converter integration")
+        os.environ["LATEX_LIVE_EXPORT_COMMAND"] = REAL_CONVERTER
 
-    def test_existing_html_does_not_make_an_unsuccessful_status_pass(self) -> None:
-        self.output.parent.mkdir()
-        self.output.write_text("<html><body>old output</body></html>", encoding="utf-8")
-        with patch.object(export_latex_web.shutil, "which", return_value="/tools/kgdistiller"), \
-                patch.object(export_latex_web.subprocess, "run", return_value=subprocess.CompletedProcess(
-                    [], 0, json.dumps({
-                        "schema": "kgdistiller-latex-html-export-v1",
-                        "status": "error", "output": str(self.output),
-                    }), "",
-                )):
-            with self.assertRaisesRegex(export_latex_web.LatexWebError, "requested HTML"):
-                self.export()
-
-    def sync_fixture(self) -> None:
-        executable = shutil.which(os.environ.get("KGDISTILLER_BIN", "kgdistiller"))
-        if executable is None:
-            self.skipTest("kgdistiller is required for direct provider integration")
-        result = subprocess.run(
-            [executable, "--repo-root", str(self.repo), "sync"],
-            capture_output=True, text=True, encoding="utf-8", check=False,
-        )
-        self.assertEqual(0, result.returncode, result.stderr)
-
-    @unittest.skipUnless(
-        os.environ.get("KGDISTILLER_LATEX_HTML_COMMAND"),
-        "Set KGDISTILLER_LATEX_HTML_COMMAND to run the direct provider integration",
-    )
     def test_latex_source_compiles_to_self_contained_html_directly(self) -> None:
-        self.sync_fixture()
+        self.real_converter()
         self.export()
         rendered = self.output.read_text(encoding="utf-8")
         self.assertIn("LaTeX Knowledge Fixture", rendered)
@@ -269,27 +342,19 @@ class DirectLatexWebTest(unittest.TestCase):
         self.assertIn('data-ql-ref="measure-space"', rendered)
         self.assertIn("<style>", rendered)
 
-    @unittest.skipUnless(
-        os.environ.get("KGDISTILLER_LATEX_HTML_COMMAND"),
-        "Set KGDISTILLER_LATEX_HTML_COMMAND to run the direct provider integration",
-    )
     def test_cjk_fragment_with_unicode_path_exports_directly(self) -> None:
+        self.real_converter()
         source = self.source.with_name("知识 片段.tex")
         self.source.rename(source)
         self.source = source
         source.write_text(source.read_text(encoding="utf-8") + "\n测度空间的定义。\n", encoding="utf-8")
-        self.sync_fixture()
         self.export()
         rendered = self.output.read_text(encoding="utf-8")
         self.assertIn("测度空间的定义", rendered)
         self.assertIn('data-ql-kn="measure-space"', rendered)
 
-    @unittest.skipUnless(
-        os.environ.get("KGDISTILLER_LATEX_HTML_COMMAND"),
-        "Set KGDISTILLER_LATEX_HTML_COMMAND to run the direct provider integration",
-    )
     def test_latex_web_export_rejects_unregistered_markers(self) -> None:
-        self.sync_fixture()
+        self.real_converter()
         unknown = self.repo / "unknown.tex"
         unknown.write_text("\\kn{fixture concept that is not registered}\n", encoding="utf-8")
         with self.assertRaisesRegex(

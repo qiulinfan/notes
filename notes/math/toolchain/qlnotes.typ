@@ -67,7 +67,8 @@
 }
 
 // Refer to the unique definition point with the same semantic name. Authors
-// write only #ref[Name]; unresolved names remain readable until the next sync.
+// write only #ref[Name]; unresolved names remain readable until
+// `make knowledge-registry` regenerates the registry.
 #let typst-ref = ref
 #let ref(name, ..arguments) = context {
   if type(name) == label {

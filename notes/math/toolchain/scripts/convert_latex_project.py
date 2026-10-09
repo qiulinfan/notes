@@ -15,9 +15,7 @@ from migrate_latex import MigrationError, migrate
 
 
 TOOLCHAIN = Path(__file__).resolve().parents[1]
-PUBLIC_KNOWLEDGE_REGISTRY = (
-    TOOLCHAIN.parents[2] / ".knowledge/export/site/knowledge-registry.typ"
-)
+KNOWLEDGE_REGISTRY = TOOLCHAIN / "generated/knowledge-registry.typ"
 INCLUDE_RE = re.compile(r"\\(?:input|include)\s*\{(?P<path>[^}]+)\}")
 GRAPHIC_RE = re.compile(
     r"\\(?:pic(?:\[[^\]]*\])?|includegraphics(?:\[[^\]]*\])?)"
@@ -156,10 +154,7 @@ def copy_support(project: LatexProject, build: Path) -> None:
     for name in ("qlnotes.typ", "math-aliases.typ", "web.css"):
         shutil.copy2(TOOLCHAIN / name, target / name)
     (target / "generated").mkdir(exist_ok=True)
-    shutil.copy2(
-        PUBLIC_KNOWLEDGE_REGISTRY,
-        target / "generated/knowledge-registry.typ",
-    )
+    shutil.copy2(KNOWLEDGE_REGISTRY, target / "generated/knowledge-registry.typ")
     assets = project.project_root / "assets"
     if assets.is_dir():
         shutil.copytree(assets, build / "assets", dirs_exist_ok=True)

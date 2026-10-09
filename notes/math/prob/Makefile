@@ -1,10 +1,9 @@
-.PHONY: all release export web web-check homeworks-web homeworks-web-check watch knowledge-sync knowledge-curate
+.PHONY: all release export web web-check homeworks-web homeworks-web-check watch knowledge-curate
 
 TYPST := typst
 TOOLCHAIN := ../toolchain
 WEB_CHECK := $(TOOLCHAIN)/scripts/check_web.py
 REPO_ROOT := ../../..
-KGDISTILLER ?= kgdistiller
 BUILD := build/typst
 EXPORTS := exports
 
@@ -20,11 +19,8 @@ export:
 		--output $(EXPORTS) \
 		--build $(BUILD)/export
 
-knowledge-sync:
-	@$(KGDISTILLER) --repo-root $(REPO_ROOT) sync --course probability
-
-knowledge-curate: knowledge-sync
-	@$(MAKE) -C $(REPO_ROOT) knowledge-authoring-check
+knowledge-curate:
+	@$(MAKE) -C $(REPO_ROOT) knowledge-build knowledge-authoring-check
 
 web:
 	@mkdir -p $(BUILD)

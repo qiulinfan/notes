@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Export maintained LaTeX authorities directly through kgdistiller's HTML provider."""
+"""Export maintained LaTeX sources to self-contained HTML.
+
+The obsidian-latex-live converter (``latex-live-export``, or the JSON argv in
+LATEX_LIVE_EXPORT_COMMAND) receives one ``latex-live-html-request-v1`` document
+request on stdin. Its knowledge markers come from the notes-owned registry
+(knowledge_registry.latex_markers); no shell evaluates the command.
+"""
 
 from __future__ import annotations
 
@@ -7,17 +13,25 @@ import argparse
 import json
 import os
 import re
-import shutil
 import subprocess
 import sys
 import tempfile
 from pathlib import Path
+
+from knowledge_registry import RegistryError, latex_markers
 
 
 class LatexWebError(RuntimeError):
     pass
 
 
+COMMAND_ENV = "LATEX_LIVE_EXPORT_COMMAND"
+DEFAULT_COMMAND = ("latex-live-export",)
+REQUEST_SCHEMA = "latex-live-html-request-v1"
+RESULT_SCHEMA = "latex-live-html-result-v1"
+TIMEOUT_SECONDS = 600
+MAX_RESULT_CHARACTERS = 64 * 1024 * 1024
+HTML_RE = re.compile(r"<html(?:\s|>)", re.IGNORECASE)
 DOCUMENT_CLASS_RE = re.compile(r"(?m)^\s*\\documentclass(?:\s*\[[^\]]*\])?\s*\{")
 CJK_RE = re.compile(r"[\u3400-\u9fff\uf900-\ufaff\U00020000-\U0002ffff]")
 THEOREM_ENVIRONMENTS = (
@@ -84,35 +98,90 @@ def fragment_document(
     return "\n".join([*lines, r"\end{document}", ""])
 
 
-def run_export(root: Path, repo_root: Path, output: Path) -> None:
-    executable = os.environ.get("KGDISTILLER_BIN", "kgdistiller")
-    command = shutil.which(executable)
-    if command is None:
-        raise LatexWebError("kgdistiller is required for direct LaTeX HTML export (set KGDISTILLER_BIN)")
-    result = subprocess.run(
-        [command, "--repo-root", str(repo_root), "export", "latex", str(root),
-         "--output", str(output), "--replace"],
-        check=False,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-    )
-    if result.returncode:
-        detail = result.stderr.strip() or result.stdout.strip()
-        raise LatexWebError(f"direct LaTeX HTML export failed:\n{detail}")
+def converter_command() -> list[str]:
+    configured = os.environ.get(COMMAND_ENV)
+    if configured is None:
+        return list(DEFAULT_COMMAND)
     try:
-        status = json.loads(result.stdout)
-    except (ValueError, TypeError) as error:
-        raise LatexWebError("kgdistiller did not return a JSON export result") from error
-    if (
-        not isinstance(status, dict)
-        or status.get("schema") != "kgdistiller-latex-html-export-v1"
-        or status.get("status") != "exported"
-        or not isinstance(status.get("output"), str)
-        or Path(status["output"]).resolve() != output
-        or not output.is_file()
+        command = json.loads(configured)
+    except json.JSONDecodeError as error:
+        raise LatexWebError(f"{COMMAND_ENV} must be a JSON array of command arguments") from error
+    if not isinstance(command, list) or not command or any(
+        not isinstance(argument, str) or not argument or "\0" in argument for argument in command
     ):
-        raise LatexWebError("kgdistiller did not produce the requested HTML output")
+        raise LatexWebError(f"{COMMAND_ENV} must be a non-empty JSON array of strings")
+    return command
+
+
+def run_export(root: Path, repo_root: Path, output: Path) -> None:
+    """Send one document request to the converter and write its HTML atomically."""
+    try:
+        markers = latex_markers(repo_root)
+    except (RegistryError, ValueError, KeyError) as error:
+        raise LatexWebError(f"cannot read the knowledge markers: {error}") from error
+    request = {
+        "schema": REQUEST_SCHEMA,
+        "operation": "document",
+        "source": str(root),
+        "project_root": str(repo_root),
+        "markers": markers,
+    }
+    try:
+        process = subprocess.Popen(
+            converter_command(),
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            encoding="utf-8",
+        )
+        try:
+            stdout, stderr = process.communicate(
+                json.dumps(request, ensure_ascii=False), timeout=TIMEOUT_SECONDS,
+            )
+        except (subprocess.TimeoutExpired, KeyboardInterrupt):
+            # The converter's SIGTERM handler disposes its TeX process groups;
+            # killing it immediately would bypass that cleanup.
+            process.terminate()
+            try:
+                process.communicate(timeout=10)
+            except subprocess.TimeoutExpired:
+                process.kill()
+                process.communicate()
+            raise
+    except FileNotFoundError as error:
+        raise LatexWebError(
+            "the LaTeX HTML converter is unavailable; install obsidian-latex-live's "
+            f"latex-live-export command or set {COMMAND_ENV} to its JSON argv"
+        ) from error
+    except (OSError, UnicodeError, subprocess.TimeoutExpired) as error:
+        raise LatexWebError(f"the LaTeX HTML converter failed: {error}") from error
+    if process.returncode:
+        detail = stderr.strip() or stdout.strip() or f"exit {process.returncode}"
+        raise LatexWebError(f"direct LaTeX HTML export failed:\n{detail}")
+    if len(stdout) > MAX_RESULT_CHARACTERS:
+        raise LatexWebError("the LaTeX HTML converter result exceeds 64 MiB")
+    try:
+        response = json.loads(stdout)
+    except (ValueError, TypeError) as error:
+        raise LatexWebError("the LaTeX HTML converter did not return JSON") from error
+    if not isinstance(response, dict) or response.get("schema") != RESULT_SCHEMA:
+        raise LatexWebError(f"the LaTeX HTML converter must return {RESULT_SCHEMA}")
+    if response.get("operation") != "document":
+        raise LatexWebError("the LaTeX HTML converter returned another operation")
+    document = response.get("html")
+    if not isinstance(document, str) or not HTML_RE.search(document):
+        raise LatexWebError("the LaTeX HTML converter omitted the complete HTML document")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(
+        "w", encoding="utf-8", dir=output.parent, prefix=f".{output.name}.", delete=False,
+    ) as handle:
+        handle.write(document)
+        temporary = Path(handle.name)
+    try:
+        os.replace(temporary, output)
+    except OSError:
+        temporary.unlink(missing_ok=True)
+        raise
 
 
 def export_latex_web(

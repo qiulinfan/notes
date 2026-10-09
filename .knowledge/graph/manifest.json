@@ -1,7 +1,7 @@
 {
   "counts": {
-    "edges": 577,
-    "nodes": 346,
+    "edges": 219,
+    "nodes": 316,
     "references": 58
   },
   "entry_authorities": {
@@ -1523,9 +1523,9 @@
     "schema": "kgdistiller-entry-source-index-v1"
   },
   "git_revision": "bed727b4326796e3d69e72cc3514a289130a70d8",
-  "graph_sha256": "ab2e9fef29b858ca6714987b821277d13fad54a94d844b94aa88ad8147d3d8b8",
+  "graph_sha256": "f59d751b16dc93d2166f98e5caf137177c67d475af35f07bb2f34a5b1d2785da",
   "identity_sha256": "7fc70e77532ba1be431628f953dbdc7c38a81c786b2eba986aea36f0d2e9bdf4",
-  "registry_sha256": "07935c6fad9f7d7e505c4eeb0bc82682733151b1f785961192a98fe600eb5f85",
+  "registry_sha256": "6d5fe118aa0af2fcaeeba2bd9a7ad2b149e677ddf0b7c2dca8042708f2521416",
   "schema": "kgdistiller-graph-v2",
   "source_hashes": {
     "notes/cs/computer-graphics/README.md": "5cab628090fc9e4518228336cfbc714cf961a467ac55457b145b0036d17b42bb",

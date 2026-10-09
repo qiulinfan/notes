@@ -1,13 +1,12 @@
 SHELL := cmd.exe
 .SHELLFLAGS := /c
 
-.PHONY: all release export web web-check homeworks-web homeworks-web-check watch edit knowledge-sync knowledge-curate
+.PHONY: all release export web web-check homeworks-web homeworks-web-check watch edit knowledge-curate
 
 TYPST := typst
 TOOLCHAIN := ../toolchain
 WEB_CHECK := $(TOOLCHAIN)/scripts/check_web.py
 REPO_ROOT := ../../..
-KGDISTILLER ?= kgdistiller
 BUILD := build/typst
 EXPORTS := exports
 COURSE_SLUG := mathematical-analysis
@@ -24,11 +23,8 @@ export:
 		--output $(EXPORTS) \
 		--build $(BUILD)/export
 
-knowledge-sync:
-	@$(KGDISTILLER) --repo-root $(REPO_ROOT) sync --course $(COURSE_SLUG)
-
-knowledge-curate: knowledge-sync
-	@$(MAKE) -C $(REPO_ROOT) knowledge-authoring-check
+knowledge-curate:
+	@$(MAKE) -C $(REPO_ROOT) knowledge-build knowledge-authoring-check
 
 web:
 	@IF NOT EXIST "$(BUILD)" MKDIR "$(BUILD)"

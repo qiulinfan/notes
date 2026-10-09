@@ -8,8 +8,9 @@ These are decisions of this personal instance, not kgdistiller product defaults.
 - Ambiguous mappings remain `uncertain`, contradictory mappings remain
   `conflict`, and neither state is auto-promoted to a global alias.
 - Paper distillation uses an isolated namespace by default and must not modify
-  the personal graph, alignments, notes, or public site without a separate,
-  reviewed ingest request.
+  the personal graph, alignments or notes without a separate, reviewed ingest
+  request. Changing the notes website (`courses.json`, the generated marker
+  registry) needs an explicit owner request.
 - Do not import solvablemodel paper nodes C02, C07, C09, C12, C15, C16, C17,
   C19, C20, or other paper nodes into this personal graph/research
   authority under the prior evaluation decision.
