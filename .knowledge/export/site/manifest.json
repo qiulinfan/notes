@@ -1,10 +1,10 @@
 {
   "artifacts": [
     {
-      "bytes": 954661,
+      "bytes": 955203,
       "kind": "site-graph",
       "path": "graph.json",
-      "sha256": "f649dfd6605c7dd9154fd4b48a7a7a6251c6b4cbf82a9801943212f1be1097bc"
+      "sha256": "74304b05ab0daeb9594a12bee1e9547e093bb874e777dfd13845d33b3988e475"
     },
     {
       "bytes": 85632,
@@ -13,36 +13,36 @@
       "sha256": "78177c50f9b3666e37ed0161dc352d6ff26a00501ee8d8578a192b7ad35aeefb"
     },
     {
-      "bytes": 29172,
+      "bytes": 29202,
       "kind": "standalone-verifier",
       "path": "verify_export.py",
-      "sha256": "b00a561f929ce8e6ca9c3ba8407a9a8db4ac627b97cbb8a46e198b34a46ae0bd"
+      "sha256": "aeea5050ae0286f4bb250431ea7f0f5c27a5e5237ba2107111708167ce518e7a"
     }
   ],
-  "export_sha256": "f9ce40a2680cfe748a8d4c87cce38bee7cdf873fcf8813a5bf40a5013e94c98a",
+  "export_sha256": "f2493d262ad0f1301a2f5f04e510e4527f805d7b4dd4ed553fe91ba656e066b0",
   "graph": {
     "private_counts": {
       "edges": 577,
       "nodes": 346,
       "references": 58
     },
-    "private_schema": "kgdistiller-graph-v1",
-    "private_sha256": "0f3adf192824dcd1c5951d54fa9ad1c6d9c783d7708c6935d24ec3bd167ec633",
+    "private_schema": "kgdistiller-graph-v2",
+    "private_sha256": "ab2e9fef29b858ca6714987b821277d13fad54a94d844b94aa88ad8147d3d8b8",
     "public_counts": {
       "edges": 530,
       "nodes": 299,
       "references": 58
     },
     "public_schema": "kgdistiller-site-graph-v1",
-    "public_sha256": "10b42b461cb808f2a2ccdc84660f65a5be5e39539634fa3762bd87bb6c13a710"
+    "public_sha256": "8e618197c92df319ab68d9176338589928afbf86b249f0d54f1a6f4fe89169bf"
   },
   "producer": {
-    "commit": "140c83daffefef1ac2e14a3ff38a5c6c5668b97f",
+    "commit": "5fbc4ce73c780a64644bedf09274034619c8b4b6",
     "name": "kgdistiller",
     "repository": "https://github.com/qiulinfan/kgdistiller",
     "version": "0.4.0"
   },
-  "replaces_export_sha256": "e18a6b00b2d55cbe7f7ca3e69b7a5b8b55f4b3828aeca7d5f8a4cbed51e0466d",
+  "replaces_export_sha256": "f9ce40a2680cfe748a8d4c87cce38bee7cdf873fcf8813a5bf40a5013e94c98a",
   "schema": "kgdistiller-static-export-v1",
   "source": {
     "digest": "d783ad3b9a7a846fc32edb87de40ae2d3ae4f122ca61c78a94e717c3f90d2fec",
@@ -134,7 +134,7 @@
       "notes/math/single-and-multivariate-mathematical-analysis/main.tex": "6d5e59784690f9e27f99232e256715cbc4bd04163902168c0e315e7008f56674"
     },
     "repository": "https://github.com/qiulinfan/notes",
-    "revision": "60f10467ae44fb638a626f42b226d5dd2ef17da3"
+    "revision": "116acb96ee3287e9e5120f040e835d9ee614de94"
   },
   "status": "exported",
   "visibility": {
