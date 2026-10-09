@@ -1,9 +1,0 @@
-{"id":"abstract-algebra","text":"The field studying algebraic structures such as groups, rings, quotient objects, and homomorphisms."}
-{"id":"analysis","text":"The field studying limiting processes, continuity, measure, integration, and function spaces."}
-{"id":"combinatorics","text":"The field studying discrete structures, counting principles, and finite configurations."}
-{"id":"computer-architecture","text":"The field connecting instruction sets, processors, memory systems, digital organization, and performance."}
-{"id":"data-structures-and-algorithms","text":"The field studying representations of data, algorithm design, correctness, and computational efficiency."}
-{"id":"linear-algebra","text":"The field studying vector spaces, linear maps, matrix factorisations, spectral structure, and numerical stability."}
-{"id":"measure-theory","text":"The field of measurable structures, measures, integration, and differentiation of measures."}
-{"id":"probability-theory","text":"The field studying random phenomena through probability spaces, distributions, and stochastic limits."}
-{"id":"programming-languages","text":"The field studying programming-language concepts, abstractions, type systems, memory models, and their practical use."}

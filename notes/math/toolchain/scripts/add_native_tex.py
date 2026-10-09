@@ -215,7 +215,7 @@ def main() -> int:
     for source in sources:
         if source.with_suffix('.tex').exists() and not args.replace:
             raise ValueError(f'companion already exists: {source.with_suffix(".tex")}')
-    build = REPO / 'knowledge/build/native-tex'
+    build = REPO / '.knowledge/build/native-tex'
     workspace = build / 'workspace'
     workspace.mkdir(parents=True, exist_ok=True)
     shutil.copytree(math_root, workspace / 'notes/math', dirs_exist_ok=True,

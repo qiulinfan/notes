@@ -7,7 +7,7 @@ KGDISTILLER ?= kgdistiller
 KGDISTILLER_INSTANCE := $(KGDISTILLER) --repo-root .
 
 # Course roots whose standalone web pages the site publishes, read from the source registry.
-PUBLISHED_WEB_ROOTS = $(shell python3 -c 'import json; print(" ".join(s["root"] for s in json.load(open("knowledge/sources.json"))["sources"] if s["publish"] and s.get("web_artifacts")))')
+PUBLISHED_WEB_ROOTS = $(shell python3 -c 'import json; print(" ".join(s["root"] for s in json.load(open(".knowledge/sources.json"))["sources"] if s["publish"] and s.get("web_artifacts")))')
 
 check: knowledge-check web
 
@@ -27,7 +27,7 @@ notes-source-check:
 	@python3 notes/scripts/check_source_policy.py --repo-root .
 
 knowledge-export-check:
-	@python3 knowledge/export/site/verify_export.py knowledge/export/site
+	@python3 .knowledge/export/site/verify_export.py .knowledge/export/site
 	@node tests/knowledge-export.test.mjs
 
 knowledge-check: notes-source-check knowledge-export-check
@@ -67,12 +67,12 @@ knowledge-candidate:
 	@$(KGDISTILLER_INSTANCE) candidate build "$(CANDIDATE)" --output "$(SNAPSHOT)"
 
 knowledge-align:
-	@test -n "$(SNAPSHOT)" || (echo '用法: make knowledge-align SNAPSHOT=knowledge/build/paper.snapshot.json NAME=paper' && exit 1)
+	@test -n "$(SNAPSHOT)" || (echo '用法: make knowledge-align SNAPSHOT=.knowledge/build/paper.snapshot.json NAME=paper' && exit 1)
 	@test -n "$(NAME)" || (echo 'NAME 不能为空' && exit 1)
-	@$(KGDISTILLER_INSTANCE) agent align "$(SNAPSHOT)" --output "knowledge/build/reviews/$(NAME).alignment.json"
+	@$(KGDISTILLER_INSTANCE) agent align "$(SNAPSHOT)" --output ".knowledge/build/reviews/$(NAME).alignment.json"
 
 knowledge-compare:
-	@test -n "$(SNAPSHOT)" || (echo '用法: make knowledge-compare SNAPSHOT=knowledge/build/paper.snapshot.json' && exit 1)
+	@test -n "$(SNAPSHOT)" || (echo '用法: make knowledge-compare SNAPSHOT=.knowledge/build/paper.snapshot.json' && exit 1)
 	@$(KGDISTILLER_INSTANCE) agent compare "$(SNAPSHOT)"
 
 knowledge-propose:
@@ -80,8 +80,8 @@ knowledge-propose:
 	@test -n "$(AUTHORITY)" || (echo 'AUTHORITY 不能为空' && exit 1)
 	@test -n "$(NAME)" || (echo 'NAME 不能为空' && exit 1)
 	@$(KGDISTILLER_INSTANCE) agent propose "$(SNAPSHOT)" --target-authority "$(AUTHORITY)" \
-		--output "knowledge/build/reviews/$(NAME).proposal.json" \
-		--delta-output "knowledge/build/reviews/$(NAME).delta.json"
+		--output ".knowledge/build/reviews/$(NAME).proposal.json" \
+		--delta-output ".knowledge/build/reviews/$(NAME).delta.json"
 
 knowledge-ingest-plan:
 	@test -n "$(REQUEST)" || (echo 'REQUEST 不能为空' && exit 1)

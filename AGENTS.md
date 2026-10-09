@@ -7,12 +7,12 @@ the owner asks, and keep development documentation here. The READMEs inside
 
 ## Rules
 
-- This repository is the authority for personal notes (`notes/`) and one personal kgdistiller instance (`knowledge/`). It is not the kgdistiller product checkout: never vendor or submodule the engine.
+- This repository is the authority for personal notes (`notes/`) and one personal kgdistiller instance (`.knowledge/`). It is not the kgdistiller product checkout: never vendor or submodule the engine.
 - The homepage repository `qiulinfan/qiulinfan.github.io` consumes this repository as its `notes` dock and is the only publisher. Never enable GitHub Pages here, and never add site frontend or deployment code here.
 - Refreshing the knowledge instance is an explicit local authoring operation through an installed, selected kgdistiller product revision. `make check` and CI only validate the committed export; they never run the engine.
 - The export manifest records `https://github.com/qiulinfan/notes` as its source repository; keep that value when exporting.
 - `notes/math/toolchain/web.css` is the standalone projection of the homepage palette (`site/src/styles/variables.styl` in the homepage repository). The homepage build verifies the pair, so change both together.
-- A course is published only through `knowledge/sources.json` (`publish`, `listed`, `web_artifacts`); `make web` derives its build list from that registry.
+- A course is published only through `.knowledge/sources.json` (`publish`, `listed`, `web_artifacts`); `make web` derives its build list from that registry.
 - Native LaTeX web export uses `notes/math/toolchain/scripts/export_latex_web.py`
   and `kgdistiller export latex` with the obsidian-latex-live converter. Follow
   the selected product's `docs/latex-sources.md`; do not use Typst/Pandoc as this
@@ -23,29 +23,29 @@ the owner asks, and keep development documentation here. The READMEs inside
   companions. Preserve their include structure and explicit knowledge markers.
   Registered pairs select TeX for knowledge authoring; source and topic globs
   admit both formats. Converted mathematical name spellings have explicit
-  aliases in `knowledge/identities.json`, retaining the registered IDs.
+  aliases in `.knowledge/identities.json`, retaining the registered IDs.
 - `notes/math/toolchain/latex/qlnotes-native.cls` is the shared XeLaTeX class.
   Course entry points load it by relative path; avoid copying classes per course.
   Run `make latex-check` for pair/include auditing and two-pass compilation of
   every entry (plus uncovered fragments). All outputs stay in
-  `knowledge/build/native-tex/check`, outside the source-only `notes/` tree.
+  `.knowledge/build/native-tex/check`, outside the source-only `notes/` tree.
 - `add_native_tex.py` is an explicit migration tool, not a synchronization job.
   It evaluates a disposable copy through Typst/MathML and the QLNotes filters;
   `.tex` companions are authored files afterward. Never regenerate an edited
   companion without requested replacement. Its `--replace` flag overwrites
   companions, including subsequent TeX-only layout edits. The migration checks
   every mathematical expression, knowledge marker and ignored backend element;
-  its diagnostic and identity maps remain under `knowledge/build/native-tex`.
+  its diagnostic and identity maps remain under `.knowledge/build/native-tex`.
 - Never place credentials in the repository or command output.
 
 ## Layout
 
 - `notes/`: Markdown, Typst, and LaTeX sources with the shared rendering
   toolchain. Never commit PDFs, course archives, or build outputs.
-- `knowledge/`: one local kgdistiller instance, with its configuration,
+- `.knowledge/`: one local kgdistiller instance, with its configuration,
   decisions, private graph, and adopted static export. Its authority, public
-  bundle contract, and adoption flow are in `knowledge/SPEC.md` and
-  `knowledge/WORKFLOW.md`.
+  bundle contract, and adoption flow are in `.knowledge/SPEC.md` and
+  `.knowledge/WORKFLOW.md`.
 - The homepage repository builds the site: it reads this repository as the
   `notes` dock and publishes it at `https://qiulinfan.github.io/notes/`.
   Enabling GitHub Pages here would make this project site take over that path
@@ -77,7 +77,7 @@ discovered or ingested.
 ## Checks and builds
 
 `make check` runs what CI runs. `make web` runs `make release` for every course
-in `knowledge/sources.json` that is published and has `web_artifacts`. The
+in `.knowledge/sources.json` that is published and has `web_artifacts`. The
 Typst version is pinned once, as `TYPST_VERSION` in the `Makefile`; this
 repository's CI and the homepage build both read it.
 
@@ -91,7 +91,7 @@ make knowledge-build
 make knowledge-authoring-check
 
 kgdistiller --repo-root . export site \
-  --output knowledge/export/site \
+  --output .knowledge/export/site \
   --product-commit <full-kgdistiller-commit> \
   --source-repository https://github.com/qiulinfan/notes \
   --replace

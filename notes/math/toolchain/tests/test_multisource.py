@@ -73,7 +73,7 @@ class MultiSourceExportTest(unittest.TestCase):
     )
     def test_elegantbook_entrypoint_becomes_self_contained_previewable_typst(self) -> None:
         fixture = Path(__file__).parent / "fixtures/latex-project/main.tex"
-        build_parent = REPO_ROOT / "knowledge/build"
+        build_parent = REPO_ROOT / ".knowledge/build"
         build_parent.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(prefix="qlnotes-latex-project-", dir=build_parent) as temporary:
             root = Path(temporary)
@@ -115,7 +115,7 @@ class DirectLatexWebTest(unittest.TestCase):
         self.source = self.repo / "notes/math/demo/knowledge.tex"
         self.source.parent.mkdir(parents=True)
         shutil.copyfile(Path(__file__).parent / "fixtures/knowledge.tex", self.source)
-        registry = self.repo / "knowledge/sources.json"
+        registry = self.repo / ".knowledge/sources.json"
         registry.parent.mkdir()
         registry.write_text(json.dumps({
             "schema": "kgdistiller-sources-v1",

@@ -16,7 +16,7 @@ from migrate_latex import MigrationError, migrate
 
 TOOLCHAIN = Path(__file__).resolve().parents[1]
 PUBLIC_KNOWLEDGE_REGISTRY = (
-    TOOLCHAIN.parents[2] / "knowledge/export/site/knowledge-registry.typ"
+    TOOLCHAIN.parents[2] / ".knowledge/export/site/knowledge-registry.typ"
 )
 INCLUDE_RE = re.compile(r"\\(?:input|include)\s*\{(?P<path>[^}]+)\}")
 GRAPHIC_RE = re.compile(

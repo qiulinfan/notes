@@ -50,7 +50,7 @@ core.*
 node_modules/
 
 # Disposable local knowledge builds, candidate reviews, deltas, and receipts
-knowledge/build/
+.knowledge/build/
 
 # Personal editor, vault and agent environment stays local, at every depth.
 .obsidian/

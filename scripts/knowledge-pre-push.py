@@ -15,9 +15,9 @@ import tempfile
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
-GRAPH_MANIFEST = REPOSITORY_ROOT / "knowledge/graph/manifest.json"
-EXPORT_MANIFEST = REPOSITORY_ROOT / "knowledge/export/site/manifest.json"
-EXPORT_ROOT = REPOSITORY_ROOT / "knowledge/export/site"
+GRAPH_MANIFEST = REPOSITORY_ROOT / ".knowledge/graph/manifest.json"
+EXPORT_MANIFEST = REPOSITORY_ROOT / ".knowledge/export/site/manifest.json"
+EXPORT_ROOT = REPOSITORY_ROOT / ".knowledge/export/site"
 GIT = os.environ.get("NOTES_GIT") or (
 	"/opt/homebrew/bin/git"
 	if Path("/opt/homebrew/bin/git").is_file()
@@ -89,8 +89,8 @@ def knowledge_check() -> bool:
 	commands = [
 		(
 			sys.executable,
-			"knowledge/export/site/verify_export.py",
-			"knowledge/export/site",
+			".knowledge/export/site/verify_export.py",
+			".knowledge/export/site",
 		),
 		("node", "tests/knowledge-export.test.mjs"),
 	]
@@ -136,10 +136,10 @@ def sync_registered_sources() -> None:
 		)
 		raise SystemExit(1)
 
-	unexpected = [path for path in changed_paths() if not path.startswith("knowledge/")]
+	unexpected = [path for path in changed_paths() if not path.startswith(".knowledge/")]
 	if unexpected:
 		print(
-			"knowledge pre-push: kgdistiller changed files outside knowledge/; refusing to commit automatically:\n"
+			"knowledge pre-push: kgdistiller changed files outside .knowledge/; refusing to commit automatically:\n"
 			+ "\n".join(f"  {path}" for path in unexpected),
 			file=sys.stderr,
 		)
@@ -147,8 +147,8 @@ def sync_registered_sources() -> None:
 
 	run("kgdistiller", "--repo-root", str(REPOSITORY_ROOT), "check")
 	run("kgdistiller", "--repo-root", str(REPOSITORY_ROOT), "agent", "status")
-	git("add", "--", "knowledge")
-	git("commit", "-m", "knowledge: sync registered sources", "--", "knowledge")
+	git("add", "--", ".knowledge")
+	git("commit", "-m", "knowledge: sync registered sources", "--", ".knowledge")
 
 
 def installed_product_runtime() -> tuple[str, Path]:
@@ -239,7 +239,7 @@ def refresh_export() -> None:
 	run_pinned_export(manifest)
 
 	unexpected = [
-		path for path in changed_paths() if not path.startswith("knowledge/export/site/")
+		path for path in changed_paths() if not path.startswith(".knowledge/export/site/")
 	]
 	if unexpected:
 		print(
@@ -249,14 +249,14 @@ def refresh_export() -> None:
 		)
 		raise SystemExit(1)
 
-	run("python3", "knowledge/export/site/verify_export.py", "knowledge/export/site")
-	git("add", "--", "knowledge/export/site")
+	run("python3", ".knowledge/export/site/verify_export.py", ".knowledge/export/site")
+	git("add", "--", ".knowledge/export/site")
 	git(
 		"commit",
 		"-m",
 		"knowledge: refresh site export",
 		"--",
-		"knowledge/export/site",
+		".knowledge/export/site",
 	)
 
 

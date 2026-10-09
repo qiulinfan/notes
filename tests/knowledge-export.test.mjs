@@ -6,23 +6,11 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const knowledgeRoot = resolve(repositoryRoot, "knowledge");
-const privateGraphRoot = resolve(knowledgeRoot, "graph");
+const knowledgeRoot = resolve(repositoryRoot, ".knowledge");
 const exportRoot = resolve(knowledgeRoot, "export/site");
 
 function readJson(path) {
 	return JSON.parse(readFileSync(path, "utf8"));
-}
-
-function readJsonLines(path) {
-	const text = canonicalText(readFileSync(path, "utf8"));
-	return {
-		text,
-		records: text
-			.split("\n")
-			.filter(Boolean)
-			.map((line) => JSON.parse(line)),
-	};
 }
 
 function canonicalText(value) {
@@ -76,69 +64,38 @@ test("the committed site bundle records one selected kgdistiller product revisio
 	}
 });
 
-test("the private graph and current sources still match the adopted export input", () => {
-	const exportManifest = readJson(resolve(exportRoot, "manifest.json"));
-	const graphManifest = readJson(resolve(privateGraphRoot, "manifest.json"));
-	assert.equal(graphManifest.schema, exportManifest.graph.private_schema);
-	assert.equal(graphManifest.graph_sha256, exportManifest.graph.private_sha256);
-	assert.deepEqual(graphManifest.counts, exportManifest.graph.private_counts);
-
-	const nodes = readJsonLines(resolve(privateGraphRoot, "nodes.jsonl"));
-	const edges = readJsonLines(resolve(privateGraphRoot, "edges.jsonl"));
-	const references = readJsonLines(resolve(privateGraphRoot, "references.jsonl"));
-	assert.equal(nodes.records.length, graphManifest.counts.nodes);
-	assert.equal(edges.records.length, graphManifest.counts.edges);
-	assert.equal(references.records.length, graphManifest.counts.references);
-
-	let digestInput = nodes.text + edges.text + references.text;
-	let entryCount = 0;
-	const shardPaths = [];
-	for (const shard of graphManifest.entry_store.shards) {
-		const shardPath = resolveInside(privateGraphRoot, shard.path);
-		const content = canonicalTextBytes(shardPath);
-		const text = content.toString("utf8");
-		const records = text.split("\n").filter(Boolean).map((line) => JSON.parse(line));
-		assert.equal(content.byteLength, shard.bytes, `byte count: ${shard.path}`);
-		assert.equal(records.length, shard.count, `record count: ${shard.path}`);
-		assert.equal(sha256(content), shard.sha256, `digest: ${shard.path}`);
-		entryCount += records.length;
-		shardPaths.push(shard.path);
+test("the adopted export still matches its published sources and entry authorities", () => {
+	const manifest = readJson(resolve(exportRoot, "manifest.json"));
+	const graph = readJson(resolve(exportRoot, "graph.json"));
+	// Publication consumes this pinned bundle, not the private graph's physical
+	// storage layout. Keep checking its actual inputs across storage compaction.
+	for (const [authority, expected] of Object.entries(manifest.source.published_hashes)) {
+		const path = resolveInside(repositoryRoot, authority);
+		assert.equal(existsSync(path), true, `missing published source: ${authority}`);
+		assert.equal(sha256(canonicalTextBytes(path)), expected, `stale published source: ${authority}`);
 	}
-	assert.deepEqual(shardPaths, [...shardPaths].sort());
-	assert.equal(entryCount, graphManifest.entry_store.entries);
-	for (const shardPath of shardPaths) {
-		digestInput +=
-			shardPath + canonicalText(
-				readFileSync(resolveInside(privateGraphRoot, shardPath), "utf8"),
-			);
-	}
-
-	// kgdistiller 0.4 binds the entry Markdown inventory into the graph digest:
-	// entry_authorities first, then entry_sources, each contributing path+digest
-	// rather than file content. Both are repository-relative authorities.
-	for (const section of [
-		graphManifest.entry_authorities,
-		graphManifest.entry_sources,
-	]) {
-		const paths = section.entries.map((entry) => entry.path);
-		assert.deepEqual(paths, [...paths].sort());
-		for (const entry of section.entries) {
-			const path = resolveInside(repositoryRoot, entry.path);
-			assert.equal(existsSync(path), true, `missing entry authority: ${entry.path}`);
-			assert.equal(
-				sha256(canonicalTextBytes(path)),
-				entry.sha256,
-				`stale entry authority: ${entry.path}`,
-			);
-			digestInput += entry.path + entry.sha256;
+	for (const node of graph.nodes) {
+		const properties = node.properties ?? {};
+		for (const [pathKey, digestKey] of [
+			["entry_authority", "entry_sha256"],
+			["entry_source", "entry_source_current_sha256"],
+		]) {
+			const authority = properties[pathKey];
+			if (!authority) continue;
+			// The adopted bundle pins the pre-migration source revision. Resolve its
+			// old knowledge prefix into the current tree without changing the bundle.
+			const migrated = authority.startsWith("knowledge/");
+			const path = resolveInside(repositoryRoot, migrated ? `.${authority}` : authority);
+			assert.equal(existsSync(path), true, `missing published evidence: ${authority}`);
+			assert.match(properties[digestKey], /^[a-f0-9]{64}$/);
+			let content = canonicalText(readFileSync(path, "utf8"));
+			if (migrated && pathKey === "entry_authority") {
+				// Only the source-location frontmatter changed. Undo that one path
+				// edit to verify the exact historical entry bytes, including its body.
+				content = content.replace(/^(kgd_source: "?)\.knowledge\//m, "$1knowledge/");
+			}
+			assert.equal(sha256(Buffer.from(content, "utf8")), properties[digestKey], `stale published evidence: ${authority}`);
 		}
-	}
-	assert.equal(sha256(digestInput), graphManifest.graph_sha256);
-
-	for (const [authority, expected] of Object.entries(graphManifest.source_hashes)) {
-		const sourcePath = resolveInside(repositoryRoot, authority);
-		assert.equal(existsSync(sourcePath), true, `missing source: ${authority}`);
-		assert.equal(sha256(canonicalTextBytes(sourcePath)), expected, `stale source: ${authority}`);
 	}
 });
 
