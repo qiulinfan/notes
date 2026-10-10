@@ -3,8 +3,7 @@
 # The single Typst pin for local checks, this repository's CI, and the homepage build.
 TYPST_VERSION := 0.15.1
 
-KGDISTILLER ?= kgdistiller
-KGDISTILLER_INSTANCE := $(KGDISTILLER) --repo-root .
+KGD ?= kgd
 
 # Course roots whose standalone web pages the site publishes, read from the course registry.
 PUBLISHED_WEB_ROOTS = $(shell python3 -c 'import json; print(" ".join(c["root"] for c in json.load(open("courses.json"))["courses"] if c["publish"] and c.get("web_artifacts")))')
@@ -21,7 +20,7 @@ web:
 	@for root in $(PUBLISHED_WEB_ROOTS); do $(MAKE) -C "$$root" release || exit 1; done
 
 notes-source-check:
-	@python3 notes/scripts/check_source_policy.py --repo-root .
+	@python3 notes/scripts/check_source_policy.py
 
 knowledge-registry:
 	@python3 notes/math/toolchain/scripts/knowledge_registry.py
@@ -30,28 +29,28 @@ knowledge-registry-check:
 	@python3 notes/math/toolchain/scripts/knowledge_registry.py --check
 
 knowledge-authoring-check:
-	@$(KGDISTILLER_INSTANCE) check
+	@$(KGD) check --base notes
 
 knowledge-fix-lines:
-	@$(KGDISTILLER_INSTANCE) check --fix-lines
+	@$(KGD) check --base notes --fix-lines
 
 knowledge-search:
 	@test -n "$(QUERY)" || (echo '用法: make knowledge-search QUERY="conditional expectation"' && exit 1)
-	@$(KGDISTILLER_INSTANCE) agent search "$(QUERY)"
+	@$(KGD) agent search "$(QUERY)" --base notes
 
 knowledge-context:
 	@test -n "$(QUERY)" || (echo '用法: make knowledge-context QUERY="conditional expectation"' && exit 1)
-	@$(KGDISTILLER_INSTANCE) agent context "$(QUERY)" --graph-strategy hybrid
+	@$(KGD) agent context "$(QUERY)" --graph-strategy hybrid --base notes
 
 knowledge-agent-status:
-	@$(KGDISTILLER_INSTANCE) agent status
+	@$(KGD) agent status --base notes
 
 knowledge-ingest-plan:
 	@test -n "$(REQUEST)" || (echo 'REQUEST 不能为空' && exit 1)
 	@test -n "$(PLAN)" || (echo 'PLAN 不能为空' && exit 1)
-	@$(KGDISTILLER_INSTANCE) ingest plan "$(REQUEST)" --output "$(PLAN)"
+	@$(KGD) ingest plan "$(REQUEST)" --output "$(PLAN)" --base notes
 
 knowledge-ingest-apply:
 	@test -n "$(REQUEST)" || (echo 'REQUEST 不能为空' && exit 1)
 	@test -n "$(RECEIPT)" || (echo 'RECEIPT 不能为空' && exit 1)
-	@$(KGDISTILLER_INSTANCE) ingest apply "$(REQUEST)" --receipt "$(RECEIPT)"
+	@$(KGD) ingest apply "$(REQUEST)" --receipt "$(RECEIPT)" --base notes

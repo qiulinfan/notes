@@ -9,16 +9,18 @@ neither of which reads `.knowledge/`.
 
 ## Layout
 
-- `sources.json` defines the kgdistiller sources only: each source has an `id`,
-  a `root`, its `files` globs and an optional `document_type`, plus the
-  top-level user `document_types`. It registers the mathematics courses' `.tex`
-  files with the document type `math-notes` (allowed entry kinds and extraction
-  guidance) and the CS courses' Markdown notes without a document type yet. Publishing data (titles, fields, topics, web routes,
-  publish/listed policy) and the `.typ` companions live in `courses.json`.
-- `vault.json` identifies this vault to kgdistiller.
+- Source registration is not stored here. This repository is the base `notes`
+  in the kgdistiller home (`$KGDISTILLER_HOME`, default `~/.knowledge`); its
+  `config.json` maps repository-relative globs to document types: the
+  mathematics courses' `.tex` files to `math-notes` and the registered CS
+  Markdown notes to the draft type `cs-notes`. Each type (allowed node kinds,
+  relation kinds, epistemic values and guidance) is
+  `~/.knowledge/types/<name>.md`. Publishing data (titles, fields, topics, web
+  routes, publish/listed policy) and the `.typ` companions live in
+  `courses.json`.
 - `entries/<id>.md` is the single stored copy of each knowledge node. Its
   frontmatter holds `schema`, `id`, `label`, `kind`, `aliases`, `source` (a
-  repository-relative `.tex` path), `line_start`, `line_end` and
+  repository-relative registered source path), `line_start`, `line_end` and
   `understanding`; its body holds the Summary and the other reviewed sections,
   and its `Evidence` section quotes the cited source lines verbatim.
 - `edges.jsonl` holds the accepted semantic edges, one JSON object per line
@@ -34,5 +36,5 @@ evidence or portable snapshot: everything a node needs lives in its entry.
 Reviews, receipts and other disposable local build artifacts belong under the
 ignored `.knowledge/build/` directory; they are not authorities. The
 `build/obsidian/semantic-graph.json` feed remains an active local plugin input,
-regenerated with `kgdistiller --repo-root . export obsidian`. Do not clear all
+regenerated with `kgd export obsidian --base notes`. Do not clear all
 build outputs merely because they are generated.

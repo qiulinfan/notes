@@ -21,14 +21,14 @@ When personal knowledge must change, first select and install the intended
 kgdistiller product revision. Its development checkout may remain linked
 directly into Codex for live Skill iteration. Nothing scans the sources
 automatically: new or changed entries and edges are captured or curated from
-the registered `.tex` sources through the product Skills
+the registered sources through the product Skills
 (`capture-kgdistiller`, `curate-kgdistiller-notes`) and applied with a
 reviewed ingest (`make knowledge-ingest-plan` and `make knowledge-ingest-apply`).
 Then validate the instance against its sources:
 
 ```sh
-make knowledge-authoring-check   # kgdistiller --repo-root . check
-make knowledge-fix-lines         # kgdistiller --repo-root . check --fix-lines
+make knowledge-authoring-check   # kgd check --base notes
+make knowledge-fix-lines         # kgd check --base notes --fix-lines
 ```
 
 The check validates every entry and edge and reports an entry as moved when
@@ -43,7 +43,7 @@ Never hand-edit `edges.jsonl`; change edges only through a reviewed ingest.
 Do not guess identity from similarity or publish a failed or partial ingest.
 
 Refresh the Obsidian plugin's graph feed with
-`kgdistiller --repo-root . export obsidian`. When the product changes the feed
+`kgd export obsidian --base notes`. When the product changes the feed
 contract, reinstall the plugin with
-`kgdistiller --repo-root . obsidian install --replace` before or together with
+`kgd obsidian install --base notes --replace` before or together with
 that export, then reload the plugin in Obsidian.

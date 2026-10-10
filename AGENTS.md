@@ -21,14 +21,16 @@ the owner asks, and keep development documentation here. The READMEs inside
   `web_artifacts` there. The marker registry covers only published courses,
   so after changing `publish`, run `make knowledge-registry` and commit the
   regenerated files in `notes/math/toolchain/generated/`.
-- `.knowledge/sources.json` holds only kgdistiller sources:
-  `{id, root, files, document_type?}` per source and optional top-level
-  `document_types`; kgdistiller rejects any other key. It registers only the
-  mathematics courses' `.tex` files, each with the document type
-  `math-notes`, whose `node_kinds` and `extraction_guidance` it declares. The
-  `.typ` companions are website and authoring files listed in `courses.json`;
-  they are not knowledge sources. kgdistiller reads every source as plain
-  text with line numbers and never parses its syntax.
+- kgdistiller source registration lives outside this repository, in the
+  kgdistiller home (`$KGDISTILLER_HOME`, default `~/.knowledge`), under the
+  base `notes` in its `config.json`. Each source glob there is relative to
+  this repository and maps to one document type: the mathematics courses'
+  `.tex` files map to `math-notes`, and the registered CS Markdown notes map
+  to `cs-notes`, an owner-reviewable draft type. The types themselves are
+  `~/.knowledge/types/<name>.md`. The `.typ` companions are website and
+  authoring files listed in `courses.json`; they are not knowledge sources.
+  kgdistiller reads every source as plain text with line numbers and never
+  parses its syntax.
 - Knowledge nodes are the reviewed entries `.knowledge/entries/<id>.md`.
   Each entry's frontmatter holds its label, kind, aliases, source path, line
   range and understanding state, and its `Evidence` section quotes the cited
@@ -88,10 +90,10 @@ the owner asks, and keep development documentation here. The READMEs inside
 - `notes/`: Markdown, Typst, and LaTeX sources with the shared rendering
   toolchain. Never commit PDFs, course archives, or build outputs.
 - `courses.json`: the website's course registry.
-- `.knowledge/`: one local kgdistiller instance: `sources.json`,
-  `vault.json`, the reviewed `entries/` and `edges.jsonl`, plus its
-  decisions. Its layout and authoring flow are in `.knowledge/SPEC.md` and
-  `.knowledge/WORKFLOW.md`.
+- `.knowledge/`: the knowledge of the kgdistiller base `notes`: the
+  reviewed `entries/` and `edges.jsonl`, plus its decisions. Its source
+  globs and document types live in the kgdistiller home. Its layout and
+  authoring flow are in `.knowledge/SPEC.md` and `.knowledge/WORKFLOW.md`.
 - The homepage repository builds the site: it reads this repository as the
   `notes` dock and publishes it at `https://qiulinfan.github.io/notes/`.
   Enabling GitHub Pages here would make this project site take over that path
@@ -125,14 +127,14 @@ with `python3 -m unittest discover -s notes/math/toolchain/tests`.
 ## Refreshing the knowledge instance
 
 Only knowledge authoring needs the installed kgdistiller CLI. New or
-changed knowledge is captured or curated from the `.tex` sources through the
-product Skills and applied with a reviewed ingest; nothing scans the sources
+changed knowledge is captured or curated from the registered sources
+through the product Skills and applied with a reviewed ingest; nothing scans the sources
 automatically. Then:
 
 ```sh
 make knowledge-authoring-check   # validate entries and edges against the sources
 make knowledge-fix-lines         # after source edits move cited lines
-kgdistiller --repo-root . export obsidian
+kgd export obsidian --base notes
 ```
 
 `make knowledge-authoring-check` reports an entry as moved when its Evidence
