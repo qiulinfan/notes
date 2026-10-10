@@ -40,7 +40,7 @@ The migrator:
 
 - expands legacy `\bX`, `\cX`, and `\bfX` aliases before Pandoc;
 - maps theorem-like LaTeX environments to QLNotes components;
-- rewrites document-local labels without treating them as graph identity;
+- rewrites document-local labels without treating them as marker identity;
 - preserves Python and terminal blocks as native code;
 - extracts active TikZ blocks as named diagram placeholders;
 - hoists nested proof/solution blocks out of examples for safe pagination.
@@ -56,13 +56,13 @@ must import the shared QLNotes component and alias modules itself.
 
 Inspect every generated semantic call:
 
-- remove legacy `id`, `concepts`, `depends`, and `aliases` graph attributes;
+- remove legacy `id`, `concepts`, `depends`, and `aliases` marker attributes;
 - add one globally unique, stable, human-readable `#kn[Name]` only to meaningful named
   definitions, axioms, theorems, propositions, lemmas, and corollaries;
 - replace repeated definitions with `#ref` when they refer to an existing global
   concept;
 - never auto-mark sections, examples, exercises, remarks, proofs, or diagrams;
-- preserve document-local labels independently from hidden graph IDs;
+- preserve document-local labels independently from `#kn-<id>` anchor IDs;
 - keep supporting proof/solution blocks as siblings;
 - eliminate raw-LaTeX fallbacks from Typst math;
 - fix implicit LaTeX multiplication that Pandoc can merge, such as `p^kp^r`;
@@ -104,7 +104,7 @@ acceptance path:
 - the LaTeX and Typst source-file inventories match;
 - every environment count matches by kind;
 - every active `#kn` name is globally unique and every `#ref` is resolvable;
-- examples and headings add no implicit graph nodes;
+- examples and headings add no implicit knowledge markers;
 - every enabled and supplementary source is included exactly once;
 - active TikZ count equals the number of authored CeTZ diagrams;
 - `make export` succeeds and emits one `.tex` and `.md` per level-one chapter;

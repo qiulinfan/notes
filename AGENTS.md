@@ -8,10 +8,10 @@ the owner asks, and keep development documentation here. The READMEs inside
 ## Rules
 
 - This repository is the authority for personal notes (`notes/`), the notes
-  website's course registry (`courses.json`), and one personal kgdistiller
-  instance (`.knowledge/`). It is not the kgdistiller product checkout: never
-  vendor or submodule the engine. kgdistiller manages knowledge only; it has no
-  publishing role, and nothing on the website reads `.knowledge/`.
+  website's course registry (`courses.json`), and the personal kgdistiller
+  base `notes` (`.knowledge/`). It is not the kgdistiller product checkout:
+  never vendor or submodule the engine. kgdistiller manages knowledge only; it
+  has no publishing role, and nothing on the website reads `.knowledge/`.
 - The homepage repository `qiulinfan/qiulinfan.github.io` consumes this repository as its `notes` dock and is the only publisher. Never enable GitHub Pages here, and never add site frontend or deployment code here.
 - `courses.json` (schema `notes-courses-v1`) is the website registry: each
   course's title, description, subject, course slug, `root`, `files`, `fields`,
@@ -64,7 +64,7 @@ the owner asks, and keep development documentation here. The READMEs inside
   renders as plain text, and a LaTeX one fails the LaTeX web export.
   Comments, verbatim-like environments, `\verb`, inactive `\iffalse` branches
   and macro or environment definitions hold no LaTeX markers.
-- Refreshing the knowledge instance is an explicit local authoring operation through an installed, selected kgdistiller product revision. `make check` and CI never run the engine.
+- Refreshing the knowledge base is an explicit local authoring operation through an installed, selected kgdistiller product revision. `make check` and CI never run the engine.
 - `notes/math/toolchain/web.css` is the standalone projection of the homepage palette (`site/src/styles/variables.styl` in the homepage repository). The homepage build verifies the pair, so change both together.
 - Native LaTeX web export uses `notes/math/toolchain/scripts/export_latex_web.py`,
   which sends one document request directly to the obsidian-latex-live
@@ -102,7 +102,7 @@ the owner asks, and keep development documentation here. The READMEs inside
   else: the accepted records in `entries/`, the drafts in `drafts/` and the
   generated sheets in `sheets/`. Its source globs and document types live in
   the kgdistiller home. Its rules and authoring flow are in
-  [Knowledge instance](#knowledge-instance).
+  [Knowledge base](#knowledge-base).
 - `build/`: ignored, disposable local outputs: the native TeX migration and
   check outputs in `build/native-tex/` and local review inputs in
   `build/reviews/`. Nothing in it is an authority.
@@ -136,9 +136,9 @@ Typst version is pinned once, as `TYPST_VERSION` in the `Makefile`; this
 repository's CI and the homepage build both read it. Run the toolchain tests
 with `python3 -m unittest discover -s notes/math/toolchain/tests`.
 
-## Knowledge instance
+## Knowledge base
 
-This repository is one personal kgdistiller instance, the base `notes`. It
+This repository holds one personal kgdistiller base, `notes`. It
 owns the personal note sources and the reviewed knowledge records. It does not
 own the kgdistiller engine, product Skills, agents, workflows or tests. The
 notes website does not depend on it: it is driven by `courses.json` and the
@@ -156,7 +156,7 @@ generated knowledge-marker registry, neither of which reads `.knowledge/`.
 
 ### Decisions
 
-These are decisions of this personal instance, not kgdistiller product
+These are decisions of this personal base, not kgdistiller product
 defaults.
 
 - Identity comes from the reviewed entries: each entry's id, label and aliases.
@@ -172,7 +172,7 @@ defaults.
   (or `kgd harvest`). Changing the notes website (`courses.json`, the
   generated marker registry) needs an explicit owner request.
 - Do not import solvablemodel paper nodes C02, C07, C09, C12, C15, C16, C17,
-  C19, C20, or other paper nodes into this personal knowledge instance under
+  C19, C20, or other paper nodes into this personal knowledge base under
   the prior evaluation decision.
 - Do not write knowledge markers back into the solvablemodel paper sources
   under the prior evaluation decision.
@@ -184,7 +184,7 @@ defaults.
   spellings became aliases; the 219 accepted edges became accepted relation
   records.
 
-### Refreshing the knowledge instance
+### Refreshing the knowledge base
 
 `make check` and CI consume committed data only; they never invoke
 kgdistiller. Only knowledge authoring needs the installed kgdistiller CLI
