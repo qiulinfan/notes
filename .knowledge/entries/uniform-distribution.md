@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "uniform-distribution"
-kgd_label: "uniform distribution"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "7396dd670b61b36f5471ce12e07fbf5f696462b0cc6e7be7041861742bf13713"
+schema: kgdistiller-entry-v1
+id: uniform-distribution
+label: uniform distribution
+kind: definition
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 1227
+line_end: 1233
+understanding: unknown
 ---
 
 # uniform distribution
@@ -14,6 +16,14 @@ kgd_definition_sha256: "7396dd670b61b36f5471ce12e07fbf5f696462b0cc6e7be704186174
 
 Uniform(a,b) 在区间上以常数密度 1/(b−a) 分布。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:1119。
+```
+\begin{definition}{\kn{uniform distribution}}
+
+如果 \(\mathit{f}_{\mathit{X}}(\mathit{x}) = \frac{1}{\mathit{b} - \mathit{a}}\) on \((\mathit{a},\mathit{b})\) and \(0\) elsewhere, 那么我们称 \(\mathit{X}\) 的 distribution \(\mathit{P}^{\mathit{X}}\) 为一个 \textbf{uniform distribution}, 写作
+
+\[\mathit{X} \sim \mathit{U}(\lbrack\mathit{a},\mathit{b}\rbrack)\]
+
+\end{definition}
+```

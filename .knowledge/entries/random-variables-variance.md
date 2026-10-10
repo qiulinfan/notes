@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "random-variables-variance"
-kgd_label: "两个 random variables 之和的 variance"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "9cac2f0453da467266f2e8c92d022a9929271a31966ddfe7825accebe016526a"
+schema: kgdistiller-entry-v1
+id: random-variables-variance
+label: 两个 random variables 之和的 variance
+kind: proposition
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 900
+line_end: 906
+understanding: unknown
 ---
 
 # 两个 random variables 之和的 variance
@@ -14,6 +16,14 @@ kgd_definition_sha256: "9cac2f0453da467266f2e8c92d022a9929271a31966ddfe7825acceb
 
 Var(X+Y)=Var(X)+Var(Y)+2Cov(X,Y)。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:864。
+```
+\begin{proposition}{\kn{两个 random variables 之和的 variance}}
+
+两个 random variables 的和的 variance 可分解成 variances 和 covariance:
+
+\[\text{Var}(\mathit{X} + \mathit{Y}) = \text{Var}(\mathit{X}) + \text{Var}(\mathit{Y}) + 2\ \text{Cov}(\mathit{X},\mathit{Y})\]
+
+\end{proposition}
+```

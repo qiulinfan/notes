@@ -1,11 +1,14 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "subspace"
-kgd_label: "Subspace"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/advanced-linear-algebra/chapters/01-review-on-basic-concepts.typ.md"
-kgd_source_sha256: "04ea6d8c81b9b2d625c92d61a01fd77dba2fd91583cb4671dc9efa034c32afad"
-kgd_definition_sha256: "9a5148b62ffc0513b5e213aff2689733d59d0c57f932f09bcf70f6392b7e9b91"
+schema: kgdistiller-entry-v1
+id: subspace
+label: Subspace
+kind: definition
+aliases:
+  - linear subspace
+source: notes/math/advanced-linear-algebra/chapters/01-review-on-basic-concepts.tex
+line_start: 7
+line_end: 19
+understanding: unknown
 ---
 
 # Subspace
@@ -13,3 +16,21 @@ kgd_definition_sha256: "9a5148b62ffc0513b5e213aff2689733d59d0c57f932f09bcf70f639
 ## Summary
 
 A subset of a vector space containing zero and closed under addition and scalar multiplication.
+
+## Evidence
+
+```
+\begin{definition}{\kn{Subspace}}\label{subspace}
+
+vector space 的 subset \(U \subset V\) 为一个 subspace，if 它满足条件：
+
+\begin{enumerate}
+\tightlist
+\item
+  包含 0
+\item
+  对 addition 和 scalar multiplication 闭合
+\end{enumerate}
+
+\end{definition}
+```

@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "correlation"
-kgd_label: "correlation"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "a79208abc3dba247948d5bd9901c32b370082124feb39aae2709ec64f3596da1"
+schema: kgdistiller-entry-v1
+id: correlation
+label: correlation
+kind: definition
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 851
+line_end: 855
+understanding: unknown
 ---
 
 # correlation
@@ -14,6 +16,12 @@ kgd_definition_sha256: "a79208abc3dba247948d5bd9901c32b370082124feb39aae2709ec64
 
 correlation 是 covariance 以两个标准差归一化后的量。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:823。
+```
+\begin{definition}{\kn{correlation}}
+
+\[\mathit{\rho}(\mathit{X},\mathit{Y}) = \frac{\text{Cov}(X,Y)}{\sqrt{\text{Var}(\mathit{X})}\sqrt{\text{Var}(\mathit{Y})}}\]
+
+\end{definition}
+```

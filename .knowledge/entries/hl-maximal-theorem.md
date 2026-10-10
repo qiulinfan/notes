@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "hl-maximal-theorem"
-kgd_label: "HL maximal theorem"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.typ.md"
-kgd_source_sha256: "9f9534a6af1bbc79aa99aa439eb00a31c435094b33f00a0cdcbd7c19f6e65cbd"
-kgd_definition_sha256: "cf30acbd930236978af420af00ff21928cede60a430b45ac9df557c7afdee23e"
+schema: kgdistiller-entry-v1
+id: hl-maximal-theorem
+label: HL maximal theorem
+kind: theorem
+aliases: []
+source: notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex
+line_start: 172
+line_end: 178
+understanding: unknown
 ---
 
 # HL maximal theorem
@@ -14,6 +16,14 @@ kgd_definition_sha256: "cf30acbd930236978af420af00ff21928cede60a430b45ac9df557c7
 
 For $L^1\(m^n\)$, take constant $C := 3^n$, 则对于任意 $f in L^1\(m^n\)$, 都有: $ m\({ x : H f\(x\)> alpha }\)lt.eq C / alpha integral\|f\| $
 
-## Context
+## Evidence
 
-原生 theorem；authority: notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.typ:99。
+```
+\begin{theorem}{\kn{HL maximal theorem}}
+
+For \(L^{1}(m^{n})\), take constant \(C := 3^{n}\), 则对于任意 \(f \in L^{1}(m^{n})\), 都有:
+
+\[\left. m(\left\{ {x:Hf(x) > \alpha} \right\}) \leq \frac{C}{\alpha}\int \middle| f| \right.\]
+
+\end{theorem}
+```

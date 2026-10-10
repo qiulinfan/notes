@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "orthogonal-projection"
-kgd_label: "Orthogonal projection"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/linear-algebra/chapters/05-geometry-of-linear-transformations.typ.md"
-kgd_source_sha256: "8e39b93736befe3f4280c7bc3731939396394957e12d7dcd182716607c39b7b2"
-kgd_definition_sha256: "b02e1c321d33098f9e195eec5016adec07b642cbb12664adc5e2fa0d075e75e7"
+schema: kgdistiller-entry-v1
+id: orthogonal-projection
+label: Orthogonal projection
+kind: definition
+aliases: []
+source: notes/math/linear-algebra/chapters/05-geometry-of-linear-transformations.tex
+line_start: 70
+line_end: 82
+understanding: unknown
 ---
 
 # Orthogonal projection
@@ -13,3 +15,21 @@ kgd_definition_sha256: "b02e1c321d33098f9e195eec5016adec07b642cbb12664adc5e2fa0d
 ## Summary
 
 The component of a vector parallel to a line, with its projection formula.
+
+## Evidence
+
+```
+\begin{definition}{\kn{Orthogonal projection}}
+
+Consider a line \(L\) in coordinate plane, 经过 \(\left( {0,0} \right)\). 任何 \(x \in \mathbb{R}^{2}\) 都可以写成 \(x = x^{\parallel} + x^{\perp}\), where \(x^{\parallel}\ \|\ L\) and \(x^{\perp} \perp L\). The transformation \(T(x) = x^{\parallel}\) is the orthogonal projection of \(x\) onto \(L\), denoted \(\text{proj}_{L{(x)}}\).
+
+随意取 \(w\ \|\ L\), \(\text{proj}_{L{(x)}} = \frac{x \cdot w}{w \cdot w}w\). 特别地，如果 \(w\) 是 unit vector \(u = \begin{pmatrix}
+u_{1} \\
+u_{2}
+\end{pmatrix}\ \|\ L\), then \(\text{proj}_{L{(x)}} = \left( {x \cdot u} \right)u\). 这一个 transformation 是 linear 的；with matrix \(P = \begin{pmatrix}
+u_{1}^{2} & {u_{1}u_{2}} \\
+{u_{1}u_{2}} & u_{2}^{2}
+\end{pmatrix}\).
+
+\end{definition}
+```

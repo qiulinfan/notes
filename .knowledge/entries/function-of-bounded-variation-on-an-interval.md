@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "function-of-bounded-variation-on-an-interval"
-kgd_label: "function of bounded variation on an interval"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.typ.md"
-kgd_source_sha256: "9ad96e95994d7684c4ca200e193c820035ed825cf43d143f29cfafbde80900f4"
-kgd_definition_sha256: "ba0702fd7d61262c43cbac9aff1a3e12c7229776ef9bc50e210d32090b4be196"
+schema: kgdistiller-entry-v1
+id: function-of-bounded-variation-on-an-interval
+label: function of bounded variation on an interval
+kind: definition
+aliases: []
+source: notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex
+line_start: 390
+line_end: 394
+understanding: unknown
 ---
 
 # function of bounded variation on an interval
@@ -14,6 +16,12 @@ kgd_definition_sha256: "ba0702fd7d61262c43cbac9aff1a3e12c7229776ef9bc50e210d3209
 
 如果 $T_F\(a\;b\)< oo$, 我们称 $F : bb(R) arrow.r bb(C)$ is of bounded variation on $\[a\,b\]$, 写成 $F in B V\(\[a\,b\]\)$.
 
-## Context
+## Evidence
 
-原生 definition；authority: notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.typ:206。
+```
+\begin{definition}{\kn{function of bounded variation on an interval}}
+
+如果 \(T_{F}(a;b) < \infty\), 我们称 \(F:\mathbb{R}\rightarrow\mathbb{C}\) is \textbf{of bounded variation} on \(\lbrack a,b\rbrack\), 写成 \(F \in BV(\lbrack a,b\rbrack)\).
+
+\end{definition}
+```

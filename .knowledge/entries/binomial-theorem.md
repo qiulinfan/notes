@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "binomial-theorem"
-kgd_label: "Binomial Theorem"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/01-combinatorics&prob_space.typ.md"
-kgd_source_sha256: "85ec8db58bd29edfb393ac5e5f57555a2e9acb9680b39b85b9898e7b89790e97"
-kgd_definition_sha256: "ff2f2d424ce51b440890fe1742285c39a9c91503beca93d49b15fde4b74bf2e0"
+schema: kgdistiller-entry-v1
+id: binomial-theorem
+label: Binomial Theorem
+kind: theorem
+aliases: []
+source: notes/math/prob/chapters/01-combinatorics&prob_space.tex
+line_start: 94
+line_end: 100
+understanding: unknown
 ---
 
 # Binomial Theorem
@@ -13,3 +15,15 @@ kgd_definition_sha256: "ff2f2d424ce51b440890fe1742285c39a9c91503beca93d49b15fde4
 ## Summary
 
 对 x,y∈ℝ 与 n∈ℕ，Binomial Theorem 给出 (x+y)^n = ∑_{k=0}^n binom(n,k)x^{n-k}y^k；组合解释把系数视为从 n 个因子中选择 y 项的位置数。
+
+## Evidence
+
+```
+\begin{theorem}{\kn{Binomial Theorem}}
+
+令 \(\mathit{x},\mathit{y} \in \mathbb{R},\mathit{n} \in \mathbb{N}\), 则有:
+
+\[(\mathit{x} + \mathit{y})^{\mathit{n}} = \sum\limits_{\mathit{k} = 0}^{\mathit{n}}\binom{\mathit{n}}{\mathit{k}}\mathit{x}^{\mathit{n} - \mathit{k}}\mathit{y}^{\mathit{k}}\]
+
+\end{theorem}
+```

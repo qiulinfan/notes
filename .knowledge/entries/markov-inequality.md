@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "markov-inequality"
-kgd_label: "Markov's inequality"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/04-LLN.typ.md"
-kgd_source_sha256: "832888e03949ed5914f31f788001bf68352a73d0b2ecc986b85ccc70c8e5b27e"
-kgd_definition_sha256: "44a765af98054495c9ba0a511c8c631a217faf070f9b2b2e5f6e2f0669909e85"
+schema: kgdistiller-entry-v1
+id: markov-inequality
+label: Markov's inequality
+kind: theorem
+aliases: []
+source: notes/math/prob/chapters/04-LLN.tex
+line_start: 10
+line_end: 16
+understanding: unknown
 ---
 
 # Markov's inequality
@@ -14,6 +16,14 @@ kgd_definition_sha256: "44a765af98054495c9ba0a511c8c631a217faf070f9b2b2e5f6e2f06
 
 非负 X 与 t>0 时，P(X≥t)≤E[X]/t。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/04-LLN.typ:16。
+```
+\begin{theorem}{\kn{Markov's inequality}}
+
+下文的 expectation 与 variance 采用 \knref{expectation and variance of random variable} 的定义。对于一个 non-negative random variable \(\mathit{X}\) (即 \(\mathit{X} \geq 0\) a.s.), 任取 \(\mathit{t} > 0\), 都有
+
+\[\mathbb{P}(\mathit{X} \geq \mathit{t}) \leq \frac{\mathbb{E}\lbrack\mathit{X}\rbrack}{\mathit{t}}\]
+
+\end{theorem}
+```

@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "sigma-finite-measure"
-kgd_label: "σ-finite measure"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.typ.md"
-kgd_source_sha256: "21342e1548973ced5c41abfe8383a7b268d1716c83162f6a317f19191c3ca338"
-kgd_definition_sha256: "56871cb23067e93b75637c9d625cdbbbd6858150b1c31706bf1e66c8b2bbab08"
+schema: kgdistiller-entry-v1
+id: sigma-finite-measure
+label: σ-finite measure
+kind: definition
+aliases: []
+source: notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex
+line_start: 319
+line_end: 325
+understanding: unknown
 ---
 
 # σ-finite measure
@@ -14,6 +16,14 @@ kgd_definition_sha256: "56871cb23067e93b75637c9d625cdbbbd6858150b1c31706bf1e66c8
 
 Let $\(X\,cal(M)\,mu\)$ be a measure space. \ 如果 $mu\(X\)< oo$, 则称 $mu$ 是 finite 的. \ 如果存在一个 sequence $\(E_i\)$ in $cal(M)$ 使得 $union.big_i E_i = X$ 并且每个 $mu\(E_i\)< oo$, 则称 $mu$ 是 $sigma$-finite 的.
 
-## Context
+## Evidence
 
-原生 definition；authority: notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.typ:231。
+```
+\begin{definition}{\kn{$\sigma$-finite measure}}
+
+Let \((X,\mathcal{M},\mu)\) be a measure space.\\
+如果 \(\mu(X) < \infty\), 则称 \(\mu\) 是 finite 的.\\
+如果存在一个 sequence \((E_{i})\) in \(\mathcal{M}\) 使得 \(\bigcup_{i}E_{i} = X\) 并且每个 \(\mu(E_{i}) < \infty\), 则称 \(\mu\) 是 \(\sigma\)-finite 的.
+
+\end{definition}
+```

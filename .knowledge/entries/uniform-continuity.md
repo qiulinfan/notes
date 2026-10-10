@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "uniform-continuity"
-kgd_label: "Uniform continuity"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/mathematical-analysis/chapters/04-limits-and-continuity.typ.md"
-kgd_source_sha256: "e25b234e0f809a441898fa4cb38b6bfa70f20cf2d7176ea260f382113ea46607"
-kgd_definition_sha256: "5efa5aab6d9c3b366727d030254eb7a8297c140b985050ad9a32455fe7ba3526"
+schema: kgdistiller-entry-v1
+id: uniform-continuity
+label: Uniform continuity
+kind: definition
+aliases: []
+source: notes/math/mathematical-analysis/chapters/04-limits-and-continuity.tex
+line_start: 204
+line_end: 208
+understanding: unknown
 ---
 
 # Uniform continuity
@@ -13,3 +15,13 @@ kgd_definition_sha256: "5efa5aab6d9c3b366727d030254eb7a8297c140b985050ad9a32455f
 ## Summary
 
 A function is uniformly continuous when one delta works for all pairs of domain points for each epsilon.
+
+## Evidence
+
+```
+\begin{definition}{\kn{Uniform continuity}}
+
+Let \(B \subseteq A \subseteq \mathbb{R}\) and \(f:A\rightarrow\mathbb{R}\). Then \(f\) is uniformly continuous on \(B\) if, for every \(\varepsilon > 0\), there is \(\delta > 0\) such that for all \(x,y \in B\), \(\left| {x - y} \right| < \delta\) implies \(\left| {f(x) - f(y)} \right| < \varepsilon\).
+
+\end{definition}
+```

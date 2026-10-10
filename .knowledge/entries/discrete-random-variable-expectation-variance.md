@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "discrete-random-variable-expectation-variance"
-kgd_label: "discrete random variable 的 expectation 和 variance"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "902eec8ff20161d20307d5d7a3209187b24db432c8484c4b19ff2a4f9159fdb2"
+schema: kgdistiller-entry-v1
+id: discrete-random-variable-expectation-variance
+label: discrete random variable 的 expectation 和 variance
+kind: proposition
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 622
+line_end: 628
+understanding: unknown
 ---
 
 # discrete random variable 的 expectation 和 variance
@@ -14,6 +16,14 @@ kgd_definition_sha256: "902eec8ff20161d20307d5d7a3209187b24db432c8484c4b19ff2a4f
 
 离散情形的 expectation/variance 分别按取值和 pmf 的加权和计算。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:616。
+```
+\begin{proposition}{\kn{discrete random variable 的 expectation 和 variance}}
+
+对于 discrete random variable \(\mathit{X}\) with pmf \(\mathit{p}_{\mathit{X}}\),
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack = \sum\limits_{\mathit{x}}\mathit{x}\mathit{p}_{\mathit{X}}(\mathit{x}),\quad\text{Var}(\mathit{X}) = \sum\limits_{\mathit{x}}(\mathit{x} - \mathbb{E}\lbrack\mathit{X}\rbrack)^{2}\mathit{p}_{\mathit{X}}(\mathit{x})\]
+
+\end{proposition}
+```

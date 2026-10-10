@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "spectral-theorem"
-kgd_label: "Spectral theorem"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/linear-algebra/chapters/13-spectral-theorem.typ.md"
-kgd_source_sha256: "76cc2fbf29989077a5d0d9901876e136a63f472b19de27d8bd141a8b41e8e3ab"
-kgd_definition_sha256: "9c7ea82ca6eab5b36ddb7197355a6be5b2759a5dff2fce2fb26df618c9d08bc7"
+schema: kgdistiller-entry-v1
+id: spectral-theorem
+label: Spectral theorem
+kind: theorem
+aliases: []
+source: notes/math/linear-algebra/chapters/13-spectral-theorem.tex
+line_start: 6
+line_end: 10
+understanding: unknown
 ---
 
 # Spectral theorem
@@ -13,3 +15,13 @@ kgd_definition_sha256: "9c7ea82ca6eab5b36ddb7197355a6be5b2759a5dff2fce2fb26df618
 ## Summary
 
 The named theorem stated for the course's linear-algebra setting.
+
+## Evidence
+
+```
+\begin{theorem}{\kn{Spectral theorem}}
+
+\(A\) is orthogonally diagonalizable iff \(A\) is symmetric: \(\exists S \in \mathbb{R}^{n \times n}\) such that \(S^{- 1} = S^{t}\) and \(S^{t}AS\) is diagonal iff \(A\) is symmetric.
+
+\end{theorem}
+```

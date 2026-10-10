@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "moment-generating-function"
-kgd_label: "moment generating function"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/05-CLT.typ.md"
-kgd_source_sha256: "5f7348d3fa7ec45b2d0850ecc670c74f51c6ee037017dbf56cc19931c0d18669"
-kgd_definition_sha256: "8102931a7eb609a5cfa7ac1a01336ffde24e78dcc0c074fb53f10c309e53b56d"
+schema: kgdistiller-entry-v1
+id: moment-generating-function
+label: moment generating function
+kind: definition
+aliases: []
+source: notes/math/prob/chapters/05-CLT.tex
+line_start: 32
+line_end: 38
+understanding: unknown
 ---
 
 # moment generating function
@@ -14,6 +16,14 @@ kgd_definition_sha256: "8102931a7eb609a5cfa7ac1a01336ffde24e78dcc0c074fb53f10c30
 
 M_X(t)=E[e^(tX)]；在零邻域存在时导数给出各阶矩。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/05-CLT.typ:50。
+```
+\begin{definition}{\kn{moment generating function}}
+
+对于一个随机变量 \(\mathit{X}\), 其 moment generating function (MGF) 定义为
+
+\[\mathit{M}_{\mathit{X}}(\mathit{t}) = \mathbb{E}\lbrack\mathit{e}^{\mathit{t}\mathit{X}}\rbrack,\quad\mathit{t} \in \mathbb{R}\]
+
+\end{definition}
+```

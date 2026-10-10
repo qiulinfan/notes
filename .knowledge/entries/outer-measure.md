@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "outer-measure"
-kgd_label: "outer measure"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.typ.md"
-kgd_source_sha256: "21342e1548973ced5c41abfe8383a7b268d1716c83162f6a317f19191c3ca338"
-kgd_definition_sha256: "f277af83c3ceb1495ed90e7999b3d902c8e066be63766d5d5b899be1178d7c19"
+schema: kgdistiller-entry-v1
+id: outer-measure
+label: outer measure
+kind: definition
+aliases: []
+source: notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex
+line_start: 66
+line_end: 79
+understanding: unknown
 ---
 
 # outer measure
@@ -14,6 +16,21 @@ kgd_definition_sha256: "f277af83c3ceb1495ed90e7999b3d902c8e066be63766d5d5b899be1
 
 An outer measure on $X$ is a function $mu^(*) : cal(P)\(X\)arrow.r\[0\,oo\)$ such that + $mu\(diameter\)= 0$ + monotone ($A subset B arrow.r.double.long mu^(*)\(A\)lt.eq mu^(*)\(B\)$) + countable subadditive ($mu^(*)\(union.big_(i = 1)^oo E_i\)lt.eq sum_(i = 1)^oo mu^(*)\(E_i\)$)
 
-## Context
+## Evidence
 
-原生 definition；authority: notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.typ:54。
+```
+\begin{definition}{\kn{outer measure}}
+
+An outer measure on \(X\) is a function \(\mu^{\ast}:\mathcal{P}(X)\rightarrow\lbrack 0,\infty)\) such that
+
+\begin{enumerate}
+\item
+  \(\mu(\varnothing) = 0\)
+\item
+  monotone (\(A \subset B\Longrightarrow\mu^{\ast}(A) \leq \mu^{\ast}(B)\))
+\item
+  countable subadditive (\(\mu^{\ast}(\bigcup_{i = 1}^{\infty}E_{i}) \leq \sum_{i = 1}^{\infty}\mu^{\ast}(E_{i})\))
+\end{enumerate}
+
+\end{definition}
+```

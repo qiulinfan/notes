@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "differentiability"
-kgd_label: "Differentiability"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/multivariate-analysis/chapters/02-multivariable-differentiation.typ.md"
-kgd_source_sha256: "4bf52ac6126f79140a0632d471565ca9cff025baa9f51ee67ad88e87755dd977"
-kgd_definition_sha256: "fb590f534577b6f9083fd00741c260820d4ddd3693f32471bd8935b806db34b3"
+schema: kgdistiller-entry-v1
+id: differentiability
+label: Differentiability
+kind: definition
+aliases: []
+source: notes/math/multivariate-analysis/chapters/02-multivariable-differentiation.tex
+line_start: 30
+line_end: 34
+understanding: unknown
 ---
 
 # Differentiability
@@ -13,3 +15,13 @@ kgd_definition_sha256: "fb590f534577b6f9083fd00741c260820d4ddd3693f32471bd8935b8
 ## Summary
 
 A map on an open subset of R^n is differentiable at a point when a linear map gives a remainder negligible relative to the displacement.
+
+## Evidence
+
+```
+\begin{definition}{\kn{Differentiability}}
+
+Let \(A \subseteq \mathbb{R}^{n}\) be open and \(f:A\rightarrow\mathbb{R}^{m}\). The map \(f\) is differentiable at \(x_{0} \in A\) if there is a linear map \(A_{0}:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}\) such that \(\lim_{{\| h\|}\rightarrow 0}\frac{\left\| {f\left( {x_{0} + h} \right) - f\left( x_{0} \right) - A_{0}h} \right\|}{\left\| h \right\|} = 0\). The linear map is unique and is denoted \(Df\left( x_{0} \right)\).
+
+\end{definition}
+```

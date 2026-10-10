@@ -1,11 +1,14 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "linear-transformation"
-kgd_label: "Linear transformation"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/linear-algebra/chapters/04-linear-transformations.typ.md"
-kgd_source_sha256: "39c38751baf2a91aa47469ba6352cc7689d7779e07f87b65b74b09a82ac22378"
-kgd_definition_sha256: "3fd7bcddf5d69b4762fca941d32400d9323e5cadc4145b691b168979d1b5196a"
+schema: kgdistiller-entry-v1
+id: linear-transformation
+label: Linear transformation
+kind: definition
+aliases:
+  - linear map
+source: notes/math/linear-algebra/chapters/04-linear-transformations.tex
+line_start: 30
+line_end: 42
+understanding: unknown
 ---
 
 # Linear transformation
@@ -13,3 +16,21 @@ kgd_definition_sha256: "3fd7bcddf5d69b4762fca941d32400d9323e5cadc4145b691b168979
 ## Summary
 
 A map between real vector spaces represented by a matrix in the notes.
+
+## Evidence
+
+```
+\begin{definition}{\kn{Linear transformation}}
+
+A function \(T:\mathbb{R}^{m}\rightarrow\mathbb{R}^{n}\) is called a linear transformation if for every \(x \in \mathbb{R}^{m}\) there is an \(n \times m\) matrix \(A\) such that \(T(x) = Ax\).
+
+Example: \(y = x_{1}^{2} + x_{2}^{2} + x_{3}^{2}\) has input \(\begin{pmatrix}
+x_{1} \\
+x_{2} \\
+x_{3}
+\end{pmatrix}\) and output \(\lbrack y\rbrack\); \(A = \begin{pmatrix}
+x_{1} & x_{2} & x_{3}
+\end{pmatrix}\). 可以发现 \(y = x \cdot x\) is not a linear transformation of \(x\).
+
+\end{definition}
+```

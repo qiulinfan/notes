@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "sample-space"
-kgd_label: "sample space"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/01-combinatorics&prob_space.typ.md"
-kgd_source_sha256: "85ec8db58bd29edfb393ac5e5f57555a2e9acb9680b39b85b9898e7b89790e97"
-kgd_definition_sha256: "b362f8477cc73f66e66f1e03f0214e7022b1ff05b3c215b880ce50988494b226"
+schema: kgdistiller-entry-v1
+id: sample-space
+label: sample space
+kind: definition
+aliases: []
+source: notes/math/prob/chapters/01-combinatorics&prob_space.tex
+line_start: 366
+line_end: 374
+understanding: unknown
 ---
 
 # sample space
@@ -13,3 +15,17 @@ kgd_definition_sha256: "b362f8477cc73f66e66f1e03f0214e7022b1ff05b3c215b880ce5098
 ## Summary
 
 Sample space Ω 是一次 experiment 所有可能 outcomes 的集合，是 probability space 的底层集合。
+
+## Evidence
+
+```
+\begin{definition}{\kn{probability space}, \kn{probability measure}, \kn{sample space},
+\kn{event space}}
+
+按 \knref{measure space} 的定义, 一个 probability space 是三元组 \((\Omega,\mathcal{F},\mathbb{P})\), 其中 \(\mathbb{P}(\varnothing) = 0,\mathbb{P}(\Omega) = 1\).\\
+对于这样的 \knref{measure} \(\mathbb{P}\), 我们称之为 \textbf{probability measure (概率测度, 即概率)}.\\
+而这里的 \(\Omega\) 我们称之为 \textbf{sample space (样本空间)}; 这里的 \knref{$\mathit{\sigma}$-algebra} \(\mathcal{F}\), 我们称之为 \textbf{event space (事件空间)}.\\
+任意的 \(\mathit{A} \subset \Omega\) 都是一个 \textbf{event}, 但是概率论中只考虑 \(\mathit{A} \in \mathcal{F}\), 即 measurable event. 为简化, event 这个单词就指 measurable event.
+
+\end{definition}
+```

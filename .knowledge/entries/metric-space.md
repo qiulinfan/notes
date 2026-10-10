@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "metric-space"
-kgd_label: "Metric space"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/mathematical-analysis/chapters/02-functions-countability-and-metric-spaces.typ.md"
-kgd_source_sha256: "fe968f13b52ad32996004dae8bc30ffd591fe4fcebcad8ca47b97cabaf3dd740"
-kgd_definition_sha256: "e1d4c0a80fbdc5845e266810406d172c90194fddd673dc9626051eaef3ad6d74"
+schema: kgdistiller-entry-v1
+id: metric-space
+label: Metric space
+kind: definition
+aliases: []
+source: notes/math/mathematical-analysis/chapters/02-functions-countability-and-metric-spaces.tex
+line_start: 62
+line_end: 78
+understanding: unknown
 ---
 
 # Metric space
@@ -13,3 +15,25 @@ kgd_definition_sha256: "e1d4c0a80fbdc5845e266810406d172c90194fddd673dc9626051eae
 ## Summary
 
 A metric space is a set equipped with a nonnegative symmetric distance satisfying the triangle inequality.
+
+## Evidence
+
+```
+\begin{definition}{Metric and \kn{Metric space}}
+
+A metric on \(X\) is a map \(d:X \times X\rightarrow\mathbb{R}\) such that, for all \(a,b,c \in X\):
+
+\begin{itemize}
+\tightlist
+\item
+  \(d\left( {a,b} \right) \geq 0\), with equality if and only if \(a = b\);
+\item
+  \(d\left( {a,b} \right) = d\left( {b,a} \right)\); and
+\item
+  \(d\left( {a,c} \right) \leq d\left( {a,b} \right) + d\left( {b,c} \right)\).
+\end{itemize}
+
+The pair \(\left( {X,d} \right)\) is a metric space.
+
+\end{definition}
+```

@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "absolutely-continuous"
-kgd_label: "absolutely continuous 的性质"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.typ.md"
-kgd_source_sha256: "75fc9ad9babc011aa00a8dcc87bc1a9f75c8d7532ef49a0cf54442690275c255"
-kgd_definition_sha256: "ad729170cb2b8247ea35487e5b3181d6439ed3d35b9cd49838114606de8a9b95"
+schema: kgdistiller-entry-v1
+id: absolutely-continuous
+label: absolutely continuous 的性质
+kind: proposition
+aliases: []
+source: notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.tex
+line_start: 68
+line_end: 83
+understanding: unknown
 ---
 
 # absolutely continuous 的性质
@@ -14,6 +16,23 @@ kgd_definition_sha256: "ad729170cb2b8247ea35487e5b3181d6439ed3d35b9cd49838114606
 
 - 对 [total variation measure], $ \|nu\|lt.double mu arrow.l.r.double nu^(+) lt.double mu upright(" and ") nu^(-) lt.double mu $\(容易证明) - $ nu perp mu upright(" and ") nu lt.double mu arrow.r.double.long nu = 0 $\(刚才已经证明)
 
-## Context
+## Evidence
 
-原生 proposition；authority: notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.typ:47。
+```
+\begin{proposition}{\kn{absolutely continuous 的性质}}
+
+\begin{itemize}
+\item
+  对 \knref{total variation measure},
+
+  \[\left. |\nu \middle| \ll \mu\Leftrightarrow\nu^{+} \ll \mu\ \text{and}\ \nu^{-} \ll \mu \right.\]
+
+  (容易证明)
+\item
+  \[\nu \perp \mu\ \text{and}\ \nu \ll \mu\Longrightarrow\nu = 0\]
+
+  (刚才已经证明)
+\end{itemize}
+
+\end{proposition}
+```

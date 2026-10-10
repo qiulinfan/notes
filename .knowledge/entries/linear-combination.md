@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "linear-combination"
-kgd_label: "Linear combination"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/linear-algebra/chapters/03-linear-combinations.typ.md"
-kgd_source_sha256: "c0014438c1c70c9c8b6f883194600234b4b6fcd04c568ba25a8db575d4a78637"
-kgd_definition_sha256: "861758c31b0fdc62dd575de8f86dc3051813c7f537bbb7a5b5c40df92a28d30a"
+schema: kgdistiller-entry-v1
+id: linear-combination
+label: Linear combination
+kind: definition
+aliases: []
+source: notes/math/linear-algebra/chapters/03-linear-combinations.tex
+line_start: 133
+line_end: 137
+understanding: unknown
 ---
 
 # Linear combination
@@ -13,3 +15,13 @@ kgd_definition_sha256: "861758c31b0fdc62dd575de8f86dc3051813c7f537bbb7a5b5c40df9
 ## Summary
 
 A vector represented as a scalar combination of given vectors.
+
+## Evidence
+
+```
+\begin{definition}{\kn{Linear combination}}
+
+A vector \(b \in \mathbb{R}^{n}\) is called a linear combination of vectors \(v_{1},\ldots,v_{m} \in \mathbb{R}^{n}\) if there are scalars \(x_{1},\ldots,x_{m}\) such that \(b = x_{1}v_{1} + \ldots + x_{m}v_{m}\).
+
+\end{definition}
+```

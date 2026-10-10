@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "decomposing-probability-of-intersection-of-events"
-kgd_label: "decomposing probability of intersection of events"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/01-combinatorics&prob_space.typ.md"
-kgd_source_sha256: "85ec8db58bd29edfb393ac5e5f57555a2e9acb9680b39b85b9898e7b89790e97"
-kgd_definition_sha256: "340e71524da1eca824b12892f9646fe42c8d9fa9f033f60c862e8d236611d505"
+schema: kgdistiller-entry-v1
+id: decomposing-probability-of-intersection-of-events
+label: decomposing probability of intersection of events
+kind: proposition
+aliases: []
+source: notes/math/prob/chapters/01-combinatorics&prob_space.tex
+line_start: 484
+line_end: 490
+understanding: unknown
 ---
 
 # decomposing probability of intersection of events
@@ -13,3 +15,15 @@ kgd_definition_sha256: "340e71524da1eca824b12892f9646fe42c8d9fa9f033f60c862e8d23
 ## Summary
 
 对 events A₁,…,Aₙ，交集概率可逐步分解为 P(A₁)P(A₂|A₁)⋯P(Aₙ|A₁∩⋯∩Aₙ₋₁)。这是 conditional probability 定义的连锁展开。
+
+## Evidence
+
+```
+\begin{proposition}{\kn{decomposing probability of intersection of events}}
+
+令 \(\left( \mathit{A}_{\mathit{i}} \right)_{\mathit{i} \in \mathbb{N}}\) 为一个 seq of events, 对于任意 \(\mathit{n} \in \mathbb{N}\):
+
+\[\mathbb{P}\left( {\mathit{A}_{1} \cap \mathit{A}_{2} \cap \ldots \cap \mathit{A}_{\mathit{n}}} \right) = \mathbb{P}\left( \mathit{A}_{1} \right) \cdot \mathbb{P}\left( {\mathit{A}_{2} \mid \mathit{A}_{1}} \right) \cdot \mathbb{P}\left( {\mathit{A}_{3} \mid \mathit{A}_{1} \cap \mathit{A}_{2}} \right)\ldots \cdot \mathbb{P}\left( {\mathit{A}_{\mathit{n}} \mid \mathit{A}_{1} \cap \ldots \cap \mathit{A}_{\mathit{n} - 1}} \right)\]
+
+\end{proposition}
+```

@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "probability-density-function"
-kgd_label: "probability density function 的性质"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "8872c15c0036ed121849b101f6fde6bc110cd3fe7f2a98388c93473dae74fd89"
+schema: kgdistiller-entry-v1
+id: probability-density-function
+label: probability density function 的性质
+kind: proposition
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 471
+line_end: 490
+understanding: unknown
 ---
 
 # probability density function 的性质
@@ -14,6 +16,27 @@ kgd_definition_sha256: "8872c15c0036ed121849b101f6fde6bc110cd3fe7f2a98388c93473d
 
 pdf 非负、积分为一，区间概率是密度积分。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:466。
+```
+\begin{proposition}{\kn{probability density function 的性质}}
+
+对于 continuous random variable \(\mathit{X}\) with pdf \(\mathit{f}_{\mathit{X}}\),
+
+\begin{itemize}
+\item
+  \(\mathit{f}_{\mathit{X}}(\mathit{x}) \geq 0\) for \(\mathit{m}\)-a.e. \(\mathit{x} \in \mathbb{R}\). (因为 \(\mathit{F}_{\mathit{X}}\) 是 non-decreasing 的.)
+\item
+  \(\int_{- \infty}^{+ \infty}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x} = 1\). (因为 \(\mathit{F}_{\mathit{X}}(\infty) = 1\).)
+\item
+  对于任意 Borel set \(\mathit{A}\), 有
+
+  \[\mathbb{P}(\mathit{X} \in \mathit{A}) = \mathbb{P}^{\mathit{X}}(\mathit{A}) = \int_{\mathit{A}}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x}\]
+\item
+  对于 \(\mathit{m}\)-a.e. \(\mathit{x} \in \mathbb{R}\),
+
+  \[\mathit{f}_{\mathit{X}}(\mathit{x}) = \lim\limits_{\mathit{\varepsilon}\rightarrow 0^{+}}\frac{\mathbb{P}^{\mathit{X}}(\lbrack\mathit{x},\mathit{x} + \mathit{\varepsilon}))}{\mathit{\varepsilon}} = \lim\limits_{\mathit{\varepsilon}\rightarrow 0^{+}}\frac{\mathit{F}_{\mathit{X}}(\mathit{x} + \mathit{\varepsilon}) - \mathit{F}_{\mathit{X}}(\mathit{x})}{\mathit{\varepsilon}}\]
+\end{itemize}
+
+\end{proposition}
+```

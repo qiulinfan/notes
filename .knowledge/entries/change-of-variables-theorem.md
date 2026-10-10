@@ -1,11 +1,14 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "change-of-variables-theorem"
-kgd_label: "Change-of-variables theorem"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/multivariate-analysis/chapters/05-integration-and-change-of-variables.typ.md"
-kgd_source_sha256: "397338a33c96b0e1f74d4bca0e5021edae2ef70a6034bf4425982457edb69ecd"
-kgd_definition_sha256: "f721f5647212c5f36ebb69ea73f0c4515f1689362386548194f6495866cd6eec"
+schema: kgdistiller-entry-v1
+id: change-of-variables-theorem
+label: Change-of-variables theorem
+kind: theorem
+aliases:
+  - change of variables formula
+source: notes/math/multivariate-analysis/chapters/05-integration-and-change-of-variables.tex
+line_start: 197
+line_end: 207
+understanding: unknown
 ---
 
 # Change-of-variables theorem
@@ -13,3 +16,19 @@ kgd_definition_sha256: "f721f5647212c5f36ebb69ea73f0c4515f1689362386548194f64958
 ## Summary
 
 For a C^1 diffeomorphism between open subsets of R^n, the integral transforms by the absolute determinant of its derivative.
+
+## Evidence
+
+```
+\begin{theorem}{\kn{Change-of-variables theorem}}
+
+Let \(A,B \subset \mathbb{R}^{n}\) be open, let \(g:A\rightarrow B\) be a \(C^{1}\) diffeomorphism, and let \(f:B\rightarrow\mathbb{R}\) be continuous. Then
+
+\[f\ \text{is integrable over}\ B\quad\Leftrightarrow\quad f\left( {g(x)} \right)\left| {\det Dg(x)} \right|\ \text{is integrable over}\ A,\]
+
+and, whenever either condition holds,
+
+\[\int_{B}f(y)\, dy = \int_{A}f\left( {g(x)} \right)\left| {\det Dg(x)} \right|\, dx.\]
+
+\end{theorem}
+```

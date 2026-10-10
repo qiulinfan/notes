@@ -1,11 +1,14 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "direct-sum"
-kgd_label: "Direct sum"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/advanced-linear-algebra/chapters/01-review-on-basic-concepts.typ.md"
-kgd_source_sha256: "04ea6d8c81b9b2d625c92d61a01fd77dba2fd91583cb4671dc9efa034c32afad"
-kgd_definition_sha256: "5b9db25a5ac2a09125453776dc4039141b62499eaad5b600b19252c8e2d9351a"
+schema: kgdistiller-entry-v1
+id: direct-sum
+label: Direct sum
+kind: definition
+aliases:
+  - direct sum of subspaces
+source: notes/math/advanced-linear-algebra/chapters/01-review-on-basic-concepts.tex
+line_start: 37
+line_end: 41
+understanding: unknown
 ---
 
 # Direct sum
@@ -13,3 +16,13 @@ kgd_definition_sha256: "5b9db25a5ac2a09125453776dc4039141b62499eaad5b600b19252c8
 ## Summary
 
 A sum of subspaces in which every vector has a unique decomposition into components from the summands.
+
+## Evidence
+
+```
+\begin{definition}{\kn{Direct sum}}\label{direct sum}
+
+如果 \(U_{1} + U_{2} + \ldots + U_{m}\) 中的任意元素 \(v\)，都存在唯一的 \(v_{k} \in U_{k}\) for each \(k\) 使得 \(v = \sum_{k}v_{k}\)，就称 \(U_{1} + \ldots + U_{m} = \oplus_{i = 1}^{m}U_{i}\) 为一个 direct sum.
+
+\end{definition}
+```

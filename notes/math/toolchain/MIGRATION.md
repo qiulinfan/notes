@@ -68,8 +68,10 @@ Inspect every generated semantic call:
 - fix implicit LaTeX multiplication that Pandoc can merge, such as `p^kp^r`;
 - keep prose and callouts left-aligned.
 
-After curation, run a scoped graph scan before export. Extract direct semantic
-edges from the actual statements and proofs through an agent delta; do not
+These markers are website anchors and links only; kgdistiller does not read
+them. Knowledge extraction is a separate step: capture or curate entries and
+direct semantic edges from the course's `.tex` statements and proofs through
+the kgdistiller Skills, then apply them with a reviewed ingest. Do not
 translate legacy proximity or numbering into dependencies.
 
 Avoid wrapping export-relevant content in paged-only outer `figure` or centered

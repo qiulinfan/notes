@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "criterion-for-l-p-convergence"
-kgd_label: "Criterion for L^p convergence"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.typ.md"
-kgd_source_sha256: "a24a46e6359001089e8a69d8b10db9bfee49699c095f36e4620331cb28aa4b3f"
-kgd_definition_sha256: "176a4bf7fb5e0d16fd949d41ddc9b97a046908f8a5ab191a62385b2796807069"
+schema: kgdistiller-entry-v1
+id: criterion-for-l-p-convergence
+label: Criterion for L^p convergence
+kind: theorem
+aliases: []
+source: notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex
+line_start: 537
+line_end: 541
+understanding: unknown
 ---
 
 # Criterion for L^p convergence
@@ -14,6 +16,12 @@ kgd_definition_sha256: "176a4bf7fb5e0d16fd949d41ddc9b97a046908f8a5ab191a62385b27
 
 if $f_n arrow.r f$ a.e. and $parallel f_n parallel_p arrow.r parallel f parallel_p$, then $parallel f_n - f parallel_p arrow.r 0$.
 
-## Context
+## Evidence
 
-原生 theorem；authority: notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.typ:280。
+```
+\begin{theorem}{\kn{Criterion for $L^p$ convergence}}
+
+if \(f_{n}\rightarrow f\) a.e. and \(\parallel f_{n}\underset{p}{\parallel}\rightarrow \parallel f\underset{p}{\parallel}\), then \(\parallel f_{n} - f\underset{p}{\parallel}\rightarrow 0\).
+
+\end{theorem}
+```

@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "covariance"
-kgd_label: "covariance"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "bcd27942773397742d4c5300d0cec893b19a278adc3d8f7108580d3fee512c1f"
+schema: kgdistiller-entry-v1
+id: covariance
+label: covariance
+kind: definition
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 761
+line_end: 767
+understanding: unknown
 ---
 
 # covariance
@@ -14,6 +16,14 @@ kgd_definition_sha256: "bcd27942773397742d4c5300d0cec893b19a278adc3d8f7108580d3f
 
 Cov(X,Y)=E[(X−EX)(Y−EY)]，描述中心化变量的共同变化。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:739。
+```
+\begin{definition}{\kn{covariance}}
+
+给定两个 random variables \(\mathit{X},\mathit{Y}\), 我们定义它们的 covariance 为
+
+\[\text{Cov}(\mathit{X},\mathit{Y}) := \mathbb{E}\lbrack(\mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack)(\mathit{Y} - \mathbb{E}\lbrack\mathit{Y}\rbrack)\rbrack = \mathbb{E}\lbrack\mathit{X}\mathit{Y}\rbrack - \mathbb{E}\lbrack\mathit{X}\rbrack\mathbb{E}\lbrack\mathit{Y}\rbrack\]
+
+\end{definition}
+```

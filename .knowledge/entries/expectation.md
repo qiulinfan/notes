@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "expectation"
-kgd_label: "expectation 的性质"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "530c5e485f4ec6f4a7d7105bbacf888bffb3f193a77c84350dc263e926263101"
+schema: kgdistiller-entry-v1
+id: expectation
+label: expectation 的性质
+kind: proposition
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 681
+line_end: 694
+understanding: unknown
 ---
 
 # expectation 的性质
@@ -14,6 +16,21 @@ kgd_definition_sha256: "530c5e485f4ec6f4a7d7105bbacf888bffb3f193a77c84350dc263e9
 
 expectation 满足线性性、单调性及常数规则。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:666。
+```
+\begin{proposition}{\kn{expectation 的性质}}
+
+令 \(\mathit{X},\mathit{Y}:\Omega\rightarrow\mathbb{R}\) 为 \textbf{integrable} random variables, 则
+
+\begin{itemize}
+\item
+  \textbf{linearity of expectation}: \(\mathbb{E}\lbrack\mathit{a}\mathit{X} + \mathit{b}\mathit{Y}\rbrack = \mathit{a}\mathbb{E}\lbrack\mathit{X}\rbrack + \mathit{b}\mathbb{E}\lbrack\mathit{Y}\rbrack\) for any \(\mathit{a},\mathit{b} \in \mathbb{R}\).
+\item
+  \textbf{monotonicity of expectation}: 如果 \(\mathit{X} \leq \mathit{Y}\) a.s., 那么 \(\mathbb{E}\lbrack\mathit{X}\rbrack \leq \mathbb{E}\lbrack\mathit{Y}\rbrack\).
+\item
+  \textbf{absolute value}: \(\left. \mathbb{E}\lbrack\mathit{X}\rbrack \leq \mathbb{E}\lbrack \middle| \mathit{X} \middle| \rbrack \right.\)
+\end{itemize}
+
+\end{proposition}
+```

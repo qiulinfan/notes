@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "monotone-class-lemma"
-kgd_label: "monotone class lemma"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.typ.md"
-kgd_source_sha256: "bc4e4cc56e9cb47b8832d9dcd705e404893b538f73032de1029984a740890293"
-kgd_definition_sha256: "27e124b4f3a6fcc310d050dd68df4be235da1bf71da055d376e40c48a3a7b7e9"
+schema: kgdistiller-entry-v1
+id: monotone-class-lemma
+label: monotone class lemma
+kind: lemma
+aliases: []
+source: notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.tex
+line_start: 370
+line_end: 378
+understanding: unknown
 ---
 
 # monotone class lemma
@@ -14,6 +16,16 @@ kgd_definition_sha256: "27e124b4f3a6fcc310d050dd68df4be235da1bf71da055d376e40c48
 
 Let $cal(A) subset cal(P)\(X\)$ be an algebra. \ Define $cal(C)$ 为包含 $cal(A)$ 的最小的 montone class. \ Claim: $ < cal(A) > = cal(C) $
 
-## Context
+## Evidence
 
-原生 lemma；authority: notes/math/measure-theory/chapters/06-product_measure&Fubini-Tonelli.typ:238。
+```
+\begin{lemma}{\kn{monotone class lemma}}
+
+Let \(\mathcal{A} \subset \mathcal{P}(X)\) be an algebra.\\
+Define \(\mathcal{C}\) 为包含 \(\mathcal{A}\) 的最小的 montone class.\\
+Claim:
+
+\[< \mathcal{A} > = \mathcal{C}\]
+
+\end{lemma}
+```

@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "continuous-random-variable"
-kgd_label: "continuous random variable"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "daf8ca4c87aefbc71c32f9f64baa0c1f94e0e3373022ea6c88b2ac41b064b92e"
+schema: kgdistiller-entry-v1
+id: continuous-random-variable
+label: continuous random variable
+kind: definition
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 357
+line_end: 361
+understanding: unknown
 ---
 
 # continuous random variable
@@ -14,6 +16,12 @@ kgd_definition_sha256: "daf8ca4c87aefbc71c32f9f64baa0c1f94e0e3373022ea6c88b2ac41
 
 distribution 对 Lebesgue 测度绝对连续的随机变量称 continuous。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:361。
+```
+\begin{definition}{\kn{continuous random variable}}
+
+我们称一个 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\) 是一个 \textbf{continuous random variable}, 如果它的 cdf \(\mathit{F}_{\mathit{X}}\) 是一个 \textbf{absolutely continuous function.}
+
+\end{definition}
+```

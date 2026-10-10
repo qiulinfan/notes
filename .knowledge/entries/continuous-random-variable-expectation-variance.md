@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "continuous-random-variable-expectation-variance"
-kgd_label: "continuous random variable 的 expectation 和 variance"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "9dcf3b895619bcfca30599a84052beb3554c22333fc2159419d7230a8bd7a2b8"
+schema: kgdistiller-entry-v1
+id: continuous-random-variable-expectation-variance
+label: continuous random variable 的 expectation 和 variance
+kind: proposition
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 659
+line_end: 669
+understanding: unknown
 ---
 
 # continuous random variable 的 expectation 和 variance
@@ -14,6 +16,18 @@ kgd_definition_sha256: "9dcf3b895619bcfca30599a84052beb3554c22333fc2159419d7230a
 
 连续情形按 pdf 的积分计算 expectation 和 variance。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:652。
+```
+\begin{proposition}{\kn{continuous random variable 的 expectation 和 variance}}
+
+对于 continuous random variable \(\mathit{X}\) with pdf \(\mathit{f}_{\mathit{X}}\), 如果 \(\mathbb{E}\lbrack\mathit{X}\rbrack\) 和 \(\text{Var}(\mathit{X})\) 都是 finite 的, 那么
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack = \int_{- \infty}^{+ \infty}\mathit{x}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x},\quad\text{Var}(\mathit{X}) = \int_{- \infty}^{+ \infty}(\mathit{x} - \mathbb{E}\lbrack\mathit{X}\rbrack)^{2}\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x}\]
+
+并且, 对于任意的 measurable function \(\mathit{g}:\mathbb{R}\rightarrow\mathbb{R}\), 都有
+
+\[\mathbb{E}\lbrack\mathit{g}(\mathit{X})\rbrack = \int_{- \infty}^{+ \infty}\mathit{g}(\mathit{x})\mathit{f}_{\mathit{X}}(\mathit{x})\mathit{d}\mathit{x}\]
+
+\end{proposition}
+```

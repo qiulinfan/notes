@@ -1,19 +1,29 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "mathcal-l-preserves-translation-and-scaling"
-kgd_label: "cal(L) preserves translation and scaling"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.typ.md"
-kgd_source_sha256: "3dd8e7f13d7d5561942ca497783eb3727779193462744b1216010db975179e15"
-kgd_definition_sha256: "05a43c86d4d133d5373acdee5a63c379e72203e5e8e4d035c2cfd62049c7fcf8"
+schema: kgdistiller-entry-v1
+id: mathcal-l-preserves-translation-and-scaling
+label: L preserves translation and scaling
+kind: theorem
+aliases:
+  - cal(L) preserves translation and scaling
+source: notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.tex
+line_start: 379
+line_end: 384
+understanding: unknown
 ---
 
-# cal(L) preserves translation and scaling
+# L preserves translation and scaling
 
 ## Summary
 
 if $E in cal(L)$ $arrow.r.double$ $E + s\,r E in cal(L)$ $forall s\,r in bb(R)$. \ 并且, $m\(E + s\)= m\(E\)\,m\(r E\)=\|r\|m\(E\)$
 
-## Context
+## Evidence
 
-原生 theorem；authority: notes/math/measure-theory/chapters/03-distribution-function-与-lebesgue-stieltjes-measures.typ:263。
+```
+\begin{theorem}{\kn{$\mathcal{L}$ preserves translation and scaling}}
+
+if \(E \in \mathcal{L}\) \(\Rightarrow\) \(E + s,rE \in \mathcal{L}\) \(\forall s,r \in \mathbb{R}\).\\
+并且, \(\left. m(E + s) = m(E),m(rE) = \middle| r \middle| m(E) \right.\)
+
+\end{theorem}
+```

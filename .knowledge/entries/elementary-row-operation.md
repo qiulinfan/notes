@@ -1,11 +1,14 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "elementary-row-operation"
-kgd_label: "Elementary row operation"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/linear-algebra/chapters/01-linear-equations.typ.md"
-kgd_source_sha256: "256bd2b9a8fb0e54459b22e57519b4166e4b84fe23d8d43f2ca67396c20fcd15"
-kgd_definition_sha256: "39ae544a0e20e398519dacc4c0b9a34193ff234890263b3b84cac19cfae858f5"
+schema: kgdistiller-entry-v1
+id: elementary-row-operation
+label: Elementary row operation
+kind: definition
+aliases:
+  - elementary row operations
+source: notes/math/linear-algebra/chapters/01-linear-equations.tex
+line_start: 179
+line_end: 195
+understanding: unknown
 ---
 
 # Elementary row operation
@@ -13,3 +16,25 @@ kgd_definition_sha256: "39ae544a0e20e398519dacc4c0b9a34193ff234890263b3b84cac19c
 ## Summary
 
 The three row operations used for Gauss--Jordan elimination.
+
+## Evidence
+
+```
+\begin{definition}{\kn{Elementary row operation}}
+
+之前我们对 linear system 中 equations 的三种 operations 用在 matrix 上，这三种 operation 统称 elementary row operations:
+
+\begin{enumerate}
+\tightlist
+\item
+  Divide a row by a non-zero scalar.
+\item
+  Subtract a multiple of a row from another.
+\item
+  Swap two rows.
+\end{enumerate}
+
+这种使用 elementary row operations 将 matrix 化为 rref 的解 linear system 的 algorithm 叫做 Gauss--Jordan elimination.
+
+\end{definition}
+```

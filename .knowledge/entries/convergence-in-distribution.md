@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "convergence-in-distribution"
-kgd_label: "convergence in distribution"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/05-CLT.typ.md"
-kgd_source_sha256: "5f7348d3fa7ec45b2d0850ecc670c74f51c6ee037017dbf56cc19931c0d18669"
-kgd_definition_sha256: "c5ca6cbe1060ceb75db47e6277f84a38a9cc23dde11af4f0b021103a2ce6909a"
+schema: kgdistiller-entry-v1
+id: convergence-in-distribution
+label: convergence in distribution
+kind: definition
+aliases: []
+source: notes/math/prob/chapters/05-CLT.tex
+line_start: 6
+line_end: 12
+understanding: unknown
 ---
 
 # convergence in distribution
@@ -14,6 +16,14 @@ kgd_definition_sha256: "c5ca6cbe1060ceb75db47e6277f84a38a9cc23dde11af4f0b021103a
 
 在极限 CDF 连续点上 F_Xn(x)→F_X(x) 定义按分布收敛。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/05-CLT.typ:10。
+```
+\begin{definition}{\kn{convergence in distribution}}
+
+这里的分布采用 \knref{probability distribution} 的定义。我们称一个 seq of random variables \(\left\{ \mathit{X}_{\mathit{n}} \right\}\) converge in distribution to a random variable \(\mathit{X}\), 写作 \(\mathit{X}_{\mathit{n}}\overset{\mathit{d}}{\rightarrow}\mathit{X}\), 如果 \(\mathit{X}\) 的 分布函数 \(\mathit{F}_{\mathit{X}}\) 下所有 右连续的 \(\mathit{x}\) (即 \(\mathit{F}_{\mathit{X}}(\mathit{x}) = \mathit{F}_{\mathit{X}}(\mathit{x} - )\) ), 都有
+
+\[\lim\limits_{\mathit{n}\rightarrow\infty}\mathit{F}_{\mathit{X}_{\mathit{n}}}(\mathit{x}) = \mathit{F}_{\mathit{X}}(\mathit{x})\]
+
+\end{definition}
+```

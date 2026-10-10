@@ -1,19 +1,29 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "centered-l2-hilbert-space-under-covariance"
-kgd_label: "L_0^2(Omega,cal(F),bb(P)) 为一个 Hilbert space, with covariance as an inner product"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "ef6ef351f4606a42adc81eaa8b203a3d186c2b9f53eefa176f01b4e44deb9bd7"
+schema: kgdistiller-entry-v1
+id: centered-l2-hilbert-space-under-covariance
+label: L _0^2(Ω,F,P) 为一个 Hilbert space, with covariance as an inner product
+kind: theorem
+aliases:
+  - L_0^2(Omega,cal(F),bb(P)) 为一个 Hilbert space, with covariance as an inner product
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 836
+line_end: 841
+understanding: unknown
 ---
 
-# L_0^2(Omega,cal(F),bb(P)) 为一个 Hilbert space, with covariance as an inner product
+# L _0^2(Ω,F,P) 为一个 Hilbert space, with covariance as an inner product
 
 ## Summary
 
 L₀² 以 covariance 为内积构成 Hilbert 空间。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:803。
+```
+\begin{theorem}{\kn{$\mathit{L}_0^2(\Omega,\mathcal{F},\mathbb{P})$ 为一个 Hilbert
+space, with covariance as an inner product}}
+
+\((\mathit{L}_{0}^{2}(\Omega,\mathcal{F},\mathbb{P}),\langle \cdot , \cdot \rangle_{\text{Cov}})\) 为一个 Hilbert space, 即: covariance 在其上是一个 inner product (positive definite symmetric bilinear form).
+
+\end{theorem}
+```

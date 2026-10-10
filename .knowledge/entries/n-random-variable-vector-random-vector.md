@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "n-random-variable-vector-random-vector"
-kgd_label: "由 n 个 random variable 构成的 vector 是一个 random vector"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/03-joint&conditional-distribution.typ.md"
-kgd_source_sha256: "225f9c65cf203ff7f5de6fb275c6aa022a0ea76958849888893242091694ae29"
-kgd_definition_sha256: "fe81a38bbb4a58f363cc8b7fc11968c8c2540d92f9083c535614b68f2c768386"
+schema: kgdistiller-entry-v1
+id: n-random-variable-vector-random-vector
+label: 由 n 个 random variable 构成的 vector 是一个 random vector
+kind: proposition
+aliases: []
+source: notes/math/prob/chapters/03-joint&conditional-distribution.tex
+line_start: 20
+line_end: 28
+understanding: unknown
 ---
 
 # 由 n 个 random variable 构成的 vector 是一个 random vector
@@ -13,3 +15,17 @@ kgd_definition_sha256: "fe81a38bbb4a58f363cc8b7fc11968c8c2540d92f9083c535614b68f
 ## Summary
 
 若 X_1,...,X_n 是定义在同一 probability space 上的 random variables，则 omega 映到 (X_1(omega),...,X_n(omega))^T 的函数是 random vector。
+
+## Evidence
+
+```
+\begin{proposition}{\kn{由 $\mathit{n}$ 个 random variable 构成的 vector 是一个 random vector}}
+
+令 \(\mathit{X}_{1},\mathit{X}_{2},\cdots,\mathit{X}_{\mathit{n}}\) 是定义在\textbf{同一个 prob space} \((\Omega,\mathcal{F},\mathbb{P})\) 上的 \(\mathit{n}\) 个 random variables. 则函数 \(\mathbf{X}:\Omega\rightarrow\mathbb{R}^{\mathit{n}}\) defined by
+
+\[\mathit{\omega}\mapsto(\mathit{X}_{1}(\mathit{\omega}),\mathit{X}_{2}(\mathit{\omega}),\cdots,\mathit{X}_{\mathit{n}}(\mathit{\omega}))^{\mathit{T}}\]
+
+是一个 random vector.
+
+\end{proposition}
+```

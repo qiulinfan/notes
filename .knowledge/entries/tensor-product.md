@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "tensor-product"
-kgd_label: "Tensor product"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/numerical-linear-algebra/chapters/01-tensor-products-and-matrix-multiplication.typ.md"
-kgd_source_sha256: "d2d3b4279120e16bd117e7bc0e962774056bca1c3fd5532673b73205415d80bd"
-kgd_definition_sha256: "995110a425a574d1d5333dd5f12d6c62084a8d8091115a42362f62b8b6020ece"
+schema: kgdistiller-entry-v1
+id: tensor-product
+label: Tensor product
+kind: definition
+aliases: []
+source: notes/math/numerical-linear-algebra/chapters/01-tensor-products-and-matrix-multiplication.tex
+line_start: 6
+line_end: 20
+understanding: unknown
 ---
 
 # Tensor product
@@ -13,3 +15,23 @@ kgd_definition_sha256: "995110a425a574d1d5333dd5f12d6c62084a8d8091115a42362f62b8
 ## Summary
 
 The notes introduce a bilinear tensor-product operation on vector spaces and span the basis tensors as V tensor W.
+
+## Evidence
+
+```
+\begin{definition}{(not rigorous) \kn{Tensor product}}
+
+令 \(V,W\) be vector spaces over \(\mathbb{F}\)，我们定义一个 vector 与 vector 之间的 tensor product operation：
+
+\(\otimes :\left( {v,w} \right)\rightarrow v \otimes w\)
+
+s.t. 对于 \(V,W\) 的 basis \(e_{1},\ldots,e_{n}\) 和 \(\varepsilon_{1},\ldots,\varepsilon_{m}\)，我们给每个 \(\left( {e_{i},\varepsilon_{j}} \right)\) 都赋予一个不同的 image \(e_{i} \otimes \varepsilon_{j}\)，其 over \(\mathbb{F}\) 具有 bilinear 性。
+
+对于
+
+\(V \otimes W := \text{span}\left( \left\{ {e_{i} \otimes e_{j}:1 \leq i \leq n,1 \leq j \leq m} \right\} \right)\)
+
+\(V \otimes W\) 也是一个 over \(\mathbb{F}\) 的 vector space，且 \(\text{dim}\left( {V \otimes W} \right) = mn\)。
+
+\end{definition}
+```

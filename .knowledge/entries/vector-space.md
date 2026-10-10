@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "vector-space"
-kgd_label: "Vector space"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/linear-algebra/chapters/01-linear-equations.typ.md"
-kgd_source_sha256: "256bd2b9a8fb0e54459b22e57519b4166e4b84fe23d8d43f2ca67396c20fcd15"
-kgd_definition_sha256: "6e854b314e8b45400043f9726c25a0b0a770e03680c4de7fae3782ff6fa8017c"
+schema: kgdistiller-entry-v1
+id: vector-space
+label: Vector space
+kind: definition
+aliases: []
+source: notes/math/linear-algebra/chapters/01-linear-equations.tex
+line_start: 22
+line_end: 37
+understanding: unknown
 ---
 
 # Vector space
@@ -13,3 +15,24 @@ kgd_definition_sha256: "6e854b314e8b45400043f9726c25a0b0a770e03680c4de7fae3782ff
 ## Summary
 
 The notes introduce column vectors in R^n as a vector space.
+
+## Evidence
+
+```
+\begin{definition}{\kn{Vector space}}
+
+A matrix with only one column is called a column vector, or simply a vector. The entries of a vector are called its components. The set of all column vectors with \(n\) components is denoted by \(\mathbb{R}^{n}\). We will refer to \(\mathbb{R}^{n}\) as a vector space.
+
+A matrix with only one row is a row vector. In this text, we refer to vectors as column vectors unless otherwise stated. 下一章会说 preference for column vectors 的 apparent reason.
+
+For example, \(\begin{pmatrix}
+1 \\
+2 \\
+9 \\
+1
+\end{pmatrix}\) is a vector in \(\mathbb{R}^{4}\); \(\begin{pmatrix}
+1 & 5 & 5 & 3 & 7
+\end{pmatrix}\) is a row vector with \(5\) components.
+
+\end{definition}
+```

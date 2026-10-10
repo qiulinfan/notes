@@ -1,11 +1,14 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "condition-number"
-kgd_label: "Condition number"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/numerical-linear-algebra/chapters/07-conditioning-and-stability.typ.md"
-kgd_source_sha256: "01da5a6a4d56f623e9c98a9bcd9d890b759171b5127c1b565dff3610435310d4"
-kgd_definition_sha256: "8b377b83edba3ce0a0d18525573399c87c4e1019378637f65392209294efbde2"
+schema: kgdistiller-entry-v1
+id: condition-number
+label: Condition number
+kind: definition
+aliases:
+  - matrix condition number
+source: notes/math/numerical-linear-algebra/chapters/07-conditioning-and-stability.tex
+line_start: 224
+line_end: 236
+understanding: unknown
 ---
 
 # Condition number
@@ -13,3 +16,21 @@ kgd_definition_sha256: "8b377b83edba3ce0a0d18525573399c87c4e1019378637f653922092
 ## Summary
 
 For a matrix A, the notes define kappa(A) as the product of the operator norms of A and its pseudoinverse.
+
+## Evidence
+
+```
+\begin{definition}{\kn{Condition number} of a matrix}
+
+我们定义 condition number of a matrix:
+
+\(\kappa(A) := \left\| A \right\|\left\| A^{\dagger} \right\|\)
+
+Notice: 如果 \(\left\| \cdot \right\| := \left\| \cdot \right\|_{2}\), 那么 for \(A \in \mathbb{C}^{m \times n}\), we have:
+
+\(\left\| A \right\|_{2} = \sigma_{1},\quad\left\| A^{\dagger} \right\|_{2} = \frac{1}{\sigma_{r}}\)
+
+where \textbf{\(\sigma_{r}\) 是最小的非零的 singular value.}
+
+\end{definition}
+```

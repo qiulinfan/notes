@@ -1,19 +1,29 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "density-of-compactly-supported-continuous-functions-in-lp"
-kgd_label: "C_c^0(bb(R)^n) is dense in L^p(bb(R),m) for 1 lt.eq p < oo"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.typ.md"
-kgd_source_sha256: "a24a46e6359001089e8a69d8b10db9bfee49699c095f36e4620331cb28aa4b3f"
-kgd_definition_sha256: "2f7707571225aceab3914bd8ae5c571b4527e5227df8b7893531a330ff5c9056"
+schema: kgdistiller-entry-v1
+id: density-of-compactly-supported-continuous-functions-in-lp
+label: C_c^0(R^n) is dense in L^p(R,m) for 1 leq p < infty
+kind: theorem
+aliases:
+  - C_c^0(bb(R)^n) is dense in L^p(bb(R),m) for 1 lt.eq p < oo
+source: notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex
+line_start: 580
+line_end: 585
+understanding: unknown
 ---
 
-# C_c^0(bb(R)^n) is dense in L^p(bb(R),m) for 1 lt.eq p < oo
+# C_c^0(R^n) is dense in L^p(R,m) for 1 leq p < infty
 
 ## Summary
 
 $C_c^0\(bb(R)^n\)$ is dense in $L^p\(bb(R)\,m\)$ for $1 lt.eq p < oo$
 
-## Context
+## Evidence
 
-原生 theorem；authority: notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.typ:308。
+```
+\begin{theorem}{\kn{$C_c^0(\mathbb{R}^n)$ is dense in $L^p(\mathbb{R},m)$ for
+$1 \leq p < \infty$}}
+
+\(C_{c}^{0}(\mathbb{R}^{n})\) is dense in \(L^{p}(\mathbb{R},m)\) for \(1 \leq p < \infty\)
+
+\end{theorem}
+```

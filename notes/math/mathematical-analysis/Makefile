@@ -24,7 +24,7 @@ export:
 		--build $(BUILD)/export
 
 knowledge-curate:
-	@$(MAKE) -C $(REPO_ROOT) knowledge-build knowledge-authoring-check
+	@$(MAKE) -C $(REPO_ROOT) knowledge-authoring-check
 
 web:
 	@IF NOT EXIST "$(BUILD)" MKDIR "$(BUILD)"

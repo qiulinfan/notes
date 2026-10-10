@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "lebesgue-differentiation-theorem"
-kgd_label: "Lebesgue differentiation theorem"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.typ.md"
-kgd_source_sha256: "9f9534a6af1bbc79aa99aa439eb00a31c435094b33f00a0cdcbd7c19f6e65cbd"
-kgd_definition_sha256: "16a527affe5bec09036ffb2c8c621bc82f1129fefc4f1fca3ce0b9f42b08cfb1"
+schema: kgdistiller-entry-v1
+id: lebesgue-differentiation-theorem
+label: Lebesgue differentiation theorem
+kind: theorem
+aliases: []
+source: notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex
+line_start: 259
+line_end: 263
+understanding: unknown
 ---
 
 # Lebesgue differentiation theorem
@@ -14,6 +16,12 @@ kgd_definition_sha256: "16a527affe5bec09036ffb2c8c621bc82f1129fefc4f1fca3ce0b9f4
 
 对于任意的 $f in L_(l o c)^1\(bb(R)^n\)$, $L_f$ is Leb mble and $m\(L_f^c\)= 0$.
 
-## Context
+## Evidence
 
-原生 theorem；authority: notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.typ:145。
+```
+\begin{theorem}{\kn{Lebesgue differentiation theorem}}
+
+对于任意的 \(f \in L_{loc}^{1}(\mathbb{R}^{n})\), \(L_{f}\) is Leb mble and \(m(L_{f}^{c}) = 0\).
+
+\end{theorem}
+```

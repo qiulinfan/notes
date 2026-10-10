@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "why-it-is-called-absolutely-continuous"
-kgd_label: "why it is called \"absolutely continuous\""
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.typ.md"
-kgd_source_sha256: "75fc9ad9babc011aa00a8dcc87bc1a9f75c8d7532ef49a0cf54442690275c255"
-kgd_definition_sha256: "e594f327754c777df96f101728342bfd9019d5542f01659496b8aebe41df159a"
+schema: kgdistiller-entry-v1
+id: why-it-is-called-absolutely-continuous
+label: why it is called "absolutely continuous"
+kind: theorem
+aliases: []
+source: notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.tex
+line_start: 95
+line_end: 102
+understanding: unknown
 ---
 
 # why it is called "absolutely continuous"
@@ -14,6 +16,15 @@ kgd_definition_sha256: "e594f327754c777df96f101728342bfd9019d5542f01659496b8aebe
 
 令 $nu$ 为一个 finite s.m., $mu$ 为一个 p.m. on $\(X\,cal(A)\)$. \ Claim: $ nu lt.double mu arrow.l.r.double forall thin epsilon.alt > 0\,thin exists thin delta > 0 upright("s.t.") \|nu\(E\)\|< epsilon.alt upright(" whenever ") mu\(E\)< delta $
 
-## Context
+## Evidence
 
-原生 theorem；authority: notes/math/measure-theory/chapters/11-Radon-Nikodym_theorem.typ:62。
+```
+\begin{theorem}{\kn{why it is called "absolutely continuous"}}
+
+令 \(\nu\) 为一个 \textbf{finite s.m.}, \(\mu\) 为一个 \textbf{p.m.} on \((X,\mathcal{A})\).\\
+Claim:
+
+\[\left. \nu \ll \mu\Leftrightarrow\forall\,\varepsilon > 0,\,\exists\,\delta > 0\text{s.t.} \middle| \nu(E) \middle| < \varepsilon\ \text{whenever}\ \mu(E) < \delta \right.\]
+
+\end{theorem}
+```

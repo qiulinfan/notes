@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "orthogonal-transformation"
-kgd_label: "Orthogonal transformation"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/linear-algebra/chapters/07-orthogonal-transformations.typ.md"
-kgd_source_sha256: "c6d2a4ad352e8787cdeabf532dd128e71fc50900a9754632c3c872eb023c4a74"
-kgd_definition_sha256: "ab6fe3b28464f2684e682069b70bea5998dccaeefa3a9ce5ed94b3bf4cd9f275"
+schema: kgdistiller-entry-v1
+id: orthogonal-transformation
+label: Orthogonal transformation
+kind: definition
+aliases: []
+source: notes/math/linear-algebra/chapters/07-orthogonal-transformations.tex
+line_start: 6
+line_end: 10
+understanding: unknown
 ---
 
 # Orthogonal transformation
@@ -13,3 +15,13 @@ kgd_definition_sha256: "ab6fe3b28464f2684e682069b70bea5998dccaeefa3a9ce5ed94b3bf
 ## Summary
 
 A transformation preserving the dot product, norm, and angles, as defined in the course notes.
+
+## Evidence
+
+```
+\begin{definition}{\kn{Orthogonal transformation}}
+
+\(T:\mathbb{R}^{n}\rightarrow\mathbb{R}^{n}\) is orthogonal (正交变换) if it preserves dot products: \(\forall x,y \in \mathbb{R}^{n}\), \(x \cdot y = T(x) \cdot T(y)\).
+
+\end{definition}
+```

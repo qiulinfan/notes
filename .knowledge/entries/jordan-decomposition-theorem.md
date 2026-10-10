@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "jordan-decomposition-theorem"
-kgd_label: "Jordan decomposition theorem"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.typ.md"
-kgd_source_sha256: "fc3b1fd4c1dd6198277e744e0225c7c366c2a21b550738fe1335bf29eafbdd68"
-kgd_definition_sha256: "b667a0c775ee3291881570ebbf7f5a466f12b228990efa59b24dd9570a014582"
+schema: kgdistiller-entry-v1
+id: jordan-decomposition-theorem
+label: Jordan decomposition theorem
+kind: theorem
+aliases: []
+source: notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.tex
+line_start: 502
+line_end: 517
+understanding: unknown
 ---
 
 # Jordan decomposition theorem
@@ -14,6 +16,23 @@ kgd_definition_sha256: "b667a0c775ee3291881570ebbf7f5a466f12b228990efa59b24dd957
 
 对于任意 s.m. $nu$ on $\(X\,cal(A)\)$, 都存在唯一的 positive measure $nu^(+)$, $nu^(-)$ s.t. - $nu^(+)\,nu^(-)$ 是 $\(X\,cal(A)\)$ 上的 positive measure - $nu^(+)\,nu^(-)$ 中至少有一个是 finite measure (对应了 $nu$ admit 的是 $oo$ 还是 $- oo$) - $ nu = nu^(+) - nu^(-) $ - $ nu^(+) tack.t thin nu^(-) $
 
-## Context
+## Evidence
 
-原生 theorem；authority: notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.typ:258。
+```
+\begin{theorem}{\kn{Jordan decomposition theorem}}
+
+对于任意 s.m. \(\nu\) on \((X,\mathcal{A})\), 都存在唯一的 positive measure \(\nu^{+}\), \(\nu^{-}\) s.t.
+
+\begin{itemize}
+\item
+  \(\nu^{+},\nu^{-}\) 是 \((X,\mathcal{A})\) 上的 positive measure
+\item
+  \(\nu^{+},\nu^{-}\) 中\textbf{至少有一个是 finite measure} (对应了 \(\nu\) admit 的是 \(\infty\) 还是 \(- \infty\))
+\item
+  \[\nu = \nu^{+} - \nu^{-}\]
+\item
+  \[\nu^{+}\bot\,\nu^{-}\]
+\end{itemize}
+
+\end{theorem}
+```

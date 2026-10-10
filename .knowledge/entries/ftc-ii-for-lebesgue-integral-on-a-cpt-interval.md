@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "ftc-ii-for-lebesgue-integral-on-a-cpt-interval"
-kgd_label: "FTC-II for Lebesgue integral on a cpt interval"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.typ.md"
-kgd_source_sha256: "9ad96e95994d7684c4ca200e193c820035ed825cf43d143f29cfafbde80900f4"
-kgd_definition_sha256: "a5bcf6ece087f75d3ee7dcfd19cbfcf9196b339083bab8edeb70f98d0aea349e"
+schema: kgdistiller-entry-v1
+id: ftc-ii-for-lebesgue-integral-on-a-cpt-interval
+label: FTC-II for Lebesgue integral on a cpt interval
+kind: theorem
+aliases: []
+source: notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex
+line_start: 948
+line_end: 963
+understanding: unknown
 ---
 
 # FTC-II for Lebesgue integral on a cpt interval
@@ -14,6 +16,23 @@ kgd_definition_sha256: "a5bcf6ece087f75d3ee7dcfd19cbfcf9196b339083bab8edeb70f98d
 
 TFAE: - $F in A C\[a\,b\]$ - $F$ 是 diffble a.e. on $\[a\,b\]$ 的, 且 $F' in L^1\(\[a\,b\]\,m\)$, 且 $ F\(x\)- F\(a\)= integral_a^x F'\(t\)thin d t $for all $x in\[a\,b\$].
 
-## Context
+## Evidence
 
-原生 theorem；authority: notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.typ:508。
+```
+\begin{theorem}{\kn{FTC-II for Lebesgue integral on a cpt interval}}
+
+TFAE:
+
+\begin{itemize}
+\item
+  \(F \in AC\lbrack a,b\rbrack\)
+\item
+  \(F\) 是 diffble a.e. on \(\lbrack a,b\rbrack\) 的, 且 \(F' \in L^{1}(\lbrack a,b\rbrack,m)\), 且
+
+  \[F(x) - F(a) = \int_{a}^{x}F'(t)\, dt\]
+
+  \textbf{for all \(x \in \lbrack a,b\rbrack\)}.
+\end{itemize}
+
+\end{theorem}
+```

@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "total-variation-function"
-kgd_label: "total variation function"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.typ.md"
-kgd_source_sha256: "9ad96e95994d7684c4ca200e193c820035ed825cf43d143f29cfafbde80900f4"
-kgd_definition_sha256: "73be6d33811b68148b0ac5ce83108a90ba15b89cc0a4589dcfc687efdf9792ac"
+schema: kgdistiller-entry-v1
+id: total-variation-function
+label: total variation function
+kind: definition
+aliases: []
+source: notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.tex
+line_start: 337
+line_end: 346
+understanding: unknown
 ---
 
 # total variation function
@@ -14,6 +16,17 @@ kgd_definition_sha256: "73be6d33811b68148b0ac5ce83108a90ba15b89cc0a4589dcfc687ef
 
 给定一个 function $F : bb(R) arrow.r bb(C)$, 我们定义它的 total variation function $T_F$ 为:$ T_F : bb(R) & arrow.r\[0\,oo\]\ x & mapsto sup { sum_(j = 1)^n\|F\(x_j\)- F\(x_(j + 1)\)\|: - oo < x_0 < dots.h.c < x_n = x } $
 
-## Context
+## Evidence
 
-原生 definition；authority: notes/math/measure-theory/chapters/12-differentiation_on_real_spaces.typ:171。
+```
+\begin{definition}{\kn{total variation function}}
+
+给定一个 function \(F:\mathbb{R}\rightarrow\mathbb{C}\), 我们定义它的 total variation function \(T_{F}\) 为:
+
+\[\begin{matrix}
+{T_{F}:\mathbb{R}} & {\rightarrow\lbrack 0,\infty\rbrack} \\
+x & {\mapsto\sup\left\{ \sum\limits_{j = 1}^{n} \middle| F(x_{j}) - F(x_{j + 1}) \middle| : - \infty < x_{0} < \cdots < x_{n} = x \right\}}
+\end{matrix}\]
+
+\end{definition}
+```

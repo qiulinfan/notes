@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "singular-continuous-random-variable"
-kgd_label: "singular continuous random variable"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "4eb814ed2bf5705c3f7ac2d71a8fb91ef8b89e27f0d09fe744936c2471f27195"
+schema: kgdistiller-entry-v1
+id: singular-continuous-random-variable
+label: singular continuous random variable
+kind: definition
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 548
+line_end: 552
+understanding: unknown
 ---
 
 # singular continuous random variable
@@ -14,6 +16,12 @@ kgd_definition_sha256: "4eb814ed2bf5705c3f7ac2d71a8fb91ef8b89e27f0d09fe744936c24
 
 连续但 distribution 与 Lebesgue 测度奇异的随机变量。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:535。
+```
+\begin{definition}{\kn{singular continuous random variable}}
+
+对于 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\), 如果 \(\mathit{X}\) 的 cdf \(\mathit{F}_{\mathit{X}}\) 是一个 continuous function, 并且 \(\mathbb{P}^{\mathit{X}}\bot\mathit{m}\) (即存在一个 measure zero 的 Borel set \(\mathit{N}\) 使得 \(\mathbb{P}^{\mathit{X}}(\mathit{N}) = 1\), 也等价于 \(\mathit{F}_{\mathit{X}}\) 的导数 \(\mathit{F}_{\mathit{X}}' = 0\) a.e.), 那么我们称 \(\mathit{X}\) 是一个 singular continuous random variable.
+
+\end{definition}
+```

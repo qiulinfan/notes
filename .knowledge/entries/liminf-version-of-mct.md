@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "liminf-version-of-mct"
-kgd_label: "liminf version of MCT"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).typ.md"
-kgd_source_sha256: "4872241cfd6210efaa52bb24f976dc19765713449c9adadb125124f6514a1b94"
-kgd_definition_sha256: "8c73061c97261767cb9bcbe3c5695762f0579e04c1e4e98e9221c73733d5738f"
+schema: kgdistiller-entry-v1
+id: liminf-version-of-mct
+label: liminf version of MCT
+kind: corollary
+aliases: []
+source: notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex
+line_start: 863
+line_end: 869
+understanding: unknown
 ---
 
 # liminf version of MCT
@@ -14,6 +16,14 @@ kgd_definition_sha256: "8c73061c97261767cb9bcbe3c5695762f0579e04c1e4e98e9221c737
 
 suppose $\(f_n\)_(n in bb(N))$ 是一个 seq of functions in $L^(+)\(mu\)$, 且 $f_n arrow.r f in L^(+)\(mu\)$, 则: $ liminf_n integral f_n gt.eq integral f $
 
-## Context
+## Evidence
 
-原生 corollary；authority: notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).typ:602。
+```
+\begin{corollary}{\kn{liminf version of MCT}}
+
+suppose \((f_{n})_{n \in \mathbb{N}}\) 是一个 seq of functions in \(L^{+}(\mu)\), 且 \(f_{n}\rightarrow f \in L^{+}(\mu)\), 则:
+
+\[\operatorname{lim\, inf}\limits_{n}\int f_{n} \geq \int f\]
+
+\end{corollary}
+```

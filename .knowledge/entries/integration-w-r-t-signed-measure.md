@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "integration-w-r-t-signed-measure"
-kgd_label: "integration w.r.t. signed measure"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.typ.md"
-kgd_source_sha256: "fc3b1fd4c1dd6198277e744e0225c7c366c2a21b550738fe1335bf29eafbdd68"
-kgd_definition_sha256: "b9b7de9f1cf4d2ced03a86bec9b2d3398fae239ff86e83ac27c9a20d98e5b662"
+schema: kgdistiller-entry-v1
+id: integration-w-r-t-signed-measure
+label: integration w.r.t. signed measure
+kind: definition
+aliases: []
+source: notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.tex
+line_start: 574
+line_end: 584
+understanding: unknown
 ---
 
 # integration w.r.t. signed measure
@@ -14,6 +16,18 @@ kgd_definition_sha256: "b9b7de9f1cf4d2ced03a86bec9b2d3398fae239ff86e83ac27c9a20d
 
 对于 signed measure $nu$, 我们 set: $ L^1\(nu\): = L^1\(\|nu\|\)= L^1\(nu^(+)\)inter L^1\(nu^(-)\) $ 且对于每个 $f in L^1\(nu\)$, 我们 set: $ integral f thin d nu : = integral f thin d nu^(+) - integral f thin d nu^(-) $
 
-## Context
+## Evidence
 
-原生 definition；authority: notes/math/measure-theory/chapters/10-signed_measure&Jordan-decomposition.typ:301。
+```
+\begin{definition}{\kn{integration w.r.t. signed measure}}
+
+对于 signed measure \(\nu\), 我们 set:
+
+\[\left. L^{1}(\nu): = L^{1}( \middle| \nu \middle| ) = L^{1}(\nu^{+}) \cap L^{1}(\nu^{-}) \right.\]
+
+且对于每个 \(f \in L^{1}(\nu)\), 我们 set:
+
+\[\int f\, d\nu: = \int f\, d\nu^{+} - \int f\, d\nu^{-}\]
+
+\end{definition}
+```

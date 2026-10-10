@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "combinations-with-repetition"
-kgd_label: "combinations with repetition"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/01-combinatorics&prob_space.typ.md"
-kgd_source_sha256: "85ec8db58bd29edfb393ac5e5f57555a2e9acb9680b39b85b9898e7b89790e97"
-kgd_definition_sha256: "36e7d23e295d6a238b39074a13b9b8ce7148db97e74d01c1346131ebf173b076"
+schema: kgdistiller-entry-v1
+id: combinations-with-repetition
+label: combinations with repetition
+kind: definition
+aliases: []
+source: notes/math/prob/chapters/01-combinatorics&prob_space.tex
+line_start: 229
+line_end: 233
+understanding: unknown
 ---
 
 # combinations with repetition
@@ -13,3 +15,13 @@ kgd_definition_sha256: "36e7d23e295d6a238b39074a13b9b8ce7148db97e74d01c1346131eb
 ## Summary
 
 Combination with repetition 从一个 set 中选取 elements、忽略顺序并允许重复。由 n 个互异对象选取 k 个的数量为 binom(n+k-1,k)，可由 stars-and-bars 表示得到。
+
+## Evidence
+
+```
+\begin{definition}{\kn{combinations with repetition}}
+
+一个 combination with repetition 就是从一个 set 中选取若干个 elements, 而忽略它们的顺序, 并且\textbf{允许重复选取}.
+
+\end{definition}
+```

@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "orthogonal-projector"
-kgd_label: "Orthogonal projector"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/numerical-linear-algebra/chapters/05-qr-factorization.typ.md"
-kgd_source_sha256: "0603a3ff2f452cc608c610c6821840930fa11c00cd171220a322a02380455245"
-kgd_definition_sha256: "ce162e7dfb24e210ec8b90051e086d49541af62951064922d93f894b9d546193"
+schema: kgdistiller-entry-v1
+id: orthogonal-projector
+label: Orthogonal projector
+kind: definition
+aliases: []
+source: notes/math/numerical-linear-algebra/chapters/05-qr-factorization.tex
+line_start: 80
+line_end: 84
+understanding: unknown
 ---
 
 # Orthogonal projector
@@ -13,3 +15,13 @@ kgd_definition_sha256: "ce162e7dfb24e210ec8b90051e086d49541af62951064922d93f894b
 ## Summary
 
 A projector whose kernel is orthogonal to its image; the notes also characterize it by P = P*.
+
+## Evidence
+
+```
+\begin{definition}{\kn{Orthogonal projector}}
+
+我们称一个 projector 是 orthogonal projector，如果 \(\text{ker}(P) \perp \text{im}(P)\).
+
+\end{definition}
+```

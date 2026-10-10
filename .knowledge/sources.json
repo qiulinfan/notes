@@ -1,107 +1,137 @@
 {
   "schema": "kgdistiller-sources-v1",
+  "document_types": {
+    "math-notes": {
+      "node_kinds": [
+        "definition",
+        "theorem",
+        "proposition",
+        "lemma",
+        "corollary",
+        "concept"
+      ],
+      "extraction_guidance": "These are personal mathematics course notes written in LaTeX. Extract named concepts and precisely stated results from the native TeX statement environments (definition, theorem, proposition, lemma, corollary), citing the whole environment as evidence and keeping the result's own name as the label. Use concept for a named notion that the notes introduce without a formal statement environment. Do not extract proofs, examples, exercises, remarks or section headings as entries."
+    }
+  },
   "sources": [
     {
       "id": "math:measure-theory",
       "root": "notes/math/measure-theory",
       "files": [
-        "main.typ",
         "main.tex",
-        "extras.typ",
         "extras.tex",
-        "chapters/*.typ",
         "chapters/*.tex",
-        "homeworks/*.typ",
         "homeworks/*.tex",
-        "extras/*.typ",
         "extras/*.tex"
-      ]
+      ],
+      "document_type": "math-notes"
     },
     {
       "id": "math:probability",
       "root": "notes/math/prob",
       "files": [
-        "main.typ",
         "main.tex",
-        "homeworks.typ",
         "homeworks.tex",
-        "chapters/*.typ",
         "chapters/*.tex",
-        "homeworks/*.typ",
         "homeworks/*.tex"
-      ]
+      ],
+      "document_type": "math-notes"
     },
     {
       "id": "math:advanced-linear-algebra",
       "root": "notes/math/advanced-linear-algebra",
       "files": [
-        "main.typ",
         "main.tex",
-        "chapters/*.typ",
         "chapters/*.tex"
-      ]
+      ],
+      "document_type": "math-notes"
     },
     {
       "id": "math:linear-algebra",
       "root": "notes/math/linear-algebra",
       "files": [
-        "main.typ",
         "main.tex",
-        "chapters/*.typ",
         "chapters/*.tex",
-        "homeworks/*.typ",
         "homeworks/*.tex"
-      ]
+      ],
+      "document_type": "math-notes"
     },
     {
       "id": "math:mathematical-analysis",
       "root": "notes/math/mathematical-analysis",
       "files": [
-        "main.typ",
         "main.tex",
-        "homeworks.typ",
         "homeworks.tex",
-        "chapters/*.typ",
         "chapters/*.tex",
-        "homeworks/*.typ",
         "homeworks/*.tex"
-      ]
+      ],
+      "document_type": "math-notes"
     },
     {
       "id": "math:modern-algebra",
       "root": "notes/math/modern-algebra",
       "files": [
-        "main.typ",
         "main.tex",
-        "chapters/*.typ",
         "chapters/*.tex",
-        "homeworks/*.typ",
         "homeworks/*.tex"
-      ]
+      ],
+      "document_type": "math-notes"
     },
     {
       "id": "math:multivariate-analysis",
       "root": "notes/math/multivariate-analysis",
       "files": [
-        "main.typ",
         "main.tex",
-        "homeworks.typ",
         "homeworks.tex",
-        "chapters/*.typ",
         "chapters/*.tex",
-        "homeworks/*.typ",
         "homeworks/*.tex"
-      ]
+      ],
+      "document_type": "math-notes"
     },
     {
       "id": "math:numerical-linear-algebra",
       "root": "notes/math/numerical-linear-algebra",
       "files": [
-        "main.typ",
         "main.tex",
-        "chapters/*.typ",
         "chapters/*.tex"
-      ]
+      ],
+      "document_type": "math-notes"
+    },
+    {
+      "id": "math:everything-about-linear-algebra",
+      "root": "notes/math/everything-about-linear-algebra",
+      "files": [
+        "main.tex",
+        "chapters/*.tex"
+      ],
+      "document_type": "math-notes"
+    },
+    {
+      "id": "math:single-and-multivariate-mathematical-analysis",
+      "root": "notes/math/single-and-multivariate-mathematical-analysis",
+      "files": [
+        "main.tex",
+        "chapters/*.tex"
+      ],
+      "document_type": "math-notes"
+    },
+    {
+      "id": "math:a-bit-of-abstract-algebra",
+      "root": "notes/math/a-bit-of-abstract-algebra",
+      "files": [
+        "main.tex",
+        "chapters/*.tex"
+      ],
+      "document_type": "math-notes"
+    },
+    {
+      "id": "math:point-set-topology",
+      "root": "notes/math/point-set-topology",
+      "files": [
+        "main.tex",
+        "chapters/*.tex"
+      ],
+      "document_type": "math-notes"
     },
     {
       "id": "cs:computer-organization",
@@ -132,46 +162,6 @@
       "files": [
         "index.md",
         "notes-*.md"
-      ]
-    },
-    {
-      "id": "math:everything-about-linear-algebra",
-      "root": "notes/math/everything-about-linear-algebra",
-      "files": [
-        "main.typ",
-        "main.tex",
-        "chapters/*.typ",
-        "chapters/*.tex"
-      ]
-    },
-    {
-      "id": "math:single-and-multivariate-mathematical-analysis",
-      "root": "notes/math/single-and-multivariate-mathematical-analysis",
-      "files": [
-        "main.typ",
-        "main.tex",
-        "chapters/*.typ",
-        "chapters/*.tex"
-      ]
-    },
-    {
-      "id": "math:a-bit-of-abstract-algebra",
-      "root": "notes/math/a-bit-of-abstract-algebra",
-      "files": [
-        "main.typ",
-        "main.tex",
-        "chapters/*.typ",
-        "chapters/*.tex"
-      ]
-    },
-    {
-      "id": "math:point-set-topology",
-      "root": "notes/math/point-set-topology",
-      "files": [
-        "main.typ",
-        "main.tex",
-        "chapters/*.typ",
-        "chapters/*.tex"
       ]
     },
     {

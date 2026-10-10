@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "first-isomorphism-theorem"
-kgd_label: "First isomorphism theorem"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/modern-algebra/chapters/06-normal-subgroups-and-isomorphisms.typ.md"
-kgd_source_sha256: "551ee97bfa6e93f2b2abe4ccdbe6620c9c96cda2cf7b86b91dfc97496ee16b88"
-kgd_definition_sha256: "24dcb691a8e208125025cc823a7d17b6b274339066cf39f774e4724906e17846"
+schema: kgdistiller-entry-v1
+id: first-isomorphism-theorem
+label: First isomorphism theorem
+kind: theorem
+aliases: []
+source: notes/math/modern-algebra/chapters/06-normal-subgroups-and-isomorphisms.tex
+line_start: 26
+line_end: 32
+understanding: unknown
 ---
 
 # First isomorphism theorem
@@ -13,3 +15,15 @@ kgd_definition_sha256: "24dcb691a8e208125025cc823a7d17b6b274339066cf39f774e47249
 ## Summary
 
 A surjective group homomorphism f:G→H induces an isomorphism G/ker f ≅ H.
+
+## Evidence
+
+```
+\begin{theorem}{\kn{First isomorphism theorem}}
+
+If \(f:G\rightarrow H\) is a surjective group homomorphism, then
+
+\[\frac{G}{\ker}f \sim = H.\]
+
+\end{theorem}
+```

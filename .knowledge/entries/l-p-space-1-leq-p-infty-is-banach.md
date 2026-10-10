@@ -1,19 +1,28 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "l-p-space-1-leq-p-infty-is-banach"
-kgd_label: "L^p space (1 lt.eq p < oo) is Banach"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.typ.md"
-kgd_source_sha256: "a24a46e6359001089e8a69d8b10db9bfee49699c095f36e4620331cb28aa4b3f"
-kgd_definition_sha256: "dee2ed51785453f00b6f7e1fc88220484ffe40a6b9b5542306f85044bead7977"
+schema: kgdistiller-entry-v1
+id: l-p-space-1-leq-p-infty-is-banach
+label: L^p space (1 leq p < infty) is Banach
+kind: theorem
+aliases:
+  - L^p space (1 lt.eq p < oo) is Banach
+source: notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex
+line_start: 452
+line_end: 456
+understanding: unknown
 ---
 
-# L^p space (1 lt.eq p < oo) is Banach
+# L^p space (1 leq p < infty) is Banach
 
 ## Summary
 
 $L^p$ ($1 lt.eq p < oo$) is Banach.
 
-## Context
+## Evidence
 
-原生 theorem；authority: notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.typ:253。
+```
+\begin{theorem}{\kn{$L^p$ space ($1 \leq p < \infty$) is Banach}}
+
+\(L^{p}\) (\(1 \leq p < \infty\)) is Banach.
+
+\end{theorem}
+```

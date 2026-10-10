@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "probability-density-function-pdf"
-kgd_label: "probability density function (pdf)"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "1b34a6fb448d95ab54d6cb1e1bae47fdfcf2272e3df5c94193f2918f1182b4e1"
+schema: kgdistiller-entry-v1
+id: probability-density-function-pdf
+label: probability density function (pdf)
+kind: definition
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 452
+line_end: 458
+understanding: unknown
 ---
 
 # probability density function (pdf)
@@ -14,6 +16,14 @@ kgd_definition_sha256: "1b34a6fb448d95ab54d6cb1e1bae47fdfcf2272e3df5c94193f2918f
 
 pdf 是 distribution 对 Lebesgue 测度的 RN 导数，并积分给出概率。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:447。
+```
+\begin{definition}{\kn{probability density function (pdf)}}
+
+对于 continuous random variable \(\mathit{X}\), 其 probability density function 定义为 \(\mathit{F}_{\mathit{X}}\) 的 (\(\mathit{m}\)-a.e.)导数, 即
+
+\[\mathit{f}_{\mathit{X}}(\mathit{x}) := \mathit{F}_{\mathit{X}}'(\mathit{x}),\quad\mathit{m}\ \text{-a.e.}\ \mathit{x} \in \mathbb{R}\]
+
+\end{definition}
+```

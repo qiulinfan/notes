@@ -1,11 +1,14 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "matrix-rank"
-kgd_label: "Matrix rank"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/linear-algebra/chapters/03-linear-combinations.typ.md"
-kgd_source_sha256: "c0014438c1c70c9c8b6f883194600234b4b6fcd04c568ba25a8db575d4a78637"
-kgd_definition_sha256: "96fad028ee6849e972c73aa435f7b3c1b0e83bb5de81b47e60fecf049dc2ced7"
+schema: kgdistiller-entry-v1
+id: matrix-rank
+label: Matrix rank
+kind: definition
+aliases:
+  - rank of a matrix
+source: notes/math/linear-algebra/chapters/03-linear-combinations.tex
+line_start: 48
+line_end: 60
+understanding: unknown
 ---
 
 # Matrix rank
@@ -13,3 +16,21 @@ kgd_definition_sha256: "96fad028ee6849e972c73aa435f7b3c1b0e83bb5de81b47e60fecf04
 ## Summary
 
 The number of leading ones in the reduced row-echelon form of a matrix.
+
+## Evidence
+
+```
+\begin{definition}{\kn{Matrix rank}}
+
+The number of leading \(1\)′s in \(\text{rref}(A)\) is denoted \(\text{rank}(A)\). For \(A = \begin{pmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{pmatrix}\), \(\text{rref}(A) = \begin{pmatrix}
+1 & 0 & {- 1} \\
+0 & 1 & 2 \\
+0 & 0 & 0
+\end{pmatrix}\), so \(\text{rank}(A) = 2\).
+
+\end{definition}
+```

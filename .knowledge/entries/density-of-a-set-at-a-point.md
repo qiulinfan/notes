@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "density-of-a-set-at-a-point"
-kgd_label: "density of a set at a point"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.typ.md"
-kgd_source_sha256: "9f9534a6af1bbc79aa99aa439eb00a31c435094b33f00a0cdcbd7c19f6e65cbd"
-kgd_definition_sha256: "03471a5ab01d69323e64a0c60b3768ecc9e2d5978f9ee772bf9ac77e617db977"
+schema: kgdistiller-entry-v1
+id: density-of-a-set-at-a-point
+label: density of a set at a point
+kind: definition
+aliases: []
+source: notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.tex
+line_start: 352
+line_end: 358
+understanding: unknown
 ---
 
 # density of a set at a point
@@ -14,6 +16,14 @@ kgd_definition_sha256: "03471a5ab01d69323e64a0c60b3768ecc9e2d5978f9ee772bf9ac77e
 
 对于 $E subset bb(R)^n$ Lebesgue measurable (which implies: $chi_E in L_(l o c)^1$), 我们定义: $ D_E\(x\): = lim_(r arrow.r 0^(+)) frac(m\(E inter B\(x\,r\)\), m\(B\(x\,r\)\)) $
 
-## Context
+## Evidence
 
-原生 definition；authority: notes/math/measure-theory/chapters/08-Hardy-Littlewood&LDT.typ:182。
+```
+\begin{definition}{\kn{density of a set at a point}}
+
+对于 \(E \subset \mathbb{R}^{n}\) Lebesgue measurable (which implies: \(\chi_{E} \in L_{loc}^{1}\)), 我们定义:
+
+\[D_{E}(x): = \lim\limits_{r\rightarrow 0^{+}}\frac{m(E \cap B(x,r))}{m(B(x,r))}\]
+
+\end{definition}
+```

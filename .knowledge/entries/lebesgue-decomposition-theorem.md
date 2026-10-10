@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "lebesgue-decomposition-theorem"
-kgd_label: "Lebesgue Decomposition Theorem"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "2a08075ca0a1875431eb2b46a0cb374688a2e0e7df8d3b2714c2ed0f7e94d393"
+schema: kgdistiller-entry-v1
+id: lebesgue-decomposition-theorem
+label: Lebesgue Decomposition Theorem
+kind: theorem
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 562
+line_end: 570
+understanding: unknown
 ---
 
 # Lebesgue Decomposition Theorem
@@ -14,6 +16,16 @@ kgd_definition_sha256: "2a08075ca0a1875431eb2b46a0cb374688a2e0e7df8d3b2714c2ed0f
 
 distribution 可分为绝对连续、离散原子与奇异连续部分。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:553。
+```
+\begin{theorem}{\kn{Lebesgue Decomposition Theorem}}
+
+对于任意 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\), 其 distribution \(\mathbb{P}^{\mathit{X}}\) 可以唯一分解为三个 mutually singular 的 measure 的和:
+
+\[\mathbb{P}^{\mathit{X}} = \mathbb{P}_{\mathit{a}\mathit{c}}^{\mathit{X}} + \mathbb{P}_{\mathit{s}\mathit{c}}^{\mathit{X}} + \mathbb{P}_{\mathit{d}}^{\mathit{X}}\]
+
+其中 \(\mathbb{P}_{\mathit{a}\mathit{c}}^{\mathit{X}} \ll \mathit{m}\) 是 absolutely continuous measure, \(\mathbb{P}_{\mathit{s}\mathit{c}}^{\mathit{X}} \perp \mathit{m}\) 是一个 singular continuous measure, \(\mathbb{P}_{\mathit{d}}^{\mathit{X}} \perp \mathit{m}\) 是 discrete measure.
+
+\end{theorem}
+```

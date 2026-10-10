@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "expectation-and-variance-of-random-variable"
-kgd_label: "expectation and variance of random variable"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "579a52fb3a688df0fbebb1c5ede0e8e101eedc7d1160c5715f2bc23f28cd2d5d"
+schema: kgdistiller-entry-v1
+id: expectation-and-variance-of-random-variable
+label: expectation and variance of random variable
+kind: definition
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 600
+line_end: 610
+understanding: unknown
 ---
 
 # expectation and variance of random variable
@@ -14,6 +16,18 @@ kgd_definition_sha256: "579a52fb3a688df0fbebb1c5ede0e8e101eedc7d1160c5715f2bc23f
 
 expectation 是 X 关于 P 的积分，variance 是围绕 expectation 的平方偏差期望。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:595。
+```
+\begin{definition}{\kn{expectation and variance of random variable}}
+
+对于 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\), 其 expectation 定义为
+
+\[\mathbb{E}\lbrack\mathit{X}\rbrack := \int_{\Omega}\mathit{X}\mathit{d}\mathbb{P}\]
+
+其 variance 定义为
+
+\[\text{Var}(\mathit{X}) := \mathbb{E}\lbrack(\mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack)^{2}\rbrack = \int_{\Omega}(\mathit{X} - \mathbb{E}\lbrack\mathit{X}\rbrack)^{2}\mathit{d}\mathbb{P}\]
+
+\end{definition}
+```

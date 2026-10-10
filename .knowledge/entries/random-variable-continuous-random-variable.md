@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "random-variable-continuous-random-variable"
-kgd_label: "一个 random variable 是 continuous random variable 的充要条件"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "608129a539b4e20a74bd2b24ec25e133ffb304baeb9ea1619fa2f5004d25aa9c"
+schema: kgdistiller-entry-v1
+id: random-variable-continuous-random-variable
+label: 一个 random variable 是 continuous random variable 的充要条件
+kind: theorem
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 413
+line_end: 435
+understanding: unknown
 ---
 
 # 一个 random variable 是 continuous random variable 的充要条件
@@ -14,6 +16,30 @@ kgd_definition_sha256: "608129a539b4e20a74bd2b24ec25e133ffb304baeb9ea1619fa2f500
 
 X 连续当且仅当其 CDF 绝对连续，因而可由密度积分表示。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:415。
+```
+\begin{theorem}{\kn{一个 random variable 是 continuous random variable 的充要条件}}
+
+\begin{itemize}
+\item
+  一个 random variable \(\mathit{X}:\Omega\rightarrow\mathbb{R}\) 的 cdf 一定是 \(\mathit{m}\)-a.e. differentiable 的.
+\item
+  \(\mathit{X}\) 是一个 continuous random variable 当且 仅当 \(\mathbb{P}^{\mathit{X}} \ll \mathit{m}\), 即当且仅当存在一个函数 \(\mathit{f}_{\mathit{X}}:\mathbb{R}\rightarrow\lbrack 0,\infty)\), 使得 使得对于任意 Borel set \(\mathit{A} \subseteq \mathbb{R}\), 有
+
+  \[\mathbb{P}^{\mathit{X}}(\mathit{A}) = \int_{\mathit{A}}\mathit{f}_{\mathit{X}}\mathit{d}\mathit{m}\]
+
+  这个函数 \(\mathit{f}_{\mathit{X}}\) 即是:
+
+  \begin{itemize}
+  \item
+    \textbf{distribution 对于 Lebesgue measure 的 Radon-Nikodym derivative}: \(\mathit{f}_{\mathit{X}} = \frac{\mathit{d}\mathbb{P}^{\mathit{X}}}{\mathit{d}\mathit{m}}\).
+  \item
+    \textbf{cdf \(\mathit{F}_{\mathit{X}}\) 的 \(\mathit{m}\)-a.e.导数 \(\mathit{f}_{\mathit{X}} = \mathit{F}_{\mathit{X}}'\).}
+  \end{itemize}
+
+  我们也称这个 \(\mathit{f}_{\mathit{X}}\) 是 continuous random variable \(\mathit{X}\) 的 \textbf{probability density function (pdf).}
+\end{itemize}
+
+\end{theorem}
+```

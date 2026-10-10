@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "jensen-inequality"
-kgd_label: "Jensen's inequality"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/04-LLN.typ.md"
-kgd_source_sha256: "832888e03949ed5914f31f788001bf68352a73d0b2ecc986b85ccc70c8e5b27e"
-kgd_definition_sha256: "989c2e995bdbfe92e28a600cee9b86fe390c81c3e9264630faae1b118efd5132"
+schema: kgdistiller-entry-v1
+id: jensen-inequality
+label: Jensen's inequality
+kind: theorem
+aliases: []
+source: notes/math/prob/chapters/04-LLN.tex
+line_start: 88
+line_end: 94
+understanding: unknown
 ---
 
 # Jensen's inequality
@@ -14,6 +16,14 @@ kgd_definition_sha256: "989c2e995bdbfe92e28a600cee9b86fe390c81c3e9264630faae1b11
 
 凸 φ 下，φ(E[X])≤E[φ(X)]，要求两侧有限且有定义。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/04-LLN.typ:92。
+```
+\begin{theorem}{\kn{Jensen's inequality}}
+
+对于一个 convex function \(\mathit{\varphi}\) 和 任意的 random variable \(\mathit{X}\), 只要 \(\mathbb{E}\lbrack\mathit{X}\rbrack\) 和 \(\mathbb{E}\lbrack\mathit{\varphi}(\mathit{X})\rbrack\) 都是 well-defined 的 (即 finite), 都有
+
+\[\mathit{\varphi}(\mathbb{E}\lbrack\mathit{X}\rbrack) \leq \mathbb{E}\lbrack\mathit{\varphi}(\mathit{X})\rbrack\]
+
+\end{theorem}
+```

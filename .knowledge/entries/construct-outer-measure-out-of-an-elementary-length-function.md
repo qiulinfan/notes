@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "construct-outer-measure-out-of-an-elementary-length-function"
-kgd_label: "construct outer measure out of an \"elementary length function\""
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.typ.md"
-kgd_source_sha256: "21342e1548973ced5c41abfe8383a7b268d1716c83162f6a317f19191c3ca338"
-kgd_definition_sha256: "2289ad0d37969063f560ec8a53fd365222394703c08c3146c3dd452095ec0650"
+schema: kgdistiller-entry-v1
+id: construct-outer-measure-out-of-an-elementary-length-function
+label: construct outer measure out of an "elementary length function"
+kind: theorem
+aliases: []
+source: notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.tex
+line_start: 100
+line_end: 108
+understanding: unknown
 ---
 
 # construct outer measure out of an "elementary length function"
@@ -14,6 +16,16 @@ kgd_definition_sha256: "2289ad0d37969063f560ec8a53fd365222394703c08c3146c3dd4520
 
 另 $cal(E) subset.eq cal(P)\(X\)$ 为一个包含 $diameter\,X$ 的集合, 并定义 $rho : cal(E) arrow.r\[0\,oo\)$ 为一个满足 $rho\(diameter\)= 0$ 的函数, 则 $ mu^(*)\(A\)= inf { sum_(i = 1)^oo rho\(E_i\)divides E_i in cal(E) upright(" for each i and ") A subset.eq union.big_(i = 1)^oo E_i } $ is an outer measure.
 
-## Context
+## Evidence
 
-原生 theorem；authority: notes/math/measure-theory/chapters/02-outer-measure-与-completion-of-a-measurable-space.typ:79。
+```
+\begin{theorem}{\kn{construct outer measure out of an "elementary length function"}}\label{thm-02-outer-measure-completion-of-a-measurable-space-construct-outer-measure-out-of-an-elementary-length-function}
+
+另 \(\mathcal{E} \subseteq \mathcal{P}(X)\) 为一个包含 \(\varnothing,X\) 的集合, 并定义 \(\rho:\mathcal{E}\rightarrow\lbrack 0,\infty)\) 为一个满足 \(\rho(\varnothing) = 0\) 的函数, 则
+
+\[\mu^{\ast}(A) = \inf\left\{ {\sum\limits_{i = 1}^{\infty}\rho(E_{i}) \mid E_{i} \in \mathcal{E}\ \text{for each i and}\ A \subseteq \bigcup\limits_{i = 1}^{\infty}E_{i}} \right\}\]
+
+is an outer measure.
+
+\end{theorem}
+```

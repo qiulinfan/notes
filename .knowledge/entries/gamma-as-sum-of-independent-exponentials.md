@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "gamma-as-sum-of-independent-exponentials"
-kgd_label: "Gamma distribution as a sum of independent exponentials"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "cb374b2a828ceaccad0d0a754caf5534735525c4a63425c80a361117b9292228"
+schema: kgdistiller-entry-v1
+id: gamma-as-sum-of-independent-exponentials
+label: Gamma distribution as a sum of independent exponentials
+kind: proposition
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 1466
+line_end: 1472
+understanding: unknown
 ---
 
 # Gamma distribution as a sum of independent exponentials
@@ -14,6 +16,14 @@ kgd_definition_sha256: "cb374b2a828ceaccad0d0a754caf5534735525c4a63425c80a361117
 
 同率独立指数变量的和服从相应 shape 参数的 Gamma 分布。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:1283。
+```
+\begin{proposition}{\kn{Gamma distribution as a sum of independent exponentials}}
+
+Let \(\mathit{X}_{1},\mathit{X}_{2},\cdots,\mathit{X}_{\mathit{n}} \sim \text{Exp}(\mathit{\lambda})\) be i.i.d., 则
+
+\[\Gamma(\mathit{n},\mathit{\lambda}) = \sum\limits_{\mathit{i} = 1}^{\mathit{n}}\mathit{X}_{\mathit{i}}\]
+
+\end{proposition}
+```

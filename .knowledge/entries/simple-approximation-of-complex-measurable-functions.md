@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "simple-approximation-of-complex-measurable-functions"
-kgd_label: "simple approximation of complex measurable functions"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).typ.md"
-kgd_source_sha256: "4872241cfd6210efaa52bb24f976dc19765713449c9adadb125124f6514a1b94"
-kgd_definition_sha256: "4967b396d010283f71733fe1e162f0566c8e0784407f391d134b9283dee132ce"
+schema: kgdistiller-entry-v1
+id: simple-approximation-of-complex-measurable-functions
+label: simple approximation of complex measurable functions
+kind: corollary
+aliases: []
+source: notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).tex
+line_start: 423
+line_end: 438
+understanding: unknown
 ---
 
 # simple approximation of complex measurable functions
@@ -14,6 +16,23 @@ kgd_definition_sha256: "4967b396d010283f71733fe1e162f0566c8e0784407f391d134b9283
 
 对于任意的 measurable $f : X arrow.r bb(C)$, 都存在 a seq of simple functions $ 0 lt.eq\|phi.alt_1\|lt.eq\|phi.alt_2\|lt.eq dots.h.c lt.eq\|f\| $ 使得 - $phi.alt_n arrow.r f$ pointwisely - $phi.alt_n arrow.r f$ uniformly on ${ x divides\|f\(x\)\|< oo }$
 
-## Context
+## Evidence
 
-原生 corollary；authority: notes/math/measure-theory/chapters/04-measurable_functions_and_integration_on_L^+(mu).typ:326。
+```
+\begin{corollary}{\kn{simple approximation of complex measurable functions}}
+
+对于任意的 measurable \(f:X\rightarrow\mathbb{C}\), 都存在 a seq of simple functions
+
+\[\left. 0 \leq \middle| \varphi_{1} \middle| \leq \middle| \varphi_{2} \middle| \leq \cdots \leq \middle| f| \right.\]
+
+使得
+
+\begin{itemize}
+\item
+  \textbf{\(\varphi_{n}\rightarrow f\) pointwisely}
+\item
+  \textbf{\(\varphi_{n}\rightarrow f\) uniformly on \(\left\{ x \mid \middle| f(x) \middle| < \infty \right\}\)}
+\end{itemize}
+
+\end{corollary}
+```

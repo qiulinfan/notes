@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "lusin-s-theorem"
-kgd_label: "Lusin's Theorem"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.typ.md"
-kgd_source_sha256: "4a154a2bb87ae6cc3d4dbfa2e8b7ae578dfdeec22235b93faa012794c91ed46e"
-kgd_definition_sha256: "1bdb8a29338fcdb7c9bd127617b2b5ece827dbec886e7c5c627856134bdf8ea2"
+schema: kgdistiller-entry-v1
+id: lusin-s-theorem
+label: Lusin's Theorem
+kind: theorem
+aliases: []
+source: notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.tex
+line_start: 1049
+line_end: 1053
+understanding: unknown
 ---
 
 # Lusin's Theorem
@@ -14,6 +16,12 @@ kgd_definition_sha256: "1bdb8a29338fcdb7c9bd127617b2b5ece827dbec886e7c5c62785613
 
 If $f :\[a\,b\]arrow.r bb(C)$ 是 Leb. mble 的, 那么 $forall epsilon > 0$, 都存在 compact $K subset.eq\[a\,b\]$ s.t. $m\(K^c\)< epsilon$ 并且 $f\|_K$ ctn.
 
-## Context
+## Evidence
 
-原生 theorem；authority: notes/math/measure-theory/chapters/05-integration_of_real_and_complex_functions.typ:569。
+```
+\begin{theorem}{\kn{Lusin's Theorem}}
+
+If \(f:\lbrack a,b\rbrack\rightarrow\mathbb{C}\) 是 Leb. mble 的, 那么 \(\forall\varepsilon > 0\), 都存在 compact \(K \subseteq \lbrack a,b\rbrack\) s.t. \(m(K^{c}) < \varepsilon\) 并且 \(f|_{K}\) ctn.
+
+\end{theorem}
+```

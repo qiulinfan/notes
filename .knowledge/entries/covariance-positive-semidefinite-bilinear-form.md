@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "covariance-positive-semidefinite-bilinear-form"
-kgd_label: "covariance is a positive-semidefinite symmetric bilinear form"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "d44bd33751f0f192df4042479f762f77ce83f089c27b8b5be64985213f228bc1"
+schema: kgdistiller-entry-v1
+id: covariance-positive-semidefinite-bilinear-form
+label: covariance is a positive-semidefinite symmetric bilinear form
+kind: theorem
+aliases: []
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 815
+line_end: 826
+understanding: unknown
 ---
 
 # covariance is a positive-semidefinite symmetric bilinear form
@@ -14,6 +16,19 @@ kgd_definition_sha256: "d44bd33751f0f192df4042479f762f77ce83f089c27b8b5be6498521
 
 covariance 在 L₀² 上对称、双线性并正半定。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:786。
+```
+\begin{theorem}{\kn{covariance is a positive-semidefinite symmetric bilinear form}}
+
+\begin{itemize}
+\item
+  covariance 是一个 \textbf{symmetric bilinear form} (并且 \textbf{translation-invariant}, 忽略 translation) 的 operator:
+
+  \[\text{Cov}(\mathit{a}\mathit{X} + \mathit{b},\mathit{c}\mathit{Y} + \mathit{d}) = \mathit{a}\mathit{c}\,\text{Cov}(\mathit{X},\mathit{Y})\]\[\text{Cov}(\mathit{X},\mathit{Y}) = \text{Cov}(\mathit{Y},\mathit{X})\]\[\text{Cov}(\mathit{X} + \mathit{Y},\mathit{Z}) = \text{Cov}(\mathit{X},\mathit{Z}) + \text{Cov}(\mathit{Y},\mathit{Z})\]
+\item
+  covariance 满足 positive definiteness: \(\text{Cov}(\mathit{X},\mathit{X}) = \text{Var}(\mathit{X}) \geq 0\).
+\end{itemize}
+
+\end{theorem}
+```

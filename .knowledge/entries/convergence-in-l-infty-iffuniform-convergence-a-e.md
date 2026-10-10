@@ -1,19 +1,31 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "convergence-in-l-infty-iffuniform-convergence-a-e"
-kgd_label: "convergence in L^oo arrow.l.r.doubleuniform convergence a.e."
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.typ.md"
-kgd_source_sha256: "a24a46e6359001089e8a69d8b10db9bfee49699c095f36e4620331cb28aa4b3f"
-kgd_definition_sha256: "34830f55def2fb4767eca1a74e116921a2026598f00d8a5ffbfe421a053b7ffc"
+schema: kgdistiller-entry-v1
+id: convergence-in-l-infty-iffuniform-convergence-a-e
+label: convergence in L^ infty Leftrightarrowuniform convergence a.e.
+kind: theorem
+aliases:
+  - convergence in L^oo arrow.l.r.doubleuniform convergence a.e.
+source: notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.tex
+line_start: 792
+line_end: 799
+understanding: unknown
 ---
 
-# convergence in L^oo arrow.l.r.doubleuniform convergence a.e.
+# convergence in L^ infty Leftrightarrowuniform convergence a.e.
 
 ## Summary
 
 $ f_n arrow.r f upright(" in ") L^oo arrow.l.r.double upright("exists null set ") E subset X s . t . f_n arrow.r f upright(" uniformly on ") E^c $ (注意, 这不是 conv almost uniformly, 而是一个比 almost uniformly 更强的条件: conv uniformly almost everywhere, 因为 almost uniformly 只要求对于任意的 $epsilon.alt$, 都存在一个 measure 小于 $epsilon.alt$ 的 $E$, 使得在 $E^c$ 上 uni conv 即可.)
 
-## Context
+## Evidence
 
-原生 theorem；authority: notes/math/measure-theory/chapters/09-L^P-space_and_inequalities.typ:423。
+```
+\begin{theorem}{\kn{convergence in $L^{\infty}$ $\Leftrightarrow$uniform convergence
+a.e.}}
+
+\[f_{n}\rightarrow f\text{in}\ L^{\infty}\Leftrightarrow\text{exists null set}\ E \subset X s.t.f_{n}\rightarrow f\ \text{uniformly on}\ E^{c}\]
+
+(注意, 这\textbf{不是 conv almost uniformly}, 而是一个比 almost uniformly \textbf{更强}的条件: \textbf{conv uniformly almost everywhere}, 因为 almost uniformly 只要求对于任意的 \(\varepsilon\), 都存在一个 measure 小于 \(\varepsilon\) 的 \(E\), 使得在 \(E^{c}\) 上 uni conv 即可.)
+
+\end{theorem}
+```

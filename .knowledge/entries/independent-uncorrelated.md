@@ -1,11 +1,13 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "independent-uncorrelated"
-kgd_label: "independent 严格强于 uncorrelated"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/03-joint&conditional-distribution.typ.md"
-kgd_source_sha256: "225f9c65cf203ff7f5de6fb275c6aa022a0ea76958849888893242091694ae29"
-kgd_definition_sha256: "8d91b80f5da81770bb792252d5478b309b654d6947e24796c1e23ae49c14efb1"
+schema: kgdistiller-entry-v1
+id: independent-uncorrelated
+label: independent 严格强于 uncorrelated
+kind: proposition
+aliases: []
+source: notes/math/prob/chapters/03-joint&conditional-distribution.tex
+line_start: 534
+line_end: 538
+understanding: unknown
 ---
 
 # independent 严格强于 uncorrelated
@@ -13,3 +15,13 @@ kgd_definition_sha256: "8d91b80f5da81770bb792252d5478b309b654d6947e24796c1e23ae4
 ## Summary
 
 若 X,Y independent，则 Cov(X,Y)=0；反命题不成立，例如对称分布的 X 与 Y=X^2 可以 uncorrelated 却不 independent。
+
+## Evidence
+
+```
+\begin{proposition}{\kn{independent 严格强于 uncorrelated}}
+
+令 \(\mathit{X},\mathit{Y}\) 是两个 random variables. 则 \(\mathit{X},\mathit{Y}\) 是 independent 的 \(\Longrightarrow\) \(\text{Cov}(\mathit{X},\mathit{Y}) = 0\). 但是 \(\text{Cov}(\mathit{X},\mathit{Y}) = 0\) 不一定 \(\Longrightarrow\) \(\mathit{X},\mathit{Y}\) 是 independent 的.
+
+\end{proposition}
+```

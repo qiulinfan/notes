@@ -1,11 +1,14 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "qr-factorization"
-kgd_label: "QR factorization"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/linear-algebra/chapters/06-gram-schmidt-and-qr.typ.md"
-kgd_source_sha256: "32e3a152754cdf242f27babbce6bb9d465ecfbf0f48f0399ad4026e1991f6c84"
-kgd_definition_sha256: "5be28fc812c74132f95c5c277baf7e6c33909473a3a937137049466325cba480"
+schema: kgdistiller-entry-v1
+id: qr-factorization
+label: QR factorization
+kind: concept
+aliases:
+  - QR decomposition
+source: notes/math/linear-algebra/chapters/06-gram-schmidt-and-qr.tex
+line_start: 4
+line_end: 4
+understanding: unknown
 ---
 
 # QR factorization
@@ -13,3 +16,9 @@ kgd_definition_sha256: "5be28fc812c74132f95c5c277baf7e6c33909473a3a9371370494663
 ## Summary
 
 The Gram--Schmidt construction writes a matrix as an orthogonal matrix times an upper-triangular matrix.
+
+## Evidence
+
+```
+\section{\texorpdfstring{WS 17, p. 1: proof of QR factorization \kn{QR factorization}}{WS 17, p. 1: proof of QR factorization }}
+```

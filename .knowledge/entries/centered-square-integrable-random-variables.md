@@ -1,19 +1,33 @@
 ---
-kgd_schema: "kgdistiller-entry-v1"
-kgd_id: "centered-square-integrable-random-variables"
-kgd_label: "zero-centered square integrable random variables L_0^2(Omega,cal(F),bb(P))"
-kgd_entry_origin: "agent-extracted"
-kgd_source: ".knowledge/derived/by-source/notes/math/prob/chapters/02-random-variables.typ.md"
-kgd_source_sha256: "c1651fe0c43c04d2802b1e64e1f27ce58622f365ef48b81b16019557c25be753"
-kgd_definition_sha256: "03c699cca395420a6357d3730c2b32144017e26368e85e59b46bf93221dba568"
+schema: kgdistiller-entry-v1
+id: centered-square-integrable-random-variables
+label: zero-centered square integrable random variables L _0^2(Ω,F,P)
+kind: definition
+aliases:
+  - zero-centered square integrable random variables L_0^2(Omega,cal(F),bb(P))
+source: notes/math/prob/chapters/02-random-variables.tex
+line_start: 747
+line_end: 756
+understanding: unknown
 ---
 
-# zero-centered square integrable random variables L_0^2(Omega,cal(F),bb(P))
+# zero-centered square integrable random variables L _0^2(Ω,F,P)
 
 ## Summary
 
 L₀² 是均值为零且二次可积的随机变量空间。
 
-## Context
+## Evidence
 
-原生 marker；authority: notes/math/prob/chapters/02-random-variables.typ:726。
+```
+\begin{definition}{\kn{zero-centered square integrable random variables
+$\mathit{L}_0^2(\Omega,\mathcal{F},\mathbb{P})$}}
+
+我们定义:
+
+\[\mathit{L}_{0}^{2}(\Omega,\mathcal{F},\mathbb{P}) := \left\{ {\mathit{X} \in \mathit{L}^{2}(\Omega,\mathcal{F},\mathbb{P}) \mid \mathbb{E}\lbrack\mathit{X}\rbrack = 0} \right\}\]
+
+注意, 这个空间是 \(\mathit{L}^{2}(\Omega,\mathcal{F},\mathbb{P})\) 的一个 subspace.
+
+\end{definition}
+```
