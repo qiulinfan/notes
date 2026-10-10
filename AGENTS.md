@@ -212,8 +212,11 @@ quote now sits at other lines of its source, and as stale when the quote no
 longer occurs there; a stale record needs a reviewed update. `make
 knowledge-search QUERY="..."` searches the index. The kgdistiller Obsidian
 plugin reads the records' live metadata, so there is no export step;
-reinstall it with `kgd obsidian install --base notes --replace` when the
-product changes it.
+reinstall it with `kgd obsidian install --base notes` when the product
+changes it. The command also turns on the plugin's hidden-folder indexing of
+`.knowledge/`. The plugin is desktop only. Leave Obsidian's **New link
+format** unset (shortest) or set it to absolute: relative links write `../`
+paths that record links reject, and the install command warns about them.
 Do not guess identity from similarity. None of this affects the website.
 
 ## Obsidian vault
@@ -225,5 +228,8 @@ other personal environment directories, or `*.code-workspace` files in this
 public repository. Keep their ignore rules without allowlist exceptions.
 Each machine must trust the vault and allow community plugins, which are
 installed from the official community plugin browser and never committed.
+The one exception is kgdistiller's plugin: `kgd obsidian install` installs
+it from the product rather than the community browser, and it is never
+committed either.
 YOLO's `data.json`, OAuth tokens, and `YOLO/` state are git-ignored and hold
 credentials: never force them into Git.
