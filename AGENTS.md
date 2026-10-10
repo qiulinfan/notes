@@ -182,7 +182,7 @@ defaults.
   migrated once on 2026-10-09 from the derived-evidence graph: each entry was
   rebound to its `.tex` statement with a verbatim Evidence quote and earlier
   spellings became aliases; the 219 accepted edges became accepted relation
-  records in S2.
+  records.
 
 ### Refreshing the knowledge instance
 
