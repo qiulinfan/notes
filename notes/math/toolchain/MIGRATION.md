@@ -69,10 +69,11 @@ Inspect every generated semantic call:
 - keep prose and callouts left-aligned.
 
 These markers are website anchors and links only; kgdistiller does not read
-them. Knowledge extraction is a separate step: capture or curate entries and
-direct semantic edges from the course's `.tex` statements and proofs through
-the kgdistiller Skills, then apply them with a reviewed ingest. Do not
-translate legacy proximity or numbering into dependencies.
+them. Knowledge extraction is a separate step: draft node and relation records
+from the course's `.tex` statements and proofs with the `capture-kgdistiller`
+or `compile-knowledge-sheets` Skill, accept them with `kgd accept` or
+`kgd harvest`, then run `kgd index`. Do not translate legacy proximity or
+numbering into dependencies.
 
 Avoid wrapping export-relevant content in paged-only outer `figure` or centered
 table constructs. Typst's experimental HTML target may omit nested content even

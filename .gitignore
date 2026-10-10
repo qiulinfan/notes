@@ -49,8 +49,8 @@ core.*
 # JavaScript dependencies
 node_modules/
 
-# Disposable local knowledge builds, candidate reviews, deltas, and receipts
-.knowledge/build/
+# Disposable local builds: native TeX migration and check outputs, and review inputs
+/build/
 
 # Personal editor, vault and agent environment stays local, at every depth.
 .obsidian/

@@ -76,7 +76,7 @@ class MultiSourceExportTest(unittest.TestCase):
     )
     def test_elegantbook_entrypoint_becomes_self_contained_previewable_typst(self) -> None:
         fixture = Path(__file__).parent / "fixtures/latex-project/main.tex"
-        build_parent = REPO_ROOT / ".knowledge/build"
+        build_parent = REPO_ROOT / "build"
         build_parent.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(prefix="qlnotes-latex-project-", dir=build_parent) as temporary:
             root = Path(temporary)

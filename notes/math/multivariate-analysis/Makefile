@@ -1,7 +1,7 @@
 SHELL := cmd.exe
 .SHELLFLAGS := /c
 
-.PHONY: all release export web web-check homeworks-web homeworks-web-check watch edit knowledge-curate
+.PHONY: all release export web web-check homeworks-web homeworks-web-check watch edit
 
 TYPST := typst
 TOOLCHAIN := ../toolchain
@@ -22,9 +22,6 @@ export:
 		--root $(REPO_ROOT) \
 		--output $(EXPORTS) \
 		--build $(BUILD)/export
-
-knowledge-curate:
-	@$(MAKE) -C $(REPO_ROOT) knowledge-authoring-check
 
 web:
 	@IF NOT EXIST "$(BUILD)" MKDIR "$(BUILD)"

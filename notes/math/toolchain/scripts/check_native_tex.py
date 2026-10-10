@@ -2,7 +2,7 @@
 """Audit native companions and compile entries plus otherwise uncovered fragments.
 
 Sources stay read-only. Every TeX output and fragment wrapper belongs to the
-selected check directory under .knowledge/build (or the system temporary tree).
+selected check directory under the ignored build/ (or the system temporary tree).
 """
 from __future__ import annotations
 
@@ -197,14 +197,14 @@ def main() -> int:
     parser.add_argument("--audit-only", action="store_true")
     parser.add_argument("--jobs", type=int, default=2)
     parser.add_argument("--timeout", type=int, default=120)
-    parser.add_argument("--output", type=Path, default=REPO / ".knowledge/build/native-tex/check")
+    parser.add_argument("--output", type=Path, default=REPO / "build/native-tex/check")
     args = parser.parse_args()
     if args.jobs < 1 or args.timeout < 1:
         parser.error("--jobs and --timeout must be positive")
     output = args.output.resolve()
-    allowed_roots = [(REPO / ".knowledge/build").resolve(), Path(tempfile.gettempdir()).resolve(), Path("/tmp").resolve()]
+    allowed_roots = [(REPO / "build").resolve(), Path(tempfile.gettempdir()).resolve(), Path("/tmp").resolve()]
     if not any(output.is_relative_to(path) for path in allowed_roots):
-        parser.error("check output must be under .knowledge/build or the system temporary tree")
+        parser.error("check output must be under build/ or the system temporary tree")
     math_root = (REPO / "notes/math").resolve()
     courses = [course.name for course in math_root.iterdir() if course.is_dir() and course.name != "toolchain"
                and (not args.course or course.name in args.course) and course.name not in args.skip_course]

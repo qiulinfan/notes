@@ -1,29 +1,18 @@
 ---
-schema: kgdistiller-entry-v1
-id: bayes-theorem
 label: Bayes theorem
 kind: theorem
-aliases: []
 source: notes/math/prob/chapters/01-combinatorics&prob_space.tex
-line_start: 518
-line_end: 524
+lines: 518-524
 understanding: unknown
 ---
-
-# Bayes theorem
-
-## Summary
-
 若 A,B⊆Ω 且 P(B)≠0，则 Bayes theorem 给出 P(A|B)=P(A)P(B|A)/P(B)。它由 P(A)P(B|A)=P(A∩B) 与 conditional probability 的定义得到。
 
 ## Evidence
 
-```
-\begin{theorem}{\kn{Bayes theorem}}
-
-If \(\mathit{A},\mathit{B} \subseteq \Omega\) such that \(\mathbb{P}(\mathit{B}) \neq 0\), then
-
-\[\mathbb{P}(\mathit{A} \mid \mathit{B}) = \frac{\mathbb{P}(\mathit{A}) \cdot \mathbb{P}(\mathit{B} \mid \mathit{A})}{\mathbb{P}(\mathit{B})}\]
-
-\end{theorem}
-```
+> \begin{theorem}{\kn{Bayes theorem}}
+>
+> If \(\mathit{A},\mathit{B} \subseteq \Omega\) such that \(\mathbb{P}(\mathit{B}) \neq 0\), then
+>
+> \[\mathbb{P}(\mathit{A} \mid \mathit{B}) = \frac{\mathbb{P}(\mathit{A}) \cdot \mathbb{P}(\mathit{B} \mid \mathit{A})}{\mathbb{P}(\mathit{B})}\]
+>
+> \end{theorem}

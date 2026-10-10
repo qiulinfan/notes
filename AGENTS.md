@@ -31,12 +31,19 @@ the owner asks, and keep development documentation here. The READMEs inside
   authoring files listed in `courses.json`; they are not knowledge sources.
   kgdistiller reads every source as plain text with line numbers and never
   parses its syntax.
-- Knowledge nodes are the reviewed entries `.knowledge/entries/<id>.md`.
-  Each entry's frontmatter holds its label, kind, aliases, source path, line
-  range and understanding state, and its `Evidence` section quotes the cited
-  source lines verbatim. Accepted semantic edges live in
-  `.knowledge/edges.jsonl`. Entries are human-editable Markdown; never
-  hand-edit `edges.jsonl`.
+- Knowledge is a set of records in kgdistiller's record format: YAML
+  frontmatter followed by a Markdown body, one file per record, the id being
+  the file stem. The frontmatter holds `label`, `kind`, `source` (a
+  repository-relative registered source), `lines` (`a` or `a-b`) and
+  optionally `aliases`, `understanding`, `epistemic` and `requires`; a
+  relation also holds its role keys (for example `prerequisite` and
+  `dependent`), each a list of quoted `"[[id]]"` links or plain pending terms.
+  The body is prose, an optional `## Search terms` section and a final
+  `## Evidence` section of blockquotes that quote the cited source lines
+  verbatim. Nodes and relations both live in `.knowledge/entries/`; proposed
+  new records are drafts in `.knowledge/drafts/`, and `kgd sheet` writes
+  generated per-source sheets to `.knowledge/sheets/`. There is no separate
+  edge file. Records are human-editable Markdown, also in Obsidian.
 - Knowledge markers are only a notes and homepage frontend convention, used
   as website anchors and links; kgdistiller does not read them, and they do
   not define knowledge entries. They are Typst `#kn[...]`/`#ref[...]`, LaTeX
@@ -70,19 +77,20 @@ the owner asks, and keep development documentation here. The READMEs inside
 - Mathematics course sources have editable, same-directory `.typ` and `.tex`
   companions. Preserve their include structure and explicit knowledge markers.
   Only the `.tex` companion is a registered knowledge source. Alternative
-  name spellings are aliases in the entries' frontmatter.
+  name spellings are aliases in the records' frontmatter.
 - `notes/math/toolchain/latex/qlnotes-native.cls` is the shared XeLaTeX class.
   Course entry points load it by relative path; avoid copying classes per course.
   Run `make latex-check` for pair/include auditing and two-pass compilation of
   every entry (plus uncovered fragments). All outputs stay in
-  `.knowledge/build/native-tex/check`, outside the source-only `notes/` tree.
+  `build/native-tex/check` under the ignored repository-root `build/`,
+  outside the source-only `notes/` tree.
 - `add_native_tex.py` is an explicit migration tool, not a synchronization job.
   It evaluates a disposable copy through Typst/MathML and the QLNotes filters;
   `.tex` companions are authored files afterward. Never regenerate an edited
   companion without requested replacement. Its `--replace` flag overwrites
   companions, including subsequent TeX-only layout edits. The migration checks
   every mathematical expression, knowledge marker and ignored backend element;
-  its diagnostic and identity maps remain under `.knowledge/build/native-tex`.
+  its diagnostic and identity maps remain under the ignored `build/native-tex`.
 - Never place credentials in the repository or command output.
 
 ## Layout
@@ -90,10 +98,14 @@ the owner asks, and keep development documentation here. The READMEs inside
 - `notes/`: Markdown, Typst, and LaTeX sources with the shared rendering
   toolchain. Never commit PDFs, course archives, or build outputs.
 - `courses.json`: the website's course registry.
-- `.knowledge/`: the knowledge of the kgdistiller base `notes`: the
-  reviewed `entries/` and `edges.jsonl`, plus its decisions. Its source
-  globs and document types live in the kgdistiller home. Its layout and
-  authoring flow are in `.knowledge/SPEC.md` and `.knowledge/WORKFLOW.md`.
+- `.knowledge/`: the knowledge of the kgdistiller base `notes`, and nothing
+  else: the accepted records in `entries/`, the drafts in `drafts/` and the
+  generated sheets in `sheets/`. Its source globs and document types live in
+  the kgdistiller home. Its rules and authoring flow are in
+  [Knowledge instance](#knowledge-instance).
+- `build/`: ignored, disposable local outputs: the native TeX migration and
+  check outputs in `build/native-tex/` and local review inputs in
+  `build/reviews/`. Nothing in it is an authority.
 - The homepage repository builds the site: it reads this repository as the
   `notes` dock and publishes it at `https://qiulinfan.github.io/notes/`.
   Enabling GitHub Pages here would make this project site take over that path
@@ -124,24 +136,85 @@ Typst version is pinned once, as `TYPST_VERSION` in the `Makefile`; this
 repository's CI and the homepage build both read it. Run the toolchain tests
 with `python3 -m unittest discover -s notes/math/toolchain/tests`.
 
-## Refreshing the knowledge instance
+## Knowledge instance
 
-Only knowledge authoring needs the installed kgdistiller CLI. New or
-changed knowledge is captured or curated from the registered sources
-through the product Skills and applied with a reviewed ingest; nothing scans the sources
-automatically. Then:
+This repository is one personal kgdistiller instance, the base `notes`. It
+owns the personal note sources and the reviewed knowledge records. It does not
+own the kgdistiller engine, product Skills, agents, workflows or tests. The
+notes website does not depend on it: it is driven by `courses.json` and the
+generated knowledge-marker registry, neither of which reads `.knowledge/`.
+
+- Source registration and document types live in the kgdistiller home, not
+  here. Each type (node kinds, relation kinds with their roles, epistemic
+  values and extraction guidance) is `~/.knowledge/types/<name>.md`. Every
+  record's `kind` and role keys must be registered in its source's type.
+- `.knowledge/` holds only `entries/`, `drafts/` and `sheets/`. kgdistiller
+  reads each registered source as plain text with line numbers and never
+  parses markers or other syntax. There is no identity registry, alignment
+  file, graph directory, derived evidence or portable snapshot: everything a
+  record needs lives in its file.
+
+### Decisions
+
+These are decisions of this personal instance, not kgdistiller product
+defaults.
+
+- Identity comes from the reviewed entries: each entry's id, label and aliases.
+  Knowledge markers in the sources are website anchors and do not establish
+  identity. Text or graph similarity retrieves evidence; it does not establish
+  identity.
+- Ambiguous or contradictory identity decisions stay unresolved until reviewed
+  and are never auto-promoted to aliases.
+- For mathematics courses only the `.tex` files are knowledge sources; the
+  `.typ` companions are not registered. CS course Markdown stays registered.
+- Paper distillation changes the personal records or notes only on an
+  explicit owner request, as drafts that the owner accepts with `kgd accept`
+  (or `kgd harvest`). Changing the notes website (`courses.json`, the
+  generated marker registry) needs an explicit owner request.
+- Do not import solvablemodel paper nodes C02, C07, C09, C12, C15, C16, C17,
+  C19, C20, or other paper nodes into this personal knowledge instance under
+  the prior evaluation decision.
+- Do not write knowledge markers back into the solvablemodel paper sources
+  under the prior evaluation decision.
+- The records in `entries/` are the durable authority. They hold
+  agent-authored summaries and relations for which no separate decision log
+  exists; note-only reconstruction is not an acceptable migration. They were
+  migrated once on 2026-10-09 from the derived-evidence graph: each entry was
+  rebound to its `.tex` statement with a verbatim Evidence quote and earlier
+  spellings became aliases; the 219 accepted edges became accepted relation
+  records in S2.
+
+### Refreshing the knowledge instance
+
+`make check` and CI consume committed data only; they never invoke
+kgdistiller. Only knowledge authoring needs the installed kgdistiller CLI
+(`kgd`), from an intentionally selected product revision. Nothing scans the
+sources automatically:
+
+1. Capture one item while reading with the `capture-kgdistiller` Skill, or
+   draft the records of a bounded part of a source with the
+   `compile-knowledge-sheets` Skill. New records are written as drafts in
+   `.knowledge/drafts/`; `kgd sheet <source>` lists a source's records,
+   pending terms and drafts.
+2. Accept drafts with `kgd accept <draft>...`, or tick them in the source's
+   sheet and run `kgd harvest <sheet>`. Accepted records are edited in place
+   and never re-serialized; deleting a draft rejects it.
+3. Validate and index:
 
 ```sh
-make knowledge-authoring-check   # validate entries and edges against the sources
+make knowledge-authoring-check   # kgd check --base notes
 make knowledge-fix-lines         # after source edits move cited lines
-kgd export obsidian --base notes
+make knowledge-index             # kgd index
 ```
 
-`make knowledge-authoring-check` reports an entry as moved when its Evidence
-quote now sits at other lines, and as stale when the quote no longer occurs
-in its source; a stale entry needs a reviewed update. The last command
-refreshes the Obsidian plugin's graph feed under the ignored
-`.knowledge/build/obsidian/`. None of this affects the website.
+`make knowledge-authoring-check` reports a record as moved when its Evidence
+quote now sits at other lines of its source, and as stale when the quote no
+longer occurs there; a stale record needs a reviewed update. `make
+knowledge-search QUERY="..."` searches the index. The kgdistiller Obsidian
+plugin reads the records' live metadata, so there is no export step;
+reinstall it with `kgd obsidian install --base notes --replace` when the
+product changes it.
+Do not guess identity from similarity. None of this affects the website.
 
 ## Obsidian vault
 

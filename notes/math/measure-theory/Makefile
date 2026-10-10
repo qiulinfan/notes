@@ -1,4 +1,4 @@
-.PHONY: all release export web web-check extras-web extras-web-check watch knowledge-curate
+.PHONY: all release export web web-check extras-web extras-web-check watch
 
 TYPST := typst
 TOOLCHAIN := ../toolchain
@@ -18,9 +18,6 @@ export:
 		--root $(REPO_ROOT) \
 		--output $(EXPORTS) \
 		--build $(BUILD)/export
-
-knowledge-curate:
-	@$(MAKE) -C $(REPO_ROOT) knowledge-authoring-check
 
 web:
 	@mkdir -p $(BUILD)

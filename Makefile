@@ -1,4 +1,4 @@
-.PHONY: check latex-check typst-version web notes-source-check knowledge-registry knowledge-registry-check knowledge-authoring-check knowledge-fix-lines knowledge-search knowledge-context knowledge-agent-status knowledge-ingest-plan knowledge-ingest-apply
+.PHONY: check latex-check typst-version web notes-source-check knowledge-registry knowledge-registry-check knowledge-authoring-check knowledge-fix-lines knowledge-index knowledge-search
 
 # The single Typst pin for local checks, this repository's CI, and the homepage build.
 TYPST_VERSION := 0.15.1
@@ -34,23 +34,9 @@ knowledge-authoring-check:
 knowledge-fix-lines:
 	@$(KGD) check --base notes --fix-lines
 
+knowledge-index:
+	@$(KGD) index
+
 knowledge-search:
 	@test -n "$(QUERY)" || (echo '用法: make knowledge-search QUERY="conditional expectation"' && exit 1)
-	@$(KGD) agent search "$(QUERY)" --base notes
-
-knowledge-context:
-	@test -n "$(QUERY)" || (echo '用法: make knowledge-context QUERY="conditional expectation"' && exit 1)
-	@$(KGD) agent context "$(QUERY)" --graph-strategy hybrid --base notes
-
-knowledge-agent-status:
-	@$(KGD) agent status --base notes
-
-knowledge-ingest-plan:
-	@test -n "$(REQUEST)" || (echo 'REQUEST 不能为空' && exit 1)
-	@test -n "$(PLAN)" || (echo 'PLAN 不能为空' && exit 1)
-	@$(KGD) ingest plan "$(REQUEST)" --output "$(PLAN)" --base notes
-
-knowledge-ingest-apply:
-	@test -n "$(REQUEST)" || (echo 'REQUEST 不能为空' && exit 1)
-	@test -n "$(RECEIPT)" || (echo 'RECEIPT 不能为空' && exit 1)
-	@$(KGD) ingest apply "$(REQUEST)" --receipt "$(RECEIPT)" --base notes
+	@$(KGD) search "$(QUERY)" --base notes
