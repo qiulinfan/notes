@@ -1,9 +1,8 @@
 ---
 label: independence via product distribution of marginal distributions contrasts with uncorrelated random variables
 kind: contrasts-with
-subject:
+side:
   - "[[independence-via-product-distribution]]"
-contrast:
   - "[[uncorrelated-random-variables]]"
 source: notes/math/prob/chapters/03-joint&conditional-distribution.tex
 lines: 372-384

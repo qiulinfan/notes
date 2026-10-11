@@ -1,9 +1,8 @@
 ---
 label: measure contrasts with outer measure
 kind: contrasts-with
-subject:
+side:
   - "[[measure]]"
-contrast:
   - "[[outer-measure]]"
 source: notes/math/measure-theory/chapters/01-sigma-algebra-与-measure.tex
 lines: 206-224
