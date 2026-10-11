@@ -1,34 +1,18 @@
-.PHONY: all release export web web-check watch edit
+.PHONY: all release web web-check
 
-TYPST := typst
 TOOLCHAIN := ../toolchain
-WEB_CHECK := $(TOOLCHAIN)/scripts/check_web.py
 REPO_ROOT := ../../..
-BUILD := build/typst
-EXPORTS := exports
-COURSE_SLUG := linear-algebra
+BUILD := $(REPO_ROOT)/build/latex-web/$(notdir $(CURDIR))
+WEB_EXPORT := $(TOOLCHAIN)/scripts/export_latex_web.py
+WEB_CHECK := $(TOOLCHAIN)/scripts/check_web.py
 
 all: release
 
 release: web-check
 
-export:
-	@python3 $(TOOLCHAIN)/scripts/export_course.py \
-		--document notes=main.typ \
-		--root $(REPO_ROOT) \
-		--output $(EXPORTS) \
-		--build $(BUILD)/export
-
 web:
-	@if not exist "$(BUILD)" mkdir "$(BUILD)"
-	@$(TYPST) compile --root $(REPO_ROOT) --features html --format html main.typ $(BUILD)/index.html >$(BUILD)/index.log 2>&1 || (type "$(BUILD)\index.log" & exit /b 1)
+	@python3 $(WEB_EXPORT) main.tex --repo-root $(REPO_ROOT) \
+		--build $(BUILD)/work --output $(BUILD)/index.html
 
 web-check: web
 	@python3 $(WEB_CHECK) $(BUILD)/index.html
-
-watch:
-	@if not exist "$(BUILD)" mkdir "$(BUILD)"
-	@$(TYPST) watch --root $(REPO_ROOT) --features html --format html main.typ $(BUILD)/index.html
-
-edit:
-	@code -r $(COURSE_SLUG).code-workspace main.typ

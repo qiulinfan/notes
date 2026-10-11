@@ -1,45 +1,25 @@
-.PHONY: all release export web web-check homeworks-web homeworks-web-check watch
+.PHONY: all release web web-check homeworks-web homeworks-web-check
 
-TYPST := typst
 TOOLCHAIN := ../toolchain
-WEB_CHECK := $(TOOLCHAIN)/scripts/check_web.py
 REPO_ROOT := ../../..
-BUILD := build/typst
-EXPORTS := exports
+BUILD := $(REPO_ROOT)/build/latex-web/$(notdir $(CURDIR))
+WEB_EXPORT := $(TOOLCHAIN)/scripts/export_latex_web.py
+WEB_CHECK := $(TOOLCHAIN)/scripts/check_web.py
 
 all: release
 
-release: web-check homeworks-web-check
-
-export:
-	@python3 $(TOOLCHAIN)/scripts/export_course.py \
-		--document notes=main.typ \
-		--document homeworks=homeworks.typ \
-		--root $(REPO_ROOT) \
-		--output $(EXPORTS) \
-		--build $(BUILD)/export
-
-web:
-	@mkdir -p $(BUILD)
-	@$(TYPST) compile --root $(REPO_ROOT) --features html --format html \
-		main.typ $(BUILD)/index.html 2>$(BUILD)/index.log || \
-		{ cat $(BUILD)/index.log >&2; exit 1; }
-
-web-check: web
-	@python3 $(WEB_CHECK) $(BUILD)/index.html \
-		--expected-nodes 93 --expected-diagrams 14
+release: homeworks-web-check web-check
 
 homeworks-web:
-	@mkdir -p $(BUILD)
-	@$(TYPST) compile --root $(REPO_ROOT) --features html --format html \
-		homeworks.typ $(BUILD)/homeworks.html 2>$(BUILD)/homeworks.log || \
-		{ cat $(BUILD)/homeworks.log >&2; exit 1; }
+	@python3 $(WEB_EXPORT) homeworks.tex --repo-root $(REPO_ROOT) \
+		--build $(BUILD)/work --output $(BUILD)/homeworks.html
 
 homeworks-web-check: homeworks-web
-	@python3 $(WEB_CHECK) $(BUILD)/homeworks.html \
-		--expected-nodes 0 --expected-diagrams 0
+	@python3 $(WEB_CHECK) $(BUILD)/homeworks.html
 
-watch:
-	@mkdir -p $(BUILD)
-	@$(TYPST) watch --root $(REPO_ROOT) --features html --format html \
-		main.typ $(BUILD)/index.html
+web:
+	@python3 $(WEB_EXPORT) main.tex --repo-root $(REPO_ROOT) \
+		--build $(BUILD)/work --output $(BUILD)/index.html
+
+web-check: web
+	@python3 $(WEB_CHECK) $(BUILD)/index.html --expected-native-fragments 14

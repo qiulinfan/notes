@@ -17,6 +17,8 @@
 \newenvironment{qlnote}[1]{\par\smallskip\noindent\textbf{\color{structurecolor}#1}\quad}{\par\smallskip}
 \newenvironment{qlremark}[1]{\par\smallskip\noindent\textbf{\color{second}#1}\quad}{\par\smallskip}
 \newenvironment{qlsolution}[1]{\par\smallskip\noindent\textbf{\color{main}#1}\quad}{\par\smallskip}
+% Keep opaque drawing macros in the native TeX/SVG export path.
+\newenvironment{qldrawing}{}{}
 % The authored markers remain readable without a generated knowledge registry.
 % A registry may override these commands before the document starts.
 \providecommand{\kn}[1]{\textbf{#1}}

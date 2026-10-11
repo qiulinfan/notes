@@ -14,14 +14,7 @@ from unittest.mock import patch
 
 TOOLCHAIN = Path(__file__).resolve().parents[1]
 REPO_ROOT = TOOLCHAIN.parents[2]
-MODULE_PATH = TOOLCHAIN / "scripts/migrate_latex.py"
-sys.path.insert(0, str(MODULE_PATH.parent))
-SPEC = importlib.util.spec_from_file_location("qlnotes_migrate_latex", MODULE_PATH)
-assert SPEC is not None and SPEC.loader is not None
-migrate_latex = importlib.util.module_from_spec(SPEC)
-sys.modules[SPEC.name] = migrate_latex
-SPEC.loader.exec_module(migrate_latex)
-from convert_latex_project import convert_latex_project, inspect_project
+sys.path.insert(0, str(TOOLCHAIN / "scripts"))
 WEB_MODULE_PATH = TOOLCHAIN / "scripts/export_latex_web.py"
 WEB_SPEC = importlib.util.spec_from_file_location("qlnotes_export_latex_web", WEB_MODULE_PATH)
 assert WEB_SPEC is not None and WEB_SPEC.loader is not None
@@ -31,84 +24,6 @@ WEB_SPEC.loader.exec_module(export_latex_web)
 # The real converter integration runs only when its argv is configured; the
 # mocked tests clear the variable so they always exercise the default command.
 REAL_CONVERTER = os.environ.get("LATEX_LIVE_EXPORT_COMMAND")
-
-
-class MultiSourceExportTest(unittest.TestCase):
-    def test_typst_math_relations_stay_separate_from_preceding_exponents(self) -> None:
-        rendered, changes = migrate_latex.normalize_typst_output(
-            '$x^iapprox y + z^nepsilon.alt + mat(delim: "||", a; b)$'
-        )
-
-        self.assertEqual(
-            '$x^i approx y + z^n epsilon.alt + mat(delim: "|", a; b)$',
-            rendered,
-        )
-        self.assertEqual(3, changes)
-
-    def test_latex_markers_are_rewritten_without_losing_nested_markup(self) -> None:
-        source = r"\kn{$L^p$ \textbf{space}} and \knref{$L^p$ \textbf{space}}"
-        rewritten, count = migrate_latex.rewrite_knowledge_macros(source)
-
-        self.assertEqual(2, count)
-        self.assertIn(r"\href{qlkn:}{$L^p$ \textbf{space}}", rewritten)
-        self.assertIn(r"\href{qlknref:}{$L^p$ \textbf{space}}", rewritten)
-
-    @unittest.skipUnless(shutil.which("pandoc"), "Pandoc is required for the integration fixture")
-    def test_latex_markers_survive_tex_to_typst(self) -> None:
-        fixture = Path(__file__).parent / "fixtures/knowledge.tex"
-        with tempfile.TemporaryDirectory(prefix="qlnotes-latex-test-") as temporary:
-            root = Path(temporary)
-            output = root / "typst"
-            migrate_latex.migrate(
-                [fixture],
-                output,
-                root / "diagrams",
-                None,
-            )
-            rendered = (output / "knowledge.typ").read_text(encoding="utf-8")
-
-        self.assertIn("#kn[measure space]", rendered)
-        self.assertIn("#ref[measure space]", rendered)
-
-    @unittest.skipUnless(
-        shutil.which("pandoc") and shutil.which("typst"),
-        "Pandoc and Typst are required for the project integration fixture",
-    )
-    def test_elegantbook_entrypoint_becomes_self_contained_previewable_typst(self) -> None:
-        fixture = Path(__file__).parent / "fixtures/latex-project/main.tex"
-        build_parent = REPO_ROOT / "build"
-        build_parent.mkdir(parents=True, exist_ok=True)
-        with tempfile.TemporaryDirectory(prefix="qlnotes-latex-project-", dir=build_parent) as temporary:
-            root = Path(temporary)
-            project = inspect_project([fixture])
-            main = convert_latex_project(project, root / "typst")
-            preview = root / "typst/index.html"
-            result = subprocess.run(
-                [
-                    "typst",
-                    "compile",
-                    "--root",
-                    str(root / "typst"),
-                    "--features",
-                    "html",
-                    "--format",
-                    "html",
-                    str(main),
-                    str(preview),
-                ],
-                check=False,
-                capture_output=True,
-                text=True,
-                encoding="utf-8",
-            )
-            self.assertEqual(0, result.returncode, result.stderr)
-            self.assertTrue(preview.is_file())
-            self.assertTrue((root / "typst/Makefile").is_file())
-            self.assertTrue((root / "typst/toolchain/qlnotes.typ").is_file())
-            rendered_main = main.read_text(encoding="utf-8")
-
-        self.assertIn('title: "Measure Preview"', rendered_main)
-        self.assertIn('#include "chapters/01-measure.typ"', rendered_main)
 
 
 class FakeConverter:
@@ -341,6 +256,32 @@ class DirectLatexWebTest(unittest.TestCase):
         self.assertIn('id="kn-measure-space"', rendered)
         self.assertIn('data-ql-ref="measure-space"', rendered)
         self.assertIn("<style>", rendered)
+
+    def test_opaque_drawing_keeps_native_svg_and_a_linked_caption(self) -> None:
+        self.real_converter()
+        self.source.with_name("drawings.sty").write_text(r"""\ProvidesPackage{drawings}
+\RequirePackage{tikz}
+\newenvironment{qldrawing}{}{}
+\expandafter\newcommand\csname demo-diagram-01\endcsname{\tikz\draw (0,0) circle (1em);}
+""", encoding="utf-8")
+        self.source.write_text(r"""\documentclass{article}
+\usepackage{drawings}
+\begin{document}
+\kn{measure space}: a named concept.
+\begin{figure}
+\begin{qldrawing}
+\csname demo-diagram-01\endcsname
+\end{qldrawing}
+\caption{Drawing for \knref{measure space}}
+\end{figure}
+\end{document}
+""", encoding="utf-8")
+        self.export()
+        rendered = self.output.read_text(encoding="utf-8")
+        self.assertIn('<svg', rendered)
+        self.assertIn('data-ql-ref="measure-space"', rendered)
+        self.assertIn('<figcaption>', rendered)
+        self.assertNotIn('demo-diagram-01', rendered)
 
     def test_cjk_fragment_with_unicode_path_exports_directly(self) -> None:
         self.real_converter()

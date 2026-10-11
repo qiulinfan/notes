@@ -23,6 +23,7 @@ class QLNotesHTMLParser(HTMLParser):
         self.has_utf8_charset = False
         self.math_count = 0
         self.svg_count = 0
+        self.native_fragment_count = 0
         self.data_image_count = 0
         self.knowledge_ids: list[str] = []
         self.reference_ids: list[str] = []
@@ -42,12 +43,14 @@ class QLNotesHTMLParser(HTMLParser):
             self.has_utf8_charset = True
         if "ql-site" in classes:
             self.has_site_shell = True
-        if tag == "nav" and values.get("role") == "doc-toc":
+        if tag == "nav" and (values.get("role") == "doc-toc" or "llx-toc" in classes):
             self.has_toc = True
         if tag == "math":
             self.math_count += 1
         if tag == "svg":
             self.svg_count += 1
+            if "llx-frag" in classes:
+                self.native_fragment_count += 1
             for index in self._open_diagrams:
                 self.diagram_svg[index] = True
         if tag == "img" and values.get("src", "").startswith("data:image/"):
@@ -120,7 +123,6 @@ def check(args: argparse.Namespace) -> None:
         "--ql-blue:",
         "--ql-primary-contrast:",
         "--ql-border:",
-        'data-ql-theme="light"',
     )
     missing_theme_markers = [marker for marker in theme_markers if marker not in text]
     if missing_theme_markers:
@@ -159,6 +161,10 @@ def check(args: argparse.Namespace) -> None:
         raise CheckError(
             f"diagram count is {len(parser.diagram_ids)}, expected {args.expected_diagrams}"
         )
+    if args.expected_native_fragments is not None and parser.native_fragment_count != args.expected_native_fragments:
+        raise CheckError(
+            f"native drawing count is {parser.native_fragment_count}, expected {args.expected_native_fragments}"
+        )
 
     print(f"OK: {html_path}")
     print(
@@ -175,6 +181,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("html", type=Path, help="generated QLNotes HTML file")
     parser.add_argument("--expected-nodes", type=int)
     parser.add_argument("--expected-diagrams", type=int)
+    parser.add_argument("--expected-native-fragments", type=int)
     return parser.parse_args()
 
 

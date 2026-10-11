@@ -3,6 +3,7 @@
   "entries": [
     {
       "names": [
+        "a Borel measure on $(0,\\infty) \\times S^{n - 1}$",
         "a Borel measure on $\\(0\\,oo\\)times S^(n - 1)$"
       ],
       "id": "a-borel-measure-on-0-infty-times-s-n-1",
@@ -10,6 +11,7 @@
     },
     {
       "names": [
+        "使用 \\textbf{a sum of indicator functions of measurable sets} 来定义\nsimple function",
         "使用 #strong[a sum of indicator functions of measurable sets] 来定义\nsimple function"
       ],
       "id": "a-sum-of-indicator-functions-of-measurable-sets-simple-function",
@@ -150,6 +152,7 @@
     },
     {
       "names": [
+        "Borel $\\sigma$-algebra defined on a topological space",
         "Borel $sigma$-algebra defined on a topological space"
       ],
       "id": "borel-sigma-algebra-defined-on-a-topological-space",
@@ -164,6 +167,7 @@
     },
     {
       "names": [
+        "$BV$ 是一个 complex vector space",
         "$B V$ 是一个 complex vector space"
       ],
       "id": "bv-complex-vector-space",
@@ -171,6 +175,7 @@
     },
     {
       "names": [
+        "哪些函数一定 $BV$ or $BV(I)$",
         "哪些函数一定 $B V$ or $B V\\(I\\)$"
       ],
       "id": "bv-or-bv-i",
@@ -178,6 +183,7 @@
     },
     {
       "names": [
+        "$C_c(X)$",
         "$C_c\\(X\\)$"
       ],
       "id": "c-c-x",
@@ -185,6 +191,7 @@
     },
     {
       "names": [
+        "$C_c(X) \\subset L^1(\\mu)$ 是一个 dense linear subspace",
         "$C_c\\(X\\)subset L^1\\(mu\\)$ 是一个 dense linear subspace"
       ],
       "id": "c-c-x-subset-l-1-mu-dense-linear-subspace",
@@ -206,6 +213,7 @@
     },
     {
       "names": [
+        "cdf 一定是 $\\mathit{N}\\mathit{B}\\mathit{V}$ 的",
         "cdf 一定是 $N B V$ 的"
       ],
       "id": "cdf-nbv",
@@ -213,6 +221,7 @@
     },
     {
       "names": [
+        "$\\mathit{L}_0^2(\\Omega,\\mathcal{F},\\mathbb{P})$ 为一个 Hilbert\nspace, with covariance as an inner product",
         "$L_0^2\\(Omega\\,cal(F)\\,bb(P)\\)$ 为一个 Hilbert space, with covariance as\nan inner product"
       ],
       "id": "centered-l2-hilbert-space-under-covariance",
@@ -220,6 +229,7 @@
     },
     {
       "names": [
+        "zero-centered square integrable random variables\n$\\mathit{L}_0^2(\\Omega,\\mathcal{F},\\mathbb{P})$",
         "zero-centered square integrable random variables\n$L_0^2\\(Omega\\,cal(F)\\,bb(P)\\)$"
       ],
       "id": "centered-square-integrable-random-variables",
@@ -241,6 +251,7 @@
     },
     {
       "names": [
+        "characterization of $\\mu_F \\perp m$ 和 $\\mu_F \\ll m$, for\n$F \\in NBV$",
         "characterization of $mu_F perp m$ 和 $mu_F lt.double m$, for\n$F in N B V$"
       ],
       "id": "characterization-of-mu-f-perp-m-mu-f-ll-m-for-f-in-nbv",
@@ -297,6 +308,7 @@
     },
     {
       "names": [
+        "(complex-valued) measurable functions",
         "\\(complex-valued) measurable functions"
       ],
       "id": "complex-valued-measurable-functions",
@@ -346,6 +358,7 @@
     },
     {
       "names": [
+        "对于互为 conjugate exponent 的 $p,q$, $L^p$ 是 $L^q$ 的 dual\nspace",
         "对于互为 conjugate exponent 的 $p\\,q$, $L^p$ 是 $L^q$ 的 dual space"
       ],
       "id": "conjugate-exponent-p-q-l-p-l-q-dual-space",
@@ -353,6 +366,7 @@
     },
     {
       "names": [
+        "construct outer measure out of an \"elementary length function\"",
         "construct outer measure out of an \\\"elementary length function\\\""
       ],
       "id": "construct-outer-measure-out-of-an-elementary-length-function",
@@ -402,6 +416,7 @@
     },
     {
       "names": [
+        "convergence in $L^{\\infty}$ $\\Leftrightarrow$uniform convergence\na.e.",
         "convergence in $L^oo$ $arrow.l.r.double$uniform convergence a.e."
       ],
       "id": "convergence-in-l-infty-iffuniform-convergence-a-e",
@@ -437,6 +452,7 @@
     },
     {
       "names": [
+        "De Moivre--Laplace theorem",
         "De Moivre–Laplace theorem"
       ],
       "id": "de-moivre-laplace-theorem",
@@ -458,6 +474,7 @@
     },
     {
       "names": [
+        "$C_c^0(\\mathbb{R}^n)$ is dense in $L^p(\\mathbb{R},m)$ for\n$1 \\leq p < \\infty$",
         "$C_c^0\\(bb(R)^n\\)$ is dense in $L^p\\(bb(R)\\,m\\)$ for $1 lt.eq p < oo$"
       ],
       "id": "density-of-compactly-supported-continuous-functions-in-lp",
@@ -465,6 +482,7 @@
     },
     {
       "names": [
+        "density of simple functions in $L^1(\\mu)$",
         "density of simple functions in $L^1\\(mu\\)$"
       ],
       "id": "density-of-simple-functions-in-l-1-mu",
@@ -500,6 +518,7 @@
     },
     {
       "names": [
+        "distribution function (也称 \\textbf{cumulative distribution function,\ncdf})",
         "distribution function (也称 #strong[cumulative distribution function,\ncdf])",
         "distribution function (也称 #strong[cumulative distribution function, cdf])"
       ],
@@ -508,6 +527,7 @@
     },
     {
       "names": [
+        "distribution function $\\mathit{F}_{\\mathit{X}}$ determines\ndistribution $\\mathbb{P}^{\\mathit{X}}$",
         "distribution function $F_X$ determines distribution $bb(P)^X$"
       ],
       "id": "distribution-function-f-x-determines-distribution-mathbb-p-x",
@@ -522,6 +542,7 @@
     },
     {
       "names": [
+        "distribution function of $\\mu$",
         "distribution function of $mu$"
       ],
       "id": "distribution-function-of-mu",
@@ -529,6 +550,7 @@
     },
     {
       "names": [
+        "用 distribution ($\\mathit{X}$ 的 push-forward measure) 计算\nexpectation",
         "用 distribution ($X$ 的 push-forward measure) 计算 expectation"
       ],
       "id": "distribution-x-push-forward-measure-expectation",
@@ -536,7 +558,8 @@
     },
     {
       "names": [
-        "dominated convergence theorem"
+        "dominated convergence theorem",
+        "dominated-convergence-theorem"
       ],
       "id": "dominated-convergence-theorem",
       "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-dominated-convergence-theorem"
@@ -557,6 +580,7 @@
     },
     {
       "names": [
+        "Dynkin's $\\mathit{\\pi} - \\mathit{\\lambda}$ theorem",
         "Dynkin's $pi - lambda$ theorem"
       ],
       "id": "dynkins-pi-lambda-theorem",
@@ -578,6 +602,7 @@
     },
     {
       "names": [
+        "$\\mathcal{l}^{\\infty}$",
         "$ell^oo$"
       ],
       "id": "ell-infty",
@@ -627,6 +652,7 @@
     },
     {
       "names": [
+        "$F \\in BV$ right ctn $\\Longrightarrow T_F$ right ctn",
         "$F in B V$ right ctn $arrow.r.double.long T_F$ right ctn"
       ],
       "id": "f-in-bv-right-ctn-implies-t-f-right-ctn",
@@ -634,6 +660,7 @@
     },
     {
       "names": [
+        "$F \\in NBV$ abs ctn $\\Leftrightarrow$ $\\mu_F \\ll m$",
         "$F in N B V$ abs ctn $arrow.l.r.double$ $mu_F lt.double m$"
       ],
       "id": "f-in-nbv-abs-ctn-iff-mu-f-ll-m",
@@ -641,6 +668,7 @@
     },
     {
       "names": [
+        "\\textbf{fast $L^1$-conv $\\Longrightarrow$ a.e. conv.}",
         "#strong[fast $L^1$-conv $arrow.r.double.long$ a.e. conv.]"
       ],
       "id": "fast-l-1-conv-implies-a-e-conv",
@@ -648,7 +676,8 @@
     },
     {
       "names": [
-        "Fatou's Lemma"
+        "Fatou's Lemma",
+        "fatou-lemma"
       ],
       "id": "fatou-lemma",
       "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-fatou-lemma"
@@ -704,6 +733,7 @@
     },
     {
       "names": [
+        "$G_{\\delta},F_{\\sigma}$ sets",
         "$G_delta\\,F_sigma$ sets"
       ],
       "id": "g-delta-f-sigma-sets",
@@ -718,6 +748,7 @@
     },
     {
       "names": [
+        "$\\Gamma$-distribution",
         "$Gamma$-distribution"
       ],
       "id": "gamma-distribution",
@@ -767,6 +798,7 @@
     },
     {
       "names": [
+        "Hahn--Kolmogorov theorem",
         "Hahn–Kolmogorov theorem"
       ],
       "id": "hahn-kolmogorov-theorem",
@@ -802,6 +834,7 @@
     },
     {
       "names": [
+        "积分收敛 $\\Longrightarrow$ 发散点集零测, 以及 support\n$\\sigma$-finite",
         "积分收敛 $arrow.r.double.long$ 发散点集零测, 以及 support $sigma$-finite"
       ],
       "id": "implies-support-sigma-finite",
@@ -816,6 +849,7 @@
     },
     {
       "names": [
+        "inclusion properties of generated $\\sigma$-algebra",
         "inclusion properties of generated $sigma$-algebra"
       ],
       "id": "inclusion-properties-of-generated-sigma-algebra",
@@ -830,6 +864,7 @@
     },
     {
       "names": [
+        "\\textbf{任意 increasing 且 right ctn 函数都是某个 regular Borel measure\n的 distribution 函数}",
         "#strong[任意 increasing 且 right ctn 函数都是某个 regular Borel measure\n的 distribution 函数]"
       ],
       "id": "increasing-right-ctn-regular-borel-measure-distribution",
@@ -858,6 +893,7 @@
     },
     {
       "names": [
+        "independence $\\Longrightarrow$ expectation is closed under product",
         "independence $arrow.r.double.long$ expectation is closed under product"
       ],
       "id": "independence-implies-expectation-is-closed-under-product",
@@ -879,6 +915,7 @@
     },
     {
       "names": [
+        "independence via conditional distribution: marginal distribution",
         "independence via conditional distribution:\nmarginal distribution"
       ],
       "id": "independence-via-conditional-distribution",
@@ -893,6 +930,7 @@
     },
     {
       "names": [
+        "independence via joint-density factorization marginal densities",
         "independence via joint-density factorization\nmarginal densities"
       ],
       "id": "independence-via-joint-density-factorization",
@@ -900,6 +938,7 @@
     },
     {
       "names": [
+        "independence via product distribution of marginal distributions",
         "independence via product distribution\nof marginal distributions"
       ],
       "id": "independence-via-product-distribution",
@@ -914,6 +953,7 @@
     },
     {
       "names": [
+        "\\textbf{inner regularity}",
         "#strong[inner regularity]"
       ],
       "id": "inner-regularity",
@@ -984,6 +1024,7 @@
     },
     {
       "names": [
+        "Jordan decomposition for $F \\in BV$",
         "Jordan decomposition for $F in B V$"
       ],
       "id": "jordan-decomposition-for-f-in-bv",
@@ -1005,6 +1046,7 @@
     },
     {
       "names": [
+        "$L^1$-convergence ($\\Longrightarrow$conv. in measure)\n$\\Longrightarrow$ subseq a.e. conv.",
         "$L^1$-convergence ($arrow.r.double.long$conv. in measure)\n$arrow.r.double.long$ subseq a.e. conv."
       ],
       "id": "l-1-convergence-impliesconv-in-measure-implies-subseq-a-e-conv",
@@ -1012,6 +1054,7 @@
     },
     {
       "names": [
+        "$\\left. (L^1(\\mu), \\middle| \\middle| \\cdot \\middle| \\middle| ) \\right.$\n是一个 Banach space",
         "$\\(L^1\\(mu\\)\\,\\|\\|dot.op\\|\\|\\)$ 是一个 Banach space"
       ],
       "id": "l-1-mu-cdot-banach-space",
@@ -1019,6 +1062,7 @@
     },
     {
       "names": [
+        "$L^1(\\mu)$ 以 integral w.r.t. $\\mu$ 作为 norm 是一个 normed VS",
         "$L^1\\(mu\\)$ 以 integral w.r.t. $mu$ 作为 norm 是一个 normed VS"
       ],
       "id": "l-1-mu-integral-w-r-t-mu-norm-normed-vs",
@@ -1026,6 +1070,7 @@
     },
     {
       "names": [
+        "$L^1(\\mu)$ space",
         "$L^1\\(mu\\)$ space"
       ],
       "id": "l-1-mu-space",
@@ -1033,6 +1078,7 @@
     },
     {
       "names": [
+        "$L^{\\infty}$ space",
         "$L^oo$ space"
       ],
       "id": "l-infty-space",
@@ -1040,6 +1086,7 @@
     },
     {
       "names": [
+        "每个 $L^m$ 函数都是一个 $L^n$ 函数和一个 $L^r$ 函数的和\n($0 < n < m < r \\leq \\infty$)",
         "每个 $L^m$ 函数都是一个 $L^n$ 函数和一个 $L^r$ 函数的和\n($0 < n < m < r lt.eq oo$)"
       ],
       "id": "l-m-l-n-l-r-0-n-m-r-leq-infty",
@@ -1047,6 +1094,7 @@
     },
     {
       "names": [
+        "$L^p$ ($1 \\leq p \\leq \\infty$) is Banach",
         "$L^p$ ($1 lt.eq p lt.eq oo$) is Banach"
       ],
       "id": "l-p-1-leq-p-leq-infty-is-banach",
@@ -1054,6 +1102,7 @@
     },
     {
       "names": [
+        "$L^p$ space ($1 \\leq p < \\infty$) is Banach",
         "$L^p$ space ($1 lt.eq p < oo$) is Banach"
       ],
       "id": "l-p-space-1-leq-p-infty-is-banach",
@@ -1068,14 +1117,17 @@
     },
     {
       "names": [
-        "$L_p$ spaces"
+        "$L_p$ spaces",
+        "l-p-spaces"
       ],
       "id": "l-p-spaces",
       "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-l-p-spaces"
     },
     {
       "names": [
-        "$L^(+)$ space and integration on it"
+        "$L^{+}$ space and integration on it",
+        "$L^(+)$ space and integration on it",
+        "l-space-and-integration-on-it"
       ],
       "id": "l-space-and-integration-on-it",
       "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-l-space-and-integration-on-it"
@@ -1096,6 +1148,7 @@
     },
     {
       "names": [
+        "LDT meets LRNT: computing RN derivative on $\\mathbb{R}^n$",
         "LDT meets LRNT: computing RN derivative on $bb(R)^n$"
       ],
       "id": "ldt-meets-lrnt-computing-rn-derivative-on-mathbb-r-n",
@@ -1124,7 +1177,8 @@
     },
     {
       "names": [
-        "Lebesgue measure"
+        "Lebesgue measure",
+        "lebesgue-measure"
       ],
       "id": "lebesgue-measure",
       "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-lebesgue-measure"
@@ -1138,6 +1192,7 @@
     },
     {
       "names": [
+        "Lebesgue measure and integration is scaled $|\\det T|$ by linear map",
         "Lebesgue measure and integration is scaled $\\|det T\\|$ by linear map"
       ],
       "id": "lebesgue-measure-and-integration-is-scaled-det-t-by-linear-map",
@@ -1201,6 +1256,7 @@
     },
     {
       "names": [
+        "linear functional bounded $\\Leftrightarrow$ ctn at $0$",
         "linear functional bounded $arrow.l.r.double$ ctn at $0$"
       ],
       "id": "linear-functional-bounded-iff-ctn-at-0",
@@ -1250,13 +1306,15 @@
     },
     {
       "names": [
-        "Markov's inequality"
+        "Markov's inequality",
+        "markov-inequality"
       ],
       "id": "markov-inequality",
       "url": "https://qiulinfan.github.io/notes/math/probability/#kn-markov-inequality"
     },
     {
       "names": [
+        "$\\mathcal{L}$ preserves translation and scaling",
         "$cal(L)$ preserves translation and scaling"
       ],
       "id": "mathcal-l-preserves-translation-and-scaling",
@@ -1264,6 +1322,7 @@
     },
     {
       "names": [
+        "$(\\mathcal{M},\\mathcal{N})$-measurable function",
         "$\\(cal(M)\\,cal(N)\\)$-measurable function"
       ],
       "id": "mathcal-m-mathcal-n-measurable-function",
@@ -1271,7 +1330,8 @@
     },
     {
       "names": [
-        "measurable space"
+        "measurable space",
+        "measurable-space-and-measure-space"
       ],
       "id": "measurable-space-and-measure-space",
       "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-measurable-space-and-measure-space"
@@ -1369,6 +1429,7 @@
     },
     {
       "names": [
+        "$\\mu_F$ 的 total variation measure $=$ $\\mu_{T_F}$",
         "$mu_F$ 的 total variation measure $=$ $mu_(T_F)$"
       ],
       "id": "mu-f-total-variation-measure-mu-t-f",
@@ -1376,6 +1437,7 @@
     },
     {
       "names": [
+        "$\\mu^{\\ast}$-measurable",
         "$mu^(*)$-measurable"
       ],
       "id": "mu-measurable",
@@ -1390,6 +1452,7 @@
     },
     {
       "names": [
+        "\\textbf{mutual independence} of multiple random variables",
         "#strong[mutual independence] of multiple random variables"
       ],
       "id": "mutual-independence-of-multiple-random-variables",
@@ -1404,6 +1467,7 @@
     },
     {
       "names": [
+        "由 $\\mathit{n}$ 个 random variable 构成的 vector 是一个 random vector",
         "由 $n$ 个 random variable 构成的 vector 是一个 random vector"
       ],
       "id": "n-random-variable-vector-random-vector",
@@ -1418,6 +1482,7 @@
     },
     {
       "names": [
+        "norm of dual space: 即 \\textbf{dual norm}",
         "norm of dual space: 即 #strong[dual norm]"
       ],
       "id": "norm-of-dual-space-dual-norm",
@@ -1432,6 +1497,7 @@
     },
     {
       "names": [
+        "open-interval covers for Lebesgue--Stieltjes measure",
         "open-interval covers for Lebesgue–Stieltjes measure"
       ],
       "id": "open-interval-covers-for-lebesgue-stieltjes-measure",
@@ -1446,6 +1512,7 @@
     },
     {
       "names": [
+        "\\textbf{outer regularity}",
         "#strong[outer regularity]"
       ],
       "id": "outer-regularity",
@@ -1460,6 +1527,7 @@
     },
     {
       "names": [
+        "pmf 是 distribution 对于 counting measure $\\mathit{\\mu}_{\\mathit{S}}$\n的 Radon-Nikodym 导数",
         "pmf 是 distribution 对于 counting measure $mu_S$ 的 Radon-Nikodym 导数"
       ],
       "id": "pmf-distribution-counting-measure-mu-s-radon-nikodym",
@@ -1537,6 +1605,7 @@
     },
     {
       "names": [
+        "product $\\sigma$-algebra",
         "product $sigma$-algebra"
       ],
       "id": "product-sigma-algebra",
@@ -1607,13 +1676,15 @@
     },
     {
       "names": [
-        "real-valued integrable function"
+        "real-valued integrable function",
+        "real-valued-integrable-function"
       ],
       "id": "real-valued-integrable-function",
       "url": "https://qiulinfan.github.io/notes/math/measure-theory/#kn-real-valued-integrable-function"
     },
     {
       "names": [
+        "(real-valued) measurable functions",
         "\\(real-valued) measurable functions"
       ],
       "id": "real-valued-measurable-functions",
@@ -1642,6 +1713,7 @@
     },
     {
       "names": [
+        "regularities of $\\mathcal{L}^n$",
         "regularities of $cal(L)^n$"
       ],
       "id": "regularities-of-mathcal-l-n",
@@ -1691,6 +1763,8 @@
     },
     {
       "names": [
+        "$\\sigma$-algebra",
+        "$\\mathit{\\sigma}$-algebra",
         "$sigma$-algebra",
         "sigma-algebra"
       ],
@@ -1699,6 +1773,7 @@
     },
     {
       "names": [
+        "$\\sigma$-algebra closure properties: set difference, symmetric\ndifference and countable intersection",
         "$sigma$-algebra closure properties: set difference, symmetric difference\nand countable intersection"
       ],
       "id": "sigma-algebra-closure-properties",
@@ -1706,6 +1781,7 @@
     },
     {
       "names": [
+        "$\\mathit{\\sigma}$-algebra generated by a random variable (measurable\nfunction)",
         "$sigma$-algebra generated by a random variable (measurable function)"
       ],
       "id": "sigma-algebra-generated-by-a-random-variable-measurable-function",
@@ -1713,6 +1789,7 @@
     },
     {
       "names": [
+        "$\\sigma$-algebra generated by a subset",
         "$sigma$-algebra generated by a subset"
       ],
       "id": "sigma-algebra-generated-by-a-subset",
@@ -1720,6 +1797,7 @@
     },
     {
       "names": [
+        "任意 $\\sigma$-algebra 的 intersection 仍是 $\\sigma$-algebra",
         "任意 $sigma$-algebra 的 intersection 仍是 $sigma$-algebra"
       ],
       "id": "sigma-algebra-intersection-sigma-algebra",
@@ -1727,6 +1805,7 @@
     },
     {
       "names": [
+        "$\\sigma$-finite measure",
         "$sigma$-finite measure"
       ],
       "id": "sigma-finite-measure",
@@ -1783,6 +1862,7 @@
     },
     {
       "names": [
+        "$\\left\\{ {\\text{complex Borel measures on}\\ \\mathbb{R}} \\right\\} \\simeq NBV$",
         "${ upright(\"complex Borel measures on \") bb(R) } tilde.eq N B V$"
       ],
       "id": "text-complex-borel-measures-on-mathbb-r-simeq-nbv",
@@ -1790,6 +1870,7 @@
     },
     {
       "names": [
+        "$\\widetilde{L}(X,\\mu,\\mathbb{R})$\n以及$\\widetilde{L}(X,\\mu,\\mathbb{C})$ space",
         "$tilde(L)\\(X\\,mu\\,bb(R)\\)$ 以及$tilde(L)\\(X\\,mu\\,bb(C)\\)$ space"
       ],
       "id": "tilde-l-x-mu-mathbb-r-tilde-l-x-mu-mathbb-c-space",
@@ -1832,6 +1913,7 @@
     },
     {
       "names": [
+        "trace $\\mathit{\\sigma}$-algebra",
         "trace $sigma$-algebra"
       ],
       "id": "trace-sigma-algebra",
@@ -1853,6 +1935,7 @@
     },
     {
       "names": [
+        "unique smallest $\\sigma$-algebra containing a collection of subsets",
         "unique smallest $sigma$-algebra containing a collection of subsets"
       ],
       "id": "unique-smallest-sigma-algebra-containing-a-collection-of-subsets",
@@ -1874,6 +1957,7 @@
     },
     {
       "names": [
+        "why it is called \"absolutely continuous\"",
         "why it is called \\\"absolutely continuous\\\""
       ],
       "id": "why-it-is-called-absolutely-continuous",

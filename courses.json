@@ -56,15 +56,10 @@
       "course": "measure-theory",
       "root": "notes/math/measure-theory",
       "files": [
-        "main.typ",
         "main.tex",
-        "extras.typ",
         "extras.tex",
-        "chapters/*.typ",
         "chapters/*.tex",
-        "homeworks/*.typ",
         "homeworks/*.tex",
-        "extras/*.typ",
         "extras/*.tex"
       ],
       "fields": [
@@ -73,22 +68,10 @@
       ],
       "topics": [
         {
-          "glob": "chapters/01-*.typ",
-          "id": "measurable-spaces-and-measures",
-          "label": "Measurable Spaces and Measures",
-          "text": "从 algebra of sets 与 σ-algebra 出发，建立 measurable space、measure space、measure 及其基本性质。"
-        },
-        {
           "glob": "chapters/01-*.tex",
           "id": "measurable-spaces-and-measures",
           "label": "Measurable Spaces and Measures",
           "text": "从 algebra of sets 与 σ-algebra 出发，建立 measurable space、measure space、measure 及其基本性质。"
-        },
-        {
-          "glob": "chapters/02-*.typ",
-          "id": "outer-measure-and-extension",
-          "label": "Outer Measure and Measure Extension",
-          "text": "研究 null sets 与 completion，并通过 outer measure、Carathéodory theorem 和 Hahn–Kolmogorov theorem 从 premeasure 构造 measure。"
         },
         {
           "glob": "chapters/02-*.tex",
@@ -97,22 +80,10 @@
           "text": "研究 null sets 与 completion，并通过 outer measure、Carathéodory theorem 和 Hahn–Kolmogorov theorem 从 premeasure 构造 measure。"
         },
         {
-          "glob": "chapters/03-*.typ",
-          "id": "lebesgue-stieltjes-measures",
-          "label": "Lebesgue–Stieltjes Measures",
-          "text": "连接 distribution functions、Lebesgue–Stieltjes measures、regularity 与 Lebesgue measure。"
-        },
-        {
           "glob": "chapters/03-*.tex",
           "id": "lebesgue-stieltjes-measures",
           "label": "Lebesgue–Stieltjes Measures",
           "text": "连接 distribution functions、Lebesgue–Stieltjes measures、regularity 与 Lebesgue measure。"
-        },
-        {
-          "glob": "chapters/04-*.typ",
-          "id": "measurable-functions-and-nonnegative-integration",
-          "label": "Measurable Functions and Nonnegative Integration",
-          "text": "建立 measurable functions、simple functions 与非负积分，并发展 monotone convergence 与 Fatou lemma。"
         },
         {
           "glob": "chapters/04-*.tex",
@@ -121,22 +92,10 @@
           "text": "建立 measurable functions、simple functions 与非负积分，并发展 monotone convergence 与 Fatou lemma。"
         },
         {
-          "glob": "chapters/05-*.typ",
-          "id": "lebesgue-integration-and-convergence",
-          "label": "Lebesgue Integration and Convergence",
-          "text": "从 real/complex-valued integrable functions 出发，研究 Lebesgue integral、dominated convergence 与 L¹ convergence。"
-        },
-        {
           "glob": "chapters/05-*.tex",
           "id": "lebesgue-integration-and-convergence",
           "label": "Lebesgue Integration and Convergence",
           "text": "从 real/complex-valued integrable functions 出发，研究 Lebesgue integral、dominated convergence 与 L¹ convergence。"
-        },
-        {
-          "glob": "chapters/06-*.typ",
-          "id": "product-measures-and-fubini-tonelli",
-          "label": "Product Measures and Fubini–Tonelli",
-          "text": "建立 product σ-algebra 与 product measure，并用 Tonelli/Fubini 定理交换多重积分。"
         },
         {
           "glob": "chapters/06-*.tex",
@@ -145,22 +104,10 @@
           "text": "建立 product σ-algebra 与 product measure，并用 Tonelli/Fubini 定理交换多重积分。"
         },
         {
-          "glob": "chapters/07-*.typ",
-          "id": "lebesgue-measure-on-euclidean-space",
-          "label": "Lebesgue Measure on Euclidean Space",
-          "text": "研究 Euclidean space 上 Lebesgue measure 的 translation、linear change of variables 与极坐标结构。"
-        },
-        {
           "glob": "chapters/07-*.tex",
           "id": "lebesgue-measure-on-euclidean-space",
           "label": "Lebesgue Measure on Euclidean Space",
           "text": "研究 Euclidean space 上 Lebesgue measure 的 translation、linear change of variables 与极坐标结构。"
-        },
-        {
-          "glob": "chapters/08-*.typ",
-          "id": "differentiation-of-integrals",
-          "label": "Differentiation of Integrals",
-          "text": "以 Hardy–Littlewood maximal function 为工具，发展 Lebesgue differentiation theorem 及积分的微分性质。"
         },
         {
           "glob": "chapters/08-*.tex",
@@ -169,22 +116,10 @@
           "text": "以 Hardy–Littlewood maximal function 为工具，发展 Lebesgue differentiation theorem 及积分的微分性质。"
         },
         {
-          "glob": "chapters/09-*.typ",
-          "id": "lp-spaces-and-inequalities",
-          "label": "Lp Spaces and Inequalities",
-          "text": "建立 semi-norm、norm 与 Lᵖ spaces，研究 Hölder/Minkowski inequalities、completeness 与 density。"
-        },
-        {
           "glob": "chapters/09-*.tex",
           "id": "lp-spaces-and-inequalities",
           "label": "Lp Spaces and Inequalities",
           "text": "建立 semi-norm、norm 与 Lᵖ spaces，研究 Hölder/Minkowski inequalities、completeness 与 density。"
-        },
-        {
-          "glob": "chapters/10-*.typ",
-          "id": "signed-measures",
-          "label": "Signed Measures",
-          "text": "建立 signed measure、positive/negative sets、Hahn decomposition、Jordan decomposition 与 total variation。"
         },
         {
           "glob": "chapters/10-*.tex",
@@ -193,34 +128,16 @@
           "text": "建立 signed measure、positive/negative sets、Hahn decomposition、Jordan decomposition 与 total variation。"
         },
         {
-          "glob": "chapters/11-*.typ",
-          "id": "radon-nikodym-theory",
-          "label": "Radon–Nikodym Theory",
-          "text": "研究 measures 之间的 absolute continuity、Radon–Nikodym derivative 及 Lebesgue–Radon–Nikodym decomposition。"
-        },
-        {
           "glob": "chapters/11-*.tex",
           "id": "radon-nikodym-theory",
           "label": "Radon–Nikodym Theory",
           "text": "研究 measures 之间的 absolute continuity、Radon–Nikodym derivative 及 Lebesgue–Radon–Nikodym decomposition。"
         },
         {
-          "glob": "chapters/12-*.typ",
-          "id": "functions-of-bounded-variation",
-          "label": "Differentiation and Functions of Bounded Variation",
-          "text": "研究 bounded variation functions、normalized bounded variation、相关 measures 与 Lebesgue decomposition。"
-        },
-        {
           "glob": "chapters/12-*.tex",
           "id": "functions-of-bounded-variation",
           "label": "Differentiation and Functions of Bounded Variation",
           "text": "研究 bounded variation functions、normalized bounded variation、相关 measures 与 Lebesgue decomposition。"
-        },
-        {
-          "glob": "chapters/13-*.typ",
-          "id": "duality-of-lp-spaces",
-          "label": "Duality of Lp Spaces",
-          "text": "从 bounded linear functionals 与 dual spaces 出发，研究 conjugate exponents 下 Lᵖ spaces 的 duality。"
         },
         {
           "glob": "chapters/13-*.tex",
@@ -234,11 +151,11 @@
       "web": "https://qiulinfan.github.io/notes/math/measure-theory",
       "web_artifacts": [
         {
-          "source": "build/typst/index.html",
+          "source": "../../../build/latex-web/measure-theory/index.html",
           "route": ""
         },
         {
-          "source": "build/typst/extras.html",
+          "source": "../../../build/latex-web/measure-theory/extras.html",
           "route": "extras"
         }
       ]
@@ -251,28 +168,15 @@
       "course": "probability",
       "root": "notes/math/prob",
       "files": [
-        "main.typ",
         "main.tex",
-        "homeworks.typ",
         "homeworks.tex",
-        "chapters/*.typ",
         "chapters/*.tex",
-        "homeworks/*.typ",
         "homeworks/*.tex"
       ],
       "fields": [
         "probability-theory"
       ],
       "topics": [
-        {
-          "glob": "chapters/01-*.typ",
-          "id": "probability-spaces-and-combinatorics",
-          "label": "Probability Spaces and Combinatorics",
-          "fields": [
-            "combinatorics"
-          ],
-          "text": "从计数原理进入 probability space、events、conditional probability、Bayes theorem 与 event independence。"
-        },
         {
           "glob": "chapters/01-*.tex",
           "id": "probability-spaces-and-combinatorics",
@@ -283,15 +187,6 @@
           "text": "从计数原理进入 probability space、events、conditional probability、Bayes theorem 与 event independence。"
         },
         {
-          "glob": "chapters/02-*.typ",
-          "id": "random-variables-and-distributions",
-          "label": "Random Variables and Distributions",
-          "fields": [
-            "measure-theory"
-          ],
-          "text": "研究 random variables 的 measurability、probability distributions、cdf/pmf/pdf、expectation、variance 与常见分布。"
-        },
-        {
           "glob": "chapters/02-*.tex",
           "id": "random-variables-and-distributions",
           "label": "Random Variables and Distributions",
@@ -299,16 +194,6 @@
             "measure-theory"
           ],
           "text": "研究 random variables 的 measurability、probability distributions、cdf/pmf/pdf、expectation、variance 与常见分布。"
-        },
-        {
-          "glob": "chapters/03-*.typ",
-          "id": "joint-and-conditional-distributions",
-          "label": "Joint and Conditional Distributions",
-          "fields": [
-            "analysis",
-            "measure-theory"
-          ],
-          "text": "建立 random vectors、joint/marginal distributions、independence、conditional distributions 与 conditional expectation。"
         },
         {
           "glob": "chapters/03-*.tex",
@@ -321,15 +206,6 @@
           "text": "建立 random vectors、joint/marginal distributions、independence、conditional distributions 与 conditional expectation。"
         },
         {
-          "glob": "chapters/04-*.typ",
-          "id": "laws-of-large-numbers",
-          "label": "Laws of Large Numbers",
-          "fields": [
-            "analysis"
-          ],
-          "text": "研究 modes of convergence、Markov/Chebyshev inequalities，以及 weak/strong laws of large numbers。"
-        },
-        {
           "glob": "chapters/04-*.tex",
           "id": "laws-of-large-numbers",
           "label": "Laws of Large Numbers",
@@ -337,15 +213,6 @@
             "analysis"
           ],
           "text": "研究 modes of convergence、Markov/Chebyshev inequalities，以及 weak/strong laws of large numbers。"
-        },
-        {
-          "glob": "chapters/05-*.typ",
-          "id": "central-limit-theorems",
-          "label": "Central Limit Theorems",
-          "fields": [
-            "analysis"
-          ],
-          "text": "研究 moment generating functions、De Moivre–Laplace、Lindeberg–Lévy CLT 与 Berry–Esseen error bounds。"
         },
         {
           "glob": "chapters/05-*.tex",
@@ -362,11 +229,11 @@
       "web": "https://qiulinfan.github.io/notes/math/probability",
       "web_artifacts": [
         {
-          "source": "build/typst/index.html",
+          "source": "../../../build/latex-web/prob/index.html",
           "route": ""
         },
         {
-          "source": "build/typst/homeworks.html",
+          "source": "../../../build/latex-web/prob/homeworks.html",
           "route": "homeworks"
         }
       ]
@@ -379,9 +246,7 @@
       "course": "advanced-linear-algebra",
       "root": "notes/math/advanced-linear-algebra",
       "files": [
-        "main.typ",
         "main.tex",
-        "chapters/*.typ",
         "chapters/*.tex"
       ],
       "fields": [
@@ -400,11 +265,8 @@
       "course": "linear-algebra",
       "root": "notes/math/linear-algebra",
       "files": [
-        "main.typ",
         "main.tex",
-        "chapters/*.typ",
         "chapters/*.tex",
-        "homeworks/*.typ",
         "homeworks/*.tex"
       ],
       "fields": [
@@ -423,13 +285,9 @@
       "course": "mathematical-analysis",
       "root": "notes/math/mathematical-analysis",
       "files": [
-        "main.typ",
         "main.tex",
-        "homeworks.typ",
         "homeworks.tex",
-        "chapters/*.typ",
         "chapters/*.tex",
-        "homeworks/*.typ",
         "homeworks/*.tex"
       ],
       "fields": [
@@ -448,11 +306,8 @@
       "course": "modern-algebra",
       "root": "notes/math/modern-algebra",
       "files": [
-        "main.typ",
         "main.tex",
-        "chapters/*.typ",
         "chapters/*.tex",
-        "homeworks/*.typ",
         "homeworks/*.tex"
       ],
       "fields": [
@@ -471,13 +326,9 @@
       "course": "multivariate-analysis",
       "root": "notes/math/multivariate-analysis",
       "files": [
-        "main.typ",
         "main.tex",
-        "homeworks.typ",
         "homeworks.tex",
-        "chapters/*.typ",
         "chapters/*.tex",
-        "homeworks/*.typ",
         "homeworks/*.tex"
       ],
       "fields": [
@@ -496,9 +347,7 @@
       "course": "numerical-linear-algebra",
       "root": "notes/math/numerical-linear-algebra",
       "files": [
-        "main.typ",
         "main.tex",
-        "chapters/*.typ",
         "chapters/*.tex"
       ],
       "fields": [
@@ -599,9 +448,7 @@
       "course": "everything-about-linear-algebra",
       "root": "notes/math/everything-about-linear-algebra",
       "files": [
-        "main.typ",
         "main.tex",
-        "chapters/*.typ",
         "chapters/*.tex"
       ],
       "fields": [
@@ -613,7 +460,7 @@
       "web": "https://qiulinfan.github.io/notes/math/everything-about-linear-algebra",
       "web_artifacts": [
         {
-          "source": "build/typst/index.html",
+          "source": "../../../build/latex-web/everything-about-linear-algebra/index.html",
           "route": ""
         }
       ]
@@ -626,9 +473,7 @@
       "course": "single-and-multivariate-mathematical-analysis",
       "root": "notes/math/single-and-multivariate-mathematical-analysis",
       "files": [
-        "main.typ",
         "main.tex",
-        "chapters/*.typ",
         "chapters/*.tex"
       ],
       "fields": [
@@ -640,7 +485,7 @@
       "web": "https://qiulinfan.github.io/notes/math/single-and-multivariate-mathematical-analysis",
       "web_artifacts": [
         {
-          "source": "build/typst/index.html",
+          "source": "../../../build/latex-web/single-and-multivariate-mathematical-analysis/index.html",
           "route": ""
         }
       ]
@@ -653,9 +498,7 @@
       "course": "a-bit-of-abstract-algebra",
       "root": "notes/math/a-bit-of-abstract-algebra",
       "files": [
-        "main.typ",
         "main.tex",
-        "chapters/*.typ",
         "chapters/*.tex"
       ],
       "fields": [
@@ -667,7 +510,7 @@
       "web": "https://qiulinfan.github.io/notes/math/a-bit-of-abstract-algebra",
       "web_artifacts": [
         {
-          "source": "build/typst/index.html",
+          "source": "../../../build/latex-web/a-bit-of-abstract-algebra/index.html",
           "route": ""
         }
       ]
@@ -675,14 +518,12 @@
     {
       "id": "math:point-set-topology",
       "title": "Point-Set Topology",
-      "description": "Typst-first notes for Point-Set Topology.",
+      "description": "LaTeX notes for Point-Set Topology.",
       "subject": "math",
       "course": "point-set-topology",
       "root": "notes/math/point-set-topology",
       "files": [
-        "main.typ",
         "main.tex",
-        "chapters/*.typ",
         "chapters/*.tex"
       ],
       "fields": [],

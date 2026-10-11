@@ -31,6 +31,7 @@ REQUEST_SCHEMA = "latex-live-html-request-v1"
 RESULT_SCHEMA = "latex-live-html-result-v1"
 TIMEOUT_SECONDS = 600
 MAX_RESULT_CHARACTERS = 64 * 1024 * 1024
+TOOLCHAIN = Path(__file__).resolve().parents[1]
 HTML_RE = re.compile(r"<html(?:\s|>)", re.IGNORECASE)
 DOCUMENT_CLASS_RE = re.compile(r"(?m)^\s*\\documentclass(?:\s*\[[^\]]*\])?\s*\{")
 CJK_RE = re.compile(r"[\u3400-\u9fff\uf900-\ufaff\U00020000-\U0002ffff]")
@@ -44,6 +45,30 @@ THEOREM_ENVIRONMENTS = (
     ("example", "Example"),
     ("remark", "Remark"),
 )
+
+
+def notes_theme(document: str) -> str:
+    """Apply the shared notes palette while retaining the converter's layout."""
+    css = (TOOLCHAIN / "web.css").read_text(encoding="utf-8")
+    css += """
+:root {
+  --text: var(--ql-text); --muted: var(--ql-muted); --bg: var(--ql-canvas);
+  --rule: var(--ql-border); --code-bg: var(--ql-code-soft);
+  --llx-link: var(--ql-blue); --llx-heading: var(--ql-ink);
+  --llx-c-structurecolor: var(--ql-blue);
+  --llx-c-main: var(--ql-blue); --llx-f-main: var(--ql-blue);
+  --llx-t-main: var(--ql-blue-soft);
+  --llx-c-second: var(--ql-teal); --llx-f-second: var(--ql-teal);
+  --llx-t-second: var(--ql-teal-soft);
+  --llx-c-third: var(--ql-violet); --llx-f-third: var(--ql-violet);
+  --llx-t-third: var(--ql-violet-soft);
+}
+"""
+    # The homepage moves this style into head and adds its existing theme controls.
+    document, count = re.subn(r"<body>\s*", lambda _: f"<body><style>{css}</style>\n", document, count=1)
+    if not count:
+        raise LatexWebError("the LaTeX HTML converter omitted the document body")
+    return document.replace("<main>", '<main class="ql-site">', 1)
 
 
 def tex_text(value: str) -> str:
@@ -171,6 +196,7 @@ def run_export(root: Path, repo_root: Path, output: Path) -> None:
     document = response.get("html")
     if not isinstance(document, str) or not HTML_RE.search(document):
         raise LatexWebError("the LaTeX HTML converter omitted the complete HTML document")
+    document = notes_theme(document)
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(
         "w", encoding="utf-8", dir=output.parent, prefix=f".{output.name}.", delete=False,

@@ -11,7 +11,7 @@ class NotesSourcePolicyTest(unittest.TestCase):
     def test_accepts_authoritative_source_formats(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             notes_root = Path(temporary)
-            for name in ("chapter.typ", "paper.tex", "research.md"):
+            for name in ("chapter.tex", "paper.tex", "research.md"):
                 (notes_root / name).write_text("source", encoding="utf-8")
 
             self.assertEqual([], find_pdfs(notes_root))

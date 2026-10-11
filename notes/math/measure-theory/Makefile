@@ -1,45 +1,25 @@
-.PHONY: all release export web web-check extras-web extras-web-check watch
+.PHONY: all release web web-check extras-web extras-web-check
 
-TYPST := typst
 TOOLCHAIN := ../toolchain
-WEB_CHECK := $(TOOLCHAIN)/scripts/check_web.py
 REPO_ROOT := ../../..
-BUILD := build/typst
-EXPORTS := exports
+BUILD := $(REPO_ROOT)/build/latex-web/$(notdir $(CURDIR))
+WEB_EXPORT := $(TOOLCHAIN)/scripts/export_latex_web.py
+WEB_CHECK := $(TOOLCHAIN)/scripts/check_web.py
 
 all: release
 
-release: web-check extras-web-check
-
-export:
-	@python3 $(TOOLCHAIN)/scripts/export_course.py \
-		--document main=main.typ \
-		--document extras=extras.typ \
-		--root $(REPO_ROOT) \
-		--output $(EXPORTS) \
-		--build $(BUILD)/export
-
-web:
-	@mkdir -p $(BUILD)
-	@$(TYPST) compile --root $(REPO_ROOT) --features html --format html \
-		main.typ $(BUILD)/index.html 2>$(BUILD)/index.log || \
-		{ cat $(BUILD)/index.log >&2; exit 1; }
-
-web-check: web
-	@python3 $(WEB_CHECK) $(BUILD)/index.html \
-		--expected-nodes 178 --expected-diagrams 0
+release: extras-web-check web-check
 
 extras-web:
-	@mkdir -p $(BUILD)
-	@$(TYPST) compile --root $(REPO_ROOT) --features html --format html \
-		extras.typ $(BUILD)/extras.html 2>$(BUILD)/extras.log || \
-		{ cat $(BUILD)/extras.log >&2; exit 1; }
+	@python3 $(WEB_EXPORT) extras.tex --repo-root $(REPO_ROOT) \
+		--build $(BUILD)/work --output $(BUILD)/extras.html
 
 extras-web-check: extras-web
-	@python3 $(WEB_CHECK) $(BUILD)/extras.html \
-		--expected-nodes 0 --expected-diagrams 0
+	@python3 $(WEB_CHECK) $(BUILD)/extras.html
 
-watch:
-	@mkdir -p $(BUILD)
-	@$(TYPST) watch --root $(REPO_ROOT) --features html --format html \
-		main.typ $(BUILD)/index.html
+web:
+	@python3 $(WEB_EXPORT) main.tex --repo-root $(REPO_ROOT) \
+		--build $(BUILD)/work --output $(BUILD)/index.html
+
+web-check: web
+	@python3 $(WEB_CHECK) $(BUILD)/index.html

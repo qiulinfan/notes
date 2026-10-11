@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit native companions and compile entries plus otherwise uncovered fragments.
+"""Audit authored TeX sources and compile entries plus otherwise uncovered fragments.
 
 Sources stay read-only. Every TeX output and fragment wrapper belongs to the
 selected check directory under the ignored build/ (or the system temporary tree).
@@ -40,13 +40,13 @@ def uncomment(text: str) -> str:
     return "".join(result)
 
 
-def companion_sources(math_root: Path, courses: list[str] | None = None) -> list[Path]:
+def tex_sources(math_root: Path, courses: list[str] | None = None) -> list[Path]:
     return sorted(
         source
         for course in math_root.iterdir()
         if course.is_dir() and course.name != "toolchain"
         and (courses is None or course.name in courses)
-        for source in course.rglob("*.typ")
+        for source in course.rglob("*.tex")
         if not (set(source.relative_to(course).parts) & EXCLUDED)
     )
 
@@ -77,24 +77,19 @@ def include_closure(entry: Path, course: Path) -> tuple[set[Path], list[str]]:
     return seen, sorted(set(missing))
 
 
-def audit_pairs(math_root: Path, courses: list[str] | None = None) -> dict:
+def audit_sources(math_root: Path, courses: list[str] | None = None) -> dict:
     math_root = math_root.resolve()
-    sources = companion_sources(math_root, courses)
+    sources = tex_sources(math_root, courses)
     entries: list[Path] = []
     fragments: list[Path] = []
-    missing: list[str] = []
     empty: list[str] = []
     for source in sources:
-        companion = source.with_suffix(".tex")
-        relative = companion.relative_to(math_root).as_posix()
-        if not companion.is_file():
-            missing.append(relative)
-            continue
-        text = uncomment(companion.read_text(encoding="utf-8"))
+        relative = source.relative_to(math_root).as_posix()
+        text = uncomment(source.read_text(encoding="utf-8"))
         if re.search(r"\\documentclass\b", text):
-            entries.append(companion.resolve())
+            entries.append(source.resolve())
         elif text.strip():
-            fragments.append(companion.resolve())
+            fragments.append(source.resolve())
         else:
             empty.append(relative)
     covered: set[Path] = set()
@@ -106,9 +101,7 @@ def audit_pairs(math_root: Path, courses: list[str] | None = None) -> dict:
         if absent:
             missing_inputs[entry.relative_to(math_root).as_posix()] = absent
     return {
-        "typst_sources": len(sources),
-        "companions": len(sources) - len(missing),
-        "missing_companions": missing,
+        "tex_sources": len(sources),
         "entries": [path.relative_to(math_root).as_posix() for path in entries],
         "uncovered_fragments": [path.relative_to(math_root).as_posix() for path in fragments if path not in covered],
         "empty_fragments": empty,
@@ -211,9 +204,9 @@ def main() -> int:
     unknown = sorted(set(args.course) - {course.name for course in math_root.iterdir() if course.is_dir()})
     if unknown:
         parser.error("unknown course: " + ", ".join(unknown))
-    audit = audit_pairs(math_root, courses)
+    audit = audit_sources(math_root, courses)
     results = []
-    if not args.audit_only and not audit["missing_companions"]:
+    if not args.audit_only and not audit["missing_inputs"]:
         entries = [math_root / name for name in audit["entries"]]
         jobs = [(entry, None) for entry in entries]
         for name in audit["uncovered_fragments"]:
@@ -242,11 +235,11 @@ def main() -> int:
     report = {"schema": "qlnotes-native-tex-check-v1", "audit": audit, "compiles": results}
     output.mkdir(parents=True, exist_ok=True)
     (output / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"sources": audit["typst_sources"], "companions": audit["companions"],
+    print(json.dumps({"sources": audit["tex_sources"],
                       "entries": len(audit["entries"]), "uncovered_fragments": len(audit["uncovered_fragments"]),
                       "failed": sum(result["status"] == "failed" for result in results),
                       "report": str(output / "report.json")}, ensure_ascii=False))
-    return int(bool(audit["missing_companions"] or audit["missing_inputs"]
+    return int(bool(audit["missing_inputs"]
                     or any(result["status"] == "failed" for result in results)))
 
 

@@ -27,9 +27,7 @@ the owner asks, and keep development documentation here. The READMEs inside
   this repository and maps to one document type: the mathematics courses'
   `.tex` files map to `math-notes`, and the registered CS Markdown notes map
   to `cs-notes`, an owner-reviewable draft type. The types themselves are
-  `~/.knowledge/types/<name>.md`. The `.typ` companions are website and
-  authoring files listed in `courses.json`; they are not knowledge sources.
-  kgdistiller reads every source as plain text with line numbers and never
+  `~/.knowledge/types/<name>.md`. kgdistiller reads every source as plain text with line numbers and never
   parses its syntax.
 - Knowledge is a set of records in kgdistiller's record format: YAML
   frontmatter followed by a Markdown body, one file per record, the id being
@@ -46,24 +44,20 @@ the owner asks, and keep development documentation here. The READMEs inside
   edge file. Records are human-editable Markdown, also in Obsidian.
 - Knowledge markers are only a notes and homepage frontend convention, used
   as website anchors and links; kgdistiller does not read them, and they do
-  not define knowledge entries. They are Typst `#kn[...]`/`#ref[...]`, LaTeX
-  `\kn{...}`/`\knref{...}`, and Markdown `--[[X]]--`/`[[X]]` (resolved by
-  the homepage). A marker's ID is its exact
-  spelling's entry in `notes/math/toolchain/knowledge-ids.json`, otherwise the
-  slug of the spelling; the map also lists the extra spellings Typst
-  references use. These IDs are public `#kn-<id>` anchors, so keep them stable.
+  not define knowledge entries. They are LaTeX `\kn{...}`/`\knref{...}` and
+  Markdown `--[[X]]--`/`[[X]]` (resolved by the homepage). A marker's ID is its
+  exact spelling's entry in `notes/math/toolchain/knowledge-ids.json`, otherwise
+  the slug of the spelling. These IDs are public `#kn-<id>` anchors; keep them
+  stable. The map retains earlier public spellings as explicit aliases.
   `notes/math/toolchain/scripts/knowledge_registry.py` generates the committed
-  `notes/math/toolchain/generated/knowledge-registry.typ` and its JSON twin
-  `knowledge-registry.json` (which the homepage reads to link Markdown `[[X]]`
-  references to these anchors) from the published courses' Typst
-  definitions; run `make knowledge-registry` after editing markers, and
-  `make check` verifies both are current. The generator fails only on what
-  the registry needs (published Typst definitions, duplicate Typst names,
-  stale map entries). LaTeX marker problems, such as an unresolved `\knref`,
-  and unresolved published Typst `#ref`s are printed as warnings; a Typst one
-  renders as plain text, and a LaTeX one fails the LaTeX web export.
-  Comments, verbatim-like environments, `\verb`, inactive `\iffalse` branches
-  and macro or environment definitions hold no LaTeX markers.
+  `notes/math/toolchain/generated/knowledge-registry.json` from the published
+  courses' TeX definitions. The homepage reads it to link Markdown references.
+  Run `make knowledge-registry` after editing markers; `make check` verifies
+  freshness. Duplicate published names or IDs and stale map entries fail the
+  registry build. Other TeX marker problems are warnings in the registry and
+  failures in the direct web export. Comments, verbatim-like environments,
+  `\verb`, inactive `\iffalse` branches and macro/environment definitions hold
+  no LaTeX markers.
 - Refreshing the knowledge base is an explicit local authoring operation through an installed, selected kgdistiller product revision. `make check` and CI never run the engine.
 - `notes/math/toolchain/web.css` is the standalone projection of the homepage palette (`site/src/styles/variables.styl` in the homepage repository). The homepage build verifies the pair, so change both together.
 - Native LaTeX web export uses `notes/math/toolchain/scripts/export_latex_web.py`,
@@ -71,31 +65,35 @@ the owner asks, and keep development documentation here. The READMEs inside
   converter `latex-live-export` (or the JSON argv in
   `LATEX_LIVE_EXPORT_COMMAND`) with the LaTeX marker rows from
   `knowledge_registry.py`. Do not use Typst/Pandoc as this web route or
-  register generated HTML as an authority. Explicit format migration tools
-  remain separate.
+  register generated HTML as an authority.
 - Validate changes with `make check`.
-- Mathematics course sources have editable, same-directory `.typ` and `.tex`
-  companions. Preserve their include structure and explicit knowledge markers.
-  Only the `.tex` companion is a registered knowledge source. Alternative
-  name spellings are aliases in the records' frontmatter.
+- Mathematics course sources are authored `.tex` files only. Preserve their
+  include structure and explicit knowledge markers; never regenerate them from
+  another format. Alternative names are aliases in knowledge records.
 - `notes/math/toolchain/latex/qlnotes-native.cls` is the shared XeLaTeX class.
   Course entry points load it by relative path; avoid copying classes per course.
-  Run `make latex-check` for pair/include auditing and two-pass compilation of
-  every entry (plus uncovered fragments). All outputs stay in
-  `build/native-tex/check` under the ignored repository-root `build/`,
-  outside the source-only `notes/` tree.
-- `add_native_tex.py` is an explicit migration tool, not a synchronization job.
-  It evaluates a disposable copy through Typst/MathML and the QLNotes filters;
-  `.tex` companions are authored files afterward. Never regenerate an edited
-  companion without requested replacement. Its `--replace` flag overwrites
-  companions, including subsequent TeX-only layout edits. The migration checks
-  every mathematical expression, knowledge marker and ignored backend element;
-  its diagnostic and identity maps remain under the ignored `build/native-tex`.
+  Run `make latex-check` to audit TeX inputs and compile every entry twice (plus
+  uncovered fragments). All outputs stay in the ignored repository-root
+  `build/native-tex/check`, outside the source-only `notes/` tree.
+- Course `make release` commands export authored TeX directly through
+  `export_latex_web.py`, then validate the standalone HTML. Outputs stay in
+  `build/latex-web/<course>/`; `courses.json` lists paths relative to each course
+  root. The homepage permits artifacts anywhere inside this repository.
+- `notes/math/toolchain/scripts/setup_latex_web_ci.sh` installs TeX and a pinned
+  obsidian-latex-live converter on disposable GitHub Actions runners. Both this
+  repository and the homepage use it. Local prerequisites can be checked with
+  `make -C notes/math/toolchain doctor`.
+- Wrap opaque drawing calls (for example literal `\csname` diagram macros) in
+  the shared `qldrawing` environment so the converter renders them through TeX
+  and SVG. Keep captions and their knowledge links outside the drawing wrapper.
+  Probability's web check verifies that all 14 native drawings survive export.
+- Web build directories use the authoring root's directory name, independent of
+  a course's public slug. Keep `web_artifacts` paths aligned with that directory.
 - Never place credentials in the repository or command output.
 
 ## Layout
 
-- `notes/`: Markdown, Typst, and LaTeX sources with the shared rendering
+- `notes/`: Markdown and LaTeX sources with the shared rendering
   toolchain. Never commit PDFs, course archives, or build outputs.
 - `courses.json`: the website's course registry.
 - `.knowledge/`: the knowledge of the kgdistiller base `notes`, and nothing
@@ -103,7 +101,7 @@ the owner asks, and keep development documentation here. The READMEs inside
   generated sheets in `sheets/`. Its source globs and document types live in
   the kgdistiller home. Its rules and authoring flow are in
   [Knowledge base](#knowledge-base).
-- `build/`: ignored, disposable local outputs: the native TeX migration and
+- `build/`: ignored, disposable local outputs: the native TeX
   check outputs in `build/native-tex/` and local review inputs in
   `build/reviews/`. Nothing in it is an authority.
 - The homepage repository builds the site: it reads this repository as the
@@ -116,7 +114,7 @@ the owner asks, and keep development documentation here. The READMEs inside
 1. Commit and push to `main`. There is no export, adoption step or pre-push
    hook.
 2. CI runs `make check`: the source policy, the knowledge-marker registry
-   freshness check, and the Typst web build of published courses.
+   freshness check, and the direct LaTeX web build of published courses.
 3. When the checks pass, CI triggers the homepage Pages workflow, which rebuilds
    from the latest `main` here.
 
@@ -131,9 +129,9 @@ Local preview needs no push: the homepage dev server reads the sibling
 
 `make check` runs what CI runs: `notes-source-check`,
 `knowledge-registry-check` and `web`. `make web` runs `make release` for every
-course in `courses.json` that is published and has `web_artifacts`. The
-Typst version is pinned once, as `TYPST_VERSION` in the `Makefile`; this
-repository's CI and the homepage build both read it. Run the toolchain tests
+course in `courses.json` that is published and has `web_artifacts`. The direct LaTeX web
+converter revision is pinned in `setup_latex_web_ci.sh`, which both CI builds
+use. Run the toolchain tests
 with `python3 -m unittest discover -s notes/math/toolchain/tests`.
 
 ## Knowledge base
@@ -165,8 +163,8 @@ defaults.
   identity.
 - Ambiguous or contradictory identity decisions stay unresolved until reviewed
   and are never auto-promoted to aliases.
-- For mathematics courses only the `.tex` files are knowledge sources; the
-  `.typ` companions are not registered. CS course Markdown stays registered.
+- For mathematics courses the `.tex` files are knowledge sources. CS course
+  Markdown stays registered.
 - Paper distillation changes the personal records or notes only on an
   explicit owner request, as drafts that the owner accepts with `kgd accept`
   (or `kgd harvest`). Changing the notes website (`courses.json`, the

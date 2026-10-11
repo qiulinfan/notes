@@ -2,7 +2,7 @@
 **/build/
 # Course-local HTML is disposable. GitHub Actions publishes it to Pages.
 **/site/
-# Typst-to-LaTeX/Markdown snapshots are reproducible local projections.
+# Historical export directories stay local.
 **/exports/
 **/*.aux
 **/*.log

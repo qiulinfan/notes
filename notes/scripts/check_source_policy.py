@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reject PDF artifacts inside the source-only notes tree."""
+"""Reject retired Typst sources and PDF artifacts inside the notes tree."""
 
 from __future__ import annotations
 
@@ -58,9 +58,15 @@ def main() -> int:
     args = parser.parse_args()
     repo_root = args.repo_root.resolve()
     notes_root = repo_root / "notes"
+    typst = sorted(notes_root.rglob("*.typ"))
+    if typst:
+        print("Mathematics notes use authored TeX only; retired .typ files:")
+        for candidate in typst:
+            print(f"  - {candidate.relative_to(repo_root).as_posix()}")
+        return 1
     pdfs = find_pdfs(notes_root)
     if pdfs:
-        print("notes/ must contain no PDF files; publish HTML from .typ/.tex/.md sources:")
+        print("notes/ must contain no PDF files; publish HTML from .tex/.md sources:")
         for candidate in pdfs:
             print(f"  - {candidate.relative_to(repo_root).as_posix()}")
         return 1

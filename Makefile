@@ -1,7 +1,4 @@
-.PHONY: check latex-check typst-version web notes-source-check knowledge-registry knowledge-registry-check knowledge-authoring-check knowledge-fix-lines knowledge-index knowledge-search
-
-# The single Typst pin for local checks, this repository's CI, and the homepage build.
-TYPST_VERSION := 0.15.1
+.PHONY: check latex-check web notes-source-check knowledge-registry knowledge-registry-check knowledge-authoring-check knowledge-fix-lines knowledge-index knowledge-search
 
 KGD ?= kgd
 
@@ -12,9 +9,6 @@ check: notes-source-check knowledge-registry-check web
 
 latex-check:
 	@python3 notes/math/toolchain/scripts/check_native_tex.py
-
-typst-version:
-	@echo $(TYPST_VERSION)
 
 web:
 	@for root in $(PUBLISHED_WEB_ROOTS); do $(MAKE) -C "$$root" release || exit 1; done
