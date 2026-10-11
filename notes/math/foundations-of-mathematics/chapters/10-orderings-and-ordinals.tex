@@ -1,0 +1,35 @@
+\chapter{序、序数与超限构造}
+\begin{qlnote}{阅读参照}Enderton, \emph{Set Theory}, Chapters 7--8。
+本章先固定定义与后续证明任务。\end{qlnote}
+
+\section{偏序、线序与良序}
+非严格偏序 \(\le\) 满足自反、反对称和传递；线序还要求任意两元素可比较。
+严格序 \(<\) 的公理使用反自反性；不能把两套约定混在同一个定义里。
+一个严格线序是\textbf{良序}，若每个非空子集都存在最小元素。
+\(\omega\) 的通常序是良序；\(\mathbb Z\) 的通常序不是，因为负整数集合没有最小元素。
+
+\section{Von Neumann ordinals}
+\begin{definition}{Transitive sets and ordinals}
+集合 \(A\) 传递，若 \(x\in y\in A\Rightarrow x\in A\)。
+一个传递集合 \(\alpha\)，若其成员被 \(\in\) 严格良序，则称为\textbf{序数}。
+对序数写 \(\alpha<\beta\) 当且仅当 \(\alpha\in\beta\)。
+\end{definition}
+有限自然数和 \(\omega\) 是标准例子。序数后继为 \(\alpha+1=\alpha\cup\{\alpha\}\)；
+非零且不是后继的序数称为极限序数。
+成员关系与子集关系在序数之间有特殊联系，但不能把这种联系推广到任意集合。
+
+\section{超限归纳与递归的角色}
+对一个固定序数 \(\alpha\)，若 \(A\subseteq\alpha\) 满足：对每个 \(\beta<\alpha\)，
+只要所有 \(\gamma<\beta\) 属于 \(A\)，就有 \(\beta\in A\)，则 \(A=\alpha\)。
+否则 \(\alpha\setminus A\) 的最小元素给出矛盾。
+
+超限递归在阶段 \(\beta\) 根据先前整段函数 \(f\restriction\beta\) 定义新值。
+它需要精确说明可定义的规则、值的唯一性及集合长度的定义域。
+替代公理用于把集合索引的已定义值收集成集合；极限阶段还需证明近似图像兼容。
+序数可比较性、每个良序的序型、超限递归及 rank 的完整构造，随原书逐项展开。
+
+\section{序型与大小}
+\(\omega+1\) 的序是在自然数之后添加一个最大元素，所以它不与 \(\omega\) 序同构，
+尽管两者的底层集合等势。序数描述良序的型；基数描述集合的大小。
+在选择公理下，每个集合可良序，其大小可由某个最小的等势序数，即初始序数表示。
+集合的全体与所有序数的全体要区别：后者是一个真类，不能未经论证放进幂集或作为函数的集合定义域。

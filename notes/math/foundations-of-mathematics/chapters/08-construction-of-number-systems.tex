@@ -1,0 +1,49 @@
+\chapter{整数、有理数与实数的构造}
+\begin{qlnote}{阅读参照}Enderton, \emph{Set Theory}, Chapter 5.\end{qlnote}
+
+\section{用等价类补入运算}
+自然数的算术及消去律建立后，在 \(\omega\times\omega\) 上定义
+\[
+ (a,b)\sim(c,d)\quad\Longleftrightarrow\quad a+d=b+c.
+\]
+整数是这些等价类组成的商集合；\([(a,b)]\) 表示形式差 \(a-b\)。定义
+\[
+\begin{aligned}
+ [(a,b)]+[(c,d)]&=[(a+c,b+d)],\\
+ [(a,b)]\,[(c,d)]&=[(ac+bd,ad+bc)].
+\end{aligned}
+\]
+证明 \(\sim\) 为等价关系、运算与代表元选择无关，以及环的各项定律，
+是这个构造的必要步骤。\(n\mapsto[(n,0)]\) 给出自然数到整数的嵌入。
+
+有理数同样可由 \(\mathbb Z\times\mathbb Z_{>0}\) 上的等价关系
+\((a,b)\sim(c,d)\Longleftrightarrow ad=bc\) 构造。
+取正分母便于定义序；加法和乘法仍要先证明良定义。
+通常写 \(\omega\subseteq\mathbb Z\subseteq\mathbb Q\subseteq\mathbb R\) 时，
+须说明已通过相应嵌入作了识别；这些构造的原始集合不自动按字面互相包含。
+
+\section{Dedekind cuts}
+\begin{definition}{Dedekind cut}
+有理数的子集 \(D\) 是一个割，若：\(D\ne\varnothing\)、\(D\ne\mathbb Q\)；
+若 \(q\in D,r<q\)，则 \(r\in D\)；\(D\) 没有最大元素。
+全体割是 \(\mathcal P(\mathbb Q)\) 内以分离得到的一个集合，记为 \(\mathbb R\)。
+\end{definition}
+定义 \(D\le E\) 当且仅当 \(D\subseteq E\)。对任意两个割，若互不包含，
+取 \(d\in D\setminus E,e\in E\setminus D\)，比较 \(d,e\) 后用向下闭合便得矛盾。
+所以这个序是线性的。有理数 \(q\) 的嵌入为 \(\{r\in\mathbb Q:r<q\}\)。
+
+\begin{theorem}{Least-upper-bound property of cuts}
+若 \(\mathcal A\) 是非空、在包含序下有上界的割集合，则
+\(\sup\mathcal A=\bigcup\mathcal A\)。
+\end{theorem}
+\begin{proof}
+令 \(U=\bigcup\mathcal A\)。取一个割上界 \(B\)，有 \(U\subseteq B\ne\mathbb Q\)，
+而 \(\mathcal A\) 非空保证 \(U\ne\varnothing\)。向下闭合由各割继承。
+每个 \(q\in U\) 属于某个 \(D\in\mathcal A\)，而 \(D\) 无最大元素，故有
+\(r\in D\subseteq U\) 满足 \(q<r\)。因此 \(U\) 是割。
+并集包含每个 \(D\in\mathcal A\)，且包含于每个上界，故是最小上界。
+\end{proof}
+实数加法可定义为
+\(D+E=\{q\in\mathbb Q:\exists d\in D\exists e\in E\ (q<d+e)\}\)。
+乘法、加法逆元和域公理的完整验证随原书补足。本节已经证明的是割序的确界性质，
+不能只凭这一条性质就跳过有序域结构的构造。

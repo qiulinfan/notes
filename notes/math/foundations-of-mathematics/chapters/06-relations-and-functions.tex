@@ -1,0 +1,59 @@
+\chapter{关系、函数与索引族}
+\begin{qlnote}{阅读参照}Enderton, \emph{Set Theory}, Chapters 2--3.\end{qlnote}
+
+\section{有序对与笛卡尔积}
+\begin{definition}{Kuratowski ordered pair}
+\[
+ (a,b):=\{\{a\},\{a,b\}\}.
+\]
+对公理保证这确实是集合。它须满足 \((a,b)=(c,d)\) 当且仅当 \(a=c,b=d\)。
+\end{definition}
+\begin{proof}
+该对的成员的交集为 \(\{a\}\)，并集为 \(\{a,b\}\)，所以可先恢复 \(a\)。
+若并集只有 \(a\)，则 \(b=a\)；否则 \(b\) 是并集中唯一不同于 \(a\) 的元素。
+因此可从编码唯一恢复两个分量，反方向由定义立即成立。
+\end{proof}
+
+\(A\times B=\{(a,b):a\in A,b\in B\}\) 存在：每个这样的对属于
+\(\mathcal P(\mathcal P(A\cup B))\)，再由分离筛出所需对。
+这说明「有某种描述」之外，还要给出构造所处的已有集合。
+
+\section{关系与函数}
+\begin{definition}{Relations and functions}
+从 \(A\) 到 \(B\) 的关系是 \(A\times B\) 的一个子集。
+函数图像 \(f\subseteq A\times B\) 满足
+\[
+ \forall a\in A\ \exists!b\in B\ ((a,b)\in f).
+\]
+定义 \(\operatorname{dom}(f)=A\)，\(\operatorname{ran}(f)=\{b\in B:\exists a\in A\,(a,b)\in f\}\)，
+并写 \(f:A\to B\)。每个函数值由唯一性确定。
+\end{definition}
+按函数图像的集合定义，陪域 \(B\) 是箭头声明的一部分，却不由图像唯一决定。
+例如同一个恒等图像可声明为 \(\{0\}\to\{0\}\) 或 \(\{0\}\to\{0,1\}\)；
+只有前一个声明是满射。讨论满射、复合与逆函数时，须写出所声明的陪域。
+
+若 \(f:A\to B,g:B\to C\)，则
+\[
+ g\circ f=\{(a,c)\in A\times C:\exists b\in B\ ((a,b)\in f\land(b,c)\in g)\}.
+\]
+分离保证这个图像存在，两个原函数的唯一性保证它是函数。
+关系的逆总能定义；逆关系成为反向全函数需要原函数为双射。
+
+\section{等价类与商集合}
+等价关系须具有自反、对称、传递性。对 \(E\subseteq A\times A\)，定义
+\([a]_E=\{x\in A:(a,x)\in E\}\)。这些类属于 \(\mathcal P(A)\)，故
+\[
+ A/E=\{C\in\mathcal P(A):\exists a\in A\ (C=[a]_E)\}
+\]
+由分离存在。在商上定义运算，需要证明改变代表元不会改变所得等价类。
+
+\section{索引族与空索引的交}
+集合索引族 \((A_i)_{i\in I}\) 可看成定义域为集合 \(I\) 的函数，其函数值都是集合。
+先得到值域集合，再作并集，便得到 \(\bigcup_{i\in I}A_i\)。
+当 \(I\ne\varnothing\) 时，任选 \(i_0\in I\)，在 \(A_{i_0}\) 内分离出
+满足 \(\forall i\in I\ x\in A_i\) 的元素，就得到交集。
+
+若 \(I=\varnothing\)，不加限制的「所有集合的交」会要求一个全体集合的集合。
+在给定环境集合 \(X\) 中定义交，则
+\(\{x\in X:\forall i\in\varnothing\ x\in A_i\}=X\)，因为全称条件空真。
+这也是分析、拓扑和测度论中须明确环境集合的原因。

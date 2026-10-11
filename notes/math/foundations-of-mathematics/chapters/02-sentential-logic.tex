@@ -1,0 +1,54 @@
+\chapter{命题逻辑：语法与语义}
+\begin{qlnote}{阅读参照}Enderton, \emph{Logic}, Chapter One.\end{qlnote}
+
+\section{递归定义公式}
+\begin{definition}{Sentential formulas}
+给定命题字母集合，取 \(\neg,\to\) 为基本联结词。每个命题字母是公式；
+若 \(\varphi,\psi\) 是公式，则 \((\neg\varphi)\) 和 \((\varphi\to\psi)\)
+也是公式；除此之外没有公式。括号是语法的一部分。
+\end{definition}
+这一定义同时给出\textbf{结构归纳}：先证明命题字母满足性质，再证明两个构造步骤保留性质，
+便可得到所有公式满足该性质。公式是一棵有限语法树；它的语义通过树递归计算。
+
+\section{真值赋值}
+\begin{definition}{Truth assignment}
+赋值 \(v\) 把每个命题字母映到 \(\{0,1\}\)，并唯一递归扩张到公式：
+\[
+ v(\neg\varphi)=1-v(\varphi),\qquad
+ v(\varphi\to\psi)=0\ \Longleftrightarrow\
+ v(\varphi)=1\text{ 且 }v(\psi)=0.
+\]
+\end{definition}
+\(\varphi\land\psi\)、\(\varphi\lor\psi\) 和 \(\varphi\leftrightarrow\psi\)
+可作为缩写引入，也可作为带真值规则的基本联结词。前后必须保持同一种约定。
+
+\begin{definition}{Satisfiability and semantic consequence}
+若存在赋值使一组公式 \(\Gamma\) 全为真，则 \(\Gamma\) \textbf{可满足}。
+\(\Gamma\models\varphi\) 表示每个使 \(\Gamma\) 全为真的赋值也使 \(\varphi\) 为真。
+若 \(\varnothing\models\varphi\)，则 \(\varphi\) 是\textbf{重言式}。
+若 \(\models\varphi\leftrightarrow\psi\)，则两公式\textbf{逻辑等价}。
+\end{definition}
+
+\begin{theorem}{Modus ponens preserves truth}
+\(\{\varphi,\varphi\to\psi\}\models\psi\)。
+\end{theorem}
+\begin{proof}
+取使两个前提为真的赋值。若 \(v(\psi)=0\)，由于 \(v(\varphi)=1\)，
+条件公式的真值规则给出 \(v(\varphi\to\psi)=0\)，矛盾。
+\end{proof}
+
+\section{充分、必要与逆否}
+\(P\to Q\) 中，\(P\) 是 \(Q\) 的充分条件，\(Q\) 是 \(P\) 的必要条件。
+它与 \(\neg Q\to\neg P\) 逻辑等价。逆命题 \(Q\to P\) 和否命题
+\(\neg P\to\neg Q\) 互相等价，却一般不由原命题推出。
+赋值 \(v(P)=0,v(Q)=1\) 就使原命题真、逆命题假。
+
+\begin{example}[真值表能检查什么]
+一个只含有限多个命题字母的公式，可由有限真值表判定是否为重言式。
+例如 \(P\lor\neg P\) 在经典语义下总为真。
+这项算法检查的是命题联结结构；它不会检查「连续函数一定可导」这样的数学前提是否成立。
+\end{example}
+
+\section{练习}
+证明 De Morgan 等价式；为肯定后件 \((P\to Q),Q\therefore P\) 找反例；
+用结构归纳证明每个公式只含有限多个命题字母。阅读原书时补足唯一可读性与命题紧致性的证明。

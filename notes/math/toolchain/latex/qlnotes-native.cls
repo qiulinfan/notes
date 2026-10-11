@@ -5,6 +5,11 @@
 \setCJKmainfont{FandolSong-Regular}[BoldFont=FandolSong-Bold,ItalicFont=FandolKai-Regular,AutoFakeBold=2]
 \setCJKsansfont{FandolHei-Regular}[AutoFakeBold=2]
 \setCJKmonofont{FandolFang-Regular}[AutoFakeBold=2]
+% Paragraphs start flush left, including after CTeX initializes its defaults.
+\setlength{\parindent}{0pt}
+\AddToHook{begindocument/end}{\setlength{\parindent}{0pt}}
+% Box bodies use the normal text face; titles and mathematical fonts stay distinct.
+\tcbset{common/.append style={fontupper=\normalfont,fontlower=\normalfont}}
 \RequirePackage{longtable,booktabs,array,calc,enumitem,tikz}
 % Pandoc 3's captionless longtables deliberately use this non-numbering type.
 \newcounter{none}

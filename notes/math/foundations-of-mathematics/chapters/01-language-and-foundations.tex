@@ -1,0 +1,46 @@
+\chapter{语言、对象与基础}
+
+这门课为之后的数学与计算机课程建立共同的语言：一个表达式是否合式，
+它在什么解释下为真，一个结论是否能由指定假设推出，以及所讨论的对象怎样由集合构造。
+本轮先学习经典数理逻辑与 ZFC；类型论、范畴论留作之后的独立专题。
+
+\section{两本书的阅读路线}
+逻辑部分以 Enderton 的 \emph{A Mathematical Introduction to Logic} 为主：
+先读 Chapter Zero 的集合预备知识，再读 Chapter One 的 sentential logic
+与 Chapter Two 的 first-order logic。Chapter Three 的 undecidability
+与 Chapter Four 的 second-order logic 是后续阅读。
+
+集合论部分以 \emph{Elements of Set Theory} 为主：Chapters 1--2 建立集合观点、
+公理和运算；Chapter 3 讨论关系与函数；Chapters 4--5 构造自然数和实数；
+Chapter 6 讨论基数与选择公理；Chapters 7--8 讨论序、序数和超限构造。
+Chapter 9 的特殊专题留到主线建立后再读。
+
+这些笔记按概念重新组织，并记录初步解释、证明和阅读任务。
+书中的完整证明仍需逐节 review；下面标为「证明路线」的内容保留这一区别。
+
+\section{对象语言与元语言}
+\begin{definition}{Object language and metalanguage}
+\textbf{对象语言}是被研究的形式语言；\textbf{元语言}是我们用来描述该语言、
+其解释和推理规则的语言。例如研究集合论时，\(x\in y\) 是对象语言的原子公式，
+「这个公式有两个自由变量」是元语言的断言。
+\end{definition}
+
+\(\varphi\) 通常是元语言中代表一个公式的字母，不自动成为对象语言里的变量。
+同样，\(\models\) 描述满足关系，\(\vdash\) 描述可推导性；它们不是 ZFC
+对象语言的关系符号。我们先借助非形式化数学描述语法和语义，随后在 ZFC 中研究这些构造。
+
+\begin{definition}{Working conventions}
+本课采用经典一阶逻辑，带等号，解释的论域非空。集合论采用纯集合的 ZFC，
+其唯一非逻辑关系符号是 \(\in\)。集合论语境中的所有个体变量都量化于集合。
+自然数采用含 \(0\) 的 \(\omega\)；其他课程若把 \(\mathbb N\) 定为正整数，须另行声明。
+\end{definition}
+
+\section{每次 review 要回答的四个问题}
+\begin{enumerate}
+\item \textbf{对象：}变量表示什么，在哪个集合或结构中取值？
+\item \textbf{断言：}量词的顺序、作用域和自由变量是什么？
+\item \textbf{推导：}用了哪些假设、规则或已经证明的结论？
+\item \textbf{构造：}对象的存在性与唯一性由什么保证，是否使用了选择公理？
+\end{enumerate}
+定义固定术语或引入可消去的记号；公理规定一个理论的假设；定理需要在这些假设下证明。
+一个方便的图像、例子或记号本身不保证对象存在。

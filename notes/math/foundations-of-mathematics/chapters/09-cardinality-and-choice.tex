@@ -1,0 +1,45 @@
+\chapter{基数、可数性与选择公理}
+\begin{qlnote}{阅读参照}Enderton, \emph{Set Theory}, Chapter 6.\end{qlnote}
+
+\section{先比较集合，再引入基数记号}
+写 \(A\approx B\) 表示存在双射 \(A\to B\)，写 \(A\preccurlyeq B\) 表示存在单射
+\(A\to B\)。前者是等势关系；后者不是两个集合之间的包含关系。
+本课称 \(A\) 可数，若 \(A\preccurlyeq\omega\)；可数无穷则要求 \(A\approx\omega\)。
+阅读别的课程时，要确认其「可数」是否包含有限集合。
+
+\begin{theorem}{Cantor's theorem}
+不存在满射 \(f:A\to\mathcal P(A)\)。
+\end{theorem}
+\begin{proof}
+假设 \(f\) 满射。由分离得到 \(D=\{a\in A:a\notin f(a)\}\)。
+\(D\in\mathcal P(A)\)，故存在 \(d\in A\) 使 \(f(d)=D\)。
+于是 \(d\in D\Longleftrightarrow d\notin f(d)\Longleftrightarrow d\notin D\)，矛盾。
+\end{proof}
+单射 \(a\mapsto\{a\}\) 又给出 \(A\preccurlyeq\mathcal P(A)\)。上述对角证明没有使用选择公理。
+
+\begin{theorem}{Cantor--Schröder--Bernstein}
+若 \(A\preccurlyeq B\) 且 \(B\preccurlyeq A\)，则 \(A\approx B\)。
+\end{theorem}
+\begin{proof}
+取单射 \(f:A\to B,g:B\to A\)，令 \(A_0=A\setminus g[B]\)，
+\(A_{n+1}=g[f[A_n]]\)，\(C=\bigcup_{n\in\omega}A_n\)。定义
+\[
+ h(a)=\begin{cases}f(a),&a\in C,\\g^{-1}(a),&a\notin C.\end{cases}
+\]
+若 \(a\notin C\)，则 \(a\notin A_0\)，所以逆值存在，且由单射性唯一。
+\(g^{-1}\) 把 \(A\setminus C\) 双射到 \(B\setminus f[C]\)：
+若其值落在 \(f[C]\)，则 \(a\in g[f[C]]\subseteq C\)，矛盾；
+若 \(b\notin f[C]\)，则 \(g(b)\notin A_0\)，也不能属于任何 \(A_{n+1}\)，否则
+由 \(g\) 单射得 \(b\in f[A_n]\)。因此两个分支分别双射到不相交且覆盖 \(B\) 的部分。
+\end{proof}
+
+\section{选择的内容与依赖}
+选择公理把每个非空集合都有成员的逐项存在断言，提升为整个集合索引族上的一个选择函数。
+有限族的选择可由有限归纳得到；任意族的选择是额外公理。
+存在明确的统一选取规则时，可直接验证该规则给出函数。
+
+在 ZF 上，选择公理、良序定理和 Zorn 引理等价。
+Zorn 引理断言：若一个非空偏序集合的每条链都有该集合内的上界，则存在极大元。
+极大元未必是最大元；这两种条件要分开。
+这些等价性及基数算术的完整证明，是原书阅读任务。
+后续线代用 Zorn 引理证明任意向量空间存在基时，必须记录这一步的选择依赖。

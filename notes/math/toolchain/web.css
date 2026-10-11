@@ -180,6 +180,10 @@ a:focus-visible {
   min-height: 100vh;
 }
 
+.ql-site p {
+  text-indent: 0;
+}
+
 .ql-hero {
   position: relative;
   overflow: hidden;

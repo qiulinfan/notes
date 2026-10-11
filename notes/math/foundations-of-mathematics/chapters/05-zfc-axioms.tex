@@ -1,0 +1,118 @@
+\chapter{ZFC：语言、公理与公理模式}
+\begin{qlnote}{阅读参照}Enderton, \emph{Set Theory}, Chapters 1--2、6--7 及书末公理表。
+这里把不同阶段引入的公理先集中展示，再分章解释其用途。\end{qlnote}
+
+\section{语言与缩写}
+纯集合论语言只有非逻辑二元关系符号 \(\in\)，另带逻辑等号。
+例如 \(A\subseteq B\) 缩写为 \(\forall x(x\in A\to x\in B)\)。
+\(\forall x\in A\,\varphi\) 缩写为 \(\forall x(x\in A\to\varphi)\)，
+\(\exists x\in A\,\varphi\) 缩写为 \(\exists x(x\in A\land\varphi)\)。
+下文的空集、无序对、并集、幂集、函数等记号，都须由存在唯一性建立后作为定义性缩写使用。
+
+\textbf{公理模式}给每个符合条件的公式一个公理实例。分离与替代是模式，
+因而这张有限的名称表不意味着 ZFC 只有有限条一阶公理。
+下列各式均作全称闭包；\(\bar p\) 表示公式的有限参数列。
+模式中的 \(\varphi\) 是元语言占位符，不能包含正在新建的集合变量 \(B\) 的自由出现。
+
+\section{九组公理}
+\begin{axiom}{Extensionality：外延}
+\[
+ \forall A\forall B\bigl[\forall x(x\in A\leftrightarrow x\in B)\to A=B\bigr].
+\]
+集合由其成员决定。证明两个集合相等通常从双向包含开始。
+\end{axiom}
+
+\begin{axiom}{Pairing：无序对}
+\[
+ \forall a\forall b\exists C\forall x\bigl(x\in C\leftrightarrow(x=a\lor x=b)\bigr).
+\]
+由外延性，此集合唯一，记为 \(\{a,b\}\)；取 \(a=b\) 得单点集。
+\end{axiom}
+
+\begin{axiom}{Union：并集}
+\[
+ \forall A\exists U\forall x\bigl(x\in U\leftrightarrow\exists B(B\in A\land x\in B)\bigr).
+\]
+记为 \(U=\bigcup A\)。二元并集是 \(a\cup b=\bigcup\{a,b\}\)。
+\end{axiom}
+
+\begin{axiom}{Power Set：幂集}
+\[
+ \forall A\exists P\forall x\bigl(x\in P\leftrightarrow x\subseteq A\bigr).
+\]
+记为 \(P=\mathcal P(A)\)。它保证所有 \(A\) 的子集组成一个集合。
+\end{axiom}
+
+\begin{axiom}{Separation schema：分离}
+对于集合论公式 \(\varphi(x,\bar p)\)，有公理实例
+\[
+ \forall\bar p\forall A\exists B\forall x
+ \bigl(x\in B\leftrightarrow(x\in A\land\varphi(x,\bar p))\bigr).
+\]
+它从一个已有集合 \(A\) 筛选成员；\(B=\{x\in A:\varphi(x,\bar p)\}\)。
+\end{axiom}
+
+\begin{axiom}{Replacement schema：替代}
+对于公式 \(\varphi(x,y,\bar p)\)，有公理实例
+\[
+\forall\bar p\forall A\left[
+ \bigl(\forall x\in A\ \exists!y\,\varphi(x,y,\bar p)\bigr)
+ \to\exists B\forall y\bigl(y\in B\leftrightarrow\exists x\in A\,\varphi(x,y,\bar p)\bigr)
+\right].
+\]
+一个在集合域上唯一确定输出的可定义对应，其值域也是集合。
+输出没有被预先限制在某个给定集合中。
+\end{axiom}
+
+\begin{axiom}{Infinity：无穷}
+存在集合 \(I\)，满足
+\[
+ \varnothing\in I\quad\text{且}\quad\forall x\in I\ (x\cup\{x\}\in I).
+\]
+这样的 \(I\) 称为归纳集合。空集记号的存在性由下面的推论保证。
+\end{axiom}
+
+\begin{axiom}{Foundation：正则／基础}
+\[
+ \forall A\bigl[A\ne\varnothing\to\exists x\in A\ (x\cap A=\varnothing)\bigr].
+\]
+每个非空集合具有一个与它无共同成员的成员。交集记号可由分离定义。
+\end{axiom}
+
+\begin{axiom}{Choice：选择}
+对于每个成员都非空的集合 \(A\)，存在函数 \(f\)，使
+\[
+ \operatorname{dom}(f)=A\quad\text{且}\quad\forall a\in A\ (f(a)\in a).
+\]
+函数与定义域的符号将在下一章展开为集合论定义。这是纯一阶语言句子的缩写。
+\end{axiom}
+本笔记把外延、对、并、幂、分离、替代、无穷、基础合称 ZF，再加入选择得到 ZFC。
+有些公理表单列空集公理，或使用更少的独立公理组；计数依所选表达方式而异。
+
+\section{空集、类与 Russell 问题}
+\begin{theorem}{空集存在且唯一}
+在本课非空论域的一阶逻辑约定下，由分离和外延可以推出空集存在且唯一。
+\end{theorem}
+\begin{proof}
+取一个集合 \(A\)，以条件 \(x\ne x\) 分离，得到没有成员的集合。
+任意两个没有成员的集合有相同成员，由外延性相等。
+\end{proof}
+
+\begin{theorem}{不存在包含所有集合的集合}
+不存在集合 \(U\) 满足 \(\forall x(x\in U)\)。
+\end{theorem}
+\begin{proof}
+若有这样的 \(U\)，以分离得到 \(R=\{x\in U:x\notin x\}\)。
+由于 \(R\in U\)，有 \(R\in R\leftrightarrow R\notin R\)，矛盾。
+\end{proof}
+\(\{x:\varphi(x)\}\) 可在元语言中描述一个\textbf{可定义类}；
+只有证明某个集合恰有这些成员后，才能把它当作集合使用。
+\(V\)、所有序数组成的类等记号，不是 ZFC 中额外的个体变量或集合常元。
+
+\begin{theorem}{没有集合属于自己}
+基础公理蕴含 \(\forall x(x\notin x)\)。
+\end{theorem}
+\begin{proof}
+若 \(x\in x\)，对非空单点集 \(\{x\}\) 应用基础公理。
+其唯一成员是 \(x\)，但 \(x\cap\{x\}\) 含有 \(x\)，矛盾。
+\end{proof}

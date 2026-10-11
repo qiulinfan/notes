@@ -16,8 +16,7 @@ the owner asks, and keep development documentation here. The READMEs inside
 - `courses.json` (schema `notes-courses-v1`) is the website registry: each
   course's title, description, subject, course slug, `root`, `files`, `fields`,
   `topics`, `web`, `publish`, `listed` and `web_artifacts`, plus the field
-  labels. `make web`, the homepage dock and the `create-math-notes` Skill read
-  it. A course is published only through its `publish`, `listed` and
+  labels. `make web` and the homepage dock read it. A course is published only through its `publish`, `listed` and
   `web_artifacts` there. The marker registry covers only published courses,
   so after changing `publish`, run `make knowledge-registry` and commit the
   regenerated files in `notes/math/toolchain/generated/`.
@@ -174,13 +173,11 @@ defaults.
   the prior evaluation decision.
 - Do not write knowledge markers back into the solvablemodel paper sources
   under the prior evaluation decision.
-- The records in `entries/` are the durable authority. They hold
-  agent-authored summaries and relations for which no separate decision log
-  exists; note-only reconstruction is not an acceptable migration. They were
-  migrated once on 2026-10-09 from the derived-evidence graph: each entry was
-  rebound to its `.tex` statement with a verbatim Evidence quote and earlier
-  spellings became aliases; the 219 accepted edges became accepted relation
-  records.
+- On 2026-10-11 the owner retired all 316 knowledge nodes and 219 relations
+  and restarted this base empty, preserving the original notes. Build the
+  knowledge base incrementally through small, explicitly selected items and
+  test their usefulness before expanding. Do not restore the retired records
+  or bulk-import earlier experiment proposals without an explicit request.
 
 ### Refreshing the knowledge base
 

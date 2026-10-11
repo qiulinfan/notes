@@ -2,6 +2,16 @@
   "schema": "notes-courses-v1",
   "fields": [
     {
+      "id": "mathematical-logic",
+      "label": "Mathematical Logic",
+      "text": "The study of formal languages, semantics, deduction, and the metatheorems of classical logic."
+    },
+    {
+      "id": "set-theory",
+      "label": "Set Theory",
+      "text": "The study of sets, ZFC axioms, relations, functions, number systems, cardinality, and ordinals."
+    },
+    {
       "id": "analysis",
       "label": "Analysis",
       "text": "The field studying limiting processes, continuity, measure, integration, and function spaces."
@@ -48,6 +58,100 @@
     }
   ],
   "courses": [
+    {
+      "id": "math:foundations-of-mathematics",
+      "title": "Foundations of Mathematics",
+      "description": "Mathematical logic and ZFC set theory, with Herbert B. Enderton’s A Mathematical Introduction to Logic and Elements of Set Theory as the primary reading references.",
+      "subject": "math",
+      "course": "foundations-of-mathematics",
+      "root": "notes/math/foundations-of-mathematics",
+      "files": [
+        "main.tex",
+        "chapters/*.tex"
+      ],
+      "fields": [
+        "mathematical-logic",
+        "set-theory"
+      ],
+      "topics": [
+        {
+          "glob": "chapters/02-*.tex",
+          "id": "sentential-logic",
+          "label": "Sentential Logic",
+          "fields": [
+            "mathematical-logic"
+          ]
+        },
+        {
+          "glob": "chapters/03-*.tex",
+          "id": "first-order-logic",
+          "label": "First-Order Logic",
+          "fields": [
+            "mathematical-logic"
+          ]
+        },
+        {
+          "glob": "chapters/04-*.tex",
+          "id": "deduction-and-metatheorems",
+          "label": "Deduction and Metatheorems",
+          "fields": [
+            "mathematical-logic"
+          ]
+        },
+        {
+          "glob": "chapters/05-*.tex",
+          "id": "zfc-axioms",
+          "label": "ZFC Axioms",
+          "fields": [
+            "set-theory"
+          ]
+        },
+        {
+          "glob": "chapters/06-*.tex",
+          "id": "relations-and-functions",
+          "label": "Relations and Functions",
+          "fields": [
+            "set-theory"
+          ]
+        },
+        {
+          "glob": "chapters/07-*.tex",
+          "id": "natural-numbers-and-recursion",
+          "label": "Natural Numbers and Recursion",
+          "fields": [
+            "set-theory"
+          ]
+        },
+        {
+          "glob": "chapters/08-*.tex",
+          "id": "construction-of-number-systems",
+          "label": "Construction of Number Systems",
+          "fields": [
+            "set-theory",
+            "analysis"
+          ]
+        },
+        {
+          "glob": "chapters/09-*.tex",
+          "id": "cardinality-and-choice",
+          "label": "Cardinality and Choice",
+          "fields": [
+            "set-theory"
+          ]
+        },
+        {
+          "glob": "chapters/10-*.tex",
+          "id": "orderings-and-ordinals",
+          "label": "Orderings and Ordinals",
+          "fields": [
+            "set-theory"
+          ]
+        }
+      ],
+      "publish": false,
+      "listed": false,
+      "web": "https://qiulinfan.github.io/notes/math/foundations-of-mathematics"
+    },
     {
       "id": "math:measure-theory",
       "title": "Measure Theory",

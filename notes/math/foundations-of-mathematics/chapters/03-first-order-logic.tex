@@ -1,0 +1,55 @@
+\chapter{一阶逻辑：量词、结构与满足}
+\begin{qlnote}{阅读参照}Enderton, \emph{Logic}, Chapter Two.\end{qlnote}
+
+\section{语言、项与公式}
+一阶语言的签名规定常元、函数符号和关系符号，并规定后两者的元数。
+变量和常元是项；\(f(t_1,\ldots,t_n)\) 是由函数符号构成的项。
+原子公式是 \(t=u\) 或 \(R(t_1,\ldots,t_n)\)；再用联结词和量词构造其他公式。
+项表示对象，公式表达断言；函数符号和关系符号不能混用。
+
+\begin{definition}{Free variables and sentences}
+变量的某次出现若处于同名量词的约束范围内，便是约束出现；否则是自由出现。
+没有自由变量的公式称为\textbf{句子}。同一个变量符号可以在不同位置自由或约束地出现。
+\end{definition}
+例如 \(P(x)\land\forall x\,Q(x)\) 中，左边的 \(x\) 自由，右边的 \(x\) 约束。
+\(\forall x(P(x)\to Q(x))\) 则没有自由变量，若 \(P,Q\) 是一元关系符号。
+
+\section{结构与赋值}
+\begin{definition}{Structure}
+\(\mathcal M\) 给出非空论域 \(M\)，每个常元的元素解释、每个 \(n\) 元函数符号的
+全函数 \(M^n\to M\)，以及每个 \(n\) 元关系符号的子集 \(M^n\)。
+等号解释为论域上的实际相等。赋值 \(s\) 把变量映到 \(M\)。
+\end{definition}
+项的值 \(t^{\mathcal M}[s]\) 递归定义，公式的满足关系也递归定义。
+量词的两条规则是
+\[
+\begin{aligned}
+\mathcal M,s\models\forall x\,\varphi
+ &\Longleftrightarrow \text{每个 }a\in M\text{ 都有 }\mathcal M,s[x\mapsto a]\models\varphi,\\
+\mathcal M,s\models\exists x\,\varphi
+ &\Longleftrightarrow \text{存在 }a\in M\text{ 使 }\mathcal M,s[x\mapsto a]\models\varphi.
+\end{aligned}
+\]
+句子的真值不依赖赋值。写 \(\Gamma\models\varphi\) 时，要遍历所有结构和赋值；
+只在某个固定结构中为真，是更具体的断言。
+
+\section{量词顺序与变量捕获}
+\begin{example}[见证是否可以随输入变化]
+在实数的通常序结构中，\(\forall x\exists y\,(x<y)\) 为真：可取 \(y=x+1\)。
+\(\exists y\forall x\,(x<y)\) 为假：给定 \(y\)，取 \(x=y\)。
+前者允许见证依赖于 \(x\)，后者要求同一个见证适用于所有 \(x\)。
+\end{example}
+
+\(\varphi[t/x]\) 表示把自由出现的 \(x\) 替换为项 \(t\)，且不得捕获 \(t\) 的自由变量。
+例如直接把 \(y\) 代入 \(\exists y(x\ne y)\) 中的 \(x\)，会错误得到
+\(\exists y(y\ne y)\)。正确做法是先把约束变量改名为新变量 \(z\)，再得到
+\(\exists z(y\ne z)\)。这种改名不改变原公式的含义。
+
+\section{把分析中的条件展开}
+一致连续性的量词顺序为
+\[
+\forall\varepsilon>0\ \exists\delta>0\ \forall x,y\in A\quad
+ |x-y|<\delta\ \Longrightarrow\ |f(x)-f(y)|<\varepsilon.
+\]
+这里 \(\delta\) 可以依赖 \(\varepsilon\)，却必须同时适用于所有 \(x,y\in A\)。
+复习普通连续性时，把 \(x\) 放在 \(\exists\delta\) 之前，便能看清两者的区别。
