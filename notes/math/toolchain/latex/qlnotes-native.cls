@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{qlnotes-native}[2026/10/02 Native mathematics notes]
-\LoadClass[lang=cn,11pt,chinesefont=nofont]{elegantbook}
+\LoadClass[lang=en,11pt,chinesefont=nofont]{elegantbook}
 \RequirePackage[UTF8,fontset=fandol,scheme=plain]{ctex}
 \setCJKmainfont{FandolSong-Regular}[BoldFont=FandolSong-Bold,ItalicFont=FandolKai-Regular,AutoFakeBold=2]
 \setCJKsansfont{FandolHei-Regular}[AutoFakeBold=2]

@@ -379,7 +379,7 @@
 
 \RequirePackage{fancyvrb}
 \RequirePackage{makecell,lipsum,hologo}
-%%中文结构名字
+%% Generated headings
 
 
 %%   章节设置
@@ -392,88 +392,49 @@
   citestyle=\ELEGANT@citestyle,
   bibstyle=\ELEGANT@bibstyle]{biblatex}
 
-\ifdefstring{\ELEGANT@lang}{cn}{
-  \renewcommand{\baselinestretch}{1.3}
-  \renewcommand{\contentsname}{Contents}
-  \renewcommand{\figurename}{Figure}
-  \renewcommand{\tablename}{Table}
-  \renewcommand{\partname}{\color{structurecolor}}
-  \renewcommand{\thepart}{第\zhnumber{\arabic{part}}部分}
-  \renewcommand{\listfigurename}{插图目录}
-  \renewcommand{\listtablename}{表格目录}
-  \renewcommand{\bibname}{Bibliography}
-  \newcommand{\ebibname}{Bibliography}
-  \renewcommand{\appendixname}{appendix}
-  \renewcommand{\appendixtocname}{appendix}
-  \renewcommand{\indexname}{索\hspace{2em}引}
-  \newcommand\figref[1]{\textbf{Figure}~\ref{#1}}
-  \newcommand\tabref[1]{\textbf{Table}~\ref{#1}}
-  \newcommand{\authorname}{\citshape Author：}
-  \newcommand{\institutename}{\citshape Institution：}
-  \newcommand{\datename}{\citshape Date：}
-  \newcommand{\versionname}{\citshape version：}
-  \newcommand{\notename}{Note}
-  \renewcommand*{\proofname}{Proof}
-  \newcommand{\definitionname}{Def}
-  \newcommand{\theoremname}{Theorem}
-  \newcommand{\axiomname}{Axiom}
-  \newcommand{\postulatename}{Postulate}
-  \newcommand{\lemmaname}{Lemma}
-  \newcommand{\propositionname}{Proposition}
-  \newcommand{\corollaryname}{Corollary}
-  \newcommand{\examplename}{Example} %
-  \newcommand{\instancename}{Instance} %
-  \newcommand{\problemname}{Problem} % 问题
-  \newcommand{\exercisename}{Exercise} % 练习=习题
-  \newcommand{\remarkname}{Remark}
-  \newcommand{\assumptionname}{Assumption}
-  \newcommand{\conclusionname}{Conclusion}
-  \newcommand{\solutionname}{Sol.}
-  \newcommand{\propertyname}{Property}
-  \newcommand{\introductionname}{Introduction}
-  \newcommand\bioinfo[2]{\gdef\@bioinfo{{\citshape #1}：#2}}
-  \newcommand{\updatename}{Update: }
-  \newcommand{\historyname}{History}
-  \newcommand{\beforechap}{module}
-  \newcommand{\afterchap}{:}
-}{\relax}
+% One English vocabulary for generated headings; CJK text support is independent.
+\renewcommand{\baselinestretch}{1.3}
+\renewcommand{\contentsname}{Contents}
+\renewcommand{\figurename}{Figure}
+\renewcommand{\tablename}{Table}
+\renewcommand{\listfigurename}{List of Figures}
+\renewcommand{\listtablename}{List of Tables}
+\renewcommand{\bibname}{Bibliography}
+\renewcommand{\appendixtocname}{Appendix}
+\renewcommand{\indexname}{Index}
+\newcommand\figref[1]{\textbf{Figure}~\ref{#1}}
+\newcommand\tabref[1]{\textbf{Table}~\ref{#1}}
+\renewcommand{\chaptername}{Module}
+\renewcommand{\partname}{\color{structurecolor} Part}
+\newcommand{\authorname}{\textbf{Author: }}
+\newcommand{\institutename}{\textbf{Institute: }}
+\newcommand{\datename}{\textbf{Date: }}
+\newcommand{\versionname}{\textbf{Version: }}
+\newcommand{\notename}{Note}
+\providecommand{\proofname}{Proof}
+\renewcommand{\proofname}{Proof}
+\newcommand{\problemname}{Problem}
+\newcommand{\definitionname}{Definition}
+\newcommand{\theoremname}{Theorem}
+\newcommand{\axiomname}{Axiom}
+\newcommand{\postulatename}{Postulate}
+\newcommand{\lemmaname}{Lemma}
+\newcommand{\propositionname}{Proposition}
+\newcommand{\corollaryname}{Corollary}
+\newcommand{\examplename}{Example}
+\newcommand{\exercisename}{Exercise}
+\newcommand{\remarkname}{Remark}
+\newcommand{\assumptionname}{Assumption}
+\newcommand{\conclusionname}{Conclusion}
+\newcommand{\solutionname}{Solution}
+\newcommand{\propertyname}{Property}
+\newcommand{\introductionname}{Introduction}
+\renewcommand{\appendixname}{Appendix}
+\newcommand{\ebibname}{Bibliography}
+\newcommand\bioinfo[2]{\gdef\@bioinfo{\textbf{#1}: #2}}
+\newcommand{\updatename}{Updates:}
+\newcommand{\historyname}{Version History}
 
-
-\ifdefstring{\ELEGANT@lang}{en}{
-  \setlength\parindent{2em}
-  \newcommand\figref[1]{\textbf{Figure}~\ref{#1}}
-  \newcommand\tabref[1]{\textbf{Table}~\ref{#1}}
-  \renewcommand{\chaptername}{Module}
-  \renewcommand{\partname}{\color{structurecolor} Part}
-  \newcommand{\authorname}{\textbf{Author: }}
-  \newcommand{\institutename}{\textbf{Institute: }}
-  \newcommand{\datename}{\textbf{Date: }}
-  \newcommand{\versionname}{\textbf{Version: }}
-  \newcommand{\notename}{Note}
-  \newcommand{\proofname}{Proof}
-  \newcommand{\problemname}{Problem}
-  \newcommand{\definitionname}{Definition}
-  \newcommand{\theoremname}{Theorem}
-  \newcommand{\axiomname}{Axiom}
-  \newcommand{\postulatename}{Postulate}
-  \newcommand{\lemmaname}{Lemma}
-  \newcommand{\propositionname}{Proposition}
-  \newcommand{\corollaryname}{Corollary}
-  \newcommand{\examplename}{Example}
-  \newcommand{\exercisename}{Exercise}
-  \newcommand{\remarkname}{Remark}
-  \newcommand{\assumptionname}{Assumption}
-  \newcommand{\conclusionname}{Conclusion}
-  \newcommand{\solutionname}{Solution}
-  \newcommand{\propertyname}{Property}
-  \newcommand{\introductionname}{Introduction}
-  \renewcommand{\appendixname}{Appendix}
-  \newcommand{\ebibname}{Bibliography}
-  % \newcommand{\problemsetname}{Exercise}
-  \newcommand\bioinfo[2]{\gdef\@bioinfo{\textbf{#1}: #2}}
-  \newcommand{\updatename}{Updates:}
-  \newcommand{\historyname}{Version History}
-}{\relax}
 
 
 \graphicspath{{./figure/}{./figures/}{./image/}{./images/}{./graphics/}{./graphic/}{./pictures/}{./picture/}}
@@ -499,11 +460,7 @@
 
 % appendix chapter:
 
-\ifdefstring{\ELEGANT@lang}{cn}{
-  \ifdefstring{\ELEGANT@scheme}{chinese}{
-    \newcommand{\xchaptertitle}{Module \zhnumber{\arabic{chapter}}} }{
-    \newcommand{\xchaptertitle}{Module \thechapter{}}} }{
-  \newcommand{\xchaptertitle}{\chaptername~\thechapter~}}
+\newcommand{\xchaptertitle}{\chaptername~\thechapter~}
 
 \setcounter{secnumdepth}{5}
 \titleformat{\chapter}[\style]{\bfseries}{
@@ -1134,27 +1091,15 @@
 % https://tex.stackexchange.com/questions/56839/chaptername-is-used-even-for-appendix-chapters-in-toc
 \usepackage{calc}
 \usepackage[titles]{tocloft}
-\ifdefstring{\ELEGANT@lang}{cn}{
-  \renewcommand{\cftchappresnum}{\beforechap\space}
-  \renewcommand{\cftchapaftersnum}{\space\afterchap\space}
-  \setlength{\cftchapnumwidth}{\widthof{\textbf{\beforechap\space 999\space\afterchap\space}}}
-  \g@addto@macro\appendix{%
-    \addtocontents{toc}{%
-      \protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}%
-      \protect\renewcommand{\protect\cftchapaftersnum}{}%
-    }%
-  }
-}{
-  \renewcommand{\cftchappresnum}{\chaptername\space}
-  \renewcommand{\cftchapaftersnum}{\space}
-  \setlength{\cftchapnumwidth}{\widthof{\textbf{Appendix~9}}}
-  \g@addto@macro\appendix{%
-    \addtocontents{toc}{%
-      \protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}%
-      \protect\renewcommand{\protect\cftchapaftersnum}{}%
-      \setlength{\cftchapnumwidth}{\widthof{\textbf{Appendix~999}}}
-    }%
-  }
+\renewcommand{\cftchappresnum}{\chaptername\space}
+\renewcommand{\cftchapaftersnum}{\space}
+\setlength{\cftchapnumwidth}{\widthof{\textbf{Appendix~9}}}
+\g@addto@macro\appendix{%
+  \addtocontents{toc}{%
+    \protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}%
+    \protect\renewcommand{\protect\cftchapaftersnum}{}%
+    \setlength{\cftchapnumwidth}{\widthof{\textbf{Appendix~999}}}
+  }%
 }
 
 % restore the tt default family to lmodern tt family
@@ -1394,16 +1339,6 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \newcommand*{\avint}{\mathop{\ooalign{$\int$\cr$-$}}}
-\setCJKmainfont{FandolSong-Regular}[BoldFont=FandolHei-Regular,ItalicFont=FandolKai-Regular]
-\setCJKsansfont{FandolHei-Regular}
-\setCJKmonofont{FandolFang-Regular}
-\setCJKfamilyfont{zhsong}{FandolSong-Regular}
-\setCJKfamilyfont{zhhei}{FandolHei-Regular}
-\setCJKfamilyfont{zhfs}{FandolFang-Regular}
-\setCJKfamilyfont{zhkai}{FandolKai-Regular}
-\newcommand*{\songti}{\CJKfamily{zhsong}}
-\newcommand*{\heiti}{\CJKfamily{zhhei}}
-\newcommand*{\fangsong}{\CJKfamily{zhfs}}
-\newcommand*{\kaishu}{\CJKfamily{zhkai}}
+% The shared qlnotes-native class owns the CJK font configuration.
 
 \allowdisplaybreaks
