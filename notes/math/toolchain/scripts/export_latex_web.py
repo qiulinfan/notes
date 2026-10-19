@@ -196,6 +196,12 @@ def run_export(root: Path, repo_root: Path, output: Path) -> None:
     document = response.get("html")
     if not isinstance(document, str) or not HTML_RE.search(document):
         raise LatexWebError("the LaTeX HTML converter omitted the complete HTML document")
+    report = response.get("report")
+    for item in report.get("items", []) if isinstance(report, dict) else []:
+        # The converter's fallbacks (fragments shown as source, missing images) only reach CI logs here.
+        if isinstance(item, dict) and item.get("severity") in ("error", "warning"):
+            where = f" ({item['file']}:{item.get('line', '?')})" if item.get("file") else ""
+            print(f"{item['severity']}: {item.get('kind', '?')}: {item.get('message', '')}{where}", file=sys.stderr)
     document = notes_theme(document)
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(
