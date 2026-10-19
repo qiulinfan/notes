@@ -14,7 +14,14 @@ sudo apt-get update
 sudo apt-get install -y --no-install-recommends \
   texlive-xetex texlive-latex-extra texlive-lang-chinese texlive-science \
   texlive-fonts-recommended texlive-fonts-extra texlive-bibtex-extra \
-  latexmk dvisvgm mupdf-tools
+  latexmk dvisvgm mupdf-tools fonts-texgyre
+# Ubuntu's TeX Live packages omit ElegantBook, which qlnotes-native.cls loads;
+# install the same v4.6 class as TeX Live 2026 into the runner's TEXMFHOME.
+elegantbook_dir="$(kpsewhich -var-value TEXMFHOME)/tex/latex/elegantbook"
+mkdir -p "$elegantbook_dir"
+curl -fsSL -o "$elegantbook_dir/elegantbook.cls" \
+  https://raw.githubusercontent.com/ElegantLaTeX/ElegantBook/81bc14a0633d9a1060cd3a9df96075c3ba09ae67/elegantbook.cls
+kpsewhich elegantbook.cls
 git -C "$converter_dir" init
 git -C "$converter_dir" remote add origin https://github.com/qiulinfan/obsidian-latex-live.git
 git -C "$converter_dir" fetch --depth 1 origin "$converter_revision"
