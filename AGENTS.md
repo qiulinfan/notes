@@ -20,14 +20,15 @@ the owner asks, and keep development documentation here. The READMEs inside
   `web_artifacts` there. The marker registry covers only published courses,
   so after changing `publish`, run `make knowledge-registry` and commit the
   regenerated files in `notes/math/toolchain/generated/`.
-- kgdistiller source registration lives outside this repository, in the
-  kgdistiller home (`$KGDISTILLER_HOME`, default `~/.knowledge`), under the
-  base `notes` in its `config.json`. Each source glob there is relative to
-  this repository and maps to one document type: the mathematics courses'
-  `.tex` files map to `math-notes`, and the registered CS Markdown notes map
-  to `cs-notes`, an owner-reviewable draft type. The types themselves are
-  `~/.knowledge/types/<name>.md`. kgdistiller reads every source as plain text with line numbers and never
-  parses its syntax.
+- The kgdistiller base `notes` is registered outside this repository, in the
+  kgdistiller home (`$KGDISTILLER_HOME`, default `~/.knowledge`), whose
+  `config.json` lists the document types its records may use: `math-notes`
+  for the mathematics courses and `cs-notes`, an owner-reviewable draft type,
+  for the CS notes. Every `.md`, `.tex` and `.txt` file of this repository
+  outside hidden directories is a source; each record names its type in its
+  `type:`. The types themselves are `~/.knowledge/types/<name>.md`.
+  kgdistiller reads every source as plain text with line numbers, except for
+  its knowledge markers.
 - Knowledge is a set of records in kgdistiller's record format: YAML
   frontmatter followed by a Markdown body, one file per record, the id being
   the file stem. The frontmatter holds `label`, `kind`, `source` (a
@@ -41,10 +42,13 @@ the owner asks, and keep development documentation here. The READMEs inside
   new records are drafts in `.knowledge/drafts/`, and `kgd sheet` writes
   generated per-source sheets to `.knowledge/sheets/`. There is no separate
   edge file. Records are human-editable Markdown, also in Obsidian.
-- Knowledge markers are only a notes and homepage frontend convention, used
-  as website anchors and links; kgdistiller does not read them, and they do
-  not define knowledge entries. They are LaTeX `\kn{...}`/`\knref{...}` and
-  Markdown `--[[X]]--`/`[[X]]` (resolved by the homepage). A marker's ID is its
+- Knowledge markers serve both the website and kgdistiller. They are LaTeX
+  `\kn{NAME}`, `\kn[NAME]{TEXT}` (defines NAME and shows TEXT, which may be
+  empty) and `\knref{NAME}`, and Markdown `--[[NAME]]--`, `--[[NAME|TEXT]]--`
+  and `[[NAME]]` (resolved by the homepage). On the website they are anchors
+  and links; kgdistiller resolves a definition marker's NAME to the record
+  whose label, alias or id it is, to find the record again after its source
+  is edited or moved. Markers never create knowledge entries. A marker's ID is its
   exact spelling's entry in `notes/math/toolchain/knowledge-ids.json`, otherwise
   the slug of the spelling. These IDs are public `#kn-<id>` anchors; keep them
   stable. The map retains earlier public spellings as explicit aliases.
