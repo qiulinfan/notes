@@ -26,7 +26,7 @@
 \newenvironment{qldrawing}{}{}
 % The authored markers remain readable without a generated knowledge registry.
 % A registry may override these commands before the document starts.
-\providecommand{\kn}[1]{\textbf{#1}}
+\providecommand{\kn}[2][]{\textbf{#2}}
 \providecommand{\knref}[1]{#1}
 \providecommand{\bE}{\mathbb{E}}
 \providecommand{\bI}{\mathbb{I}}

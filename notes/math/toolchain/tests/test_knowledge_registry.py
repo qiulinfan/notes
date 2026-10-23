@@ -122,6 +122,24 @@ class KnowledgeRegistryTest(unittest.TestCase):
         ))
         self.assertEqual(["measure space"], [row["name"] for row in knowledge_registry.latex_markers(self.repo)])
 
+    def test_a_bracketed_name_defines_it_whatever_the_text_shows(self) -> None:
+        self.write("notes/math/measure/main.tex", (
+            "\\kn[measure space]{} A triple.\n"
+            "\\kn [outer measure] {the outer measure of a set}\n"
+            "\\knref{outer measure}\n"
+        ))
+        self.assertEqual(
+            [("measure space", "measure-space"), ("outer measure", "outer-measure")],
+            [(row["name"], row["id"]) for row in knowledge_registry.latex_markers(self.repo)],
+        )
+        self.assertEqual([], knowledge_registry.build(self.repo).latex_problems)
+
+    def test_bracket_misuse_is_a_marker_problem(self) -> None:
+        self.write("notes/math/measure/main.tex", "\\kn[ ]{empty name} \\knref[x]{y}\n")
+        problems = knowledge_registry.build(self.repo).latex_problems
+        self.assertTrue(any("needs a name" in problem for problem in problems), problems)
+        self.assertTrue(any("takes no optional name" in problem for problem in problems), problems)
+
     def test_literal_and_inactive_tex_creates_no_markers(self) -> None:
         self.write("notes/math/measure/main.tex", (
             "% \\kn{comment}\n\\newcommand{\\alias}[1]{\\kn{#1}}\n"

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Generate the public knowledge-marker JSON registry from authored TeX notes.
 
-LaTeX sources define names with ``\\kn{...}`` and refer to them with
+LaTeX sources define names with ``\\kn{NAME}`` (or ``\\kn[NAME]{TEXT}``, which shows
+TEXT where NAME is defined) and refer to them with
 ``\\knref{...}``. IDs come from knowledge-ids.json or the stable slug rule.
 Only published courses contribute public anchors. All courses contribute marker
 rows for direct LaTeX HTML export. Explicit map aliases retain existing links.
@@ -26,7 +27,7 @@ KNOWLEDGE_IDS = Path("notes/math/toolchain/knowledge-ids.json")
 REGISTRY_JSON = Path("notes/math/toolchain/generated/knowledge-registry.json")
 REGISTRY_SCHEMA = "notes-knowledge-registry-v1"
 ID_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
-LATEX_MARKER_RE = re.compile(r"\\(?P<command>knref|kn)\s*\{")
+LATEX_MARKER_RE = re.compile(r"\\(?P<command>knref|kn)(?![A-Za-z@])\s*(?:\[(?P<target>[^\[\]{}\n]*)\]\s*)?\{")
 GREEK_NAMES = {"σ": " sigma ", "π": " pi ", "λ": " lambda ", "μ": " mu ", "ρ": " rho ", "ω": " omega "}
 # TeX whose content is literal or inactive, so it holds no knowledge markers.
 LITERAL_ENVIRONMENTS = frozenset({
@@ -409,6 +410,15 @@ def scan_latex(
                     problems.append(f"{source}: {error}")
                     continue
                 spelling = text[match.end():close]
+                target = match.group("target")
+                if target is not None:
+                    if match.group("command") == "knref":
+                        problems.append(f"{source}: \\knref takes no optional name: {match.group(0)}")
+                        continue
+                    spelling = target.strip()
+                    if not spelling:
+                        problems.append(f"{source}: \\kn[] needs a name in its brackets")
+                        continue
                 if match.group("command") == "knref":
                     references.append((spelling, source))
                     continue

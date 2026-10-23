@@ -105,7 +105,7 @@ def fragment_document(
         # Fandol is supplied by TeX Live; ctex also selects XeLaTeX in the provider.
         lines.append(r"\usepackage[UTF8,fontset=fandol]{ctex}")
     lines.extend([
-        r"\providecommand{\kn}[1]{\textbf{#1}}",
+        r"\providecommand{\kn}[2][]{\textbf{#2}}",
         r"\providecommand{\knref}[1]{#1}",
         *(rf"\newtheorem{{{name}}}{{{label}}}" for name, label in THEOREM_ENVIRONMENTS),
         rf"\title{{{heading}}}",
