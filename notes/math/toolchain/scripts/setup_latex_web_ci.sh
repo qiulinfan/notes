@@ -8,7 +8,7 @@ test "${GITHUB_ACTIONS:-}" = true || {
 }
 
 # The direct LaTeX HTML protocol is provided by this reviewed product revision.
-converter_revision=cda98cbc45a40a5666f2d8a3fa2f3c5ee22b4f59
+converter_revision=7cf29c7aa76f66afb2d8845ef987ad6e0fdd1537
 converter_dir=$(mktemp -d "${RUNNER_TEMP}/notes-latex-live.XXXXXX")
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends \
