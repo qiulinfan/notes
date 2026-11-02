@@ -1,8 +1,8 @@
 :root {
   color-scheme: light;
-  --ql-ink: #24292f;
-  --ql-text: #424a53;
-  --ql-muted: #57606a;
+  --ql-ink: #2b2526;
+  --ql-text: #4a4243;
+  --ql-muted: #6b6163;
   --ql-canvas: #f6f8fa;
   --ql-paper: rgba(255, 255, 255, 0.9);
   --ql-surface-deep: #eaeef2;
@@ -24,9 +24,9 @@
 
 :root.dark {
   color-scheme: dark;
-  --ql-ink: #e5e9f0;
-  --ql-text: #abb2bf;
-  --ql-muted: #8f98a7;
+  --ql-ink: #e9dfdc;
+  --ql-text: #cbc1be;
+  --ql-muted: #9d9391;
   --ql-canvas: #21252b;
   --ql-paper: rgba(40, 44, 52, 0.9);
   --ql-surface-deep: #333946;
@@ -49,9 +49,9 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-ql-theme="light"]) {
     color-scheme: dark;
-    --ql-ink: #e5e9f0;
-    --ql-text: #abb2bf;
-    --ql-muted: #8f98a7;
+    --ql-ink: #e9dfdc;
+    --ql-text: #cbc1be;
+    --ql-muted: #9d9391;
     --ql-canvas: #21252b;
     --ql-paper: rgba(40, 44, 52, 0.9);
     --ql-surface-deep: #333946;
