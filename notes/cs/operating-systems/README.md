@@ -1,0 +1,1 @@
+EECS 482: Introduction to Operating Systems. Lecture notes on threads, synchronization, deadlock, address spaces, scheduling, file systems and crash consistency, discussion-section notes, and short notes on git, sockets and debugging.

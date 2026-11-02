@@ -1,3 +1,1 @@
-# Computer Networks
-
-// 待整理
+EECS 489: Computer Networks. Lecture notes from layering, bandwidth, latency and sockets through HTTP, DNS and CDNs, video streaming and data centers, TCP and congestion control, to the network layer.

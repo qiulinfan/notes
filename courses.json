@@ -55,6 +55,22 @@
       "id": "data-structures-and-algorithms",
       "label": "Data Structures and Algorithms",
       "text": "The field studying representations of data, algorithm design, correctness, and computational efficiency."
+    },
+    {
+      "id": "machine-learning",
+      "label": "Machine Learning"
+    },
+    {
+      "id": "operating-systems",
+      "label": "Operating Systems"
+    },
+    {
+      "id": "computer-vision",
+      "label": "Computer Vision"
+    },
+    {
+      "id": "computer-networks",
+      "label": "Computer Networks"
     }
   ],
   "courses": [
@@ -482,8 +498,8 @@
           "label": "Computer Organization"
         }
       ],
-      "publish": false,
-      "listed": false,
+      "publish": true,
+      "listed": true,
       "web": "https://qiulinfan.github.io/notes/cs/computer-organization"
     },
     {
@@ -639,33 +655,51 @@
     {
       "id": "cs:operating-systems",
       "title": "Operating Systems",
-      "description": "// 待整理",
+      "description": "Operating systems lecture and discussion notes on threads, synchronization, deadlock, address spaces, scheduling, file systems and crash consistency.",
       "subject": "cs",
       "course": "operating-systems",
       "root": "notes/cs/operating-systems",
       "files": [
+        "*.md",
         "**/*.md"
       ],
-      "fields": [],
-      "topics": [],
-      "publish": false,
-      "listed": false,
+      "fields": [
+        "operating-systems"
+      ],
+      "topics": [
+        {
+          "glob": "**/*.md",
+          "id": "operating-systems",
+          "label": "Operating Systems"
+        }
+      ],
+      "publish": true,
+      "listed": true,
       "web": "https://qiulinfan.github.io/notes/cs/operating-systems"
     },
     {
       "id": "cs:machine-learning",
       "title": "Machine Learning",
-      "description": "// 待整理",
+      "description": "Graduate machine learning notes with derivations and Python implementations: regression, classification, kernels, neural networks, CNNs and RNNs, EM and clustering, dimensionality reduction, and generative models.",
       "subject": "cs",
       "course": "machine-learning",
       "root": "notes/cs/machine-learning",
       "files": [
+        "*.md",
         "**/*.md"
       ],
-      "fields": [],
-      "topics": [],
-      "publish": false,
-      "listed": false,
+      "fields": [
+        "machine-learning"
+      ],
+      "topics": [
+        {
+          "glob": "**/*.md",
+          "id": "machine-learning",
+          "label": "Machine Learning"
+        }
+      ],
+      "publish": true,
+      "listed": true,
       "web": "https://qiulinfan.github.io/notes/cs/machine-learning"
     },
     {
@@ -687,33 +721,49 @@
     {
       "id": "cs:computer-networks",
       "title": "Computer Networks",
-      "description": "// 待整理",
+      "description": "Computer networks lecture notes on layering, sockets, HTTP, DNS and CDNs, video streaming, TCP and congestion control, and the network layer.",
       "subject": "cs",
       "course": "computer-networks",
       "root": "notes/cs/computer-networks",
       "files": [
-        "README.md"
+        "*.md"
       ],
-      "fields": [],
-      "topics": [],
-      "publish": false,
-      "listed": false,
+      "fields": [
+        "computer-networks"
+      ],
+      "topics": [
+        {
+          "glob": "*.md",
+          "id": "computer-networks",
+          "label": "Computer Networks"
+        }
+      ],
+      "publish": true,
+      "listed": true,
       "web": "https://qiulinfan.github.io/notes/cs/computer-networks"
     },
     {
       "id": "cs:computer-vision",
       "title": "Computer Vision",
-      "description": "// 待整理",
+      "description": "Computer vision lecture notes on image filtering, frequency analysis and the Fourier transform.",
       "subject": "cs",
       "course": "computer-vision",
       "root": "notes/cs/computer-vision",
       "files": [
-        "README.md"
+        "*.md"
       ],
-      "fields": [],
-      "topics": [],
-      "publish": false,
-      "listed": false,
+      "fields": [
+        "computer-vision"
+      ],
+      "topics": [
+        {
+          "glob": "*.md",
+          "id": "computer-vision",
+          "label": "Computer Vision"
+        }
+      ],
+      "publish": true,
+      "listed": true,
       "web": "https://qiulinfan.github.io/notes/cs/computer-vision"
     },
     {
